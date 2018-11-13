@@ -1,0 +1,85 @@
+---
+layout: post
+title: Popular matchings
+redirect_from: "/2018/11/13/popular-matchings/"
+permalink: popular-matchings
+---
+
+*Popular matchings* are a nice variant of the classic
+[stable matchings](https://en.wikipedia.org/wiki/Stable_marriage_problem). 
+This post define these matchings, and give some bits of information about them.
+
+== Stable matchings ==
+Remember what a stable matching is. There is bipartite graph, where 
+every node holds an ordering of its neighbours, known as the *preference list*. 
+A matching $M$ in this graph is stable, if no edge $(u,v)$ that is *not* in $M$ 
+is such that both $u$ and $v$, would prefer to be matched together instead of 
+the way they are matched (or unmatched) in $M$. Note that such matchings are 
+maximal.
+
+A stable matching always exists and can be computed in lienar-time using the 
+famous Gale-Shapley algorithm. Something frustrating with stable matchings is 
+that they may be small with respect to the maximum matching (if one forgets 
+about the preference lists). For example, in the following example, the stable 
+matching matches $A_1$ with $B_2$, and prevent $A_2$ and $B_1$ from being match, 
+although they would be matched in with $(A_1,B_1)$ and $(A_2,B_2)$. 
+
+![](assets/popular.png){: .center-image height="300px"}
+
+This example shows that the size of a stable matching can be half of the size of 
+a maximum matching. 
+If you are in the context where you would like to (at least partially) satisfy 
+the nodes in terms of preference lists, but would like to also satisfy as many 
+nodes as possible, then you need another form of optimality, and (max-size) 
+popular matchings is a good one.
+
+== Popular matchings ==
+With a stable matching the matched nodes are happy, because they are at a kind 
+of equilibrium, but the other nodes are unhappy because they are not matched at 
+all. 
+What happens if you make the nodes vote for their favourite matching? 
+This makes sense if you do a tournament: for every couple of matchings you make 
+an election (the vertices perfer to be matched, and with the highest neighbour 
+in their preference list). 
+A matching is popular if it wins every election (if there is an ex-eaquo then 
+both matching win). 
+
+== Relation with stable matchings, and size considerations ==
+It is known that every stable matching is popular. 
+Thus popularity is a relaxation of stability. 
+Unlike stable matchings, popular matchings can have different sizes, and can be 
+larger than stable matchings (that why we look at them in the first place).
+Actually, stable matchings are the worst popular matchings with respect to size: 
+stable matchings are the popular matchings of minimum size.
+
+We then look for is max-size popular matching.  
+The good news it that max-size popular matchings can be computed in polynomial 
+time, and that they have size at least 2/3 of the maximum size matching.
+
+== Notes ==
+I got aware of this topic by a seminar of 
+[Telikepalli Kavitha](http://www.tcs.tifr.res.in/~kavitha/) at [IRIF](irif.fr) 
+in September. After a nice introduction, she told us about her recent papers on 
+the topic (there is a lot to say, with many relevant variants, and nice 
+algorithmic techniques but it would be too much for a blog post!). 
+
+The concept of popular matchings was introduced by Gärdenfors in the seventies, 
+who also proved that stable matchings are popular.[^1] 
+The polynomial algorithm for computing max-size popular matching is much more 
+recent, it was designed by Telikepalli and Chien-Chung Huang in 2011. [^2] 
+And it is still a hot topic. [^3]
+
+=== Footnotes ===
+[^1]: P. Gärdenfors, [Match making: Assignments based on bilateral preferences](https://doi.org/10.1002/bs.3830200304). (I couldn't find it on google scholar, but I could on the Wiley webpage I link to.
+[^2]: T. Kavitha, C. Huang, [Popular matchings in the stable marriage problem](https://doi.org/10.1016/j.ic.2012.10.012). ([Arxiv version]())
+[^3]: See [DBLP "popular matching" search](https://dblp.uni-trier.de/search?q=popular+matching).
+
+
+
+
+
+
+
+  
+
+

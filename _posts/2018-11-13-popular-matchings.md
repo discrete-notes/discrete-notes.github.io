@@ -9,7 +9,7 @@ permalink: popular-matchings
 [stable matchings](https://en.wikipedia.org/wiki/Stable_marriage_problem). 
 This post define these matchings, and give some bits of information about them.
 
-== Stable matchings ==
+# Stable matchings
 Remember what a stable matching is. There is bipartite graph, where 
 every node holds an ordering of its neighbours, known as the *preference list*. 
 A matching $M$ in this graph is stable, if no edge $(u,v)$ that is *not* in $M$ 
@@ -33,7 +33,7 @@ the nodes in terms of preference lists, but would like to also satisfy as many
 nodes as possible, then you need another form of optimality, and (max-size) 
 popular matchings is a good one.
 
-== Popular matchings ==
+# Popular matchings
 With a stable matching the matched nodes are happy, because they are at a kind 
 of equilibrium, but the other nodes are unhappy because they are not matched at 
 all. 
@@ -44,7 +44,7 @@ in their preference list).
 A matching is popular if it wins every election (if there is an ex-eaquo then 
 both matching win). 
 
-== Relation with stable matchings, and size considerations ==
+# Relation with stable matchings and size considerations
 It is known that every stable matching is popular. 
 Thus popularity is a relaxation of stability. 
 Unlike stable matchings, popular matchings can have different sizes, and can be 
@@ -56,7 +56,7 @@ We then look for is max-size popular matching.
 The good news it that max-size popular matchings can be computed in polynomial 
 time, and that they have size at least 2/3 of the maximum size matching.
 
-== Notes ==
+# Notes 
 I got aware of this topic by a seminar of 
 [Telikepalli Kavitha](http://www.tcs.tifr.res.in/~kavitha/) at [IRIF](irif.fr) 
 in September. After a nice introduction, she told us about her recent papers on 
@@ -69,8 +69,8 @@ The polynomial algorithm for computing max-size popular matching is much more
 recent, it was designed by Telikepalli and Chien-Chung Huang in 2011. [^2] 
 And it is still a hot topic. [^3]
 
-=== Footnotes ===
-[^1]: P. Gärdenfors, [Match making: Assignments based on bilateral preferences](https://doi.org/10.1002/bs.3830200304). (I couldn't find it on google scholar, but I could on the Wiley webpage I link to.
+## Footnotes
+[^1]: P. Gärdenfors, [Match making: Assignments based on bilateral preferences](https://doi.org/10.1002/bs.3830200304). (I couldn't find it on Google Scholar, but it is accessible on Wiley.)
 [^2]: T. Kavitha, C. Huang, [Popular matchings in the stable marriage problem](https://doi.org/10.1016/j.ic.2012.10.012). ([Arxiv version]())
 [^3]: See [DBLP "popular matching" search](https://dblp.uni-trier.de/search?q=popular+matching).
 

@@ -38,12 +38,16 @@ Her thesis was about a problem that
 any electric utility company faces: how to manage the different the power plants
 to meet the demand while using the less energy possible, given that there are 
 many constraints on these plants (a nuclear reactor cannot be switched on and 
-off in a minute, some other stuff has to cool down etc.). As often in OR (from what 
+off in a minute, some other stuff has to cool down, etc.). As often in OR (as far as
 I know) this is done by having big LPs and playing with them, adding new 
 inequalities, trying to use the structure to speed the computation, having 
 branch and cut routines etc. 
-A challenge is to break symmetries in these LPs. Suppose you have two identical 
-nuclear reactors, then if you use one or the other, you will have the same cost, 
+
+One of the big challenges that one has to tackle when solving these big LPs 
+in an industrial context is to break the symmetries.
+Suppose you have two identical 
+nuclear reactors, then if you use one or the other in your solution, 
+you will have the same cost, 
 thus you can have many many optimal solutions. This is bad for a branch and cut 
 strategy, where the ideal case is to have only one optimal solution, and to be 
 cutting all the other branches. Cécile showed ways to solve this problem, and 

@@ -23,7 +23,7 @@ into logic, and this paper seems to make a step in this direction.
 ## A map of the theory of distributed computing community 
 [Jukka Suomela](https://users.ics.aalto.fi/suomela/) published
 [a nice map](https://plus.google.com/+JukkaSuomela/posts/JgWYFk4XzWW) of the 
-PODC/DISC communicties. (PODC and DISC are the two main conferences in theory 
+PODC/DISC communities. (PODC and DISC are the two main conferences in theory 
 of distributed computing.)  
 It is a graph where the nodes are the authors, and the edges between them 
 have different thickness, 
@@ -85,42 +85,44 @@ I just picked a few non-specific things that caught my interest.
 ### Network formation games
 The first topic is about understanding the structure of real-world networks, by 
 finding ways to build algorithmically networks that have similar properties. 
-A well-known generation algorithms is the 
+A well-known generation algorithm is the 
 [Barabási–Albert model](https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model) 
-where nodes basically arrive one by one and choose who to be linked to 
+where nodes basically arrive one by one and choose who to be linked to, 
 based on the degree of the nodes that already arrived. There is a second 
-type of network formation model that I didn't know,[^3][^4] which is to start 
-with a set of fixed nodes and to make them play a game with the edges. 
-For example maximize the payoff in a game where links cost something, 
-but having short paths to every node is rewarded. 
+type of network formation model that I didn't know,[^3]<sup>,</sup>[^4] which is to start 
+with a fixed set of nodes, and to make them play a game to decide 
+which edges are in the graph. 
+For example, the nodes want to maximize their pay-offs in a game where every 
+link cost something, but having short paths to every node is rewarded. 
 These are called network formation games.  
 
 ### Monetary transfer
-The second idea is monetary transfer. Suppose you have a Nash equilibrium 
-that is very bad (for some definition of bad) because each player when 
-maximizing its gain is hurting the other players a lot. Then you can introduce
-monetary transfer, that consists for two nodes to agree that if the 
-first does this thing that decreases its pay-off but increases the pay-off 
-of the second player, then the second player will give part of its 
-pay-off to reimburse him, and both will be happier. Natural idea to 
+The second idea is about introducing money in games.
+Suppose you have a Nash equilibrium 
+that is very bad (for some definition of bad) because each player, when 
+maximizing its gain, is hurting the other players a lot. Then you can introduce
+monetary transfer, that consists for two players A and B to agree that if the 
+A does this thing that decreases its pay-off but increases the pay-off 
+of B, then B will give part of its 
+pay-off to reimburse A, and both will be happier. Natural idea to 
 consider, but that I had never heard of.
 
 ### Using motifs to validate a model
-The third thing is a tiny thing: I knew that people studying social 
-networks are obssesed with finding motifs (small graphs that appear more 
+I knew that people studying social 
+networks are obsessed with finding motifs (small graphs that appear more 
 often than others), but I was not sure why. It could be just to have 
-more knowledge about the relationships, but in Ariel Orda's talk, it was 
-also a way to validate a model. Basically in real-world graphs this and that 
+more knowledge about the relationships, but in Orda's talk, it was 
+also a way to validate a model. Basically: in real-world graphs this and that 
 motifs are very common, we don't know why, and previous generative 
 models did not have this property, but their model could capture this. 
-To my knowledge, parameters such as the diameter, or the clustering 
-coefficient are canonical ways to validate a model.
+As far as I know, parameters such as the diameter, or the clustering 
+coefficient are more classic ways to validate such models.
 
-### About the price of anarchy, selfiness and collaboration
+### About the price of anarchy, selfishness and collaboration
 The [price of anarchy](https://en.wikipedia.org/wiki/Price_of_anarchy), 
 is the ratio between the social cost when each players tries to optimize 
-its own pay-off, and when all the players play the startegy that minimize 
-this social cost. It is often said that this price is the price to pay 
+its own pay-off, and when all the players play the strategy that minimize 
+the social cost. It is often said that this price is the price to pay 
 when players are selfish. But it is not completely true, it is also the 
 price of not collaborating. You can image scenarios in which players have
 the option of collaborating but each player will agree only if it ensures 
@@ -135,5 +137,5 @@ will consider what is called a Nash bargaining solution.
 [^1]: If you are interested, see [Fabian Reiter's very nice PhD thesis](https://arxiv.org/abs/1805.06238).
 [^2]: See [this tweet](https://twitter.com/JukkaSuomela/status/1065259077738082304)
 [^3]: There seems that there is no third well-known way to generate networks, at least in the [wikipedia article about network formation](https://en.wikipedia.org/wiki/Network_formation).
-[^4]: Actually I somehow knew because of [this paper](https://dl.acm.org/citation.cfm?doid=3178876.3186122) by my PhD advisor and collegues, but I had forgotten.
+[^4]: Actually I somehow knew because of [this paper](https://dl.acm.org/citation.cfm?doid=3178876.3186122) by my PhD advisor and colleges, but I had forgotten.
 

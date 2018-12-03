@@ -25,7 +25,7 @@ into logic, and this paper seems to make a step in this direction.
 [a nice map](https://plus.google.com/+JukkaSuomela/posts/JgWYFk4XzWW) of the 
 PODC/DISC communicties. (PODC and DISC are the two main conferences in theory 
 of distributed computing.)  
-It is a graphs where the nodes are the authors, and the edges between them 
+It is a graph where the nodes are the authors, and the edges between them 
 have different thickness, 
 depending on how much they have collaborated, or have had papers in the same 
 sessions. There are strong thematic clusters, which is no surprise.
@@ -55,20 +55,22 @@ cutting all the other branches quickly. Cécile showed ways to solve this proble
 This reminded me of another PhD defense with symmetries: the one of 
 [Victor Verdugo](https://sites.google.com/view/vverdugo/). Victor had a part of 
 his PhD work on how to break symmetry for 
-[sum-of-squares](https://en.wikipedia.org/wiki/Sum-of-squares_optimization).  
-The timing for this blog post is pretty good: the paper of Victor on this topic 
+[sum-of-squares](https://en.wikipedia.org/wiki/Sum-of-squares_optimization). The
+timing for this blog post is pretty good: the paper of Victor on this topic 
 just appeared on arxiv, 
 [here](https://arxiv.org/abs/1811.08539).
 
 ## Double-blind for DISC
 The conference [DISC](http://www.disc-conference.org/wp/) will go 
-double-blind next year(that is both the reviewers and the authors will
+double-blind next year (that is the names of both the reviewers and the authors will
 be anonymized).[^2] At first I was sceptical about this idea, 
 because of the usual reasons: extra-care in the process (e.g. when talking to 
-people) with probably no big impact, etc. But recently I had to review a paper by 
+people) with probably no big impact, etc. But recently I reviewed a paper by 
 authors from a university I had never heard of, and I felt that before even 
 starting I had a negative bias. I think double-blind is exactly about 
-protecting authors from this bias. I heard many times that the 
+protecting authors from this bias. 
+
+I heard many times that the 
 problem is that well-known people get their papers accepted although 
 they are not good enough, and I think this cannot really change (because 
 of arxiv, favourite topics, writing style), but it's the other side of the 

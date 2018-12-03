@@ -13,20 +13,22 @@ A few notes for November 2018.
 [Descriptive complexity](https://en.wikipedia.org/wiki/Descriptive_complexity_theory) 
 basically aims at characterizing complexity classes through logic. A classic 
 results is [Fagin's Theorem](https://en.wikipedia.org/wiki/Descriptive_complexity_theory)
-that characterize NP. 
+that characterizes NP. 
 Descriptive complexity for distributed computing is a relatively new topic,[^1]
 and a [new paper](https://arxiv.org/abs/1811.08197) just came out on arxiv.
-I'm not a specialist, but from what I understood, the usual assumption in the
+I'm not a specialist, but from what I understood, the classic assumption of the
 LOCAL model that there are unique identifiers, is pretty difficult to transfer 
-into logic, and this paper make a step in this direction.
+into logic, and this paper seems to make a step in this direction.
 
 ## A map of the theory of distributed computing community 
 [Jukka Suomela](https://users.ics.aalto.fi/suomela/) published
 [a nice map](https://plus.google.com/+JukkaSuomela/posts/JgWYFk4XzWW) of the 
-PODC/DISC (the two main conferences in theory of distributed computing) community.  
-The nodes are the authors, that are linked by edges of different thickness, 
+PODC/DISC communicties. (PODC and DISC are the two main conferences in theory 
+of distributed computing.)  
+It is a graphs where the nodes are the authors, and the edges between them 
+have different thickness, 
 depending on how much they have collaborated, or have had papers in the same 
-sessions. There are strong thematic clusters, which is no surprize.
+sessions. There are strong thematic clusters, which is no surprise.
 
 ## Symmetries in LPs and SOS
 I attended the PhD defense of 
@@ -45,7 +47,7 @@ nuclear reactors, then if you use one or the other, you will have the same cost,
 thus you can have many many optimal solutions. This is bad for a branch and cut 
 strategy, where the ideal case is to have only one optimal solution, and to be 
 cutting all the other branches. Cécile showed ways to solve this problem, and 
-there is a whole litterature about this. 
+there is a whole literature about this. 
 This reminded me of another PhD defense with symmetries: the one of 
 [Victor Verdugo](https://sites.google.com/view/vverdugo/). Victor had a part of 
 his PhD work on how to break symmetry for 
@@ -55,13 +57,13 @@ the timing for this blog post is pretty good: the paper just appeared on arxiv,
 
 ## Double-blind for DISC
 The conference [DISC](http://www.disc-conference.org/wp/) will go 
-double-blind next year.[^2] At first I was sceptical about this idea, 
-because of the usual reasons: extra-work, extra-care when talking to 
-people, not very effective, we should not super-optimize conferences because
-journals are the most important etc. But recently I had to review a paper by 
-people from a university I've never heard of, and I felt that, before even 
-starting I had a big bias. I think double-blind is exactly about 
-removing this bias. In other words, I heard many times that the 
+double-blind next year,[^2] that is both the reviewers and the authors will
+be anonymized. At first I was sceptical about this idea, 
+because of the usual reasons: extra-care in th process (e.g. when talking to 
+people) with no probably no big impact, etc. But recently I had to review a paper by 
+people from a university I've never heard of and I felt that, before even 
+starting, I had a negative bias. I think double-blind is exactly about 
+protexting authors from this bias. In other words, I heard many times that the 
 problem is that well-known people get their papers accepted although 
 they are not good enough, and I think this cannot really change (because 
 of arxiv, favourite topics, writing style), but it's the other side of the 
@@ -120,6 +122,7 @@ they can talk to each other and make agreements.
 This can change the outcome a lot. Then one 
 will consider what is called a Nash bargaining solution.
 
+---
 
 #### Footnotes 
 [^1]: If you are interested, see [Fabian Reiter's very nice PhD thesis](https://arxiv.org/abs/1805.06238).

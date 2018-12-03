@@ -46,28 +46,29 @@ branch and cut routines etc.
 One of the big challenges that one has to tackle when solving these big LPs 
 in an industrial context is to break the symmetries.
 Suppose you have two identical 
-nuclear reactors, then if you use one or the other in your solution, 
-you will have the same cost, 
-thus you can have many many optimal solutions. This is bad for a branch and cut 
+nuclear reactors in your system. Then if you use one or the other in your solution, 
+you will have the same cost. This implies that you can have many many optimal 
+solutions. This is bad for a branch and cut 
 strategy, where the ideal case is to have only one optimal solution, and to be 
-cutting all the other branches. Cécile showed ways to solve this problem, and 
-there is a whole literature about this. 
+cutting all the other branches quickly. Cécile showed ways to solve this problem.
+
 This reminded me of another PhD defense with symmetries: the one of 
 [Victor Verdugo](https://sites.google.com/view/vverdugo/). Victor had a part of 
 his PhD work on how to break symmetry for 
-[sum-of-squares](https://en.wikipedia.org/wiki/Sum-of-squares_optimization), and 
-the timing for this blog post is pretty good: the paper just appeared on arxiv, 
+[sum-of-squares](https://en.wikipedia.org/wiki/Sum-of-squares_optimization).  
+The timing for this blog post is pretty good: the paper of Victor on this topic 
+just appeared on arxiv, 
 [here](https://arxiv.org/abs/1811.08539).
 
 ## Double-blind for DISC
 The conference [DISC](http://www.disc-conference.org/wp/) will go 
-double-blind next year,[^2] that is both the reviewers and the authors will
-be anonymized. At first I was sceptical about this idea, 
-because of the usual reasons: extra-care in th process (e.g. when talking to 
-people) with no probably no big impact, etc. But recently I had to review a paper by 
-people from a university I've never heard of and I felt that, before even 
-starting, I had a negative bias. I think double-blind is exactly about 
-protexting authors from this bias. In other words, I heard many times that the 
+double-blind next year(that is both the reviewers and the authors will
+be anonymized).[^2] At first I was sceptical about this idea, 
+because of the usual reasons: extra-care in the process (e.g. when talking to 
+people) with probably no big impact, etc. But recently I had to review a paper by 
+authors from a university I had never heard of, and I felt that before even 
+starting I had a negative bias. I think double-blind is exactly about 
+protecting authors from this bias. I heard many times that the 
 problem is that well-known people get their papers accepted although 
 they are not good enough, and I think this cannot really change (because 
 of arxiv, favourite topics, writing style), but it's the other side of the 

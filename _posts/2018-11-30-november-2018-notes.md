@@ -134,7 +134,7 @@ will consider what is called a Nash bargaining solution.
 ---
 
 #### Footnotes 
-[^1]: If you are interested, see [Fabian Reiter's very nice PhD thesis](https://arxiv.org/abs/1805.06238).
+[^1]: If you are interested, see [Fabian Reiter's very nice PhD thesis](https://arxiv.org/abs/1805.06238), and the [gentle introduction](https://semidoc.github.io/reiter-dga) to the topic I wrote on semidoc.
 [^2]: See [this tweet](https://twitter.com/JukkaSuomela/status/1065259077738082304)
 [^3]: There seems that there is no third well-known way to generate networks, at least in the [wikipedia article about network formation](https://en.wikipedia.org/wiki/Network_formation).
 [^4]: Actually I somehow knew because of [this paper](https://dl.acm.org/citation.cfm?doid=3178876.3186122) by my PhD advisor and colleges, but I had forgotten.

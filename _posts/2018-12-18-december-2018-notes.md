@@ -9,7 +9,7 @@ A few notes for December 2018.
 
 ---
 
-## Karchmer-Wigderson theorem
+## Karchmer-Wigderson theorem
 
 Karchmer-Wigderson theorem makes a precise link between circuit and 
 communication complexity. More precisely it 

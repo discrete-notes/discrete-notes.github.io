@@ -141,7 +141,7 @@ Exactly $n-1$, as proved in [this paper](https://doi.org/10.1007/BF02579350).
 (I discovered this in the related works section of 
 [this paper](https://doi.org/10.1007/3-540-44676-1_40).)
 
-## Jaccard metric
+##Jaccard metric
 Lipton and Regan talk about the 
 [Jaccard metric](https://en.wikipedia.org/wiki/Jaccard_index) in 
 [a post](https://rjlipton.wordpress.com/2018/12/14/explaining-the-jaccard-metric/)
@@ -152,7 +152,7 @@ Let $A$ and $B$
 be two sets, the distance is:
 $$d(A,B)=1-\frac{|A \cap B|}{|A \cup B|}.$$
 
-## Preprints
+##Preprints
 I have two news preprints this month: 
 
 * [Graph classes and forbidden patterns on three vertices](https://arxiv.org/abs/1812.05913)

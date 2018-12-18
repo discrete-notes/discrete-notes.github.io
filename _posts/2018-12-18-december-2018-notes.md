@@ -9,7 +9,7 @@ A few notes for December 2018.
 
 ---
 
-##Karchmer-Wigderson theorem 
+## Karchmer-Wigderson theorem 
 
 Karchmer-Wigderson theorem makes a precise link between circuit and 
 communication complexity. More precisely it 
@@ -40,7 +40,7 @@ For the other direction, see the Internet.
 [online talk](https://www.youtube.com/watch?v=t1EsRm1dmw0) by 
 [Mika Göös](http://www.math.ias.edu/~mika/).) 
 
-##Counting crows
+## Counting crows
 
 These days I often cross the 
 [Jardin des Plantes](https://en.wikipedia.org/wiki/Jardin_des_plantes)
@@ -55,7 +55,7 @@ This sounded very much like CS to me, for example in networks,
 sending packets that may disappear, and trying to know the message loss for 
 example.
 
-##Minimum degree spanning tree
+## Minimum degree spanning tree
 [Minimum-degree spanning tree](https://en.wikipedia.org/wiki/Degree-constrained_spanning_tree), 
 consists in finding a spanning tree of a graph, 
 with the constraint that the maximum degree of the tree should be as small as 
@@ -73,7 +73,7 @@ to know if there are real-world applications.
 (I discovered this problem in
 [this distributed computing paper](https://doi.org/10.1109/ICDCS.2015.66).)
 
-##Cycle cover
+## Cycle cover
 An [(edge) cycle-cover](https://en.wikipedia.org/wiki/Edge_cycle_cover)
 is a set of cycles of a graph, such that every edge of the graph 
 is contained in at least one cycle. There are several problems associated with 
@@ -93,7 +93,7 @@ for the details.
 ([A paper about cycle covers](https://arxiv.org/abs/1812.04492) recently 
 appeared on the arxiv, reminded me this problem.)
 
-##MST algorithms
+## MST algorithms
 Consider the following algorithm for finding a minimum weight spanning tree, similar to 
 [Borůvka's algorithm](https://en.wikipedia.org/wiki/Bor%C5%AFvka%27s_algorithm). 
 
@@ -117,7 +117,7 @@ view with a kind of scheduler, with different strategies.
 reminded me about this fact, that I discovered a few years ago, but that I've 
 never seen in undergraduate courses.) 
 
-##Squashed cube conjecture and distance labelling
+## Squashed cube conjecture and distance labelling
 Distance labelling are labels given to the nodes of a graph such that given the 
 labels of two arbitrary nodes $u$ and $v$, and without seeing the graph, one can compute 
 the distance between $u$ and $v$. One usually tries to minimize the size of 
@@ -141,7 +141,7 @@ Exactly $n-1$, as proved in [this paper](https://doi.org/10.1007/BF02579350).
 (I discovered this in the related works section of 
 [this paper](https://doi.org/10.1007/3-540-44676-1_40).)
 
-##Jaccard metric
+## Jaccard metric
 Lipton and Regan talk about the 
 [Jaccard metric](https://en.wikipedia.org/wiki/Jaccard_index) in 
 [a post](https://rjlipton.wordpress.com/2018/12/14/explaining-the-jaccard-metric/)
@@ -152,7 +152,7 @@ Let $A$ and $B$
 be two sets, the distance is:
 $$d(A,B)=1-\frac{|A \cap B|}{|A \cup B|}.$$
 
-##Preprints
+## Preprints
 I have two news preprints this month: 
 
 * [Graph classes and forbidden patterns on three vertices](https://arxiv.org/abs/1812.05913)

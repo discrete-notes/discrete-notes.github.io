@@ -5,7 +5,7 @@ redirect_from: "/2018/12/18/december-2018-notes/"
 permalink: december-2018-notes
 ---
 
-A few notes for December 2018.
+![](assets/arbre.png){: .center-image height="500px"}
 
 ---
 

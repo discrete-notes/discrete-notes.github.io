@@ -5,7 +5,8 @@ redirect_from: "/2018/12/18/december-2018-notes/"
 permalink: december-2018-notes
 ---
 
-A few notes for December 2018.
+![](assets/arbre.png){: .center-image height="500px"}
+
 
 ---
 
@@ -153,7 +154,7 @@ be two sets, the distance is:
 $$d(A,B)=1-\frac{|A \cap B|}{|A \cup B|}.$$
 
 ## Preprints
-I have two news preprints this month: 
+I have two new preprints this month: 
 
 * [Graph classes and forbidden patterns on three vertices](https://arxiv.org/abs/1812.05913)
 with [Michel Habib](https://www.irif.fr/~habib/).

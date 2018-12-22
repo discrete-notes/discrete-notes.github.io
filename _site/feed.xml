@@ -8,7 +8,7 @@
     
       <item>
         <title>December notes</title>
-        <description>&lt;p&gt;A few notes for December 2018.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;assets/arbre.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -159,7 +159,7 @@ be two sets, the distance is:
 &lt;script type=&quot;math/tex&quot;&gt;d(A,B)=1-\frac{|A \cap B|}{|A \cup B|}.&lt;/script&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;preprints&quot;&gt;Preprints&lt;/h2&gt;
-&lt;p&gt;I have two news preprints this month:&lt;/p&gt;
+&lt;p&gt;I have two new preprints this month:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1812.05913&quot;&gt;Graph classes and forbidden patterns on three vertices&lt;/a&gt;

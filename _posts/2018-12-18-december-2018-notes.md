@@ -87,7 +87,7 @@ contained in exactly two.
 
 If you think "How can this be open?!", I'll just add that it is listed in the 
 [open problem garden](http://www.openproblemgarden.org/op/cycle_double_cover_conjecture) 
-has of "outstanding importance". See there, or on the wikipedia page linked above 
+as of "outstanding importance". See there, or on the wikipedia page linked above 
 for the details. 
 
 ([A paper about cycle covers](https://arxiv.org/abs/1812.04492) recently 

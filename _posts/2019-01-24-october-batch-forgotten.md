@@ -5,11 +5,11 @@ redirect_from: "/2019/01/24/"
 permalink: october-batch-forgotten
 ---
 
+![](assets/arbre-bw.png){: .center-image height="400px"}
+
 I saw many talks in October and I plan to blog a bit about those in some 
 posts to come. This first post is about some notions a somehow knew but couldn't 
 really define.
-
-![](assets/arbre.png){: .center-image height="500px"}
 
 ## $\epsilon$-nets
  

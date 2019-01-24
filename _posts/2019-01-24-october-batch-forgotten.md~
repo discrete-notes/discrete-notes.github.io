@@ -9,6 +9,8 @@ I saw many talks in October and I plan to blog a bit about those in some
 posts to come. This first post is about some notions a somehow knew but couldn't 
 really define.
 
+![](assets/arbre.png){: .center-image height="500px"}
+
 ## $\epsilon$-nets
  
 [$\epsilon$-nets](https://en.wikipedia.org/wiki/%CE%95-net_(computational_geometry)) 

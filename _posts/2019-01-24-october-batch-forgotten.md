@@ -2,7 +2,7 @@
 layout: post
 title: October batch, forgotten notions
 redirect_from: "/2019/01/24/"
-permalink: october-batch-forgoazfafazfs
+permalink: october-batch-forgotten
 ---
 
 I saw many talks in October and I plan to blog a bit about those in some 

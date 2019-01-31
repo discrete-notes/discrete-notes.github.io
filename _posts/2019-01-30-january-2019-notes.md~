@@ -17,17 +17,18 @@ been solved by a team supervised by
 [The preprint](https://arxiv.org/abs/1901.02441) has been 
 uploaded to arxiv recently, and is not reviewed yet, so this should be taken 
 with a grain of salt, but given the authors list, and what I have read of the 
-paper, there is little doubt it is true. 
+paper, there is little doubt it is correct. 
 
-The setting can be explain with the following setting: there are jobs available 
-and people looking for jobs, such that each job has at most $\Delta$ condidates, 
-and each person has at most $\Delta$ jobs he or she is interested in. 
-There is no central entity, so the decision have to be taken based on communication 
+The setting can be explained the following way. There are jobs available,
+and people looking for jobs. Every job has at most $\Delta$ condidates, 
+and each person has at most $\Delta$ jobs (s)he is interested in. 
+There is no central entity, so the decisions of which job is matched
+to which person have to be taken based on communication 
 between the "jobs" and the people. 
-At the end, we want that every person
-either has been assigned a job, or all the jobs (s)he was intersted in have be 
-assiged to someone else, and every job is either assigned to someone, or all the 
-candidates have been assigned a job. 
+At the end, we want that (1) every person
+either has been assigned a job or all the jobs (s)he was interested in have been 
+assiged to someone else, and (2) every job is either assigned to someone, or all 
+the candidates for this job have been assigned another job. 
 Note that there is no preference list, and 
 this problem would be very easy if we had a central entity managing the job 
 market. 

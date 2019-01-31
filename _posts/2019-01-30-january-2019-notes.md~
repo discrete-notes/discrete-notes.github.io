@@ -86,7 +86,7 @@ class file. This is not useful anymore: the class now provide a command
 [authors guidelines](http://drops.dagstuhl.de/styles/lipics-v2019/lipics-v2019-authors/lipics-v2019-authors-guidelines.pdf), 
 page 8.)
 
-## PAC learning and deep learning
+## PAC learning and deep learning
 
 It seems that deep learning is becoming popular among almost everybody (at least 
 from a scientific point of view), except theoretical computer scientists, who 
@@ -131,7 +131,7 @@ to picture units of fluid. Power diagrams are generalizations of
 [Voronoi diagrams](https://en.wikipedia.org/wiki/Voronoi_diagram) but special 
 cases of [weighted Voronoi diagrams](https://en.wikipedia.org/wiki/Weighted_Voronoi_diagram).
 
-# Order types
+## Order types
 
 Suppose you have a configuration with four points in the plane, usch that no 
 three of them are alligned. Then, either all the points are extreme points, and 

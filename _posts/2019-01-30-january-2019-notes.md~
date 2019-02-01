@@ -7,6 +7,8 @@ permalink: january-2019-notes
 
 A few notes for January 2019.
 
+![](assets/dino.png){: .center-image height="500px"}
+<center> "Illuminated species" in the Jardin des Plantes in Paris. </center> 
 ---
 
 ## Maximal matching lower bound
@@ -139,7 +141,9 @@ cases of [weighted Voronoi diagrams](https://en.wikipedia.org/wiki/Weighted_Voro
 Suppose you have a configuration with four points in the plane, such that no 
 three of them are aligned. Then, either all the points are extreme points, and 
 they form a kind of quadrilateral, or there are three points forming a triangle, 
-and the last point is in the triangle. These two cases are called the order types.
+and the last point is in the triangle. These two cases are called the order types
+(for four points in the plane). As you can expect, this gets more tricky when 
+you look at more points.
 
 There was a [paper at SODA 2019](https://epubs.siam.org/doi/10.1137/1.9781611975482.27)
 about this topic.

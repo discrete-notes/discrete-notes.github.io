@@ -9,7 +9,7 @@ permalink: simulation-1
 
 ---
 
-As.
+As
 [said earlier](https://discrete-notes.github.io/january-2019-notes) 
 on this blog, a 
 [recent preprint](https://arxiv.org/abs/1901.02441) 

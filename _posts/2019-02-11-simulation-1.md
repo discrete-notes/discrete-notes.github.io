@@ -74,9 +74,9 @@ into an algorithm in 0 round for $P'$, which would contradict the
 non-triviality of $P'$. 
 Then you known that $P$ requires at least 2 rounds. 
 This may sound silly as we have just moved the problem: now you are left 
-with proving that $P'$ is non-trivial. But this is usually much simpler.  
+with proving that $P'$ is non-trivial. But this is usually much simpler.
 
-### Induction
+### Induction
 Now, you want to prove lower bounds above one round, say $k+1$ rounds. 
 The argument goes the following way.
 For the sake of contradiction, suppose there is an algorithm in $k$ rounds for 

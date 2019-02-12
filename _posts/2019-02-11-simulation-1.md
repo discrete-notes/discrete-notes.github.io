@@ -7,6 +7,8 @@ permalink: simulation-1
 
 ---
 
+![](assets/puzzle-1.png){: .center-image height="300px"}
+
 ---
 
 As

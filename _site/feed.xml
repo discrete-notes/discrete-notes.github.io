@@ -10,9 +10,11 @@
         <title>Simulation argument I. General technique</title>
         <description>&lt;hr /&gt;
 
+&lt;p&gt;&lt;img src=&quot;assets/puzzle-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+
 &lt;hr /&gt;
 
-&lt;p&gt;As.
+&lt;p&gt;As
 &lt;a href=&quot;https://discrete-notes.github.io/january-2019-notes&quot;&gt;said earlier&lt;/a&gt; 
 on this blog, a 
 &lt;a href=&quot;https://arxiv.org/abs/1901.02441&quot;&gt;recent preprint&lt;/a&gt; 
@@ -81,7 +83,7 @@ Then you known that $P$ requires at least 2 rounds.
 This may sound silly as we have just moved the problem: now you are left 
 with proving that $P’$ is non-trivial. But this is usually much simpler.&lt;/p&gt;
 
-&lt;h3 id=&quot;induction&quot;&gt; Induction&lt;/h3&gt;
+&lt;h3 id=&quot;induction&quot;&gt;Induction&lt;/h3&gt;
 &lt;p&gt;Now, you want to prove lower bounds above one round, say $k+1$ rounds. 
 The argument goes the following way.
 For the sake of contradiction, suppose there is an algorithm in $k$ rounds for 

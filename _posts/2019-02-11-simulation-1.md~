@@ -127,7 +127,7 @@ synchronization with neighbours)
 * the new labels fit into a language that has good properties, in particular, it 
 is not trivial.
 
-### Footnote
+### Footnotes
 
 [^1]: The simulation argument appears more clearly in the [modern version of the proof](https://users.ics.aalto.fi/suomela/doc/linial-easy.pdf)
 

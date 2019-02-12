@@ -122,7 +122,7 @@ The goal is to simplify the proof, by replacing the sets of labels by something
 simpler, typically simple labels. For example you decide that every set of labels 
 {$a,b$} is replaced by $a$. For this step to be useful you need that:
  
-* one can compute teh simplification without further communication (e.g. no 
+* one can compute the simplification without further communication (e.g. no 
 synchronization with neighbours)
 * the new labels fit into a language that has good properties, in particular, it 
 is not trivial.

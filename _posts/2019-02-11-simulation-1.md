@@ -5,12 +5,6 @@ redirect_from: "/2019/02/11/"
 permalink: simulation-1
 ---
 
----
-
-![](assets/puzzle-1.png){: .center-image height="300px"}
-
----
-
 As
 [said earlier](https://discrete-notes.github.io/january-2019-notes) 
 on this blog, a 
@@ -18,6 +12,12 @@ on this blog, a
 proves a set of long-expected lower bounds for distributed graph algorithms. 
 This post is the first of a (short) series of (short) posts about the basics of 
 this paper. 
+
+---
+
+![](assets/puzzle-1.png){: .center-image height="300px"}
+
+---
 
 ## A series of posts
 

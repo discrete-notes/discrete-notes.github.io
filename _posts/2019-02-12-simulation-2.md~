@@ -37,7 +37,7 @@ $\Delta$-regular tree.
 If we can prove a lower bound for this area of the tree, then we
 have a lower bound for our problem.
 
-### Bicoloring
+### 2-coloring
 We will consider graphs that are 2-colored (trees are bipartite), and we assume 
 that every node knows on which side of the partition it is (black or white). So 
 we work on this kind of graph (with omitted port-numbers):
@@ -54,11 +54,9 @@ In such an algorithm, the
 black nodes do not label the edges, they "trust" the white nodes. 
 A *black algorithm* is defined the same way, but for black nodes.
 
-
-
 ## Encoding of edge problems
 
-### Using the 2-coloring
+### Using the 2-coloring
 We consider edge problems defined the following way. 
 The multiset of edges adjacent to any vertex should follow some rule, that
 depends on the color of the node. 
@@ -75,7 +73,7 @@ unlike in the example above.
 Actually, it is often useful to make them different (we'll see that in the two 
 next posts).
 
-### Polynomial point of view
+### Polynomial point of view
 
 We now introduce the polynomial point of view. 
 Consider a node $u$ in a graph where the edges are labeled.
@@ -98,7 +96,7 @@ $\Delta$, because every node has $\Delta$ adjacent edges.
 
 ## Simulation step and independence
 
-### Polynomial point of view
+### Polynomial point of view
 In the previous post, we said that the simulation step is basically about having 
 a view at distance $T-1$, imagining everything that could appear in the nodes 
 at distance $T$, and labeling edges with all the labels that could be correct 

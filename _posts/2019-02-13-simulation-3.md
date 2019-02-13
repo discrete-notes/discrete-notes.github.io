@@ -51,7 +51,7 @@ $b^{\Delta}$.
 And well, that's all we need!
 
 ### Simplification step
-Now consider the simplification: $b+w \rightarrow b$. 
+Consider the simplification: $b+w \rightarrow b$. 
 
 If we apply this simplification, we have all the edges labeled with unique 
 labels (not set labels), and this labeling is correct with respect to the black 

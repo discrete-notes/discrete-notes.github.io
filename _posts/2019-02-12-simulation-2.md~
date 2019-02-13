@@ -243,7 +243,7 @@ adjacent to the node we consider.
 For example, in the simulation, the node $u$ computes what 
 its white neighbor $v$ would put on an edge $(v,z)$, and we consider it in our 
 superposition property.Bbut the edge $(v,z)$ is probably labeled in different 
-way by $z$! 
+manner by $z$, and this has to be taken into account in the simplification step.
 
 
 ## Footnotes

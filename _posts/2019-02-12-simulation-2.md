@@ -98,7 +98,7 @@ $\Delta$, because every node has $\Delta$ adjacent edges.
 
 ## Simulation step and independence
 
-### Polynomial point of view
+### Polynomial point of view
 In the previous post, we said that the simulation step is basically about having 
 a view at distance $T-1$, imagining everything that could appear in the nodes 
 at distance $T$, and labeling edges with all the labels that could be correct 

@@ -240,8 +240,12 @@ are very different.
 adjacent to the node we consider. 
 For example, in the simulation, the node $u$ computes what 
 its white neighbor $v$ would put on an edge $(v,z)$, and we consider it in our 
-superposition property.Bbut the edge $(v,z)$ is probably labeled in different 
+superposition property. But the edge $(v,z)$ is probably labeled in different 
 manner by $z$, and this has to be taken into account in the simplification step.
+A good thing, that could be a third key property actually, is that the way $u$ 
+and $z$ label the edges is not completely non-correlated: there is at least one
+label for each edge on which they agree: the label of the $T$-algorithm gives 
+in the real graph (not a simulated one).
 
 
 ## Footnotes

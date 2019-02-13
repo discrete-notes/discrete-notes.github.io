@@ -129,7 +129,7 @@ algorithm in time $T$, and gather the set of labels possible for each edge.
 Note that we have fixed the topology to $\Delta$-regular trees, so the only 
 thing to imagine for the extension is the port-number assignment.
 
-### Independence
+### Independence
 The key point here is the following: the $T$-view of a white 
 neighbour $v$ of $u$ consists of: 
 (1) the $(T-1)$-view of $u$, and 

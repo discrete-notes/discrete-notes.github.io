@@ -7,6 +7,98 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Simulation argument III. Sinkless orientation</title>
+        <description>&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/puzzle-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This is the third post of a series that starts &lt;a href=&quot;./simulation-1&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In this post, we show how to use simulation argument to prove a lower bound on 
+the &lt;em&gt;sinkless orientation&lt;/em&gt; problem. 
+This is done in the context described in the &lt;a href=&quot;./simulation-2&quot;&gt;previous post&lt;/a&gt;:
+2-colored regular trees.&lt;/p&gt;
+
+&lt;h2 id=&quot;sinkless-orientation-encoding&quot;&gt; Sinkless orientation encoding&lt;/h2&gt;
+
+&lt;p&gt;The sinkless orientation problem consists in orienting the edges of the graph, 
+such that no node is a sink, that is, no node has only edges pointing to it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/sinkless.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This can be easily encoded in bipartite graphs: an edge is labeled $b$ if it is 
+pointing to the black endpoint, and $w$ is it is pointing to the white endpoint.&lt;/p&gt;
+
+&lt;p&gt;Now the languages, described as polynomials, are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$L_W=b(b+w)^{\Delta-1}$,&lt;/li&gt;
+  &lt;li&gt;$L_B=w(b+w)^{\Delta-1}$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;transformation&quot;&gt;Transformation&lt;/h2&gt;
+
+&lt;p&gt;We will show a very strong property: from a $T$-round algorithm for sinkless 
+orientation, we can get a $(T-1)$-round algorithm for… sinkless orientation!&lt;/p&gt;
+
+&lt;h3 id=&quot;simulation&quot;&gt;Simulation&lt;/h3&gt;
+&lt;p&gt;After one step of simulation centered at a black node $u$, the labeling of the 
+edges adjacent to $u$ is described by a factorized polynomial $P_u$. 
+By definition $P_u$ is included in $(w+b)^{\Delta}$.&lt;/p&gt;
+
+&lt;h3 id=&quot;product-and-superposition-property&quot;&gt;Product and superposition property&lt;/h3&gt;
+&lt;p&gt;We now use the key properties to have a better upper bound on $P_u$.
+Thanks to the product property, we know that $P_u\subseteq w(b+w)^{\Delta-1}$. 
+And thanks to the superposition property, we know that $P_v$ cannot be 
+$b^{\Delta}$.
+And well, that’s all we need!&lt;/p&gt;
+
+&lt;h3 id=&quot;simplification-step&quot;&gt;Simplification step&lt;/h3&gt;
+&lt;p&gt;Now consider the simplification: $b+w \rightarrow b$.&lt;/p&gt;
+
+&lt;p&gt;If we apply this simplification, we have all the edges labeled with unique 
+labels (not set labels), and this labeling is correct with respect to the black 
+language. In other words, after simplification, we have a polynomial $\hat{P_u}$, 
+that is a monomial, and $\hat{P_u}\subseteq L_B$.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
+But what about the white nodes?
+We know from the previous section that $P_v$ was not $b^{\Delta}$, thus 
+$\hat{P_v}$ is not $b^{\Delta}$ either, thus $\hat{P_v}\subseteq L_W$.&lt;/p&gt;
+
+&lt;p&gt;Thus we have a new labeling, for the exact same language, in one less round!&lt;/p&gt;
+
+&lt;h2 id=&quot;lower-bound&quot;&gt;Lower bound&lt;/h2&gt;
+
+&lt;p&gt;The same reasoning would work for the white nodes as well. 
+This means that from any $T$-round algorithm for sinkless orientation, we get 
+down to a 0-round algorithm for sinkless orientation. 
+And sinkless orientation is not a trivial language.&lt;/p&gt;
+
+&lt;p&gt;So is sinkless orientation impossible to solve?&lt;/p&gt;
+
+&lt;p&gt;No, remember that our lower bound technique works only up to $O(\log n)$ rounds.
+Thus we have just proved an $\Omega(\log n)$ lower bound for this problem.&lt;/p&gt;
+
+&lt;p&gt;Actually there is a $O(\log n)$ algorithm for this language, hance this bound is 
+tight.&lt;/p&gt;
+
+&lt;h2 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h2&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;We always have the property that the simplification step does not destroy the correctness of the labeling on the black node, as long as we do an “hereditary” simplification, that is we replace a set of labels by a label of the set. This is because of the product property.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 13 Feb 2019 00:00:00 +0100</pubDate>
+        <link>https://discrete-notes.github.io///simulation-3</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///simulation-3</guid>
+      </item>
+    
+      <item>
         <title>Simulation argument II. Edge-labelings on 2-colored trees, and polynomials</title>
         <description>&lt;p&gt;This is the second post of a series that starts 
 &lt;a href=&quot;https://discrete-notes.github.io/simulation-1&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -40,7 +132,7 @@ $\Delta$-regular tree.
 If we can prove a lower bound for this area of the tree, then we
 have a lower bound for our problem.&lt;/p&gt;
 
-&lt;h3 id=&quot;bicoloring&quot;&gt; Bicoloring&lt;/h3&gt;
+&lt;h3 id=&quot;coloring&quot;&gt;2-coloring&lt;/h3&gt;
 &lt;p&gt;We will consider graphs that are 2-colored (trees are bipartite), and we assume 
 that every node knows on which side of the partition it is (black or white). So 
 we work on this kind of graph (with omitted port-numbers):&lt;/p&gt;
@@ -59,7 +151,7 @@ A &lt;em&gt;black algorithm&lt;/em&gt; is defined the same way, but for black no
 
 &lt;h2 id=&quot;encoding-of-edge-problems&quot;&gt;Encoding of edge problems&lt;/h2&gt;
 
-&lt;h3 id=&quot;using-the-2-coloring&quot;&gt; Using the 2-coloring&lt;/h3&gt;
+&lt;h3 id=&quot;using-the-2-coloring&quot;&gt;Using the 2-coloring&lt;/h3&gt;
 &lt;p&gt;We consider edge problems defined the following way. 
 The multiset of edges adjacent to any vertex should follow some rule, that
 depends on the color of the node. 
@@ -76,7 +168,7 @@ unlike in the example above.
 Actually, it is often useful to make them different (we’ll see that in the two 
 next posts).&lt;/p&gt;
 
-&lt;h3 id=&quot;polynomial-point-of-view&quot;&gt; Polynomial point of view&lt;/h3&gt;
+&lt;h3 id=&quot;polynomial-point-of-view&quot;&gt;Polynomial point of view&lt;/h3&gt;
 
 &lt;p&gt;We now introduce the polynomial point of view. 
 Consider a node $u$ in a graph where the edges are labeled.
@@ -101,7 +193,7 @@ $\Delta$, because every node has $\Delta$ adjacent edges.&lt;/p&gt;
 
 &lt;h2 id=&quot;simulation-step-and-independence&quot;&gt;Simulation step and independence&lt;/h2&gt;
 
-&lt;h3 id=&quot;polynomial-point-of-view-1&quot;&gt; Polynomial point of view&lt;/h3&gt;
+&lt;h3 id=&quot;polynomial-point-of-view-1&quot;&gt;Polynomial point of view&lt;/h3&gt;
 &lt;p&gt;In the previous post, we said that the simulation step is basically about having 
 a view at distance $T-1$, imagining everything that could appear in the nodes 
 at distance $T$, and labeling edges with all the labels that could be correct 
@@ -134,7 +226,7 @@ algorithm in time $T$, and gather the set of labels possible for each edge.&lt;/
 &lt;p&gt;Note that we have fixed the topology to $\Delta$-regular trees, so the only 
 thing to imagine for the extension is the port-number assignment.&lt;/p&gt;
 
-&lt;h3 id=&quot;independence&quot;&gt; Independence&lt;/h3&gt;
+&lt;h3 id=&quot;independence&quot;&gt;Independence&lt;/h3&gt;
 &lt;p&gt;The key point here is the following: the $T$-view of a white 
 neighbour $v$ of $u$ consists of: 
 (1) the $(T-1)$-view of $u$, and 
@@ -243,8 +335,12 @@ are very different.&lt;/li&gt;
 adjacent to the node we consider. 
 For example, in the simulation, the node $u$ computes what 
 its white neighbor $v$ would put on an edge $(v,z)$, and we consider it in our 
-superposition property.Bbut the edge $(v,z)$ is probably labeled in different 
-manner by $z$, and this has to be taken into account in the simplification step.&lt;/li&gt;
+superposition property. But the edge $(v,z)$ is probably labeled in different 
+manner by $z$, and this has to be taken into account in the simplification step.
+A good thing, that could be a third key property actually, is that the way $u$ 
+and $z$ label the edges is not completely non-correlated: there is at least one
+label for each edge on which they agree: the label of the $T$-algorithm gives 
+in the real graph (not a simulated one).&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h2&gt;

@@ -5,13 +5,13 @@ redirect_from: "/2019/02/08/"
 permalink: simulation-3
 ---
 
+This is the third post of a series that starts [here](./simulation-1). 
+
 ---
 
 ![](assets/puzzle-3.png){: .center-image height="300px"}
 
 ---
-
-This is the third post of a series that starts [here](./simulation-1). 
 
 In this post, we show how to use simulation argument to prove a lower bound on 
 the *sinkless orientation* problem. 

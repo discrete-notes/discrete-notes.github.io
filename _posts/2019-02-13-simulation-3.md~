@@ -18,7 +18,7 @@ the *sinkless orientation* problem.
 This is done in the context described in the [previous post](./simulation-2):
 2-colored regular trees.
 
-## Sinkless orientation encoding
+## Sinkless orientation encoding
 
 The sinkless orientation problem consists in orienting the edges of the graph, 
 such that no node is a sink, that is, no node has only edges pointing to it.

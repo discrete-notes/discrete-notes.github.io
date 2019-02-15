@@ -73,12 +73,12 @@ $M(P+0)^{\Delta-1}+O^{\Delta}$. which contradicts the product property.
 Then we are left with 5 possible sums as factors in $P_u$: 
 $(M), (O), (P), (M+O), (P+0)$. 
 
-Now it seems that we cannot get much more our the properties, so let's try a 
-simplifications step.
+Now it seems that we cannot get much more out of our properties, so let's try a 
+simplification step.
 
 ### (Tentative) Simplification step
 
-So now, if we can map $(M+O)$ and $P+0$ to a label, 
+If we can map $(M+O)$ and $P+0$ to a simple label, 
 and still match the language, 
 then we are done, and we can conclude like in the [previous post](./simulation-3). 
 But this is not going to happen. 
@@ -90,7 +90,7 @@ a $P+O$.
 
 Then, one thinks: let's just take one of the two edges labeled with $M+O$
 (let say the one with the smallest port-number on the white node), 
-label it with $M$, and label the other one with $O$, and we are done.
+label it with $M$, label the other one with $O$, and we are done.
 
 The problem is the one we highlighted in the [second post](./simulation-2): 
 the edges are not uniformly set-labeled by all the nodes. 
@@ -109,13 +109,13 @@ algorithm for this problem, thus no $\Omega(\log n)$ lower bound!
 
 * The above alone does not prove that there is no $\Omega(\log n)$ lower 
 bound: we could use another definition of the problem, or we could have tried 
-more exotic label replacement ($M$ tranformed in $P$, or whatever). 
+more exotic label replacement ($M$ tranformed into $P$, or whatever). 
 
 * If you want to prove a $\Omega(\Delta)$ lower bound then you need to be 
-smarter. In particular you need that after the transformation the language is 
+smarter. In particular you need that, after the transformation, the language is 
 different. Basically there should be a parameter that starts with something like 
 $\Delta$ and decreases at each transformation. 
-See [the paper](https://arxiv.org/abs/1901.02441)!
+For that, see [the paper](https://arxiv.org/abs/1901.02441)!
  
 
 

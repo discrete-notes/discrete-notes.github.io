@@ -75,7 +75,7 @@ So is sinkless orientation impossible to solve?
 No, remember that our lower bound technique works only up to $O(\log n)$ rounds.
 Thus we have just proved an $\Omega(\log n)$ lower bound for this problem. 
 
-Actually there is a $O(\log n)$ algorithm for this language, hance this bound is 
+Actually there is a $O(\log n)$ algorithm for this language, hence this bound is 
 tight. 
 
 ## Footnotes

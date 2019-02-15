@@ -181,7 +181,7 @@ By definition $P_u$ is included in $(w+b)^{\Delta}$.&lt;/p&gt;
 &lt;h3 id=&quot;product-and-superposition-property&quot;&gt;Product and superposition property&lt;/h3&gt;
 &lt;p&gt;We now use the key properties to have a better upper bound on $P_u$.
 Thanks to the product property, we know that $P_u\subseteq w(b+w)^{\Delta-1}$. 
-And thanks to the superposition property, we know that $P_v$ cannot be 
+And thanks to the common label property, we know that $P_v$ cannot be 
 $b^{\Delta}$.
 And well, that’s all we need!&lt;/p&gt;
 
@@ -408,34 +408,23 @@ $P_u \subseteq L_B$.&lt;/p&gt;
 &lt;p&gt;This means that every monomial of $P_u$ has to be a monomial of $L_B$, which is
 just a reformulation of the claim above.&lt;/p&gt;
 
-&lt;h3 id=&quot;superposition-property&quot;&gt;Superposition property&lt;/h3&gt;
+&lt;h3 id=&quot;common-label-property&quot;&gt;Common label property&lt;/h3&gt;
 
-&lt;p&gt;And now a property for the neighborhoods of the white nodes. An important thing 
-here is that we are considering the simulation of the black node $u$ only (see 
-the subtleties at the end of this post).&lt;/p&gt;
-
-&lt;p&gt;Let a &lt;em&gt;set addition&lt;/em&gt; of two vectors $(s_1,s_2, …s_{\Delta})$ and 
-$(s_1’,s_2’, …s_{\Delta}’)$ be $(s_1+s_1’,s_2+s_2’, …s_{\Delta}+s_{\Delta}’)$,
-where the addition $s_i+s_i’$ is a set addition, that is if $s_i=s_i’$ then 
-$s_i+s_i’=s_i$. 
-A superposition of a set of vectors is the set addition of all the vectors.&lt;/p&gt;
+&lt;p&gt;And now a property for the neighborhoods of the white nodes. 
+This will not give us a lot of information, because we don’t know how the other
+black nodes around the node label the edges around this white node. 
+But we still have the following:&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Claim:&lt;/em&gt;
-The set labeling around a white node is the superposition of correct labelings 
-for the white language.&lt;/p&gt;
+Take a white node $v$.
+All the black nodes around $v$ agree on at least one label for each edge. 
+That is, for each edge there is a label that is in the set of labels of the 
+simulation of every black node.&lt;/p&gt;
 
-&lt;p&gt;This directly follows from the definition of the simulation.&lt;/p&gt;
+&lt;p&gt;This label is simply the one that the white nodes would give with its $T$-round 
+algorithm on the real graph (not a simulated one).&lt;/p&gt;
 
-&lt;p&gt;In terms of polynomials, I couldn’t find a nice algebraic analogue (one can 
-easily find clumsy complicated analogues), so let say that the superposition 
-property can be stated the following way.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Superposition property&lt;/em&gt;:
-After the simulation, $P_v$ is the superposition of permutations of monomials 
-from $P_W$.&lt;/p&gt;
-
-&lt;p&gt;This property is somehow weaker than the first one, but still it’s 
-going to be useful in our second example.&lt;/p&gt;
+&lt;p&gt;This property is weaker than the first one, but is sometimes useful.&lt;/p&gt;
 
 &lt;h2 id=&quot;typical-transformation-step&quot;&gt;Typical transformation step&lt;/h2&gt;
 
@@ -464,13 +453,9 @@ are very different.&lt;/li&gt;
   &lt;li&gt;Second, one should be careful when talking about the edges that are not 
 adjacent to the node we consider. 
 For example, in the simulation, the node $u$ computes what 
-its white neighbor $v$ would put on an edge $(v,z)$, and we consider it in our 
-superposition property. But the edge $(v,z)$ is probably labeled in different 
-manner by $z$, and this has to be taken into account in the simplification step.
-A good thing, that could be a third key property actually, is that the way $u$ 
-and $z$ label the edges is not completely non-correlated: there is at least one
-label for each edge on which they agree: the label of the $T$-algorithm gives 
-in the real graph (not a simulated one).&lt;/li&gt;
+its white neighbor $v$ would put on an edge $(v,z)$. 
+But the edge $(v,z)$ is probably labeled in different 
+manner by $z$, and this has to be taken into account in the simplification step.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h2&gt;

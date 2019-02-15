@@ -264,34 +264,23 @@ $P_u \subseteq L_B$.</p>
 <p>This means that every monomial of $P_u$ has to be a monomial of $L_B$, which is
 just a reformulation of the claim above.</p>
 
-<h3 id="superposition-property">Superposition property</h3>
+<h3 id="common-label-property">Common label property</h3>
 
-<p>And now a property for the neighborhoods of the white nodes. An important thing 
-here is that we are considering the simulation of the black node $u$ only (see 
-the subtleties at the end of this post).</p>
-
-<p>Let a <em>set addition</em> of two vectors $(s_1,s_2, …s_{\Delta})$ and 
-$(s_1’,s_2’, …s_{\Delta}’)$ be $(s_1+s_1’,s_2+s_2’, …s_{\Delta}+s_{\Delta}’)$,
-where the addition $s_i+s_i’$ is a set addition, that is if $s_i=s_i’$ then 
-$s_i+s_i’=s_i$. 
-A superposition of a set of vectors is the set addition of all the vectors.</p>
+<p>And now a property for the neighborhoods of the white nodes. 
+This will not give us a lot of information, because we don’t know how the other
+black nodes around the node label the edges around this white node. 
+But we still have the following:</p>
 
 <p><em>Claim:</em>
-The set labeling around a white node is the superposition of correct labelings 
-for the white language.</p>
+Take a white node $v$.
+All the black nodes around $v$ agree on at least one label for each edge. 
+That is, for each edge there is a label that is in the set of labels of the 
+simulation of every black node.</p>
 
-<p>This directly follows from the definition of the simulation.</p>
+<p>This label is simply the one that the white nodes would give with its $T$-round 
+algorithm on the real graph (not a simulated one).</p>
 
-<p>In terms of polynomials, I couldn’t find a nice algebraic analogue (one can 
-easily find clumsy complicated analogues), so let say that the superposition 
-property can be stated the following way.</p>
-
-<p><em>Superposition property</em>:
-After the simulation, $P_v$ is the superposition of permutations of monomials 
-from $P_W$.</p>
-
-<p>This property is somehow weaker than the first one, but still it’s 
-going to be useful in our second example.</p>
+<p>This property is weaker than the first one, but is sometimes useful.</p>
 
 <h2 id="typical-transformation-step">Typical transformation step</h2>
 
@@ -320,13 +309,9 @@ are very different.</li>
   <li>Second, one should be careful when talking about the edges that are not 
 adjacent to the node we consider. 
 For example, in the simulation, the node $u$ computes what 
-its white neighbor $v$ would put on an edge $(v,z)$, and we consider it in our 
-superposition property. But the edge $(v,z)$ is probably labeled in different 
-manner by $z$, and this has to be taken into account in the simplification step.
-A good thing, that could be a third key property actually, is that the way $u$ 
-and $z$ label the edges is not completely non-correlated: there is at least one
-label for each edge on which they agree: the label of the $T$-algorithm gives 
-in the real graph (not a simulated one).</li>
+its white neighbor $v$ would put on an edge $(v,z)$. 
+But the edge $(v,z)$ is probably labeled in different 
+manner by $z$, and this has to be taken into account in the simplification step.</li>
 </ul>
 
 <h2 id="footnotes">Footnotes</h2>

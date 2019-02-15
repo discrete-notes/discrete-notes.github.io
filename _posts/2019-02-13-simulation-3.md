@@ -43,7 +43,7 @@ After one step of simulation centered at a black node $u$, the labeling of the
 edges adjacent to $u$ is described by a factorized polynomial $P_u$. 
 By definition $P_u$ is included in $(w+b)^{\Delta}$. 
 
-### Product and superposition property
+### Product and common label property
 We now use the key properties to have a better upper bound on $P_u$.
 Thanks to the product property, we know that $P_u\subseteq w(b+w)^{\Delta-1}$. 
 And thanks to the common label property, we know that $P_v$ cannot be 

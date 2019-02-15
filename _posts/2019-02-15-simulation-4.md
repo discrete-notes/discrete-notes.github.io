@@ -50,12 +50,12 @@ The languages we use are then described by the following polynomials:
 
 ## Transformation
 
-### Simulation 
+### Simulation
 
 We perform the simulation on a black node $u$, and get a polynomial $P_u$.  
 By definition $P_u\subseteq (M+O+P)^{\Delta}$, and is factorized.
 
-### Product property
+### Product property
 
 As the product rule applies, we know that
 $P_u \subseteq M(P+0)^{\Delta-1}+O^{\Delta}$.  

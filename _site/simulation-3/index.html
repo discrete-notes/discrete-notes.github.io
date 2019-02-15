@@ -86,20 +86,20 @@
       <div class="post">
   <h1 class="post-title">Simulation argument III. Sinkless orientation</h1>
   <span class="post-date">13 Feb 2019</span>
-  <hr />
+  <p>This is the third post of a series that starts <a href="./simulation-1">here</a>.</p>
+
+<hr />
 
 <p><img src="assets/puzzle-3.png" alt="" class="center-image" height="300px" /></p>
 
 <hr />
-
-<p>This is the third post of a series that starts <a href="./simulation-1">here</a>.</p>
 
 <p>In this post, we show how to use simulation argument to prove a lower bound on 
 the <em>sinkless orientation</em> problem. 
 This is done in the context described in the <a href="./simulation-2">previous post</a>:
 2-colored regular trees.</p>
 
-<h2 id="sinkless-orientation-encoding"> Sinkless orientation encoding</h2>
+<h2 id="sinkless-orientation-encoding">Sinkless orientation encoding</h2>
 
 <p>The sinkless orientation problem consists in orienting the edges of the graph, 
 such that no node is a sink, that is, no node has only edges pointing to it.</p>
@@ -134,7 +134,7 @@ $b^{\Delta}$.
 And well, that’s all we need!</p>
 
 <h3 id="simplification-step">Simplification step</h3>
-<p>Now consider the simplification: $b+w \rightarrow b$.</p>
+<p>Consider the simplification: $b+w \rightarrow b$.</p>
 
 <p>If we apply this simplification, we have all the edges labeled with unique 
 labels (not set labels), and this labeling is correct with respect to the black 
@@ -158,7 +158,7 @@ And sinkless orientation is not a trivial language.</p>
 <p>No, remember that our lower bound technique works only up to $O(\log n)$ rounds.
 Thus we have just proved an $\Omega(\log n)$ lower bound for this problem.</p>
 
-<p>Actually there is a $O(\log n)$ algorithm for this language, hance this bound is 
+<p>Actually there is a $O(\log n)$ algorithm for this language, hence this bound is 
 tight.</p>
 
 <h2 id="footnotes">Footnotes</h2>

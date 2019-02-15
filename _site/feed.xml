@@ -7,21 +7,151 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Simulation argument IV. Maximal matching</title>
+        <description>&lt;p&gt;This is the fourth and last post of a series about the simulation argument, that 
+started with &lt;a href=&quot;./simulation-1&quot;&gt;this post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/puzzle-4.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;In this post we tackle the maximal matching problem. 
+Or actually we will show 
+why establishing a lower bound for this problem is not as easy as for the 
+sinkless orientation problem. 
+The real lower bound is in &lt;a href=&quot;https://arxiv.org/abs/1901.02441&quot;&gt;this paper&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;encoding&quot;&gt;Encoding&lt;/h3&gt;
+
+&lt;p&gt;A maximal matching is a set of edges of the graph, such that not two edges are 
+adjacent and not two unmatched node are linked by an edge.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/couplage.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A natural encoding for this problem would be to label the edges of the matching 
+with a first label, and edges not in the matching with second label. 
+But this does not work for our setting. 
+Instead, we will do the following. 
+(As in the previous post we will deal with 2-colored trees.)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The edges of the matching are labeled with the label $M$.&lt;/li&gt;
+  &lt;li&gt;If a white node is not matched then its edges are labeled with $P$. 
+These are pointers to matched black nodes.&lt;/li&gt;
+  &lt;li&gt;The remaining edges are labeled with $O$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On the following picture, red edges are for $M$, green edges are for $P$, and 
+blue edges are for $O$ (the missing edge should be blue!).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/couplage-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The languages we use are then described by the following polynomials:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$L_W = MO^{\Delta-1}+P^{\Delta}$,&lt;/li&gt;
+  &lt;li&gt;$L_B = M(P+O)^{\Delta-1} + O^{\Delta}$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;transformation&quot;&gt;Transformation&lt;/h2&gt;
+
+&lt;h3 id=&quot;simulation&quot;&gt; Simulation&lt;/h3&gt;
+
+&lt;p&gt;We perform the simulation on a black node $u$, and get a polynomial $P_u$.&lt;br /&gt;
+By definition $P_u\subseteq (M+O+P)^{\Delta}$, and is factorized.&lt;/p&gt;
+
+&lt;h3 id=&quot;product-and-good-one-properties&quot;&gt; Product and good-one properties&lt;/h3&gt;
+
+&lt;p&gt;As the product rule applies, we know that
+$P_u \subseteq M(P+0)^{\Delta-1}+O^{\Delta}$.&lt;br /&gt;
+Thus there is at most one factor of $P_u$ with an $M$.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Claim 1&lt;/em&gt;: This factor is either $(M)$ or $(M+O)$.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;: Suppose the factor with $M$ has a $P$. 
+Then it means that when we develop $P_u$,
+there are two monomials $M\times K$ and $P\times K$, with $K$ a polynomial
+of degree $\Delta-1$, that does not contain an $M$. 
+But the monomial $P\times K$ is not included in 
+$M(P+0)^{\Delta-1}+O^{\Delta}$. which contradicts the product property.&lt;/p&gt;
+
+&lt;p&gt;Then we are left with 5 possible sums as factors in $P_u$: 
+$(M), (O), (P), (M+O), (P+0)$.&lt;/p&gt;
+
+&lt;p&gt;Now it seems that we cannot get much more our the properties, so let’s try a 
+simplifications step.&lt;/p&gt;
+
+&lt;h3 id=&quot;tentative-simplification-step&quot;&gt;(Tentative) Simplification step&lt;/h3&gt;
+
+&lt;p&gt;So now, if we can map $(M+O)$ and $P+0$ to a label, 
+and still match the language, 
+then we are done, and we can conclude like in the &lt;a href=&quot;./simulation-3&quot;&gt;previous post&lt;/a&gt;. 
+But this is not going to happen.&lt;/p&gt;
+
+&lt;p&gt;Suppose you are in following situation, that is easy because there is not even 
+a $P+O$.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/couplage-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then, one thinks: let’s just take one of the two edges labeled with $M+O$
+(let say the one with the smallest port-number on the white node), 
+label it with $M$, and label the other one with $O$, and we are done.&lt;/p&gt;
+
+&lt;p&gt;The problem is the one we highlighted in the &lt;a href=&quot;./simulation-2&quot;&gt;second post&lt;/a&gt;: 
+the edges are not uniformly set-labeled by all the nodes. 
+Maybe the other black node that is dealing with these edges, labels it 
+with only $O$.
+And then you have to synchronize, and this is forbidden (it takes extra time).&lt;/p&gt;
+
+&lt;h3 id=&quot;no-lower-bound-this-way&quot;&gt;No lower bound this way&lt;/h3&gt;
+
+&lt;p&gt;So at the end, we cannot conclude like in the case of sinkless orientation.&lt;/p&gt;
+
+&lt;p&gt;Comments on that:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;This make sense: actually there is a $O(\Delta)$ 
+algorithm for this problem, thus no $\Omega(\log n)$ lower bound!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The above alone does not prove that there is no $\Omega(\log n)$ lower 
+bound: we could use another definition of the problem, or we could have tried 
+more exotic label replacement ($M$ tranformed in $P$, or whatever).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If you want to prove a $\Omega(\Delta)$ lower bound then you need to be 
+smarter. In particular you need that after the transformation the language is 
+different. Basically there should be a parameter that starts with something like 
+$\Delta$ and decreases at each transformation. 
+See &lt;a href=&quot;https://arxiv.org/abs/1901.02441&quot;&gt;the paper&lt;/a&gt;!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 15 Feb 2019 00:00:00 +0100</pubDate>
+        <link>https://discrete-notes.github.io///simulation-4</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///simulation-4</guid>
+      </item>
+    
+      <item>
         <title>Simulation argument III. Sinkless orientation</title>
-        <description>&lt;hr /&gt;
+        <description>&lt;p&gt;This is the third post of a series that starts &lt;a href=&quot;./simulation-1&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/puzzle-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
-
-&lt;p&gt;This is the third post of a series that starts &lt;a href=&quot;./simulation-1&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;In this post, we show how to use simulation argument to prove a lower bound on 
 the &lt;em&gt;sinkless orientation&lt;/em&gt; problem. 
 This is done in the context described in the &lt;a href=&quot;./simulation-2&quot;&gt;previous post&lt;/a&gt;:
 2-colored regular trees.&lt;/p&gt;
 
-&lt;h2 id=&quot;sinkless-orientation-encoding&quot;&gt; Sinkless orientation encoding&lt;/h2&gt;
+&lt;h2 id=&quot;sinkless-orientation-encoding&quot;&gt;Sinkless orientation encoding&lt;/h2&gt;
 
 &lt;p&gt;The sinkless orientation problem consists in orienting the edges of the graph, 
 such that no node is a sink, that is, no node has only edges pointing to it.&lt;/p&gt;
@@ -56,7 +186,7 @@ $b^{\Delta}$.
 And well, that’s all we need!&lt;/p&gt;
 
 &lt;h3 id=&quot;simplification-step&quot;&gt;Simplification step&lt;/h3&gt;
-&lt;p&gt;Now consider the simplification: $b+w \rightarrow b$.&lt;/p&gt;
+&lt;p&gt;Consider the simplification: $b+w \rightarrow b$.&lt;/p&gt;
 
 &lt;p&gt;If we apply this simplification, we have all the edges labeled with unique 
 labels (not set labels), and this labeling is correct with respect to the black 
@@ -80,7 +210,7 @@ And sinkless orientation is not a trivial language.&lt;/p&gt;
 &lt;p&gt;No, remember that our lower bound technique works only up to $O(\log n)$ rounds.
 Thus we have just proved an $\Omega(\log n)$ lower bound for this problem.&lt;/p&gt;
 
-&lt;p&gt;Actually there is a $O(\log n)$ algorithm for this language, hance this bound is 
+&lt;p&gt;Actually there is a $O(\log n)$ algorithm for this language, hence this bound is 
 tight.&lt;/p&gt;
 
 &lt;h2 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h2&gt;

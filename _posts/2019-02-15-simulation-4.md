@@ -98,7 +98,7 @@ Maybe the other black node that is dealing with these edges, labels it
 with only $O$.
 And then you have to synchronize, and this is forbidden (it takes extra time).
 
-### No lower bound this way
+## No lower bound this way
 
 So at the end, we cannot conclude like in the case of sinkless orientation. 
 

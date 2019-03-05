@@ -87,247 +87,94 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/simulation-2">
-        Simulation argument II. Edge-labelings on 2-colored trees, and polynomials
+      <a href="/simulation-3">
+        Simulation argument III. Sinkless orientation
       </a>
     </h1>
 
-    <span class="post-date">12 Feb 2019</span>
+    <span class="post-date">13 Feb 2019</span>
 
-    <p>This is the second post of a series that starts 
-<a href="https://discrete-notes.github.io/simulation-1">here</a>.</p>
-
-<hr />
-
-<p><img src="assets/puzzle-2.png" alt="" class="center-image" height="300px" /></p>
+    <p>This is the third post of a series that starts <a href="./simulation-1">here</a>.</p>
 
 <hr />
 
-<p>In the previous post, we saw an overview of the simulation technique. 
-In this post, we are going to see a more precise and usable approach, for the case edge 
-labelings on 2-colored regular trees.</p>
+<p><img src="assets/puzzle-3.png" alt="" class="center-image" height="300px" /></p>
 
-<p>The explanation differs a bit from the 
-<a href="https://arxiv.org/abs/1901.02441">original paper</a>, 
-because we talk about polynomials, whereas they talk about regular expressions. 
-This is mainly a vocabulary change, because there is not 
-much algebra going on (but it is easier for me to see it this way).</p>
+<hr />
 
-<h2 id="arestricted-setting">A restricted setting</h2>
-<p>Let us describe the special case we are interested in, and why it is relevant.</p>
+<p>In this post, we show how to use simulation argument to prove a lower bound on 
+the <em>sinkless orientation</em> problem. 
+This is done in the context described in the <a href="./simulation-2">previous post</a>:
+2-colored regular trees.</p>
 
-<h3 id="delta-regular-trees">$\Delta$-regular trees</h3>
+<h2 id="sinkless-orientation-encoding">Sinkless orientation encoding</h2>
 
-<p>We consider that we are in the middle of a $\Delta$-regular tree. Here “middle”
-means that we cannot see the leaves. 
-As a consequence, the method works only for the regime below time 
-$\Theta(\log n)$, because time $\Omega(\log n)$ you can always see a leaf in a 
-$\Delta$-regular tree.
-If we can prove a lower bound for this area of the tree, then we
-have a lower bound for our problem.</p>
+<p>The sinkless orientation problem consists in orienting the edges of the graph, 
+such that no node is a sink, that is, no node has only edges pointing to it.</p>
 
-<h3 id="coloring">2-coloring</h3>
-<p>We will consider graphs that are 2-colored (trees are bipartite), and we assume 
-that every node knows on which side of the partition it is (black or white). So 
-we work on this kind of graph (with omitted port-numbers):</p>
+<p><img src="assets/sinkless.png" alt="" class="center-image" height="300px" /></p>
 
-<p><img src="assets/fig-delta-regulier.png" alt="" class="center-image" height="400px" /></p>
+<p>This can be easily encoded in bipartite graphs: an edge is labeled $b$ if it is 
+pointing to the black endpoint, and $w$ is it is pointing to the white endpoint.</p>
 
-<p>This, in addition to port-numbers, is a powerful way to break symmetry between 
-adjacent nodes.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
-
-<p>A <em>white algorithm</em> for a problem $\Pi$ in $k$ rounds is an algorithm such that, 
-after $k$ rounds the white nodes label their edges in a correct way, with 
-respect to $\Pi$. 
-In such an algorithm, the 
-black nodes do not label the edges, they “trust” the white nodes. 
-A <em>black algorithm</em> is defined the same way, but for black nodes.</p>
-
-<h2 id="encoding-of-edge-problems">Encoding of edge problems</h2>
-
-<h3 id="using-the-2-coloring">Using the 2-coloring</h3>
-<p>We consider edge problems defined the following way. 
-The multiset of edges adjacent to any vertex should follow some rule, that
-depends on the color of the node. 
-For example: there are three labels $a,b,c$, the white nodes should either 
-have 2 edges labeled with $a$, and the rest with $c$, or 3 edges labeled with 
-$a$ and the rest with $b$; and black nodes should have at least one label $a$, 
-one label $b$ and one label $c$. (I just made up this example, it’s probably 
-silly.)</p>
-
-<p>Most problems we are usually interested in are defined in general graphs, not in 
-bipartite graphs, thus the problem does not refer to a coloring. 
-Hence one expects the constraints on white nodes and black nodes to be the same, 
-unlike in the example above. 
-Actually, it is often useful to make them different (we’ll see that in the two 
-next posts).</p>
-
-<h3 id="polynomial-point-of-view">Polynomial point of view</h3>
-
-<p>We now introduce the polynomial point of view. 
-Consider a node $u$ in a graph where the edges are labeled.
-We can define the product of the labels of $u$ as a polynomial $M_u$, whose 
-variables are the labels of the problem. 
-Note that $M_u$ is a monomial: it’s just a product of labels.</p>
-
-<p>One can now express the toy problem above in terms of two polynomials:</p>
+<p>Now the languages, described as polynomials, are:</p>
 
 <ul>
-  <li>$L_W(a,b,c)=a^2c^{\Delta-2}+a^3b^{\Delta-3}$</li>
-  <li>$L_B(a,b,c)=abc(a+b+c)^{\Delta-3}$</li>
+  <li>$L_W=b(b+w)^{\Delta-1}$,</li>
+  <li>$L_B=w(b+w)^{\Delta-1}$.</li>
 </ul>
 
-<p>We denote $P \subseteq P’$ the fact that the monomials of P are all 
-present in $P’$. Then the labeling of $u$ is correct for problem $\Pi$, if and only if, 
-$M_u \subseteq L_{C(u)}$, where $C(u)$ is the color of $u$.</p>
+<h2 id="transformation">Transformation</h2>
 
-<p>Note that, in our example, all the polynomials we play with have three variables, 
-because there are three labels, and that they are homogeneous of degree 
-$\Delta$, because every node has $\Delta$ adjacent edges.</p>
+<p>We will show a very strong property: from a $T$-round algorithm for sinkless 
+orientation, we can get a $(T-1)$-round algorithm for… sinkless orientation!</p>
 
-<h2 id="simulation-step-and-independence">Simulation step and independence</h2>
+<h3 id="simulation">Simulation</h3>
+<p>After one step of simulation centered at a black node $u$, the labeling of the 
+edges adjacent to $u$ is described by a factorized polynomial $P_u$. 
+By definition $P_u$ is included in $(w+b)^{\Delta}$.</p>
 
-<h3 id="polynomial-point-of-view-1">Polynomial point of view</h3>
-<p>In the previous post, we said that the simulation step is basically about having 
-a view at distance $T-1$, imagining everything that could appear in the nodes 
-at distance $T$, and labeling edges with all the labels that could be correct 
-in one of these extensions.</p>
+<h3 id="product-and-common-label-property">Product and common label property</h3>
+<p>We now use the key properties to have a better upper bound on $P_u$.
+Thanks to the product property, we know that $P_u\subseteq w(b+w)^{\Delta-1}$. 
+And thanks to the common label property, we know that $P_v$ cannot be 
+$b^{\Delta}$.
+And well, that’s all we need!</p>
 
-<p>Now let us restate this in terms of polynomials. 
-After the simulation, every edge is labeled with a set of labels, that can be 
-transfered to a sum of labels for polynomials. 
-Then the polynomial associated with a set labeling at a node $u$ could be for 
-example $P_u=(a+b)^3(a+b+c)^4c^{\Delta-7}$ (this polynomial would not be 
-possible for our toy language as we will see later).</p>
+<h3 id="simplification-step">Simplification step</h3>
+<p>Consider the simplification: $b+w \rightarrow b$.</p>
 
-<p>Note that the polynomial we get for a set labeling is not a monomial in general, 
-but it is factorized.</p>
+<p>If we apply this simplification, we have all the edges labeled with unique 
+labels (not set labels), and this labeling is correct with respect to the black 
+language. In other words, after simplification, we have a polynomial $\hat{P_u}$, 
+that is a monomial, and $\hat{P_u}\subseteq L_B$.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+But what about the white nodes?
+We know from the previous section that $P_v$ was not $b^{\Delta}$, thus 
+$\hat{P_v}$ is not $b^{\Delta}$ either, thus $\hat{P_v}\subseteq L_W$.</p>
 
-<h3 id="simulation-for-2-colored-trees">Simulation for 2-colored trees</h3>
-<p>For 2-colored trees we can be more specific in the description of the simulation 
-(and actually we will change the simulation outline a bit too).</p>
+<p>Thus we have a new labeling, for the exact same language, in one less round!</p>
 
-<p>We have a white algorithm in time $T$, and we want a black algorithm 
-in time $T-1$ (this will be our setting until the end of the post). 
-Consider a black node $u$.
-The black node $u$ will first imagine all the extensions of its $(T-1)$-view 
-into a $(T+1)$-view. 
-(Note that we simulate at distance $T+1$ and not just $T$, as stated in the 
-previous post.) 
-The black node will then simulate the run of its white neighbors with the 
-algorithm in time $T$, and gather the set of labels possible for each edge.</p>
+<h2 id="lower-bound">Lower bound</h2>
 
-<p>Note that we have fixed the topology to $\Delta$-regular trees, so the only 
-thing to imagine for the extension is the port-number assignment.</p>
+<p>The same reasoning would work for the white nodes as well. 
+This means that from any $T$-round algorithm for sinkless orientation, we get 
+down to a 0-round algorithm for sinkless orientation. 
+And sinkless orientation is not a trivial language.</p>
 
-<h3 id="independence">Independence</h3>
-<p>The key point here is the following: the $T$-view of a white 
-neighbour $v$ of $u$ consists of: 
-(1) the $(T-1)$-view of $u$, and 
-(2) the extension of this view <em>in the direction of $v$</em>. 
-In the following picture, this means that this view includes only the 
-black part and the red part.</p>
+<p>So is sinkless orientation impossible to solve?</p>
 
-<p><img src="assets/fig-simulation-1.png" alt="" class="center-image" height="400px" /></p>
+<p>No, remember that our lower bound technique works only up to $O(\log n)$ rounds.
+Thus we have just proved an $\Omega(\log n)$ lower bound for this problem.</p>
 
-<p>As a consequence when simulating node $v$, the black node does not need to 
-imagine something for the other parts of its imaginary $(T+1)$-view (e.g. the blue 
-parts on the figure). 
-In other words the labeling of the edge $(u,v)$ comes only from the different 
-version of the red part, and is independent of what happens in the blue parts. 
-Obviously this independence property is true for every white neighbor of $u$, 
-with its “own” extension.</p>
-
-<h2 id="two-key-properties">Two key properties</h2>
-
-<p>There are two key properties about the set labelings given by the simulation.</p>
-
-<h3 id="product-property">Product property</h3>
-<p>This property is about the neighborhood of the black nodes.</p>
-
-<p><em>Claim:</em>
-Let $S_1, S_2, …, S_{\Delta}$ be the sets of labels on the edges after the 
-simulation step (with an arbitrary order of the edges). Then any tuple of the form
-$(s_1, s_2,…, s_{\Delta})$, with $s_i\in S_i$, has to be in the language (for 
-the black side).</p>
-
-<p><em>Proof:</em> Suppose it is not the case, and let $(s_1, s_2,…, s_{\Delta})$ be a 
-tuple of $S_1, S_2, …, S_{\Delta}$ that is not in the language. 
-Then we build an extension such that the $T$-round 
-algorithm would label the edges with $(s_1, s_2,…, s_{\Delta})$, which is a 
-contradiction with the correctness of the algorithm.
-Start with $s_1$. 
-If $s_1$ is in $S_1$ it means that there is an extension, in 
-the direction of the first edge (in the figure, suppose $(u,v)$ is the first 
-edge, then we are talking about the red part), such that the first edge is 
-labeled with $s_1$, and we take this extension. 
-But, because of the independence property stated above, we can continue with 
-$s_2$, and then $s_3$ etc., which leads to the desired structure.</p>
-
-<p>We can restate this in terms of polynomials.</p>
-
-<p><em>Product property:</em>
-$P_u \subseteq L_B$.</p>
-
-<p>This means that every monomial of $P_u$ has to be a monomial of $L_B$, which is
-just a reformulation of the claim above.</p>
-
-<h3 id="common-label-property">Common label property</h3>
-
-<p>And now a property for the neighborhoods of the white nodes. 
-This will not give us a lot of information, because we don’t know how the other
-black nodes around the node label the edges around this white node. 
-But we still have the following:</p>
-
-<p><em>Claim:</em>
-Take a white node $v$.
-All the black nodes around $v$ agree on at least one label for each edge. 
-That is, for each edge there is a label that is in the set of labels of the 
-simulation of every black node.</p>
-
-<p>This label is simply the one that the white nodes would give with its $T$-round 
-algorithm on the real graph (not a simulated one).</p>
-
-<p>This property is weaker than the first one, but is sometimes useful.</p>
-
-<h2 id="typical-transformation-step">Typical transformation step</h2>
-
-<p>The typical way to prove that one has a transformation from an algorithm in $T$ 
-rounds for a problem $\Pi$, to an algorithm in $T-1$ rounds for a problem $\Pi’$,
-is the following.</p>
-
-<p>First make the simulation. 
-In our example, the black node $u$ has a polynomial included in 
-$(a+b+c)^{\Delta}$. 
-But this is a very rough over-approximation, and $P_u$ is probably much smaller. 
-Then one can use the two key properties to rule out many labelings and have a 
-more precise idea of what $P_u$ is. 
-Once this is done, we can go for a simplification step: replace sets of labels by labels. 
-If everything works fine you have a labeling that is correct for your problem 
-$P’$.</p>
-
-<h2 id="subtleties">Subtleties</h2>
-<p>There are two subtleties that blocked me at some point.</p>
-
-<ul>
-  <li>First, in this 2-colored framework, it is not enough to have a general way to 
-go from a white T-round algorithm to a black (T-1)-round algorithm, you also 
-need to go from a black algorithm to a white algorithm. In some cases, the two 
-are very different.</li>
-  <li>Second, one should be careful when talking about the edges that are not 
-adjacent to the node we consider. 
-For example, in the simulation, the node $u$ computes what 
-its white neighbor $v$ would put on an edge $(v,z)$. 
-But the edge $(v,z)$ is probably labeled in different 
-manner by $z$, and this has to be taken into account in the simplification step.</li>
-</ul>
+<p>Actually there is a $O(\log n)$ algorithm for this language, hence this bound is 
+tight.</p>
 
 <h2 id="footnotes">Footnotes</h2>
 
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>Indeed <a href="https://users.ics.aalto.fi/suomela/mm-lb/">previous lower bound techniques</a> cannot work in the 2-colored model.&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>We always have the property that the simplification step does not destroy the correctness of the labeling on the black node, as long as we do an “hereditary” simplification, that is we replace a set of labels by a label of the set. This is because of the product property.&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

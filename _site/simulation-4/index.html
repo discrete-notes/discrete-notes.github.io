@@ -135,12 +135,12 @@ blue edges are for $O$ (the missing edge should be blue!).</p>
 
 <h2 id="transformation">Transformation</h2>
 
-<h3 id="simulation"> Simulation</h3>
+<h3 id="simulation">Simulation</h3>
 
 <p>We perform the simulation on a black node $u$, and get a polynomial $P_u$.<br />
 By definition $P_u\subseteq (M+O+P)^{\Delta}$, and is factorized.</p>
 
-<h3 id="product-and-good-one-properties"> Product and good-one properties</h3>
+<h3 id="product-property">Product property</h3>
 
 <p>As the product rule applies, we know that
 $P_u \subseteq M(P+0)^{\Delta-1}+O^{\Delta}$.<br />
@@ -158,12 +158,12 @@ $M(P+0)^{\Delta-1}+O^{\Delta}$. which contradicts the product property.</p>
 <p>Then we are left with 5 possible sums as factors in $P_u$: 
 $(M), (O), (P), (M+O), (P+0)$.</p>
 
-<p>Now it seems that we cannot get much more our the properties, so let’s try a 
-simplifications step.</p>
+<p>Now it seems that we cannot get much more out of our properties, so let’s try a 
+simplification step.</p>
 
 <h3 id="tentative-simplification-step">(Tentative) Simplification step</h3>
 
-<p>So now, if we can map $(M+O)$ and $P+0$ to a label, 
+<p>If we can map $(M+O)$ and $P+0$ to a simple label, 
 and still match the language, 
 then we are done, and we can conclude like in the <a href="./simulation-3">previous post</a>. 
 But this is not going to happen.</p>
@@ -175,7 +175,7 @@ a $P+O$.</p>
 
 <p>Then, one thinks: let’s just take one of the two edges labeled with $M+O$
 (let say the one with the smallest port-number on the white node), 
-label it with $M$, and label the other one with $O$, and we are done.</p>
+label it with $M$, label the other one with $O$, and we are done.</p>
 
 <p>The problem is the one we highlighted in the <a href="./simulation-2">second post</a>: 
 the edges are not uniformly set-labeled by all the nodes. 
@@ -183,7 +183,7 @@ Maybe the other black node that is dealing with these edges, labels it
 with only $O$.
 And then you have to synchronize, and this is forbidden (it takes extra time).</p>
 
-<h3 id="no-lower-bound-this-way">No lower bound this way</h3>
+<h2 id="no-lower-bound-this-way">No lower bound this way</h2>
 
 <p>So at the end, we cannot conclude like in the case of sinkless orientation.</p>
 
@@ -197,14 +197,14 @@ algorithm for this problem, thus no $\Omega(\log n)$ lower bound!</p>
   <li>
     <p>The above alone does not prove that there is no $\Omega(\log n)$ lower 
 bound: we could use another definition of the problem, or we could have tried 
-more exotic label replacement ($M$ tranformed in $P$, or whatever).</p>
+more exotic label replacement ($M$ tranformed into $P$, or whatever).</p>
   </li>
   <li>
     <p>If you want to prove a $\Omega(\Delta)$ lower bound then you need to be 
-smarter. In particular you need that after the transformation the language is 
+smarter. In particular you need that, after the transformation, the language is 
 different. Basically there should be a parameter that starts with something like 
 $\Delta$ and decreases at each transformation. 
-See <a href="https://arxiv.org/abs/1901.02441">the paper</a>!</p>
+For that, see <a href="https://arxiv.org/abs/1901.02441">the paper</a>!</p>
   </li>
 </ul>
 

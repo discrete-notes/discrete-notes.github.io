@@ -7,6 +7,105 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>February notes</title>
+        <description>&lt;p&gt;Notes for February 2019.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/lierre.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;minorities-in-network&quot;&gt;Minorities in network&lt;/h2&gt;
+
+&lt;p&gt;I attended a talk about minorities in network,
+by &lt;a href=&quot;http://claudiawagner.info/&quot;&gt;Claudia Wagner&lt;/a&gt; at the 
+&lt;a href=&quot;http://www.complexnetworks.fr/events/&quot;&gt;Complex network seminar&lt;/a&gt; of Sorbonnes 
+University. 
+There was a lot of content, here are a few things I noted.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Contrary to what I thought, a &lt;a href=&quot;https://en.wikipedia.org/wiki/K-core&quot;&gt;$k$-core&lt;/a&gt; 
+is not another name for a $k$-clique. 
+A $k$-core of a graph is a maximal connected subgraph where all the nodes have 
+degree at least $k$. It can have much more nodes than just $k$
+(a $k$-regular graph is its own $k$-core). Such subgraphs can be considered as 
+coherent communities in social networks.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A part of the talk was about minorities in wikipedia. 
+One would like to consider statements such as “women are more 
+linked to other women than to men”. 
+This is not true in general because there are more men pages, thus 
+links have more chance to point to men, but could still be true, proportionally.
+But it’s a bit too rough to just look at proportions because the graph may be 
+complicated and there might be many correlations going on.
+One way to deal with this is following: consider the graph of wikipedia 
+bibliographies, note the global gender proportions, then erase the gender of the 
+nodes, and reassign them at random, keeping the right proportions. 
+Now you can compare the neighbourhoods in this new graph and in the original 
+graph, and try to understand what’s going on. One paper on the topic is the following: 
+&lt;a href=&quot;https://arxiv.org/pdf/1501.06307.pdf&quot;&gt;It’s a Man’s Wikipedia? Assessing Gender Inequality in an Online Encyclopedia&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A notion known as &lt;em&gt;Burt efficiency&lt;/em&gt;, or &lt;em&gt;brokerage&lt;/em&gt;, or 
+&lt;em&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Structural_holes&quot;&gt;structural hole&lt;/a&gt;&lt;/em&gt;, is more or 
+less the following. 
+A node that belongs to (or is close to) two clusters in a 
+network, can have an advantage over the other nodes,
+because it can enjoy the information gathered by both communities, and 
+can choose to transfer or not such information. 
+One can define coefficients to measure if a node is or not in such a 
+position.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;multi-stage-optimization&quot;&gt;Multi-stage optimization&lt;/h2&gt;
+
+&lt;p&gt;For dynamic algorithms, one is usually concerned with having a good solution
+ at any time, but these solutions do not need to be related.
+Multi-stage optimization, introduced in 
+&lt;a href=&quot;https://arxiv.org/abs/1404.3768&quot;&gt;this paper&lt;/a&gt;, considers the cases where one 
+should not change the solution too much between the two steps. 
+In other words, in this framework one maximizes the quality of the solution, 
+while minimizing the churn.&lt;/p&gt;
+
+&lt;p&gt;[I stumble on the notion in &lt;a href=&quot;https://arxiv.org/abs/1901.11260&quot;&gt;this preprint&lt;/a&gt;.]&lt;/p&gt;
+
+&lt;h2 id=&quot;conjecture&quot;&gt;1-2-3 Conjecture&lt;/h2&gt;
+
+&lt;p&gt;Another edition of the Complex Network seminar by 
+&lt;a href=&quot;http://www.labri.fr/index.php?n=Annuaires.Profile&amp;amp;id=Senhaji_ID1441185629&quot;&gt;Mohammed Senhaji&lt;/a&gt; 
+(that I couldn’t attend) was about the 1-2-3 conjecture, which is the following.&lt;/p&gt;
+
+&lt;p&gt;In any graph, one can label the edges with label 1, 2, or 3, such that, when each node 
+computes the sum of the labels of its adjacent labels, not two neighbours have 
+the same sum.&lt;/p&gt;
+
+&lt;p&gt;A survey about the conjecture is &lt;a href=&quot;https://arxiv.org/pdf/1211.5122.pdf&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;lovszs-new-book&quot;&gt;Lovász’s new book&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://fr.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Lov%C3%A1sz&quot;&gt;László Lovász&lt;/a&gt; 
+wrote a new book: 
+&lt;a href=&quot;http://web.cs.elte.hu/~lovasz/bookxx/geombook2019-01-20.pdf&quot;&gt;Graphs and geometry&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;vandermonde-identity&quot;&gt;Vandermonde identity&lt;/h2&gt;
+
+&lt;p&gt;Vandermonde’s identity is the following:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\binom{m+n}{r} = \sum_{k=0}^{r}\binom{m}{k} \binom{n}{r-k}.&lt;/script&gt;
+
+&lt;p&gt;I thought it was only a bachelor exercise, until it naturally popped up in the 
+calculation in &lt;a href=&quot;https://arxiv.org/pdf/1812.09120.pdf&quot;&gt;a recent paper&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 05 Mar 2019 00:00:00 +0100</pubDate>
+        <link>https://discrete-notes.github.io///january-2019-notes</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///january-2019-notes</guid>
+      </item>
+    
+      <item>
         <title>Simulation argument IV. Maximal matching</title>
         <description>&lt;p&gt;This is the fourth and last post of a series about the simulation argument, that 
 started with &lt;a href=&quot;./simulation-1&quot;&gt;this post&lt;/a&gt;.&lt;/p&gt;
@@ -57,12 +156,12 @@ blue edges are for $O$ (the missing edge should be blue!).&lt;/p&gt;
 
 &lt;h2 id=&quot;transformation&quot;&gt;Transformation&lt;/h2&gt;
 
-&lt;h3 id=&quot;simulation&quot;&gt; Simulation&lt;/h3&gt;
+&lt;h3 id=&quot;simulation&quot;&gt;Simulation&lt;/h3&gt;
 
 &lt;p&gt;We perform the simulation on a black node $u$, and get a polynomial $P_u$.&lt;br /&gt;
 By definition $P_u\subseteq (M+O+P)^{\Delta}$, and is factorized.&lt;/p&gt;
 
-&lt;h3 id=&quot;product-and-good-one-properties&quot;&gt; Product and good-one properties&lt;/h3&gt;
+&lt;h3 id=&quot;product-property&quot;&gt;Product property&lt;/h3&gt;
 
 &lt;p&gt;As the product rule applies, we know that
 $P_u \subseteq M(P+0)^{\Delta-1}+O^{\Delta}$.&lt;br /&gt;
@@ -80,12 +179,12 @@ $M(P+0)^{\Delta-1}+O^{\Delta}$. which contradicts the product property.&lt;/p&gt
 &lt;p&gt;Then we are left with 5 possible sums as factors in $P_u$: 
 $(M), (O), (P), (M+O), (P+0)$.&lt;/p&gt;
 
-&lt;p&gt;Now it seems that we cannot get much more our the properties, so let’s try a 
-simplifications step.&lt;/p&gt;
+&lt;p&gt;Now it seems that we cannot get much more out of our properties, so let’s try a 
+simplification step.&lt;/p&gt;
 
 &lt;h3 id=&quot;tentative-simplification-step&quot;&gt;(Tentative) Simplification step&lt;/h3&gt;
 
-&lt;p&gt;So now, if we can map $(M+O)$ and $P+0$ to a label, 
+&lt;p&gt;If we can map $(M+O)$ and $P+0$ to a simple label, 
 and still match the language, 
 then we are done, and we can conclude like in the &lt;a href=&quot;./simulation-3&quot;&gt;previous post&lt;/a&gt;. 
 But this is not going to happen.&lt;/p&gt;
@@ -97,7 +196,7 @@ a $P+O$.&lt;/p&gt;
 
 &lt;p&gt;Then, one thinks: let’s just take one of the two edges labeled with $M+O$
 (let say the one with the smallest port-number on the white node), 
-label it with $M$, and label the other one with $O$, and we are done.&lt;/p&gt;
+label it with $M$, label the other one with $O$, and we are done.&lt;/p&gt;
 
 &lt;p&gt;The problem is the one we highlighted in the &lt;a href=&quot;./simulation-2&quot;&gt;second post&lt;/a&gt;: 
 the edges are not uniformly set-labeled by all the nodes. 
@@ -105,7 +204,7 @@ Maybe the other black node that is dealing with these edges, labels it
 with only $O$.
 And then you have to synchronize, and this is forbidden (it takes extra time).&lt;/p&gt;
 
-&lt;h3 id=&quot;no-lower-bound-this-way&quot;&gt;No lower bound this way&lt;/h3&gt;
+&lt;h2 id=&quot;no-lower-bound-this-way&quot;&gt;No lower bound this way&lt;/h2&gt;
 
 &lt;p&gt;So at the end, we cannot conclude like in the case of sinkless orientation.&lt;/p&gt;
 
@@ -119,14 +218,14 @@ algorithm for this problem, thus no $\Omega(\log n)$ lower bound!&lt;/p&gt;
   &lt;li&gt;
     &lt;p&gt;The above alone does not prove that there is no $\Omega(\log n)$ lower 
 bound: we could use another definition of the problem, or we could have tried 
-more exotic label replacement ($M$ tranformed in $P$, or whatever).&lt;/p&gt;
+more exotic label replacement ($M$ tranformed into $P$, or whatever).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;If you want to prove a $\Omega(\Delta)$ lower bound then you need to be 
-smarter. In particular you need that after the transformation the language is 
+smarter. In particular you need that, after the transformation, the language is 
 different. Basically there should be a parameter that starts with something like 
 $\Delta$ and decreases at each transformation. 
-See &lt;a href=&quot;https://arxiv.org/abs/1901.02441&quot;&gt;the paper&lt;/a&gt;!&lt;/p&gt;
+For that, see &lt;a href=&quot;https://arxiv.org/abs/1901.02441&quot;&gt;the paper&lt;/a&gt;!&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -178,7 +277,7 @@ orientation, we can get a $(T-1)$-round algorithm for… sinkless orientation!&l
 edges adjacent to $u$ is described by a factorized polynomial $P_u$. 
 By definition $P_u$ is included in $(w+b)^{\Delta}$.&lt;/p&gt;
 
-&lt;h3 id=&quot;product-and-superposition-property&quot;&gt;Product and superposition property&lt;/h3&gt;
+&lt;h3 id=&quot;product-and-common-label-property&quot;&gt;Product and common label property&lt;/h3&gt;
 &lt;p&gt;We now use the key properties to have a better upper bound on $P_u$.
 Thanks to the product property, we know that $P_u\subseteq w(b+w)^{\Delta-1}$. 
 And thanks to the common label property, we know that $P_v$ cannot be 
@@ -1268,15 +1367,6 @@ And popular matchings are still a hot topic.&lt;sup id=&quot;fnref:3&quot;&gt;&l
         <pubDate>Tue, 13 Nov 2018 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///popular-matchings</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///popular-matchings</guid>
-      </item>
-    
-      <item>
-        <title>Start</title>
-        <description>&lt;p&gt;Hello. The start of the new blog.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 24 Sep 2018 00:00:00 +0200</pubDate>
-        <link>https://discrete-notes.github.io///start</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///start</guid>
       </item>
     
   </channel>

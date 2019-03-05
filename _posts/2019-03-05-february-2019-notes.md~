@@ -60,7 +60,7 @@ For dynamic algorithms, one is usually concerned with having a good solution
 Multi-stage optimization, introduced in 
 [this paper](https://arxiv.org/abs/1404.3768), considers the cases where one 
 should not change the solution too much between the two steps. 
-In other words, in this framework one maximizes the quality of its solution, 
+In other words, in this framework one maximizes the quality of the solution, 
 while minimizing the churn. 
 
 [I stumble on the notion in [this preprint](https://arxiv.org/abs/1901.11260).] 

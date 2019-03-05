@@ -13,7 +13,7 @@ Notes for February 2019.
 
 ---
 
-##Minorities in network
+## Minorities in network
 
 I attended a talk about minorities in network,
 by [Claudia Wagner](http://claudiawagner.info/) at the 
@@ -53,7 +53,7 @@ One can define coefficients to measure if a node is or not in such a
 position. 
 
 
-##Multi-stage optimization
+## Multi-stage optimization
 
 For dynamic algorithms, one is usually concerned with having a good solution
  at any time, but these solutions do not need to be related.
@@ -66,7 +66,7 @@ while minimizing the churn.
 [I stumble on the notion in [this preprint](https://arxiv.org/abs/1901.11260).] 
 
 
-##1-2-3 Conjecture
+## 1-2-3 Conjecture
 
 Another edition of the Complex Network seminar by 
 [Mohammed Senhaji](http://www.labri.fr/index.php?n=Annuaires.Profile&id=Senhaji_ID1441185629) 
@@ -78,13 +78,13 @@ the same sum.
 
 A survey about the conjecture is [here](https://arxiv.org/pdf/1211.5122.pdf).
 
-##Lovász's new book
+## Lovász's new book
 [László Lovász](https://fr.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Lov%C3%A1sz) 
 wrote a new book: 
 [Graphs and geometry](http://web.cs.elte.hu/~lovasz/bookxx/geombook2019-01-20.pdf).
 
 
-##Vandermonde identity
+## Vandermonde identity
 
 Vandermonde's identity is the following:
 

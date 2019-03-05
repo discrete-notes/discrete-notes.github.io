@@ -1,8 +1,8 @@
 ---
 layout: post
 title: February notes
-redirect_from: "/2019/01/xx/january-2019-notes/"
-permalink: january-2019-notes
+redirect_from: "/2019/01/xx/february-2019-notes/"
+permalink: february-2019-notes
 ---
 
 Notes for February 2019.

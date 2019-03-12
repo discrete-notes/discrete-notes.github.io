@@ -60,26 +60,27 @@ For lower bounds, the basic line of reasoning is the following.
 Fix a problem $P$.
 Suppose you have a way to do the following transformation.
 
-*Transformation:*  
-Start with:  
+*Start with:*  
 an algorithm $A$ in $T$ rounds for a problem $P$.   
-change it into:  
+*Change it into:* 
 an algorithm $A'$ in $T-1$ rounds for another problem $P'$.   
 
-Then, say you want to prove that solving $P$ requires more than 1 
+Then, say you want to prove that solving $P$ requires more than one
 round. 
 Then you only need to prove that you have a transformation as above, with $T=1$, 
 and that $P'$ is not trivial (that is, to prove that 
-$P'$ cannot be solved in zero round) 
-Indeed if there is an algorithm in 1 round for $P$, then you can transform it 
+$P'$ cannot be solved in zero round).
+Indeed if there is an algorithm in one round for $P$, then you can transform it 
 into an algorithm in 0 round for $P'$, which would contradict the 
 non-triviality of $P'$. 
-Then you known that $P$ requires at least 2 rounds. 
-This may sound silly as we have just moved the problem: now you are left 
-with proving that $P'$ is non-trivial. But this is usually much simpler.
+At this point, you know that $P$ requires at least two rounds. 
+This may sound silly as we have just moved the difficulty from one problem to
+another: for this technique to work, we need to be able to prove that $P'$ is 
+non-trivial. But this is usually much simpler.
 
 ### Induction
-Now, you want to prove lower bounds above one round, say $k+1$ rounds. 
+Lower bounds of one rounds are not super exciting, and one would like to prove
+bounds of $k+1$ rounds, for some $k$. 
 The argument goes the following way.
 For the sake of contradiction, suppose there is an algorithm in $k$ rounds for 
 your problem $P$.
@@ -90,20 +91,20 @@ $P_0=P$, such that:
 * given an algorithm for $P_i$ in $k-i$ rounds, you can transform it into an 
 algorithm in $k-i-1$ rounds for $P_{i+1}$. 
 
-The last point implies that $P_k$ can be solved in $0$ rounds, which impossible 
-because the first point states that it is non-trivial. 
+The second bullet implies that $P_k$ can be solved in $0$ rounds, which impossible 
+because the first bullet states that it is non-trivial. 
 Thus $P$ needs at least $k+1$ rounds.
 
 ### Simulation argument
-The question now: how do you define a transformation?   
+The question now: how do you define a transformation from one problem to another?   
 Suppose you know an algorithm in $T$ rounds, but you have only a view of 
 $T-1$ rounds. Then you can do the following.
 
-* Imagine all the possible ways your $T-1$ neighbourhood could be extended to a 
-$T$ neighbourhood. 
-* Compute a solution for each of these extensions, using you $T$-round algorithm.
-* Label you node/edges with the set of all the labels that the T-round algorithm
-would use in one of the extensions.
+* Imagine all the possible ways your $(T-1)$-neighborhood could be extended to a 
+$T$-neighborhood. 
+* Compute a solution for each of these extensions, using your $T$-round algorithm.
+* Label your node/edges with the set of all the labels that the T-round algorithm
+would use in at least one of the extensions.
  
 Obviously you are not solving the original problem because you are labeling your
 node/edges with sets of labels, instead of labeling them with only one label. 

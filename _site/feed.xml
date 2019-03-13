@@ -7,12 +7,221 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>STOC and SOCG picks</title>
+        <description>&lt;p&gt;A few weeks ago the accepted papers lists of 
+&lt;a href=&quot;http://acm-stoc.org/stoc2019/&quot;&gt;STOC&lt;/a&gt; 
+and 
+&lt;a href=&quot;http://eecs.oregonstate.edu/socg19/&quot;&gt;SOCG&lt;/a&gt; 
+were made public. 
+A bunch of titles caught my attention, and here are a few bits of information on
+some papers I could find online.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/saucisses.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;350px&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;testing-graphs-in-vertex-distribution-free-models&quot;&gt;Testing graphs in vertex-distribution-free models&lt;/h2&gt;
+
+&lt;p&gt;Graph &lt;a href=&quot;https://en.wikipedia.org/wiki/Property_testing&quot;&gt;property testing&lt;/a&gt; 
+basically consists in deciding if a graph has a property 
+or not, by looking only at some parts of it. 
+More precisely one queries a few nodes, and ask for their neighbors for example, 
+and then outputs whether the graph has the property or is far from having 
+it. Note that such a statement can only be true with some probability.
+An introduction to graph property testing is 
+&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~/oded/COL/tgp-intro.pdf&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the classic model, one is allowed to query a random node, with “random” 
+meaning “uniformly at random”. In a new 
+&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~/oded/VO/vdf.pdf&quot;&gt;paper&lt;/a&gt;
+the author considers the case where the random access is not uniform but depends 
+on an arbitrary distribution. This in turn implies a change in the definition of 
+being far from a property.&lt;/p&gt;
+
+&lt;p&gt;I didn’t dive in the paper, but I imagine the following scenario. 
+Some nodes are more “important” than others. This translates into two things:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It’s not a very big deal if you don’t detect that something is wrong around
+an unimportant node.&lt;/li&gt;
+  &lt;li&gt;Your random queries have more chance to visit an important node than an 
+unimportant node.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For example, you have a dynamic graph, you may not know about newly arrived 
+nodes, but these are less important, so it’s no big deal if you don’t query them
+now.&lt;/p&gt;
+
+&lt;p&gt;[The paper is 
+&lt;em&gt;&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~/oded/VO/vdf.pdf&quot;&gt;Testing Graphs in Vertex-Distribution-Free Models&lt;/a&gt;&lt;/em&gt;,
+by &lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~oded/&quot;&gt;Oded Goldreich&lt;/a&gt;, 
+and will appear at STOC 2019.
+It was listed in 
+&lt;a href=&quot;https://ptreview.sublinear.info/?p=1044&quot;&gt;October 2018 property testing review&lt;/a&gt;.]&lt;/p&gt;
+
+&lt;h2 id=&quot;transportation-problem&quot;&gt;Transportation problem&lt;/h2&gt;
+
+&lt;p&gt;The transportation problem is the following. 
+Given a graph, where each node $v$ is given a (positive or negative) supply 
+$\mu(v)$, such that $\sum_v \mu(v)=0$, one has to find a flow to transport the 
+supplies in order to reach the configuration where every node has supply 0. 
+See the picture below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/transportation.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;250px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is very similar to the 
+&lt;a href=&quot;Transportation theory (mathematics)&quot;&gt;optimal transport problem&lt;/a&gt; in non-discrete 
+mathematics. The &lt;a href=&quot;https://arxiv.org/pdf/1902.08384.pdf&quot;&gt;paper&lt;/a&gt; presents an 
+approximation algorithm for fixed dimensions via continuous optimization.&lt;/p&gt;
+
+&lt;p&gt;I don’t know how much continuous optimization is used, but it reminds me of an 
+excellent invited talk by 
+&lt;a href=&quot;https://people.csail.mit.edu/madry/&quot;&gt;Aleksander Mądry&lt;/a&gt; at 
+&lt;a href=&quot;http://2016.highlightsofalgorithms.org/&quot;&gt;HALG 2016&lt;/a&gt;, that convinced me that 
+continuous optimization can be a good approach to solve combinatorial problems.
+There is no video of the talk, but 
+&lt;a href=&quot;https://www.youtube.com/watch?v=noRNcDbqtVY&quot;&gt;this one&lt;/a&gt;
+seems pretty close.&lt;/p&gt;
+
+&lt;p&gt;[The paper is 
+&lt;em&gt;&lt;a href=&quot;https://arxiv.org/pdf/1902.08384.pdf&quot;&gt;Preconditioning for the Geometric Transportation Problem&lt;/a&gt;&lt;/em&gt;
+by &lt;a href=&quot;http://www.math.toronto.edu/khesin/&quot;&gt;Boris A. Khesin&lt;/a&gt;,
+&lt;a href=&quot;http://www.cs.toronto.edu/~anikolov/&quot;&gt;Aleksandar Nikolov&lt;/a&gt;,
+and Dmitry Paramonov, and will appear at SOCG.]&lt;/p&gt;
+
+&lt;h2 id=&quot;lp-roundings-iterated-meets-randomized&quot;&gt; LP roundings: iterated meets randomized&lt;/h2&gt;
+
+&lt;p&gt;A classic approach in combinatorial optimization is to express the problem as a 
+linear program. 
+Unfortunately, only the fractional case is known to be solvable 
+efficiently, and only the integer solutions can be transfered back to solution 
+for the original problem. 
+A solution is to compute a fractional solution and then to round it to an integer 
+solution. This approach is very powerful for approximation algorithms.&lt;/p&gt;
+
+&lt;p&gt;There are two important types of rounding: randomized rounding and iterated 
+rounding. 
+In &lt;a href=&quot;https://en.wikipedia.org/wiki/Randomized_rounding&quot;&gt;randomized rounding&lt;/a&gt;, 
+a fractional variable $x_i$ is simply rounded to 1 
+with probability $x_i$. 
+In iterated rounding, one iteratively modify the fractional solution until it 
+gets to an integral solutions (for example adding some small amount to a set of 
+variables, until they reach 1, etc.). 
+Both roundings have their pros and cons.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1811.01597.pdf&quot;&gt;The paper&lt;/a&gt; presents a method that 
+combines the two approaches into one common framework, and shows how to use it.&lt;/p&gt;
+
+&lt;p&gt;[The paper is 
+&lt;em&gt;&lt;a href=&quot;https://arxiv.org/pdf/1811.01597.pdf&quot;&gt;On a generalization of iterated and randomizedrounding&lt;/a&gt;&lt;/em&gt;
+by &lt;a href=&quot;https://www.win.tue.nl/~nikhil/&quot;&gt;Nikhil Bansal&lt;/a&gt;, and will appear at STOC.]&lt;/p&gt;
+
+&lt;h2 id=&quot;queue-layout&quot;&gt; Queue layout&lt;/h2&gt;
+
+&lt;p&gt;Given a graph, a $k$-queue layout is an ordering of the vertices and a partition 
+of the
+edges into $k$ sets, such that there are not two edges of the same partition, 
+that are nested. 
+Below is an example of a graph and a 2-queue layout of it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/queue-layout.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;250px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Queue_number&quot;&gt;queue number&lt;/a&gt; of a graph is 
+the minimum $k$ such that there exists a $k$ layout of the graph. 
+An important open question is whether planar graph have bounded queue number. 
+&lt;a href=&quot;https://arxiv.org/pdf/1811.00816.pdf&quot;&gt;The paper&lt;/a&gt; makes a step towards a positive
+answer, by proving that planar graphs with bounded degree have bounded queue 
+number.&lt;/p&gt;
+
+&lt;p&gt;[The paper is 
+&lt;em&gt;&lt;a href=&quot;https://arxiv.org/pdf/1811.00816.pdf&quot;&gt;Planar Graphs of Bounded Degree have Constant Queue Number&lt;/a&gt;&lt;/em&gt;
+by 
+&lt;a href=&quot;http://algo.inf.uni-tuebingen.de/?site=mitarbeiter/michaelbekos/index&quot;&gt;Michael A. Bekos&lt;/a&gt;, 
+&lt;a href=&quot;http://www-pr.informatik.uni-tuebingen.de/?site=mitarbeiter/henryfoerster/index&quot;&gt;Henry Förster&lt;/a&gt;,
+&lt;a href=&quot;https://informatik.uni-koeln.de/ls-juenger/people/gronemann/&quot;&gt;Martin Gronemann&lt;/a&gt;, 
+&lt;a href=&quot;https://i11www.iti.kit.edu/en/members/tamara_mchedlidze/index&quot;&gt;Tamara Mchedlidze&lt;/a&gt;,
+&lt;a href=&quot;http://mozart.diei.unipg.it/montecchiani/&quot;&gt;Fabrizio Montecchiani&lt;/a&gt;, 
+Chrysanthi Raftopoulou, and
+&lt;a href=&quot;https://i11www.iti.kit.edu/en/members/torsten_ueckerdt/index&quot;&gt;Torsten Ueckerdt&lt;/a&gt;.
+It will appear at STOC (even though the topic is very SOCG-friendly).
+I didn’t know about queue layouts, and it’s good to discover it, as it is yet 
+another example of graph parameter that correspond to a pattern, in the sense of 
+&lt;a href=&quot;https://arxiv.org/abs/1812.05913&quot;&gt;this paper&lt;/a&gt;.]&lt;/p&gt;
+
+&lt;h2 id=&quot;reachability-of-petri-nets&quot;&gt;Reachability of Petri nets&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Petri_net&quot;&gt;Petri nets&lt;/a&gt; are very common in 
+theoretical computer science, for 
+example in &lt;a href=&quot;https://en.wikipedia.org/wiki/Model_checking&quot;&gt;model checking&lt;/a&gt;. 
+Nevertheless, it is horribly hard to decide the reachability problem for this 
+model: can you get from a configuration $A$ to a configuration $B$?
+The decidability of the problem was proved only in the 80s, and the best 
+upper bound is non-primitive recursive cubic-Ackermannian (don’t ask what it 
+means, exponential space is already scaring me).&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://arxiv.org/pdf/1809.07115.pdf&quot;&gt;paper&lt;/a&gt; proves that the problem is 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Nonelementary_problem&quot;&gt;non-elemetary&lt;/a&gt;, that is, 
+its time complexity cannot be bounded by a power tower.&lt;/p&gt;
+
+&lt;p&gt;[The paper is 
+&lt;em&gt;&lt;a href=&quot;https://arxiv.org/pdf/1809.07115.pdf&quot;&gt;The Reachability Problem for Petri Nets is Not Elementary&lt;/a&gt;&lt;/em&gt;
+by &lt;a href=&quot;https://www.mimuw.edu.pl/~wczerwin/&quot;&gt;Wojciech Czerwiński&lt;/a&gt;,
+&lt;a href=&quot;https://mimuw.edu.pl/~sl/&quot;&gt;Sławomir Lasota&lt;/a&gt;,
+&lt;a href=&quot;https://warwick.ac.uk/fac/sci/dcs/people/ranko_lazic&quot;&gt;Ranko Lazić&lt;/a&gt;,
+&lt;a href=&quot;https://www.labri.fr/perso/leroux/&quot;&gt;Jérôme Leroux&lt;/a&gt; and 
+&lt;a href=&quot;https://www.labri.fr/perso/fmazowiecki/&quot;&gt;Filip Mazowiecki&lt;/a&gt;; and will appear at STOC.
+In France, &lt;a href=&quot;http://www.lsv.fr/~schmitz/index.html.en&quot;&gt;Sylvain Schmitz&lt;/a&gt; is one 
+of the researcher working on this kind of stratospherical complexities. 
+&lt;a href=&quot;http://www.lsv.fr/~halfon/&quot;&gt;Simon Halfon&lt;/a&gt; one his PhD students at the time, 
+gave an excellent talk on this topic at the 
+&lt;a href=&quot;https://www.irif.fr/en/seminaires/doctorants/index&quot;&gt;IRIF PhD seminar&lt;/a&gt; in 2017.]&lt;/p&gt;
+
+&lt;h2 id=&quot;quartet-distance-and-4-cycles&quot;&gt;Quartet distance and 4-cycles&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Quartet_distance&quot;&gt;quartet distance&lt;/a&gt; is a 
+distance between phylogenetic trees. More precisely it is a distance between two 
+unrooted trees with labeled leaves. It basically takes all the tuples of four 
+leaves and count how many of them are in different topology in the two trees.&lt;/p&gt;
+
+&lt;p&gt;For example in the picture below, for the two trees on the left, we want to 
+decide whether the leaves $a$, $b$, $c$ and $d$ are in the same topology or not. 
+We simplify the tree until we have only these leaves, and we see on the pictures
+on the right&lt;br /&gt;
+that it is not the case. Thus this quartet will add one to the distance. 
+(Note that on the left, all leaves should be labeled, but I indicate only the 
+ones we are interested in).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/quartet.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://arxiv.org/pdf/1811.06244.pdf&quot;&gt;paper&lt;/a&gt; shows that computing the 
+problem of computing 
+distance between two trees is equivalent to the problem of computing the number 
+of 4-cycles in a graph, up to 
+polylogarithmic factors. This implies better algorithms and better insights
+on the complexity.&lt;/p&gt;
+
+&lt;p&gt;[The paper is
+&lt;em&gt;&lt;a href=&quot;https://arxiv.org/pdf/1811.06244.pdf&quot;&gt;Computing Quartet Distance is Equivalent to Counting 4-Cycles&lt;/a&gt;&lt;/em&gt;
+ by Bartłomiej Dudek (whom I have had the chance to meet in EPFL), 
+and &lt;a href=&quot;https://sites.google.com/a/cs.uni.wroc.pl/gawry/&quot;&gt;Paweł Gawrychowski&lt;/a&gt;, and 
+it
+will appear at STOC.]&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 13 Mar 2019 00:00:00 +0100</pubDate>
+        <link>https://discrete-notes.github.io///stoc-socg-picks</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///stoc-socg-picks</guid>
+      </item>
+    
+      <item>
         <title>February notes</title>
         <description>&lt;p&gt;Notes for February 2019.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/lierre.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/lierre.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -631,26 +840,27 @@ For lower bounds, the basic line of reasoning is the following.&lt;/p&gt;
 &lt;p&gt;Fix a problem $P$.
 Suppose you have a way to do the following transformation.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Transformation:&lt;/em&gt;&lt;br /&gt;
-Start with:&lt;br /&gt;
+&lt;p&gt;&lt;em&gt;Start with:&lt;/em&gt;&lt;br /&gt;
 an algorithm $A$ in $T$ rounds for a problem $P$. &lt;br /&gt;
-change it into:&lt;br /&gt;
+&lt;em&gt;Change it into:&lt;/em&gt; 
 an algorithm $A’$ in $T-1$ rounds for another problem $P’$.&lt;/p&gt;
 
-&lt;p&gt;Then, say you want to prove that solving $P$ requires more than 1 
+&lt;p&gt;Then, say you want to prove that solving $P$ requires more than one
 round. 
 Then you only need to prove that you have a transformation as above, with $T=1$, 
 and that $P’$ is not trivial (that is, to prove that 
-$P’$ cannot be solved in zero round) 
-Indeed if there is an algorithm in 1 round for $P$, then you can transform it 
+$P’$ cannot be solved in zero round).
+Indeed if there is an algorithm in one round for $P$, then you can transform it 
 into an algorithm in 0 round for $P’$, which would contradict the 
 non-triviality of $P’$. 
-Then you known that $P$ requires at least 2 rounds. 
-This may sound silly as we have just moved the problem: now you are left 
-with proving that $P’$ is non-trivial. But this is usually much simpler.&lt;/p&gt;
+At this point, you know that $P$ requires at least two rounds. 
+This may sound silly as we have just moved the difficulty from one problem to
+another: for this technique to work, we need to be able to prove that $P’$ is 
+non-trivial. But this is usually much simpler.&lt;/p&gt;
 
 &lt;h3 id=&quot;induction&quot;&gt;Induction&lt;/h3&gt;
-&lt;p&gt;Now, you want to prove lower bounds above one round, say $k+1$ rounds. 
+&lt;p&gt;Lower bounds of one rounds are not super exciting, and one would like to prove
+bounds of $k+1$ rounds, for some $k$. 
 The argument goes the following way.
 For the sake of contradiction, suppose there is an algorithm in $k$ rounds for 
 your problem $P$.
@@ -663,21 +873,21 @@ $P_0=P$, such that:&lt;/p&gt;
 algorithm in $k-i-1$ rounds for $P_{i+1}$.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The last point implies that $P_k$ can be solved in $0$ rounds, which impossible 
-because the first point states that it is non-trivial. 
+&lt;p&gt;The second bullet implies that $P_k$ can be solved in $0$ rounds, which impossible 
+because the first bullet states that it is non-trivial. 
 Thus $P$ needs at least $k+1$ rounds.&lt;/p&gt;
 
 &lt;h3 id=&quot;simulation-argument&quot;&gt;Simulation argument&lt;/h3&gt;
-&lt;p&gt;The question now: how do you define a transformation? &lt;br /&gt;
+&lt;p&gt;The question now: how do you define a transformation from one problem to another? &lt;br /&gt;
 Suppose you know an algorithm in $T$ rounds, but you have only a view of 
 $T-1$ rounds. Then you can do the following.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Imagine all the possible ways your $T-1$ neighbourhood could be extended to a 
-$T$ neighbourhood.&lt;/li&gt;
-  &lt;li&gt;Compute a solution for each of these extensions, using you $T$-round algorithm.&lt;/li&gt;
-  &lt;li&gt;Label you node/edges with the set of all the labels that the T-round algorithm
-would use in one of the extensions.&lt;/li&gt;
+  &lt;li&gt;Imagine all the possible ways your $(T-1)$-neighborhood could be extended to a 
+$T$-neighborhood.&lt;/li&gt;
+  &lt;li&gt;Compute a solution for each of these extensions, using your $T$-round algorithm.&lt;/li&gt;
+  &lt;li&gt;Label your node/edges with the set of all the labels that the T-round algorithm
+would use in at least one of these extensions.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Obviously you are not solving the original problem because you are labeling your
@@ -1274,99 +1484,6 @@ will consider what is called a Nash bargaining solution.&lt;/p&gt;
         <pubDate>Fri, 30 Nov 2018 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///november-2018-notes</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///november-2018-notes</guid>
-      </item>
-    
-      <item>
-        <title>Popular matchings</title>
-        <description>&lt;p&gt;&lt;em&gt;Popular matchings&lt;/em&gt; are a nice variant of the classic
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Stable_marriage_problem&quot;&gt;stable matchings&lt;/a&gt;. 
-In this post introduce these matchings, and give some bits of information about 
-them.&lt;/p&gt;
-
-&lt;h2 id=&quot;stable-matchings&quot;&gt;Stable matchings&lt;/h2&gt;
-&lt;p&gt;Remember what a stable matching is. There is bipartite graph, where 
-every node holds an ordering of its neighbours, known as the &lt;em&gt;preference list&lt;/em&gt;. 
-A matching $M$ in this graph is stable, if no edge $(u,v)$ that is &lt;em&gt;not&lt;/em&gt; in $M$ 
-is such that both $u$ and $v$, would prefer to be matched together instead of 
-the way they are matched (or unmatched) in $M$. Note that such matchings are 
-maximal.&lt;/p&gt;
-
-&lt;p&gt;A stable matching always exists and can be computed in linear-time using the 
-famous Gale-Shapley algorithm. Something frustrating with stable matchings is 
-that they may be small with respect to the maximum matching (if one forgets 
-about the preference lists). For example, in the following picture, the stable 
-matching matches the top node on the left, with the bottom node on the right, 
-and prevent the two other nodes from being matched, although all could be 
-matched.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/popular.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This example shows that the size of a stable matching can be half of the size of 
-a maximum matching. 
-If you are in a context where you would like to (at least partially) satisfy 
-the nodes in terms of preference lists, but you would also like to satisfy as many 
-nodes as possible, then you need another form of optimality, and (max-size) 
-popular matchings is a good one.&lt;/p&gt;
-
-&lt;h2 id=&quot;popular-matchings&quot;&gt;Popular matchings&lt;/h2&gt;
-&lt;p&gt;With a stable matching the matched nodes are happy, because they are at a kind 
-of equilibrium, but the other nodes are unhappy because they are not matched at 
-all. 
-What happens if you make the nodes vote for their favourite matching? 
-This makes sense if you do a tournament: for every couple of matchings you make 
-an election, and the winner is the matching that is prefered by the majority of 
-the nodes. In such an election the vertices perfer to be 
-matched, and if matched consider their preference list. Also if there is an 
-ex-eaquo then both matchings win.
-A matching is popular if it wins every election.&lt;/p&gt;
-
-&lt;h2 id=&quot;relation-with-stable-matchings-and-size-considerations&quot;&gt;Relation with stable matchings and size considerations&lt;/h2&gt;
-&lt;p&gt;It is known that every stable matching is popular. 
-Thus popularity is a relaxation of stability. 
-Unlike stable matchings, popular matchings can have different sizes, and in 
-particular they can be
-larger the stable matchings (that why we look at them in the first place).
-Actually, stable matchings are the worst popular matchings with respect to size: 
-stable matchings are the popular matchings of minimum size.&lt;/p&gt;
-
-&lt;p&gt;We then look for &lt;em&gt;max-size popular matching&lt;/em&gt;.
-The good news it that a max-size popular matching can be computed in polynomial 
-time, and that they have size at least 2/3 of the maximum size matching.&lt;/p&gt;
-
-&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
-&lt;p&gt;I got aware of this topic at a seminar of 
-&lt;a href=&quot;http://www.tcs.tifr.res.in/~kavitha/&quot;&gt;Telikepalli Kavitha&lt;/a&gt; at &lt;a href=&quot;https://www.irif.fr&quot;&gt;IRIF&lt;/a&gt; 
-in September. After a nice introduction, she told us about her recent papers on 
-the topic (there is a lot to say, with many relevant variants and nice 
-algorithmic techniques).&lt;/p&gt;
-
-&lt;p&gt;The concept of popular matchings was introduced by Gärdenfors in the seventies, 
-who also proved that stable matchings are popular.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 
-The polynomial algorithm for computing a max-size popular matching is much more 
-recent, it was designed by Telikepalli and Chien-Chung Huang in 2011.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; 
-And popular matchings are still a hot topic.&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h4&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;P. Gärdenfors, &lt;a href=&quot;https://doi.org/10.1002/bs.3830200304&quot;&gt;Match making: Assignments based on bilateral preferences&lt;/a&gt;. (I couldn’t find it on Google Scholar, but it is accessible on Wiley.)&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;T. Kavitha, C. Huang, &lt;a href=&quot;https://doi.org/10.1016/j.ic.2012.10.012&quot;&gt;Popular matchings in the stable marriage problem&lt;/a&gt;.S&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:3&quot;&gt;
-      &lt;p&gt;See &lt;a href=&quot;https://dblp.uni-trier.de/search?q=popular+matching&quot;&gt;DBLP “popular matching” search&lt;/a&gt;.&amp;nbsp;&lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Tue, 13 Nov 2018 00:00:00 +0100</pubDate>
-        <link>https://discrete-notes.github.io///popular-matchings</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///popular-matchings</guid>
       </item>
     
   </channel>

@@ -88,7 +88,7 @@ by [Boris A. Khesin](http://www.math.toronto.edu/khesin/),
 [Aleksandar Nikolov](http://www.cs.toronto.edu/~anikolov/),
 and Dmitry Paramonov, and will appear at SOCG.]
 
-## LP roundings: iterated meets randomized
+## LP roundings: iterated meets randomized
 
 A classic approach in combinatorial optimization is to express the problem as a 
 linear program. 
@@ -115,7 +115,7 @@ combines the two approaches into one common framework, and shows how to use it.
 *[On a generalization of iterated and randomizedrounding](https://arxiv.org/pdf/1811.01597.pdf)*
 by [Nikhil Bansal](https://www.win.tue.nl/~nikhil/), and will appear at STOC.]
 
-## Queue layout
+## Queue layout
 
 Given a graph, a $k$-queue layout is an ordering of the vertices and a partition 
 of the

@@ -32,7 +32,7 @@ Let us describe the special case we are interested in, and why it is relevant.
 We consider that we are in the middle of a $\Delta$-regular tree. Here "middle"
 means that we cannot see the leaves. 
 As a consequence, the method works only for the regime below time 
-$\Theta(\log n)$, because time $\Omega(\log n)$ you can always see a leaf in a 
+$\Theta(\log n)$, because in time $\Omega(\log n)$ you can always see a leaf in a 
 $\Delta$-regular tree.
 If we can prove a lower bound for this area of the tree, then we
 have a lower bound for our problem.
@@ -47,7 +47,7 @@ we work on this kind of graph (with omitted port-numbers):
 This, in addition to port-numbers, is a powerful way to break symmetry between 
 adjacent nodes.[^1] 
 
-A *white algorithm* for a problem $\Pi$ in $k$ rounds is an algorithm such that, 
+A *white algorithm* in $k$ rounds for a problem $\Pi$ is an algorithm such that, 
 after $k$ rounds the white nodes label their edges in a correct way, with 
 respect to $\Pi$. 
 In such an algorithm, the 
@@ -68,7 +68,7 @@ silly.)
 
 Most problems we are usually interested in are defined in general graphs, not in 
 bipartite graphs, thus the problem does not refer to a coloring. 
-Hence one expects the constraints on white nodes and black nodes to be the same, 
+Hence one could expect the constraints on white nodes and black nodes to be the same, 
 unlike in the example above. 
 Actually, it is often useful to make them different (we'll see that in the two 
 next posts).
@@ -86,9 +86,9 @@ One can now express the toy problem above in terms of two polynomials:
 * $L_W(a,b,c)=a^2c^{\Delta-2}+a^3b^{\Delta-3}$
 * $L_B(a,b,c)=abc(a+b+c)^{\Delta-3}$
 
-We denote $P \subseteq P'$ the fact that the monomials of P are all 
+We denote $P \subseteq P'$ the fact that the monomials of $P$ are all 
 present in $P'$. Then the labeling of $u$ is correct for problem $\Pi$, if and only if, 
-$M_u \subseteq L_{C(u)}$, where $C(u)$ is the color of $u$.
+$M_u \subseteq L_{C(u)}$ (where $C(u)$ is the color of $u$).
 
 Note that, in our example, all the polynomials we play with have three variables, 
 because there are three labels, and that they are homogeneous of degree 
@@ -106,11 +106,13 @@ Now let us restate this in terms of polynomials.
 After the simulation, every edge is labeled with a set of labels, that can be 
 transfered to a sum of labels for polynomials. 
 Then the polynomial associated with a set labeling at a node $u$ could be for 
-example $P_u=(a+b)^3(a+b+c)^4c^{\Delta-7}$ (this polynomial would not be 
-possible for our toy language as we will see later). 
+example $P_u=(a+b)^3(a+b+c)^4c^{\Delta-7}$, which means that three edges are 
+labeled with $a$ and $b$, four edges are labeled with $a$, $b$ and $c$ and the 
+rest is labeled with only $c$. 
+(This polynomial would not work for our toy language as we will see later). 
 
 Note that the polynomial we get for a set labeling is not a monomial in general, 
-but it is factorized. 
+but it is nevertheless in a factorized form. 
 
 ### Simulation for 2-colored trees
 For 2-colored trees we can be more specific in the description of the simulation 
@@ -208,14 +210,14 @@ rounds for a problem $\Pi$, to an algorithm in $T-1$ rounds for a problem $\Pi'$
 is the following. 
 
 First make the simulation. 
-In our example, the black node $u$ has a polynomial included in 
+In our example, we know that the black node $u$ gets a polynomial included in 
 $(a+b+c)^{\Delta}$. 
 But this is a very rough over-approximation, and $P_u$ is probably much smaller. 
 Then one can use the two key properties to rule out many labelings and have a 
 more precise idea of what $P_u$ is. 
 Once this is done, we can go for a simplification step: replace sets of labels by labels. 
 If everything works fine you have a labeling that is correct for your problem 
-$P'$.
+$\Pi'$.
 
 
 ## Subtleties

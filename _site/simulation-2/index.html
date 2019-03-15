@@ -113,7 +113,7 @@ much algebra going on (but it is easier for me to see it this way).</p>
 <p>We consider that we are in the middle of a $\Delta$-regular tree. Here “middle”
 means that we cannot see the leaves. 
 As a consequence, the method works only for the regime below time 
-$\Theta(\log n)$, because time $\Omega(\log n)$ you can always see a leaf in a 
+$\Theta(\log n)$, because in time $\Omega(\log n)$ you can always see a leaf in a 
 $\Delta$-regular tree.
 If we can prove a lower bound for this area of the tree, then we
 have a lower bound for our problem.</p>
@@ -128,7 +128,7 @@ we work on this kind of graph (with omitted port-numbers):</p>
 <p>This, in addition to port-numbers, is a powerful way to break symmetry between 
 adjacent nodes.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
 
-<p>A <em>white algorithm</em> for a problem $\Pi$ in $k$ rounds is an algorithm such that, 
+<p>A <em>white algorithm</em> in $k$ rounds for a problem $\Pi$ is an algorithm such that, 
 after $k$ rounds the white nodes label their edges in a correct way, with 
 respect to $\Pi$. 
 In such an algorithm, the 
@@ -149,7 +149,7 @@ silly.)</p>
 
 <p>Most problems we are usually interested in are defined in general graphs, not in 
 bipartite graphs, thus the problem does not refer to a coloring. 
-Hence one expects the constraints on white nodes and black nodes to be the same, 
+Hence one could expect the constraints on white nodes and black nodes to be the same, 
 unlike in the example above. 
 Actually, it is often useful to make them different (we’ll see that in the two 
 next posts).</p>
@@ -169,9 +169,9 @@ Note that $M_u$ is a monomial: it’s just a product of labels.</p>
   <li>$L_B(a,b,c)=abc(a+b+c)^{\Delta-3}$</li>
 </ul>
 
-<p>We denote $P \subseteq P’$ the fact that the monomials of P are all 
+<p>We denote $P \subseteq P’$ the fact that the monomials of $P$ are all 
 present in $P’$. Then the labeling of $u$ is correct for problem $\Pi$, if and only if, 
-$M_u \subseteq L_{C(u)}$, where $C(u)$ is the color of $u$.</p>
+$M_u \subseteq L_{C(u)}$ (where $C(u)$ is the color of $u$).</p>
 
 <p>Note that, in our example, all the polynomials we play with have three variables, 
 because there are three labels, and that they are homogeneous of degree 
@@ -189,11 +189,13 @@ in one of these extensions.</p>
 After the simulation, every edge is labeled with a set of labels, that can be 
 transfered to a sum of labels for polynomials. 
 Then the polynomial associated with a set labeling at a node $u$ could be for 
-example $P_u=(a+b)^3(a+b+c)^4c^{\Delta-7}$ (this polynomial would not be 
-possible for our toy language as we will see later).</p>
+example $P_u=(a+b)^3(a+b+c)^4c^{\Delta-7}$, which means that three edges are 
+labeled with $a$ and $b$, four edges are labeled with $a$, $b$ and $c$ and the 
+rest is labeled with only $c$. 
+(This polynomial would not work for our toy language as we will see later).</p>
 
 <p>Note that the polynomial we get for a set labeling is not a monomial in general, 
-but it is factorized.</p>
+but it is nevertheless in a factorized form.</p>
 
 <h3 id="simulation-for-2-colored-trees">Simulation for 2-colored trees</h3>
 <p>For 2-colored trees we can be more specific in the description of the simulation 
@@ -238,7 +240,8 @@ with its “own” extension.</p>
 <p>This property is about the neighborhood of the black nodes.</p>
 
 <p><em>Claim:</em>
-Let $S_1, S_2, …, S_{\Delta}$ be the sets of labels on the edges after the 
+Let $S_1, S_2, …, S_{\Delta}$ be the sets of labels that a black nodes gives 
+to its adjacent edges after the
 simulation step (with an arbitrary order of the edges). Then any tuple of the form
 $(s_1, s_2,…, s_{\Delta})$, with $s_i\in S_i$, has to be in the language (for 
 the black side).</p>
@@ -266,21 +269,26 @@ just a reformulation of the claim above.</p>
 
 <h3 id="common-label-property">Common label property</h3>
 
-<p>And now a property for the neighborhoods of the white nodes. 
-This will not give us a lot of information, because we don’t know how the other
-black nodes around the node label the edges around this white node. 
-But we still have the following:</p>
+<p>This property is for the neighborhoods of the white nodes. 
+It is not as powerful as the previous ones, but sometimes it can be crucial.</p>
+
+<p>Consider a white node $w$ and two black neighbors $v_1$ and $v_2$. 
+The black node $v_1$ is mostly interested in the edge $(w,v_1)$ 
+(and not $(w,v_2)$), because it is the edge that matters for the product 
+property, and the edge for which it is somehow “responsible”. 
+But when it simulates the white algorithm on $w$, it also labels virtually 
+$(w,v_2)$. 
+This is getting dangerous, because the set labeling that $v_1$ and $v_2$ give to 
+$(w,v_2)$ are different in general.
+But they are a bit related, by the following property:</p>
 
 <p><em>Claim:</em>
-Take a white node $v$.
-All the black nodes around $v$ agree on at least one label for each edge. 
-That is, for each edge there is a label that is in the set of labels of the 
-simulation of every black node.</p>
+Take a white node $w$.
+For each edge around $w$, all the black neighbors agree on at least one label. 
+That is for each edge, there is a label that is in all set labels.</p>
 
-<p>This label is simply the one that the white nodes would give with its $T$-round 
-algorithm on the real graph (not a simulated one).</p>
-
-<p>This property is weaker than the first one, but is sometimes useful.</p>
+<p>This label is simply the one that the white node would give if it were running<br />
+the $T$-round algorithm in the real graph (not a simulated one).</p>
 
 <h2 id="typical-transformation-step">Typical transformation step</h2>
 
@@ -289,30 +297,26 @@ rounds for a problem $\Pi$, to an algorithm in $T-1$ rounds for a problem $\Pi�
 is the following.</p>
 
 <p>First make the simulation. 
-In our example, the black node $u$ has a polynomial included in 
+In our example, we know that the black node $u$ gets a polynomial included in 
 $(a+b+c)^{\Delta}$. 
 But this is a very rough over-approximation, and $P_u$ is probably much smaller. 
 Then one can use the two key properties to rule out many labelings and have a 
 more precise idea of what $P_u$ is. 
 Once this is done, we can go for a simplification step: replace sets of labels by labels. 
 If everything works fine you have a labeling that is correct for your problem 
-$P’$.</p>
+$\Pi’$.</p>
 
 <h2 id="subtleties">Subtleties</h2>
 <p>There are two subtleties that blocked me at some point.</p>
 
-<ul>
-  <li>First, in this 2-colored framework, it is not enough to have a general way to 
-go from a white T-round algorithm to a black (T-1)-round algorithm, you also 
+<p>The first one is this danger I warned you about in the common label property 
+section: an edge is labeled differently in different simulations.</p>
+
+<p>The second is that in this 2-colored framework, it is not enough to have a 
+general way to 
+go from a white $T$-round algorithm to a black $(T-1)$-round algorithm, you also 
 need to go from a black algorithm to a white algorithm. In some cases, the two 
-are very different.</li>
-  <li>Second, one should be careful when talking about the edges that are not 
-adjacent to the node we consider. 
-For example, in the simulation, the node $u$ computes what 
-its white neighbor $v$ would put on an edge $(v,z)$. 
-But the edge $(v,z)$ is probably labeled in different 
-manner by $z$, and this has to be taken into account in the simplification step.</li>
-</ul>
+are very different.</p>
 
 <h2 id="footnotes">Footnotes</h2>
 

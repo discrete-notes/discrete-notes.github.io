@@ -156,9 +156,9 @@ There are two key properties about the set labelings given by the simulation.
 ### Product property
 This property is about the neighborhood of the black nodes. 
 
-
 *Claim:*
-Let $S_1, S_2, ..., S_{\Delta}$ be the sets of labels on the edges after the 
+Let $S_1, S_2, ..., S_{\Delta}$ be the sets of labels that a black nodes gives 
+to its adjacent edges after the
 simulation step (with an arbitrary order of the edges). Then any tuple of the form
 $(s_1, s_2,..., s_{\Delta})$, with $s_i\in S_i$, has to be in the language (for 
 the black side).
@@ -187,21 +187,26 @@ just a reformulation of the claim above.
 
 ### Common label property
 
-And now a property for the neighborhoods of the white nodes. 
-This will not give us a lot of information, because we don't know how the other
-black nodes around the node label the edges around this white node. 
-But we still have the following: 
+This property is for the neighborhoods of the white nodes. 
+It is not as powerful as the previous ones, but sometimes it can be crucial.
+
+Consider a white node $w$ and two black neighbors $v_1$ and $v_2$. 
+The black node $v_1$ is mostly interested in the edge $(w,v_1)$ 
+(and not $(w,v_2)$), because it is the edge that matters for the product 
+property, and the edge for which it is somehow "responsible". 
+But when it simulates the white algorithm on $w$, it also labels virtually 
+$(w,v_2)$. 
+This is getting dangerous, because the set labeling that $v_1$ and $v_2$ give to 
+$(w,v_2)$ are different in general.
+But they are a bit related, by the following property:
 
 *Claim:*
-Take a white node $v$.
-All the black nodes around $v$ agree on at least one label for each edge. 
-That is, for each edge there is a label that is in the set of labels of the 
-simulation of every black node. 
+Take a white node $w$.
+For each edge around $w$, all the black neighbors agree on at least one label. 
+That is for each edge, there is a label that is in all set labels. 
 
-This label is simply the one that the white nodes would give with its $T$-round 
-algorithm on the real graph (not a simulated one).
-
-This property is weaker than the first one, but is sometimes useful. 
+This label is simply the one that the white node would give if it were running  
+the $T$-round algorithm on the real graph (not a simulated one).
 
 ## Typical transformation step
 
@@ -223,16 +228,15 @@ $\Pi'$.
 ## Subtleties
 There are two subtleties that blocked me at some point.
 
-* First, in this 2-colored framework, it is not enough to have a general way to 
-go from a white T-round algorithm to a black (T-1)-round algorithm, you also 
+The first one is this danger I warned you about in the common label property 
+section: an edge is labeled differently in different simulations.
+
+The second is that in this 2-colored framework, it is not enough to have a 
+general way to 
+go from a white $T$-round algorithm to a black $(T-1)$-round algorithm, you also 
 need to go from a black algorithm to a white algorithm. In some cases, the two 
 are very different.
-* Second, one should be careful when talking about the edges that are not 
-adjacent to the node we consider. 
-For example, in the simulation, the node $u$ computes what 
-its white neighbor $v$ would put on an edge $(v,z)$. 
-But the edge $(v,z)$ is probably labeled in different 
-manner by $z$, and this has to be taken into account in the simplification step.
+
 
 ## Footnotes
 [^1]: Indeed [previous lower bound techniques](https://users.ics.aalto.fi/suomela/mm-lb/) cannot work in the 2-colored model.

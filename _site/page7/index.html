@@ -87,157 +87,156 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/january-2019-notes">
-        January notes
+      <a href="/simulation-1">
+        Simulation argument I. General technique
       </a>
     </h1>
 
-    <span class="post-date">30 Jan 2019</span>
+    <span class="post-date">11 Feb 2019</span>
 
-    <p>A few notes for January 2019.</p>
+    <p>As
+<a href="https://discrete-notes.github.io/january-2019-notes">said earlier</a> 
+on this blog, a 
+<a href="https://arxiv.org/abs/1901.02441">recent preprint</a> 
+proves a set of long-expected lower bounds for distributed graph algorithms. 
+This post is the first of a (short) series of (short) posts about the basics of 
+this paper.</p>
 
 <hr />
-<p><img src="assets/dino.png" alt="" class="center-image" height="500px" /></p>
-<center><a href="http://www.jardindesplantesdeparis.fr/en/activities-events/galleries-gardens-zoo-libraries/illuminated-species-2931">Illuminated species</a> in Jardin des Plantes in Paris.</center>
+
+<p><img src="assets/puzzle-1.png" alt="" class="center-image" height="300px" /></p>
+
 <hr />
 
-<h2 id="maximal-matching-lower-bound">Maximal matching lower bound</h2>
+<h2 id="a-series-of-posts">A series of posts</h2>
 
-<p>They did it! A key problem of distributed computing on graphs has 
-been solved by a team supervised by
-<a href="https://users.ics.aalto.fi/suomela/">Jukka Suomela</a>. 
-<a href="https://arxiv.org/abs/1901.02441">The preprint</a> has been 
-uploaded to arxiv recently, and is not reviewed yet, so this should be taken 
-with a grain of salt, but given the authors list, and what I have read of the 
-paper, there is little doubt it is correct.</p>
+<p>In this first post we give an overview of the <em>simulation argument</em>, which is 
+the framework used for the lower bound.</p>
 
-<p>The setting can be explained the following way. There are jobs available,
-and people looking for jobs. Every job has at most $\Delta$ candidates, 
-and each person has at most $\Delta$ jobs (s)he is interested in. 
-There is no central entity, so the decisions of which job is matched
-to which person have to be taken based on communication 
-between the “jobs” and the people. 
-At the end, we want that (1) every person
-either has been assigned a job or all the jobs (s)he was interested in have been 
-assigned to someone else, and (2) every job is either assigned to someone, or all 
-the candidates for this job have been assigned another job. 
-Note that there is no preference list, and that
-this problem would be very easy if we had a central entity managing the job 
-market.</p>
+<p>The next posts will be about:</p>
 
-<p>A strategy to solve the problem is the following: first every person chooses a 
-job among the ones it has selected, and sends a proposal to this job, second the 
-“jobs” choose one of the persons that have sent a proposal to it (if any). 
-After this first round, some people and jobs are already matched, and they leave 
-the game. 
-The other jobs and persons continue, until we have reached a situation that 
-fulfils the conditions (1) and (2) above.</p>
+<ul>
+  <li>specific construction for edge labelings on bicolored trees</li>
+  <li>Example 1: sinkless orientation</li>
+  <li>Example 2: maximal matching</li>
+</ul>
 
-<p>This strategy requires $O(\Delta)$ phases. The new result tells us
-that this is basically optimal.</p>
+<p>Most of the content of this series is probably better explained in the 
+preprint cited above, so you may want to look at it instead of these posts! 
+The main difference will appear in the second post where I propose a slightly 
+different vocabulary, based on polynomials. The posts assume familiarity with 
+the local model.</p>
 
-<h2 id="search-vs-decision">Search vs decision</h2>
+<h3 id="a-few-bits-of-context">A few bits of context</h3>
 
-<p>My PhD was about distributed decision, and a sentence that often appears in 
-papers on this topic is some variation of “unlike in the centralized setting,
-search and decision are very different in the distributed setting”. This makes
-me a bit uncomfortable because I don’t have a very strong statement to support 
-the claim that in centralized computing search and decision are similar.</p>
+<p>The simulation technique can be traced back to Linial, 
+and his $\Omega(\log^*n)$ lower bound for coloring.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+However, it did a come-back with 
+<a href="https://arxiv.org/pdf/1511.00900.pdf">a 2015 paper</a> that had a different point 
+of view. 
+It was then simplified and improved.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> 
+The technique was an important part of 
+<a href="http://adga.hiit.fi/2017/hirvonen.pdf">the talk of Juho Hirvonen</a> 
+at the 
+<a href="http://adga.hiit.fi/2017/">2017 ADGA workshop</a>.</p>
 
-<p>Lance Fortnow 
-<a href="https://blog.computationalcomplexity.org/2019/01/search-versus-decision.html">blogged about this</a> 
-early this month.</p>
+<h2 id="overview-of-the-simulation-argument">Overview of the simulation argument</h2>
 
-<h2 id="fragile-complexity">Fragile complexity</h2>
+<p>The core question of the simulation argument is the following. 
+Suppose that in time $T$ you can solve a problem. Then what can you solve 
+if you have only $T-1$ rounds? 
+For lower bounds, the basic line of reasoning is the following.</p>
 
-<p>An interesting recent line of research is to go “beyond worst-case complexity”, 
-that is to consider other measures of complexity/efficiency than the time on the
-worst input, as the later can be inadequate for many purposes.
-There are very nice concepts there, such as the 
-<a href="https://en.wikipedia.org/wiki/Smoothed_analysis">smoothed complexity</a>. 
-See also the <a href="http://timroughgarden.org/f14/l/top10.pdf">top 10 ideas</a> in this 
-area, by <a href="http://timroughgarden.org/">Tim Roughgarden</a>.</p>
+<h3 id="base-step-0-rounds">Base step: 0 rounds</h3>
+<p>Fix a problem $P$.
+Suppose you have a way to do the following transformation.</p>
 
-<p>A new measure was introduced in 
-<a href="https://export.arxiv.org/abs/1901.02857">an arxiv preprint</a> this month: fragile 
-complexity. I just read the abstract, and I don’t know why it is called ‘fragile’, 
-but I understand the definition for sorting: the fragile complexity of a sorting
-algorithm is the maximal number of comparisons that an element of the list can 
-be part of.</p>
+<p><em>Start with:</em><br />
+an algorithm $A$ in $T$ rounds for a problem $P$. <br />
+<em>Change it into:</em> 
+an algorithm $A’$ in $T-1$ rounds for another problem $P’$.</p>
 
-<h2 id="lipics-without-logos">LIPIcs without logos</h2>
+<p>Then, say you want to prove that solving $P$ requires more than one
+round. 
+Then you only need to prove that you have a transformation as above, with $T=1$, 
+and that $P’$ is not trivial (that is, to prove that 
+$P’$ cannot be solved in zero round).
+Indeed if there is an algorithm in one round for $P$, then you can transform it 
+into an algorithm in 0 round for $P’$, which would contradict the 
+non-triviality of $P’$. 
+At this point, you know that $P$ requires at least two rounds. 
+This may sound silly as we have just moved the difficulty from one problem to
+another: for this technique to work, we need to be able to prove that $P’$ is 
+non-trivial. But this is usually much simpler.</p>
 
-<p>I like LIPIcs latex class, which is now used for many conferences (basically the 
-ones that switched to open access). 
-I would like to use 
-it for my preprints (because it looks nice, and because if the conference is in 
-lipics, it avoids extra-work). One problem is that preprints should not have the
-official lipics logos, and other feature that are relevant only for conference 
-publications. 
-Following the example of a colleague, I used to use a modified version of the 
-class file. This is not useful any more: the class now provides the command 
-\hideLIPIcs that hides the conference-only features. (See the
-<a href="http://drops.dagstuhl.de/styles/lipics-v2019/lipics-v2019-authors/lipics-v2019-authors-guidelines.pdf">authors guidelines</a>, 
-page 8.)</p>
+<h3 id="induction">Induction</h3>
+<p>Lower bounds of one rounds are not super exciting, and one would like to prove
+bounds of $k+1$ rounds, for some $k$. 
+The argument goes the following way.
+For the sake of contradiction, suppose there is an algorithm in $k$ rounds for 
+your problem $P$.
+Now you prove that there exists a family of problems $P_0, P_1, P_2, …,P_k$, with 
+$P_0=P$, such that:</p>
 
-<h2 id="pac-learning-and-deep-learning">PAC learning and deep learning</h2>
+<ul>
+  <li>none of them is trivial</li>
+  <li>given an algorithm for $P_i$ in $k-i$ rounds, you can transform it into an 
+algorithm in $k-i-1$ rounds for $P_{i+1}$.</li>
+</ul>
 
-<p>It seems that deep learning is becoming popular among almost everybody (at least 
-from a scientific point of view), except theoretical computer scientists, who 
-criticize it for its lack of proven guarantees. As a reaction, 
-there are several efforts to better understand ML from a theoretical point of 
-view (for example in <a href="http://people.csail.mit.edu/madry/lab/">Alexander Mądry’s group</a>
-and in the <a href="http://mltheory.cs.princeton.edu/">ML theory group at Princeton</a>).</p>
+<p>The second bullet implies that $P_k$ can be solved in $0$ rounds, which impossible 
+because the first bullet states that it is non-trivial. 
+Thus $P$ needs at least $k+1$ rounds.</p>
 
-<p>The month in the Theory Dish blog, Amit Daniely and Roy Frostig 
-<a href="https://theorydish.blog/2019/01/04/on-pac-analysis-and-deep-neural-networks/">blog about</a>
-the performances of deep learning on well-defined theoretical tasks in the 
-context of <a href="https://en.wikipedia.org/wiki/Probably_approximately_correct_learning">PAC learning</a>.</p>
+<h3 id="simulation-argument">Simulation argument</h3>
+<p>The question now: how do you define a transformation from one problem to another? <br />
+Suppose you know an algorithm in $T$ rounds, but you have only a view of 
+$T-1$ rounds. Then you can do the following.</p>
 
-<p>Incidentally, Leslie Valiant published a <a href="http://www.probablyapproximatelycorrect.com/">book</a>
-about PAC learning (that he defined in the eighties), and its relation with 
-nature and evolution.</p>
+<ul>
+  <li>Imagine all the possible ways your $(T-1)$-neighborhood could be extended to a 
+$T$-neighborhood.</li>
+  <li>Compute a solution for each of these extensions, using your $T$-round algorithm.</li>
+  <li>Label your node/edges with the set of all the labels that the T-round algorithm
+would use in at least one of these extensions.</li>
+</ul>
 
-<h2 id="wind-turbines-machine-learning-and-algorithms">Wind turbines, machine learning and algorithms</h2>
+<p>Obviously you are not solving the original problem because you are labeling your
+node/edges with sets of labels, instead of labeling them with only one label. 
+Also this labeling may be uninteresting: every node/edge could be labeled with 
+all the possible labels. 
+But maybe it <em>is</em> interesting. 
+And then you may be able to define a non-trivial problem $P’$ 
+(probably a quite artificial problem but it’s ok) such that this set-labeling 
+is a proper labeling for $P’$.</p>
 
-<p>Lance Fortnow also <a href="https://blog.computationalcomplexity.org/2019/01/machine-learning-and-wind-turbines.html">blogged about wind turbines and ML</a>.</p>
+<h3 id="simplification-step">Simplification step</h3>
+<p>You may also want to have a simplification step. 
+This is a step that you perform after you have labeled your nodes/edges with 
+sets of labels.
+The goal is to simplify the proof, by replacing the sets of labels by something 
+simpler, typically simple labels. For example you decide that every set of labels 
+{$a,b$} is replaced by $a$. For this step to be useful you need that:</p>
 
-<p>Basically, a problem for wind turbines is to predict sudden changes of the wind, 
-that could cause damage. One could use complex fluid simulations, but these are 
-slow therefore there is an increasing trend in using ML for these predictions.</p>
+<ul>
+  <li>one can compute the simplification without further communication (e.g. no 
+synchronization with neighbours)</li>
+  <li>the new labels fit into a language that has good properties, in particular, it 
+is not trivial.</li>
+</ul>
 
-<p>So there is a way to make things in a “deterministic” well-defined way, but one 
-prefers the ML version that is quicker. 
-This reminds me of a 
-<a href="https://cstheory.stackexchange.com/questions/38095/if-machine-learning-techniques-keep-improving-whats-the-role-of-algorithmics-i">stack exchange topic</a>
-that was basically asking: will algorithms be really useful in the future, knowing
-that most of the time we are interested in “good enough” solution, and that we 
-don’t even want some approximation guarantees, or even worse, we want solutions 
-that are good, with the definition of good given only by examples. Unfortunately 
-there were not many answers…</p>
+<h3 id="footnotes">Footnotes</h3>
 
-<h2 id="power-diagrams-to-represents-fluids">Power diagrams to represents fluids</h2>
-
-<p><a href="https://11011110.github.io/blog/2019/01/15/linkage.html">11011110 blog</a> links 
-to
-<a href="https://twitter.com/BrunoLevy01/status/1080085027210309632">nice fluid simulations</a>
-using <a href="https://en.wikipedia.org/wiki/Power_diagram">power diagram</a>, 
-to picture units of fluid. Power diagrams are generalizations of 
-<a href="https://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi diagrams</a> but special 
-cases of <a href="https://en.wikipedia.org/wiki/Weighted_Voronoi_diagram">weighted Voronoi diagrams</a>.</p>
-
-<h2 id="order-types">Order types</h2>
-
-<p>Suppose you have a configuration with four points in the plane, such that no 
-three of them are aligned. Then, either all the points are extreme points, and 
-they form a kind of quadrilateral, or there are three points forming a triangle, 
-and the last point is in the triangle. These two cases are called the order types
-(for four points in the plane). As you can expect, this gets more tricky when 
-you look at more points.</p>
-
-<p>There was a <a href="https://epubs.siam.org/doi/10.1137/1.9781611975482.27">paper at SODA 2019</a>
-about this topic.</p>
-
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>The simulation argument appears more clearly in the <a href="https://users.ics.aalto.fi/suomela/doc/linial-easy.pdf">modern version of the proof</a>&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>There is an soon coming note by <a href="https://disco.ethz.ch/alumni/brandts">Sebastian Brandt</a> that formalizes precisely the approach.&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
   </div>
   

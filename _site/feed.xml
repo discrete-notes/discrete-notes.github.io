@@ -7,6 +7,160 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>March notes (I)</title>
+        <description>&lt;p&gt;First half of the March 2019 notes.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;assets/mimosa-2.JPG&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;450px&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;tverbergs-theorem&quot;&gt;Tverberg’s theorem&lt;/h2&gt;
+
+&lt;p&gt;For geometric algorithms in the plane, one sometimes has go through case by case 
+analysis along the lines of “if this point is below this line, then this and 
+that intersect, if not then…”. 
+Such proofs are a bit boring and it is easy to make mistakes. 
+So when you have a general theorem that does the work for you, it’s good news. 
+Tverberg’s theorem looks like a theorem that could be useful from this point of 
+view.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Tverberg%27s_theorem&quot;&gt;Tverberg’s theorem&lt;/a&gt; states 
+a condition such that the convex hulls of several sets of points intersect. 
+Precisely: in a $d$-dimensional euclidian space, for any integer $r$, for any 
+set of $(d+1)(r-1)+1$ points, there exists a partition in $r$ subsets such that 
+the convex hulls of the $r$ subsets intersect. 
+The picture below present the case $d=2$ and $r=3$, for $(d+1)(r-1)+1=7$ points, 
+and for one less point. 
+In this last case the theorem does not hold (we just show one partition).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/tverberg.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;270px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;[I saw the name of this theorem on the SOCG accepted papers list, unfortunately
+the paper is not available online, and we don’t know what they do with this 
+theorem.]&lt;/p&gt;
+
+&lt;h2 id=&quot;criteria-for-fair-item-assignment&quot;&gt;Criteria for fair item assignment&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Fair_item_assignment&quot;&gt;Fair item assignement&lt;/a&gt; 
+consists, given items and participants, to assign the items to the participants 
+in a fair manner, for some definition of fair. There are many variants of the 
+problem and many ways to define fairness.&lt;/p&gt;
+
+&lt;p&gt;Here are a few fairness criteria, to decide if the assignment is fair or not:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Max-min fair-share (“I cut, you choose”): every participant is least as happy 
+as if she had cut the set of items first, and then let all the other 
+participants choose before her.&lt;/li&gt;
+  &lt;li&gt;Max-min fair-share (“You cut, I choose”): the same but reversed, that is every
+participant is at least as happy as if someone else did the cut, and she could 
+decide first.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Envy-freeness&quot;&gt;Envy-freeness&lt;/a&gt;: 
+no participant would like to change her items for the items of 
+another participant.&lt;/li&gt;
+  &lt;li&gt;Competitive equilibrium from equal incomes: there exists a price for each item
+such that, given the same budget, the participants would choose different items.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;[I learnt about this at the CS PhD seminar of Sorbonne university, by Parham 
+Shams.]&lt;/p&gt;
+
+&lt;h2 id=&quot;tai-chi-problem&quot;&gt;Tai chi problem&lt;/h2&gt;
+
+&lt;p&gt;When crossing the 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Jardin_des_plantes&quot;&gt;Jardin des plantes&lt;/a&gt; 
+I often witness the following kind of scene.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/taichi.JPG&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It is people practising &lt;a href=&quot;https://en.wikipedia.org/wiki/Tai_chi&quot;&gt;taichi&lt;/a&gt;. 
+There is a professor in front of the group (with a white cap on the picture)
+who is showing the movements, and everybody is supposed to perform them in 
+real-time (it’s pretty slow).&lt;/p&gt;
+
+&lt;p&gt;The thing is: people on the first row can see the professor, but the ones on the 
+back cannot, so they follow the moves of the people on the rows closer to the 
+professor. Therefore there is a kind of wave from the front to the back. 
+Maybe it can make an interesting problem: how fast does the wave propagate, is 
+it close to a straight line, how does it depend on the size of the participants?&lt;/p&gt;
+
+&lt;h2 id=&quot;core-algorithms-deployed&quot;&gt;Core algorithms deployed&lt;/h2&gt;
+
+&lt;p&gt;It is common as a reseacher to have doubt about how useful your research is. 
+In my case, I sometimes wonder whether the algorithmic problem we try to solve 
+really have an impact. 
+It could well be the case that the algorithmic problems that 
+are really useful are the ones that have only basic answers.
+That is, we focus on the sweet spot between trivially easy and trivially hard 
+problems, and this set could have an empty intersection with real-world 
+questions.&lt;/p&gt;
+
+&lt;p&gt;I was really happy to discover a few years ago 
+&lt;a href=&quot;https://cstheory.stackexchange.com/questions/19759/core-algorithms-deployed&quot;&gt;the topic “core algorithms deployed”&lt;/a&gt;
+on stack exchange,
+that removes any doubt on this regard.&lt;/p&gt;
+
+&lt;h2 id=&quot;numerical-errors-in-missile-trajectories&quot;&gt;Numerical errors in missile trajectories&lt;/h2&gt;
+
+&lt;p&gt;I discovered in the introduction of
+&lt;a href=&quot;https://www.lri.fr/~melquion/doc/19-hdr.pdf&quot;&gt;this  PhD thesis&lt;/a&gt; the following 
+story, illustrating why computer arithmetics is important and difficult.&lt;/p&gt;
+
+&lt;p&gt;In 2011, a US “&lt;a href=&quot;https://en.wikipedia.org/wiki/Missile_defense&quot;&gt;defence missile&lt;/a&gt;” 
+missed a “real missile”, with tragic consequences, 
+because of computer arithmetic. 
+The basic reason is the following. 
+There used to be a software doing the trajectory computations, with rounding 
+operations, including on the time variable. This  variable slowly shifted 
+compared to the real time because of these rounding. 
+It sounds dangerous, but it was actually ok: 
+the trajectory computations would consider fast movements 
+so between the start and end of the trajectory, the shift was negligible, and 
+the absolute time did not matter. The problem is that part of the system was 
+updated with more accurate time variable. Then the shift would not be the same 
+in two different parts of the system. Then the shift would not cancel out and 
+this was the bug.&lt;/p&gt;
+
+&lt;p&gt;[A better explanation can be found in 
+&lt;a href=&quot;http://www-users.math.umn.edu/~arnold/disasters/Patriot-dharan-skeel-siam.pdf&quot;&gt;this document&lt;/a&gt;.
+The PhD thesis has a more light-hearted story about gamers trying to finish a 
+video game level without jumping, and using a slow shift of a platform 
+(also due to rounding errors) to do so.]&lt;/p&gt;
+
+&lt;h2 id=&quot;max-cut-and-planar-graphs&quot;&gt;Max cut and planar graphs&lt;/h2&gt;
+
+&lt;p&gt;Two results about &lt;a href=&quot;https://en.wikipedia.org/wiki/Maximum_cut&quot;&gt;max-cut&lt;/a&gt; that I 
+didn’t know:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;a cut is maximum if and only if its complement is a minimum odd-circuit cover 
+(this is easy to check, see for example 
+&lt;a href=&quot;https://web.engr.oregonstate.edu/~glencora/wiki/uploads/planar-max-cut.pdf&quot;&gt;here&lt;/a&gt;,
+or simply stare a bit at the picture below.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;This can be used to obtain a polynomial-time algorithm for max-cut in planar 
+graphs.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/maxcut.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;[I got aware of this by
+&lt;a href=&quot;https://arxiv.org/abs/1903.06061&quot;&gt;this preprint&lt;/a&gt;
+which presents an algorithm for max-cut whose complexity is parametrized by the 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Crossing_number_(graph_theory)&quot;&gt;number of crossing&lt;/a&gt; 
+in the drawing of the graph.]&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 25 Mar 2019 00:00:00 +0100</pubDate>
+        <link>https://discrete-notes.github.io///march-2019-notes-1</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///march-2019-notes-1</guid>
+      </item>
+    
+      <item>
         <title>STOC and SOCG picks</title>
         <description>&lt;p&gt;A few weeks ago the accepted papers lists of 
 &lt;a href=&quot;http://acm-stoc.org/stoc2019/&quot;&gt;STOC&lt;/a&gt; 
@@ -1334,160 +1488,6 @@ with &lt;a href=&quot;https://www.irif.fr/~habib/&quot;&gt;Michel Habib&lt;/a&gt
         <pubDate>Tue, 18 Dec 2018 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///december-2018-notes</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///december-2018-notes</guid>
-      </item>
-    
-      <item>
-        <title>November notes</title>
-        <description>&lt;p&gt;A few notes for November 2018.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;a-new-paper-on-descriptive-complexity-of-distributed-computing&quot;&gt;A new paper on descriptive complexity of distributed computing&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Descriptive_complexity_theory&quot;&gt;Descriptive complexity&lt;/a&gt; 
-basically aims at characterizing complexity classes through logic. A classic 
-results is &lt;a href=&quot;https://en.wikipedia.org/wiki/Descriptive_complexity_theory&quot;&gt;Fagin’s Theorem&lt;/a&gt;
-that characterizes NP. 
-Descriptive complexity for distributed computing is a relatively new topic,&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
-and a &lt;a href=&quot;https://arxiv.org/abs/1811.08197&quot;&gt;new paper&lt;/a&gt; just came out on arxiv.
-I’m not a specialist, but from what I understood, the classic assumption of the
-LOCAL model that there are unique identifiers, is pretty difficult to transfer 
-into logic, and this paper seems to make a step in this direction.&lt;/p&gt;
-
-&lt;h2 id=&quot;a-map-of-the-theory-of-distributed-computing-community&quot;&gt;A map of the theory of distributed computing community&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://users.ics.aalto.fi/suomela/&quot;&gt;Jukka Suomela&lt;/a&gt; published
-&lt;a href=&quot;https://plus.google.com/+JukkaSuomela/posts/JgWYFk4XzWW&quot;&gt;a nice map&lt;/a&gt; of the 
-PODC/DISC communities. (PODC and DISC are the two main conferences in theory 
-of distributed computing.)&lt;br /&gt;
-It is a graph where the nodes are the authors, and the edges between them 
-have different thickness, 
-depending on how much they have collaborated, or have had papers in the same 
-sessions. There are strong thematic clusters, which is no surprise.&lt;/p&gt;
-
-&lt;h2 id=&quot;symmetries-in-lps-and-sos&quot;&gt;Symmetries in LPs and SOS&lt;/h2&gt;
-&lt;p&gt;I attended the PhD defense of 
-&lt;a href=&quot;https://www.lip6.fr/actualite/personnes-fiche.php?ident=D1634&quot;&gt;Cécile Rottner&lt;/a&gt;
-who was a student in the OR team of &lt;a href=&quot;https://www.lip6.fr/?LANG=en&quot;&gt;LIP6&lt;/a&gt;. 
-Her thesis was about a problem that
-any electric utility company faces: how to manage the different the power plants
-to meet the demand while using the less energy possible, given that there are 
-many constraints on these plants (a nuclear reactor cannot be switched on and 
-off in a minute, some other stuff has to cool down, etc.). As often in OR (as far as
-I know) this is done by having big LPs and playing with them, adding new 
-inequalities, trying to use the structure to speed the computation, having 
-branch and cut routines etc.&lt;/p&gt;
-
-&lt;p&gt;One of the big challenges that one has to tackle when solving these big LPs 
-in an industrial context is to break the symmetries.
-Suppose you have two identical 
-nuclear reactors in your system. Then if you use one or the other in your solution, 
-you will have the same cost. This implies that you can have many many optimal 
-solutions. This is bad for a branch and cut 
-strategy, where the ideal case is to have only one optimal solution, and to be 
-cutting all the other branches quickly. Cécile showed ways to solve this problem.&lt;/p&gt;
-
-&lt;p&gt;This reminded me of another PhD defense with symmetries: the one of 
-&lt;a href=&quot;https://sites.google.com/view/vverdugo/&quot;&gt;Victor Verdugo&lt;/a&gt;. Victor had a part of 
-his PhD work on how to break symmetry for 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Sum-of-squares_optimization&quot;&gt;sum-of-squares&lt;/a&gt;. The
-timing for this blog post is pretty good: the paper of Victor on this topic 
-just appeared on arxiv, 
-&lt;a href=&quot;https://arxiv.org/abs/1811.08539&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;double-blind-for-disc&quot;&gt;Double-blind for DISC&lt;/h2&gt;
-&lt;p&gt;The conference &lt;a href=&quot;http://www.disc-conference.org/wp/&quot;&gt;DISC&lt;/a&gt; will go 
-double-blind next year (that is the names of both the reviewers and the authors will
-be anonymized).&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; At first I was sceptical about this idea, 
-because of the usual reasons: extra-care in the process (e.g. when talking to 
-people) with probably no big impact, etc. But recently I reviewed a paper by 
-authors from a university I had never heard of, and I felt that before even 
-starting I had a negative bias. I think double-blind is exactly about 
-protecting authors from this bias.&lt;/p&gt;
-
-&lt;p&gt;I heard many times that the 
-problem is that well-known people get their papers accepted although 
-they are not good enough, and I think this cannot really change (because 
-of arxiv, favourite topics, writing style), but it’s the other side of the 
-spectrum that can be made more fair. So let’s see how it goes.&lt;/p&gt;
-
-&lt;h2 id=&quot;a-few-points-on-networks-and-games&quot;&gt;A few points on networks and games&lt;/h2&gt;
-&lt;p&gt;I attended a talk at LIP6 by 
-&lt;a href=&quot;http://webee.technion.ac.il/Sites/People/ArielOrda/&quot;&gt;Ariel Orda&lt;/a&gt; on game theory 
-and networks. The talk described two very interesting works, but 
-I just picked a few non-specific things that caught my interest.&lt;/p&gt;
-
-&lt;h3 id=&quot;network-formation-games&quot;&gt;Network formation games&lt;/h3&gt;
-&lt;p&gt;The first topic is about understanding the structure of real-world networks, by 
-finding ways to build algorithmically networks that have similar properties. 
-A well-known generation algorithm is the 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model&quot;&gt;Barabási–Albert model&lt;/a&gt; 
-where nodes basically arrive one by one and choose who to be linked to, 
-based on the degree of the nodes that already arrived. There is a second 
-type of network formation model that I didn’t know,&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;sup&gt;,&lt;/sup&gt;&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; which is to start 
-with a fixed set of nodes, and to make them play a game to decide 
-which edges are in the graph. 
-For example, the nodes want to maximize their pay-offs in a game where every 
-link cost something, but having short paths to every node is rewarded. 
-These are called network formation games.&lt;/p&gt;
-
-&lt;h3 id=&quot;monetary-transfer&quot;&gt;Monetary transfer&lt;/h3&gt;
-&lt;p&gt;The second idea is about introducing money in games.
-Suppose you have a Nash equilibrium 
-that is very bad (for some definition of bad) because each player, when 
-maximizing its gain, is hurting the other players a lot. Then you can introduce
-monetary transfer, that consists for two players A and B to agree that if the 
-A does this thing that decreases its pay-off but increases the pay-off 
-of B, then B will give part of its 
-pay-off to reimburse A, and both will be happier. Natural idea to 
-consider, but that I had never heard of.&lt;/p&gt;
-
-&lt;h3 id=&quot;using-motifs-to-validate-a-model&quot;&gt;Using motifs to validate a model&lt;/h3&gt;
-&lt;p&gt;I knew that people studying social 
-networks are obsessed with finding motifs (small graphs that appear more 
-often than others), but I was not sure why. It could be just to have 
-more knowledge about the relationships, but in Orda’s talk, it was 
-also a way to validate a model. Basically: in real-world graphs this and that 
-motifs are very common, we don’t know why, and previous generative 
-models did not have this property, but their model could capture this. 
-As far as I know, parameters such as the diameter, or the clustering 
-coefficient are more classic ways to validate such models.&lt;/p&gt;
-
-&lt;h3 id=&quot;about-the-price-of-anarchy-selfishness-and-collaboration&quot;&gt;About the price of anarchy, selfishness and collaboration&lt;/h3&gt;
-&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Price_of_anarchy&quot;&gt;price of anarchy&lt;/a&gt;, 
-is the ratio between the social cost when each players tries to optimize 
-its own pay-off, and when all the players play the strategy that minimize 
-the social cost. It is often said that this price is the price to pay 
-when players are selfish. But it is not completely true, it is also the 
-price of not collaborating. You can image scenarios in which players have
-the option of collaborating but each player will agree only if it ensures 
- a better pay-off. That is the players are still selfish but 
-they can talk to each other and make agreements. 
-This can change the outcome a lot. Then one 
-will consider what is called a Nash bargaining solution.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h4&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;If you are interested, see &lt;a href=&quot;https://arxiv.org/abs/1805.06238&quot;&gt;Fabian Reiter’s very nice PhD thesis&lt;/a&gt;, and the &lt;a href=&quot;https://semidoc.github.io/reiter-dga&quot;&gt;gentle introduction&lt;/a&gt; to the topic I wrote on semidoc.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;See &lt;a href=&quot;https://twitter.com/JukkaSuomela/status/1065259077738082304&quot;&gt;this tweet&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:3&quot;&gt;
-      &lt;p&gt;There seems that there is no third well-known way to generate networks, at least in the &lt;a href=&quot;https://en.wikipedia.org/wiki/Network_formation&quot;&gt;wikipedia article about network formation&lt;/a&gt;.&amp;nbsp;&lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:4&quot;&gt;
-      &lt;p&gt;Actually I somehow knew because of &lt;a href=&quot;https://dl.acm.org/citation.cfm?doid=3178876.3186122&quot;&gt;this paper&lt;/a&gt; by my PhD advisor and colleges, but I had forgotten.&amp;nbsp;&lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Fri, 30 Nov 2018 00:00:00 +0100</pubDate>
-        <link>https://discrete-notes.github.io///november-2018-notes</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///november-2018-notes</guid>
       </item>
     
   </channel>

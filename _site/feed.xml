@@ -7,11 +7,40 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>March notes (I)</title>
+        <title>Lightning and search algorithms</title>
+        <description>&lt;p&gt;I rencentely stumbled on &lt;a href=&quot;https://www.youtube.com/watch?v=nBYZpsbu9ds&quot;&gt;this video&lt;/a&gt;
+of lightning. I knew that lightning kind of “search for the good way”, but 
+I was stunned by how it looks like the run of a search algorithm with several 
+agent: exploration phases, backtrack, compromise between depth and breadth etc.
+For fun I copied second by second a partiuclar bolt, that you may find in the 
+video around 0:20-0:30.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/eclair-1a.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;
+&lt;img src=&quot;assets/eclair-1b.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;
+&lt;img src=&quot;assets/eclair-2a.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;
+&lt;img src=&quot;assets/eclair-2b.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;
+&lt;img src=&quot;assets/eclair-3a.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;
+&lt;img src=&quot;assets/eclair-3b.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;
+&lt;img src=&quot;assets/eclair-4a.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;
+&lt;img src=&quot;assets/eclair-4b.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;
+&lt;img src=&quot;assets/eclair-5a.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;
+&lt;img src=&quot;assets/eclair-5b.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;
+&lt;img src=&quot;assets/eclair-6a.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;
+&lt;img src=&quot;assets/eclair-6b.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 26 Mar 2019 00:00:00 +0100</pubDate>
+        <link>https://discrete-notes.github.io///lightning</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///lightning</guid>
+      </item>
+    
+      <item>
+        <title>March notes I.</title>
         <description>&lt;p&gt;First half of the March 2019 notes.&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;p&gt;&lt;img src=&quot;assets/mimosa-2.JPG&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;450px&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;Mimosa in Jardin des Plantes.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1318,176 +1347,6 @@ presented at FOCS.)&lt;/p&gt;
         <pubDate>Thu, 24 Jan 2019 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///october-batch-forgotten</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///october-batch-forgotten</guid>
-      </item>
-    
-      <item>
-        <title>December notes</title>
-        <description>&lt;p&gt;&lt;img src=&quot;assets/arbre.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;karchmer-wigderson-theorem&quot;&gt;Karchmer-Wigderson theorem&lt;/h2&gt;
-
-&lt;p&gt;Karchmer-Wigderson theorem makes a precise link between circuit and 
-communication complexity. More precisely it 
- relates the depth of a boolean
-circuit computing some function $f$, to the communication complexity of a game 
-based on $f$. The game is the following:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Inputs: Alice has an input $x$ such that $f(x)=1$, 
-and Bob has another input $y$ such that $f(y)=0$.&lt;/li&gt;
-  &lt;li&gt;Task: find $i$ such that $x_i \neq y_i$ (such an $i$ must exist).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The way to go from the circuit to a communication protocol is the following. 
-Alice and Bob each run the circuit on their inputs, the usual bottom-up way. 
-Thus each of them knows the 
-evaluation after each gate (“after this gate, this wire holds a 0, after this 
-one it’s a 1” etc.). Now the protocol will go top-down.
-As after the final gate (that is, the top gate), 
-Alice gets a 1 and Bob gets a 0, we know that the two wires 
-entering this gate cannot both have the same value for Alice and Bob. 
-Alice and Bob can communicate to agree on one wire that has different value. 
-This takes constant number of bits. And then you just follow the wire to the 
-next gate and continue. At the end Alice and Bob agree on an input wire that has different 
-value and they win the game. The communication complexity is the circuit depth.&lt;/p&gt;
-
-&lt;p&gt;For the other direction, see the Internet.&lt;/p&gt;
-
-&lt;p&gt;(I learnt about Karchmer-Wigderson theorem recently by watching parts of an 
-&lt;a href=&quot;https://www.youtube.com/watch?v=t1EsRm1dmw0&quot;&gt;online talk&lt;/a&gt; by 
-&lt;a href=&quot;http://www.math.ias.edu/~mika/&quot;&gt;Mika Göös&lt;/a&gt;.)&lt;/p&gt;
-
-&lt;h2 id=&quot;counting-crows&quot;&gt;Counting crows&lt;/h2&gt;
-
-&lt;p&gt;These days I often cross the 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Jardin_des_plantes&quot;&gt;Jardin des Plantes&lt;/a&gt;
-in Paris, and I saw a sign giving information about the counting of crows in 
-Paris. Basically a large number of crows now have a ring with a specific number. 
-The problem is that the rings tend to fall, disappear etc. To evaluate this 
-loss rate, the birds are rung with two rings. Then 
-by counting the number of crows with zero, one and two rings, one can evaluate 
-the loss rate, and then the population.&lt;/p&gt;
-
-&lt;p&gt;This sounded very much like CS to me, for example in networks, 
-sending packets that may disappear, and trying to know the message loss for 
-example.&lt;/p&gt;
-
-&lt;h2 id=&quot;minimum-degree-spanning-tree&quot;&gt;Minimum degree spanning tree&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Degree-constrained_spanning_tree&quot;&gt;Minimum-degree spanning tree&lt;/a&gt;, 
-consists in finding a spanning tree of a graph, 
-with the constraint that the maximum degree of the tree should be as small as 
-possible. This problem is NP-hard, because if the answer is 2 then it means that 
-you have an Hamiltonian path. But one can get an approximation with additive 
-constant 1.
-The algorithm (from 
-&lt;a href=&quot;https://doi.org/10.1006%2Fjagm.1994.1042&quot;&gt;this paper&lt;/a&gt;, explained in 
-&lt;a href=&quot;http://pages.cs.wisc.edu/~shuchi/courses/880-S07/scribe-notes/lecture08.pdf&quot;&gt;these lecture notes&lt;/a&gt;)
-consists in a local search, with swapping of edges to as local moves.&lt;/p&gt;
-
-&lt;p&gt;This problems looks very natural and potentially very useful. I’d be curious 
-to know if there are real-world applications.&lt;/p&gt;
-
-&lt;p&gt;(I discovered this problem in
-&lt;a href=&quot;https://doi.org/10.1109/ICDCS.2015.66&quot;&gt;this distributed computing paper&lt;/a&gt;.)&lt;/p&gt;
-
-&lt;h2 id=&quot;cycle-cover&quot;&gt;Cycle cover&lt;/h2&gt;
-&lt;p&gt;An &lt;a href=&quot;https://en.wikipedia.org/wiki/Edge_cycle_cover&quot;&gt;(edge) cycle-cover&lt;/a&gt;
-is a set of cycles of a graph, such that every edge of the graph 
-is contained in at least one cycle. There are several problems associated with 
-this object, for example related to the total length of the cycles in such a 
-cover. I want to mention a super-cute-super-hard open problem: the 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Cycle_double_cover&quot;&gt;cycle double cover conjecture&lt;/a&gt;. 
-The conjecture is: in every graph with no 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Bridge_(graph_theory)&quot;&gt;bridge&lt;/a&gt;, 
-there is a list of cycles so that every edge is 
-contained in exactly two.&lt;/p&gt;
-
-&lt;p&gt;If you think “How can this be open?!”, I’ll just add that it is listed in the 
-&lt;a href=&quot;http://www.openproblemgarden.org/op/cycle_double_cover_conjecture&quot;&gt;open problem garden&lt;/a&gt; 
-as of “outstanding importance”. See there, or on the wikipedia page linked above 
-for the details.&lt;/p&gt;
-
-&lt;p&gt;(&lt;a href=&quot;https://arxiv.org/abs/1812.04492&quot;&gt;A paper about cycle covers&lt;/a&gt; recently 
-appeared on the arxiv, reminded me this problem.)&lt;/p&gt;
-
-&lt;h2 id=&quot;mst-algorithms&quot;&gt;MST algorithms&lt;/h2&gt;
-&lt;p&gt;Consider the following algorithm for finding a minimum weight spanning tree, similar to 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Bor%C5%AFvka%27s_algorithm&quot;&gt;Borůvka’s algorithm&lt;/a&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Every node begins has a so-called fragment.&lt;/li&gt;
-  &lt;li&gt;Until there is only one fragment: choose an arbitrary fragment, find the 
-lightest edge linking a node of 
-this fragment to another fragment, merge the two fragments into a new one by 
-adding this edge.&lt;/li&gt;
-  &lt;li&gt;Output the final fragment.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This algorithm is actually a generalization of Borůvka, Prim and Kruskal algorithm! 
-For Borůvka’s algorithm, one would basically choose an 
-outgoing edge for all fragments in parallel. For Prim, one would always choose 
-the same fragment to enlarge. F	or Kruskal, one would choose the lightest 
-outgoing edge of all the fragments.&lt;/p&gt;
-
-&lt;p&gt;This can probably be explained with red-blue rules, but I like this point of
-view with a kind of scheduler, with different strategies.&lt;/p&gt;
-
-&lt;p&gt;(I’m working again on some minimum spanning tree distributed problems, and it 
-reminded me about this fact, that I discovered a few years ago, but that I’ve 
-never seen in undergraduate courses.)&lt;/p&gt;
-
-&lt;h2 id=&quot;squashed-cube-conjecture-and-distance-labelling&quot;&gt;Squashed cube conjecture and distance labelling&lt;/h2&gt;
-&lt;p&gt;Distance labelling are labels given to the nodes of a graph such that given the 
-labels of two arbitrary nodes $u$ and $v$, and without seeing the graph, one can compute 
-the distance between $u$ and $v$. One usually tries to minimize the size of 
-the labels.
-A strategy for this is to find some metric embedding of the graph, because then 
-one can 
-simply give the coordinates of the nodes as labels. 
-In this direction, a natural thing to do is to try the embed the graph in an 
-hypercube with the Hamming distance. This cannot be done in general, but the 
-squashed cube conjecture (that is actually a theorem) provides a result close to 
-this.&lt;/p&gt;
-
-&lt;p&gt;Consider that instead of two symbols, there are three: 0, 1, and *, and 
-that the “distance” between $x$ and $y$ is the number of indices such that $x=0$ 
-and $y=1$ or $x=1$ and $y=0$. That is * is at distance zero from 0 and 1. 
-(Note that this distance is not a proper distance.)
-Now how many symbols do you need to have a distance preserving embedding? 
-Exactly $n-1$, as proved in &lt;a href=&quot;https://doi.org/10.1007/BF02579350&quot;&gt;this paper&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;(I discovered this in the related works section of 
-&lt;a href=&quot;https://doi.org/10.1007/3-540-44676-1_40&quot;&gt;this paper&lt;/a&gt;.)&lt;/p&gt;
-
-&lt;h2 id=&quot;jaccard-metric&quot;&gt;Jaccard metric&lt;/h2&gt;
-&lt;p&gt;Lipton and Regan talk about the 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Jaccard_index&quot;&gt;Jaccard metric&lt;/a&gt; in 
-&lt;a href=&quot;https://rjlipton.wordpress.com/2018/12/14/explaining-the-jaccard-metric/&quot;&gt;a post&lt;/a&gt;
-of their blog, &lt;em&gt;Gödel’s lost letter&lt;/em&gt;, in particular why it is a metric. I didn’t 
-know about this distance over sets, so here is the definition.&lt;/p&gt;
-
-&lt;p&gt;Let $A$ and $B$ 
-be two sets, the distance is:
-&lt;script type=&quot;math/tex&quot;&gt;d(A,B)=1-\frac{|A \cap B|}{|A \cup B|}.&lt;/script&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;preprints&quot;&gt;Preprints&lt;/h2&gt;
-&lt;p&gt;I have two new preprints this month:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1812.05913&quot;&gt;Graph classes and forbidden patterns on three vertices&lt;/a&gt;
-with &lt;a href=&quot;https://www.irif.fr/~habib/&quot;&gt;Michel Habib&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;xxx&quot;&gt;Lower bounds for text indexing with mismatches and differences&lt;/a&gt; with
-&lt;a href=&quot;https://www.di.ens.fr/~vcohen/&quot;&gt;Vincent Cohen-Addad&lt;/a&gt; and 
-&lt;a href=&quot;https://starikovskaya.github.io/homepage/&quot;&gt;Tatiana Starikoskaya&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I really like both papers, I hope I’ll find some time to blog about it soon.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 18 Dec 2018 00:00:00 +0100</pubDate>
-        <link>https://discrete-notes.github.io///december-2018-notes</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///december-2018-notes</guid>
       </item>
     
   </channel>

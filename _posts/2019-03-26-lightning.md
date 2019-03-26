@@ -1,0 +1,29 @@
+---
+layout: post
+title: Lightning and search algorithms
+redirect_from: "/2019/03/26/lightning/"
+permalink: lightning
+---
+
+I rencentely stumbled on [this video](https://www.youtube.com/watch?v=nBYZpsbu9ds)
+of lightning. I knew that lightning kind of "search for the good way", but 
+I was stunned by how it looks like the run of a search algorithm with several 
+agent: exploration phases, backtrack, compromise between depth and breadth etc.
+For fun I copied second by second a partiuclar bolt, that you may find in the 
+video around 0:20-0:30.
+
+![](assets/eclair-1a.png){: .center-image height="500px"}
+![](assets/eclair-1b.png){: .center-image height="500px"}
+![](assets/eclair-2a.png){: .center-image height="500px"}
+![](assets/eclair-2b.png){: .center-image height="500px"}
+![](assets/eclair-3a.png){: .center-image height="500px"}
+![](assets/eclair-3b.png){: .center-image height="500px"}
+![](assets/eclair-4a.png){: .center-image height="500px"}
+![](assets/eclair-4b.png){: .center-image height="500px"}
+![](assets/eclair-5a.png){: .center-image height="500px"}
+![](assets/eclair-5b.png){: .center-image height="500px"}
+![](assets/eclair-6a.png){: .center-image height="500px"}
+![](assets/eclair-6b.png){: .center-image height="500px"}
+
+
+

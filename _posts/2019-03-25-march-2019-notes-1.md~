@@ -1,6 +1,6 @@
 ---
 layout: post
-title: March notes (I)
+title: March notes I.
 redirect_from: "/2019/03/25/march-2019-notes-1/"
 permalink: march-2019-notes-1
 ---
@@ -137,7 +137,7 @@ or simply stare a bit at the picture below.)
 * This can be used to obtain a polynomial-time algorithm for max-cut in planar 
 graphs.
 
-![](assets/maxcut.png){: .center-image height="300px"}
+![](assets/maxcut.png){: .center-image height="400px"}
 
 [I got aware of this by
 [this preprint](https://arxiv.org/abs/1903.06061)

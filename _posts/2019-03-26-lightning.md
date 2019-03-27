@@ -7,9 +7,9 @@ permalink: lightning
 
 I rencentely stumbled on [this video](https://www.youtube.com/watch?v=nBYZpsbu9ds)
 of lightning. I knew that lightning kind of "search for the good way", but 
-I was stunned by how it looks like the run of a search algorithm with several 
-agent: exploration phases, backtrack, compromise between depth and breadth etc.
-For fun I copied second by second a partiuclar bolt, that you may find in the 
+I was stunned by how it looks like the run of a search algorithm: exploration 
+phases, backtracking, compromise between depth and breadth etc.
+For fun, I drew a lightning bolt, second by second. You may find it in the 
 video around 0:25-0:35.
 
 ![](assets/eclair-1a.png){: .center-image height="500px"}

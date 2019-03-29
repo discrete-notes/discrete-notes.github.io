@@ -516,13 +516,13 @@ The real lower bound is in &lt;a href=&quot;https://arxiv.org/abs/1901.02441&quo
 
 &lt;h3 id=&quot;encoding&quot;&gt;Encoding&lt;/h3&gt;
 
-&lt;p&gt;A maximal matching is a set of edges of the graph, such that not two edges are 
-adjacent and not two unmatched node are linked by an edge.&lt;/p&gt;
+&lt;p&gt;A maximal matching is a set of edges of the graph, such that no two of these
+edges are adjacent, and no two unmatched node are linked by an edge.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/couplage.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;A natural encoding for this problem would be to label the edges of the matching 
-with a first label, and edges not in the matching with second label. 
+with a label $A$, and edges not in the matching with a label $B$. 
 But this does not work for our setting. 
 Instead, we will do the following. 
 (As in the previous post we will deal with 2-colored trees.)&lt;/p&gt;
@@ -576,25 +576,36 @@ simplification step.&lt;/p&gt;
 
 &lt;h3 id=&quot;tentative-simplification-step&quot;&gt;(Tentative) Simplification step&lt;/h3&gt;
 
-&lt;p&gt;If we can map $(M+O)$ and $P+0$ to a simple label, 
+&lt;p&gt;If we can map $(M+O)$ and $(P+O)$ to a simple label, 
 and still match the language, 
 then we are done, and we can conclude like in the &lt;a href=&quot;./simulation-3&quot;&gt;previous post&lt;/a&gt;. 
 But this is not going to happen.&lt;/p&gt;
 
-&lt;p&gt;Suppose you are in following situation, that is easy because there is not even 
-a $P+O$.&lt;/p&gt;
+&lt;p&gt;Suppose you are in following situation, which is supposed to be easy because 
+there is not even a $(P+O)$. (On the picture, every black node writes on its 
+adjacent edges.)&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/couplage-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Then, one thinks: let’s just take one of the two edges labeled with $M+O$
+&lt;p&gt;Ok, let’s just take one of the two edges labeled with $M+O$
 (let say the one with the smallest port-number on the white node), 
 label it with $M$, label the other one with $O$, and we are done.&lt;/p&gt;
 
-&lt;p&gt;The problem is the one we highlighted in the &lt;a href=&quot;./simulation-2&quot;&gt;second post&lt;/a&gt;: 
+&lt;p&gt;This does notwork.
+The problem is the one we highlighted in the &lt;a href=&quot;./simulation-2&quot;&gt;second post&lt;/a&gt;: 
 the edges are not uniformly set-labeled by all the nodes. 
-Maybe the other black node that is dealing with these edges, labels it 
-with only $O$.
-And then you have to synchronize, and this is forbidden (it takes extra time).&lt;/p&gt;
+A concrete bad case:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;let $(u,v)$ and $(v,w)$ be the two edges labeled by $(M+0)$&lt;/li&gt;
+  &lt;li&gt;in its simulation, $u$ has (M+O) for both edges, and based on port-numbers, 
+decides that $(u,v)$ gets $M$.&lt;/li&gt;
+  &lt;li&gt;in its simulation $w$ has $(M+O)$ for $(v,w)$, but only $(O)$ for $(u,v)$. Thus 
+it labels $(v,w)$ with $M$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To solve this problem you have to synchronize, and this is forbidden as it takes 
+extra time.&lt;/p&gt;
 
 &lt;h2 id=&quot;no-lower-bound-this-way&quot;&gt;No lower bound this way&lt;/h2&gt;
 
@@ -604,13 +615,13 @@ And then you have to synchronize, and this is forbidden (it takes extra time).&l
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;This make sense: actually there is a $O(\Delta)$ 
-algorithm for this problem, thus no $\Omega(\log n)$ lower bound!&lt;/p&gt;
+    &lt;p&gt;This makes sense: actually there is a $O(\Delta)$ 
+algorithm for this problem, thus no $\Omega(\log n)$ lower bound exists.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;The above alone does not prove that there is no $\Omega(\log n)$ lower 
 bound: we could use another definition of the problem, or we could have tried 
-more exotic label replacement ($M$ tranformed into $P$, or whatever).&lt;/p&gt;
+more exotic label replacement ($M$ transformed into $P$, or whatever).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;If you want to prove a $\Omega(\Delta)$ lower bound then you need to be 

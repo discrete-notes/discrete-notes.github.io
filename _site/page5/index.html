@@ -111,13 +111,13 @@ The real lower bound is in <a href="https://arxiv.org/abs/1901.02441">this paper
 
 <h3 id="encoding">Encoding</h3>
 
-<p>A maximal matching is a set of edges of the graph, such that not two edges are 
-adjacent and not two unmatched node are linked by an edge.</p>
+<p>A maximal matching is a set of edges of the graph, such that no two of these
+edges are adjacent, and no two unmatched node are linked by an edge.</p>
 
 <p><img src="assets/couplage.png" alt="" class="center-image" height="400px" /></p>
 
 <p>A natural encoding for this problem would be to label the edges of the matching 
-with a first label, and edges not in the matching with second label. 
+with a label $A$, and edges not in the matching with a label $B$. 
 But this does not work for our setting. 
 Instead, we will do the following. 
 (As in the previous post we will deal with 2-colored trees.)</p>
@@ -171,25 +171,36 @@ simplification step.</p>
 
 <h3 id="tentative-simplification-step">(Tentative) Simplification step</h3>
 
-<p>If we can map $(M+O)$ and $P+0$ to a simple label, 
+<p>If we can map $(M+O)$ and $(P+O)$ to a simple label, 
 and still match the language, 
 then we are done, and we can conclude like in the <a href="./simulation-3">previous post</a>. 
 But this is not going to happen.</p>
 
-<p>Suppose you are in following situation, that is easy because there is not even 
-a $P+O$.</p>
+<p>Suppose you are in following situation, which is supposed to be easy because 
+there is not even a $(P+O)$. (On the picture, every black node writes on its 
+adjacent edges.)</p>
 
 <p><img src="assets/couplage-3.png" alt="" class="center-image" height="300px" /></p>
 
-<p>Then, one thinks: let’s just take one of the two edges labeled with $M+O$
+<p>Ok, let’s just take one of the two edges labeled with $M+O$
 (let say the one with the smallest port-number on the white node), 
 label it with $M$, label the other one with $O$, and we are done.</p>
 
-<p>The problem is the one we highlighted in the <a href="./simulation-2">second post</a>: 
+<p>This does notwork.
+The problem is the one we highlighted in the <a href="./simulation-2">second post</a>: 
 the edges are not uniformly set-labeled by all the nodes. 
-Maybe the other black node that is dealing with these edges, labels it 
-with only $O$.
-And then you have to synchronize, and this is forbidden (it takes extra time).</p>
+A concrete bad case:</p>
+
+<ul>
+  <li>let $(u,v)$ and $(v,w)$ be the two edges labeled by $(M+0)$</li>
+  <li>in its simulation, $u$ has (M+O) for both edges, and based on port-numbers, 
+decides that $(u,v)$ gets $M$.</li>
+  <li>in its simulation $w$ has $(M+O)$ for $(v,w)$, but only $(O)$ for $(u,v)$. Thus 
+it labels $(v,w)$ with $M$.</li>
+</ul>
+
+<p>To solve this problem you have to synchronize, and this is forbidden as it takes 
+extra time.</p>
 
 <h2 id="no-lower-bound-this-way">No lower bound this way</h2>
 
@@ -199,13 +210,13 @@ And then you have to synchronize, and this is forbidden (it takes extra time).</
 
 <ul>
   <li>
-    <p>This make sense: actually there is a $O(\Delta)$ 
-algorithm for this problem, thus no $\Omega(\log n)$ lower bound!</p>
+    <p>This makes sense: actually there is a $O(\Delta)$ 
+algorithm for this problem, thus no $\Omega(\log n)$ lower bound exists.</p>
   </li>
   <li>
     <p>The above alone does not prove that there is no $\Omega(\log n)$ lower 
 bound: we could use another definition of the problem, or we could have tried 
-more exotic label replacement ($M$ tranformed into $P$, or whatever).</p>
+more exotic label replacement ($M$ transformed into $P$, or whatever).</p>
   </li>
   <li>
     <p>If you want to prove a $\Omega(\Delta)$ lower bound then you need to be 

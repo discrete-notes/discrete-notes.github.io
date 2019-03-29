@@ -22,13 +22,13 @@ The real lower bound is in [this paper](https://arxiv.org/abs/1901.02441).
  
 ### Encoding
 
-A maximal matching is a set of edges of the graph, such that not two edges are 
-adjacent and not two unmatched node are linked by an edge. 
+A maximal matching is a set of edges of the graph, such that no two of these
+edges are adjacent, and no two unmatched node are linked by an edge. 
 
 ![](assets/couplage.png){: .center-image height="400px"}
 
 A natural encoding for this problem would be to label the edges of the matching 
-with a first label, and edges not in the matching with second label. 
+with a label $A$, and edges not in the matching with a label $B$. 
 But this does not work for our setting. 
 Instead, we will do the following. 
 (As in the previous post we will deal with 2-colored trees.)
@@ -78,25 +78,34 @@ simplification step.
 
 ### (Tentative) Simplification step
 
-If we can map $(M+O)$ and $P+0$ to a simple label, 
+If we can map $(M+O)$ and $(P+O)$ to a simple label, 
 and still match the language, 
 then we are done, and we can conclude like in the [previous post](./simulation-3). 
 But this is not going to happen. 
 
-Suppose you are in following situation, that is easy because there is not even 
-a $P+O$. 
+Suppose you are in following situation, which is supposed to be easy because 
+there is not even a $(P+O)$. (On the picture, every black node writes on its 
+adjacent edges.)
 
 ![](assets/couplage-3.png){: .center-image height="300px"}
 
-Then, one thinks: let's just take one of the two edges labeled with $M+O$
+Ok, let's just take one of the two edges labeled with $M+O$
 (let say the one with the smallest port-number on the white node), 
 label it with $M$, label the other one with $O$, and we are done.
 
+This does notwork.
 The problem is the one we highlighted in the [second post](./simulation-2): 
 the edges are not uniformly set-labeled by all the nodes. 
-Maybe the other black node that is dealing with these edges, labels it 
-with only $O$.
-And then you have to synchronize, and this is forbidden (it takes extra time).
+A concrete bad case:
+
+* let $(u,v)$ and $(v,w)$ be the two edges labeled by $(M+0)$ 
+* in its simulation, $u$ has (M+O) for both edges, and based on port-numbers, 
+decides that $(u,v)$ gets $M$.
+* in its simulation $w$ has $(M+O)$ for $(v,w)$, but only $(O)$ for $(u,v)$. Thus 
+it labels $(v,w)$ with $M$.
+
+To solve this problem you have to synchronize, and this is forbidden as it takes 
+extra time.
 
 ## No lower bound this way
 
@@ -104,12 +113,12 @@ So at the end, we cannot conclude like in the case of sinkless orientation.
 
 Comments on that:
 
-* This make sense: actually there is a $O(\Delta)$ 
-algorithm for this problem, thus no $\Omega(\log n)$ lower bound! 
+* This makes sense: actually there is a $O(\Delta)$ 
+algorithm for this problem, thus no $\Omega(\log n)$ lower bound exists. 
 
 * The above alone does not prove that there is no $\Omega(\log n)$ lower 
 bound: we could use another definition of the problem, or we could have tried 
-more exotic label replacement ($M$ tranformed into $P$, or whatever). 
+more exotic label replacement ($M$ transformed into $P$, or whatever). 
 
 * If you want to prove a $\Omega(\Delta)$ lower bound then you need to be 
 smarter. In particular you need that, after the transformation, the language is 

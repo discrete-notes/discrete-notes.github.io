@@ -102,10 +102,10 @@
 
 <hr />
 
-<p>In this post, we show how to use simulation argument to prove a lower bound on 
+<p>In this post, we show how to use the simulation argument to prove a lower bound on 
 the <em>sinkless orientation</em> problem. 
-This is done in the context described in the <a href="./simulation-2">previous post</a>:
-2-colored regular trees.</p>
+This is done in the context of the <a href="./simulation-2">previous post</a>, that is,
+2-colored $\Delta$-regular trees.</p>
 
 <h2 id="sinkless-orientation-encoding">Sinkless orientation encoding</h2>
 
@@ -114,8 +114,10 @@ such that no node is a sink, that is, no node has only edges pointing to it.</p>
 
 <p><img src="assets/sinkless.png" alt="" class="center-image" height="300px" /></p>
 
-<p>This can be easily encoded in bipartite graphs: an edge is labeled $b$ if it is 
-pointing to the black endpoint, and $w$ is it is pointing to the white endpoint.</p>
+<p>In a bipartite graph, whose nodes are labeled black and white, 
+it is easy to encode an orientation with edge labels: an edge is 
+labeled $b$ if it is pointing to the black endpoint, and $w$ if it is pointing 
+to the white endpoint.</p>
 
 <p>Now the languages, described as polynomials, are:</p>
 
@@ -124,10 +126,14 @@ pointing to the black endpoint, and $w$ is it is pointing to the white endpoint.
   <li>$L_B=w(b+w)^{\Delta-1}$.</li>
 </ul>
 
+<p>Because white nodes must have an adjacent edge pointing to a black node, and 
+vice-versa.</p>
+
 <h2 id="transformation">Transformation</h2>
 
 <p>We will show a very strong property: from a $T$-round algorithm for sinkless 
-orientation, we can get a $(T-1)$-round algorithm for… sinkless orientation!</p>
+orientation, we can get a $(T-1)$-round algorithm for… the exact same problem 
+of sinkless orientation!</p>
 
 <h3 id="simulation">Simulation</h3>
 <p>After one step of simulation centered at a black node $u$, the labeling of the 
@@ -136,9 +142,10 @@ By definition $P_u$ is included in $(w+b)^{\Delta}$.</p>
 
 <h3 id="product-and-common-label-property">Product and common label property</h3>
 <p>We now use the key properties to have a better upper bound on $P_u$.
-Thanks to the product property, we know that $P_u\subseteq w(b+w)^{\Delta-1}$. 
-And thanks to the common label property, we know that $P_v$ cannot be 
-$b^{\Delta}$.
+Thanks to the product property, we know that $P_u\subseteq w(b+w)^{\Delta-1}$.
+Now consider a white node $v$, and the set labels given by its black neighbours. 
+Because of the common label property, there must at least one of its edges 
+labeled with $b$, that is $P_v$ cannot be $w^{\Delta}$.
 And well, that’s all we need!</p>
 
 <h3 id="simplification-step">Simplification step</h3>
@@ -149,14 +156,14 @@ labels (not set labels), and this labeling is correct with respect to the black
 language. In other words, after simplification, we have a polynomial $\hat{P_u}$, 
 that is a monomial, and $\hat{P_u}\subseteq L_B$.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
 But what about the white nodes?
-We know from the previous section that $P_v$ was not $b^{\Delta}$, thus 
-$\hat{P_v}$ is not $b^{\Delta}$ either, thus $\hat{P_v}\subseteq L_W$.</p>
+We know from the previous section that $P_v$ was not $w^{\Delta}$, thus 
+$\hat{P_v}$ is not $w^{\Delta}$ either, thus $\hat{P_v}\subseteq L_W$.</p>
 
 <p>Thus we have a new labeling, for the exact same language, in one less round!</p>
 
 <h2 id="lower-bound">Lower bound</h2>
 
-<p>The same reasoning would work for the white nodes as well. 
+<p>The same reasoning would work if we center the analysis on the white nodes. 
 This means that from any $T$-round algorithm for sinkless orientation, we get 
 down to a 0-round algorithm for sinkless orientation. 
 And sinkless orientation is not a trivial language.</p>

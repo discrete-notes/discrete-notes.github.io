@@ -5,7 +5,7 @@ redirect_from: "/2019/03/26/lightning/"
 permalink: lightning
 ---
 
-I rencentely stumbled on [this video](https://www.youtube.com/watch?v=nBYZpsbu9ds)
+I recently stumbled on [this video](https://www.youtube.com/watch?v=nBYZpsbu9ds)
 of lightning. I knew that lightning kind of "search for the good way", but 
 I was stunned by how it looks like the run of a search algorithm: exploration 
 phases, backtracking, compromise between depth and breadth etc.

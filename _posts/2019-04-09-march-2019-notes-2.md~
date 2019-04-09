@@ -159,10 +159,10 @@ polygonal line up to small stuff".
 
 ![](assets/uhlenbeck.png){: .center-image height="200px"}
 
-The reason why it fails is all the nasty functions, fractals, and other monsters 
+The reason why it fails is all the nasty functions (fractals and other monsters) 
 that ruin the last step.
 
-## SIGACT news, year and conference reviews
+## SIGACT news, year and conference reviews
 
 I was surprised to receive SIGACT news at home, and then remembered than I had 
 registered to ACM for FOCS. It is first time I glance at SIGACT news, as I don't

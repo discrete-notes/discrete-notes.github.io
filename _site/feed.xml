@@ -7,8 +7,238 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>March notes II.</title>
+        <description>&lt;p&gt;Second set of notes for March 2019.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/pivoines.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;a-pair-of-distributed-computing-talks&quot;&gt;A pair of distributed computing talks&lt;/h2&gt;
+
+&lt;p&gt;We had a couple of distributed computing talks this month. Here are a few words 
+about the concepts involved.&lt;/p&gt;
+
+&lt;h3 id=&quot;beeping-model&quot;&gt;Beeping model&lt;/h3&gt;
+&lt;p&gt;The &lt;em&gt;beeping model&lt;/em&gt; is a very weak model of distributed network computing.
+In this model, the nodes of the network communicate by beeping. 
+At each round, a node decides to beep or not. 
+And a node can receive only one information: either someone in the neighborhood 
+has beeped, or not. 
+One cannot know how many nodes beeped. 
+In particular, if the node chooses	 to beep, then it cannot know if another node 
+has beeped.&lt;/p&gt;
+
+&lt;p&gt;The beeping is used to model primitive communication, for example between cells.
+The surprising point is that you can actually do things in this model !
+For example compute a maximal independent set 
+(see &lt;a href=&quot;http://www.cs.tau.ac.il/~afek/MISdisc.pdf&quot;&gt;this paper&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h3 id=&quot;superimposed-codes&quot;&gt;Superimposed codes&lt;/h3&gt;
+
+&lt;p&gt;Beeps are binary information, thus to transmit more than one bit, nodes have to 
+encode information into sequences of beeps. 
+The problem is that a node may receive beeps from several neighbors, and a 
+priori cannot know if beeps it heard form a single sequence, or if it is a 
+mix of several sequences.&lt;/p&gt;
+
+&lt;p&gt;A nice tool to solve that is &lt;em&gt;superimposed codes&lt;/em&gt;: these codes are such that if one superimpose 
+them (that is, perform a bit-wise OR), one can still decode the different words. 
+In other words any sequence can be decomposed uniquely into several code words.&lt;/p&gt;
+
+&lt;p&gt;It seems that these codes were already used for punched-cards…&lt;/p&gt;
+
+&lt;h3 id=&quot;fixing-blocking-edges-in-stable-marriage&quot;&gt;Fixing blocking edges in stable marriage&lt;/h3&gt;
+
+&lt;p&gt;A marriage (or bipartite matching) is a matching in a balanced 
+bipartite graph, where every node is has a preference list. 
+It is &lt;em&gt;&lt;a href=&quot;Stable marriage problem&quot;&gt;stable&lt;/a&gt;&lt;/em&gt; if not two participants would prefer to 
+be matched together instead of their current matching (such a pair is called a 
+&lt;em&gt;blocking edge&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Gale and Shapley designed a well-known algorithm to compute such a marriage. 
+But it starts from an empty solution. Suppose you want to start from a non-stable
+solution and improve it step by step, for example because you are designing a
+self-stabilizing algorithm. This is not easy.&lt;/p&gt;
+
+&lt;p&gt;In the following example, 
+attributed to &lt;a href=&quot;https://en.wikipedia.org/wiki/Donald_Knuth&quot;&gt;Knuth&lt;/a&gt;, 
+we start on the left from 
+a solution that is unstable (the blocking pair is in red), and solve this pair 
+on the right picture, and then iterate the procedure. Unfortunately, at the end 
+of the procedure, we are back to the first instance!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/mariages.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;700px&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;privacy-in-stable-marriage&quot;&gt;Privacy in stable marriage&lt;/h3&gt;
+
+&lt;p&gt;The classic centralized algorithms for stable marriage use the full list of 
+preferences, that is there is no privacy for the participants. 
+For distributed algorithms, it makes sense to try to minimize the amount of 
+information the participants have to share to solve the task.
+For example the algorithm presented in the talk uses little information 
+(e.g. “this player is already
+matched to someone higher in his/her list”).&lt;/p&gt;
+
+&lt;p&gt;[The talks were by 
+&lt;a href=&quot;https://sites.google.com/view/dufoulon/accueil&quot;&gt;Fabien Dufoulon&lt;/a&gt; and 
+&lt;a href=&quot;https://www.lri.fr/~laveau/&quot;&gt;Marie Laveau&lt;/a&gt;, 
+both PhD students in Paris-Sud University.
+Fabien told us about his new (not yet public) result in the beeping model, 
+using a variant of superimposed codes. 
+Marie told us about her result on self-stabilizing 
+stable matching. 
+It is &lt;a href=&quot;https://hal.archives-ouvertes.fr/hal-01576055/document&quot;&gt;this paper&lt;/a&gt;.]&lt;/p&gt;
+
+&lt;h2 id=&quot;different-techniques-for-different-regimes-in-rockets-and-algorithms&quot;&gt;Different techniques for different regimes (in rockets and algorithms)&lt;/h2&gt;
+
+&lt;p&gt;I discovered recently that the flames of different space rockets have different 
+colors, partly because they use different mix of fuels.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/rockets.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;550px&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;Space shuttle (yellowish flames) and Soyouz (pinkish flames).&lt;/p&gt;
+
+&lt;p&gt;This was surprising to me, as I would naively think that there must be a solution 
+that is considered “the best to push stuff upward”, and that everybody would use it.&lt;/p&gt;
+
+&lt;p&gt;But I guess different regimes (how much you want to lift, at which speed etc.) 
+ask for different solutions. 
+In the world of algorithms, it is similar to the following scenario.
+Say you want an algorithm for instances that depend on two parameters $n$ and 
+$k$. Then you may use different technique for different regimes. 
+For example, expressing $k$ as a function of $n$, you could have: for constant 
+$k$ do brute-force, for logarithmic $k$ do some divide and conquer, for 
+$k$ around $\sqrt{n}$ do dynamic programming, etc.&lt;/p&gt;
+
+&lt;p&gt;I wonder if we have such examples with many different regimes asking for many 
+different solutions. 
+In distributed graph algorithms, an example is coloring 
+(and similar problems) where for 
+bounded degree and unbounded degree you have completely different techniques.&lt;/p&gt;
+
+&lt;p&gt;For the related question of problems (with one parameter) having many different 
+equally good solutions, I see $O(\log n)$-approximation of 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Set_cover_problem&quot;&gt;Set-Cover&lt;/a&gt;, for which you can 
+basically use all the standard tools of approximation: greedy, LP-rounding, 
+primal-dual etc.&lt;/p&gt;
+
+&lt;p&gt;[I semi-randomly stumbled on 
+&lt;a href=&quot;https://www.youtube.com/watch?v=EO_gwxon764&quot;&gt;this video&lt;/a&gt; (or more precisely 
+the French-speaking version of it) that explains a lot of stuff about rockets 
+flames. 
+For example why one can see the kind of patterns below in rocket flames 
+(it’s actually in the second part of the video).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/shock-diamonds.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;170px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;These are called &lt;a href=&quot;https://en.wikipedia.org/wiki/Shock_diamond&quot;&gt;Mach disks&lt;/a&gt; or 
+shock diamonds, and come from the fact that the flames expand when they get 
+out of the engine, but because the outside pressure is higher, it is then 
+recompressed, it heats up again, and then again 
+expands etc. Maybe there is a discrete analogue for this too (convergence by 
+oscillations?).]&lt;/p&gt;
+
+&lt;h2 id=&quot;abel-prize-and-limitations-of-the-discrete-approach&quot;&gt;Abel prize and limitations of the discrete approach&lt;/h2&gt;
+
+&lt;p&gt;Lipton and Regan 
+&lt;a href=&quot;https://rjlipton.wordpress.com/2019/03/21/the-shortest-path-to-the-abel-prize/&quot;&gt;blog about&lt;/a&gt; 
+the new Abel prize recipient, 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Karen_Uhlenbeck&quot;&gt;Karen Uhlenbeck&lt;/a&gt;, or actually about
+her research. They take the interesting approach of first trying to solve a 
+problem with a discrete natural approach, and then to show how it fails, and how 
+analysis in the style of Uhlenbeck’s research solves the problem.&lt;/p&gt;
+
+&lt;p&gt;The question is simply to prove that in the plane the shortest path between two 
+points is a straight line. The natural discrete approach is to consider 
+polygonal lines, to prove the statement by induction (on the picture below the 
+blue line is better by triangle inequality), and then to say “every curve is 
+polygonal line up to small stuff”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/uhlenbeck.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;200px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The reason why it fails is all the nasty functions (fractals and other monsters) 
+that ruin the last step.&lt;/p&gt;
+
+&lt;h2 id=&quot;sigact-news-year-and-conference-reviews&quot;&gt; SIGACT news, year and conference reviews&lt;/h2&gt;
+
+&lt;p&gt;I was surprised to receive SIGACT news at home, and then remembered than I had 
+registered to ACM for FOCS. It is first time I glance at SIGACT news, as I don’t
+have access to it online.&lt;/p&gt;
+
+&lt;p&gt;I was especially interested in the online algorithm review. 
+For the first issue of the year, the author, 
+&lt;a href=&quot;https://www.uni-siegen.de/fb6/aan/optimierung/mitarbeiter/vanstee/?lang=d&quot;&gt;Rob van Stee&lt;/a&gt;, 
+does a review of the key results of 2018 in his area. 
+This is very nice format, that gives a higher perspective on a field.&lt;/p&gt;
+
+&lt;p&gt;A more classic format is the review of a conference. In my experience, this is 
+less useful, because (1) one cannot be knowledgeable about every topic in a 
+conference, (2) one tries to be quite exhaustive ; consequently 
+the review often ends up being a list of small, not very informative
+sentences about many many papers.&lt;/p&gt;
+
+&lt;p&gt;[By the way, it’s sad that SIGACT News is not open-access.]&lt;/p&gt;
+
+&lt;h2 id=&quot;point5-and-conference-travel&quot;&gt;1point5 and conference travel&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Le_Monde&quot;&gt;Le Monde&lt;/a&gt;, one of the major French 
+newpapers, published 
+&lt;a href=&quot;https://labos1point5.org/&quot;&gt;the letter of the “1point5” group&lt;/a&gt;. 
+This name comes from the objective of keeping global warming
+upper bounded by 1.5 degree Celsius. The collective is interested in the impact of 
+research on climate. They basically argue that research should be made 
+differently to reduce its impact on the planet.&lt;/p&gt;
+
+&lt;p&gt;I have been thinking about this for a while. 
+It happened to me several times to go 
+to a conference, and think it was not worth the kerosene. 
+Conferences are often nice moments, you indeed learn stuff and make new projects,
+but it’s difficult to argue that this is as convincing as the following picture.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/histogram-CO2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The precise numbers can be discussed, but I got them from very reliable sources,
+and everywhere you will find numbers in the same ballpark.&lt;/p&gt;
+
+&lt;p&gt;In the long term, we can hope to make conferences less numerous, more efficient, 
+more local. But in the short, term it seems that the only solution is to avoid 
+submitting to far away conferences. Obviously this is a very broad topic…&lt;/p&gt;
+
+&lt;h2 id=&quot;place-in-a-queue&quot;&gt;Place in a queue&lt;/h2&gt;
+
+&lt;p&gt;I recently went to a doctor who does not take appointments, thus people wait. 
+The rule is “first-in first-cured” and people have to remember when it’s their 
+turn.
+It is usually fine, but sometimes, maybe by mistake, maybe by slyness, people 
+disagree. 
+I noticed that people in the room have somehow random sampling of the 
+order, e.g. “I arrived before this person, that person was here before, these two 
+I don’t know”.&lt;/p&gt;
+
+&lt;p&gt;You get diagrams like this one (with some inconsistencies):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/queue-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Making this into a linear order has a feedback-arcset flavor.&lt;/p&gt;
+
+&lt;p&gt;In other countries, I noticed that people, when they arrive say to a restaurant,
+ask “who is the latest arrived?”, which gives a simpler picture:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/queue-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But maybe it’s less robust to slyness..?&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 09 Apr 2019 00:00:00 +0200</pubDate>
+        <link>https://discrete-notes.github.io///march-2019-notes-2</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///march-2019-notes-2</guid>
+      </item>
+    
+      <item>
         <title>Lightning and search algorithms</title>
-        <description>&lt;p&gt;I rencentely stumbled on &lt;a href=&quot;https://www.youtube.com/watch?v=nBYZpsbu9ds&quot;&gt;this video&lt;/a&gt;
+        <description>&lt;p&gt;I recently stumbled on &lt;a href=&quot;https://www.youtube.com/watch?v=nBYZpsbu9ds&quot;&gt;this video&lt;/a&gt;
 of lightning. I knew that lightning kind of “search for the good way”, but 
 I was stunned by how it looks like the run of a search algorithm: exploration 
 phases, backtracking, compromise between depth and breadth etc.
@@ -1287,84 +1517,6 @@ about this topic.&lt;/p&gt;
         <pubDate>Wed, 30 Jan 2019 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///january-2019-notes</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///january-2019-notes</guid>
-      </item>
-    
-      <item>
-        <title>October batch, forgotten notions</title>
-        <description>&lt;p&gt;&lt;img src=&quot;assets/arbre-bw.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I saw many talks in October and I plan to blog a bit about those in some 
-posts to come. This first post is about some notions a somehow knew but couldn’t 
-really define.&lt;/p&gt;
-
-&lt;h2 id=&quot;epsilon-nets&quot;&gt;$\epsilon$-nets&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/%CE%95-net_(computational_geometry)&quot;&gt;$\epsilon$-nets&lt;/a&gt; 
-are often appear in computational geometry. Consider a set of points $X$ in 
-a geometric space, and a collection $C$ of subsets of $X$ (for example you have 
-a collection of balls, then it defines the collection of subsets of $X$: the 
-points contained in each ball). 
-Now you are given an $\epsilon\in [0,1]$. 
-An $\epsilon$-net $E$ is a subset of $X$, such that for every element $c$ of $C$ 
-that is large enough, $c$ contains an element of $X$, and large enough means: 
-&lt;script type=&quot;math/tex&quot;&gt;\frac{|c|}{|X|}\geq \epsilon.&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;As one can imagine this is a useful tool to build approximation algorithm, as 
-one may be able to focus on the net, that is hopefully much smaller than $X$.&lt;/p&gt;
-
-&lt;p&gt;The concept is related to the 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Vapnik%E2%80%93Chervonenkis_dimension&quot;&gt;VC dimension&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;A nice introduction with a chocolate-consumer example can be found 
-&lt;a href=&quot;https://www.ti.inf.ethz.ch/ew/lehre/CG12/lecture/Chapter%2015.pdf&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;ptas-qptas-etc&quot;&gt;PTAS, QPTAS etc.&lt;/h2&gt;
-
-&lt;p&gt;A small list of the accronyms for approximation schemes (PTAS is fine for me, 
-but after that…):&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Polynomial-time_approximation_scheme&quot;&gt;PTAS&lt;/a&gt;, 
-polynomial-time approximation scheme: for every $\epsilon$, you get 
-approximation $(1+\epsilon)$, in polynomial time. That is when you fix 
-$\epsilon$ you get a polynomial in $n$. Typically you have time complexity 
-$f(\epsilon)\times n^{g(\epsilon)}$, 
-where $f$ and $g$ can be arbitrarily bad.&lt;/li&gt;
-  &lt;li&gt;EPTAS, for efficient-PTAS: here the exponent should not depend on $\epsilon$. 
-With the example above, $g$ is a constant, and $f$ can still be arbitrary.&lt;/li&gt;
-  &lt;li&gt;FPTAS, for fully-PTAS: the algorithm is polynomial in both $n$ and $1/\epsilon$.
-Typically, $g$ is a constant, and $f$ a polynomial in $1/\epsilon$.&lt;/li&gt;
-  &lt;li&gt;QPTAS, quasi-polynomial-time approximation scheme: this is worse than PTAS, 
-because you allow that even for a fixed $\epsilon$ the complexity is only
-quasi-polynomial, for example some $n^{\log n}$.&lt;/li&gt;
-  &lt;li&gt;PRAS, EPRAS, FPRAS: the same as PTAS, EPTAS, FPTAS, but randomized (the result 
-has to be a correct approximation with high probability).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;(Both this section and the previous one originate from the talk of 
-&lt;a href=&quot;https://www.lamsade.dauphine.fr/~bonnet/&quot;&gt;Edouard Bonnet&lt;/a&gt; for the paper 
-&lt;em&gt;&lt;a href=&quot;http://ieee-focs.org/FOCS-2018-Papers/pdfs/59f568.pdf&quot;&gt;EPTAS for Max Clique on Disks and Unit Balls&lt;/a&gt;&lt;/em&gt; 
-at FOCS 2018.)&lt;/p&gt;
-
-&lt;h2 id=&quot;doubling-dimension&quot;&gt;Doubling dimension&lt;/h2&gt;
-
-&lt;p&gt;A lot of recent papers prove nice results in doubling metrics. The &lt;a href=&quot;https://en.wikipedia.org/wiki/Doubling_space&quot;&gt;doubling 
-dimension&lt;/a&gt; 
-of a metric space is the smallest positive $k$ such that every ball of 
-the space can be covered by $2^k$ balls of half the radius. You can think of 
-the plane, and show that you can cover a ball of radius 1, with 7 balls of 
-radius 1/2, which gives doubling dimension 3. More generally for the euclidian 
-space $R^d$, the doubling dimension is known to be in $O(d)$. Thus bounded 
-doubling dimension is a natural generalization of bounded dimension.&lt;/p&gt;
-
-&lt;p&gt;(The notion appears for example in &lt;em&gt;&lt;a href=&quot;http://ieee-focs.org/FOCS-2018-Papers/pdfs/59f814.pdf&quot;&gt;$ε$-Coresets for Clustering (with Outliers) 
-in Doubling Metrics&lt;/a&gt;&lt;/em&gt; also 
-presented at FOCS.)&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 24 Jan 2019 00:00:00 +0100</pubDate>
-        <link>https://discrete-notes.github.io///october-batch-forgotten</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///october-batch-forgotten</guid>
       </item>
     
   </channel>

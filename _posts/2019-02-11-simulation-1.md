@@ -52,8 +52,10 @@ at the
 ## Overview of the simulation argument
 
 The core question of the simulation argument is the following. 
-Suppose that in time $T$ you can solve a problem. Then what can you solve 
-if you have only $T-1$ rounds? 
+Suppose that in time $T$ you can solve a problem. 
+Then what can you solve if you have only $T-1$ rounds? 
+For example, if you can solve coloring with $c$ colors in $T$ rounds, can you 
+solve coloring with $2^c$ colors (which is easier) is $T-1$ rounds?
 For lower bounds, the basic line of reasoning is the following. 
 
 ### Base step: 0 rounds
@@ -124,7 +126,7 @@ simpler, typically simple labels. For example you decide that every set of label
 {$a,b$} is replaced by $a$. For this step to be useful you need that:
  
 * one can compute the simplification without further communication (e.g. no 
-synchronization with neighbours)
+synchronization with neighbors)
 * the new labels fit into a language that has good properties, in particular, it 
 is not trivial.
 
@@ -132,5 +134,5 @@ is not trivial.
 
 [^1]: The simulation argument appears more clearly in the [modern version of the proof](https://users.ics.aalto.fi/suomela/doc/linial-easy.pdf)
 
-[^2]: There is an soon coming note by [Sebastian Brandt](https://disco.ethz.ch/alumni/brandts) that formalizes precisely the approach.
+[^2]: See [this recent note](https://arxiv.org/abs/1902.09958) by [Sebastian Brandt](https://disco.ethz.ch/alumni/brandts) that formalizes precisely the approach.
 

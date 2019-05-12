@@ -41,3 +41,5 @@ name: Discrete notes
 description: Blog
 url: https://discrete-notes.github.io/
 
+plugins:
+  - jekyll-feed

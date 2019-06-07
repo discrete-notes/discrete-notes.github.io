@@ -50,11 +50,11 @@ After one step of simulation centered at a black node $u$, the labeling of the
 edges adjacent to $u$ is described by a factorized polynomial $P_u$. 
 By definition $P_u$ is included in $(w+b)^{\Delta}$. 
 
-### Product and common label property
+### Product and consistency property
 We now use the key properties to have a better upper bound on $P_u$.
 Thanks to the product property, we know that $P_u\subseteq w(b+w)^{\Delta-1}$.
 Now consider a white node $v$, and the set labels given by its black neighbours. 
-Because of the common label property, there must at least one of its edges 
+Because of the consistency property, there must at least one of its edges 
 labeled with $b$, that is $P_v$ cannot be $w^{\Delta}$.
 And well, that's all we need!
 

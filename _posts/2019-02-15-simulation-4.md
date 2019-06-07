@@ -125,6 +125,12 @@ smarter. In particular you need that, after the transformation, the language is
 different. Basically there should be a parameter that starts with something like 
 $\Delta$ and decreases at each transformation. 
 For that, see [the paper](https://arxiv.org/abs/1901.02441)!
+
+-------
+
+Thanks to 
+[Mikaêl Rabie](https://www.lix.polytechnique.fr/~mrabie/) 
+for reading and improving this series of posts!
  
 
 

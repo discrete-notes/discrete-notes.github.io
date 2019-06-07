@@ -15,7 +15,8 @@ This is the second post of a series that starts
 ---
 
 In the previous post, we saw an overview of the simulation technique. 
-In this post, we are going to see a more precise and usable approach, for the case edge 
+In this post, we are going to see a more precise and usable approach, for the 
+case of edge 
 labelings on 2-colored regular trees. 
 
 The explanation differs a bit from the 
@@ -68,8 +69,8 @@ silly.)
 
 Most problems we are usually interested in are defined in general graphs, not in 
 bipartite graphs, thus the problem does not refer to a coloring. 
-Hence one could expect the constraints on white nodes and black nodes to be the same, 
-unlike in the example above. 
+Hence one could expect the constraints on white nodes and black nodes to be the 
+same, unlike in the example above. 
 Actually, it is often useful to make them different (we'll see that in the two 
 next posts).
 
@@ -86,8 +87,9 @@ One can now express the toy problem above in terms of two polynomials:
 * $L_W(a,b,c)=a^2c^{\Delta-2}+a^3b^{\Delta-3}$
 * $L_B(a,b,c)=abc(a+b+c)^{\Delta-3}$
 
-We denote $P \subseteq P'$ the fact that the monomials of $P$ are all 
-present in $P'$. Then the labeling of $u$ is correct for problem $\Pi$, if and only if, 
+For two polynomials $P$ and $'$, let us denote by $P \subseteq P'$, the fact 
+that the monomials of $P$ are all present in $P'$. 
+Then the labeling of $u$ is correct for problem $\Pi$, if and only if, 
 $M_u \subseteq L_{C(u)}$ (where $C(u)$ is the color of $u$).
 
 Note that, in our example, all the polynomials we play with have three variables, 
@@ -103,20 +105,21 @@ at distance $T$, and labeling edges with all the labels that could be correct
 in one of these extensions. 
 
 Now let us restate this in terms of polynomials. 
-After the simulation, every edge is labeled with a set of labels, that can be 
-transfered to a sum of labels for polynomials. 
+After the simulation, every edge is labeled with a set of labels. 
+In term of polynomial, we represent such a set by a sum. 
 Then the polynomial associated with a set labeling at a node $u$ could be for 
 example $P_u=(a+b)^3(a+b+c)^4c^{\Delta-7}$, which means that three edges are 
 labeled with $a$ and $b$, four edges are labeled with $a$, $b$ and $c$ and the 
 rest is labeled with only $c$. 
 (This polynomial would not work for our toy language as we will see later). 
 
-Note that the polynomial we get for a set labeling is not a monomial in general, 
-but it is nevertheless in a factorized form. 
+Note that the polynomial corresponding to set labeling is not a monomial in 
+general, for example $P_u$ is not.
+But this polynomial is nevertheless in a factorized form. 
 
 ### Simulation for 2-colored trees
-For 2-colored trees we can be more specific in the description of the simulation 
-(and actually we will change the simulation outline a bit too).
+For 2-colored trees, we can be more specific in the description of the simulation 
+(and actually we will change the simulation outline a bit).
 
 We have a white algorithm in time $T$, and we want a black algorithm 
 in time $T-1$ (this will be our setting until the end of the post). 
@@ -133,7 +136,7 @@ thing to imagine for the extension is the port-number assignment.
 
 ### Independence
 The key point here is the following: the $T$-view of a white 
-neighbour $v$ of $u$ consists of: 
+neighbor $v$ of $u$ consists of: 
 (1) the $(T-1)$-view of $u$, and 
 (2) the extension of this view *in the direction of $v$*. 
 In the following picture, this means that this view includes only the 
@@ -151,7 +154,8 @@ with its "own" extension.
 
 ## Two key properties
 
-There are two key properties about the set labelings given by the simulation. 
+We now describe two properties of set labelings coming from simulations, 
+that will be essential for deriving lower bounds.
 
 ### Product property
 This property is about the neighborhood of the black nodes. 
@@ -184,29 +188,24 @@ $P_u \subseteq L_B$.
 This means that every monomial of $P_u$ has to be a monomial of $L_B$, which is
 just a reformulation of the claim above. 
 
+### Consistency property
 
-### Common label property
-
-This property is for the neighborhoods of the white nodes. 
-It is not as powerful as the previous ones, but sometimes it can be crucial.
-
-Consider a white node $w$ and two black neighbors $v_1$ and $v_2$. 
-The black node $v_1$ is mostly interested in the edge $(w,v_1)$ 
-(and not $(w,v_2)$), because it is the edge that matters for the product 
-property, and the edge for which it is somehow "responsible". 
-But when it simulates the white algorithm on $w$, it also labels virtually 
-$(w,v_2)$. 
-This is getting dangerous, because the set labeling that $v_1$ and $v_2$ give to 
-$(w,v_2)$ are different in general.
-But they are a bit related, by the following property:
+Note that after simulation, the edges around a white node have been (set) labeled
+by different black nodes. Thus a priori there is not much to say about the 
+relations between these set labelings, they can be very uncorrelated. 
+Nevertheless, there exists one relation.
 
 *Claim:*
-Take a white node $w$.
-For each edge around $w$, all the black neighbors agree on at least one label. 
-That is for each edge, there is a label that is in all set labels. 
+Consider a set labeling around a white node after simulation. One can select one 
+label per edge, such that the labeling is correct for the language $L_W$.
 
-This label is simply the one that the white node would give if it were running  
-the $T$-round algorithm on the real graph (not a simulated one).
+*Proof:*
+Consider the original white algorithm in time $T$, and run it on the graph.
+The resulting labeling is correct for both black and white nodes.
+We claim that after the simulation, on every edge the set of labels contains the 
+label given by this $T$-round white algorithm. Indeed, one of the extension 
+imagined by the black node is the real extension, thus the corresponding label 
+appears in the set. Thus the claim.
 
 ## Typical transformation step
 
@@ -220,7 +219,8 @@ $(a+b+c)^{\Delta}$.
 But this is a very rough over-approximation, and $P_u$ is probably much smaller. 
 Then one can use the two key properties to rule out many labelings and have a 
 more precise idea of what $P_u$ is. 
-Once this is done, we can go for a simplification step: replace sets of labels by labels. 
+Once this is done, we can go for a simplification step: replace sets of labels 
+by simple labels. 
 If everything works fine you have a labeling that is correct for your problem 
 $\Pi'$.
 
@@ -228,8 +228,7 @@ $\Pi'$.
 ## Subtleties
 There are two subtleties that blocked me at some point.
 
-The first one is this danger I warned you about in the common label property 
-section: an edge is labeled differently in different simulations.
+The first one is that a black node set-labels the edges adjacent to it. But it could also 
 
 The second is that in this 2-colored framework, it is not enough to have a 
 general way to 

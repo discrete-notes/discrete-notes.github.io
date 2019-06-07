@@ -50,7 +50,7 @@ After one step of simulation centered at a black node $u$, the labeling of the
 edges adjacent to $u$ is described by a factorized polynomial $P_u$. 
 By definition $P_u$ is included in $(w+b)^{\Delta}$. 
 
-### Product and common label property
+### Product and consistency property
 We now use the key properties to have a better upper bound on $P_u$.
 Thanks to the product property, we know that $P_u\subseteq w(b+w)^{\Delta-1}$.
 Now consider a white node $v$, and the set labels given by its black neighbours. 
@@ -73,7 +73,7 @@ Thus we have a new labeling, for the exact same language, in one less round!
 
 ## Lower bound
 
-The same reasoning would work if we center the analysis on the white node. 
+The same reasoning would work if we center the analysis on the white nodes. 
 This means that from any $T$-round algorithm for sinkless orientation, we get 
 down to a 0-round algorithm for sinkless orientation. 
 And sinkless orientation is not a trivial language.

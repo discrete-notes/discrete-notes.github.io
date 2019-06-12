@@ -190,22 +190,24 @@ just a reformulation of the claim above.
 
 ### Consistency property
 
-Note that after simulation, the edges around a white node have been (set) labeled
-by different black nodes. Thus a priori there is not much to say about the 
-relations between these set labelings, they can be very uncorrelated. 
-Nevertheless, there exists one relation.
+Note that during the simulation, different edges around a white node have been 
+labeled by different black nodes. Thus, a priori, the set labels on these edges 
+are rather uncorrelated: they come from different simulations, based on different 
+view of the graph. 
+Nevertheless, there exists one relation betweens these sets.
 
 *Claim:*
-Consider a set labeling around a white node after simulation. One can select one 
-label per edge, such that the labeling is correct for the language $L_W$.
+Consider a set labeling around a white node after simulation. For each edge one 
+can select a label in the set, such that the resulting labeling around the white
+node is correct for the language $L_W$.
 
 *Proof:*
 Consider the original white algorithm in time $T$, and run it on the graph.
 The resulting labeling is correct for both black and white nodes.
-We claim that after the simulation, on every edge the set of labels contains the 
+We claim that after the simulation, on every edge, the set of labels contains the 
 label given by this $T$-round white algorithm. Indeed, one of the extension 
-imagined by the black node is the real extension, thus the corresponding label 
-appears in the set. Thus the claim.
+imagined by the black node for simulation is the real extension, therefore 
+the corresponding label appears in the set. Thus the claim.
 
 ## Typical transformation step
 
@@ -224,14 +226,17 @@ by simple labels.
 If everything works fine you have a labeling that is correct for your problem 
 $\Pi'$.
 
+Choosing the problems $\Pi$, $\Pi'$ etc., and designing the right simplification 
+steps is the core of a proof by simulation.
+
 
 ## Subtleties
 There are two subtleties that blocked me at some point.
 
-The first one is that a black node set-labels the edges adjacent to it. But it 
-somehow also get information about edges at distance 2. It seems dangerous and 
-confusing to consider this further simulation, one should care only about the 
-edges adjacent to the node. 
+The first one is that the simulation performed by different nodes have to be 
+handled carefully. For example, one could try to use the simulation to set-label
+more edges basically all the edges around a white node). This is very dangerous, 
+and it seems much better to focus only on the edges around the black node at hand.
 
 The second is that in this 2-colored framework, it is not enough to have a 
 general way to 

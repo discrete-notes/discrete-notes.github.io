@@ -193,8 +193,8 @@ just a reformulation of the claim above.
 Note that during the simulation, different edges around a white node have been 
 labeled by different black nodes. Thus, a priori, the set labels on these edges 
 are rather uncorrelated: they come from different simulations, based on different 
-view of the graph. 
-Nevertheless, there exists one relation betweens these sets.
+local views of the graph. 
+Nevertheless, there exists a relation between these sets.
 
 *Claim:*
 Consider a set labeling around a white node after simulation. For each edge one 
@@ -233,10 +233,10 @@ steps is the core of a proof by simulation.
 ## Subtleties
 There are two subtleties that blocked me at some point.
 
-The first one is that a black node set-labels the edges adjacent to it. But it 
-somehow also get information about edges at distance 2. It seems dangerous and 
-confusing to consider this further simulation, one should care only about the 
-edges adjacent to the node. 
+The first one is that the simulation performed by different nodes have to be 
+handled carefully. For example, one could try to use the simulation to set-label
+more edges basically all the edges around a white node). This is very dangerous, 
+and it seems much better to focus only on the edges around the black node at hand.
 
 The second is that in this 2-colored framework, it is not enough to have a 
 general way to 

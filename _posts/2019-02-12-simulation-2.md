@@ -194,7 +194,7 @@ Note that during the simulation, different edges around a white node have been
 labeled by different black nodes. Thus, a priori, the set labels on these edges 
 are rather uncorrelated: they come from different simulations, based on different 
 local views of the graph. 
-Nevertheless, the following claims says something about the set labels around a 
+Nevertheless, the following claim says something about the set labels around a 
 white node.
 
 *Claim:*

@@ -87,134 +87,303 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/natural-history">
-        Algorithms and natural history
+      <a href="/april-may-2019-notes">
+        April-May notes
       </a>
     </h1>
 
-    <span class="post-date">09 May 2019</span>
+    <span class="post-date">23 May 2019</span>
 
-    <p>Until recently there was in Paris an exhibition about some techniques used for 
-research in natural history.
-It raises some algorithmic questions and comments about bones, diamonds and 
-polytopes.
-(More details about this great exhibition at the end of the post.)</p>
+    <p>Some deadlines disturbed the schedule of the monthly notes ; this post is for 
+both April and May.</p>
+
+<p><img src="assets/table.png" alt="" class="center-image" height="700px" /></p>
 
 <hr />
-<p><img src="assets/grenouille.png" alt="" class="center-image" height="400px" /></p>
-<p align="center"><small><i>Researchers measure the teeth of the tadpoles this frog 
-species, and learn stuff.</i></small></p>
-<hr />
 
-<h2 id="computing-skull-volumes">Computing (skull) volumes</h2>
+<h2 id="cuckoo-cycles">Cuckoo cycles</h2>
 
-<p><img src="assets/crane.png" alt="" class="center-image" height="300px" /></p>
+<p>A 
+<a href="https://blog.computationalcomplexity.org/2019/04/cuckoo-cycles.html">guest post</a> 
+by John Tromp, on the Computational Complexity blog, is about the cuckoo cycle 
+problem.</p>
 
-<p>When you get a skull, something you want to measure is how much brain you can 
-fit in, that is, what is its inside volume.
-This used to be done by filling the skull with some kind of grains, and then 
-measuring the volume of grain. 
-It is now done by with sensor measurements and computations. 
-But if I give you some triangulation of an object, how do you compute the volume?
-If you assume the object to be convex, then one can surely do some kind of discrete 
-integrals, suming some basic polytope volumes. 
-<a href="https://www.ams.org/journals/mcom/1991-57-195/S0025-5718-1991-1079024-2/S0025-5718-1991-1079024-2.pdf">This paper</a> 
-(or more precisely its introduction) seems to validate this intuition. 
-It also raises the question about how the object to measure is given.</p>
+<p>Basically there are some crypto-currencies, where the 
+<a href="https://en.wikipedia.org/wiki/Proof-of-work_system">proof-of-work</a> consists in 
+finding cycles in a huge graph. 
+This graph is the cuckoo graph, whose edges are defined by the hash function of 
+the <a href="https://en.wikipedia.org/wiki/Cuckoo_hashing">cuckoo hashing</a>. 
+The post describes briefly the method used by the miners for this problem.</p>
 
-<p>This made me remember that some price was awarded for something related to 
-volume computation. 
-I dug out the reference: 1991 
-<a href="https://en.wikipedia.org/wiki/Fulkerson_Prize">Fulkerson prize</a> was awarded to 
-Dyer, Frieze and Kannan for works of this flavour.
-Their model is black-box: you ask for a point and you are answered whether it is 
-inside or outside. 
-They provide a randomized PTAS<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> for approximating
-the volume of high-dimensional polytopes using 
-<a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo">Markov chain Monte Carlo</a> 
-methods. 
-As many counting problems can be rephrased in terms of polytopes, this is much 
-more useful than just computing high-dimensional skull volumes.
-For a bit more on this, see 
-<a href="https://en.wikipedia.org/wiki/Convex_volume_approximation">this wikipedia page</a>.</p>
+<p>Interesting to see a theoretical problem tackled in very practical way.</p>
 
-<h2 id="inclusions-ofdiamonds-and-polytopes">Inclusions of diamonds and polytopes</h2>
+<h2 id="pcp-videos">PCP videos</h2>
 
-<p><img src="assets/diamant-1.png" alt="" class="center-image" height="400px" /></p>
+<p>At the end of 2018, a workshop took place in Tel Aviv, about the
+<a href="https://en.wikipedia.org/wiki/PCP_theorem">PCP theorem</a> and related topics.
+Great news: the talks have been recorded, and the videos are available on a
+<a href="https://www.youtube.com/playlist?list=PLGRBwz8taWHiBHlgnX98zrbnWQCeDtFQ_">youtube channel</a>.</p>
 
-<p>The diamond above is the <a href="Tavernier Blue">Blue Diamond of the French Crown</a> 
-that Louis XIV bought at some point of the 17th century. 
-Or actually, it’s what it used to look like, because this diamond disappeared. 
-It was suspected that it has been recut and is now the diamond known as the 
-<a href="https://en.wikipedia.org/wiki/Hope_Diamond">Hope diamond</a>.</p>
+<p>I watched <a href="https://en.wikipedia.org/wiki/Ronitt_Rubinfeld">Ronitt Rubinfield</a>’s 
+talk, and it’s very good. She tells the story of checkers and testers. 
+Just a bit to arouse your interest: like many people, I know interactive proofs 
+for difficult problems 
+(isomorphism, satisfiability etc.), but actually testing and interactive proofs 
+have started with things as simple as GCD.</p>
 
-<p>This was presented in the exhibition because the museum in Paris has a lead cast 
-of the original diamond, and used it to validated the link between the two. 
-Basically the two diamonds fit so well one in the other, that is very likely 
-that they are the same with only a light recut.</p>
+<h2 id="graphs-defined-bymatchsticks-pennies-and-hinges">Graphs defined by matchsticks, pennies and hinges.</h2>
 
-<p><img src="assets/diamant-2.png" alt="" class="center-image" height="250px" /></p>
+<p>Here are three types of graphs that have a description in terms of real-world 
+objects.</p>
 
-<p>But how can you decide if two polytopes could be included one in the other?
-And what’s the complexity? (Note that contrary to skulls, diamonds are pretty 
-much polytopes.)</p>
+<p>First, <a href="https://en.wikipedia.org/wiki/Matchstick_graph">matchstick graphs</a> are 
+graphs that you can draw on a table with matchsticks.</p>
 
-<p>First for the decision problem: the two polytopes are somehow aligned and you 
-just want to check the inclusion of one into the other.
-If both polytopes are given by sets of vertices, then some methods similar to
-<a href="https://en.wikipedia.org/wiki/Convex_hull_algorithms">convex hull computations</a> 
-should do the job.</p>
+<p><img src="assets/alumettes.png" alt="" class="center-image" height="300px" /></p>
 
-<p>Now how to find this alignment? For our diamonds, the spikes and planar 
-symmetries surely help. But what if your polytopes are say, 
-very close to spheres, but with random perturbations? Doesn’t seem very easy. 
-This looks similar to some robotics problem, such as the 
-<a href="https://en.wikipedia.org/wiki/Motion_planning">piano mover’s problem</a>, but it’s 
-not quite the same.</p>
+<p>In more precise terms, these are planar
+<a href="https://en.wikipedia.org/wiki/Unit_distance_graph">unit-distance graphs</a>, that 
+is graphs that you can draw on the plane with only (straight) edges of length 1.</p>
 
-<h2 id="symmetrizing-old-bones">Symmetrizing old bones</h2>
+<p>Second, <a href="https://en.wikipedia.org/wiki/Penny_graph">penny graphs</a> are graphs 
+that can be represented by pennies on a table. More precisely, a graph is a 
+penny graph, if it is possible to represent each vertex by a unit disk, and to 
+place the disk in such a way that they touch only at the boundaries, and that 
+each contact represents an edge.</p>
 
-<p><img src="assets/dinosaures.png" alt="" class="center-image" height="350px" /></p>
+<p><img src="assets/pennies.png" alt="" class="center-image" height="300px" /></p>
 
-<p>Yet another problems that one can transfer to polytopes. 
-Here the paleontologists find skulls like the one on the left (I didn’t take 
-notes of the name of this fellow), that has been deformed by non-uniform forces 
-in the ground.
-Then they try to reconstruct the correct shape, like the one on the right.</p>
+<p>Penny graphs are matchsticks graphs but the reverse is not true.</p>
 
-<p>Again if you are a human, if you know a lot about such creatures, it is possible 
-to find a plausible shape by adjusting the parameters of some transformation.
-In particular, you try to have a left-right symmetry.
-But what if I give you an arbitrary triangulation, and tell you: find the best 
-way to modify it in order to have a symmetry?</p>
+<p>Finally consider the following experiment. 
+Take a graph, replace edges by rods and nodes by hinges.
+Now, if when you push on some side, the graph changes shape, then the graph is 
+flexible, otherwise it is 
+<a href="https://en.wikipedia.org/wiki/Structural_rigidity">rigid</a>.
+For example a cube is flexible, and a tetrahedron is rigid.</p>
 
-<p>Could be related to 
-<a href="https://en.wikipedia.org/wiki/Principal_component_analysis">principal component analysis</a>, 
-that gives you some notion of “this object is somehow aligned with this 
-direction”, but again if you have a random near-spherical objects, this does not 
-help you (but in this case, you may be happy with any plane, as an approximation).</p>
+<p><img src="assets/rigide.png" alt="" class="center-image" height="300px" /></p>
 
-<h3 id="about-the-exhibition">About the exhibition</h3>
-<p>The name of the exhibition in French was 
-<em><a href="https://www.mnhn.fr/en/node/5277">Secrets dévoilés : voir l’imperceptible</a></em>, 
-which basically means <em>Unveiling secrets : seeing the imperciptible</em>.
-It was created by the 
-<a href="https://en.wikipedia.org/wiki/National_Museum_of_Natural_History,_France">National Museum of Natural History of Paris</a>
-and consisted in panels, hung in the
-<a href="https://en.wikipedia.org/wiki/Jardin_des_plantes">Jardin des Plantes</a>.</p>
+<h2 id="breaking-symmetries-in-cells">Breaking symmetries, in cells</h2>
 
-<p>Some of the pictures can be seen on the 
-<a href="https://marieducom.com/portfolio/exhibition-secrets-devoiles-voir-limperceptible/?lang=fr">website of the illustrator</a>.</p>
+<p>A common challenge in distributed algorithms is breaking symmetry: 
+if two processors have exactly the same view, they have to take the same step. 
+For example, on a cycle, if the nodes do not have a way to break 
+symmetry (for example unique identifiers), then they all have the same view, 
+thus they take the same steps, and will output the same thing.</p>
 
-<h3 id="footnotes">Footnotes</h3>
+<p>Let us now take a look at biology. We know that an essential mechanism in living 
+stuff is <a href="https://en.wikipedia.org/wiki/Cell_division">cell division</a>, 
+where a cell is basically replaced by two copies of itself. 
+At the very beginning of a new organism, there is one cell, and then it divides 
+again and again, and at the end you get a fully developed living being.</p>
 
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>For PTAS and related acronyms, see <a href="https://discrete-notes.github.io/october-batch-forgotten">this post</a>.&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<p>From a distributed computing perspective, int his context,
+it would be natural to have the exact same cell everywhere, with 
+the same development. 
+It is not the case: brain cells are not muscle cells. 
+Ok, so a first reason it that there is the environment: two identical cells 
+could evolve differently because the things around them are different. 
+In some sense the environment breaks symmetry.
+But if you think about an embryo, the environment is probably very similar on 
+one side or the other, so at least at the beginning it should be just a heap of 
+identical cells, and it is not the case. So, what’s going on?</p>
+
+<p>A quick look at wikipedia provides the answer: cell division does not produce 
+identical cells. In particular, stem cells
+<a href="https://en.wikipedia.org/wiki/Asymmetric_cell_division">divide asymmetrically</a>.
+The wikipedia article goes quickly into specific things, but from what I 
+understand, that fact that the sperm cell fertilizes the egg cell “in one 
+direction” gives a special 
+direction, that influences the way the small stuff in the cell is distributed.
+Thus what is inside the cell is not uniformly distributed. 
+This asymmetry is then propagated at the level of the cells. 
+This is because the division of a cell happens in such a way that the two cells 
+have very different small stuff inside (because some proteins make this happen 
+this way).</p>
+
+<h2 id="discrete-analysis-and-light-bulbs">Discrete analysis and light bulbs</h2>
+
+<p>Once in while I remember that the 
+<em><a href="https://discreteanalysisjournal.com/">Discrete Analysis</a></em>
+journal exists. 
+It is one of these few journals that are really open access, 
+in the sense of the <a href="https://freejournals.org/">Free journal network</a>.
+One can check the list of free journals 
+<a href="https://freejournals.org/current-member-journals/">here</a>.
+The relevant journals for complexity/algorithms/graphs are
+<a href="https://dmtcs.episciences.org/">DMTCS</a>, 
+<a href="https://journals.carleton.ca/jocg/index.php/jocg">JoCG</a>, 
+<a href="http://jgaa.info/">JGAA</a>, 
+<a href="https://lmcs.episciences.org/">LMCS</a>, 
+<a href="https://digitalcommons.georgiasouthern.edu/tag/">TAG</a>, 
+and 
+<a href="https://theoryofcomputing.org/introduction.html">ToC</a>.</p>
+
+<p><em>Discrete analysis</em> is mainly about analytic methods in combinatorics, thus not 
+exactly my cup of tea, but I know it from the blog of 
+<a href="https://en.wikipedia.org/wiki/Timothy_Gowers">Timothy Gowers</a>. 
+And once in a while, there is a paper that arouses my curiosity.</p>
+
+<p>The website is especially well-done for readers like me. 
+Unlike usual journals with ugly websites, and just a list of papers, 
+Discrete Analysis has a nice picture for each paper, a small page describing it,
+with an introduction written by a member of the editorial board. All this is 
+very nice, although at first sight it may look a bit too flashy.</p>
+
+<p>A paper that “makes the cover” of the website these days is 
+<a href="https://discreteanalysisjournal.com/article/2730-fixed-energy-harmonic-functions">Fixed-energy harmonic functions</a>.
+In addition to the introduction, there is the video of a talk about the paper. 
+It goes quickly into maths that I can’t understand without effort, but the first 
+five minutes explain the problem in a fun fashion. 
+Consider an electric circuit with light bulbs. 
+The circuit is represented by a 
+graph and every edge has a weight: the resistance of the light bulb of this 
+section of the circuit. 
+Now you can plug the wires of a battery at two arbitrary nodes of the graph and 
+ask for the energy dissipated on each bulb, that is for the brightness of each 
+bulb. This is a classic exercise in physics, and on reasonable circuits one 
+just has to use simple laws of electricity and a lot of time. 
+For example the video features this circuit, where all the resistances are equal.</p>
+
+<p><img src="assets/ampoules.png" alt="" class="center-image" height="500px" /></p>
+
+<p>The paper studies the reverse problem: given a graph, and two nodes to plug the 
+battery, how to choose the resistance of the light bulbs such that they all 
+shine with the same brightness?</p>
+
+<h2 id="pie-rule">Pie rule</h2>
+
+<p>In the <a href="./march-2019-notes-1">March notes</a>, I mentioned some criteria for fair 
+item assignment. One is well-known: the first player defines two bundles of items, 
+the second player choose the bundle it prefers. This way the first player will 
+design the bundles in the most balanced way. 
+A more concrete setting is with a pie (hance the name of “pie rule”): 
+the first player cuts the cake into two pieces, and 
+the second player chooses the slice.</p>
+
+<p>I discovered that something similar exists for games such as chess, go, etc. 
+In some of these two-players games, the first player has a great advantage. 
+To mitigate this, one can use the 
+<a href="https://en.wikipedia.org/wiki/Pie_rule">pie rule</a>. Let say that we consider 
+chess, and that A plays white, and B plays black. Then the pie rule 
+says that after A has played the first move, B has the choice between:</p>
+
+<ul>
+  <li>playing the normal way until the end</li>
+  <li>changing the color, that is taking the white side, and letting A do the first 
+move for the black, and then playing the normal way until the end (with A playing 
+black, and B playing white).</li>
+</ul>
+
+<p>This way, A has an incentive to make a not-too-good move to start, which 
+mitigates its first-player advantage.</p>
+
+<h2 id="multiplicative-weight-update">Multiplicative weight update</h2>
+
+<p>The 
+<a href="https://en.wikipedia.org/wiki/Multiplicative_weight_update_method">multiplicative weight update method</a> 
+is a general algorithmic method, that is not known enough, and that has been 
+discovered several times in several contexts. 
+The basic description is the following. Suppose you have several experts, that 
+give you advice for a series of decisions that you take one by one. 
+After each decision, you redesign the way you aggregate the advice to take a 
+decision. Typically you want to give more weight to experts that have given good
+advice.
+The multiplicative weight update method basically states that updating the weight
+in multiplicative manner is a good idea.
+It seems pretty specific but it is actually very general.</p>
+
+<p>In addition to the wikipedia page and the references therein (including a survey 
+by Arora, Hazan and Kale), you may want to take a look at a series of post that 
+Luca Trevisan is currently writing 
+on this topic. 
+Actually he is mostly interested in the developments of this 
+method that have been used in a variety of papers in complexity recently. 
+The series of posts starts 
+<a href="https://lucatrevisan.wordpress.com/2019/04/17/online-optimization-for-complexity-theorists/">here</a>.</p>
+
+<p>Jeremy Kun also has a 
+<a href="https://jeremykun.com/2017/02/27/the-reasonable-effectiveness-of-the-multiplicative-weights-update-algorithm/">nice post</a> 
+about the method.</p>
+
+<h2 id="maximum-matchings-that-are-not-perfect">Maximum matchings that are not perfect</h2>
+
+<p>I recently had to think about graphs that do not have a perfect matching. 
+The first example is of course graphs with an odd number of vertices. 
+Next, you can find things like the one below (with a maximum non-perfect 
+matching).</p>
+
+<p><img src="assets/couplage-max.png" alt="" class="center-image" height="500px" /></p>
+
+<p>Intuitively, in each triangle, one node must be matched with a node outside the 
+triangle, but the three triangles are looking for the same node in the middle, 
+and as only one can be served, the other triangles must have an unmatched 
+node. 
+Actually, even a star with three leaves is a good example.</p>
+
+<p>Remember <a href="https://en.wikipedia.org/wiki/Tutte_theorem">Tutte theorem</a>: 
+A graph, $G = (V, E)$, has a perfect matching if and only if for every subset $U$ 
+of $V$, the subgraph induced by $V − U$ has at most $|U|$ connected components with 
+an odd number of vertices (definition from wikipedia). 
+In the drawing above, take the middle node as $U$, you get three connected component 
+with an odd number of vertices. As $3&gt;1$, this graph doesn’t have perfect matching.</p>
+
+<p>Tutte theorem is actually a special case of the 
+<a href="https://en.wikipedia.org/wiki/Tutte%E2%80%93Berge_formula">Tutte–Berge formula</a>, 
+which states that the size of the maximum matching is: 
+$\frac{1}{2} \min_{U\subseteq V}  \left(|U|-\operatorname{odd}(G-U)+|V|\right)$</p>
+
+<p>where $\operatorname{odd}$ counts the number of odd connected components.</p>
+
+<h2 id="irreproducibility-and-unpublished-failures">Irreproducibility and unpublished failures</h2>
+
+<p>A
+<a href="https://www.nature.com/articles/d41586-019-01307-2?utm_source=twt_nnc&amp;utm_medium=social&amp;utm_campaign=naturenews&amp;sf211598052=1">paper in Nature</a> 
+identifies the “four horsemen of irreproducibility” that harm science. 
+One of them is the publication bias: studies that do not 
+conclude that there is a relation between two things are not publishable. 
+Two problems with this are: (1) researchers have an incentive to find
+correlations, when they should have an incentive to find the truth, and (2) if 
+because of statistics a false correlation can appear in 5% of the experiments, 
+then only the wrong conclusion will be made public (after 19 teams on average 
+have tried, and failed to find a correlation).</p>
+
+<p>There are efforts to fight this problem. One is the notion of
+ <a href="https://cos.io/rr/">registered report</a>. This consists in having the journal to
+review an experiment (the topic, the hypothesis tested, the method), before the 
+experiment is made. If this set-up is accepted, then the experiment is made, the 
+paper written and it goes through a second review.
+The paper is provisionally accepted after the first review.</p>
+
+<p>In TCS and maths in general, this publication bias is not a central problem, as 
+one can check the proofs, and hopefully be convinced that the papers published 
+are correct. Nevertheless, we probably loose a lot of time trying the same 
+approaches on the same problems, without making our failures public.</p>
+
+<h2 id="planes-etc">Planes etc.</h2>
+
+<p>As a follow-up to the 
+<a href="https://discrete-notes.github.io/march-2019-notes-2">note of last month</a> about 
+conference travel and its environmental impact, here are a few more elements.</p>
+
+<p>An <a href="https://theconversation.com/chercheurs-donnez-lexemple-prenez-moins-lavion-110613">article (in French)</a> 
+about flights of researchers, mentions several alternatives. One is to have 
+purely virtual conferences (such as 
+<a href="https://ehc.english.ucsb.edu/?page_id=12687">this one</a>).
+Another one is to have the conference distributed among multiple sites, for 
+example one in each continent. Probably worth testing…
+By the way, remember that we can already enjoy a virtual TCS seminar: 
+<a href="https://sites.google.com/site/plustcs/">TCS+</a>.</p>
+
+<p>Also, it’s difficult to make efforts when you are almost alone to make them and 
+that it even hurts you career. Maybe a charter or a code of conduct, for 
+researchers of an institution or of a community would help.
+For example an important Danish newpaper now has such a charter (no domestic 
+flights (remember it’s Danemark), less flying in general, less advertising for 
+far away destination etc.). I couldn’t find good press coverage of this in English, 
+but <a href="https://www.lemonde.fr/climat/article/2019/01/16/climat-plus-de-vols-interieurs-pour-les-journalistes-de-politiken_5409874_1652612.html?xtmc=politiken&amp;xtcr=5">here is an article</a> in the main French newspaper.</p>
+
 
   </div>
   

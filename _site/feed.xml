@@ -7,6 +7,80 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Material on distributed graph algorithms</title>
+        <description>&lt;p&gt;This post is a list of pointers to books and surveys about distributed graph 
+algorithms (LOCAL model, CONGEST model, and friends).
+I probably missed some texts, as typing “local model” in a search engine 
+is not very helpful if you are not looking for top model agencies. 
+Other references are most welcome!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/local.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;distributed-computing-a-locality-sensitive-approach-by-peleg&quot;&gt;Distributed computing: a locality-sensitive approach, by Peleg&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://epubs.siam.org/doi/book/10.1137/1.9780898719772&quot;&gt;Distributed computing: a locality-sensitive approach&lt;/a&gt;
+by &lt;a href=&quot;http://www.weizmann.ac.il/math/peleg/&quot;&gt;David Peleg&lt;/a&gt; is the classic book 
+about the local model. It’s from 2000, so it’s getting a bit outdated in terms 
+of results.&lt;/p&gt;
+
+&lt;h2 id=&quot;distributed-graph-coloring-by-barenboim-and-elkin&quot;&gt;Distributed graph coloring, by Barenboim and Elkin&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.cs.bgu.ac.il/~elkinm/book.pdf&quot;&gt;Distributed graph coloring&lt;/a&gt;
+by 
+&lt;a href=&quot;https://www.openu.ac.il/personal_sites/leonid-barenboim/&quot;&gt;Leonid Bareboim&lt;/a&gt;
+and &lt;a href=&quot;https://www.cs.bgu.ac.il/~elkinm/&quot;&gt;Michael Elkin&lt;/a&gt;, is a more recent book, 
+with a focus on coloring. It explains quite a few techniques, and has a list of 
+open problems (some of these problems have been solved already).&lt;/p&gt;
+
+&lt;h2 id=&quot;survey-of-local-algorithms-by-suomela&quot;&gt;Survey of local algorithms, by Suomela&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&quot;https://users.ics.aalto.fi/suomela/doc/local-survey.pdf&quot;&gt;survey of local algorithms&lt;/a&gt;
+by &lt;a href=&quot;https://users.ics.aalto.fi/suomela/&quot;&gt;Jukka Suomela&lt;/a&gt; is the reference for 
+results about constant-time computations in the local model.&lt;/p&gt;
+
+&lt;p&gt;The last three items are sets of lecture notes, taking the form of 
+neat online textbooks. They all cover the basics, e.g. Linial’s coloring, but 
+they also have their own specific things.&lt;/p&gt;
+
+&lt;h2 id=&quot;distributed-algorithms-by-suomela&quot;&gt;Distributed algorithms, by Suomela&lt;/h2&gt;
+
+&lt;p&gt;A first online textbook is
+&lt;a href=&quot;https://users.ics.aalto.fi/suomela/da/da-print.pdf&quot;&gt;Distributed algorithm&lt;/a&gt;
+by Jukka Suomela. It has a focus on showing the similarities and differences 
+between different models, such as port numbers and unique identifiers, and on the 
+graph theory tools, such as covering maps and Ramsey theory.&lt;/p&gt;
+
+&lt;h2 id=&quot;distributed-graph-algorithms-by-ghaffari&quot;&gt;Distributed graph algorithms, by Ghaffari&lt;/h2&gt;
+
+&lt;p&gt;A second text book is
+&lt;a href=&quot;https://disco.ethz.ch/courses/podc/lecturenotes/LOCAL.pdf&quot;&gt;Distributed graph algorithms&lt;/a&gt;
+by 
+&lt;a href=&quot;https://people.csail.mit.edu/ghaffari/&quot;&gt;Mohsen Ghaffari&lt;/a&gt;. 
+It is a shorter text, with a focus on algorithmic techniques, e.g. network 
+decomposition.&lt;/p&gt;
+
+&lt;h2 id=&quot;network-algorithms-by-kuhn&quot;&gt;Network algorithms, by Kuhn&lt;/h2&gt;
+
+&lt;p&gt;A set of lectures notes by &lt;a href=&quot;http://ac.informatik.uni-freiburg.de/kuhn/&quot;&gt;Fabian Kuhn&lt;/a&gt;
+is available chapter by chapter on
+&lt;a href=&quot;http://ac.informatik.uni-freiburg.de/teaching/ss_18/network-algorithms.php&quot;&gt;the course webpage&lt;/a&gt;.
+It has a broader topic with, in addition to coloring, MIS and cie, chapters on 
+leader election and dynamic networks for example.&lt;/p&gt;
+
+&lt;h3 id=&quot;in-french&quot;&gt;In French&lt;/h3&gt;
+&lt;p&gt;Also, if you read French, you may be interested in 
+&lt;a href=&quot;https://www.irif.fr/_media/users/pierref/notes_algo_distribue.pdf&quot;&gt;Algorithmique distribuée pour les réseaux&lt;/a&gt;
+by &lt;a href=&quot;https://www.irif.fr/users/pierref/index&quot;&gt;Pierre Fraigniaud&lt;/a&gt;, and 
+&lt;a href=&quot;http://dept-info.labri.fr/~gavoille/UE-AD/cours.pdf&quot;&gt;Algorithmes distribués&lt;/a&gt; 
+by &lt;a href=&quot;http://dept-info.labri.fr/~gavoille/&quot;&gt;Cyril Gavoille&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 20 Jun 2019 00:00:00 +0200</pubDate>
+        <link>https://discrete-notes.github.io///local-model</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///local-model</guid>
+      </item>
+    
+      <item>
         <title>April-May notes</title>
         <description>&lt;p&gt;Some deadlines disturbed the schedule of the monthly notes ; this post is for 
 both April and May.&lt;/p&gt;
@@ -19,36 +93,38 @@ both April and May.&lt;/p&gt;
 
 &lt;p&gt;A 
 &lt;a href=&quot;https://blog.computationalcomplexity.org/2019/04/cuckoo-cycles.html&quot;&gt;guest post&lt;/a&gt; 
-by John Tromp on the Computational Complexity blog, talks about the cuckoo cycle 
+by John Tromp, on the Computational Complexity blog, is about the cuckoo cycle 
 problem.&lt;/p&gt;
 
 &lt;p&gt;Basically there are some crypto-currencies, where the 
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Proof-of-work_system&quot;&gt;proof-of-work&lt;/a&gt; consists in 
-finding cycles in a large graph. 
-This graph is the cuckoo graph, whose edges are defined by a hash function from the
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Cuckoo_hashing&quot;&gt;cuckoo hashing&lt;/a&gt;. 
-The post describes briefly the method used by the miners for this problem. 
-Interesting to see a theoretical problem tackled in very practical way.&lt;/p&gt;
+finding cycles in a huge graph. 
+This graph is the cuckoo graph, whose edges are defined by the hash function of 
+the &lt;a href=&quot;https://en.wikipedia.org/wiki/Cuckoo_hashing&quot;&gt;cuckoo hashing&lt;/a&gt;. 
+The post describes briefly the method used by the miners for this problem.&lt;/p&gt;
+
+&lt;p&gt;Interesting to see a theoretical problem tackled in very practical way.&lt;/p&gt;
 
 &lt;h2 id=&quot;pcp-videos&quot;&gt;PCP videos&lt;/h2&gt;
 
-&lt;p&gt;At the end of 2018, a workshop took place in Tel Aviv, about 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/PCP_theorem&quot;&gt;PCP theorems&lt;/a&gt; and related topics.
+&lt;p&gt;At the end of 2018, a workshop took place in Tel Aviv, about the
+&lt;a href=&quot;https://en.wikipedia.org/wiki/PCP_theorem&quot;&gt;PCP theorem&lt;/a&gt; and related topics.
 Great news: the talks have been recorded, and the videos are available on a
 &lt;a href=&quot;https://www.youtube.com/playlist?list=PLGRBwz8taWHiBHlgnX98zrbnWQCeDtFQ_&quot;&gt;youtube channel&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I watched &lt;a href=&quot;https://en.wikipedia.org/wiki/Ronitt_Rubinfeld&quot;&gt;Ronitt Rubinfield&lt;/a&gt;’s 
 talk, and it’s very good. She tells the story of checkers and testers. 
-Just a bit to arouse your interest: as many people I know interactive proofs 
-from PCP, with typical problems being 
-difficult (isomorphism, satisfiability etc.), but actually testing started with 
-things as simple as GCD.&lt;/p&gt;
+Just a bit to arouse your interest: like many people, I know interactive proofs 
+for difficult problems 
+(isomorphism, satisfiability etc.), but actually testing and interactive proofs 
+have started with things as simple as GCD.&lt;/p&gt;
 
 &lt;h2 id=&quot;graphs-defined-bymatchsticks-pennies-and-hinges&quot;&gt;Graphs defined by matchsticks, pennies and hinges.&lt;/h2&gt;
 
 &lt;p&gt;Here are three types of graphs that have a description in terms of real-world 
-objects. 
-First, &lt;a href=&quot;https://en.wikipedia.org/wiki/Matchstick_graph&quot;&gt;matchstick graphs&lt;/a&gt; are 
+objects.&lt;/p&gt;
+
+&lt;p&gt;First, &lt;a href=&quot;https://en.wikipedia.org/wiki/Matchstick_graph&quot;&gt;matchstick graphs&lt;/a&gt; are 
 graphs that you can draw on a table with matchsticks.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/alumettes.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
@@ -68,7 +144,7 @@ each contact represents an edge.&lt;/p&gt;
 &lt;p&gt;Penny graphs are matchsticks graphs but the reverse is not true.&lt;/p&gt;
 
 &lt;p&gt;Finally consider the following experiment. 
-Take a graph, replace edges by rods and nodes by hinges between rods.
+Take a graph, replace edges by rods and nodes by hinges.
 Now, if when you push on some side, the graph changes shape, then the graph is 
 flexible, otherwise it is 
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Structural_rigidity&quot;&gt;rigid&lt;/a&gt;.
@@ -80,7 +156,7 @@ For example a cube is flexible, and a tetrahedron is rigid.&lt;/p&gt;
 
 &lt;p&gt;A common challenge in distributed algorithms is breaking symmetry: 
 if two processors have exactly the same view, they have to take the same step. 
-For example if you are on a cycle, and the nodes do not have a way to break 
+For example, on a cycle, if the nodes do not have a way to break 
 symmetry (for example unique identifiers), then they all have the same view, 
 thus they take the same steps, and will output the same thing.&lt;/p&gt;
 
@@ -88,12 +164,15 @@ thus they take the same steps, and will output the same thing.&lt;/p&gt;
 stuff is &lt;a href=&quot;https://en.wikipedia.org/wiki/Cell_division&quot;&gt;cell division&lt;/a&gt;, 
 where a cell is basically replaced by two copies of itself. 
 At the very beginning of a new organism, there is one cell, and then it divides 
-again and again, and at the end you get a fully developed new organism. 
-But then, it should be the exact same cell everywhere, with the same development, 
-and it is not the case: brain cells are not muscle cells. 
-Ok, so there is the environment: the same cell can evolve differently because it 
-is closer to this or that protein, and this could be the cause of the 
-non-symmetry. 
+again and again, and at the end you get a fully developed living being.&lt;/p&gt;
+
+&lt;p&gt;From a distributed computing perspective, int his context,
+it would be natural to have the exact same cell everywhere, with 
+the same development. 
+It is not the case: brain cells are not muscle cells. 
+Ok, so a first reason it that there is the environment: two identical cells 
+could evolve differently because the things around them are different. 
+In some sense the environment breaks symmetry.
 But if you think about an embryo, the environment is probably very similar on 
 one side or the other, so at least at the beginning it should be just a heap of 
 identical cells, and it is not the case. So, what’s going on?&lt;/p&gt;
@@ -103,11 +182,13 @@ identical cells. In particular, stem cells
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Asymmetric_cell_division&quot;&gt;divide asymmetrically&lt;/a&gt;.
 The wikipedia article goes quickly into specific things, but from what I 
 understand, that fact that the sperm cell fertilizes the egg cell “in one 
-direction” breaks the symmetry at the very beginning, an gives a special 
-direction, that influences the way the small stuff in the cell is distributed, 
-and the cell division happens somehow perpendicularly with respect to
-this direction (because some proteins make this happen). Then the two cells are
-very different because they do not have the same small stuff inside.&lt;/p&gt;
+direction” gives a special 
+direction, that influences the way the small stuff in the cell is distributed.
+Thus what is inside the cell is not uniformly distributed. 
+This asymmetry is then propagated at the level of the cells. 
+This is because the division of a cell happens in such a way that the two cells 
+have very different small stuff inside (because some proteins make this happen 
+this way).&lt;/p&gt;
 
 &lt;h2 id=&quot;discrete-analysis-and-light-bulbs&quot;&gt;Discrete analysis and light bulbs&lt;/h2&gt;
 
@@ -130,8 +211,9 @@ and
 &lt;p&gt;&lt;em&gt;Discrete analysis&lt;/em&gt; is mainly about analytic methods in combinatorics, thus not 
 exactly my cup of tea, but I know it from the blog of 
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Timothy_Gowers&quot;&gt;Timothy Gowers&lt;/a&gt;. 
-And once in a while, there is a paper that arouse my curiosity. 
-The website is especially well-done for readers like me. 
+And once in a while, there is a paper that arouses my curiosity.&lt;/p&gt;
+
+&lt;p&gt;The website is especially well-done for readers like me. 
 Unlike usual journals with ugly websites, and just a list of papers, 
 Discrete Analysis has a nice picture for each paper, a small page describing it,
 with an introduction written by a member of the editorial board. All this is 
@@ -142,11 +224,11 @@ very nice, although at first sight it may look a bit too flashy.&lt;/p&gt;
 In addition to the introduction, there is the video of a talk about the paper. 
 It goes quickly into maths that I can’t understand without effort, but the first 
 five minutes explain the problem in a fun fashion. 
-Consider an electric circuits with light bulbs. 
+Consider an electric circuit with light bulbs. 
 The circuit is represented by a 
 graph and every edge has a weight: the resistance of the light bulb of this 
 section of the circuit. 
-Now you can plug the wire of a battery at two arbitrary nodes of the graph and 
+Now you can plug the wires of a battery at two arbitrary nodes of the graph and 
 ask for the energy dissipated on each bulb, that is for the brightness of each 
 bulb. This is a classic exercise in physics, and on reasonable circuits one 
 just has to use simple laws of electricity and a lot of time. 
@@ -161,11 +243,12 @@ shine with the same brightness?&lt;/p&gt;
 &lt;h2 id=&quot;pie-rule&quot;&gt;Pie rule&lt;/h2&gt;
 
 &lt;p&gt;In the &lt;a href=&quot;./march-2019-notes-1&quot;&gt;March notes&lt;/a&gt;, I mentioned some criteria for fair 
-item assignment. One is well-known: the first player defines two bundle of items, 
+item assignment. One is well-known: the first player defines two bundles of items, 
 the second player choose the bundle it prefers. This way the first player will 
 design the bundles in the most balanced way. 
-With a more concrete metaphor: the first player cut the cake into two pieces, and 
-the second player chooses the slice, hence the name of “pie rule”.&lt;/p&gt;
+A more concrete setting is with a pie (hance the name of “pie rule”): 
+the first player cuts the cake into two pieces, and 
+the second player chooses the slice.&lt;/p&gt;
 
 &lt;p&gt;I discovered that something similar exists for games such as chess, go, etc. 
 In some of these two-players games, the first player has a great advantage. 
@@ -188,25 +271,29 @@ mitigates its first-player advantage.&lt;/p&gt;
 
 &lt;p&gt;The 
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Multiplicative_weight_update_method&quot;&gt;multiplicative weight update method&lt;/a&gt; 
-is a general algorithmic method, that is not known enough. 
-It has been discovered several times in several contexts. 
-The basic description is the following. Suppose you have experts, that give you 
-advice for a series of decisions that you take one by one. 
-Then the method states 
-how to re-evalutate the weight of each opinion for your next decision, based on 
-whether the previous advice was correct or not. It seems pretty specific but it 
-is actually very general.&lt;/p&gt;
+is a general algorithmic method, that is not known enough, and that has been 
+discovered several times in several contexts. 
+The basic description is the following. Suppose you have several experts, that 
+give you advice for a series of decisions that you take one by one. 
+After each decision, you redesign the way you aggregate the advice to take a 
+decision. Typically you want to give more weight to experts that have given good
+advice.
+The multiplicative weight update method basically states that updating the weight
+in multiplicative manner is a good idea.
+It seems pretty specific but it is actually very general.&lt;/p&gt;
 
 &lt;p&gt;In addition to the wikipedia page and the references therein (including a survey 
 by Arora, Hazan and Kale), you may want to take a look at a series of post that 
 Luca Trevisan is currently writing 
-on this topic, and on its usefulness in complexity. 
-It starts 
+on this topic. 
+Actually he is mostly interested in the developments of this 
+method that have been used in a variety of papers in complexity recently. 
+The series of posts starts 
 &lt;a href=&quot;https://lucatrevisan.wordpress.com/2019/04/17/online-optimization-for-complexity-theorists/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Jeremy Kun also has a 
 &lt;a href=&quot;https://jeremykun.com/2017/02/27/the-reasonable-effectiveness-of-the-multiplicative-weights-update-algorithm/&quot;&gt;nice post&lt;/a&gt; 
-about this technique.&lt;/p&gt;
+about the method.&lt;/p&gt;
 
 &lt;h2 id=&quot;maximum-matchings-that-are-not-perfect&quot;&gt;Maximum matchings that are not perfect&lt;/h2&gt;
 
@@ -228,7 +315,7 @@ A graph, $G = (V, E)$, has a perfect matching if and only if for every subset $U
 of $V$, the subgraph induced by $V − U$ has at most $|U|$ connected components with 
 an odd number of vertices (definition from wikipedia). 
 In the drawing above, take the middle node as $U$, you get three connected component 
-with an odd number of vertices. As 3&amp;gt;1, this graph has no perfect matching.&lt;/p&gt;
+with an odd number of vertices. As $3&amp;gt;1$, this graph doesn’t have perfect matching.&lt;/p&gt;
 
 &lt;p&gt;Tutte theorem is actually a special case of the 
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Tutte%E2%80%93Berge_formula&quot;&gt;Tutte–Berge formula&lt;/a&gt;, 
@@ -247,8 +334,8 @@ conclude that there is a relation between two things are not publishable.
 Two problems with this are: (1) researchers have an incentive to find
 correlations, when they should have an incentive to find the truth, and (2) if 
 because of statistics a false correlation can appear in 5% of the experiments, 
-then only the wrong conclusion will be made public (after 20 teams have tried, 
-on average).&lt;/p&gt;
+then only the wrong conclusion will be made public (after 19 teams on average 
+have tried, and failed to find a correlation).&lt;/p&gt;
 
 &lt;p&gt;There are efforts to fight this problem. One is the notion of
  &lt;a href=&quot;https://cos.io/rr/&quot;&gt;registered report&lt;/a&gt;. This consists in having the journal to
@@ -258,7 +345,7 @@ paper written and it goes through a second review.
 The paper is provisionally accepted after the first review.&lt;/p&gt;
 
 &lt;p&gt;In TCS and maths in general, this publication bias is not a central problem, as 
-one can check the proof, and hopefully be convinced that the papers published 
+one can check the proofs, and hopefully be convinced that the papers published 
 are correct. Nevertheless, we probably loose a lot of time trying the same 
 approaches on the same problems, without making our failures public.&lt;/p&gt;
 
@@ -268,9 +355,10 @@ approaches on the same problems, without making our failures public.&lt;/p&gt;
 &lt;a href=&quot;https://discrete-notes.github.io/march-2019-notes-2&quot;&gt;note of last month&lt;/a&gt; about 
 conference travel and its environmental impact, here are a few more elements.&lt;/p&gt;
 
-&lt;p&gt;An &lt;a href=&quot;https://theconversation.com/chercheurs-donnez-lexemple-prenez-moins-lavion-110613&quot;&gt;article (in French)&lt;/a&gt;
-which points at the problem, proposes several alternatives. One is purely virtual 
-conferences (such as &lt;a href=&quot;https://ehc.english.ucsb.edu/?page_id=12687&quot;&gt;this one&lt;/a&gt;).
+&lt;p&gt;An &lt;a href=&quot;https://theconversation.com/chercheurs-donnez-lexemple-prenez-moins-lavion-110613&quot;&gt;article (in French)&lt;/a&gt; 
+about flights of researchers, mentions several alternatives. One is to have 
+purely virtual conferences (such as 
+&lt;a href=&quot;https://ehc.english.ucsb.edu/?page_id=12687&quot;&gt;this one&lt;/a&gt;).
 Another one is to have the conference distributed among multiple sites, for 
 example one in each continent. Probably worth testing…
 By the way, remember that we can already enjoy a virtual TCS seminar: 
@@ -1275,6 +1363,12 @@ For that, see &lt;a href=&quot;https://arxiv.org/abs/1901.02441&quot;&gt;the pap
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
+&lt;p&gt;Thanks to 
+&lt;a href=&quot;https://www.lix.polytechnique.fr/~mrabie/&quot;&gt;Mikaêl Rabie&lt;/a&gt; 
+for reading and improving this series of posts!&lt;/p&gt;
+
 </description>
         <pubDate>Fri, 15 Feb 2019 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///simulation-4</link>
@@ -1329,11 +1423,11 @@ of sinkless orientation!&lt;/p&gt;
 edges adjacent to $u$ is described by a factorized polynomial $P_u$. 
 By definition $P_u$ is included in $(w+b)^{\Delta}$.&lt;/p&gt;
 
-&lt;h3 id=&quot;product-and-common-label-property&quot;&gt;Product and common label property&lt;/h3&gt;
+&lt;h3 id=&quot;product-and-consistency-property&quot;&gt;Product and consistency property&lt;/h3&gt;
 &lt;p&gt;We now use the key properties to have a better upper bound on $P_u$.
 Thanks to the product property, we know that $P_u\subseteq w(b+w)^{\Delta-1}$.
 Now consider a white node $v$, and the set labels given by its black neighbours. 
-Because of the common label property, there must at least one of its edges 
+Because of the consistency property, there must at least one of its edges 
 labeled with $b$, that is $P_v$ cannot be $w^{\Delta}$.
 And well, that’s all we need!&lt;/p&gt;
 
@@ -1378,255 +1472,6 @@ tight.&lt;/p&gt;
         <pubDate>Wed, 13 Feb 2019 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///simulation-3</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///simulation-3</guid>
-      </item>
-    
-      <item>
-        <title>Simulation argument II. Edge-labelings on 2-colored trees, and polynomials</title>
-        <description>&lt;p&gt;This is the second post of a series that starts 
-&lt;a href=&quot;https://discrete-notes.github.io/simulation-1&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/puzzle-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;In the previous post, we saw an overview of the simulation technique. 
-In this post, we are going to see a more precise and usable approach, for the case edge 
-labelings on 2-colored regular trees.&lt;/p&gt;
-
-&lt;p&gt;The explanation differs a bit from the 
-&lt;a href=&quot;https://arxiv.org/abs/1901.02441&quot;&gt;original paper&lt;/a&gt;, 
-because we talk about polynomials, whereas they talk about regular expressions. 
-This is mainly a vocabulary change, because there is not 
-much algebra going on (but it is easier for me to see it this way).&lt;/p&gt;
-
-&lt;h2 id=&quot;arestricted-setting&quot;&gt;A restricted setting&lt;/h2&gt;
-&lt;p&gt;Let us describe the special case we are interested in, and why it is relevant.&lt;/p&gt;
-
-&lt;h3 id=&quot;delta-regular-trees&quot;&gt;$\Delta$-regular trees&lt;/h3&gt;
-
-&lt;p&gt;We consider that we are in the middle of a $\Delta$-regular tree. Here “middle”
-means that we cannot see the leaves. 
-As a consequence, the method works only for the regime below time 
-$\Theta(\log n)$, because in time $\Omega(\log n)$ you can always see a leaf in a 
-$\Delta$-regular tree.
-If we can prove a lower bound for this area of the tree, then we
-have a lower bound for our problem.&lt;/p&gt;
-
-&lt;h3 id=&quot;coloring&quot;&gt;2-coloring&lt;/h3&gt;
-&lt;p&gt;We will consider graphs that are 2-colored (trees are bipartite), and we assume 
-that every node knows on which side of the partition it is (black or white). So 
-we work on this kind of graph (with omitted port-numbers):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/fig-delta-regulier.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This, in addition to port-numbers, is a powerful way to break symmetry between 
-adjacent nodes.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;A &lt;em&gt;white algorithm&lt;/em&gt; in $k$ rounds for a problem $\Pi$ is an algorithm such that, 
-after $k$ rounds the white nodes label their edges in a correct way, with 
-respect to $\Pi$. 
-In such an algorithm, the 
-black nodes do not label the edges, they “trust” the white nodes. 
-A &lt;em&gt;black algorithm&lt;/em&gt; is defined the same way, but for black nodes.&lt;/p&gt;
-
-&lt;h2 id=&quot;encoding-of-edge-problems&quot;&gt;Encoding of edge problems&lt;/h2&gt;
-
-&lt;h3 id=&quot;using-the-2-coloring&quot;&gt;Using the 2-coloring&lt;/h3&gt;
-&lt;p&gt;We consider edge problems defined the following way. 
-The multiset of edges adjacent to any vertex should follow some rule, that
-depends on the color of the node. 
-For example: there are three labels $a,b,c$, the white nodes should either 
-have 2 edges labeled with $a$, and the rest with $c$, or 3 edges labeled with 
-$a$ and the rest with $b$; and black nodes should have at least one label $a$, 
-one label $b$ and one label $c$. (I just made up this example, it’s probably 
-silly.)&lt;/p&gt;
-
-&lt;p&gt;Most problems we are usually interested in are defined in general graphs, not in 
-bipartite graphs, thus the problem does not refer to a coloring. 
-Hence one could expect the constraints on white nodes and black nodes to be the same, 
-unlike in the example above. 
-Actually, it is often useful to make them different (we’ll see that in the two 
-next posts).&lt;/p&gt;
-
-&lt;h3 id=&quot;polynomial-point-of-view&quot;&gt;Polynomial point of view&lt;/h3&gt;
-
-&lt;p&gt;We now introduce the polynomial point of view. 
-Consider a node $u$ in a graph where the edges are labeled.
-We can define the product of the labels of $u$ as a polynomial $M_u$, whose 
-variables are the labels of the problem. 
-Note that $M_u$ is a monomial: it’s just a product of labels.&lt;/p&gt;
-
-&lt;p&gt;One can now express the toy problem above in terms of two polynomials:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$L_W(a,b,c)=a^2c^{\Delta-2}+a^3b^{\Delta-3}$&lt;/li&gt;
-  &lt;li&gt;$L_B(a,b,c)=abc(a+b+c)^{\Delta-3}$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We denote $P \subseteq P’$ the fact that the monomials of $P$ are all 
-present in $P’$. Then the labeling of $u$ is correct for problem $\Pi$, if and only if, 
-$M_u \subseteq L_{C(u)}$ (where $C(u)$ is the color of $u$).&lt;/p&gt;
-
-&lt;p&gt;Note that, in our example, all the polynomials we play with have three variables, 
-because there are three labels, and that they are homogeneous of degree 
-$\Delta$, because every node has $\Delta$ adjacent edges.&lt;/p&gt;
-
-&lt;h2 id=&quot;simulation-step-and-independence&quot;&gt;Simulation step and independence&lt;/h2&gt;
-
-&lt;h3 id=&quot;polynomial-point-of-view-1&quot;&gt;Polynomial point of view&lt;/h3&gt;
-&lt;p&gt;In the previous post, we said that the simulation step is basically about having 
-a view at distance $T-1$, imagining everything that could appear in the nodes 
-at distance $T$, and labeling edges with all the labels that could be correct 
-in one of these extensions.&lt;/p&gt;
-
-&lt;p&gt;Now let us restate this in terms of polynomials. 
-After the simulation, every edge is labeled with a set of labels, that can be 
-transfered to a sum of labels for polynomials. 
-Then the polynomial associated with a set labeling at a node $u$ could be for 
-example $P_u=(a+b)^3(a+b+c)^4c^{\Delta-7}$, which means that three edges are 
-labeled with $a$ and $b$, four edges are labeled with $a$, $b$ and $c$ and the 
-rest is labeled with only $c$. 
-(This polynomial would not work for our toy language as we will see later).&lt;/p&gt;
-
-&lt;p&gt;Note that the polynomial we get for a set labeling is not a monomial in general, 
-but it is nevertheless in a factorized form.&lt;/p&gt;
-
-&lt;h3 id=&quot;simulation-for-2-colored-trees&quot;&gt;Simulation for 2-colored trees&lt;/h3&gt;
-&lt;p&gt;For 2-colored trees we can be more specific in the description of the simulation 
-(and actually we will change the simulation outline a bit too).&lt;/p&gt;
-
-&lt;p&gt;We have a white algorithm in time $T$, and we want a black algorithm 
-in time $T-1$ (this will be our setting until the end of the post). 
-Consider a black node $u$.
-The black node $u$ will first imagine all the extensions of its $(T-1)$-view 
-into a $(T+1)$-view. 
-(Note that we simulate at distance $T+1$ and not just $T$, as stated in the 
-previous post.) 
-The black node will then simulate the run of its white neighbors with the 
-algorithm in time $T$, and gather the set of labels possible for each edge.&lt;/p&gt;
-
-&lt;p&gt;Note that we have fixed the topology to $\Delta$-regular trees, so the only 
-thing to imagine for the extension is the port-number assignment.&lt;/p&gt;
-
-&lt;h3 id=&quot;independence&quot;&gt;Independence&lt;/h3&gt;
-&lt;p&gt;The key point here is the following: the $T$-view of a white 
-neighbour $v$ of $u$ consists of: 
-(1) the $(T-1)$-view of $u$, and 
-(2) the extension of this view &lt;em&gt;in the direction of $v$&lt;/em&gt;. 
-In the following picture, this means that this view includes only the 
-black part and the red part.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/fig-simulation-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As a consequence when simulating node $v$, the black node does not need to 
-imagine something for the other parts of its imaginary $(T+1)$-view (e.g. the blue 
-parts on the figure). 
-In other words the labeling of the edge $(u,v)$ comes only from the different 
-version of the red part, and is independent of what happens in the blue parts. 
-Obviously this independence property is true for every white neighbor of $u$, 
-with its “own” extension.&lt;/p&gt;
-
-&lt;h2 id=&quot;two-key-properties&quot;&gt;Two key properties&lt;/h2&gt;
-
-&lt;p&gt;There are two key properties about the set labelings given by the simulation.&lt;/p&gt;
-
-&lt;h3 id=&quot;product-property&quot;&gt;Product property&lt;/h3&gt;
-&lt;p&gt;This property is about the neighborhood of the black nodes.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Claim:&lt;/em&gt;
-Let $S_1, S_2, …, S_{\Delta}$ be the sets of labels that a black nodes gives 
-to its adjacent edges after the
-simulation step (with an arbitrary order of the edges). Then any tuple of the form
-$(s_1, s_2,…, s_{\Delta})$, with $s_i\in S_i$, has to be in the language (for 
-the black side).&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Proof:&lt;/em&gt; Suppose it is not the case, and let $(s_1, s_2,…, s_{\Delta})$ be a 
-tuple of $S_1, S_2, …, S_{\Delta}$ that is not in the language. 
-Then we build an extension such that the $T$-round 
-algorithm would label the edges with $(s_1, s_2,…, s_{\Delta})$, which is a 
-contradiction with the correctness of the algorithm.
-Start with $s_1$. 
-If $s_1$ is in $S_1$ it means that there is an extension, in 
-the direction of the first edge (in the figure, suppose $(u,v)$ is the first 
-edge, then we are talking about the red part), such that the first edge is 
-labeled with $s_1$, and we take this extension. 
-But, because of the independence property stated above, we can continue with 
-$s_2$, and then $s_3$ etc., which leads to the desired structure.&lt;/p&gt;
-
-&lt;p&gt;We can restate this in terms of polynomials.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Product property:&lt;/em&gt;
-$P_u \subseteq L_B$.&lt;/p&gt;
-
-&lt;p&gt;This means that every monomial of $P_u$ has to be a monomial of $L_B$, which is
-just a reformulation of the claim above.&lt;/p&gt;
-
-&lt;h3 id=&quot;common-label-property&quot;&gt;Common label property&lt;/h3&gt;
-
-&lt;p&gt;This property is for the neighborhoods of the white nodes. 
-It is not as powerful as the previous ones, but sometimes it can be crucial.&lt;/p&gt;
-
-&lt;p&gt;Consider a white node $w$ and two black neighbors $v_1$ and $v_2$. 
-The black node $v_1$ is mostly interested in the edge $(w,v_1)$ 
-(and not $(w,v_2)$), because it is the edge that matters for the product 
-property, and the edge for which it is somehow “responsible”. 
-But when it simulates the white algorithm on $w$, it also labels virtually 
-$(w,v_2)$. 
-This is getting dangerous, because the set labeling that $v_1$ and $v_2$ give to 
-$(w,v_2)$ are different in general.
-But they are a bit related, by the following property:&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Claim:&lt;/em&gt;
-Take a white node $w$.
-For each edge around $w$, all the black neighbors agree on at least one label. 
-That is for each edge, there is a label that is in all set labels.&lt;/p&gt;
-
-&lt;p&gt;This label is simply the one that the white node would give if it were running&lt;br /&gt;
-the $T$-round algorithm in the real graph (not a simulated one).&lt;/p&gt;
-
-&lt;h2 id=&quot;typical-transformation-step&quot;&gt;Typical transformation step&lt;/h2&gt;
-
-&lt;p&gt;The typical way to prove that one has a transformation from an algorithm in $T$ 
-rounds for a problem $\Pi$, to an algorithm in $T-1$ rounds for a problem $\Pi’$,
-is the following.&lt;/p&gt;
-
-&lt;p&gt;First make the simulation. 
-In our example, we know that the black node $u$ gets a polynomial included in 
-$(a+b+c)^{\Delta}$. 
-But this is a very rough over-approximation, and $P_u$ is probably much smaller. 
-Then one can use the two key properties to rule out many labelings and have a 
-more precise idea of what $P_u$ is. 
-Once this is done, we can go for a simplification step: replace sets of labels by labels. 
-If everything works fine you have a labeling that is correct for your problem 
-$\Pi’$.&lt;/p&gt;
-
-&lt;h2 id=&quot;subtleties&quot;&gt;Subtleties&lt;/h2&gt;
-&lt;p&gt;There are two subtleties that blocked me at some point.&lt;/p&gt;
-
-&lt;p&gt;The first one is this danger I warned you about in the common label property 
-section: an edge is labeled differently in different simulations.&lt;/p&gt;
-
-&lt;p&gt;The second is that in this 2-colored framework, it is not enough to have a 
-general way to 
-go from a white $T$-round algorithm to a black $(T-1)$-round algorithm, you also 
-need to go from a black algorithm to a white algorithm. In some cases, the two 
-are very different.&lt;/p&gt;
-
-&lt;h2 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h2&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;Indeed &lt;a href=&quot;https://users.ics.aalto.fi/suomela/mm-lb/&quot;&gt;previous lower bound techniques&lt;/a&gt; cannot work in the 2-colored model.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Tue, 12 Feb 2019 00:00:00 +0100</pubDate>
-        <link>https://discrete-notes.github.io///simulation-2</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///simulation-2</guid>
       </item>
     
   </channel>

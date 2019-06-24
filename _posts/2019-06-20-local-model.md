@@ -15,12 +15,23 @@ Other references are most welcome!
 
 ---
 
-## Distributed computing: a locality-sensitive approach, by Peleg
+## Distributed computing: a locality-sensitive approach, by Peleg, and other references
 
 [Distributed computing: a locality-sensitive approach](https://epubs.siam.org/doi/book/10.1137/1.9780898719772)
 by [David Peleg](http://www.weizmann.ac.il/math/peleg/) is the classic book 
 about the local model. It's from 2000, so it's getting a bit outdated in terms 
 of results. 
+
+Another standard book is 
+[Distributed Algorithms](https://www.elsevier.com/books/distributed-algorithms/lynch/978-1-55860-348-6)
+by [Nancy Lynch](http://people.csail.mit.edu/lynch/), but most of the book is 
+off-topics for this post, because it deals with asynchronous systems.
+
+Yet another reference (with little material on the LOCAL model) is the online 
+textbook 
+[Notes on Theory of Distributed Systems](http://www.cs.yale.edu/homes/aspnes/classes/465/notes.pdf)
+by [ 	
+James Aspnes](http://www.cs.yale.edu/homes/aspnes/).
 
 ## Distributed graph coloring, by Barenboim and Elkin
 
@@ -36,34 +47,49 @@ The [survey of local algorithms](https://users.ics.aalto.fi/suomela/doc/local-su
 by [Jukka Suomela](https://users.ics.aalto.fi/suomela/) is the reference for 
 results about constant-time computations in the local model.
 
-The last three items are sets of lecture notes, taking the form of 
-neat online textbooks. They all cover the basics, e.g. Linial's coloring, but 
-they also have their own specific things.
-
 ## Distributed algorithms, by Suomela
 
-A first online textbook is
+A neat online textbook is
 [Distributed algorithm](https://users.ics.aalto.fi/suomela/da/da-print.pdf)
-by Jukka Suomela. It has a focus on showing the similarities and differences 
+by Jukka Suomela.
+In addition to the classic topics such as coloring, that are contained in most 
+references listed here, it has a focus on showing the similarities and differences 
 between different models, such as port numbers and unique identifiers, and on the 
 graph theory tools, such as covering maps and Ramsey theory.
 
-## Distributed graph algorithms, by Ghaffari
+## The Swiss-German lecture notes
 
-A second text book is
+There are several courses related to the local model that are taught in 
+Switzerland and South Germany. They are rather close one from another, as they 
+stem from the same Zurich source, but then evolved on their own. 
+
+* The current version of the original source is 
+[Principles of Distributed Computing](https://disco.ethz.ch/courses/podc/), 
+by [Roger Wattenhofer](https://disco.ethz.ch/members/wroger) (and more recently
+[Mohsen Ghaffari](https://people.csail.mit.edu/ghaffari/) but his part is 
+covered below. In addition to the classic topics of synchronous computing, it 
+covers some topics at the boundary with asynchronous computing (such as 
+synchronizers), or completely asynchronous (shared objects).
+
+* A set of lectures notes by [Fabian Kuhn](http://ac.informatik.uni-freiburg.de/kuhn/)
+is available chapter by chapter on
+[the course webpage](http://ac.informatik.uni-freiburg.de/teaching/ss_18/network-algorithms.php).
+The topics are very close from the ones of the bullet above. Two topics that 
+appear only here: dynamic networks and and 
+[network coding](https://en.wikipedia.org/wiki/Linear_network_coding). 
+
+* Another set of lecture notes is 
+[Theory of Distributed Systems](https://www.mpi-inf.mpg.de/departments/algorithms-complexity/teaching/winter18/tods/), 
+by [Christoph Lenzen](http://people.mpi-inf.mpg.de/~clenzen/). It covers 
+(in addition to the classic material), chapters on self-stabilization and 
+routing. 
+
+* Probably the most recent course is
 [Distributed graph algorithms](https://disco.ethz.ch/courses/podc/lecturenotes/LOCAL.pdf)
 by 
 [Mohsen Ghaffari](https://people.csail.mit.edu/ghaffari/). 
-It is a shorter text, with a focus on algorithmic techniques, e.g. network 
-decomposition. 
-
-## Network algorithms, by Kuhn
-
-A set of lectures notes by [Fabian Kuhn](http://ac.informatik.uni-freiburg.de/kuhn/)
-is available chapter by chapter on
-[the course webpage](http://ac.informatik.uni-freiburg.de/teaching/ss_18/network-algorithms.php).
-It has a broader topic with, in addition to coloring, MIS and cie, chapters on 
-leader election and dynamic networks for example.
+It is a shorter text, with a focus on algorithmic techniques for the local model, 
+e.g. network decomposition. 
 
 ### In French
 Also, if you read French, you may be interested in 

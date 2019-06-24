@@ -58,19 +58,19 @@ by [Roger Wattenhofer](https://disco.ethz.ch/members/wroger) (and more recently
 [Mohsen Ghaffari](https://people.csail.mit.edu/ghaffari/) but his part is 
 covered below). In addition to the classic topics of synchronous computing, it 
 covers some topics at the boundary with asynchronous computing (such as 
-synchronizers), or fully asynchronous (such as shared objects).
+synchronizers), or fully asynchronous computing (such as shared objects).
 
-* A set of lectures notes by [Fabian Kuhn](http://ac.informatik.uni-freiburg.de/kuhn/)
+* A set of lecture notes by [Fabian Kuhn](http://ac.informatik.uni-freiburg.de/kuhn/)
 is available chapter by chapter on
 [the course webpage](http://ac.informatik.uni-freiburg.de/teaching/ss_18/network-algorithms.php).
 The topics are very close from the ones of the bullet above. Two topics that 
-appear only here: dynamic networks and and 
+appear only here: dynamic networks and
 [network coding](https://en.wikipedia.org/wiki/Linear_network_coding). 
 
 * Another set of lecture notes is 
 [Theory of Distributed Systems](https://www.mpi-inf.mpg.de/departments/algorithms-complexity/teaching/winter18/tods/), 
 by [Christoph Lenzen](http://people.mpi-inf.mpg.de/~clenzen/). It covers 
-(in addition to the classic material), chapters on self-stabilization and 
+(in addition to the classic material) self-stabilization and 
 routing. 
 
 * Probably the most recent course is
@@ -85,7 +85,7 @@ e.g. network decomposition.
 A standard book is 
 [Distributed Algorithms](https://www.elsevier.com/books/distributed-algorithms/lynch/978-1-55860-348-6)
 by [Nancy Lynch](http://people.csail.mit.edu/lynch/), but most of the book is 
-off-topics for this post, because it deals with asynchronous systems.
+off-topic for this post, because it deals with asynchronous systems.
 
 Yet another reference (with little material on the LOCAL model) is the online 
 textbook 
@@ -100,9 +100,9 @@ by
 and a very recent one is 
 [Introduction to Distributed Self-Stabilizing Algorithms](https://www.morganclaypool.com/doi/abs/10.2200/S00908ED1V01Y201903DCT015)
 by
-[Karine Altisen](http://www-verimag.imag.fr/Karine-Altisen,102.html?lang=en)
-[Stéphane Devismes](http://www-verimag.imag.fr/~devismes/WWW/introduction.html)
-[Swan Dubois](https://pages.lip6.fr/Swan.Dubois/)
+[Karine Altisen](http://www-verimag.imag.fr/Karine-Altisen,102.html?lang=en),
+[Stéphane Devismes](http://www-verimag.imag.fr/~devismes/WWW/introduction.html),
+[Swan Dubois](https://pages.lip6.fr/Swan.Dubois/),
 and 
 [Franck Petit](https://pages.lip6.fr/Franck.Petit/).
 

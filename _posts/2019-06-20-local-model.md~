@@ -78,7 +78,7 @@ routing.
 by 
 [Mohsen Ghaffari](https://people.csail.mit.edu/ghaffari/). 
 It is a shorter text, with a focus on algorithmic techniques for the local model, 
-e.g. network decomposition. 
+e.g. network decomposition.
 
 ## Material covering the basics or specialized content
 
@@ -100,9 +100,9 @@ by
 and a very recent one is 
 [Introduction to Distributed Self-Stabilizing Algorithms](https://www.morganclaypool.com/doi/abs/10.2200/S00908ED1V01Y201903DCT015)
 by
-[Karine Altisen](http://www-verimag.imag.fr/Karine-Altisen,102.html?lang=en)
-[Stéphane Devismes](http://www-verimag.imag.fr/~devismes/WWW/introduction.html)
-[Swan Dubois](https://pages.lip6.fr/Swan.Dubois/)
+[Karine Altisen](http://www-verimag.imag.fr/Karine-Altisen,102.html?lang=en),
+[Stéphane Devismes](http://www-verimag.imag.fr/~devismes/WWW/introduction.html),
+[Swan Dubois](https://pages.lip6.fr/Swan.Dubois/),
 and 
 [Franck Petit](https://pages.lip6.fr/Franck.Petit/).
 

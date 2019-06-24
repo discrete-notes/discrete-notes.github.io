@@ -7,7 +7,7 @@ permalink: local-model
 
 This post is a list of pointers to books and surveys about distributed graph 
 algorithms (LOCAL model, CONGEST model, and friends).
-I probably missed some texts, as typing "local model" in a search engine 
+I probably missed some references, as typing "local model" in a search engine 
 is not very helpful if you are not looking for top model agencies. 
 Other references are most welcome! 
 
@@ -78,7 +78,7 @@ routing.
 by 
 [Mohsen Ghaffari](https://people.csail.mit.edu/ghaffari/). 
 It is a shorter text, with a focus on algorithmic techniques for the local model, 
-e.g. network decomposition. 
+e.g. network decomposition.
 
 ## Material covering the basics or specialized content
 

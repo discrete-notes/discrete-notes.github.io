@@ -87,104 +87,152 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/simulation-3">
-        Simulation argument III. Sinkless orientation
+      <a href="/simulation-4">
+        Simulation argument IV. Maximal matching
       </a>
     </h1>
 
-    <span class="post-date">13 Feb 2019</span>
+    <span class="post-date">15 Feb 2019</span>
 
-    <p>This is the third post of a series that starts <a href="./simulation-1">here</a>.</p>
-
-<hr />
-
-<p><img src="assets/puzzle-3.png" alt="" class="center-image" height="300px" /></p>
+    <p>This is the fourth and last post of a series about the simulation argument, that 
+started with <a href="./simulation-1">this post</a>.</p>
 
 <hr />
 
-<p>In this post, we show how to use the simulation argument to prove a lower bound on 
-the <em>sinkless orientation</em> problem. 
-This is done in the context of the <a href="./simulation-2">previous post</a>, that is,
-2-colored $\Delta$-regular trees.</p>
+<p><img src="assets/puzzle-4.png" alt="" class="center-image" height="300px" /></p>
 
-<h2 id="sinkless-orientation-encoding">Sinkless orientation encoding</h2>
+<hr />
 
-<p>The sinkless orientation problem consists in orienting the edges of the graph, 
-such that no node is a sink, that is, no node has only edges pointing to it.</p>
+<p>In this post we tackle the maximal matching problem. 
+Or actually we will show 
+why establishing a lower bound for this problem is not as easy as for the 
+sinkless orientation problem. 
+The real lower bound is in <a href="https://arxiv.org/abs/1901.02441">this paper</a>.</p>
 
-<p><img src="assets/sinkless.png" alt="" class="center-image" height="300px" /></p>
+<h3 id="encoding">Encoding</h3>
 
-<p>In a bipartite graph, whose nodes are labeled black and white, 
-it is easy to encode an orientation with edge labels: an edge is 
-labeled $b$ if it is pointing to the black endpoint, and $w$ if it is pointing 
-to the white endpoint.</p>
+<p>A maximal matching is a set of edges of the graph, such that no two of these
+edges are adjacent, and no two unmatched node are linked by an edge.</p>
 
-<p>Now the languages, described as polynomials, are:</p>
+<p><img src="assets/couplage.png" alt="" class="center-image" height="400px" /></p>
+
+<p>A natural encoding for this problem would be to label the edges of the matching 
+with a label $A$, and edges not in the matching with a label $B$. 
+But this does not work for our setting. 
+Instead, we will do the following. 
+(As in the previous post we will deal with 2-colored trees.)</p>
 
 <ul>
-  <li>$L_W=b(b+w)^{\Delta-1}$,</li>
-  <li>$L_B=w(b+w)^{\Delta-1}$.</li>
+  <li>The edges of the matching are labeled with the label $M$.</li>
+  <li>If a white node is not matched then its edges are labeled with $P$. 
+These are pointers to matched black nodes.</li>
+  <li>The remaining edges are labeled with $O$.</li>
 </ul>
 
-<p>Because white nodes must have an adjacent edge pointing to a black node, and 
-vice-versa.</p>
+<p>On the following picture, red edges are for $M$, green edges are for $P$, and 
+blue edges are for $O$ (the missing edge should be blue!).</p>
+
+<p><img src="assets/couplage-2.png" alt="" class="center-image" height="300px" /></p>
+
+<p>The languages we use are then described by the following polynomials:</p>
+
+<ul>
+  <li>$L_W = MO^{\Delta-1}+P^{\Delta}$,</li>
+  <li>$L_B = M(P+O)^{\Delta-1} + O^{\Delta}$.</li>
+</ul>
 
 <h2 id="transformation">Transformation</h2>
 
-<p>We will show a very strong property: from a $T$-round algorithm for sinkless 
-orientation, we can get a $(T-1)$-round algorithm for… the exact same problem 
-of sinkless orientation!</p>
-
 <h3 id="simulation">Simulation</h3>
-<p>After one step of simulation centered at a black node $u$, the labeling of the 
-edges adjacent to $u$ is described by a factorized polynomial $P_u$. 
-By definition $P_u$ is included in $(w+b)^{\Delta}$.</p>
 
-<h3 id="product-and-consistency-property">Product and consistency property</h3>
-<p>We now use the key properties to have a better upper bound on $P_u$.
-Thanks to the product property, we know that $P_u\subseteq w(b+w)^{\Delta-1}$.
-Now consider a white node $v$, and the set labels given by its black neighbours. 
-Because of the consistency property, there must at least one of its edges 
-labeled with $b$, that is $P_v$ cannot be $w^{\Delta}$.
-And well, that’s all we need!</p>
+<p>We perform the simulation on a black node $u$, and get a polynomial $P_u$.<br />
+By definition $P_u\subseteq (M+O+P)^{\Delta}$, and is factorized.</p>
 
-<h3 id="simplification-step">Simplification step</h3>
-<p>Consider the simplification: $b+w \rightarrow b$.</p>
+<h3 id="product-property">Product property</h3>
 
-<p>If we apply this simplification, we have all the edges labeled with unique 
-labels (not set labels), and this labeling is correct with respect to the black 
-language. In other words, after simplification, we have a polynomial $\hat{P_u}$, 
-that is a monomial, and $\hat{P_u}\subseteq L_B$.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
-But what about the white nodes?
-We know from the previous section that $P_v$ was not $w^{\Delta}$, thus 
-$\hat{P_v}$ is not $w^{\Delta}$ either, thus $\hat{P_v}\subseteq L_W$.</p>
+<p>As the product rule applies, we know that
+$P_u \subseteq M(P+0)^{\Delta-1}+O^{\Delta}$.<br />
+Thus there is at most one factor of $P_u$ with an $M$.</p>
 
-<p>Thus we have a new labeling, for the exact same language, in one less round!</p>
+<p><em>Claim 1</em>: This factor is either $(M)$ or $(M+O)$.</p>
 
-<h2 id="lower-bound">Lower bound</h2>
+<p><em>Proof</em>: Suppose the factor with $M$ has a $P$. 
+Then it means that when we develop $P_u$,
+there are two monomials $M\times K$ and $P\times K$, with $K$ a polynomial
+of degree $\Delta-1$, that does not contain an $M$. 
+But the monomial $P\times K$ is not included in 
+$M(P+0)^{\Delta-1}+O^{\Delta}$. which contradicts the product property.</p>
 
-<p>The same reasoning would work if we center the analysis on the white nodes. 
-This means that from any $T$-round algorithm for sinkless orientation, we get 
-down to a 0-round algorithm for sinkless orientation. 
-And sinkless orientation is not a trivial language.</p>
+<p>Then we are left with 5 possible sums as factors in $P_u$: 
+$(M), (O), (P), (M+O), (P+0)$.</p>
 
-<p>So is sinkless orientation impossible to solve?</p>
+<p>Now it seems that we cannot get much more out of our properties, so let’s try a 
+simplification step.</p>
 
-<p>No, remember that our lower bound technique works only up to $O(\log n)$ rounds.
-Thus we have just proved an $\Omega(\log n)$ lower bound for this problem.</p>
+<h3 id="tentative-simplification-step">(Tentative) Simplification step</h3>
 
-<p>Actually there is a $O(\log n)$ algorithm for this language, hence this bound is 
-tight.</p>
+<p>If we can map $(M+O)$ and $(P+O)$ to a simple label, 
+and still match the language, 
+then we are done, and we can conclude like in the <a href="./simulation-3">previous post</a>. 
+But this is not going to happen.</p>
 
-<h2 id="footnotes">Footnotes</h2>
+<p>Suppose you are in following situation, which is supposed to be easy because 
+there is not even a $(P+O)$. (On the picture, every black node writes on its 
+adjacent edges.)</p>
 
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>We always have the property that the simplification step does not destroy the correctness of the labeling on the black node, as long as we do an “hereditary” simplification, that is we replace a set of labels by a label of the set. This is because of the product property.&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<p><img src="assets/couplage-3.png" alt="" class="center-image" height="300px" /></p>
+
+<p>Ok, let’s just take one of the two edges labeled with $M+O$
+(let say the one with the smallest port-number on the white node), 
+label it with $M$, label the other one with $O$, and we are done.</p>
+
+<p>This does notwork.
+The problem is the one we highlighted in the <a href="./simulation-2">second post</a>: 
+the edges are not uniformly set-labeled by all the nodes. 
+A concrete bad case:</p>
+
+<ul>
+  <li>let $(u,v)$ and $(v,w)$ be the two edges labeled by $(M+0)$</li>
+  <li>in its simulation, $u$ has (M+O) for both edges, and based on port-numbers, 
+decides that $(u,v)$ gets $M$.</li>
+  <li>in its simulation $w$ has $(M+O)$ for $(v,w)$, but only $(O)$ for $(u,v)$. Thus 
+it labels $(v,w)$ with $M$.</li>
+</ul>
+
+<p>To solve this problem you have to synchronize, and this is forbidden as it takes 
+extra time.</p>
+
+<h2 id="no-lower-bound-this-way">No lower bound this way</h2>
+
+<p>So at the end, we cannot conclude like in the case of sinkless orientation.</p>
+
+<p>Comments on that:</p>
+
+<ul>
+  <li>
+    <p>This makes sense: actually there is a $O(\Delta)$ 
+algorithm for this problem, thus no $\Omega(\log n)$ lower bound exists.</p>
+  </li>
+  <li>
+    <p>The above alone does not prove that there is no $\Omega(\log n)$ lower 
+bound: we could use another definition of the problem, or we could have tried 
+more exotic label replacement ($M$ transformed into $P$, or whatever).</p>
+  </li>
+  <li>
+    <p>If you want to prove a $\Omega(\Delta)$ lower bound then you need to be 
+smarter. In particular you need that, after the transformation, the language is 
+different. Basically there should be a parameter that starts with something like 
+$\Delta$ and decreases at each transformation. 
+For that, see <a href="https://arxiv.org/abs/1901.02441">the paper</a>!</p>
+  </li>
+</ul>
+
+<hr />
+
+<p>Thanks to 
+<a href="https://www.lix.polytechnique.fr/~mrabie/">Mikaêl Rabie</a> 
+for reading and improving this series of posts!</p>
+
 
   </div>
   

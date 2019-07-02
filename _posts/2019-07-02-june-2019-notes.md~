@@ -139,7 +139,8 @@ The basic story is the following. Suppose you have data, and you want to
 summarize it by one point. You want to use the average, but because your data 
 has some adversarial noise, the average of the noisy data might be far from the 
 average of the "real data". If you are in 1D then you can take the median, which 
-is robust to such noise. But if you are in $d$ dimension, then there are several generalization, 
+is robust to such noise. But if you are in $d$ dimension, then there are several 
+generalizations of the median, 
 and either they are not robust to noise or they are NP-hard to compute, and then 
 you have to think. 
 
@@ -156,5 +157,5 @@ the Aalto distributed computing people has been accepted to
 [FOCS 2019](http://focs2019.cs.jhu.edu/). 
 
 * The [128th bulletin of the EATCS](http://eatcs.org/images/bulletin/beatcs128.pdf) 
-is out with a chapter on matching with preference lists, and a chapter on 
+is out, with a chapter on matching with preference lists, and a chapter on 
 leader election in directed dynamic graphs. 

@@ -122,7 +122,7 @@ The arxiv preprint presents an algorithm to approximate John ellipsoid.
 By the way, why is it "John ellipsoid" and, say, "Dijktra's algorithm", why is 
 there a "'s" sometimes but not always?
 
-## Eppstein's report on SoCG and robust statistics
+## Eppstein's SOCG report and robust statistics 
 
 Eppstein wrote a nice
 [report of SOCG](https://11011110.github.io/blog/2019/06/21/report-from-socg.html),

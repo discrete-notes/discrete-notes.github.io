@@ -295,3 +295,6 @@ flights (remember it's Danemark), less flying in general, less advertising for
 far away destination etc.). I couldn't find good press coverage of this in English, 
 but [here is an article](https://www.lemonde.fr/climat/article/2019/01/16/climat-plus-de-vols-interieurs-pour-les-journalistes-de-politiken_5409874_1652612.html?xtmc=politiken&xtcr=5) in the main French newspaper.
 
+EDIT(July 2019): there actually exists some rules in some universities, see 
+[this Wired article](https://www.wired.com/story/climate-scientists-take-the-train/).
+

@@ -1,0 +1,80 @@
+<p><img src="assets/azotea.jpg" alt="" class="center-image" height="400px" /></p>
+<p align="center"><small><i>
+The Andes.
+</i></small></p>
+<hr />
+
+<h2 id="queue-number-again-and-applications">Queue number again, and applications</h2>
+
+<p>A recent result about the so-called <em>queue number</em> was mentionned on this blog in March 
+(see <a href="./stoc-socg-picks">here</a>). The result says that this graph parameter is bounded 
+on planar graph with bounded degree.
+The result has now been geenralized to any planar graph! 
+The <a href="https://arxiv.org/pdf/1904.04791.pdf">paper is on arxiv</a> and will be presented 
+at FOCS 2019.
+I haven’t looked into the paper, but I know from 
+<a href="https://11011110.github.io/blog/2019/08/10/report-from-cccg.html">David Epptein’s blog</a> 
+that it is a byproduct of showing that “every planar graph is a subgraph of a strong 
+product of a path graph and a bounded-treewidth graph”.</p>
+
+<p>Another <a href="https://arxiv.org/abs/1908.03341">recent paper on the arxiv</a> 
+uses this result to design shorter labeling schemes for planar graphs.
+As the abstract says: 
+“In graph-theoretical terms, this implies an explicit construction 
+of a graph on $n^{4/3}+o(1)$ vertices that contains all planar graphs 
+on n vertices as induced subgraphs”.
+(Thanks to Cyril Gavoille for pointing out this paper.)</p>
+
+<h2 id="unfolding-polytopes-durers-conjecture">Unfolding polytopes: Durer’s Conjecture</h2>
+
+<p>Given a polyhedra, one can cut along the edges to unfold it on the plane as in the following drawing.</p>
+
+<p><img src="assets/durer-1.jpg" alt="" class="center-image" height="600px" /></p>
+
+<p>But sometimes, if you cut along some edges, you may have an overlap in the unfolding, as the
+second unfolding of the 
+following  example (borrowed from <a href="http://mathworld.wolfram.com/Unfolding.html">here</a>) shows.</p>
+
+<p><img src="assets/durer-2.jpg" alt="" class="center-image" height="600px" /></p>
+
+<p><a href="http://www.openproblemgarden.org/op/d_urers_conjecture">Durer’s conjecture</a> states that 
+“Every convex polytope has a non-overlapping edge unfolding”.
+A non-overlapping edge unfolding is called <a href="https://en.wikipedia.org/wiki/Net_(polyhedron)">a net</a>, 
+so the conjecture can be reformulated as: “Every convex polytope has a net”.
+It is surprizing that such a cute and simple result is still open.</p>
+
+<p>I learnt about this conjecture in 
+<a href="https://11011110.github.io/blog/2019/08/10/report-from-cccg.html">Eppstein’s report on CCCG</a>. 
+More information can be found in 
+<a href="https://www.mi.fu-berlin.de/math/groups/discgeom/ziegler/Preprintfiles/127PREPRINT.pdf">Ten Problems in Geometry</a>
+by Moritz W. Schmitt and Günter M. Ziegler.</p>
+
+<h2 id="more-on-graphs-inspired-by-objects-and-nature">More on graphs inspired by objects and nature</h2>
+
+<p>We had a <a href="./april-may-2019-notes">post in april</a> on graphs that have some meaning 
+in terms of real-world objects.</p>
+
+<p>Two additional pointers on this topic:</p>
+<ul>
+  <li>a <a href="https://11011110.github.io/blog/2013/12/07/kinematic-chains-and.html">blog post</a> about graph that have one degree of freedom when you want to move them.</li>
+  <li>the <a href="https://www.ics.uci.edu/~eppstein/pubs/Epp-WADS-19.pdf">slides</a> of a talk about graphs inspired by nature, for example bubbles and cristals.</li>
+</ul>
+
+<p><img src="assets/cristaux-bulles.jpg" alt="" class="center-image" height="600px" /></p>
+
+<h2 id="automata-size-to-separate-two-words">Automata size to separate two words</h2>
+
+<p>Yet another very simple and still open problem: consider two strings of length $n$, what is the size of the smallest deterministic automata than accepts one and reject the other? 
+Or more precesily, what is the maximum over all such pairs of this size? 
+The upper bound is polynomial in $n$ (something like $\sqrt(n)$) and the lower bound is $\Omega(\log n)$. An exponential gap!</p>
+
+<p>For more on this see this two posts by Lipton: <a href="https://rjlipton.wordpress.com/2019/09/08/separating-words-by-automata/">here</a> and
+<a href="https://rjlipton.wordpress.com/2019/09/16/separating-words-decoding-a-paper/">there</a>.</p>
+
+<h2 id="other-notes">Other notes</h2>
+<ul>
+  <li>The paper about the matching lower bound that I mentionned here several time won the best paper award at FOCS! I think it’s a great story of research: identifiying a fundamental problem, telling everybody about it, learning more and more, and finally solving it, and getting an award for it!</li>
+  <li>Some day, I’ll learn about spanners, I hope. <a href="https://arxiv.org/pdf/1909.03152.pdf">Here</a> is a recent survey that may help.</li>
+  <li><a href="https://arxiv.org/abs/1907.05257">Paper on the arxiv</a> on the recognition of intersection graphs of objects touching a diagonal line, related to <a href="https://www.dii.uchile.cl/~feuilloley/publications/rectangles_DCG15.html">this paper of mine</a>.</li>
+</ul>
+

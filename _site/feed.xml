@@ -7,6 +7,100 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Summer-winter notes</title>
+        <description>&lt;p&gt;Some notes for summer 2019, or actually winter 2019, as I moved to Chile.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;assets/azotea.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
+The Andes.
+&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;queue-number-again-and-applications&quot;&gt;Queue number again, and applications&lt;/h2&gt;
+
+&lt;p&gt;A recent result about the so-called &lt;em&gt;queue number&lt;/em&gt; was mentioned on this blog in March 
+(see &lt;a href=&quot;./stoc-socg-picks&quot;&gt;here&lt;/a&gt;). The result says that this graph parameter is bounded 
+on planar graph that have bounded degree.
+The result has now been generalized to any planar graph! 
+The &lt;a href=&quot;https://arxiv.org/pdf/1904.04791.pdf&quot;&gt;paper is on arxiv&lt;/a&gt; and will be presented 
+at FOCS 2019.
+I haven’t looked into the paper, but I know from 
+&lt;a href=&quot;https://11011110.github.io/blog/2019/08/10/report-from-cccg.html&quot;&gt;David Epptein’s blog&lt;/a&gt; 
+that it is a byproduct of showing that “every planar graph is a subgraph of a strong 
+product of a path graph and a bounded-treewidth graph”.&lt;/p&gt;
+
+&lt;p&gt;Another &lt;a href=&quot;https://arxiv.org/abs/1908.03341&quot;&gt;recent paper on the arxiv&lt;/a&gt; 
+uses this result to design shorter labeling schemes for planar graphs.
+As the abstract says: 
+“In graph-theoretical terms, this implies an explicit construction 
+of a graph on $n^{4/3}+o(1)$ vertices that contains all planar graphs 
+on n vertices as induced subgraphs”.
+(Thanks to Cyril Gavoille for pointing out this paper.)&lt;/p&gt;
+
+&lt;h2 id=&quot;unfolding-polytopes-durers-conjecture&quot;&gt;Unfolding polytopes: Durer’s Conjecture&lt;/h2&gt;
+
+&lt;p&gt;Given a polyhedra, one can cut along the edges to unfold it on the plane as in the following drawing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/durer-1.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But sometimes, if you cut along some edges, you may have an overlap in the unfolding, as the
+second unfolding of the 
+following  example (borrowed from &lt;a href=&quot;http://mathworld.wolfram.com/Unfolding.html&quot;&gt;here&lt;/a&gt;) shows.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/durer-2.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.openproblemgarden.org/op/d_urers_conjecture&quot;&gt;Durer’s conjecture&lt;/a&gt; states that 
+“Every convex polytope has a non-overlapping edge unfolding”.
+A non-overlapping edge unfolding is called &lt;a href=&quot;https://en.wikipedia.org/wiki/Net_(polyhedron)&quot;&gt;a net&lt;/a&gt;, 
+so the conjecture can be reformulated as: “Every convex polytope has a net”.
+It is surprising that such a cute and simple result is still open.&lt;/p&gt;
+
+&lt;p&gt;I learned about this conjecture in 
+&lt;a href=&quot;https://11011110.github.io/blog/2019/08/10/report-from-cccg.html&quot;&gt;Eppstein’s report on CCCG&lt;/a&gt;. 
+More information can be found in 
+&lt;a href=&quot;https://www.mi.fu-berlin.de/math/groups/discgeom/ziegler/Preprintfiles/127PREPRINT.pdf&quot;&gt;Ten Problems in Geometry&lt;/a&gt;
+by Moritz W. Schmitt and Günter M. Ziegler.&lt;/p&gt;
+
+&lt;h2 id=&quot;more-on-graphs-inspired-by-objects-and-nature&quot;&gt;More on graphs inspired by objects and nature&lt;/h2&gt;
+
+&lt;p&gt;We had a &lt;a href=&quot;./april-may-2019-notes&quot;&gt;post in april&lt;/a&gt; on graphs that have some meaning 
+in terms of real-world objects.&lt;/p&gt;
+
+&lt;p&gt;Two additional pointers on this topic:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;a &lt;a href=&quot;https://11011110.github.io/blog/2013/12/07/kinematic-chains-and.html&quot;&gt;blog post&lt;/a&gt; about graph that have one degree of freedom when you want to move them.&lt;/li&gt;
+  &lt;li&gt;the &lt;a href=&quot;https://www.ics.uci.edu/~eppstein/pubs/Epp-WADS-19.pdf&quot;&gt;slides&lt;/a&gt; of a talk about graphs inspired by nature, for example by crystals and by bubbles.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/cristaux-bulles.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
+The red circles are the nodes on the right drawing, but on the left ones they are part of the procedure to draw the crystals. See the slides for more details.
+&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;automata-size-to-separate-two-words&quot;&gt;Automata size to separate two words&lt;/h2&gt;
+
+&lt;p&gt;Yet another very simple and still open problem: consider two strings of length $n$, what is the size of the smallest deterministic automaton than accepts one and rejects the other? 
+Or more precisely, what is the maximum over all such pairs of this size? 
+The upper bound is polynomial in $n$ (something like $\sqrt(n)$) and the lower bound is $\Omega(\log n)$. An exponential gap!&lt;/p&gt;
+
+&lt;p&gt;For more on this see these two posts by Lipton: &lt;a href=&quot;https://rjlipton.wordpress.com/2019/09/08/separating-words-by-automata/&quot;&gt;here&lt;/a&gt; and
+&lt;a href=&quot;https://rjlipton.wordpress.com/2019/09/16/separating-words-decoding-a-paper/&quot;&gt;there&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;other-notes&quot;&gt;Other notes&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;The paper about the matching lower bound that I mentioned here several times won the best paper award at FOCS! I think it’s a remarkable research story: identifying a fundamental problem, telling everybody about it, learning more and more, and finally solving it, and getting an award for it!&lt;/li&gt;
+  &lt;li&gt;Some day, I’ll learn about spanners, I hope. &lt;a href=&quot;https://arxiv.org/pdf/1909.03152.pdf&quot;&gt;Here&lt;/a&gt; is a recent survey that may help.&lt;/li&gt;
+  &lt;li&gt;A &lt;a href=&quot;https://arxiv.org/abs/1907.05257&quot;&gt;paper appeared on the arxiv&lt;/a&gt; on the recognition of intersection graphs of objects touching a diagonal line, related to &lt;a href=&quot;https://www.dii.uchile.cl/~feuilloley/publications/rectangles_DCG15.html&quot;&gt;this paper of mine&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 17 Sep 2019 00:00:00 -0300</pubDate>
+        <link>https://discrete-notes.github.io///summer-winter-2019-notes</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///summer-winter-2019-notes</guid>
+      </item>
+    
+      <item>
         <title>June notes</title>
         <description>&lt;p&gt;Some notes for June.&lt;/p&gt;
 
@@ -105,7 +199,7 @@ theory you suddenly understand things better. I had this experience with some
 on David Eppstein’s blog, where he describes a new point of view he has on a 
 matching problem thanks to a more advanced notion of matroid (yes matroids, again).&lt;/p&gt;
 
-&lt;h2 id=&quot;john-ellipsoid-and-the-s&quot;&gt; John ellipsoid and the “‘s”&lt;/h2&gt;
+&lt;h2 id=&quot;john-ellipsoid-and-the-s&quot;&gt;John ellipsoid and the “‘s”&lt;/h2&gt;
 
 &lt;p&gt;This &lt;a href=&quot;https://arxiv.org/pdf/1905.11580.pdf&quot;&gt;arxiv preprint&lt;/a&gt; made me discover 
 &lt;a href=&quot;https://en.wikipedia.org/wiki/John_ellipsoid&quot;&gt;John ellipsoid&lt;/a&gt;. Given a polytope
@@ -127,7 +221,7 @@ and that the outer ball has to be larger.&lt;/p&gt;
 &lt;p&gt;By the way, why is it “John ellipsoid” and, say, “Dijktra’s algorithm”, why is 
 there a “‘s” sometimes but not always?&lt;/p&gt;
 
-&lt;h2 id=&quot;eppsteins-report-on-socg-and-robust-statistics&quot;&gt; Eppstein’s report on SoCG and robust statistics&lt;/h2&gt;
+&lt;h2 id=&quot;eppsteins-socg-report-and-robust-statistics&quot;&gt;Eppstein’s SOCG report and robust statistics&lt;/h2&gt;
 
 &lt;p&gt;Eppstein wrote a nice
 &lt;a href=&quot;https://11011110.github.io/blog/2019/06/21/report-from-socg.html&quot;&gt;report of SOCG&lt;/a&gt;,
@@ -170,7 +264,7 @@ leader election in directed dynamic graphs.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Tue, 02 Jul 2019 00:00:00 +0200</pubDate>
+        <pubDate>Tue, 02 Jul 2019 00:00:00 -0400</pubDate>
         <link>https://discrete-notes.github.io///june-2019-notes</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///june-2019-notes</guid>
       </item>
@@ -296,7 +390,7 @@ by &lt;a href=&quot;http://dept-info.labri.fr/~gavoille/&quot;&gt;Cyril Gavoille
 
 &lt;p&gt;Thanks to Jukka Suomela for pointing out some references.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 20 Jun 2019 00:00:00 +0200</pubDate>
+        <pubDate>Thu, 20 Jun 2019 00:00:00 -0400</pubDate>
         <link>https://discrete-notes.github.io///local-model</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///local-model</guid>
       </item>
@@ -593,8 +687,11 @@ flights (remember it’s Danemark), less flying in general, less advertising for
 far away destination etc.). I couldn’t find good press coverage of this in English, 
 but &lt;a href=&quot;https://www.lemonde.fr/climat/article/2019/01/16/climat-plus-de-vols-interieurs-pour-les-journalistes-de-politiken_5409874_1652612.html?xtmc=politiken&amp;amp;xtcr=5&quot;&gt;here is an article&lt;/a&gt; in the main French newspaper.&lt;/p&gt;
 
+&lt;p&gt;EDIT(July 2019): there actually exists some rules in some universities, see 
+&lt;a href=&quot;https://www.wired.com/story/climate-scientists-take-the-train/&quot;&gt;this Wired article&lt;/a&gt;.&lt;/p&gt;
+
 </description>
-        <pubDate>Thu, 23 May 2019 00:00:00 +0200</pubDate>
+        <pubDate>Thu, 23 May 2019 00:00:00 -0400</pubDate>
         <link>https://discrete-notes.github.io///april-may-2019-notes</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///april-may-2019-notes</guid>
       </item>
@@ -718,12 +815,12 @@ and consisted in panels, hung in the
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;For PTAS and related acronyms, see &lt;a href=&quot;https://discrete-notes.github.io/october-batch-forgotten&quot;&gt;this post&lt;/a&gt;.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;For PTAS and related acronyms, see &lt;a href=&quot;https://discrete-notes.github.io/october-batch-forgotten&quot;&gt;this post&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Thu, 09 May 2019 00:00:00 +0200</pubDate>
+        <pubDate>Thu, 09 May 2019 00:00:00 -0400</pubDate>
         <link>https://discrete-notes.github.io///natural-history</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///natural-history</guid>
       </item>
@@ -903,7 +1000,7 @@ sentences about many many papers.&lt;/p&gt;
 
 &lt;p&gt;[By the way, it’s sad that SIGACT News is not open-access.]&lt;/p&gt;
 
-&lt;h2 id=&quot;point5-and-conference-travel&quot;&gt;1point5 and conference travel&lt;/h2&gt;
+&lt;h2 id=&quot;1point5-and-conference-travel&quot;&gt;1point5 and conference travel&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Le_Monde&quot;&gt;Le Monde&lt;/a&gt;, one of the major French 
 newpapers, published 
@@ -953,7 +1050,7 @@ ask “who is the latest arrived?”, which gives a simpler picture:&lt;/p&gt;
 &lt;p&gt;But maybe it’s less robust to slyness..?&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 09 Apr 2019 00:00:00 +0200</pubDate>
+        <pubDate>Tue, 09 Apr 2019 00:00:00 -0400</pubDate>
         <link>https://discrete-notes.github.io///march-2019-notes-2</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///march-2019-notes-2</guid>
       </item>
@@ -981,7 +1078,7 @@ video around 0:25-0:35.&lt;/p&gt;
 &lt;img src=&quot;assets/eclair-6b.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 26 Mar 2019 00:00:00 +0100</pubDate>
+        <pubDate>Tue, 26 Mar 2019 00:00:00 -0300</pubDate>
         <link>https://discrete-notes.github.io///lightning</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///lightning</guid>
       </item>
@@ -1136,7 +1233,7 @@ which presents an algorithm for max-cut whose complexity is parametrized by the
 in the drawing of the graph.]&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 25 Mar 2019 00:00:00 +0100</pubDate>
+        <pubDate>Mon, 25 Mar 2019 00:00:00 -0300</pubDate>
         <link>https://discrete-notes.github.io///march-2019-notes-1</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///march-2019-notes-1</guid>
       </item>
@@ -1345,7 +1442,7 @@ it
 will appear at STOC.]&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 13 Mar 2019 00:00:00 +0100</pubDate>
+        <pubDate>Wed, 13 Mar 2019 00:00:00 -0300</pubDate>
         <link>https://discrete-notes.github.io///stoc-socg-picks</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///stoc-socg-picks</guid>
       </item>
@@ -1417,7 +1514,7 @@ while minimizing the churn.&lt;/p&gt;
 
 &lt;p&gt;[I stumble on the notion in &lt;a href=&quot;https://arxiv.org/abs/1901.11260&quot;&gt;this preprint&lt;/a&gt;.]&lt;/p&gt;
 
-&lt;h2 id=&quot;conjecture&quot;&gt;1-2-3 Conjecture&lt;/h2&gt;
+&lt;h2 id=&quot;1-2-3-conjecture&quot;&gt;1-2-3 Conjecture&lt;/h2&gt;
 
 &lt;p&gt;Another edition of the Complex Network seminar by 
 &lt;a href=&quot;http://www.labri.fr/index.php?n=Annuaires.Profile&amp;amp;id=Senhaji_ID1441185629&quot;&gt;Mohammed Senhaji&lt;/a&gt; 
@@ -1429,7 +1526,7 @@ the same sum.&lt;/p&gt;
 
 &lt;p&gt;A survey about the conjecture is &lt;a href=&quot;https://arxiv.org/pdf/1211.5122.pdf&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;lovszs-new-book&quot;&gt;Lovász’s new book&lt;/h2&gt;
+&lt;h2 id=&quot;lovászs-new-book&quot;&gt;Lovász’s new book&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://fr.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Lov%C3%A1sz&quot;&gt;László Lovász&lt;/a&gt; 
 wrote a new book: 
 &lt;a href=&quot;http://web.cs.elte.hu/~lovasz/bookxx/geombook2019-01-20.pdf&quot;&gt;Graphs and geometry&lt;/a&gt;.&lt;/p&gt;
@@ -1444,156 +1541,9 @@ wrote a new book:
 calculation in &lt;a href=&quot;https://arxiv.org/pdf/1812.09120.pdf&quot;&gt;a recent paper&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 05 Mar 2019 00:00:00 +0100</pubDate>
+        <pubDate>Tue, 05 Mar 2019 00:00:00 -0300</pubDate>
         <link>https://discrete-notes.github.io///february-2019-notes</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///february-2019-notes</guid>
-      </item>
-    
-      <item>
-        <title>Simulation argument IV. Maximal matching</title>
-        <description>&lt;p&gt;This is the fourth and last post of a series about the simulation argument, that 
-started with &lt;a href=&quot;./simulation-1&quot;&gt;this post&lt;/a&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/puzzle-4.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;In this post we tackle the maximal matching problem. 
-Or actually we will show 
-why establishing a lower bound for this problem is not as easy as for the 
-sinkless orientation problem. 
-The real lower bound is in &lt;a href=&quot;https://arxiv.org/abs/1901.02441&quot;&gt;this paper&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;encoding&quot;&gt;Encoding&lt;/h3&gt;
-
-&lt;p&gt;A maximal matching is a set of edges of the graph, such that no two of these
-edges are adjacent, and no two unmatched node are linked by an edge.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/couplage.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A natural encoding for this problem would be to label the edges of the matching 
-with a label $A$, and edges not in the matching with a label $B$. 
-But this does not work for our setting. 
-Instead, we will do the following. 
-(As in the previous post we will deal with 2-colored trees.)&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The edges of the matching are labeled with the label $M$.&lt;/li&gt;
-  &lt;li&gt;If a white node is not matched then its edges are labeled with $P$. 
-These are pointers to matched black nodes.&lt;/li&gt;
-  &lt;li&gt;The remaining edges are labeled with $O$.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;On the following picture, red edges are for $M$, green edges are for $P$, and 
-blue edges are for $O$ (the missing edge should be blue!).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/couplage-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The languages we use are then described by the following polynomials:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$L_W = MO^{\Delta-1}+P^{\Delta}$,&lt;/li&gt;
-  &lt;li&gt;$L_B = M(P+O)^{\Delta-1} + O^{\Delta}$.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;transformation&quot;&gt;Transformation&lt;/h2&gt;
-
-&lt;h3 id=&quot;simulation&quot;&gt;Simulation&lt;/h3&gt;
-
-&lt;p&gt;We perform the simulation on a black node $u$, and get a polynomial $P_u$.&lt;br /&gt;
-By definition $P_u\subseteq (M+O+P)^{\Delta}$, and is factorized.&lt;/p&gt;
-
-&lt;h3 id=&quot;product-property&quot;&gt;Product property&lt;/h3&gt;
-
-&lt;p&gt;As the product rule applies, we know that
-$P_u \subseteq M(P+0)^{\Delta-1}+O^{\Delta}$.&lt;br /&gt;
-Thus there is at most one factor of $P_u$ with an $M$.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Claim 1&lt;/em&gt;: This factor is either $(M)$ or $(M+O)$.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;: Suppose the factor with $M$ has a $P$. 
-Then it means that when we develop $P_u$,
-there are two monomials $M\times K$ and $P\times K$, with $K$ a polynomial
-of degree $\Delta-1$, that does not contain an $M$. 
-But the monomial $P\times K$ is not included in 
-$M(P+0)^{\Delta-1}+O^{\Delta}$. which contradicts the product property.&lt;/p&gt;
-
-&lt;p&gt;Then we are left with 5 possible sums as factors in $P_u$: 
-$(M), (O), (P), (M+O), (P+0)$.&lt;/p&gt;
-
-&lt;p&gt;Now it seems that we cannot get much more out of our properties, so let’s try a 
-simplification step.&lt;/p&gt;
-
-&lt;h3 id=&quot;tentative-simplification-step&quot;&gt;(Tentative) Simplification step&lt;/h3&gt;
-
-&lt;p&gt;If we can map $(M+O)$ and $(P+O)$ to a simple label, 
-and still match the language, 
-then we are done, and we can conclude like in the &lt;a href=&quot;./simulation-3&quot;&gt;previous post&lt;/a&gt;. 
-But this is not going to happen.&lt;/p&gt;
-
-&lt;p&gt;Suppose you are in following situation, which is supposed to be easy because 
-there is not even a $(P+O)$. (On the picture, every black node writes on its 
-adjacent edges.)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/couplage-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Ok, let’s just take one of the two edges labeled with $M+O$
-(let say the one with the smallest port-number on the white node), 
-label it with $M$, label the other one with $O$, and we are done.&lt;/p&gt;
-
-&lt;p&gt;This does notwork.
-The problem is the one we highlighted in the &lt;a href=&quot;./simulation-2&quot;&gt;second post&lt;/a&gt;: 
-the edges are not uniformly set-labeled by all the nodes. 
-A concrete bad case:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;let $(u,v)$ and $(v,w)$ be the two edges labeled by $(M+0)$&lt;/li&gt;
-  &lt;li&gt;in its simulation, $u$ has (M+O) for both edges, and based on port-numbers, 
-decides that $(u,v)$ gets $M$.&lt;/li&gt;
-  &lt;li&gt;in its simulation $w$ has $(M+O)$ for $(v,w)$, but only $(O)$ for $(u,v)$. Thus 
-it labels $(v,w)$ with $M$.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To solve this problem you have to synchronize, and this is forbidden as it takes 
-extra time.&lt;/p&gt;
-
-&lt;h2 id=&quot;no-lower-bound-this-way&quot;&gt;No lower bound this way&lt;/h2&gt;
-
-&lt;p&gt;So at the end, we cannot conclude like in the case of sinkless orientation.&lt;/p&gt;
-
-&lt;p&gt;Comments on that:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;This makes sense: actually there is a $O(\Delta)$ 
-algorithm for this problem, thus no $\Omega(\log n)$ lower bound exists.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The above alone does not prove that there is no $\Omega(\log n)$ lower 
-bound: we could use another definition of the problem, or we could have tried 
-more exotic label replacement ($M$ transformed into $P$, or whatever).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;If you want to prove a $\Omega(\Delta)$ lower bound then you need to be 
-smarter. In particular you need that, after the transformation, the language is 
-different. Basically there should be a parameter that starts with something like 
-$\Delta$ and decreases at each transformation. 
-For that, see &lt;a href=&quot;https://arxiv.org/abs/1901.02441&quot;&gt;the paper&lt;/a&gt;!&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Thanks to 
-&lt;a href=&quot;https://www.lix.polytechnique.fr/~mrabie/&quot;&gt;Mikaêl Rabie&lt;/a&gt; 
-for reading and improving this series of posts!&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 15 Feb 2019 00:00:00 +0100</pubDate>
-        <link>https://discrete-notes.github.io///simulation-4</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///simulation-4</guid>
       </item>
     
   </channel>

@@ -7,6 +7,142 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Graph classes and forbidden patterns&amp;#58; Introduction</title>
+        <description>&lt;p&gt;Michel Habib and I have quite recentely finished the paper 
+&lt;a href=&quot;https://arxiv.org/abs/1812.05913&quot;&gt;Graph classes and forbidden patterns on three vertices&lt;/a&gt;. 
+This blog post is the first of a small series that will present the paper.
+It follows the structure of a talk I gave yesterday at the University 
+of Chile.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-studying-graph-classes&quot;&gt;Why studying graph classes?&lt;/h2&gt;
+
+&lt;p&gt;This paper is about graph classes, and it seems that it is a topic 
+that is not popular with everybody, so let’s start with a couple of 
+reasons to study graph classes.&lt;/p&gt;
+
+&lt;h4 id=&quot;graphs-are-fundamental-objects&quot;&gt;Graphs are fundamental objects&lt;/h4&gt;
+&lt;p&gt;Just like sets and languages, graphs are basic objects, thus gathering 
+knowledge about them is useful. For example, the pumping lemma
+for regular languages appears in distributed computing, because 
+languages are basic objects, and thus they pop up everywhere.&lt;/p&gt;
+
+&lt;h4 id=&quot;to-use-algorithms-in-the-real-world&quot;&gt;To use algorithms in the “real world”&lt;/h4&gt;
+&lt;p&gt;If one wants to use algorithms for real-world problems, it is likely 
+that looking at results for general graphs is not the most useful 
+approach. There is a good proportion of the real-world instances that
+belong to very special classes, and if (1) you can recognize such 
+special classes fast, and (2) you have a fast algorithm for your problem 
+on this class, then you are happy. In other words,
+your transportation problem may be hard on expanders, but road networks 
+are not expanders, so let’s look at what road networks look like.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-not-studying-graph-classes&quot;&gt;Why &lt;em&gt;not&lt;/em&gt; studying graph classes?&lt;/h2&gt;
+
+&lt;p&gt;To be fair, there is a problem with graph classes: 
+there are way too many of them! The website 
+&lt;a href=&quot;graphclasses.org&quot;&gt;graphclasses.org&lt;/a&gt; lists 1600 classes, and it’s 
+difficult to navigate in this jungle, to know what is an interesting
+class, to know whether the class you’re working on is known etc.
+(although the website is very useful for that).&lt;/p&gt;
+
+&lt;h2 id=&quot;this-paper&quot;&gt;This paper&lt;/h2&gt;
+&lt;p&gt;This paper brings a new point of view on some very classic graph classes, 
+putting them all in the same framework, with algorithmic consequences.
+(Thus it goes in the right direction!).&lt;/p&gt;
+
+&lt;p&gt;Actually “new” should be used with a lot of quotation marks: this point of view 
+has been known for a long time for several classes. I cannot cite all 
+the papers here, so I’ll cite none of them, but keep in mind that most of 
+what I’ll write about is not new. Take a look at the paper if you want 
+to see the 70 citations.&lt;/p&gt;
+
+&lt;p&gt;Now, let’s get started with two examples.&lt;/p&gt;
+
+&lt;h2 id=&quot;example-1--forests&quot;&gt;Example 1 : forests&lt;/h2&gt;
+
+&lt;p&gt;Here is a complicated characterization of the forests (e.g. the acyclic 
+graphs).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Theorem:&lt;/em&gt; A graph $G=(V,E)$ is a forest, if and only if, there exists an ordering 
+of the nodes, such that: there does &lt;em&gt;not&lt;/em&gt; exist three nodes $a&amp;lt;b&amp;lt;c$, with 
+ $(a,b)\in E$ and $(a,c)\in E$.&lt;/p&gt;
+
+&lt;p&gt;That is, we forbid this pattern:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/tree.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;100px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Proof sketch&lt;/em&gt;
+$(\Rightarrow)$ : Consider a tree of the forest. Put the leaves 
+first in the ordering and remove them from the tree; then repeat 
+with the remaining nodes of the tree, until the tree is empty. 
+Then move on to the next tree, do the same etc. 
+It is easy to check that the pattern will not appear.&lt;/p&gt;
+
+&lt;p&gt;$(\Leftarrow)$ : If the graph is not a forest, then there is a cycle. 
+Now consider any ordering of the graph. The node of the cycle that is 
+the left-most in the ordering must have both its cycle neighbors on 
+its right, thus the pattern appears.&lt;/p&gt;
+
+&lt;h2 id=&quot;example-2--interval-graphs&quot;&gt;Example 2 : interval graphs&lt;/h2&gt;
+
+&lt;p&gt;A more interesting example is interval graphs. Given a set of intervals
+$S$, one can define the intersection graph of it, $I(S)$, by creating one 
+node for each interval and putting an edge between two nodes if the two 
+corresponding intervals intersect.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/interval-1.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;150px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Definition:&lt;/em&gt; A graph $G$ is an interval graph if $G=I(S)$ for some set 
+of intervals $S$.&lt;/p&gt;
+
+&lt;p&gt;From the picture above, we know that a path on four vertices is an 
+interval graph. A graph that is not an interval graph is the cycle on 
+four vertices. Consider the following picture.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/interval-2.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;150px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As the red node and the 
+blue node are not adjacent, they must correspond to two disjoint 
+intervals, and without loss of generality, the red interval comes first. 
+The black interval should intersect both the red and the blue intervals. 
+Thus it uses the space between these two.
+The same holds for the green interval, but the black and the green 
+intervals should not intersect, thus the construction is impossible.&lt;/p&gt;
+
+&lt;p&gt;Here is a characterization of interval graphs.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Theorem:&lt;/em&gt; A graph $G=(V,E)$ is an interval graph, if and only if, 
+there exists an ordering of the nodes, such that: there does not exist 
+three nodes $a&amp;lt;b&amp;lt;c$, with $(a,b)\notin E$ and $(a,c)\in E$.&lt;/p&gt;
+
+&lt;p&gt;In other words, the following pattern is forbidden:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/interval-pattern.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;100px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Proof sketch:&lt;/em&gt; 
+The key idea for the proof is to consider the ordering of the left 
+endpoints of the intervals. First, given a set of intervals 
+it is easy to see that the ordering given by these left endpoints avoids 
+the pattern. Second, to build a set of intervals, given the ordering, 
+one just as to put the left endpoint of the intervals in the right order
+and then to make put the right endpoint at the spot where the right most 
+neighbor starts. (The pattern insures that this construction is correct.)&lt;/p&gt;
+
+&lt;h2 id=&quot;similar-characterizations&quot;&gt;Similar characterizations&lt;/h2&gt;
+
+&lt;p&gt;Thus these two classes can be characterized in a 
+similar way: the existence of a vertex ordering that 
+avoids some small pattern. Our paper is about understanding what are the
+classes that can be defined this way. In the next post, we will define 
+this more formally.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 17 Oct 2019 00:00:00 -0300</pubDate>
+        <link>https://discrete-notes.github.io///patterns-1</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///patterns-1</guid>
+      </item>
+    
+      <item>
         <title>Summer-winter notes</title>
         <description>&lt;p&gt;Some notes for summer 2019, or actually winter 2019, as I moved to Chile.&lt;/p&gt;
 
@@ -1445,105 +1581,6 @@ will appear at STOC.]&lt;/p&gt;
         <pubDate>Wed, 13 Mar 2019 00:00:00 -0300</pubDate>
         <link>https://discrete-notes.github.io///stoc-socg-picks</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///stoc-socg-picks</guid>
-      </item>
-    
-      <item>
-        <title>February notes</title>
-        <description>&lt;p&gt;Notes for February 2019.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/lierre.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;minorities-in-network&quot;&gt;Minorities in network&lt;/h2&gt;
-
-&lt;p&gt;I attended a talk about minorities in network,
-by &lt;a href=&quot;http://claudiawagner.info/&quot;&gt;Claudia Wagner&lt;/a&gt; at the 
-&lt;a href=&quot;http://www.complexnetworks.fr/events/&quot;&gt;Complex network seminar&lt;/a&gt; of Sorbonnes 
-University. 
-There was a lot of content, here are a few things I noted.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Contrary to what I thought, a &lt;a href=&quot;https://en.wikipedia.org/wiki/K-core&quot;&gt;$k$-core&lt;/a&gt; 
-is not another name for a $k$-clique. 
-A $k$-core of a graph is a maximal connected subgraph where all the nodes have 
-degree at least $k$. It can have much more nodes than just $k$
-(a $k$-regular graph is its own $k$-core). Such subgraphs can be considered as 
-coherent communities in social networks.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A part of the talk was about minorities in wikipedia. 
-One would like to consider statements such as “women are more 
-linked to other women than to men”. 
-This is not true in general because there are more men pages, thus 
-links have more chance to point to men, but could still be true, proportionally.
-But it’s a bit too rough to just look at proportions because the graph may be 
-complicated and there might be many correlations going on.
-One way to deal with this is following: consider the graph of wikipedia 
-bibliographies, note the global gender proportions, then erase the gender of the 
-nodes, and reassign them at random, keeping the right proportions. 
-Now you can compare the neighbourhoods in this new graph and in the original 
-graph, and try to understand what’s going on. One paper on the topic is the following: 
-&lt;a href=&quot;https://arxiv.org/pdf/1501.06307.pdf&quot;&gt;It’s a Man’s Wikipedia? Assessing Gender Inequality in an Online Encyclopedia&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A notion known as &lt;em&gt;Burt efficiency&lt;/em&gt;, or &lt;em&gt;brokerage&lt;/em&gt;, or 
-&lt;em&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Structural_holes&quot;&gt;structural hole&lt;/a&gt;&lt;/em&gt;, is more or 
-less the following. 
-A node that belongs to (or is close to) two clusters in a 
-network, can have an advantage over the other nodes,
-because it can enjoy the information gathered by both communities, and 
-can choose to transfer or not such information. 
-One can define coefficients to measure if a node is or not in such a 
-position.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;multi-stage-optimization&quot;&gt;Multi-stage optimization&lt;/h2&gt;
-
-&lt;p&gt;For dynamic algorithms, one is usually concerned with having a good solution
- at any time, but these solutions do not need to be related.
-Multi-stage optimization, introduced in 
-&lt;a href=&quot;https://arxiv.org/abs/1404.3768&quot;&gt;this paper&lt;/a&gt;, considers the cases where one 
-should not change the solution too much between the two steps. 
-In other words, in this framework one maximizes the quality of the solution, 
-while minimizing the churn.&lt;/p&gt;
-
-&lt;p&gt;[I stumble on the notion in &lt;a href=&quot;https://arxiv.org/abs/1901.11260&quot;&gt;this preprint&lt;/a&gt;.]&lt;/p&gt;
-
-&lt;h2 id=&quot;1-2-3-conjecture&quot;&gt;1-2-3 Conjecture&lt;/h2&gt;
-
-&lt;p&gt;Another edition of the Complex Network seminar by 
-&lt;a href=&quot;http://www.labri.fr/index.php?n=Annuaires.Profile&amp;amp;id=Senhaji_ID1441185629&quot;&gt;Mohammed Senhaji&lt;/a&gt; 
-(that I couldn’t attend) was about the 1-2-3 conjecture, which is the following.&lt;/p&gt;
-
-&lt;p&gt;In any graph, one can label the edges with label 1, 2, or 3, such that, when each node 
-computes the sum of the labels of its adjacent labels, not two neighbours have 
-the same sum.&lt;/p&gt;
-
-&lt;p&gt;A survey about the conjecture is &lt;a href=&quot;https://arxiv.org/pdf/1211.5122.pdf&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;lovászs-new-book&quot;&gt;Lovász’s new book&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://fr.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Lov%C3%A1sz&quot;&gt;László Lovász&lt;/a&gt; 
-wrote a new book: 
-&lt;a href=&quot;http://web.cs.elte.hu/~lovasz/bookxx/geombook2019-01-20.pdf&quot;&gt;Graphs and geometry&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;vandermonde-identity&quot;&gt;Vandermonde identity&lt;/h2&gt;
-
-&lt;p&gt;Vandermonde’s identity is the following:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\binom{m+n}{r} = \sum_{k=0}^{r}\binom{m}{k} \binom{n}{r-k}.&lt;/script&gt;
-
-&lt;p&gt;I thought it was only a bachelor exercise, until it naturally popped up in the 
-calculation in &lt;a href=&quot;https://arxiv.org/pdf/1812.09120.pdf&quot;&gt;a recent paper&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 05 Mar 2019 00:00:00 -0300</pubDate>
-        <link>https://discrete-notes.github.io///february-2019-notes</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///february-2019-notes</guid>
       </item>
     
   </channel>

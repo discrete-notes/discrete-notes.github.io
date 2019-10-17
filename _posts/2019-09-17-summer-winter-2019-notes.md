@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Summer-winter notes
-redirect_from: "/2019/09/17/summer-winter-notes/"
+redirect_from: "/2019/09/17/summer-winter-2019-notes/"
 permalink: summer-winter-2019-notes
 ---
 

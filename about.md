@@ -21,5 +21,5 @@ I think it's a reasonable trade-off. If you find typos, email me!
 * The picture at the beginning of the posts, are there to identify easily the 
 posts and are usually not related to the content.
 
-[Laurent Feuilloley](https://pages.lip6.fr/Laurent.Feuilloley/)
+[Laurent Feuilloley](https://www.dii.uchile.cl/~feuilloley/)
 

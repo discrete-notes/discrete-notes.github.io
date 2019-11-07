@@ -87,98 +87,140 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/summer-winter-2019-notes">
-        Summer-winter notes
+      <a href="/patterns-1">
+        Graph classes and forbidden patterns&#58; Introduction
       </a>
     </h1>
 
-    <span class="post-date">17 Sep 2019</span>
+    <span class="post-date">17 Oct 2019</span>
 
-    <p>Some notes for summer 2019, or actually winter 2019, as I moved to Chile.</p>
+    <p>Michel Habib and I have quite recentely finished the paper 
+<a href="https://arxiv.org/abs/1812.05913">Graph classes and forbidden patterns on three vertices</a>. 
+This blog post is the first of a small series that will present the paper.
+It follows the structure of a talk I gave yesterday at the University 
+of Chile.</p>
 
-<hr />
-<p><img src="assets/azotea.jpg" alt="" class="center-image" height="400px" /></p>
-<p align="center"><small><i>
-The Andes.
-</i></small></p>
-<hr />
+<h2 id="why-studying-graph-classes">Why studying graph classes?</h2>
 
-<h2 id="queue-number-again-and-applications">Queue number again, and applications</h2>
+<p>This paper is about graph classes, and it seems that it is a topic 
+that is not popular with everybody, so let’s start with a couple of 
+reasons to study graph classes.</p>
 
-<p>A recent result about the so-called <em>queue number</em> was mentioned on this blog in March 
-(see <a href="./stoc-socg-picks">here</a>). The result says that this graph parameter is bounded 
-on planar graph that have bounded degree.
-The result has now been generalized to any planar graph! 
-The <a href="https://arxiv.org/pdf/1904.04791.pdf">paper is on arxiv</a> and will be presented 
-at FOCS 2019.
-I haven’t looked into the paper, but I know from 
-<a href="https://11011110.github.io/blog/2019/08/10/report-from-cccg.html">David Epptein’s blog</a> 
-that it is a byproduct of showing that “every planar graph is a subgraph of a strong 
-product of a path graph and a bounded-treewidth graph”.</p>
+<h4 id="graphs-are-fundamental-objects">Graphs are fundamental objects</h4>
+<p>Just like sets and languages, graphs are basic objects, thus gathering 
+knowledge about them is useful. For example, the pumping lemma
+for regular languages appears in distributed computing, because 
+languages are basic objects, and thus they pop up everywhere.</p>
 
-<p>Another <a href="https://arxiv.org/abs/1908.03341">recent paper on the arxiv</a> 
-uses this result to design shorter labeling schemes for planar graphs.
-As the abstract says: 
-“In graph-theoretical terms, this implies an explicit construction 
-of a graph on $n^{4/3}+o(1)$ vertices that contains all planar graphs 
-on n vertices as induced subgraphs”.
-(Thanks to Cyril Gavoille for pointing out this paper.)</p>
+<h4 id="to-use-algorithms-in-the-real-world">To use algorithms in the “real world”</h4>
+<p>If one wants to use algorithms for real-world problems, it is likely 
+that looking at results for general graphs is not the most useful 
+approach. There is a good proportion of the real-world instances that
+belong to very special classes, and if (1) you can recognize such 
+special classes fast, and (2) you have a fast algorithm for your problem 
+on this class, then you are happy. In other words,
+your transportation problem may be hard on expanders, but road networks 
+are not expanders, so let’s look at what road networks look like.</p>
 
-<h2 id="unfolding-polytopes-durers-conjecture">Unfolding polytopes: Durer’s Conjecture</h2>
+<h2 id="why-not-studying-graph-classes">Why <em>not</em> studying graph classes?</h2>
 
-<p>Given a polyhedra, one can cut along the edges to unfold it on the plane as in the following drawing.</p>
+<p>To be fair, there is a problem with graph classes: 
+there are way too many of them! The website 
+<a href="graphclasses.org">graphclasses.org</a> lists 1600 classes, and it’s 
+difficult to navigate in this jungle, to know what is an interesting
+class, to know whether the class you’re working on is known etc.
+(although the website is very useful for that).</p>
 
-<p><img src="assets/durer-1.jpg" alt="" class="center-image" height="300px" /></p>
+<h2 id="this-paper">This paper</h2>
+<p>This paper brings a new point of view on some very classic graph classes, 
+putting them all in the same framework, with algorithmic consequences.
+(Thus it goes in the right direction!).</p>
 
-<p>But sometimes, if you cut along some edges, you may have an overlap in the unfolding, as the
-second unfolding of the 
-following  example (borrowed from <a href="http://mathworld.wolfram.com/Unfolding.html">here</a>) shows.</p>
+<p>Actually “new” should be used with a lot of quotation marks: this point of view 
+has been known for a long time for several classes. I cannot cite all 
+the papers here, so I’ll cite none of them, but keep in mind that most of 
+what I’ll write about is not new. Take a look at the paper if you want 
+to see the 70 citations.</p>
 
-<p><img src="assets/durer-2.jpg" alt="" class="center-image" height="300px" /></p>
+<p>Now, let’s get started with two examples.</p>
 
-<p><a href="http://www.openproblemgarden.org/op/d_urers_conjecture">Durer’s conjecture</a> states that 
-“Every convex polytope has a non-overlapping edge unfolding”.
-A non-overlapping edge unfolding is called <a href="https://en.wikipedia.org/wiki/Net_(polyhedron)">a net</a>, 
-so the conjecture can be reformulated as: “Every convex polytope has a net”.
-It is surprising that such a cute and simple result is still open.</p>
+<h2 id="example-1--forests">Example 1 : forests</h2>
 
-<p>I learned about this conjecture in 
-<a href="https://11011110.github.io/blog/2019/08/10/report-from-cccg.html">Eppstein’s report on CCCG</a>. 
-More information can be found in 
-<a href="https://www.mi.fu-berlin.de/math/groups/discgeom/ziegler/Preprintfiles/127PREPRINT.pdf">Ten Problems in Geometry</a>
-by Moritz W. Schmitt and Günter M. Ziegler.</p>
+<p>Here is a complicated characterization of the forests (e.g. the acyclic 
+graphs).</p>
 
-<h2 id="more-on-graphs-inspired-by-objects-and-nature">More on graphs inspired by objects and nature</h2>
+<p><em>Theorem:</em> A graph $G=(V,E)$ is a forest, if and only if, there exists an ordering 
+of the nodes, such that: there does <em>not</em> exist three nodes $a&lt;b&lt;c$, with 
+ $(a,b)\in E$ and $(a,c)\in E$.</p>
 
-<p>We had a <a href="./april-may-2019-notes">post in april</a> on graphs that have some meaning 
-in terms of real-world objects.</p>
+<p>That is, we forbid this pattern:</p>
 
-<p>Two additional pointers on this topic:</p>
-<ul>
-  <li>a <a href="https://11011110.github.io/blog/2013/12/07/kinematic-chains-and.html">blog post</a> about graph that have one degree of freedom when you want to move them.</li>
-  <li>the <a href="https://www.ics.uci.edu/~eppstein/pubs/Epp-WADS-19.pdf">slides</a> of a talk about graphs inspired by nature, for example by crystals and by bubbles.</li>
-</ul>
+<p><img src="assets/tree.jpg" alt="" class="center-image" height="100px" /></p>
 
-<p><img src="assets/cristaux-bulles.jpg" alt="" class="center-image" height="300px" /></p>
-<p align="center"><small><i>
-The red circles are the nodes on the right drawing, but on the left ones they are part of the procedure to draw the crystals. See the slides for more details.
-</i></small></p>
+<p><em>Proof sketch</em>
+$(\Rightarrow)$ : Consider a tree of the forest. Put the leaves 
+first in the ordering and remove them from the tree; then repeat 
+with the remaining nodes of the tree, until the tree is empty. 
+Then move on to the next tree, do the same etc. 
+It is easy to check that the pattern will not appear.</p>
 
-<h2 id="automata-size-to-separate-two-words">Automata size to separate two words</h2>
+<p>$(\Leftarrow)$ : If the graph is not a forest, then there is a cycle. 
+Now consider any ordering of the graph. The node of the cycle that is 
+the left-most in the ordering must have both its cycle neighbors on 
+its right, thus the pattern appears.</p>
 
-<p>Yet another very simple and still open problem: consider two strings of length $n$, what is the size of the smallest deterministic automaton than accepts one and rejects the other? 
-Or more precisely, what is the maximum over all such pairs of this size? 
-The upper bound is polynomial in $n$ (something like $\sqrt(n)$) and the lower bound is $\Omega(\log n)$. An exponential gap!</p>
+<h2 id="example-2--interval-graphs">Example 2 : interval graphs</h2>
 
-<p>For more on this see these two posts by Lipton: <a href="https://rjlipton.wordpress.com/2019/09/08/separating-words-by-automata/">here</a> and
-<a href="https://rjlipton.wordpress.com/2019/09/16/separating-words-decoding-a-paper/">there</a>.</p>
+<p>A more interesting example is interval graphs. Given a set of intervals
+$S$, one can define the intersection graph of it, $I(S)$, by creating one 
+node for each interval and putting an edge between two nodes if the two 
+corresponding intervals intersect.</p>
 
-<h2 id="other-notes">Other notes</h2>
-<ul>
-  <li>The paper about the matching lower bound that I mentioned here several times won the best paper award at FOCS! I think it’s a remarkable research story: identifying a fundamental problem, telling everybody about it, learning more and more, and finally solving it, and getting an award for it!</li>
-  <li>Some day, I’ll learn about spanners, I hope. <a href="https://arxiv.org/pdf/1909.03152.pdf">Here</a> is a recent survey that may help.</li>
-  <li>A <a href="https://arxiv.org/abs/1907.05257">paper appeared on the arxiv</a> on the recognition of intersection graphs of objects touching a diagonal line, related to <a href="https://www.dii.uchile.cl/~feuilloley/publications/rectangles_DCG15.html">this paper of mine</a>.</li>
-</ul>
+<p><img src="assets/interval-1.jpg" alt="" class="center-image" height="150px" /></p>
+
+<p><em>Definition:</em> A graph $G$ is an interval graph if $G=I(S)$ for some set 
+of intervals $S$.</p>
+
+<p>From the picture above, we know that a path on four vertices is an 
+interval graph. A graph that is not an interval graph is the cycle on 
+four vertices. Consider the following picture.</p>
+
+<p><img src="assets/interval-2.jpg" alt="" class="center-image" height="150px" /></p>
+
+<p>As the red node and the 
+blue node are not adjacent, they must correspond to two disjoint 
+intervals, and without loss of generality, the red interval comes first. 
+The black interval should intersect both the red and the blue intervals. 
+Thus it uses the space between these two.
+The same holds for the green interval, but the black and the green 
+intervals should not intersect, thus the construction is impossible.</p>
+
+<p>Here is a characterization of interval graphs.</p>
+
+<p><em>Theorem:</em> A graph $G=(V,E)$ is an interval graph, if and only if, 
+there exists an ordering of the nodes, such that: there does not exist 
+three nodes $a&lt;b&lt;c$, with $(a,b)\notin E$ and $(a,c)\in E$.</p>
+
+<p>In other words, the following pattern is forbidden:</p>
+
+<p><img src="assets/interval-pattern.jpg" alt="" class="center-image" height="100px" /></p>
+
+<p><em>Proof sketch:</em> 
+The key idea for the proof is to consider the ordering of the left 
+endpoints of the intervals. First, given a set of intervals 
+it is easy to see that the ordering given by these left endpoints avoids 
+the pattern. Second, to build a set of intervals, given the ordering, 
+one just as to put the left endpoint of the intervals in the right order
+and then to make put the right endpoint at the spot where the right most 
+neighbor starts. (The pattern insures that this construction is correct.)</p>
+
+<h2 id="similar-characterizations">Similar characterizations</h2>
+
+<p>Thus these two classes can be characterized in a 
+similar way: the existence of a vertex ordering that 
+avoids some small pattern. Our paper is about understanding what are the
+classes that can be defined this way. In the next post, we will define 
+this more formally.</p>
 
 
   </div>

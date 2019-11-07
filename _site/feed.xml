@@ -7,6 +7,146 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>October 2019 notes&amp;#58; distances and moving stuff</title>
+        <description>&lt;p&gt;Some notes for October 2019, related to distances and to moving stuff.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;assets/farmacia.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;600px&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
+A lot is going on in Chile. Fortunately there are some good recipes.
+&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;matching-graphs-via-gromov-hausdorff-distance&quot;&gt;Matching graphs via Gromov-Hausdorff distance&lt;/h2&gt;
+
+&lt;p&gt;There are many contexts where one would like to compare two graphs, to 
+measure if they are close or not. 
+One way of doing this is to decide whether one is included in the other
+(the 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Subgraph_isomorphism_problem&quot;&gt;subgraph isomorphism problem&lt;/a&gt;) 
+or more generally if they have a 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Maximum_common_edge_subgraph&quot;&gt;large isomorphic subgraph&lt;/a&gt;.
+Another way is to measure the number of edits one has to make to go from 
+one graph to the other (for example the number of edges to add and 
+remove). This is what is done in 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Property_testing&quot;&gt;property testing&lt;/a&gt;, where having a 
+distance on the objects is essential.&lt;/p&gt;
+
+&lt;p&gt;More generally, there exists a distance for compact metric spaces called 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Gromov%E2%80%93Hausdorff_convergence#Gromov%E2%80%93Hausdorff_distance&quot;&gt;Gromov-Hausdorff distance&lt;/a&gt;, 
+that applies to graphs.&lt;/p&gt;
+
+&lt;p&gt;No surprise, this distance is a complicated notion 
+(an inf of a max of a sup of an inf),
+and computing it is NP-hard. The reduction is to the 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Quadratic_bottleneck_assignment_problem&quot;&gt;quadratic bottleneck assignment problem&lt;/a&gt;, 
+a &lt;a href=&quot;https://en.wikipedia.org/wiki/Facility_location_problem&quot;&gt;facility location problem&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A &lt;a href=&quot;https://arxiv.org/pdf/1909.09772.pdf&quot;&gt;fairly recent preprint&lt;/a&gt; studies how to 
+estimate a modification of this distance in polynomial time.&lt;/p&gt;
+
+&lt;h2 id=&quot;hardness-of-moving-earth&quot;&gt;Hardness of moving earth&lt;/h2&gt;
+
+&lt;p&gt;Given two point sets of equal size in an Euclidian space, $A$ and $B$, and a 
+bijection $f: A \rightarrow B$ , the cost of transporting $A$ to $B$ 
+through $f$ is the sum over the elements of $a$ of the distances 
+from $a$ to $f(a)$.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/earth-moving.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;200px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now given two point sets, the earth mover distance is the minimum such 
+distance over all bijection:
+$
+EMD(A,B)=\min_f \sum_{a\in A} d(a,f(a))
+$&lt;/p&gt;
+
+&lt;p&gt;It is the discrete analogue of 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Transportation_theory_(mathematics)&quot;&gt;Monge-Kantorovich metric&lt;/a&gt;
+in probability theory, and is used in machine learning.&lt;/p&gt;
+
+&lt;p&gt;Algorithms to compute the EMD are quadratic in $n$, and faster algorithms 
+are known for approximation but only in small dimensions.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1909.11068&quot;&gt;A recent preprint&lt;/a&gt; proves conditional 
+hardness results that explain this situation.&lt;/p&gt;
+
+&lt;h2 id=&quot;complexity-of-sandpiles&quot;&gt;Complexity of sandpiles&lt;/h2&gt;
+
+&lt;p&gt;Sandpile models are models close to cellular automata, based on a grid 
+in some dimension $d$, where every cell has a number (the number of 
+grains of sand there is at this location), and there is a local rule to 
+decide where the grains move at each step.&lt;/p&gt;
+
+&lt;p&gt;There is &lt;a href=&quot;https://arxiv.org/pdf/1909.12150.pdf&quot;&gt;a recent survey&lt;/a&gt; about 
+the complexity of predicting the final shape of sandpiles. 
+There are some very nice things going on. For example the complexity of 
+the prediction is related to the computational power of the sandpile itself:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If the prediction is P-hard, then the sandpile has the computational 
+power of a Turing machine.&lt;/li&gt;
+  &lt;li&gt;If the prediction is easier then it is not the case.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A classic sandpile model is called the
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Abelian_sandpile_model&quot;&gt;abelian sandpile model&lt;/a&gt;
+(or Bak–Tang–Wiesenfeld model) and is the following. 
+On a grid $Z^d$, the rule is: every node that has $2d$ grains or more 
+gives one grain to each neighboring cell.&lt;/p&gt;
+
+&lt;p&gt;Here is an example with $d=1$, and a starting configuration where one 
+cell has 5 grains. The cells that have 2 or more grains are “unstable” 
+and give one grain to their left neighbor and one grain to their right 
+neighbor.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/sandpile.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;180px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that the dynamic is not exactly what you would expect from a real 
+sandpile, but it is very simple and has very nice properties.&lt;/p&gt;
+
+&lt;p&gt;For this model, the following hold:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In dimension 1, prediction is in &lt;a href=&quot;https://en.wikipedia.org/wiki/NC_(complexity)&quot;&gt;NC&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;In dimension 3 or more the prediction is P-hard.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The survey gives a lot results, sketches and conjectures.&lt;/p&gt;
+
+&lt;h2 id=&quot;k-opt-ratio-for-tsp&quot;&gt;k-OPT ratio for TSP&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/2-opt&quot;&gt;2-OPT&lt;/a&gt; and its generalization 
+k-OPT, are popular heuristics for 
+the (metric) &lt;a href=&quot;https://en.wikipedia.org/wiki/Travelling_salesman_problem&quot;&gt;traveling salesman problem&lt;/a&gt;.
+They consist in iteratively looking for 2 (respectively $k$ edges) to modify to improve the 
+cost of the tour. Here is an example for 2-OPT.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/2opt.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;200px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This heuristic performs poorly in the worst-case: exponential time, and 
+approximation ratio in $\theta(\sqrt n)$. But it performs well in practice.&lt;/p&gt;
+
+&lt;p&gt;A &lt;a href=&quot;https://arxiv.org/pdf/1909.12025.pdf&quot;&gt;recent preprint&lt;/a&gt; computes the 
+precise approximation ratio for 2-OPT, which is $\sqrt(n)/2$.&lt;/p&gt;
+
+&lt;p&gt;Other papers from the literature prove that :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The approximation ratio is in $O(\sqrt n)$ for random edge weights 
+(which are not metric in general), see &lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S016763770900011X?via%3Dihub&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;For Euclidian instances, the worst ratio is in $O(\log n)$.&lt;/li&gt;
+  &lt;li&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Smoothed_analysis&quot;&gt;smoothed analysis&lt;/a&gt;
+of the problem has been studied, eg &lt;a href=&quot;https://wwwhome.ewi.utwente.nl/~mantheyb/full/MantheyVeenstra_TwoOpt.pdf&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;The fine-grain analysis of $k$-OPT has been done &lt;a href=&quot;http://drops.dagstuhl.de/opus/volltexte/2016/6277/pdf/LIPIcs-ICALP-2016-5.pdf&quot;&gt;here&lt;/a&gt;
+with improved complexity for $k\geq 4$.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 07 Nov 2019 00:00:00 -0300</pubDate>
+        <link>https://discrete-notes.github.io///october-2019-notes-distances</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///october-2019-notes-distances</guid>
+      </item>
+    
+      <item>
         <title>Graph classes and forbidden patterns&amp;#58; Introduction</title>
         <description>&lt;p&gt;Michel Habib and I have quite recentely finished the paper 
 &lt;a href=&quot;https://arxiv.org/abs/1812.05913&quot;&gt;Graph classes and forbidden patterns on three vertices&lt;/a&gt;. 
@@ -1372,215 +1512,6 @@ in the drawing of the graph.]&lt;/p&gt;
         <pubDate>Mon, 25 Mar 2019 00:00:00 -0300</pubDate>
         <link>https://discrete-notes.github.io///march-2019-notes-1</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///march-2019-notes-1</guid>
-      </item>
-    
-      <item>
-        <title>STOC and SOCG picks</title>
-        <description>&lt;p&gt;A few weeks ago the accepted papers lists of 
-&lt;a href=&quot;http://acm-stoc.org/stoc2019/&quot;&gt;STOC&lt;/a&gt; 
-and 
-&lt;a href=&quot;http://eecs.oregonstate.edu/socg19/&quot;&gt;SOCG&lt;/a&gt; 
-were made public. 
-A bunch of titles caught my attention, and here are a few bits of information on
-some papers I could find online.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/saucisses.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;350px&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;testing-graphs-in-vertex-distribution-free-models&quot;&gt;Testing graphs in vertex-distribution-free models&lt;/h2&gt;
-
-&lt;p&gt;Graph &lt;a href=&quot;https://en.wikipedia.org/wiki/Property_testing&quot;&gt;property testing&lt;/a&gt; 
-basically consists in deciding if a graph has a property 
-or not, by looking only at some parts of it. 
-More precisely one queries a few nodes, and ask for their neighbors for example, 
-and then outputs whether the graph has the property or is far from having 
-it. Note that such a statement can only be true with some probability.
-An introduction to graph property testing is 
-&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~/oded/COL/tgp-intro.pdf&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;In the classic model, one is allowed to query a random node, with “random” 
-meaning “uniformly at random”. In a new 
-&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~/oded/VO/vdf.pdf&quot;&gt;paper&lt;/a&gt;
-the author considers the case where the random access is not uniform but depends 
-on an arbitrary distribution. This in turn implies a change in the definition of 
-being far from a property.&lt;/p&gt;
-
-&lt;p&gt;I didn’t dive in the paper, but I imagine the following scenario. 
-Some nodes are more “important” than others. This translates into two things:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;It’s not a very big deal if you don’t detect that something is wrong around
-an unimportant node.&lt;/li&gt;
-  &lt;li&gt;Your random queries have more chance to visit an important node than an 
-unimportant node.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For example, you have a dynamic graph, you may not know about newly arrived 
-nodes, but these are less important, so it’s no big deal if you don’t query them
-now.&lt;/p&gt;
-
-&lt;p&gt;[The paper is 
-&lt;em&gt;&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~/oded/VO/vdf.pdf&quot;&gt;Testing Graphs in Vertex-Distribution-Free Models&lt;/a&gt;&lt;/em&gt;,
-by &lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~oded/&quot;&gt;Oded Goldreich&lt;/a&gt;, 
-and will appear at STOC 2019.
-It was listed in 
-&lt;a href=&quot;https://ptreview.sublinear.info/?p=1044&quot;&gt;October 2018 property testing review&lt;/a&gt;.]&lt;/p&gt;
-
-&lt;h2 id=&quot;transportation-problem&quot;&gt;Transportation problem&lt;/h2&gt;
-
-&lt;p&gt;The transportation problem is the following. 
-Given a graph, where each node $v$ is given a (positive or negative) supply 
-$\mu(v)$, such that $\sum_v \mu(v)=0$, one has to find a flow to transport the 
-supplies in order to reach the configuration where every node has supply 0. 
-See the picture below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/transportation.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;250px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This is very similar to the 
-&lt;a href=&quot;Transportation theory (mathematics)&quot;&gt;optimal transport problem&lt;/a&gt; in non-discrete 
-mathematics. The &lt;a href=&quot;https://arxiv.org/pdf/1902.08384.pdf&quot;&gt;paper&lt;/a&gt; presents an 
-approximation algorithm for fixed dimensions via continuous optimization.&lt;/p&gt;
-
-&lt;p&gt;I don’t know how much continuous optimization is used, but it reminds me of an 
-excellent invited talk by 
-&lt;a href=&quot;https://people.csail.mit.edu/madry/&quot;&gt;Aleksander Mądry&lt;/a&gt; at 
-&lt;a href=&quot;http://2016.highlightsofalgorithms.org/&quot;&gt;HALG 2016&lt;/a&gt;, that convinced me that 
-continuous optimization can be a good approach to solve combinatorial problems.
-There is no video of the talk, but 
-&lt;a href=&quot;https://www.youtube.com/watch?v=noRNcDbqtVY&quot;&gt;this one&lt;/a&gt;
-seems pretty close.&lt;/p&gt;
-
-&lt;p&gt;[The paper is 
-&lt;em&gt;&lt;a href=&quot;https://arxiv.org/pdf/1902.08384.pdf&quot;&gt;Preconditioning for the Geometric Transportation Problem&lt;/a&gt;&lt;/em&gt;
-by &lt;a href=&quot;http://www.math.toronto.edu/khesin/&quot;&gt;Boris A. Khesin&lt;/a&gt;,
-&lt;a href=&quot;http://www.cs.toronto.edu/~anikolov/&quot;&gt;Aleksandar Nikolov&lt;/a&gt;,
-and Dmitry Paramonov, and will appear at SOCG.]&lt;/p&gt;
-
-&lt;h2 id=&quot;lp-roundings-iterated-meets-randomized&quot;&gt;LP roundings: iterated meets randomized&lt;/h2&gt;
-
-&lt;p&gt;A classic approach in combinatorial optimization is to express the problem as a 
-linear program. 
-Unfortunately, only the fractional case is known to be solvable 
-efficiently, and only the integer solutions can be transfered back to solution 
-for the original problem. 
-A solution is to compute a fractional solution and then to round it to an integer 
-solution. This approach is very powerful for approximation algorithms.&lt;/p&gt;
-
-&lt;p&gt;There are two important types of rounding: randomized rounding and iterated 
-rounding. 
-In &lt;a href=&quot;https://en.wikipedia.org/wiki/Randomized_rounding&quot;&gt;randomized rounding&lt;/a&gt;, 
-a fractional variable $x_i$ is simply rounded to 1 
-with probability $x_i$. 
-In iterated rounding, one iteratively modify the fractional solution until it 
-gets to an integral solutions (for example adding some small amount to a set of 
-variables, until they reach 1, etc.). 
-Both roundings have their pros and cons.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1811.01597.pdf&quot;&gt;The paper&lt;/a&gt; presents a method that 
-combines the two approaches into one common framework, and shows how to use it.&lt;/p&gt;
-
-&lt;p&gt;[The paper is 
-&lt;em&gt;&lt;a href=&quot;https://arxiv.org/pdf/1811.01597.pdf&quot;&gt;On a generalization of iterated and randomizedrounding&lt;/a&gt;&lt;/em&gt;
-by &lt;a href=&quot;https://www.win.tue.nl/~nikhil/&quot;&gt;Nikhil Bansal&lt;/a&gt;, and will appear at STOC.]&lt;/p&gt;
-
-&lt;h2 id=&quot;queue-layout&quot;&gt;Queue layout&lt;/h2&gt;
-
-&lt;p&gt;Given a graph, a $k$-queue layout is an ordering of the vertices and a partition 
-of the
-edges into $k$ sets, such that there are not two edges of the same partition, 
-that are nested. 
-Below is an example of a graph and a 2-queue layout of it.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/queue-layout.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;250px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Queue_number&quot;&gt;queue number&lt;/a&gt; of a graph is 
-the minimum $k$ such that there exists a $k$ layout of the graph. 
-An important open question is whether planar graph have bounded queue number. 
-&lt;a href=&quot;https://arxiv.org/pdf/1811.00816.pdf&quot;&gt;The paper&lt;/a&gt; makes a step towards a positive
-answer, by proving that planar graphs with bounded degree have bounded queue 
-number.&lt;/p&gt;
-
-&lt;p&gt;[The paper is 
-&lt;em&gt;&lt;a href=&quot;https://arxiv.org/pdf/1811.00816.pdf&quot;&gt;Planar Graphs of Bounded Degree have Constant Queue Number&lt;/a&gt;&lt;/em&gt;
-by 
-&lt;a href=&quot;http://algo.inf.uni-tuebingen.de/?site=mitarbeiter/michaelbekos/index&quot;&gt;Michael A. Bekos&lt;/a&gt;, 
-&lt;a href=&quot;http://www-pr.informatik.uni-tuebingen.de/?site=mitarbeiter/henryfoerster/index&quot;&gt;Henry Förster&lt;/a&gt;,
-&lt;a href=&quot;https://informatik.uni-koeln.de/ls-juenger/people/gronemann/&quot;&gt;Martin Gronemann&lt;/a&gt;, 
-&lt;a href=&quot;https://i11www.iti.kit.edu/en/members/tamara_mchedlidze/index&quot;&gt;Tamara Mchedlidze&lt;/a&gt;,
-&lt;a href=&quot;http://mozart.diei.unipg.it/montecchiani/&quot;&gt;Fabrizio Montecchiani&lt;/a&gt;, 
-Chrysanthi Raftopoulou, and
-&lt;a href=&quot;https://i11www.iti.kit.edu/en/members/torsten_ueckerdt/index&quot;&gt;Torsten Ueckerdt&lt;/a&gt;.
-It will appear at STOC (even though the topic is very SOCG-friendly).
-I didn’t know about queue layouts, and it’s good to discover it, as it is yet 
-another example of graph parameter that correspond to a pattern, in the sense of 
-&lt;a href=&quot;https://arxiv.org/abs/1812.05913&quot;&gt;this paper&lt;/a&gt;.]&lt;/p&gt;
-
-&lt;h2 id=&quot;reachability-of-petri-nets&quot;&gt;Reachability of Petri nets&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Petri_net&quot;&gt;Petri nets&lt;/a&gt; are very common in 
-theoretical computer science, for 
-example in &lt;a href=&quot;https://en.wikipedia.org/wiki/Model_checking&quot;&gt;model checking&lt;/a&gt;. 
-Nevertheless, it is horribly hard to decide the reachability problem for this 
-model: can you get from a configuration $A$ to a configuration $B$?
-The decidability of the problem was proved only in the 80s, and the best 
-upper bound is non-primitive recursive cubic-Ackermannian (don’t ask what it 
-means, exponential space is already scaring me).&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://arxiv.org/pdf/1809.07115.pdf&quot;&gt;paper&lt;/a&gt; proves that the problem is 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Nonelementary_problem&quot;&gt;non-elemetary&lt;/a&gt;, that is, 
-its time complexity cannot be bounded by a power tower.&lt;/p&gt;
-
-&lt;p&gt;[The paper is 
-&lt;em&gt;&lt;a href=&quot;https://arxiv.org/pdf/1809.07115.pdf&quot;&gt;The Reachability Problem for Petri Nets is Not Elementary&lt;/a&gt;&lt;/em&gt;
-by &lt;a href=&quot;https://www.mimuw.edu.pl/~wczerwin/&quot;&gt;Wojciech Czerwiński&lt;/a&gt;,
-&lt;a href=&quot;https://mimuw.edu.pl/~sl/&quot;&gt;Sławomir Lasota&lt;/a&gt;,
-&lt;a href=&quot;https://warwick.ac.uk/fac/sci/dcs/people/ranko_lazic&quot;&gt;Ranko Lazić&lt;/a&gt;,
-&lt;a href=&quot;https://www.labri.fr/perso/leroux/&quot;&gt;Jérôme Leroux&lt;/a&gt; and 
-&lt;a href=&quot;https://www.labri.fr/perso/fmazowiecki/&quot;&gt;Filip Mazowiecki&lt;/a&gt;; and will appear at STOC.
-In France, &lt;a href=&quot;http://www.lsv.fr/~schmitz/index.html.en&quot;&gt;Sylvain Schmitz&lt;/a&gt; is one 
-of the researcher working on this kind of stratospherical complexities. 
-&lt;a href=&quot;http://www.lsv.fr/~halfon/&quot;&gt;Simon Halfon&lt;/a&gt; one his PhD students at the time, 
-gave an excellent talk on this topic at the 
-&lt;a href=&quot;https://www.irif.fr/en/seminaires/doctorants/index&quot;&gt;IRIF PhD seminar&lt;/a&gt; in 2017.]&lt;/p&gt;
-
-&lt;h2 id=&quot;quartet-distance-and-4-cycles&quot;&gt;Quartet distance and 4-cycles&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Quartet_distance&quot;&gt;quartet distance&lt;/a&gt; is a 
-distance between phylogenetic trees. More precisely it is a distance between two 
-unrooted trees with labeled leaves. It basically takes all the tuples of four 
-leaves and count how many of them are in different topology in the two trees.&lt;/p&gt;
-
-&lt;p&gt;For example in the picture below, for the two trees on the left, we want to 
-decide whether the leaves $a$, $b$, $c$ and $d$ are in the same topology or not. 
-We simplify the tree until we have only these leaves, and we see on the pictures
-on the right&lt;br /&gt;
-that it is not the case. Thus this quartet will add one to the distance. 
-(Note that on the left, all leaves should be labeled, but I indicate only the 
-ones we are interested in).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/quartet.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://arxiv.org/pdf/1811.06244.pdf&quot;&gt;paper&lt;/a&gt; shows that computing the 
-problem of computing 
-distance between two trees is equivalent to the problem of computing the number 
-of 4-cycles in a graph, up to 
-polylogarithmic factors. This implies better algorithms and better insights
-on the complexity.&lt;/p&gt;
-
-&lt;p&gt;[The paper is
-&lt;em&gt;&lt;a href=&quot;https://arxiv.org/pdf/1811.06244.pdf&quot;&gt;Computing Quartet Distance is Equivalent to Counting 4-Cycles&lt;/a&gt;&lt;/em&gt;
- by Bartłomiej Dudek (whom I have had the chance to meet in EPFL), 
-and &lt;a href=&quot;https://sites.google.com/a/cs.uni.wroc.pl/gawry/&quot;&gt;Paweł Gawrychowski&lt;/a&gt;, and 
-it
-will appear at STOC.]&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 13 Mar 2019 00:00:00 -0300</pubDate>
-        <link>https://discrete-notes.github.io///stoc-socg-picks</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///stoc-socg-picks</guid>
       </item>
     
   </channel>

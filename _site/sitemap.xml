@@ -2,10 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://discrete-notes.github.io/</loc>
-    <lastmod>2019-11-07T15:03:05-03:00</lastmod>
+    <lastmod>2019-11-12T12:30:10-03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+    <url>
+      <loc>https://discrete-notes.github.io//mid-november-2019-non-technical</loc>
+      
+        <lastmod>2019-11-12T00:00:00-03:00</lastmod>
+      
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
   
     <url>
       <loc>https://discrete-notes.github.io//october-2019-notes-distances</loc>
@@ -209,7 +218,7 @@
   <url>
     <loc>https://discrete-notes.github.io//404/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -222,7 +231,7 @@
   <url>
     <loc>https://discrete-notes.github.io//about/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -235,7 +244,7 @@
   <url>
     <loc>https://discrete-notes.github.io//archive/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -248,7 +257,7 @@
   <url>
     <loc>https://discrete-notes.github.io//feed.xml</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -261,7 +270,7 @@
   <url>
     <loc>https://discrete-notes.github.io//</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -274,7 +283,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page2/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -287,7 +296,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page3/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -300,7 +309,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page4/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -313,7 +322,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page5/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -326,7 +335,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page6/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -339,7 +348,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page7/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -352,7 +361,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page8/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -365,7 +374,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page9/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -378,7 +387,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page10/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -391,7 +400,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page11/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -404,7 +413,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page12/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -417,7 +426,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page13/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -430,7 +439,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page14/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -443,7 +452,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page15/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -456,7 +465,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page16/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -469,7 +478,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page17/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -482,7 +491,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page18/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -495,7 +504,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page19/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -508,7 +517,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page20/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -521,7 +530,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page21/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -534,7 +543,20 @@
   <url>
     <loc>https://discrete-notes.github.io//page22/</loc>
     
-      <lastmod>2019-11-07</lastmod>
+      <lastmod>2019-11-12</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://discrete-notes.github.io//page23/</loc>
+    
+      <lastmod>2019-11-12</lastmod>
     
     
       <changefreq>monthly</changefreq>

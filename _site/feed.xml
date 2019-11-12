@@ -7,6 +7,83 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Mid-November (non-technical) notes</title>
+        <description>&lt;p&gt;Some notes about a new conference, a new research organization etc.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;assets/comida-india.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
+&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;conference-model-survey&quot;&gt;Conference model survey&lt;/h2&gt;
+
+&lt;p&gt;An online survey has been created &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSfOmbqTTfQfUYEXADCLLqat-OAl7XUh8gFceg27uDfpr_NaaQ/viewform&quot;&gt;here&lt;/a&gt; to gather the opinions of the distributed 
+computing community about its model of conferences. Topics include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;changing from one deadline to three deadlines a year. Basically it’s like 
+having the reviewing process made three times (with a smaller number of papers), 
+and then having a conference with the papers accepted to any of the three phases.&lt;/li&gt;
+  &lt;li&gt;collocating the two main conferences of the domain.&lt;/li&gt;
+  &lt;li&gt;changing the format (more keynotes, or shorter talks etc.)&lt;/li&gt;
+  &lt;li&gt;transitioning to a journal model.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Details can be found in the survey.&lt;/p&gt;
+
+&lt;h2 id=&quot;paper-presentation-videos&quot;&gt;Paper presentation videos&lt;/h2&gt;
+
+&lt;p&gt;One of the side topics of the survey is the possibility for the 
+authors to upload a video presenting their papers. It’s something I have thought
+of doing for my papers, but finally didn’t try.&lt;/p&gt;
+
+&lt;p&gt;Till Miltzow is a researcher in graph theory and he records a talk for every 
+paper he has, see &lt;a href=&quot;https://sites.google.com/view/miltzow/publications&quot;&gt;here&lt;/a&gt;. 
+I think it’s good!&lt;/p&gt;
+
+&lt;h2 id=&quot;the-polytcs-project&quot;&gt;The PolyTCS project&lt;/h2&gt;
+
+&lt;p&gt;You may know the &lt;a href=&quot;https://en.wikipedia.org/wiki/Polymath_Project&quot;&gt;Polymath Project&lt;/a&gt;,
+which is a project from the math community. It consists in choosing an open problem, 
+and then working on this problem in a massively collaborative way: everything is
+public, and everyone can help. This project has been quite successful, with great
+collaborations, and great papers.&lt;/p&gt;
+
+&lt;p&gt;A similar project has been launched in TCS: 
+&lt;a href=&quot;https://polytcs.wordpress.com/&quot;&gt;The PolyTCS project&lt;/a&gt;.
+The first problem is about boolean functions, see 
+&lt;a href=&quot;https://polytcs.wordpress.com/2019/11/01/the-entropy-influence-conjecture/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;forc-conference&quot;&gt; FORC conference&lt;/h2&gt;
+
+&lt;p&gt;A new conference in TCS: &lt;a href=&quot;https://responsiblecomputing.org/forc-2020-call-for-paper/&quot;&gt;Symposium on the Foundations of Responsible Computing (FORC)&lt;/a&gt;. Topics include privacy, fairness and electoral processes.&lt;/p&gt;
+
+&lt;h2 id=&quot;symbolic-computations-in-python&quot;&gt;Symbolic computations in python&lt;/h2&gt;
+
+&lt;p&gt;I recently had to do a lot of small computations on toy examples. To check the 
+computations, I wanted to have some symbolic math software, but the usual
+ones (e.g. Maple) are big machines, and often not open-source. If you are in the 
+same situation, python with &lt;a href=&quot;https://www.sympy.org/en/index.html&quot;&gt;sympy&lt;/a&gt; is a 
+good choice.&lt;/p&gt;
+
+&lt;h2 id=&quot;pull-requests-for-this-blog&quot;&gt;Pull requests for this blog&lt;/h2&gt;
+
+&lt;p&gt;This blog is a github page, that is, it works as a git repository. 
+I recently got some pull requests for it, from my friend 
+&lt;a href=&quot;https://perso.crans.org/besson/me/index.fr.html&quot;&gt;Lilian Besson&lt;/a&gt;. 
+Pull requests is a way to suggest changes, e.g. correct a typo. It is very 
+convenient (on my side): I just have to pull these commits. 
+If you want to know more and correct one of the many typos of this blog, you can 
+take a look at &lt;a href=&quot;https://www.freecodecamp.org/news/how-to-make-your-first-pull-request-on-github/&quot;&gt;this page&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 12 Nov 2019 00:00:00 -0300</pubDate>
+        <link>https://discrete-notes.github.io///mid-november-2019-non-technical</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///mid-november-2019-non-technical</guid>
+      </item>
+    
+      <item>
         <title>October 2019 notes&amp;#58; distances and moving stuff</title>
         <description>&lt;p&gt;Some notes for October 2019, related to distances and to moving stuff.&lt;/p&gt;
 
@@ -129,16 +206,14 @@ approximation ratio in $\theta(\sqrt n)$. But it performs well in practice.&lt;/
 &lt;p&gt;A &lt;a href=&quot;https://arxiv.org/pdf/1909.12025.pdf&quot;&gt;recent preprint&lt;/a&gt; computes the 
 precise approximation ratio for 2-OPT, which is $\sqrt(n)/2$.&lt;/p&gt;
 
-&lt;p&gt;Other papers from the literature prove that :&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;The approximation ratio is in $O(\sqrt n)$ for random edge weights 
-(which are not metric in general), see &lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S016763770900011X?via%3Dihub&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;For Euclidian instances, the worst ratio is in $O(\log n)$.&lt;/li&gt;
-  &lt;li&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Smoothed_analysis&quot;&gt;smoothed analysis&lt;/a&gt;
-of the problem has been studied, eg &lt;a href=&quot;https://wwwhome.ewi.utwente.nl/~mantheyb/full/MantheyVeenstra_TwoOpt.pdf&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;The fine-grain analysis of $k$-OPT has been done &lt;a href=&quot;http://drops.dagstuhl.de/opus/volltexte/2016/6277/pdf/LIPIcs-ICALP-2016-5.pdf&quot;&gt;here&lt;/a&gt;
-with improved complexity for $k\geq 4$.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Other papers from the literature prove that : 
+* The approximation ratio is in $O(\sqrt n)$ for random edge weights 
+(which are not metric in general), see &lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S016763770900011X?via%3Dihub&quot;&gt;here&lt;/a&gt;.
+* For Euclidian instances, the worst ratio is in $O(\log n)$.
+* The &lt;a href=&quot;https://en.wikipedia.org/wiki/Smoothed_analysis&quot;&gt;smoothed analysis&lt;/a&gt;
+of the problem has been studied, eg &lt;a href=&quot;https://wwwhome.ewi.utwente.nl/~mantheyb/full/MantheyVeenstra_TwoOpt.pdf&quot;&gt;here&lt;/a&gt;.
+* The fine-grain analysis of $k$-OPT has been done &lt;a href=&quot;http://drops.dagstuhl.de/opus/volltexte/2016/6277/pdf/LIPIcs-ICALP-2016-5.pdf&quot;&gt;here&lt;/a&gt;
+with improved complexity for $k\geq 4$.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 07 Nov 2019 00:00:00 -0300</pubDate>
@@ -180,7 +255,7 @@ are not expanders, so let’s look at what road networks look like.&lt;/p&gt;
 
 &lt;p&gt;To be fair, there is a problem with graph classes: 
 there are way too many of them! The website 
-&lt;a href=&quot;graphclasses.org&quot;&gt;graphclasses.org&lt;/a&gt; lists 1600 classes, and it’s 
+&lt;a href=&quot;http://graphclasses.org&quot;&gt;graphclasses.org&lt;/a&gt; lists 1600 classes, and it’s 
 difficult to navigate in this jungle, to know what is an interesting
 class, to know whether the class you’re working on is known etc.
 (although the website is very useful for that).&lt;/p&gt;
@@ -343,11 +418,9 @@ by Moritz W. Schmitt and Günter M. Ziegler.&lt;/p&gt;
 &lt;p&gt;We had a &lt;a href=&quot;./april-may-2019-notes&quot;&gt;post in april&lt;/a&gt; on graphs that have some meaning 
 in terms of real-world objects.&lt;/p&gt;
 
-&lt;p&gt;Two additional pointers on this topic:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;a &lt;a href=&quot;https://11011110.github.io/blog/2013/12/07/kinematic-chains-and.html&quot;&gt;blog post&lt;/a&gt; about graph that have one degree of freedom when you want to move them.&lt;/li&gt;
-  &lt;li&gt;the &lt;a href=&quot;https://www.ics.uci.edu/~eppstein/pubs/Epp-WADS-19.pdf&quot;&gt;slides&lt;/a&gt; of a talk about graphs inspired by nature, for example by crystals and by bubbles.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Two additional pointers on this topic:
+* a &lt;a href=&quot;https://11011110.github.io/blog/2013/12/07/kinematic-chains-and.html&quot;&gt;blog post&lt;/a&gt; about graph that have one degree of freedom when you want to move them.
+* the &lt;a href=&quot;https://www.ics.uci.edu/~eppstein/pubs/Epp-WADS-19.pdf&quot;&gt;slides&lt;/a&gt; of a talk about graphs inspired by nature, for example by crystals and by bubbles.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/cristaux-bulles.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
@@ -1091,7 +1164,7 @@ and consisted in panels, hung in the
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;For PTAS and related acronyms, see &lt;a href=&quot;https://discrete-notes.github.io/october-batch-forgotten&quot;&gt;this post&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;For PTAS and related acronyms, see &lt;a href=&quot;https://discrete-notes.github.io/october-batch-forgotten&quot;&gt;this post&lt;/a&gt;.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -1276,7 +1349,7 @@ sentences about many many papers.&lt;/p&gt;
 
 &lt;p&gt;[By the way, it’s sad that SIGACT News is not open-access.]&lt;/p&gt;
 
-&lt;h2 id=&quot;1point5-and-conference-travel&quot;&gt;1point5 and conference travel&lt;/h2&gt;
+&lt;h2 id=&quot;point5-and-conference-travel&quot;&gt;1point5 and conference travel&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Le_Monde&quot;&gt;Le Monde&lt;/a&gt;, one of the major French 
 newpapers, published 
@@ -1357,161 +1430,6 @@ video around 0:25-0:35.&lt;/p&gt;
         <pubDate>Tue, 26 Mar 2019 00:00:00 -0300</pubDate>
         <link>https://discrete-notes.github.io///lightning</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///lightning</guid>
-      </item>
-    
-      <item>
-        <title>March notes I.</title>
-        <description>&lt;p&gt;First half of the March 2019 notes.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;assets/mimosa-2.JPG&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;450px&quot; /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;Mimosa in Jardin des Plantes.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;tverbergs-theorem&quot;&gt;Tverberg’s theorem&lt;/h2&gt;
-
-&lt;p&gt;For geometric algorithms in the plane, one sometimes has go through case by case 
-analysis along the lines of “if this point is below this line, then this and 
-that intersect, if not then…”. 
-Such proofs are a bit boring and it is easy to make mistakes. 
-So when you have a general theorem that does the work for you, it’s good news. 
-Tverberg’s theorem looks like a theorem that could be useful from this point of 
-view.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Tverberg%27s_theorem&quot;&gt;Tverberg’s theorem&lt;/a&gt; states 
-a condition such that the convex hulls of several sets of points intersect. 
-Precisely: in a $d$-dimensional euclidian space, for any integer $r$, for any 
-set of $(d+1)(r-1)+1$ points, there exists a partition in $r$ subsets such that 
-the convex hulls of the $r$ subsets intersect. 
-The picture below present the case $d=2$ and $r=3$, for $(d+1)(r-1)+1=7$ points, 
-and for one less point. 
-In this last case the theorem does not hold (we just show one partition).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/tverberg.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;270px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;[I saw the name of this theorem on the SOCG accepted papers list, unfortunately
-the paper is not available online, and we don’t know what they do with this 
-theorem.]&lt;/p&gt;
-
-&lt;h2 id=&quot;criteria-for-fair-item-assignment&quot;&gt;Criteria for fair item assignment&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Fair_item_assignment&quot;&gt;Fair item assignement&lt;/a&gt; 
-consists, given items and participants, to assign the items to the participants 
-in a fair manner, for some definition of fair. There are many variants of the 
-problem and many ways to define fairness.&lt;/p&gt;
-
-&lt;p&gt;Here are a few fairness criteria, to decide if the assignment is fair or not:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Max-min fair-share (“I cut, you choose”): every participant is least as happy 
-as if she had cut the set of items first, and then let all the other 
-participants choose before her.&lt;/li&gt;
-  &lt;li&gt;Max-min fair-share (“You cut, I choose”): the same but reversed, that is every
-participant is at least as happy as if someone else did the cut, and she could 
-decide first.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Envy-freeness&quot;&gt;Envy-freeness&lt;/a&gt;: 
-no participant would like to change her items for the items of 
-another participant.&lt;/li&gt;
-  &lt;li&gt;Competitive equilibrium from equal incomes: there exists a price for each item
-such that, given the same budget, the participants would choose different items.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;[I learnt about this at the CS PhD seminar of Sorbonne university, by Parham 
-Shams.]&lt;/p&gt;
-
-&lt;h2 id=&quot;tai-chi-problem&quot;&gt;Tai chi problem&lt;/h2&gt;
-
-&lt;p&gt;When crossing the 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Jardin_des_plantes&quot;&gt;Jardin des plantes&lt;/a&gt; 
-I often witness the following kind of scene.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/taichi.JPG&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It is people practising &lt;a href=&quot;https://en.wikipedia.org/wiki/Tai_chi&quot;&gt;taichi&lt;/a&gt;. 
-There is a professor in front of the group (with a white cap on the picture)
-who is showing the movements, and everybody is supposed to perform them in 
-real-time (it’s pretty slow).&lt;/p&gt;
-
-&lt;p&gt;The thing is: people on the first row can see the professor, but the ones on the 
-back cannot, so they follow the moves of the people on the rows closer to the 
-professor. Therefore there is a kind of wave from the front to the back. 
-Maybe it can make an interesting problem: how fast does the wave propagate, is 
-it close to a straight line, how does it depend on the size of the participants?&lt;/p&gt;
-
-&lt;h2 id=&quot;core-algorithms-deployed&quot;&gt;Core algorithms deployed&lt;/h2&gt;
-
-&lt;p&gt;It is common as a reseacher to have doubt about how useful your research is. 
-In my case, I sometimes wonder whether the algorithmic problem we try to solve 
-really have an impact. 
-It could well be the case that the algorithmic problems that 
-are really useful are the ones that have only basic answers.
-That is, we focus on the sweet spot between trivially easy and trivially hard 
-problems, and this set could have an empty intersection with real-world 
-questions.&lt;/p&gt;
-
-&lt;p&gt;I was really happy to discover a few years ago 
-&lt;a href=&quot;https://cstheory.stackexchange.com/questions/19759/core-algorithms-deployed&quot;&gt;the topic “core algorithms deployed”&lt;/a&gt;
-on stack exchange,
-that removes any doubt on this regard.&lt;/p&gt;
-
-&lt;h2 id=&quot;numerical-errors-in-missile-trajectories&quot;&gt;Numerical errors in missile trajectories&lt;/h2&gt;
-
-&lt;p&gt;I discovered in the introduction of
-&lt;a href=&quot;https://www.lri.fr/~melquion/doc/19-hdr.pdf&quot;&gt;this  PhD thesis&lt;/a&gt; the following 
-story, illustrating why computer arithmetics is important and difficult.&lt;/p&gt;
-
-&lt;p&gt;In 2011, a US “&lt;a href=&quot;https://en.wikipedia.org/wiki/Missile_defense&quot;&gt;defence missile&lt;/a&gt;” 
-missed a “real missile”, with tragic consequences, 
-because of computer arithmetic. 
-The basic reason is the following. 
-There used to be a software doing the trajectory computations, with rounding 
-operations, including on the time variable. This  variable slowly shifted 
-compared to the real time because of these rounding. 
-It sounds dangerous, but it was actually ok: 
-the trajectory computations would consider fast movements 
-so between the start and end of the trajectory, the shift was negligible, and 
-the absolute time did not matter. The problem is that part of the system was 
-updated with more accurate time variable. Then the shift would not be the same 
-in two different parts of the system. Then the shift would not cancel out and 
-this was the bug.&lt;/p&gt;
-
-&lt;p&gt;[A better explanation can be found in 
-&lt;a href=&quot;http://www-users.math.umn.edu/~arnold/disasters/Patriot-dharan-skeel-siam.pdf&quot;&gt;this document&lt;/a&gt;.
-The PhD thesis has a more light-hearted story about gamers trying to finish a 
-video game level without jumping, and using a slow shift of a platform 
-(also due to rounding errors) to do so.]&lt;/p&gt;
-
-&lt;h2 id=&quot;max-cut-and-planar-graphs&quot;&gt;Max cut and planar graphs&lt;/h2&gt;
-
-&lt;p&gt;Two results about &lt;a href=&quot;https://en.wikipedia.org/wiki/Maximum_cut&quot;&gt;max-cut&lt;/a&gt; that I 
-didn’t know:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;a cut is maximum if and only if its complement is a minimum odd-circuit cover 
-(this is easy to check, see for example 
-&lt;a href=&quot;https://web.engr.oregonstate.edu/~glencora/wiki/uploads/planar-max-cut.pdf&quot;&gt;here&lt;/a&gt;,
-or simply stare a bit at the picture below.)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;This can be used to obtain a polynomial-time algorithm for max-cut in planar 
-graphs.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/maxcut.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;[I got aware of this by
-&lt;a href=&quot;https://arxiv.org/abs/1903.06061&quot;&gt;this preprint&lt;/a&gt;
-which presents an algorithm for max-cut whose complexity is parametrized by the 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Crossing_number_(graph_theory)&quot;&gt;number of crossing&lt;/a&gt; 
-in the drawing of the graph.]&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 25 Mar 2019 00:00:00 -0300</pubDate>
-        <link>https://discrete-notes.github.io///march-2019-notes-1</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///march-2019-notes-1</guid>
       </item>
     
   </channel>

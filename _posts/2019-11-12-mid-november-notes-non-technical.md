@@ -50,7 +50,7 @@ A similar project has been launched in TCS:
 The first problem is about boolean functions, see 
 [here](https://polytcs.wordpress.com/2019/11/01/the-entropy-influence-conjecture/).
 
-## FORC conference
+## FORC conference
 
 A new conference in TCS: [Symposium on the Foundations of Responsible Computing (FORC)](https://responsiblecomputing.org/forc-2020-call-for-paper/). Topics include privacy, fairness and electoral processes. 
 

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://discrete-notes.github.io/</loc>
-    <lastmod>2019-11-18T16:49:51-03:00</lastmod>
+    <lastmod>2019-11-18T16:52:07-03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,6 +11,15 @@
       <loc>https://discrete-notes.github.io//more-november-2019</loc>
       
         <lastmod>2019-11-18T00:00:00-03:00</lastmod>
+      
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://discrete-notes.github.io//mid-november-2019-non-technical</loc>
+      
+        <lastmod>2019-11-12T00:00:00-03:00</lastmod>
       
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
@@ -555,6 +564,19 @@
   
   <url>
     <loc>https://discrete-notes.github.io//page23/</loc>
+    
+      <lastmod>2019-11-18</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://discrete-notes.github.io//page24/</loc>
     
       <lastmod>2019-11-18</lastmod>
     

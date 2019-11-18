@@ -87,80 +87,138 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/popular-matchings">
-        Popular matchings
+      <a href="/november-2018-notes">
+        November notes
       </a>
     </h1>
 
-    <span class="post-date">13 Nov 2018</span>
+    <span class="post-date">30 Nov 2018</span>
 
-    <p><em>Popular matchings</em> are a nice variant of the classic
-<a href="https://en.wikipedia.org/wiki/Stable_marriage_problem">stable matchings</a>. 
-In this post introduce these matchings, and give some bits of information about 
-them.</p>
+    <p>A few notes for November 2018.</p>
 
-<h2 id="stable-matchings">Stable matchings</h2>
-<p>Remember what a stable matching is. There is bipartite graph, where 
-every node holds an ordering of its neighbours, known as the <em>preference list</em>. 
-A matching $M$ in this graph is stable, if no edge $(u,v)$ that is <em>not</em> in $M$ 
-is such that both $u$ and $v$, would prefer to be matched together instead of 
-the way they are matched (or unmatched) in $M$. Note that such matchings are 
-maximal.</p>
+<hr />
 
-<p>A stable matching always exists and can be computed in linear-time using the 
-famous Gale-Shapley algorithm. Something frustrating with stable matchings is 
-that they may be small with respect to the maximum matching (if one forgets 
-about the preference lists). For example, in the following picture, the stable 
-matching matches the top node on the left, with the bottom node on the right, 
-and prevent the two other nodes from being matched, although all could be 
-matched.</p>
+<h2 id="a-new-paper-on-descriptive-complexity-of-distributed-computing">A new paper on descriptive complexity of distributed computing</h2>
+<p><a href="https://en.wikipedia.org/wiki/Descriptive_complexity_theory">Descriptive complexity</a> 
+basically aims at characterizing complexity classes through logic. A classic 
+results is <a href="https://en.wikipedia.org/wiki/Descriptive_complexity_theory">Fagin’s Theorem</a>
+that characterizes NP. 
+Descriptive complexity for distributed computing is a relatively new topic,<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+and a <a href="https://arxiv.org/abs/1811.08197">new paper</a> just came out on arxiv.
+I’m not a specialist, but from what I understood, the classic assumption of the
+LOCAL model that there are unique identifiers, is pretty difficult to transfer 
+into logic, and this paper seems to make a step in this direction.</p>
 
-<p><img src="assets/popular.png" alt="" class="center-image" height="300px" /></p>
+<h2 id="a-map-of-the-theory-of-distributed-computing-community">A map of the theory of distributed computing community</h2>
+<p><a href="https://users.ics.aalto.fi/suomela/">Jukka Suomela</a> published
+<a href="https://plus.google.com/+JukkaSuomela/posts/JgWYFk4XzWW">a nice map</a> of the 
+PODC/DISC communities. (PODC and DISC are the two main conferences in theory 
+of distributed computing.)<br />
+It is a graph where the nodes are the authors, and the edges between them 
+have different thickness, 
+depending on how much they have collaborated, or have had papers in the same 
+sessions. There are strong thematic clusters, which is no surprise.</p>
 
-<p>This example shows that the size of a stable matching can be half of the size of 
-a maximum matching. 
-If you are in a context where you would like to (at least partially) satisfy 
-the nodes in terms of preference lists, but you would also like to satisfy as many 
-nodes as possible, then you need another form of optimality, and (max-size) 
-popular matchings is a good one.</p>
+<h2 id="symmetries-in-lps-and-sos">Symmetries in LPs and SOS</h2>
+<p>I attended the PhD defense of 
+<a href="https://www.lip6.fr/actualite/personnes-fiche.php?ident=D1634">Cécile Rottner</a>
+who was a student in the OR team of <a href="https://www.lip6.fr/?LANG=en">LIP6</a>. 
+Her thesis was about a problem that
+any electric utility company faces: how to manage the different the power plants
+to meet the demand while using the less energy possible, given that there are 
+many constraints on these plants (a nuclear reactor cannot be switched on and 
+off in a minute, some other stuff has to cool down, etc.). As often in OR (as far as
+I know) this is done by having big LPs and playing with them, adding new 
+inequalities, trying to use the structure to speed the computation, having 
+branch and cut routines etc.</p>
 
-<h2 id="popular-matchings">Popular matchings</h2>
-<p>With a stable matching the matched nodes are happy, because they are at a kind 
-of equilibrium, but the other nodes are unhappy because they are not matched at 
-all. 
-What happens if you make the nodes vote for their favourite matching? 
-This makes sense if you do a tournament: for every couple of matchings you make 
-an election, and the winner is the matching that is prefered by the majority of 
-the nodes. In such an election the vertices perfer to be 
-matched, and if matched consider their preference list. Also if there is an 
-ex-eaquo then both matchings win.
-A matching is popular if it wins every election.</p>
+<p>One of the big challenges that one has to tackle when solving these big LPs 
+in an industrial context is to break the symmetries.
+Suppose you have two identical 
+nuclear reactors in your system. Then if you use one or the other in your solution, 
+you will have the same cost. This implies that you can have many many optimal 
+solutions. This is bad for a branch and cut 
+strategy, where the ideal case is to have only one optimal solution, and to be 
+cutting all the other branches quickly. Cécile showed ways to solve this problem.</p>
 
-<h2 id="relation-with-stable-matchings-and-size-considerations">Relation with stable matchings and size considerations</h2>
-<p>It is known that every stable matching is popular. 
-Thus popularity is a relaxation of stability. 
-Unlike stable matchings, popular matchings can have different sizes, and in 
-particular they can be
-larger the stable matchings (that why we look at them in the first place).
-Actually, stable matchings are the worst popular matchings with respect to size: 
-stable matchings are the popular matchings of minimum size.</p>
+<p>This reminded me of another PhD defense with symmetries: the one of 
+<a href="https://sites.google.com/view/vverdugo/">Victor Verdugo</a>. Victor had a part of 
+his PhD work on how to break symmetry for 
+<a href="https://en.wikipedia.org/wiki/Sum-of-squares_optimization">sum-of-squares</a>. The
+timing for this blog post is pretty good: the paper of Victor on this topic 
+just appeared on arxiv, 
+<a href="https://arxiv.org/abs/1811.08539">here</a>.</p>
 
-<p>We then look for <em>max-size popular matching</em>.
-The good news it that a max-size popular matching can be computed in polynomial 
-time, and that they have size at least 2/3 of the maximum size matching.</p>
+<h2 id="double-blind-for-disc">Double-blind for DISC</h2>
+<p>The conference <a href="http://www.disc-conference.org/wp/">DISC</a> will go 
+double-blind next year (that is the names of both the reviewers and the authors will
+be anonymized).<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> At first I was sceptical about this idea, 
+because of the usual reasons: extra-care in the process (e.g. when talking to 
+people) with probably no big impact, etc. But recently I reviewed a paper by 
+authors from a university I had never heard of, and I felt that before even 
+starting I had a negative bias. I think double-blind is exactly about 
+protecting authors from this bias.</p>
 
-<h2 id="notes">Notes</h2>
-<p>I got aware of this topic at a seminar of 
-<a href="http://www.tcs.tifr.res.in/~kavitha/">Telikepalli Kavitha</a> at <a href="https://www.irif.fr">IRIF</a> 
-in September. After a nice introduction, she told us about her recent papers on 
-the topic (there is a lot to say, with many relevant variants and nice 
-algorithmic techniques).</p>
+<p>I heard many times that the 
+problem is that well-known people get their papers accepted although 
+they are not good enough, and I think this cannot really change (because 
+of arxiv, favourite topics, writing style), but it’s the other side of the 
+spectrum that can be made more fair. So let’s see how it goes.</p>
 
-<p>The concept of popular matchings was introduced by Gärdenfors in the seventies, 
-who also proved that stable matchings are popular.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> 
-The polynomial algorithm for computing a max-size popular matching is much more 
-recent, it was designed by Telikepalli and Chien-Chung Huang in 2011.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> 
-And popular matchings are still a hot topic.<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+<h2 id="a-few-points-on-networks-and-games">A few points on networks and games</h2>
+<p>I attended a talk at LIP6 by 
+<a href="http://webee.technion.ac.il/Sites/People/ArielOrda/">Ariel Orda</a> on game theory 
+and networks. The talk described two very interesting works, but 
+I just picked a few non-specific things that caught my interest.</p>
+
+<h3 id="network-formation-games">Network formation games</h3>
+<p>The first topic is about understanding the structure of real-world networks, by 
+finding ways to build algorithmically networks that have similar properties. 
+A well-known generation algorithm is the 
+<a href="https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model">Barabási–Albert model</a> 
+where nodes basically arrive one by one and choose who to be linked to, 
+based on the degree of the nodes that already arrived. There is a second 
+type of network formation model that I didn’t know,<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup><sup>,</sup><sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> which is to start 
+with a fixed set of nodes, and to make them play a game to decide 
+which edges are in the graph. 
+For example, the nodes want to maximize their pay-offs in a game where every 
+link cost something, but having short paths to every node is rewarded. 
+These are called network formation games.</p>
+
+<h3 id="monetary-transfer">Monetary transfer</h3>
+<p>The second idea is about introducing money in games.
+Suppose you have a Nash equilibrium 
+that is very bad (for some definition of bad) because each player, when 
+maximizing its gain, is hurting the other players a lot. Then you can introduce
+monetary transfer, that consists for two players A and B to agree that if the 
+A does this thing that decreases its pay-off but increases the pay-off 
+of B, then B will give part of its 
+pay-off to reimburse A, and both will be happier. Natural idea to 
+consider, but that I had never heard of.</p>
+
+<h3 id="using-motifs-to-validate-a-model">Using motifs to validate a model</h3>
+<p>I knew that people studying social 
+networks are obsessed with finding motifs (small graphs that appear more 
+often than others), but I was not sure why. It could be just to have 
+more knowledge about the relationships, but in Orda’s talk, it was 
+also a way to validate a model. Basically: in real-world graphs this and that 
+motifs are very common, we don’t know why, and previous generative 
+models did not have this property, but their model could capture this. 
+As far as I know, parameters such as the diameter, or the clustering 
+coefficient are more classic ways to validate such models.</p>
+
+<h3 id="about-the-price-of-anarchy-selfishness-and-collaboration">About the price of anarchy, selfishness and collaboration</h3>
+<p>The <a href="https://en.wikipedia.org/wiki/Price_of_anarchy">price of anarchy</a>, 
+is the ratio between the social cost when each players tries to optimize 
+its own pay-off, and when all the players play the strategy that minimize 
+the social cost. It is often said that this price is the price to pay 
+when players are selfish. But it is not completely true, it is also the 
+price of not collaborating. You can image scenarios in which players have
+the option of collaborating but each player will agree only if it ensures 
+ a better pay-off. That is the players are still selfish but 
+they can talk to each other and make agreements. 
+This can change the outcome a lot. Then one 
+will consider what is called a Nash bargaining solution.</p>
 
 <hr />
 
@@ -169,13 +227,16 @@ And popular matchings are still a hot topic.<sup id="fnref:3"><a href="#fn:3" cl
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>P. Gärdenfors, <a href="https://doi.org/10.1002/bs.3830200304">Match making: Assignments based on bilateral preferences</a>. (I couldn’t find it on Google Scholar, but it is accessible on Wiley.) <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>If you are interested, see <a href="https://arxiv.org/abs/1805.06238">Fabian Reiter’s very nice PhD thesis</a>, and the <a href="https://semidoc.github.io/reiter-dga">gentle introduction</a> to the topic I wrote on semidoc. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>T. Kavitha, C. Huang, <a href="https://doi.org/10.1016/j.ic.2012.10.012">Popular matchings in the stable marriage problem</a>.S <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>See <a href="https://twitter.com/JukkaSuomela/status/1065259077738082304">this tweet</a> <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>See <a href="https://dblp.uni-trier.de/search?q=popular+matching">DBLP “popular matching” search</a>. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>There seems that there is no third well-known way to generate networks, at least in the <a href="https://en.wikipedia.org/wiki/Network_formation">wikipedia article about network formation</a>. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>Actually I somehow knew because of <a href="https://dl.acm.org/citation.cfm?doid=3178876.3186122">this paper</a> by my PhD advisor and colleges, but I had forgotten. <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

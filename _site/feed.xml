@@ -7,6 +7,161 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>More November notes</title>
+        <description>&lt;p&gt;Some more notes for November 2019.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;assets/nueva-constitucion.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
+&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;network-creation-game&quot;&gt;Network creation game&lt;/h2&gt;
+
+&lt;p&gt;Network generation models are mechanisms to create networks. 
+In a classic setting the nodes arrive one after the other and are linked 
+to nodes already in 
+the network following some rules. 
+In another setting, called &lt;em&gt;network creation game&lt;/em&gt; the nodes are players, 
+and they play a game in which they can choose to pay to be linked to 
+other nodes. 
+The outcome of the game is a network. 
+The cost that a player pays is $\alpha$ for every node it decides to be 
+linked to, plus 
+the sum of the distances from this node to all the other nodes. 
+In other words, a node wants to have short distance to every node, but 
+cannot add a link to every node, because it would be too expensive.&lt;/p&gt;
+
+&lt;p&gt;For this game one can study the usual objects of 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Algorithmic_game_theory&quot;&gt;algorithmic game theory&lt;/a&gt;:
+the &lt;a href=&quot;https://en.wikipedia.org/wiki/Nash_equilibrium&quot;&gt;Nash equilibrium&lt;/a&gt; 
+and the
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Price_of_anarchy&quot;&gt;price of anarchy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It is conjectured that the price of anarchy is constant for 
+any value $\alpha$, and &lt;a href=&quot;https://arxiv.org/abs/1909.09799&quot;&gt;this recent preprint&lt;/a&gt; 
+makes progress on the conjecture.&lt;/p&gt;
+
+&lt;h2 id=&quot;lempel-ziv-compression-algorithms&quot;&gt;Lempel-Ziv compression algorithms&lt;/h2&gt;
+
+&lt;p&gt;Lempel-Ziv algorithm is a classic compression algorithm (or more 
+precisely a classic family of algorithms, are there are several versions). 
+A &lt;a href=&quot;https://semidoc.github.io/lagarde-catastrophe&quot;&gt;blog post on Semidoc&lt;/a&gt; 
+describes the algorithm and gives an overview of 
+&lt;a href=&quot;https://arxiv.org/abs/1707.04312&quot;&gt;this paper&lt;/a&gt; which studies how the compression
+rate can change when the original text is changed by one bit.&lt;/p&gt;
+
+&lt;p&gt;Two recent papers on arxiv deal with Lempel-Ziv:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1910.00941.pdf&quot;&gt;The first one&lt;/a&gt; gives a new analysis of 
+the fact that Lempel-Ziv is optimal for some models of random text (hidden 
+Markov sources)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1802.10347&quot;&gt;The second one&lt;/a&gt; improves the complexity of 
+the algorithm decompressing the text.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;multi-armed-bandit&quot;&gt;Multi-armed bandit&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Multi-armed bandit&lt;/em&gt; is an expression that appears here and there in 
+TCS conference, and very often in theoretical machine learning. It is a type of 
+problem where one has to make decisions one after the other, to 
+maximize some pay-off. Basically, at each round, it has the choice 
+between several options called the “arms” of the bandit (like the levers 
+of different slot-machines).&lt;/p&gt;
+
+&lt;p&gt;A basic version is the following framework:&lt;/p&gt;
+
+&lt;p&gt;Given: $k$  arms, $T$ rounds.&lt;/p&gt;
+
+&lt;p&gt;In each round $t\in[T]$:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Algorithm picks arm $a_t$.&lt;/li&gt;
+  &lt;li&gt;Algorithm observes reward $r_t\in [0,1]$ for the chosen arm.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Pay-off: the sum of the rewards&lt;/p&gt;
+
+&lt;p&gt;The reward for an arm comes from an unknown distribution, but if the 
+algorithm chooses an arm repeatedly, it somehow learns this distribution. 
+There is already a lot to say on this simple case, and there are a flurry
+of papers about this, these days.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1904.07272.pdf&quot;&gt;Here&lt;/a&gt; is a recent introduction 
+to multi-armed bandit. Also if you are in Rennes, France, on Wednesday
+there is a 
+&lt;a href=&quot;https://perso.crans.org/besson/phd/defense/&quot;&gt;PhD defense on this topic&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;delaunay-triangulations-have-perfect-matchings&quot;&gt;Delaunay triangulations have perfect matchings&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Delaunay_triangulation&quot;&gt;Delaunay triangulations&lt;/a&gt; 
+are triangulations of point sets in the plane. I recentely learnt that
+the graphs that are Delaunay triangulations, always have a perfect 
+matching (that is a matching of size $n/2$ if $n$ is even, and $(n-1)/2$
+is $n$ is odd).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/delaunay.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;250px&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
+A point set, its Delaunay triangulation, and the associated graph with a perfect matching.
+&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;A short proof of this appeared on arxiv recently, 
+&lt;a href=&quot;https://arxiv.org/pdf/1907.01617.pdf&quot;&gt;here&lt;/a&gt;. (Actually it is a stronger
+result that is proved, about the so-called “toughness” of Delaunay 
+triangulations.)&lt;/p&gt;
+
+&lt;h2 id=&quot;learning-augmented-algorithms&quot;&gt;Learning-augmented algorithms&lt;/h2&gt;
+
+&lt;p&gt;Learning-augmented algorithms are algorithms that can use informtation
+coming from some machine learning source. 
+Here is an example.&lt;/p&gt;
+
+&lt;p&gt;Binary search takes $O(\log n)$ in the worst-case. 
+Now if you have some neural network (NN) telling you that the element you’re 
+looking for is around position $i$, how do you modify your search? 
+Well you can begin by testing position $i$. Then, if the NN is not perfect, 
+this might not be the right value, but maybe it’s close. Say the value 
+you’re looking for is larger. Then you can try to find a position 
+that has larger value than your element, for example by doing exponential guesses. 
+Once you have both upper and lower bound, you can run the usual binary 
+search.&lt;/p&gt;
+
+&lt;p&gt;If the error (that is, the number of positions between your element
+and the prediction of the NN) is $\mu$, then your algorithm runs in 
+$O(\log \mu)$. This is good: if the prediction is good then you speed up 
+the search, and if it’s bad, then you do not loose much.&lt;/p&gt;
+
+&lt;p&gt;In more general terms, one looks for two properties:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;consistency: the better the prediction, the better the algorithm&lt;/li&gt;
+  &lt;li&gt;robustness: if the predition is bad, then the algorithm does not get 
+much worse.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that for real application, one might also be interested in the running 
+time of the NN, and a lot of other things.&lt;/p&gt;
+
+&lt;p&gt;Some material on this topic:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a &lt;a href=&quot;https://www.mit.edu/~andoni/algoS19/scribes/scribe24.pdf&quot;&gt;lecture note&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://theory.stanford.edu/~sergei/slides/HALG-slides.pdf&quot;&gt;the slides&lt;/a&gt; 
+of a talk at &lt;a href=&quot;http://2019.highlightsofalgorithms.org/&quot;&gt;HALG 2019&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.mit.edu/~vakilian/ttic-workshop.html&quot;&gt;a workshop&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 18 Nov 2019 00:00:00 -0300</pubDate>
+        <link>https://discrete-notes.github.io///more-november-2019</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///more-november-2019</guid>
+      </item>
+    
+      <item>
         <title>October 2019 notes&amp;#58; distances and moving stuff</title>
         <description>&lt;p&gt;Some notes for October 2019, related to distances and to moving stuff.&lt;/p&gt;
 
@@ -180,7 +335,7 @@ are not expanders, so let’s look at what road networks look like.&lt;/p&gt;
 
 &lt;p&gt;To be fair, there is a problem with graph classes: 
 there are way too many of them! The website 
-&lt;a href=&quot;graphclasses.org&quot;&gt;graphclasses.org&lt;/a&gt; lists 1600 classes, and it’s 
+&lt;a href=&quot;http://graphclasses.org&quot;&gt;graphclasses.org&lt;/a&gt; lists 1600 classes, and it’s 
 difficult to navigate in this jungle, to know what is an interesting
 class, to know whether the class you’re working on is known etc.
 (although the website is very useful for that).&lt;/p&gt;
@@ -1357,161 +1512,6 @@ video around 0:25-0:35.&lt;/p&gt;
         <pubDate>Tue, 26 Mar 2019 00:00:00 -0300</pubDate>
         <link>https://discrete-notes.github.io///lightning</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///lightning</guid>
-      </item>
-    
-      <item>
-        <title>March notes I.</title>
-        <description>&lt;p&gt;First half of the March 2019 notes.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;assets/mimosa-2.JPG&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;450px&quot; /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;Mimosa in Jardin des Plantes.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;tverbergs-theorem&quot;&gt;Tverberg’s theorem&lt;/h2&gt;
-
-&lt;p&gt;For geometric algorithms in the plane, one sometimes has go through case by case 
-analysis along the lines of “if this point is below this line, then this and 
-that intersect, if not then…”. 
-Such proofs are a bit boring and it is easy to make mistakes. 
-So when you have a general theorem that does the work for you, it’s good news. 
-Tverberg’s theorem looks like a theorem that could be useful from this point of 
-view.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Tverberg%27s_theorem&quot;&gt;Tverberg’s theorem&lt;/a&gt; states 
-a condition such that the convex hulls of several sets of points intersect. 
-Precisely: in a $d$-dimensional euclidian space, for any integer $r$, for any 
-set of $(d+1)(r-1)+1$ points, there exists a partition in $r$ subsets such that 
-the convex hulls of the $r$ subsets intersect. 
-The picture below present the case $d=2$ and $r=3$, for $(d+1)(r-1)+1=7$ points, 
-and for one less point. 
-In this last case the theorem does not hold (we just show one partition).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/tverberg.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;270px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;[I saw the name of this theorem on the SOCG accepted papers list, unfortunately
-the paper is not available online, and we don’t know what they do with this 
-theorem.]&lt;/p&gt;
-
-&lt;h2 id=&quot;criteria-for-fair-item-assignment&quot;&gt;Criteria for fair item assignment&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Fair_item_assignment&quot;&gt;Fair item assignement&lt;/a&gt; 
-consists, given items and participants, to assign the items to the participants 
-in a fair manner, for some definition of fair. There are many variants of the 
-problem and many ways to define fairness.&lt;/p&gt;
-
-&lt;p&gt;Here are a few fairness criteria, to decide if the assignment is fair or not:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Max-min fair-share (“I cut, you choose”): every participant is least as happy 
-as if she had cut the set of items first, and then let all the other 
-participants choose before her.&lt;/li&gt;
-  &lt;li&gt;Max-min fair-share (“You cut, I choose”): the same but reversed, that is every
-participant is at least as happy as if someone else did the cut, and she could 
-decide first.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Envy-freeness&quot;&gt;Envy-freeness&lt;/a&gt;: 
-no participant would like to change her items for the items of 
-another participant.&lt;/li&gt;
-  &lt;li&gt;Competitive equilibrium from equal incomes: there exists a price for each item
-such that, given the same budget, the participants would choose different items.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;[I learnt about this at the CS PhD seminar of Sorbonne university, by Parham 
-Shams.]&lt;/p&gt;
-
-&lt;h2 id=&quot;tai-chi-problem&quot;&gt;Tai chi problem&lt;/h2&gt;
-
-&lt;p&gt;When crossing the 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Jardin_des_plantes&quot;&gt;Jardin des plantes&lt;/a&gt; 
-I often witness the following kind of scene.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/taichi.JPG&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It is people practising &lt;a href=&quot;https://en.wikipedia.org/wiki/Tai_chi&quot;&gt;taichi&lt;/a&gt;. 
-There is a professor in front of the group (with a white cap on the picture)
-who is showing the movements, and everybody is supposed to perform them in 
-real-time (it’s pretty slow).&lt;/p&gt;
-
-&lt;p&gt;The thing is: people on the first row can see the professor, but the ones on the 
-back cannot, so they follow the moves of the people on the rows closer to the 
-professor. Therefore there is a kind of wave from the front to the back. 
-Maybe it can make an interesting problem: how fast does the wave propagate, is 
-it close to a straight line, how does it depend on the size of the participants?&lt;/p&gt;
-
-&lt;h2 id=&quot;core-algorithms-deployed&quot;&gt;Core algorithms deployed&lt;/h2&gt;
-
-&lt;p&gt;It is common as a reseacher to have doubt about how useful your research is. 
-In my case, I sometimes wonder whether the algorithmic problem we try to solve 
-really have an impact. 
-It could well be the case that the algorithmic problems that 
-are really useful are the ones that have only basic answers.
-That is, we focus on the sweet spot between trivially easy and trivially hard 
-problems, and this set could have an empty intersection with real-world 
-questions.&lt;/p&gt;
-
-&lt;p&gt;I was really happy to discover a few years ago 
-&lt;a href=&quot;https://cstheory.stackexchange.com/questions/19759/core-algorithms-deployed&quot;&gt;the topic “core algorithms deployed”&lt;/a&gt;
-on stack exchange,
-that removes any doubt on this regard.&lt;/p&gt;
-
-&lt;h2 id=&quot;numerical-errors-in-missile-trajectories&quot;&gt;Numerical errors in missile trajectories&lt;/h2&gt;
-
-&lt;p&gt;I discovered in the introduction of
-&lt;a href=&quot;https://www.lri.fr/~melquion/doc/19-hdr.pdf&quot;&gt;this  PhD thesis&lt;/a&gt; the following 
-story, illustrating why computer arithmetics is important and difficult.&lt;/p&gt;
-
-&lt;p&gt;In 2011, a US “&lt;a href=&quot;https://en.wikipedia.org/wiki/Missile_defense&quot;&gt;defence missile&lt;/a&gt;” 
-missed a “real missile”, with tragic consequences, 
-because of computer arithmetic. 
-The basic reason is the following. 
-There used to be a software doing the trajectory computations, with rounding 
-operations, including on the time variable. This  variable slowly shifted 
-compared to the real time because of these rounding. 
-It sounds dangerous, but it was actually ok: 
-the trajectory computations would consider fast movements 
-so between the start and end of the trajectory, the shift was negligible, and 
-the absolute time did not matter. The problem is that part of the system was 
-updated with more accurate time variable. Then the shift would not be the same 
-in two different parts of the system. Then the shift would not cancel out and 
-this was the bug.&lt;/p&gt;
-
-&lt;p&gt;[A better explanation can be found in 
-&lt;a href=&quot;http://www-users.math.umn.edu/~arnold/disasters/Patriot-dharan-skeel-siam.pdf&quot;&gt;this document&lt;/a&gt;.
-The PhD thesis has a more light-hearted story about gamers trying to finish a 
-video game level without jumping, and using a slow shift of a platform 
-(also due to rounding errors) to do so.]&lt;/p&gt;
-
-&lt;h2 id=&quot;max-cut-and-planar-graphs&quot;&gt;Max cut and planar graphs&lt;/h2&gt;
-
-&lt;p&gt;Two results about &lt;a href=&quot;https://en.wikipedia.org/wiki/Maximum_cut&quot;&gt;max-cut&lt;/a&gt; that I 
-didn’t know:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;a cut is maximum if and only if its complement is a minimum odd-circuit cover 
-(this is easy to check, see for example 
-&lt;a href=&quot;https://web.engr.oregonstate.edu/~glencora/wiki/uploads/planar-max-cut.pdf&quot;&gt;here&lt;/a&gt;,
-or simply stare a bit at the picture below.)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;This can be used to obtain a polynomial-time algorithm for max-cut in planar 
-graphs.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/maxcut.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;[I got aware of this by
-&lt;a href=&quot;https://arxiv.org/abs/1903.06061&quot;&gt;this preprint&lt;/a&gt;
-which presents an algorithm for max-cut whose complexity is parametrized by the 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Crossing_number_(graph_theory)&quot;&gt;number of crossing&lt;/a&gt; 
-in the drawing of the graph.]&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 25 Mar 2019 00:00:00 -0300</pubDate>
-        <link>https://discrete-notes.github.io///march-2019-notes-1</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///march-2019-notes-1</guid>
       </item>
     
   </channel>

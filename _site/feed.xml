@@ -7,6 +7,68 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Bayesian mechanism design and Yao's principle</title>
+        <description>&lt;p&gt;I attended a talk yesterday about 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Algorithmic_game_theory&quot;&gt;algorithmic game theory&lt;/a&gt; by 
+&lt;a href=&quot;https://www.or.tum.de/en/group/alexandrostsigonias/&quot;&gt;Alexandros Tsigonias-Dimitriadis&lt;/a&gt;
+as part of Santiago’s &lt;a href=&quot;http://www.dii.uchile.cl/acgo/seminar-acgo/&quot;&gt;AGCO seminar&lt;/a&gt;.
+Here are a few elements from this talk.&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-bayesian-auction&quot;&gt;Basic Bayesian auction&lt;/h2&gt;
+
+&lt;p&gt;The very basic setting we are looking at is the following: a client (the bidder)
+comes to a seller (the auctioneer) with the goal of buying a particular item. 
+The auctioneer has to set a price for the item. 
+The bidder knows the maximum price at which she will buy the object (the value 
+of the item for her).
+If the auctioneer’s price is higher than the bidder’s value, the bidder does not 
+buy the item, and if the price is lower then the bidder buys it, but the 
+auctioneer “looses” the difference.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;a href=&quot;https://en.wikipedia.org/wiki/Bayesian-optimal_mechanism&quot;&gt;Bayesian setting&lt;/a&gt;, 
+the bidder’s value is taken following a probability 
+distribution, and the auctioneer knows this distribution. 
+Then, the expected revenue of the auctioneer is the price she announces, 
+multiplied by the probability that this price is lower than the value taken by 
+the bidder. In other words, if $F$ is the cumulative probability distribution 
+of the value of the bidder, 
+then the expected revenue for a price $p$ is $p \cdot (1-F(p))$.
+Then the auctioneer chooses a price $p$ that maximizes this quantity.&lt;/p&gt;
+
+&lt;h2 id=&quot;generalizations&quot;&gt;Generalizations&lt;/h2&gt;
+
+&lt;p&gt;One can generalize this to work with several bidders. This is called 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Bayesian-optimal_mechanism#The_Myerson_mechanism&quot;&gt;Myerson mechanism&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The paper of Alexandros and his co-authors 
+(&lt;a href=&quot;https://arxiv.org/abs/1907.04220&quot;&gt;Robust Revenue Maximization Under Minimal Statistical Information&lt;/a&gt;),
+explores the setting where the auctioneer does not know the full distributions 
+of the bidders, but only the means and the standard deviations. (That’s why it 
+is called &lt;em&gt;robust&lt;/em&gt; revenue maximization.)&lt;/p&gt;
+
+&lt;p&gt;An important element of their proof is a generalization of Yao’s minimax 
+principle.&lt;/p&gt;
+
+&lt;h2 id=&quot;yaos-minimax-principle&quot;&gt; Yao’s minimax principle&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Yao%27s_principle&quot;&gt;Yao’s minimax principle&lt;/a&gt; 
+is a general theorem for randomized algorithms. 
+Basically it is saying that the best randomized algorithm on its worst instance 
+will get the same performance as the best deterministic algorithm on the worst 
+distribution of instances. (This needs a precise statement, to say which thing is 
+optimized first etc.).&lt;/p&gt;
+
+&lt;p&gt;In the context of Alexandros, the instances are distributions (of which we know
+only the mean and the standard variation) thus a distribution of instances is 
+a distribution of distributions. This can be made precise, by considering 
+mixtures of distributions.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 21 Nov 2019 00:00:00 -0300</pubDate>
+        <link>https://discrete-notes.github.io///bayesian-auctions</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///bayesian-auctions</guid>
+      </item>
+    
+      <item>
         <title>More November notes</title>
         <description>&lt;p&gt;Some more notes for November 2019.&lt;/p&gt;
 
@@ -78,11 +140,9 @@ of different slot-machines).&lt;/p&gt;
 
 &lt;p&gt;Given: $k$  arms, $T$ rounds.&lt;/p&gt;
 
-&lt;p&gt;In each round $t\in[T]$:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Algorithm picks arm $a_t$.&lt;/li&gt;
-  &lt;li&gt;Algorithm observes reward $r_t\in [0,1]$ for the chosen arm.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;In each round $t\in[T]$:
+1. Algorithm picks arm $a_t$.
+2. Algorithm observes reward $r_t\in [0,1]$ for the chosen arm.&lt;/p&gt;
 
 &lt;p&gt;Pay-off: the sum of the rewards&lt;/p&gt;
 
@@ -361,16 +421,14 @@ approximation ratio in $\theta(\sqrt n)$. But it performs well in practice.&lt;/
 &lt;p&gt;A &lt;a href=&quot;https://arxiv.org/pdf/1909.12025.pdf&quot;&gt;recent preprint&lt;/a&gt; computes the 
 precise approximation ratio for 2-OPT, which is $\sqrt(n)/2$.&lt;/p&gt;
 
-&lt;p&gt;Other papers from the literature prove that :&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;The approximation ratio is in $O(\sqrt n)$ for random edge weights 
-(which are not metric in general), see &lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S016763770900011X?via%3Dihub&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;For Euclidian instances, the worst ratio is in $O(\log n)$.&lt;/li&gt;
-  &lt;li&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Smoothed_analysis&quot;&gt;smoothed analysis&lt;/a&gt;
-of the problem has been studied, eg &lt;a href=&quot;https://wwwhome.ewi.utwente.nl/~mantheyb/full/MantheyVeenstra_TwoOpt.pdf&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;The fine-grain analysis of $k$-OPT has been done &lt;a href=&quot;http://drops.dagstuhl.de/opus/volltexte/2016/6277/pdf/LIPIcs-ICALP-2016-5.pdf&quot;&gt;here&lt;/a&gt;
-with improved complexity for $k\geq 4$.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Other papers from the literature prove that : 
+* The approximation ratio is in $O(\sqrt n)$ for random edge weights 
+(which are not metric in general), see &lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S016763770900011X?via%3Dihub&quot;&gt;here&lt;/a&gt;.
+* For Euclidian instances, the worst ratio is in $O(\log n)$.
+* The &lt;a href=&quot;https://en.wikipedia.org/wiki/Smoothed_analysis&quot;&gt;smoothed analysis&lt;/a&gt;
+of the problem has been studied, eg &lt;a href=&quot;https://wwwhome.ewi.utwente.nl/~mantheyb/full/MantheyVeenstra_TwoOpt.pdf&quot;&gt;here&lt;/a&gt;.
+* The fine-grain analysis of $k$-OPT has been done &lt;a href=&quot;http://drops.dagstuhl.de/opus/volltexte/2016/6277/pdf/LIPIcs-ICALP-2016-5.pdf&quot;&gt;here&lt;/a&gt;
+with improved complexity for $k\geq 4$.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 07 Nov 2019 00:00:00 -0300</pubDate>
@@ -575,11 +633,9 @@ by Moritz W. Schmitt and Günter M. Ziegler.&lt;/p&gt;
 &lt;p&gt;We had a &lt;a href=&quot;./april-may-2019-notes&quot;&gt;post in april&lt;/a&gt; on graphs that have some meaning 
 in terms of real-world objects.&lt;/p&gt;
 
-&lt;p&gt;Two additional pointers on this topic:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;a &lt;a href=&quot;https://11011110.github.io/blog/2013/12/07/kinematic-chains-and.html&quot;&gt;blog post&lt;/a&gt; about graph that have one degree of freedom when you want to move them.&lt;/li&gt;
-  &lt;li&gt;the &lt;a href=&quot;https://www.ics.uci.edu/~eppstein/pubs/Epp-WADS-19.pdf&quot;&gt;slides&lt;/a&gt; of a talk about graphs inspired by nature, for example by crystals and by bubbles.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Two additional pointers on this topic:
+* a &lt;a href=&quot;https://11011110.github.io/blog/2013/12/07/kinematic-chains-and.html&quot;&gt;blog post&lt;/a&gt; about graph that have one degree of freedom when you want to move them.
+* the &lt;a href=&quot;https://www.ics.uci.edu/~eppstein/pubs/Epp-WADS-19.pdf&quot;&gt;slides&lt;/a&gt; of a talk about graphs inspired by nature, for example by crystals and by bubbles.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/cristaux-bulles.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
@@ -1323,7 +1379,7 @@ and consisted in panels, hung in the
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;For PTAS and related acronyms, see &lt;a href=&quot;https://discrete-notes.github.io/october-batch-forgotten&quot;&gt;this post&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;For PTAS and related acronyms, see &lt;a href=&quot;https://discrete-notes.github.io/october-batch-forgotten&quot;&gt;this post&lt;/a&gt;.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -1331,236 +1387,6 @@ and consisted in panels, hung in the
         <pubDate>Thu, 09 May 2019 00:00:00 -0400</pubDate>
         <link>https://discrete-notes.github.io///natural-history</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///natural-history</guid>
-      </item>
-    
-      <item>
-        <title>March notes II.</title>
-        <description>&lt;p&gt;Second set of notes for March 2019.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/pivoines.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;a-pair-of-distributed-computing-talks&quot;&gt;A pair of distributed computing talks&lt;/h2&gt;
-
-&lt;p&gt;We had a couple of distributed computing talks this month. Here are a few words 
-about the concepts involved.&lt;/p&gt;
-
-&lt;h3 id=&quot;beeping-model&quot;&gt;Beeping model&lt;/h3&gt;
-&lt;p&gt;The &lt;em&gt;beeping model&lt;/em&gt; is a very weak model of distributed network computing.
-In this model, the nodes of the network communicate by beeping. 
-At each round, a node decides to beep or not. 
-And a node can receive only one information: either someone in the neighborhood 
-has beeped, or not. 
-One cannot know how many nodes beeped. 
-In particular, if the node chooses	 to beep, then it cannot know if another node 
-has beeped.&lt;/p&gt;
-
-&lt;p&gt;The beeping is used to model primitive communication, for example between cells.
-The surprising point is that you can actually do things in this model !
-For example compute a maximal independent set 
-(see &lt;a href=&quot;http://www.cs.tau.ac.il/~afek/MISdisc.pdf&quot;&gt;this paper&lt;/a&gt;).&lt;/p&gt;
-
-&lt;h3 id=&quot;superimposed-codes&quot;&gt;Superimposed codes&lt;/h3&gt;
-
-&lt;p&gt;Beeps are binary information, thus to transmit more than one bit, nodes have to 
-encode information into sequences of beeps. 
-The problem is that a node may receive beeps from several neighbors, and a 
-priori cannot know if beeps it heard form a single sequence, or if it is a 
-mix of several sequences.&lt;/p&gt;
-
-&lt;p&gt;A nice tool to solve that is &lt;em&gt;superimposed codes&lt;/em&gt;: these codes are such that if one superimpose 
-them (that is, perform a bit-wise OR), one can still decode the different words. 
-In other words any sequence can be decomposed uniquely into several code words.&lt;/p&gt;
-
-&lt;p&gt;It seems that these codes were already used for punched-cards…&lt;/p&gt;
-
-&lt;h3 id=&quot;fixing-blocking-edges-in-stable-marriage&quot;&gt;Fixing blocking edges in stable marriage&lt;/h3&gt;
-
-&lt;p&gt;A marriage (or bipartite matching) is a matching in a balanced 
-bipartite graph, where every node is has a preference list. 
-It is &lt;em&gt;&lt;a href=&quot;Stable marriage problem&quot;&gt;stable&lt;/a&gt;&lt;/em&gt; if not two participants would prefer to 
-be matched together instead of their current matching (such a pair is called a 
-&lt;em&gt;blocking edge&lt;/em&gt;).&lt;/p&gt;
-
-&lt;p&gt;Gale and Shapley designed a well-known algorithm to compute such a marriage. 
-But it starts from an empty solution. Suppose you want to start from a non-stable
-solution and improve it step by step, for example because you are designing a
-self-stabilizing algorithm. This is not easy.&lt;/p&gt;
-
-&lt;p&gt;In the following example, 
-attributed to &lt;a href=&quot;https://en.wikipedia.org/wiki/Donald_Knuth&quot;&gt;Knuth&lt;/a&gt;, 
-we start on the left from 
-a solution that is unstable (the blocking pair is in red), and solve this pair 
-on the right picture, and then iterate the procedure. Unfortunately, at the end 
-of the procedure, we are back to the first instance!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/mariages.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;700px&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;privacy-in-stable-marriage&quot;&gt;Privacy in stable marriage&lt;/h3&gt;
-
-&lt;p&gt;The classic centralized algorithms for stable marriage use the full list of 
-preferences, that is there is no privacy for the participants. 
-For distributed algorithms, it makes sense to try to minimize the amount of 
-information the participants have to share to solve the task.
-For example the algorithm presented in the talk uses little information 
-(e.g. “this player is already
-matched to someone higher in his/her list”).&lt;/p&gt;
-
-&lt;p&gt;[The talks were by 
-&lt;a href=&quot;https://sites.google.com/view/dufoulon/accueil&quot;&gt;Fabien Dufoulon&lt;/a&gt; and 
-&lt;a href=&quot;https://www.lri.fr/~laveau/&quot;&gt;Marie Laveau&lt;/a&gt;, 
-both PhD students in Paris-Sud University.
-Fabien told us about his new (not yet public) result in the beeping model, 
-using a variant of superimposed codes. 
-Marie told us about her result on self-stabilizing 
-stable matching. 
-It is &lt;a href=&quot;https://hal.archives-ouvertes.fr/hal-01576055/document&quot;&gt;this paper&lt;/a&gt;.]&lt;/p&gt;
-
-&lt;h2 id=&quot;different-techniques-for-different-regimes-in-rockets-and-algorithms&quot;&gt;Different techniques for different regimes (in rockets and algorithms)&lt;/h2&gt;
-
-&lt;p&gt;I discovered recently that the flames of different space rockets have different 
-colors, partly because they use different mix of fuels.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/rockets.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;550px&quot; /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;Space shuttle (yellowish flames) and Soyouz (pinkish flames).&lt;/p&gt;
-
-&lt;p&gt;This was surprising to me, as I would naively think that there must be a solution 
-that is considered “the best to push stuff upward”, and that everybody would use it.&lt;/p&gt;
-
-&lt;p&gt;But I guess different regimes (how much you want to lift, at which speed etc.) 
-ask for different solutions. 
-In the world of algorithms, it is similar to the following scenario.
-Say you want an algorithm for instances that depend on two parameters $n$ and 
-$k$. Then you may use different technique for different regimes. 
-For example, expressing $k$ as a function of $n$, you could have: for constant 
-$k$ do brute-force, for logarithmic $k$ do some divide and conquer, for 
-$k$ around $\sqrt{n}$ do dynamic programming, etc.&lt;/p&gt;
-
-&lt;p&gt;I wonder if we have such examples with many different regimes asking for many 
-different solutions. 
-In distributed graph algorithms, an example is coloring 
-(and similar problems) where for 
-bounded degree and unbounded degree you have completely different techniques.&lt;/p&gt;
-
-&lt;p&gt;For the related question of problems (with one parameter) having many different 
-equally good solutions, I see $O(\log n)$-approximation of 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Set_cover_problem&quot;&gt;Set-Cover&lt;/a&gt;, for which you can 
-basically use all the standard tools of approximation: greedy, LP-rounding, 
-primal-dual etc.&lt;/p&gt;
-
-&lt;p&gt;[I semi-randomly stumbled on 
-&lt;a href=&quot;https://www.youtube.com/watch?v=EO_gwxon764&quot;&gt;this video&lt;/a&gt; (or more precisely 
-the French-speaking version of it) that explains a lot of stuff about rockets 
-flames. 
-For example why one can see the kind of patterns below in rocket flames 
-(it’s actually in the second part of the video).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/shock-diamonds.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;170px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;These are called &lt;a href=&quot;https://en.wikipedia.org/wiki/Shock_diamond&quot;&gt;Mach disks&lt;/a&gt; or 
-shock diamonds, and come from the fact that the flames expand when they get 
-out of the engine, but because the outside pressure is higher, it is then 
-recompressed, it heats up again, and then again 
-expands etc. Maybe there is a discrete analogue for this too (convergence by 
-oscillations?).]&lt;/p&gt;
-
-&lt;h2 id=&quot;abel-prize-and-limitations-of-the-discrete-approach&quot;&gt;Abel prize and limitations of the discrete approach&lt;/h2&gt;
-
-&lt;p&gt;Lipton and Regan 
-&lt;a href=&quot;https://rjlipton.wordpress.com/2019/03/21/the-shortest-path-to-the-abel-prize/&quot;&gt;blog about&lt;/a&gt; 
-the new Abel prize recipient, 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Karen_Uhlenbeck&quot;&gt;Karen Uhlenbeck&lt;/a&gt;, or actually about
-her research. They take the interesting approach of first trying to solve a 
-problem with a discrete natural approach, and then to show how it fails, and how 
-analysis in the style of Uhlenbeck’s research solves the problem.&lt;/p&gt;
-
-&lt;p&gt;The question is simply to prove that in the plane the shortest path between two 
-points is a straight line. The natural discrete approach is to consider 
-polygonal lines, to prove the statement by induction (on the picture below the 
-blue line is better by triangle inequality), and then to say “every curve is 
-polygonal line up to small stuff”.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/uhlenbeck.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;200px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The reason why it fails is all the nasty functions (fractals and other monsters) 
-that ruin the last step.&lt;/p&gt;
-
-&lt;h2 id=&quot;sigact-news-year-and-conference-reviews&quot;&gt;SIGACT news, year and conference reviews&lt;/h2&gt;
-
-&lt;p&gt;I was surprised to receive SIGACT news at home, and then remembered than I had 
-registered to ACM for FOCS. It is first time I glance at SIGACT news, as I don’t
-have access to it online.&lt;/p&gt;
-
-&lt;p&gt;I was especially interested in the online algorithm review. 
-For the first issue of the year, the author, 
-&lt;a href=&quot;https://www.uni-siegen.de/fb6/aan/optimierung/mitarbeiter/vanstee/?lang=d&quot;&gt;Rob van Stee&lt;/a&gt;, 
-does a review of the key results of 2018 in his area. 
-This is very nice format, that gives a higher perspective on a field.&lt;/p&gt;
-
-&lt;p&gt;A more classic format is the review of a conference. In my experience, this is 
-less useful, because (1) one cannot be knowledgeable about every topic in a 
-conference, (2) one tries to be quite exhaustive ; consequently 
-the review often ends up being a list of small, not very informative
-sentences about many many papers.&lt;/p&gt;
-
-&lt;p&gt;[By the way, it’s sad that SIGACT News is not open-access.]&lt;/p&gt;
-
-&lt;h2 id=&quot;1point5-and-conference-travel&quot;&gt;1point5 and conference travel&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Le_Monde&quot;&gt;Le Monde&lt;/a&gt;, one of the major French 
-newpapers, published 
-&lt;a href=&quot;https://labos1point5.org/&quot;&gt;the letter of the “1point5” group&lt;/a&gt;. 
-This name comes from the objective of keeping global warming
-upper bounded by 1.5 degree Celsius. The collective is interested in the impact of 
-research on climate. They basically argue that research should be made 
-differently to reduce its impact on the planet.&lt;/p&gt;
-
-&lt;p&gt;I have been thinking about this for a while. 
-It happened to me several times to go 
-to a conference, and think it was not worth the kerosene. 
-Conferences are often nice moments, you indeed learn stuff and make new projects,
-but it’s difficult to argue that this is as convincing as the following picture.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/histogram-CO2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;600px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The precise numbers can be discussed, but I got them from very reliable sources,
-and everywhere you will find numbers in the same ballpark.&lt;/p&gt;
-
-&lt;p&gt;In the long term, we can hope to make conferences less numerous, more efficient, 
-more local. But in the short, term it seems that the only solution is to avoid 
-submitting to far away conferences. Obviously this is a very broad topic…&lt;/p&gt;
-
-&lt;h2 id=&quot;place-in-a-queue&quot;&gt;Place in a queue&lt;/h2&gt;
-
-&lt;p&gt;I recently went to a doctor who does not take appointments, thus people wait. 
-The rule is “first-in first-cured” and people have to remember when it’s their 
-turn.
-It is usually fine, but sometimes, maybe by mistake, maybe by slyness, people 
-disagree. 
-I noticed that people in the room have somehow random sampling of the 
-order, e.g. “I arrived before this person, that person was here before, these two 
-I don’t know”.&lt;/p&gt;
-
-&lt;p&gt;You get diagrams like this one (with some inconsistencies):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/queue-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Making this into a linear order has a feedback-arcset flavor.&lt;/p&gt;
-
-&lt;p&gt;In other countries, I noticed that people, when they arrive say to a restaurant,
-ask “who is the latest arrived?”, which gives a simpler picture:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/queue-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;But maybe it’s less robust to slyness..?&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 09 Apr 2019 00:00:00 -0400</pubDate>
-        <link>https://discrete-notes.github.io///march-2019-notes-2</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///march-2019-notes-2</guid>
       </item>
     
   </channel>

@@ -57,8 +57,8 @@ optimized first etc.).
 
 In the context of Alexandros, the instances are distributions (of which we know
 only the mean and the standard variation) thus a distribution of instances is 
-a distribution of distributions. This can be made precise, by considering 
-mixtures of distributions. 
+a distribution of distributions. This can be made precise, by considering a
+mixture of distributions. 
 
   
 

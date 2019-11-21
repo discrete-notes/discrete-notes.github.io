@@ -47,6 +47,7 @@ An important element of their proof is a generalization of Yao's minimax
 principle.
 
 ## Yao's minimax principle
+
 [Yao's minimax principle](https://en.wikipedia.org/wiki/Yao%27s_principle) 
 is a general theorem for randomized algorithms. 
 Basically it is saying that the best randomized algorithm on its worst instance 

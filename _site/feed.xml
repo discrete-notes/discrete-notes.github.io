@@ -46,10 +46,10 @@ explores the setting where the auctioneer does not know the full distributions
 of the bidders, but only the means and the standard deviations. (That’s why it 
 is called &lt;em&gt;robust&lt;/em&gt; revenue maximization.)&lt;/p&gt;
 
-&lt;p&gt;An important element of their proof is a generalization of Yao’s minimax 
-principle.&lt;/p&gt;
+&lt;p&gt;An important element of their proof is a generalization of Yao’s minimax principle.&lt;/p&gt;
 
 &lt;h2 id=&quot;yaos-minimax-principle&quot;&gt; Yao’s minimax principle&lt;/h2&gt;
+
 &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Yao%27s_principle&quot;&gt;Yao’s minimax principle&lt;/a&gt; 
 is a general theorem for randomized algorithms. 
 Basically it is saying that the best randomized algorithm on its worst instance 
@@ -59,8 +59,8 @@ optimized first etc.).&lt;/p&gt;
 
 &lt;p&gt;In the context of Alexandros, the instances are distributions (of which we know
 only the mean and the standard variation) thus a distribution of instances is 
-a distribution of distributions. This can be made precise, by considering 
-mixtures of distributions.&lt;/p&gt;
+a distribution of distributions. This can be made precise, by considering a
+mixture of distributions.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 21 Nov 2019 00:00:00 -0300</pubDate>

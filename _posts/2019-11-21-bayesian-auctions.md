@@ -43,8 +43,7 @@ explores the setting where the auctioneer does not know the full distributions
 of the bidders, but only the means and the standard deviations. (That's why it 
 is called *robust* revenue maximization.)
 
-An important element of their proof is a generalization of Yao's minimax 
-principle.
+An important element of their proof is a generalization of Yao's minimax principle.
 
 ## Yao's minimax principle
 

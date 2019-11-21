@@ -45,7 +45,7 @@ is called *robust* revenue maximization.)
 
 An important element of their proof is a generalization of Yao's minimax principle.
 
-##Yao&#146;s minimax principle
+## Algorithmic minimax principle
 
 [Yao's minimax principle](https://en.wikipedia.org/wiki/Yao%27s_principle) 
 is a general theorem for randomized algorithms. 

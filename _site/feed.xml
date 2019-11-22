@@ -7,7 +7,7 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Bayesian mechanism design and Yao's principle</title>
+        <title>Bayesian mechanism design and Yao&#39;s principle</title>
         <description>&lt;p&gt;I attended a talk yesterday about 
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Algorithmic_game_theory&quot;&gt;algorithmic game theory&lt;/a&gt; by 
 &lt;a href=&quot;https://www.or.tum.de/en/group/alexandrostsigonias/&quot;&gt;Alexandros Tsigonias-Dimitriadis&lt;/a&gt;
@@ -23,7 +23,7 @@ The bidder knows the maximum price at which she will buy the object (the value
 of the item for her).
 If the auctioneer’s price is higher than the bidder’s value, the bidder does not 
 buy the item, and if the price is lower then the bidder buys it, but the 
-auctioneer “looses” the difference.&lt;/p&gt;
+auctioneer “loses” the difference.&lt;/p&gt;
 
 &lt;p&gt;In the &lt;a href=&quot;https://en.wikipedia.org/wiki/Bayesian-optimal_mechanism&quot;&gt;Bayesian setting&lt;/a&gt;, 
 the bidder’s value is taken following a probability 
@@ -41,14 +41,17 @@ Then the auctioneer chooses a price $p$ that maximizes this quantity.&lt;/p&gt;
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Bayesian-optimal_mechanism#The_Myerson_mechanism&quot;&gt;Myerson mechanism&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The paper of Alexandros and his co-authors 
-(&lt;a href=&quot;https://arxiv.org/abs/1907.04220&quot;&gt;Robust Revenue Maximization Under Minimal Statistical Information&lt;/a&gt;),
-explores the setting where the auctioneer does not know the full distributions 
-of the bidders, but only the means and the standard deviations. (That’s why it 
-is called &lt;em&gt;robust&lt;/em&gt; revenue maximization.)&lt;/p&gt;
+(&lt;a href=&quot;https://arxiv.org/abs/1907.04220&quot;&gt;Robust Revenue Maximization Under Minimal Statistical Information&lt;/a&gt;)
+goes into another direction and explores the setting where the 
+auctioneer does not know the full distribution of the bidder, but 
+only the mean and an upper bound on the standard deviation. (That’s why it 
+is called &lt;em&gt;robust&lt;/em&gt; revenue maximization.) Later they extend it to one 
+bidder buying (or not) several items.&lt;/p&gt;
 
-&lt;p&gt;An important element of their proof is a generalization of Yao’s minimax principle.&lt;/p&gt;
+&lt;p&gt;They show matching upper and lower bounds, and their lower bound
+is based on an argument similar to Yao’s minimax principle.&lt;/p&gt;
 
-&lt;h2 id=&quot;yao146s-minimax-principle&quot;&gt;Yao’s minimax principle&lt;/h2&gt;
+&lt;h2 id=&quot;minimax-principle&quot;&gt;Minimax principle&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Yao%27s_principle&quot;&gt;Yao’s minimax principle&lt;/a&gt; 
 is a general theorem for randomized algorithms. 
@@ -58,9 +61,9 @@ distribution of instances. (This needs a precise statement, to say which thing i
 optimized first etc.).&lt;/p&gt;
 
 &lt;p&gt;In the context of Alexandros, the instances are distributions (of which we know
-only the mean and the standard variation) thus a distribution of instances is 
-a distribution of distributions. This can be made precise, by considering a
-mixture of distributions.&lt;/p&gt;
+only the mean and an upper bound on the standard deviation) thus a 
+distribution of instances is a distribution of distributions. 
+This can be made precise, by considering a mixture of distributions.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 21 Nov 2019 00:00:00 -0300</pubDate>
@@ -140,9 +143,11 @@ of different slot-machines).&lt;/p&gt;
 
 &lt;p&gt;Given: $k$  arms, $T$ rounds.&lt;/p&gt;
 
-&lt;p&gt;In each round $t\in[T]$:
-1. Algorithm picks arm $a_t$.
-2. Algorithm observes reward $r_t\in [0,1]$ for the chosen arm.&lt;/p&gt;
+&lt;p&gt;In each round $t\in[T]$:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Algorithm picks arm $a_t$.&lt;/li&gt;
+  &lt;li&gt;Algorithm observes reward $r_t\in [0,1]$ for the chosen arm.&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;Pay-off: the sum of the rewards&lt;/p&gt;
 
@@ -421,14 +426,16 @@ approximation ratio in $\theta(\sqrt n)$. But it performs well in practice.&lt;/
 &lt;p&gt;A &lt;a href=&quot;https://arxiv.org/pdf/1909.12025.pdf&quot;&gt;recent preprint&lt;/a&gt; computes the 
 precise approximation ratio for 2-OPT, which is $\sqrt(n)/2$.&lt;/p&gt;
 
-&lt;p&gt;Other papers from the literature prove that : 
-* The approximation ratio is in $O(\sqrt n)$ for random edge weights 
-(which are not metric in general), see &lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S016763770900011X?via%3Dihub&quot;&gt;here&lt;/a&gt;.
-* For Euclidian instances, the worst ratio is in $O(\log n)$.
-* The &lt;a href=&quot;https://en.wikipedia.org/wiki/Smoothed_analysis&quot;&gt;smoothed analysis&lt;/a&gt;
-of the problem has been studied, eg &lt;a href=&quot;https://wwwhome.ewi.utwente.nl/~mantheyb/full/MantheyVeenstra_TwoOpt.pdf&quot;&gt;here&lt;/a&gt;.
-* The fine-grain analysis of $k$-OPT has been done &lt;a href=&quot;http://drops.dagstuhl.de/opus/volltexte/2016/6277/pdf/LIPIcs-ICALP-2016-5.pdf&quot;&gt;here&lt;/a&gt;
-with improved complexity for $k\geq 4$.&lt;/p&gt;
+&lt;p&gt;Other papers from the literature prove that :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The approximation ratio is in $O(\sqrt n)$ for random edge weights 
+(which are not metric in general), see &lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S016763770900011X?via%3Dihub&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;For Euclidian instances, the worst ratio is in $O(\log n)$.&lt;/li&gt;
+  &lt;li&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Smoothed_analysis&quot;&gt;smoothed analysis&lt;/a&gt;
+of the problem has been studied, eg &lt;a href=&quot;https://wwwhome.ewi.utwente.nl/~mantheyb/full/MantheyVeenstra_TwoOpt.pdf&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;The fine-grain analysis of $k$-OPT has been done &lt;a href=&quot;http://drops.dagstuhl.de/opus/volltexte/2016/6277/pdf/LIPIcs-ICALP-2016-5.pdf&quot;&gt;here&lt;/a&gt;
+with improved complexity for $k\geq 4$.&lt;/li&gt;
+&lt;/ul&gt;
 
 </description>
         <pubDate>Thu, 07 Nov 2019 00:00:00 -0300</pubDate>
@@ -633,9 +640,11 @@ by Moritz W. Schmitt and Günter M. Ziegler.&lt;/p&gt;
 &lt;p&gt;We had a &lt;a href=&quot;./april-may-2019-notes&quot;&gt;post in april&lt;/a&gt; on graphs that have some meaning 
 in terms of real-world objects.&lt;/p&gt;
 
-&lt;p&gt;Two additional pointers on this topic:
-* a &lt;a href=&quot;https://11011110.github.io/blog/2013/12/07/kinematic-chains-and.html&quot;&gt;blog post&lt;/a&gt; about graph that have one degree of freedom when you want to move them.
-* the &lt;a href=&quot;https://www.ics.uci.edu/~eppstein/pubs/Epp-WADS-19.pdf&quot;&gt;slides&lt;/a&gt; of a talk about graphs inspired by nature, for example by crystals and by bubbles.&lt;/p&gt;
+&lt;p&gt;Two additional pointers on this topic:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;a &lt;a href=&quot;https://11011110.github.io/blog/2013/12/07/kinematic-chains-and.html&quot;&gt;blog post&lt;/a&gt; about graph that have one degree of freedom when you want to move them.&lt;/li&gt;
+  &lt;li&gt;the &lt;a href=&quot;https://www.ics.uci.edu/~eppstein/pubs/Epp-WADS-19.pdf&quot;&gt;slides&lt;/a&gt; of a talk about graphs inspired by nature, for example by crystals and by bubbles.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/cristaux-bulles.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
@@ -1379,7 +1388,7 @@ and consisted in panels, hung in the
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;For PTAS and related acronyms, see &lt;a href=&quot;https://discrete-notes.github.io/october-batch-forgotten&quot;&gt;this post&lt;/a&gt;.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;For PTAS and related acronyms, see &lt;a href=&quot;https://discrete-notes.github.io/october-batch-forgotten&quot;&gt;this post&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;

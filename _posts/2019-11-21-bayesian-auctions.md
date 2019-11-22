@@ -20,7 +20,7 @@ The bidder knows the maximum price at which she will buy the object (the value
 of the item for her).
 If the auctioneer's price is higher than the bidder's value, the bidder does not 
 buy the item, and if the price is lower then the bidder buys it, but the 
-auctioneer "looses" the difference. 
+auctioneer "loses" the difference. 
 
 In the [Bayesian setting](https://en.wikipedia.org/wiki/Bayesian-optimal_mechanism), 
 the bidder's value is taken following a probability 
@@ -38,14 +38,17 @@ One can generalize this to work with several bidders. This is called
 [Myerson mechanism](https://en.wikipedia.org/wiki/Bayesian-optimal_mechanism#The_Myerson_mechanism).
 
 The paper of Alexandros and his co-authors 
-([Robust Revenue Maximization Under Minimal Statistical Information](https://arxiv.org/abs/1907.04220)),
-explores the setting where the auctioneer does not know the full distributions 
-of the bidders, but only the means and the standard deviations. (That's why it 
-is called *robust* revenue maximization.)
+([Robust Revenue Maximization Under Minimal Statistical Information](https://arxiv.org/abs/1907.04220))
+goes into another direction and explores the setting where the 
+auctioneer does not know the full distribution of the bidder, but 
+only the mean and an upper bound on the standard deviation. (That's why it 
+is called *robust* revenue maximization.) Later they extend it to one 
+bidder buying (or not) several items.
 
-An important element of their proof is a generalization of Yao's minimax principle.
+They show matching upper and lower bounds, and their lower bound
+is based on an argument similar to Yao's minimax principle.
 
-## Algorithmic minimax principle
+## Minimax principle
 
 [Yao's minimax principle](https://en.wikipedia.org/wiki/Yao%27s_principle) 
 is a general theorem for randomized algorithms. 
@@ -55,9 +58,9 @@ distribution of instances. (This needs a precise statement, to say which thing i
 optimized first etc.).
 
 In the context of Alexandros, the instances are distributions (of which we know
-only the mean and the standard variation) thus a distribution of instances is 
-a distribution of distributions. This can be made precise, by considering a
-mixture of distributions. 
+only the mean and an upper bound on the standard deviation) thus a 
+distribution of instances is a distribution of distributions. 
+This can be made precise, by considering a mixture of distributions. 
 
   
 

@@ -7,6 +7,96 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Price of anarchy for dynamic flows</title>
+        <description>&lt;p&gt;This post is about flows from a game theory perspective. 
+It originates from a recent talk of 
+&lt;a href=&quot;https://sites.google.com/view/timoosterwijk/home&quot;&gt;Tim Oosterwijk&lt;/a&gt; at 
+the University of Chile about 
+&lt;a href=&quot;https://drive.google.com/file/d/1u-NUQLppaTDdNUUh-BvsXYJ2QH9RM1K9/view&quot;&gt;this paper&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-model-for-dynamic-flows&quot;&gt;A model for dynamic flows&lt;/h2&gt;
+
+&lt;p&gt;We use a model useful to study settings like urban traffic.
+The flow is dynamic (that is we do not focus on 
+some stationary state) and there 
+can be congestion. It is called the &lt;em&gt;fluid queueing 
+model&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;The network is a graph, and there is one source node where the flow 
+enters and one target node where the flow exits. Each edge of the 
+network has a delay and a capacity per time unit. 
+If more flows enters the edge than the capacity, a (FIFO) queue will 
+form inside this edge.&lt;/p&gt;
+
+&lt;p&gt;Maybe a good example is a network where on every edge there is a 
+toll. If there is no queue, going through a toll $t$ takes some $s_t$ seconds,
+and at most some $c_t$ cars can go through the toll at each second. 
+If too many cars arrive, then a queue is forming, that will disappear 
+later if not so many cars arrive.&lt;/p&gt;
+
+&lt;h2 id=&quot;objective&quot;&gt;Objective&lt;/h2&gt;
+
+&lt;p&gt;We consider a setting where a constant flow $u_0$ 
+enters the network at each unit of time.&lt;/p&gt;
+
+&lt;p&gt;Now at each intersection of degree $d$ a particule of flow can go in 
+either of the $d-1$ directions. Given the choice of each particule at 
+each intersection, the flow is completely defined, and you can measure 
+how fast it is. For example routing every particule through the same edge
+of small capacity would in general form a huge queue in this edge and 
+make the flow very slow.&lt;/p&gt;
+
+&lt;p&gt;We can consider two notions of efficiency: (1) for a given 
+time, how much flow exits the network, and (2) for a given amount of flow 
+to start with, when does the last particule exits the network. 
+These are actually equivalent, so let’s consider the second one, called 
+the &lt;em&gt;makespan&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;price-of-anarchy&quot;&gt;Price of anarchy&lt;/h2&gt;
+
+&lt;p&gt;We study the makespan of different strategies for routing the flow.
+As often in 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Algorithmic_game_theory&quot;&gt;algorithmic game theory&lt;/a&gt;,
+one is interested in the &lt;a href=&quot;https://en.wikipedia.org/wiki/Price_of_anarchy&quot;&gt;price of anarchy&lt;/a&gt;.
+On a given instance this price is the ratio of the makespan of the best 
+routing strategy divided by the makespan of the strategy where every 
+particule optimizes its own travel time. 
+In other words, the ratio between the strategy where an oracle decides 
+optimally a route for every car, and the strategy where every driver 
+optimizes its own travel time. Note that the setting where we let the 
+particules (or drivers) decide is a kind of game, and we look at the 
+equilibrium of this game. This might be called the &lt;em&gt;selfish&lt;/em&gt; solution.&lt;/p&gt;
+
+&lt;p&gt;The price of anarchy of the problem is the largest 
+(the supremum to be precise) price of anarchy among every instance of 
+the problem.&lt;/p&gt;
+
+&lt;h2 id=&quot;result&quot;&gt;Result&lt;/h2&gt;
+
+&lt;p&gt;Tim and his co-authors show (among other results) an upper bound of 
+$e/(e-1)$ on the price of anarchy for this problem, under some conditions.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-key-open-problem-the-monotonicity-conjecture&quot;&gt;A key open problem: the monotonicity conjecture&lt;/h2&gt;
+
+&lt;p&gt;There is a very neat and puzzling conjecture that, if true, would imply 
+that the upper bound above always hold.&lt;/p&gt;
+
+&lt;p&gt;The so-called &lt;em&gt;monotonicity conjecture&lt;/em&gt; states that: if one reduces the 
+flow that enters in the network by unit of time (but keeping the total 
+amount to push in the network),  then the makespan of the selfish solution 
+increases.&lt;/p&gt;
+
+&lt;p&gt;This seems very natural, but it is still open, and sometimes unexpected
+things happen in the such games (like in 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Braess%27s_paradox&quot;&gt;Braess’s paradox&lt;/a&gt;)&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 05 Dec 2019 00:00:00 -0300</pubDate>
+        <link>https://discrete-notes.github.io///price-anarchy-flows</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///price-anarchy-flows</guid>
+      </item>
+    
+      <item>
         <title>Bayesian mechanism design and Yao&#39;s principle</title>
         <description>&lt;p&gt;I attended a talk yesterday about 
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Algorithmic_game_theory&quot;&gt;algorithmic game theory&lt;/a&gt; by 
@@ -1267,135 +1357,6 @@ but &lt;a href=&quot;https://www.lemonde.fr/climat/article/2019/01/16/climat-plu
         <pubDate>Thu, 23 May 2019 00:00:00 -0400</pubDate>
         <link>https://discrete-notes.github.io///april-may-2019-notes</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///april-may-2019-notes</guid>
-      </item>
-    
-      <item>
-        <title>Algorithms and natural history</title>
-        <description>&lt;p&gt;Until recently there was in Paris an exhibition about some techniques used for 
-research in natural history.
-It raises some algorithmic questions and comments about bones, diamonds and 
-polytopes.
-(More details about this great exhibition at the end of the post.)&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;assets/grenouille.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;Researchers measure the teeth of the tadpoles this frog 
-species, and learn stuff.&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;computing-skull-volumes&quot;&gt;Computing (skull) volumes&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/crane.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;When you get a skull, something you want to measure is how much brain you can 
-fit in, that is, what is its inside volume.
-This used to be done by filling the skull with some kind of grains, and then 
-measuring the volume of grain. 
-It is now done by with sensor measurements and computations. 
-But if I give you some triangulation of an object, how do you compute the volume?
-If you assume the object to be convex, then one can surely do some kind of discrete 
-integrals, suming some basic polytope volumes. 
-&lt;a href=&quot;https://www.ams.org/journals/mcom/1991-57-195/S0025-5718-1991-1079024-2/S0025-5718-1991-1079024-2.pdf&quot;&gt;This paper&lt;/a&gt; 
-(or more precisely its introduction) seems to validate this intuition. 
-It also raises the question about how the object to measure is given.&lt;/p&gt;
-
-&lt;p&gt;This made me remember that some price was awarded for something related to 
-volume computation. 
-I dug out the reference: 1991 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Fulkerson_Prize&quot;&gt;Fulkerson prize&lt;/a&gt; was awarded to 
-Dyer, Frieze and Kannan for works of this flavour.
-Their model is black-box: you ask for a point and you are answered whether it is 
-inside or outside. 
-They provide a randomized PTAS&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; for approximating
-the volume of high-dimensional polytopes using 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo&quot;&gt;Markov chain Monte Carlo&lt;/a&gt; 
-methods. 
-As many counting problems can be rephrased in terms of polytopes, this is much 
-more useful than just computing high-dimensional skull volumes.
-For a bit more on this, see 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Convex_volume_approximation&quot;&gt;this wikipedia page&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;inclusions-ofdiamonds-and-polytopes&quot;&gt;Inclusions of diamonds and polytopes&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/diamant-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The diamond above is the &lt;a href=&quot;Tavernier Blue&quot;&gt;Blue Diamond of the French Crown&lt;/a&gt; 
-that Louis XIV bought at some point of the 17th century. 
-Or actually, it’s what it used to look like, because this diamond disappeared. 
-It was suspected that it has been recut and is now the diamond known as the 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Hope_Diamond&quot;&gt;Hope diamond&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This was presented in the exhibition because the museum in Paris has a lead cast 
-of the original diamond, and used it to validated the link between the two. 
-Basically the two diamonds fit so well one in the other, that is very likely 
-that they are the same with only a light recut.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/diamant-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;250px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;But how can you decide if two polytopes could be included one in the other?
-And what’s the complexity? (Note that contrary to skulls, diamonds are pretty 
-much polytopes.)&lt;/p&gt;
-
-&lt;p&gt;First for the decision problem: the two polytopes are somehow aligned and you 
-just want to check the inclusion of one into the other.
-If both polytopes are given by sets of vertices, then some methods similar to
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Convex_hull_algorithms&quot;&gt;convex hull computations&lt;/a&gt; 
-should do the job.&lt;/p&gt;
-
-&lt;p&gt;Now how to find this alignment? For our diamonds, the spikes and planar 
-symmetries surely help. But what if your polytopes are say, 
-very close to spheres, but with random perturbations? Doesn’t seem very easy. 
-This looks similar to some robotics problem, such as the 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Motion_planning&quot;&gt;piano mover’s problem&lt;/a&gt;, but it’s 
-not quite the same.&lt;/p&gt;
-
-&lt;h2 id=&quot;symmetrizing-old-bones&quot;&gt;Symmetrizing old bones&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/dinosaures.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;350px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Yet another problems that one can transfer to polytopes. 
-Here the paleontologists find skulls like the one on the left (I didn’t take 
-notes of the name of this fellow), that has been deformed by non-uniform forces 
-in the ground.
-Then they try to reconstruct the correct shape, like the one on the right.&lt;/p&gt;
-
-&lt;p&gt;Again if you are a human, if you know a lot about such creatures, it is possible 
-to find a plausible shape by adjusting the parameters of some transformation.
-In particular, you try to have a left-right symmetry.
-But what if I give you an arbitrary triangulation, and tell you: find the best 
-way to modify it in order to have a symmetry?&lt;/p&gt;
-
-&lt;p&gt;Could be related to 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Principal_component_analysis&quot;&gt;principal component analysis&lt;/a&gt;, 
-that gives you some notion of “this object is somehow aligned with this 
-direction”, but again if you have a random near-spherical objects, this does not 
-help you (but in this case, you may be happy with any plane, as an approximation).&lt;/p&gt;
-
-&lt;h3 id=&quot;about-the-exhibition&quot;&gt;About the exhibition&lt;/h3&gt;
-&lt;p&gt;The name of the exhibition in French was 
-&lt;em&gt;&lt;a href=&quot;https://www.mnhn.fr/en/node/5277&quot;&gt;Secrets dévoilés : voir l’imperceptible&lt;/a&gt;&lt;/em&gt;, 
-which basically means &lt;em&gt;Unveiling secrets : seeing the imperciptible&lt;/em&gt;.
-It was created by the 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/National_Museum_of_Natural_History,_France&quot;&gt;National Museum of Natural History of Paris&lt;/a&gt;
-and consisted in panels, hung in the
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Jardin_des_plantes&quot;&gt;Jardin des Plantes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Some of the pictures can be seen on the 
-&lt;a href=&quot;https://marieducom.com/portfolio/exhibition-secrets-devoiles-voir-limperceptible/?lang=fr&quot;&gt;website of the illustrator&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h3&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;For PTAS and related acronyms, see &lt;a href=&quot;https://discrete-notes.github.io/october-batch-forgotten&quot;&gt;this post&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Thu, 09 May 2019 00:00:00 -0400</pubDate>
-        <link>https://discrete-notes.github.io///natural-history</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///natural-history</guid>
       </item>
     
   </channel>

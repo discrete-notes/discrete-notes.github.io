@@ -43,11 +43,10 @@ how fast it is. For example routing every particule through the same edge
 of small capacity would in general form a huge queue in this edge and 
 make the flow very slow. 
 
-We can consider two notions of efficiency: (1) for a given 
+We can consider at least two notions of efficiency: (1) for a given 
 time, how much flow exits the network, and (2) for a given amount of flow 
 to start with, when does the last particule exits the network. 
-These are actually equivalent, so let's consider the second one, called 
-the *makespan*. 
+We we will consider the second one, called the *makespan*. 
 
 ## Price of anarchy
 

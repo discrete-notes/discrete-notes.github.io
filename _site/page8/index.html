@@ -87,174 +87,99 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/june-2019-notes">
-        June notes
+      <a href="/summer-winter-2019-notes">
+        Summer-winter notes
       </a>
     </h1>
 
-    <span class="post-date">02 Jul 2019</span>
+    <span class="post-date">17 Sep 2019</span>
 
-    <p>Some notes for June.</p>
+    <p>Some notes for summer 2019, or actually winter 2019, as I moved to Chile.</p>
 
 <hr />
-<p><img src="assets/saint-laurent.png" alt="" class="center-image" height="600px" /></p>
+<p><img src="assets/azotea.jpg" alt="" class="center-image" height="400px" /></p>
 <p align="center"><small><i>
-<a href="http://www.st-laurent-de-la-cabrerisse.com/eng/">Saint Laurent de la Cabrerisse</a>
-where the <a href="https://www.irit.fr/algotel2019/index.html">Algotel conference</a> 
-took place.</i></small></p>
+The Andes.
+</i></small></p>
 <hr />
 
-<h2 id="recorded-talks-and-collaborating-virtually">Recorded talks and collaborating virtually</h2>
+<h2 id="queue-number-again-and-applications">Queue number again, and applications</h2>
 
-<p>Continuing on the topic of video conferences (e.g. to avoid plane travel),
-an important question is: can virtual conferences, and more generally 
-communication via video-conference, be really efficient?</p>
+<p>A recent result about the so-called <em>queue number</em> was mentioned on this blog in March 
+(see <a href="./stoc-socg-picks">here</a>). The result says that this graph parameter is bounded 
+on planar graph that have bounded degree.
+The result has now been generalized to any planar graph! 
+The <a href="https://arxiv.org/pdf/1904.04791.pdf">paper is on arxiv</a> and will be presented 
+at FOCS 2019.
+I haven’t looked into the paper, but I know from 
+<a href="https://11011110.github.io/blog/2019/08/10/report-from-cccg.html">David Epptein’s blog</a> 
+that it is a byproduct of showing that “every planar graph is a subgraph of a strong 
+product of a path graph and a bounded-treewidth graph”.</p>
 
-<p>I have to admit that, although I really like the idea of video conference, 
-for talks or for work, I have 
-difficulties following recorded talks, and I’m not very comfortable with 
-video calls. 
-Here are the reasons I could find for why video talks and calls are not as good 
-as their physical analogues:</p>
+<p>Another <a href="https://arxiv.org/abs/1908.03341">recent paper on the arxiv</a> 
+uses this result to design shorter labeling schemes for planar graphs.
+As the abstract says: 
+“In graph-theoretical terms, this implies an explicit construction 
+of a graph on $n^{4/3}+o(1)$ vertices that contains all planar graphs 
+on n vertices as induced subgraphs”.
+(Thanks to Cyril Gavoille for pointing out this paper.)</p>
 
+<h2 id="unfolding-polytopes-durers-conjecture">Unfolding polytopes: Durer’s Conjecture</h2>
+
+<p>Given a polyhedra, one can cut along the edges to unfold it on the plane as in the following drawing.</p>
+
+<p><img src="assets/durer-1.jpg" alt="" class="center-image" height="300px" /></p>
+
+<p>But sometimes, if you cut along some edges, you may have an overlap in the unfolding, as the
+second unfolding of the 
+following  example (borrowed from <a href="http://mathworld.wolfram.com/Unfolding.html">here</a>) shows.</p>
+
+<p><img src="assets/durer-2.jpg" alt="" class="center-image" height="300px" /></p>
+
+<p><a href="http://www.openproblemgarden.org/op/d_urers_conjecture">Durer’s conjecture</a> states that 
+“Every convex polytope has a non-overlapping edge unfolding”.
+A non-overlapping edge unfolding is called <a href="https://en.wikipedia.org/wiki/Net_(polyhedron)">a net</a>, 
+so the conjecture can be reformulated as: “Every convex polytope has a net”.
+It is surprising that such a cute and simple result is still open.</p>
+
+<p>I learned about this conjecture in 
+<a href="https://11011110.github.io/blog/2019/08/10/report-from-cccg.html">Eppstein’s report on CCCG</a>. 
+More information can be found in 
+<a href="https://www.mi.fu-berlin.de/math/groups/discgeom/ziegler/Preprintfiles/127PREPRINT.pdf">Ten Problems in Geometry</a>
+by Moritz W. Schmitt and Günter M. Ziegler.</p>
+
+<h2 id="more-on-graphs-inspired-by-objects-and-nature">More on graphs inspired by objects and nature</h2>
+
+<p>We had a <a href="./april-may-2019-notes">post in april</a> on graphs that have some meaning 
+in terms of real-world objects.</p>
+
+<p>Two additional pointers on this topic:</p>
 <ul>
-  <li>in a recorded talk, you can escape, take a coffee, answer an email, that is 
-you can “escape the room”, thus you are less focused.</li>
-  <li>videos are less immersive: the sound is bad, what you watch 
-occupies a very small part of your visual field, and in a talk you don’t feel 
-that you are part of a crowd participating in something.</li>
-  <li>A consequence of the previous bullet is that the experience is socially less 
-comfortable: in a real meeting, there can be a long silence and it’s fine, but 
-during a video call, it’s often awkward.</li>
-  <li>Also video conferences are very static. This is especially true for talks: the 
-main part of the screen is taken by the slide, which moves once every minute on 
-average, and even if you see the speaker, you just see a face, no body movements.</li>
-  <li>Related to the previous point: I don’t know good ways to have a shared 
-whiteboard when working through video, which reduces a lot the efficiency of the 
-conversation.</li>
+  <li>a <a href="https://11011110.github.io/blog/2013/12/07/kinematic-chains-and.html">blog post</a> about graph that have one degree of freedom when you want to move them.</li>
+  <li>the <a href="https://www.ics.uci.edu/~eppstein/pubs/Epp-WADS-19.pdf">slides</a> of a talk about graphs inspired by nature, for example by crystals and by bubbles.</li>
 </ul>
 
-<p>Some of these problems are kind of solved by some frameworks. For example 
-<a href="https://sites.google.com/site/plustcs/">TCS+</a> is an online seminar where the 
-speaker does not record a video alone: it is more like a large video conference
-with a dozen of labs connected, and one person giving the talk. (The 
-talks are actually recorded so you can watch them offline, but it is not the 
-main goal.) 
-This means that there is a crowd, and that you cannot escape. Also if you have a 
-good video/sound system, then it might be quite immersive. 
-I never had the opportunity to test this so I can’t tell.</p>
+<p><img src="assets/cristaux-bulles.jpg" alt="" class="center-image" height="300px" /></p>
+<p align="center"><small><i>
+The red circles are the nodes on the right drawing, but on the left ones they are part of the procedure to draw the crystals. See the slides for more details.
+</i></small></p>
 
-<p>Note that some people think the exact opposite of me: they actually prefer 
-watching a recorded talk, because it’s offline: you can stop, rethink what was 
-said, check a reference, jump to the next section etc. 
-Also note that attending a live talk can also be boring, so it also depends a 
-lot on the speaker.</p>
+<h2 id="automata-size-to-separate-two-words">Automata size to separate two words</h2>
 
-<p>If you know good alternatives to skype (ideally open-source, with a possibility of 
-drawing, and multi-users), send me an email. This will be useful not only to me 
-but also to other people: I timidly signed to be part of a pool of people 
-thinking about such technical topics, in the 
-<a href="https://labos1point5.org/en/home/">Labo 1.5 collective</a> I talked about last 
-month.</p>
+<p>Yet another very simple and still open problem: consider two strings of length $n$, what is the size of the smallest deterministic automaton than accepts one and rejects the other? 
+Or more precisely, what is the maximum over all such pairs of this size? 
+The upper bound is polynomial in $n$ (something like $\sqrt(n)$) and the lower bound is $\Omega(\log n)$. An exponential gap!</p>
 
-<h2 id="terence-tao-on-the-radius-of-the-earth">Terence Tao on the radius of the Earth</h2>
-
-<p><a href="https://en.wikipedia.org/wiki/Terence_Tao">Terence Tao</a> has a blog, 
-<a href="https://terrytao.wordpress.com/">What’s new</a>. Most of the content is way too 
-complicated for me, but once in a while he writes excellent posts about simpler
-things. 
-A very recent one is 
-<a href="https://terrytao.wordpress.com/2019/05/25/the-spherical-cayley-menger-determinant-and-the-radius-of-the-earth/">about the radius of the Earth and determinants</a>. An older one is about 
-<a href="https://terrytao.wordpress.com/2009/03/23/sailing-into-the-wind-or-faster-than-the-wind/">sailing</a>.</p>
-
-<h2 id="basic-and-advanced-tools-in-combinatorics">Basic and advanced tools in combinatorics</h2>
-
-<p>I have heard that some people tend to despise combinatorics as being “very basic”.
-To some extent, my research is very basic: most of the time I consider very 
-simple objects, a few edges and a few nodes in a graph. I almost never use 
-complicated tools which have been improved over the centuries and which 
-need time to master. Sometimes it is a bit unsettling: one can feel like playing
-child games, compared to what one was taught at the university.</p>
-
-<p>On the other hand of course, it is very annoying when people boast about using
-complicated stuff, and it is always very nice to find a basic proof of a theorem.</p>
-
-<p>Something I like is when you have a basic proof that is a bit of a mess, with
-many cases for example, and using the point of view of a more general 
-theory you suddenly understand things better. I had this experience with some 
-<a href="https://en.wikipedia.org/wiki/Matroid">matroid</a> structure in
-<a href="https://pages.lip6.fr/Laurent.Feuilloley/publications/error_sensitive.html">this paper</a>
-(although it does not appear at all in the final write-up).</p>
-
-<p>I was reminded of this by 
-<a href="https://11011110.github.io/blog/2019/05/25/more-matching-mimicking.html">this post</a>
-on David Eppstein’s blog, where he describes a new point of view he has on a 
-matching problem thanks to a more advanced notion of matroid (yes matroids, again).</p>
-
-<h2 id="john-ellipsoid-and-the-s">John ellipsoid and the “‘s”</h2>
-
-<p>This <a href="https://arxiv.org/pdf/1905.11580.pdf">arxiv preprint</a> made me discover 
-<a href="https://en.wikipedia.org/wiki/John_ellipsoid">John ellipsoid</a>. Given a polytope
-in $n$ dimensions, John ellipsoid is the largest-volume ellipsoid included in 
-the polytope. On the picture below it is the red ellipse (more or less).</p>
-
-<p><img src="assets/john-ellipsoid.png" alt="" class="center-image" height="250px" /></p>
-
-<p>An interesting property is that if you take the ellipsoid and dilate it by a 
-factor $n$, then this new ellipsoid contains the polytope (more or less the blue 
-ellipsoid on the picture). At first I thought that dimension 3 should not require 
-more dilatation than dimension 2, but if you think about an equilateral triangle 
-in the plane, and a tetrahedron in a 3D space, you see that the inner ball of the 
-tetrahedron has to be smaller than the inner disk of the equilateral triangle, 
-and that the outer ball has to be larger.</p>
-
-<p>The arxiv preprint presents an algorithm to approximate John ellipsoid.</p>
-
-<p>By the way, why is it “John ellipsoid” and, say, “Dijktra’s algorithm”, why is 
-there a “‘s” sometimes but not always?</p>
-
-<h2 id="eppsteins-socg-report-and-robust-statistics">Eppstein’s SOCG report and robust statistics</h2>
-
-<p>Eppstein wrote a nice
-<a href="https://11011110.github.io/blog/2019/06/21/report-from-socg.html">report of SOCG</a>,
-with a selection of talks that caught his interest.</p>
-
-<p>He refers to <a href="https://en.wikipedia.org/wiki/Centerpoint_(geometry)">Tukey depth</a>, 
-which is related to Tukey median, which is a 
-generalization of the median in higher dimension. I discovered this notion in a great 
-talk by <a href="https://people.csail.mit.edu/moitra/">Ankur Moitra</a> about the 
-computational aspects of
-<a href="https://en.wikipedia.org/wiki/Robust_statistics">robust statistics</a>, at 
-<a href="http://2018.highlightsofalgorithms.org/">HALG 2018</a>. 
-The basic story is the following. Suppose you have data, and you want to 
-summarize it by one point. You want to use the average, but because your data 
-has some adversarial noise, the average of the noisy data might be far from the 
-average of the “real data”. If you are in 1D then you can take the median, which 
-is robust to such noise. But if you are in $d$ dimension, then there are several 
-generalizations of the median, 
-and either they are not robust to noise or they are NP-hard to compute, and then 
-you have to think.</p>
-
-<p>Two references on robust statistics : 
-<a href="http://people.csail.mit.edu/moitra/docs/robust2.pdf">here</a>
-and 
-<a href="https://www.csun.edu/~ctoth/Handbook/chap58.pdf">there</a>.</p>
+<p>For more on this see these two posts by Lipton: <a href="https://rjlipton.wordpress.com/2019/09/08/separating-words-by-automata/">here</a> and
+<a href="https://rjlipton.wordpress.com/2019/09/16/separating-words-decoding-a-paper/">there</a>.</p>
 
 <h2 id="other-notes">Other notes</h2>
-
 <ul>
-  <li>
-    <p>The paper I talked about in a 
-<a href="https://discrete-notes.github.io/simulation-1">series of posts in February</a>, by 
-the Aalto distributed computing people has been accepted to 
-<a href="http://focs2019.cs.jhu.edu/">FOCS 2019</a>.</p>
-  </li>
-  <li>
-    <p>The <a href="http://eatcs.org/images/bulletin/beatcs128.pdf">128th bulletin of the EATCS</a> 
-is out, with a chapter on matching with preference lists, and a chapter on 
-leader election in directed dynamic graphs.</p>
-  </li>
+  <li>The paper about the matching lower bound that I mentioned here several times won the best paper award at FOCS! I think it’s a remarkable research story: identifying a fundamental problem, telling everybody about it, learning more and more, and finally solving it, and getting an award for it!</li>
+  <li>Some day, I’ll learn about spanners, I hope. <a href="https://arxiv.org/pdf/1909.03152.pdf">Here</a> is a recent survey that may help.</li>
+  <li>A <a href="https://arxiv.org/abs/1907.05257">paper appeared on the arxiv</a> on the recognition of intersection graphs of objects touching a diagonal line, related to <a href="https://www.dii.uchile.cl/~feuilloley/publications/rectangles_DCG15.html">this paper of mine</a>.</li>
 </ul>
+
 
   </div>
   

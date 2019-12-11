@@ -87,14 +87,98 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/start">
-        Start
+      <a href="/popular-matchings">
+        Popular matchings
       </a>
     </h1>
 
-    <span class="post-date">24 Sep 2018</span>
+    <span class="post-date">13 Nov 2018</span>
 
-    <p>Hello. The start of the new blog.</p>
+    <p><em>Popular matchings</em> are a nice variant of the classic
+<a href="https://en.wikipedia.org/wiki/Stable_marriage_problem">stable matchings</a>. 
+In this post introduce these matchings, and give some bits of information about 
+them.</p>
+
+<h2 id="stable-matchings">Stable matchings</h2>
+<p>Remember what a stable matching is. There is bipartite graph, where 
+every node holds an ordering of its neighbours, known as the <em>preference list</em>. 
+A matching $M$ in this graph is stable, if no edge $(u,v)$ that is <em>not</em> in $M$ 
+is such that both $u$ and $v$, would prefer to be matched together instead of 
+the way they are matched (or unmatched) in $M$. Note that such matchings are 
+maximal.</p>
+
+<p>A stable matching always exists and can be computed in linear-time using the 
+famous Gale-Shapley algorithm. Something frustrating with stable matchings is 
+that they may be small with respect to the maximum matching (if one forgets 
+about the preference lists). For example, in the following picture, the stable 
+matching matches the top node on the left, with the bottom node on the right, 
+and prevent the two other nodes from being matched, although all could be 
+matched.</p>
+
+<p><img src="assets/popular.png" alt="" class="center-image" height="300px" /></p>
+
+<p>This example shows that the size of a stable matching can be half of the size of 
+a maximum matching. 
+If you are in a context where you would like to (at least partially) satisfy 
+the nodes in terms of preference lists, but you would also like to satisfy as many 
+nodes as possible, then you need another form of optimality, and (max-size) 
+popular matchings is a good one.</p>
+
+<h2 id="popular-matchings">Popular matchings</h2>
+<p>With a stable matching the matched nodes are happy, because they are at a kind 
+of equilibrium, but the other nodes are unhappy because they are not matched at 
+all. 
+What happens if you make the nodes vote for their favourite matching? 
+This makes sense if you do a tournament: for every couple of matchings you make 
+an election, and the winner is the matching that is prefered by the majority of 
+the nodes. In such an election the vertices perfer to be 
+matched, and if matched consider their preference list. Also if there is an 
+ex-eaquo then both matchings win.
+A matching is popular if it wins every election.</p>
+
+<h2 id="relation-with-stable-matchings-and-size-considerations">Relation with stable matchings and size considerations</h2>
+<p>It is known that every stable matching is popular. 
+Thus popularity is a relaxation of stability. 
+Unlike stable matchings, popular matchings can have different sizes, and in 
+particular they can be
+larger the stable matchings (that why we look at them in the first place).
+Actually, stable matchings are the worst popular matchings with respect to size: 
+stable matchings are the popular matchings of minimum size.</p>
+
+<p>We then look for <em>max-size popular matching</em>.
+The good news it that a max-size popular matching can be computed in polynomial 
+time, and that they have size at least 2/3 of the maximum size matching.</p>
+
+<h2 id="notes">Notes</h2>
+<p>I got aware of this topic at a seminar of 
+<a href="http://www.tcs.tifr.res.in/~kavitha/">Telikepalli Kavitha</a> at <a href="https://www.irif.fr">IRIF</a> 
+in September. After a nice introduction, she told us about her recent papers on 
+the topic (there is a lot to say, with many relevant variants and nice 
+algorithmic techniques).</p>
+
+<p>The concept of popular matchings was introduced by Gärdenfors in the seventies, 
+who also proved that stable matchings are popular.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> 
+The polynomial algorithm for computing a max-size popular matching is much more 
+recent, it was designed by Telikepalli and Chien-Chung Huang in 2011.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> 
+And popular matchings are still a hot topic.<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+
+<hr />
+
+<h4 id="footnotes">Footnotes</h4>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>P. Gärdenfors, <a href="https://doi.org/10.1002/bs.3830200304">Match making: Assignments based on bilateral preferences</a>. (I couldn’t find it on Google Scholar, but it is accessible on Wiley.) <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>T. Kavitha, C. Huang, <a href="https://doi.org/10.1016/j.ic.2012.10.012">Popular matchings in the stable marriage problem</a>.S <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>See <a href="https://dblp.uni-trier.de/search?q=popular+matching">DBLP “popular matching” search</a>. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
   </div>
   
@@ -102,7 +186,7 @@
 
 <div class="pagination">
   
-    <span class="pagination-item older">Older</span>
+    <a class="pagination-item older" href="/page27/">Older</a>
   
   
     

@@ -47,7 +47,7 @@
 
   <title>
     
-      Discrete notes &middot; Blog
+      A cute "open" problem on polygons &middot; Discrete notes
     
   </title>
 
@@ -83,51 +83,32 @@
         </h3>
       </div>
 
-      <div class="posts">
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/lightning">
-        Lightning and search algorithms
-      </a>
-    </h1>
+      <div class="post">
+  <h1 class="post-title">A cute "open" problem on polygons</h1>
+  <span class="post-date">11 Dec 2019</span>
+  <p>Here is a cute problem that appeared on a chat channel of University of 
+Chile a few months ago. To my knowledge this is still open, but as it 
+seems rather natural, the answer is probably known somewhere.</p>
 
-    <span class="post-date">26 Mar 2019</span>
+<p>Consider the following transformation: take a polygon in the plane and 
+then dilate it along the $x$-axis.</p>
 
-    <p>I recently stumbled on <a href="https://www.youtube.com/watch?v=nBYZpsbu9ds">this video</a>
-of lightning. I knew that lightning kind of “search for the good way”, but 
-I was stunned by how it looks like the run of a search algorithm: exploration 
-phases, backtracking, compromise between depth and breadth etc.
-For fun, I drew a lightning bolt, second by second. You may find it in the 
-video around 0:25-0:35.</p>
+<p><img src="assets/polygon-expansion.png" alt="" class="center-image" height="250px" /></p>
 
-<p><img src="assets/eclair-1a.png" alt="" class="center-image" height="500px" />
-<img src="assets/eclair-1b.png" alt="" class="center-image" height="500px" />
-<img src="assets/eclair-2a.png" alt="" class="center-image" height="500px" />
-<img src="assets/eclair-2b.png" alt="" class="center-image" height="500px" />
-<img src="assets/eclair-3a.png" alt="" class="center-image" height="500px" />
-<img src="assets/eclair-3b.png" alt="" class="center-image" height="500px" />
-<img src="assets/eclair-4a.png" alt="" class="center-image" height="500px" />
-<img src="assets/eclair-4b.png" alt="" class="center-image" height="500px" />
-<img src="assets/eclair-5a.png" alt="" class="center-image" height="500px" />
-<img src="assets/eclair-5b.png" alt="" class="center-image" height="500px" />
-<img src="assets/eclair-6a.png" alt="" class="center-image" height="500px" />
-<img src="assets/eclair-6b.png" alt="" class="center-image" height="500px" /></p>
+<p>In other words, the $x$ coordinates of the vertices
+are multiplied by some expansion factor $\alpha$.
+On the picture the expansion factor is $\alpha=2$.</p>
+
+<p>Now the question is: is it always true that the original polygon fits in 
+the dilated polygon? Note that you are allowed to rotate and translate 
+these as you like.</p>
+
+<p><img src="assets/polygon-inclusion.png" alt="" class="center-image" height="200px" /></p>
+
+<p>We have thought a bit about this at some point, and we have a proof for 
+triangles, but not much more…</p>
 
 
-  </div>
-  
-</div>
-
-<div class="pagination">
-  
-    <a class="pagination-item older" href="/page15/">Older</a>
-  
-  
-    
-      <a class="pagination-item newer" href="/page13/">Newer</a>
-    
-  
 </div>
 
 

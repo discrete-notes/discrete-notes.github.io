@@ -7,6 +7,77 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Smoothed analysis in distributed computing</title>
+        <description>&lt;p&gt;Happy 2020! A short post about smoothed analysis in distributed 
+computing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/arbre-patagonie.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Smoothed_analysis&quot;&gt;Smoothed analysis&lt;/a&gt; is 
+about a complexity measure in between the complexity on random instances 
+and the complexity on worst-case instances. 
+It basically asks about the complexity on the worst instance,
+but with a small random permutation.
+The goal of this measure is to better capture the complexity observed in
+practice.&lt;/p&gt;
+
+&lt;p&gt;For example, the 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Simplex_algorithm&quot;&gt;simplex algorithm&lt;/a&gt;
+performs very well in practice
+but is proved to be exponential in the worst-case. This means
+that worst-case complexity is not the right tool to evaluate this algorithm.
+But if you consider a bit of noise, then the simplex algorithm becomes 
+polynomial! More precisely the complexity is bounded 
+by a polynomial in $n$ and $1/\sigma$, where $\sigma$ is the standard 
+deviation of the gaussian noise. This somehow explains why the simplex 
+is so good in practice: the examples where it is exponential are very 
+special constructions, that are eliminated by small perturbations.&lt;/p&gt;
+
+&lt;p&gt;I was recentely asked whether there exists some smoothed analysis 
+in network distributed computing. There is actually a 
+&lt;a href=&quot;https://arxiv.org/pdf/1911.02628.pdf&quot;&gt;recent paper&lt;/a&gt; that started that. 
+It does a smoothed analysis of distributed minimum 
+spanning tree.&lt;/p&gt;
+
+&lt;p&gt;A problem with smoothed analysis, or a feature maybe, is that it can be 
+made in different ways, in particular a question is: What kind of noise 
+do you consider? When there are 
+numerical inputs, you can modify these inputs with a gaussian noise. But 
+in the case of minimum spanning tree, small perturbations of the weights
+do not change much.
+More precisely, given a difficult instance, one 
+would have to add a noise of the same order of magnitude as the 
+weights to break the lower bound. 
+Instead, the authors of the paper above consider a model 
+where each node is allowed to ask for a new adjacent random edge at 
+each round. These new edges have infinite weight thus they are not 
+useful for the MST, only for the communication. 
+This seems a rather strange model, but I can imagine that a lot of more
+natural variants do not make sense.&lt;/p&gt;
+
+&lt;p&gt;More generally, a problem I can see with smoothed 
+analysis for the LOCAL model for example, is that it is based on the 
+idea that random instances are easy. 
+For graphs, a natural choice of random instances, is 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model&quot;&gt;Erdos-Renyi graphs&lt;/a&gt;,
+but these are not always easy for distributed algorithms: they are 
+sometimes used as lower bound instances (or more precisely they are 
+expanders,  and have logarithmic girth, which are two properties that 
+often pop up in lower bounds). 
+Some graphs that are somehow easy are grids, but I don’t know what kind of 
+random transformation you can apply to a graph to make it more grid-like.&lt;/p&gt;
+
+&lt;p&gt;One could also play with the identifiers. For example a random identifier 
+assignment often boils down to a randomized algorithms
+(see &lt;a href=&quot;https://arxiv.org/abs/1704.05739&quot;&gt;this&lt;/a&gt;), and maybe some slightly 
+random assignement could make sense.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 13 Jan 2020 00:00:00 -0300</pubDate>
+        <link>https://discrete-notes.github.io///smoothed-analysis</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///smoothed-analysis</guid>
+      </item>
+    
+      <item>
         <title>A cute &quot;open&quot; problem on polygons</title>
         <description>&lt;p&gt;Here is a cute problem that appeared on a chat channel of University of 
 Chile a few months ago. To my knowledge this is still open, but as it 
@@ -959,132 +1030,6 @@ leader election in directed dynamic graphs.&lt;/p&gt;
         <pubDate>Tue, 02 Jul 2019 00:00:00 -0400</pubDate>
         <link>https://discrete-notes.github.io///june-2019-notes</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///june-2019-notes</guid>
-      </item>
-    
-      <item>
-        <title>Material on distributed graph algorithms</title>
-        <description>&lt;p&gt;This post is a list of pointers to books and surveys about distributed graph 
-algorithms (LOCAL model, CONGEST model, and friends).
-I probably missed some references, as typing “local model” in a search engine 
-is not very helpful if you are not looking for top model agencies. 
-Other references are most welcome!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/local.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;distributed-computing-a-locality-sensitive-approach-by-peleg-and-other-references&quot;&gt;Distributed computing: a locality-sensitive approach, by Peleg, and other references&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://epubs.siam.org/doi/book/10.1137/1.9780898719772&quot;&gt;Distributed computing: a locality-sensitive approach&lt;/a&gt;
-by &lt;a href=&quot;http://www.weizmann.ac.il/math/peleg/&quot;&gt;David Peleg&lt;/a&gt; is the classic book 
-about the local model. It’s from 2000, so it’s getting a bit outdated in terms 
-of results.&lt;/p&gt;
-
-&lt;h2 id=&quot;distributed-graph-coloring-by-barenboim-and-elkin&quot;&gt;Distributed graph coloring, by Barenboim and Elkin&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.cs.bgu.ac.il/~elkinm/book.pdf&quot;&gt;Distributed graph coloring&lt;/a&gt;
-by 
-&lt;a href=&quot;https://www.openu.ac.il/personal_sites/leonid-barenboim/&quot;&gt;Leonid Bareboim&lt;/a&gt;
-and &lt;a href=&quot;https://www.cs.bgu.ac.il/~elkinm/&quot;&gt;Michael Elkin&lt;/a&gt;, is a more recent book, 
-with a focus on coloring. It explains quite a few techniques, and has a list of 
-open problems (some of these problems have been solved already).&lt;/p&gt;
-
-&lt;h2 id=&quot;survey-of-local-algorithms-by-suomela&quot;&gt;Survey of local algorithms, by Suomela&lt;/h2&gt;
-&lt;p&gt;The &lt;a href=&quot;https://users.ics.aalto.fi/suomela/doc/local-survey.pdf&quot;&gt;survey of local algorithms&lt;/a&gt;
-by &lt;a href=&quot;https://users.ics.aalto.fi/suomela/&quot;&gt;Jukka Suomela&lt;/a&gt; is the reference for 
-results about constant-time computations in the local model.&lt;/p&gt;
-
-&lt;h2 id=&quot;distributed-algorithms-by-suomela&quot;&gt;Distributed algorithms, by Suomela&lt;/h2&gt;
-
-&lt;p&gt;A neat online textbook is
-&lt;a href=&quot;https://users.ics.aalto.fi/suomela/da/da-print.pdf&quot;&gt;Distributed algorithm&lt;/a&gt;
-by Jukka Suomela.
-In addition to the classic topics such as coloring, that are contained in most 
-references listed here, it has a focus on showing the similarities and differences 
-between different models (such as port numbers and unique identifiers), and on the 
-graph theory tools that can be used (such as covering maps and Ramsey theory).&lt;/p&gt;
-
-&lt;h2 id=&quot;the-swiss-german-lecture-notes&quot;&gt;The Swiss-German lecture notes&lt;/h2&gt;
-
-&lt;p&gt;There are several courses related to the local model that are taught in 
-Switzerland and South Germany. They are rather close one from another, as they 
-stem from the same Zurich source (but then they evolved on their own).&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;The current version of the original source is 
-&lt;a href=&quot;https://disco.ethz.ch/courses/podc/&quot;&gt;Principles of Distributed Computing&lt;/a&gt;, 
-by &lt;a href=&quot;https://disco.ethz.ch/members/wroger&quot;&gt;Roger Wattenhofer&lt;/a&gt; (and more recently
-&lt;a href=&quot;https://people.csail.mit.edu/ghaffari/&quot;&gt;Mohsen Ghaffari&lt;/a&gt; but his part is 
-covered below). In addition to the classic topics of synchronous computing, it 
-covers some topics at the boundary with asynchronous computing (such as 
-synchronizers), or fully asynchronous computing (such as shared objects).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A set of lecture notes by &lt;a href=&quot;http://ac.informatik.uni-freiburg.de/kuhn/&quot;&gt;Fabian Kuhn&lt;/a&gt;
-is available chapter by chapter on
-&lt;a href=&quot;http://ac.informatik.uni-freiburg.de/teaching/ss_18/network-algorithms.php&quot;&gt;the course webpage&lt;/a&gt;.
-The topics are very close from the ones of the bullet above. Two topics that 
-appear only here: dynamic networks and
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Linear_network_coding&quot;&gt;network coding&lt;/a&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Another set of lecture notes is 
-&lt;a href=&quot;https://www.mpi-inf.mpg.de/departments/algorithms-complexity/teaching/winter18/tods/&quot;&gt;Theory of Distributed Systems&lt;/a&gt;, 
-by &lt;a href=&quot;http://people.mpi-inf.mpg.de/~clenzen/&quot;&gt;Christoph Lenzen&lt;/a&gt;. It covers 
-(in addition to the classic material) self-stabilization and 
-routing.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Probably the most recent course is
-&lt;a href=&quot;https://disco.ethz.ch/courses/podc/lecturenotes/LOCAL.pdf&quot;&gt;Distributed graph algorithms&lt;/a&gt;
-by 
-&lt;a href=&quot;https://people.csail.mit.edu/ghaffari/&quot;&gt;Mohsen Ghaffari&lt;/a&gt;. 
-It is a shorter text, with a focus on algorithmic techniques for the local model, 
-e.g. network decomposition.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;material-covering-only-the-basics-or-only-specialized-content&quot;&gt;Material covering only the basics, or only specialized content&lt;/h2&gt;
-
-&lt;p&gt;A standard book is 
-&lt;a href=&quot;https://www.elsevier.com/books/distributed-algorithms/lynch/978-1-55860-348-6&quot;&gt;Distributed Algorithms&lt;/a&gt;
-by &lt;a href=&quot;http://people.csail.mit.edu/lynch/&quot;&gt;Nancy Lynch&lt;/a&gt;, but most of the book is 
-off-topic for this post, because it deals with asynchronous systems.&lt;/p&gt;
-
-&lt;p&gt;Yet another reference (with little material on the LOCAL model) is the online 
-textbook 
-&lt;a href=&quot;http://www.cs.yale.edu/homes/aspnes/classes/465/notes.pdf&quot;&gt;Notes on Theory of Distributed Systems&lt;/a&gt;
-by &lt;a href=&quot;http://www.cs.yale.edu/homes/aspnes/&quot;&gt;James Aspnes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;If you look for &lt;a href=&quot;https://en.wikipedia.org/wiki/Self-stabilization&quot;&gt;self-stabilizing algorithms&lt;/a&gt;
-then a reference from 2000 is 
-&lt;a href=&quot;https://mitpress.mit.edu/books/self-stabilization&quot;&gt;Self-Stabilization &lt;/a&gt; 
-by
-&lt;a href=&quot;https://in.bgu.ac.il/en/natural_science/cs/dolev//Pages/default.aspx&quot;&gt;Shlomi Dolev&lt;/a&gt;, 
-and a very recent one is 
-&lt;a href=&quot;https://www.morganclaypool.com/doi/abs/10.2200/S00908ED1V01Y201903DCT015&quot;&gt;Introduction to Distributed Self-Stabilizing Algorithms&lt;/a&gt;
-by
-&lt;a href=&quot;http://www-verimag.imag.fr/Karine-Altisen,102.html?lang=en&quot;&gt;Karine Altisen&lt;/a&gt;,
-&lt;a href=&quot;http://www-verimag.imag.fr/~devismes/WWW/introduction.html&quot;&gt;Stéphane Devismes&lt;/a&gt;,
-&lt;a href=&quot;https://pages.lip6.fr/Swan.Dubois/&quot;&gt;Swan Dubois&lt;/a&gt;,
-and 
-&lt;a href=&quot;https://pages.lip6.fr/Franck.Petit/&quot;&gt;Franck Petit&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;in-french&quot;&gt;In French&lt;/h3&gt;
-&lt;p&gt;Also, if you read French, you may be interested in 
-&lt;a href=&quot;https://www.irif.fr/_media/users/pierref/notes_algo_distribue.pdf&quot;&gt;Algorithmique distribuée pour les réseaux&lt;/a&gt;
-by &lt;a href=&quot;https://www.irif.fr/users/pierref/index&quot;&gt;Pierre Fraigniaud&lt;/a&gt;, and 
-&lt;a href=&quot;http://dept-info.labri.fr/~gavoille/UE-AD/cours.pdf&quot;&gt;Algorithmes distribués&lt;/a&gt; 
-by &lt;a href=&quot;http://dept-info.labri.fr/~gavoille/&quot;&gt;Cyril Gavoille&lt;/a&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Thanks to Jukka Suomela for pointing out some references.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 20 Jun 2019 00:00:00 -0400</pubDate>
-        <link>https://discrete-notes.github.io///local-model</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///local-model</guid>
       </item>
     
   </channel>

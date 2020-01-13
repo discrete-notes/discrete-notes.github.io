@@ -87,159 +87,32 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/march-2019-notes-1">
-        March notes I.
+      <a href="/lightning">
+        Lightning and search algorithms
       </a>
     </h1>
 
-    <span class="post-date">25 Mar 2019</span>
+    <span class="post-date">26 Mar 2019</span>
 
-    <p>First half of the March 2019 notes.</p>
+    <p>I recently stumbled on <a href="https://www.youtube.com/watch?v=nBYZpsbu9ds">this video</a>
+of lightning. I knew that lightning kind of “search for the good way”, but 
+I was stunned by how it looks like the run of a search algorithm: exploration 
+phases, backtracking, compromise between depth and breadth etc.
+For fun, I drew a lightning bolt, second by second. You may find it in the 
+video around 0:25-0:35.</p>
 
-<hr />
-<p><img src="assets/mimosa-2.JPG" alt="" class="center-image" height="450px" /></p>
-<p align="center">Mimosa in Jardin des Plantes.</p>
-
-<hr />
-
-<h2 id="tverbergs-theorem">Tverberg’s theorem</h2>
-
-<p>For geometric algorithms in the plane, one sometimes has go through case by case 
-analysis along the lines of “if this point is below this line, then this and 
-that intersect, if not then…”. 
-Such proofs are a bit boring and it is easy to make mistakes. 
-So when you have a general theorem that does the work for you, it’s good news. 
-Tverberg’s theorem looks like a theorem that could be useful from this point of 
-view.</p>
-
-<p><a href="https://en.wikipedia.org/wiki/Tverberg%27s_theorem">Tverberg’s theorem</a> states 
-a condition such that the convex hulls of several sets of points intersect. 
-Precisely: in a $d$-dimensional euclidian space, for any integer $r$, for any 
-set of $(d+1)(r-1)+1$ points, there exists a partition in $r$ subsets such that 
-the convex hulls of the $r$ subsets intersect. 
-The picture below present the case $d=2$ and $r=3$, for $(d+1)(r-1)+1=7$ points, 
-and for one less point. 
-In this last case the theorem does not hold (we just show one partition).</p>
-
-<p><img src="assets/tverberg.png" alt="" class="center-image" height="270px" /></p>
-
-<p>[I saw the name of this theorem on the SOCG accepted papers list, unfortunately
-the paper is not available online, and we don’t know what they do with this 
-theorem.]</p>
-
-<h2 id="criteria-for-fair-item-assignment">Criteria for fair item assignment</h2>
-
-<p><a href="https://en.wikipedia.org/wiki/Fair_item_assignment">Fair item assignement</a> 
-consists, given items and participants, to assign the items to the participants 
-in a fair manner, for some definition of fair. There are many variants of the 
-problem and many ways to define fairness.</p>
-
-<p>Here are a few fairness criteria, to decide if the assignment is fair or not:</p>
-
-<ul>
-  <li>Max-min fair-share (“I cut, you choose”): every participant is least as happy 
-as if she had cut the set of items first, and then let all the other 
-participants choose before her.</li>
-  <li>Max-min fair-share (“You cut, I choose”): the same but reversed, that is every
-participant is at least as happy as if someone else did the cut, and she could 
-decide first.</li>
-  <li><a href="https://en.wikipedia.org/wiki/Envy-freeness">Envy-freeness</a>: 
-no participant would like to change her items for the items of 
-another participant.</li>
-  <li>Competitive equilibrium from equal incomes: there exists a price for each item
-such that, given the same budget, the participants would choose different items.</li>
-</ul>
-
-<p>[I learnt about this at the CS PhD seminar of Sorbonne university, by Parham 
-Shams.]</p>
-
-<h2 id="tai-chi-problem">Tai chi problem</h2>
-
-<p>When crossing the 
-<a href="https://en.wikipedia.org/wiki/Jardin_des_plantes">Jardin des plantes</a> 
-I often witness the following kind of scene.</p>
-
-<p><img src="assets/taichi.JPG" alt="" class="center-image" height="400px" /></p>
-
-<p>It is people practising <a href="https://en.wikipedia.org/wiki/Tai_chi">taichi</a>. 
-There is a professor in front of the group (with a white cap on the picture)
-who is showing the movements, and everybody is supposed to perform them in 
-real-time (it’s pretty slow).</p>
-
-<p>The thing is: people on the first row can see the professor, but the ones on the 
-back cannot, so they follow the moves of the people on the rows closer to the 
-professor. Therefore there is a kind of wave from the front to the back. 
-Maybe it can make an interesting problem: how fast does the wave propagate, is 
-it close to a straight line, how does it depend on the size of the participants?</p>
-
-<h2 id="core-algorithms-deployed">Core algorithms deployed</h2>
-
-<p>It is common as a reseacher to have doubt about how useful your research is. 
-In my case, I sometimes wonder whether the algorithmic problem we try to solve 
-really have an impact. 
-It could well be the case that the algorithmic problems that 
-are really useful are the ones that have only basic answers.
-That is, we focus on the sweet spot between trivially easy and trivially hard 
-problems, and this set could have an empty intersection with real-world 
-questions.</p>
-
-<p>I was really happy to discover a few years ago 
-<a href="https://cstheory.stackexchange.com/questions/19759/core-algorithms-deployed">the topic “core algorithms deployed”</a>
-on stack exchange,
-that removes any doubt on this regard.</p>
-
-<h2 id="numerical-errors-in-missile-trajectories">Numerical errors in missile trajectories</h2>
-
-<p>I discovered in the introduction of
-<a href="https://www.lri.fr/~melquion/doc/19-hdr.pdf">this  PhD thesis</a> the following 
-story, illustrating why computer arithmetics is important and difficult.</p>
-
-<p>In 2011, a US “<a href="https://en.wikipedia.org/wiki/Missile_defense">defence missile</a>” 
-missed a “real missile”, with tragic consequences, 
-because of computer arithmetic. 
-The basic reason is the following. 
-There used to be a software doing the trajectory computations, with rounding 
-operations, including on the time variable. This  variable slowly shifted 
-compared to the real time because of these rounding. 
-It sounds dangerous, but it was actually ok: 
-the trajectory computations would consider fast movements 
-so between the start and end of the trajectory, the shift was negligible, and 
-the absolute time did not matter. The problem is that part of the system was 
-updated with more accurate time variable. Then the shift would not be the same 
-in two different parts of the system. Then the shift would not cancel out and 
-this was the bug.</p>
-
-<p>[A better explanation can be found in 
-<a href="http://www-users.math.umn.edu/~arnold/disasters/Patriot-dharan-skeel-siam.pdf">this document</a>.
-The PhD thesis has a more light-hearted story about gamers trying to finish a 
-video game level without jumping, and using a slow shift of a platform 
-(also due to rounding errors) to do so.]</p>
-
-<h2 id="max-cut-and-planar-graphs">Max cut and planar graphs</h2>
-
-<p>Two results about <a href="https://en.wikipedia.org/wiki/Maximum_cut">max-cut</a> that I 
-didn’t know:</p>
-
-<ul>
-  <li>
-    <p>a cut is maximum if and only if its complement is a minimum odd-circuit cover 
-(this is easy to check, see for example 
-<a href="https://web.engr.oregonstate.edu/~glencora/wiki/uploads/planar-max-cut.pdf">here</a>,
-or simply stare a bit at the picture below.)</p>
-  </li>
-  <li>
-    <p>This can be used to obtain a polynomial-time algorithm for max-cut in planar 
-graphs.</p>
-  </li>
-</ul>
-
-<p><img src="assets/maxcut.png" alt="" class="center-image" height="400px" /></p>
-
-<p>[I got aware of this by
-<a href="https://arxiv.org/abs/1903.06061">this preprint</a>
-which presents an algorithm for max-cut whose complexity is parametrized by the 
-<a href="https://en.wikipedia.org/wiki/Crossing_number_(graph_theory)">number of crossing</a> 
-in the drawing of the graph.]</p>
+<p><img src="assets/eclair-1a.png" alt="" class="center-image" height="500px" />
+<img src="assets/eclair-1b.png" alt="" class="center-image" height="500px" />
+<img src="assets/eclair-2a.png" alt="" class="center-image" height="500px" />
+<img src="assets/eclair-2b.png" alt="" class="center-image" height="500px" />
+<img src="assets/eclair-3a.png" alt="" class="center-image" height="500px" />
+<img src="assets/eclair-3b.png" alt="" class="center-image" height="500px" />
+<img src="assets/eclair-4a.png" alt="" class="center-image" height="500px" />
+<img src="assets/eclair-4b.png" alt="" class="center-image" height="500px" />
+<img src="assets/eclair-5a.png" alt="" class="center-image" height="500px" />
+<img src="assets/eclair-5b.png" alt="" class="center-image" height="500px" />
+<img src="assets/eclair-6a.png" alt="" class="center-image" height="500px" />
+<img src="assets/eclair-6b.png" alt="" class="center-image" height="500px" /></p>
 
 
   </div>
@@ -264,7 +137,7 @@ in the drawing of the graph.]</p>
 
       <div class="footer">
         <p>
-          &copy; 2019. All rights reserved.
+          &copy; 2020. All rights reserved.
         </p>
       </div>
     </div>

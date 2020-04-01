@@ -63,7 +63,7 @@ it is sometimes useful to show that your algorithm stochastically dominates
 
 [I heard about this by working in the group of José Correa in Santiago de Chile.]
 
-## Polygonization, a problem not known to be in P or NPC
+## Polygonization, a problem not known to be easy or hard
 
 There are not so many reasonable problems for which we have neither a 
 polynomial-time algorithm nor a proof of NP-hardness. Some well-known are 

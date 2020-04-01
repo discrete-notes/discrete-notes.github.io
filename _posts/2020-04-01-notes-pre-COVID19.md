@@ -15,7 +15,7 @@ before the quarantine and everything.
 
 ---
 
-## Shapley value
+## Shapley value
 
 The [Shapley value](https://en.wikipedia.org/wiki/Shapley_value) 
 is a concept in game theory. It basically describes how a 
@@ -63,7 +63,7 @@ it is sometimes useful to show that your algorithm stochastically dominates
 
 [I heard about this by working in the group of José Correa in Santiago de Chile.]
 
-## Polygonization: not known in P or NPC
+## Polygonization, a problem not known to be in P or NPC
 
 There are not so many reasonable problems for which we have neither a 
 polynomial-time algorithm nor a proof of NP-hardness. Some well-known are 
@@ -95,7 +95,7 @@ When you pour some honey on a pancake, you can see that the honey behaves a bit
 like a rope and can get some rotational movement when touching the pancake. 
 Something like this: 
 
-![](assets/miel.jpg){: .center-image height="300px"}
+![](assets/miel.jpg){: .center-image height="400px"}
 
 [See also [this video](https://www.youtube.com/watch?v=lZbOV8BIOt8) by Jearl 
 Walker.] 
@@ -121,12 +121,12 @@ fact that the honey is still "tied" to the spoon. It is represented by an
 orange arrow. Now the average of the two forces is the red arrow, that is 
 pointing to the next cell.
 
-![](assets/miel2.jpg){: .center-image height="600px"}
+![](assets/miel2.jpg){: .center-image height="400px"}
 
 The proccess is repeated, and the yellow patch is circulating around the 
 cell with a orange circle. 
 
-![](assets/miel3.jpg){: .center-image height="600px"}
+![](assets/miel3.jpg){: .center-image height="400px"}
 
 Well it's not a very fancy model, in particular it doesn't make a difference 
 between honey on a pancake, and a planet around the sun, but maybe it can be 

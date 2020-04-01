@@ -101,7 +101,7 @@ The bidder knows the maximum price at which she will buy the object (the value
 of the item for her).
 If the auctioneer’s price is higher than the bidder’s value, the bidder does not 
 buy the item, and if the price is lower then the bidder buys it, but the 
-auctioneer “looses” the difference.</p>
+auctioneer “loses” the difference.</p>
 
 <p>In the <a href="https://en.wikipedia.org/wiki/Bayesian-optimal_mechanism">Bayesian setting</a>, 
 the bidder’s value is taken following a probability 
@@ -119,14 +119,17 @@ Then the auctioneer chooses a price $p$ that maximizes this quantity.</p>
 <a href="https://en.wikipedia.org/wiki/Bayesian-optimal_mechanism#The_Myerson_mechanism">Myerson mechanism</a>.</p>
 
 <p>The paper of Alexandros and his co-authors 
-(<a href="https://arxiv.org/abs/1907.04220">Robust Revenue Maximization Under Minimal Statistical Information</a>),
-explores the setting where the auctioneer does not know the full distributions 
-of the bidders, but only the means and the standard deviations. (That’s why it 
-is called <em>robust</em> revenue maximization.)</p>
+(<a href="https://arxiv.org/abs/1907.04220">Robust Revenue Maximization Under Minimal Statistical Information</a>)
+goes into another direction and explores the setting where the 
+auctioneer does not know the full distribution of the bidder, but 
+only the mean and an upper bound on the standard deviation. (That’s why it 
+is called <em>robust</em> revenue maximization.) Later they extend it to one 
+bidder buying (or not) several items.</p>
 
-<p>An important element of their proof is a generalization of Yao’s minimax principle.</p>
+<p>They show matching upper and lower bounds, and their lower bound
+is based on an argument similar to Yao’s minimax principle.</p>
 
-<h2 id="yao146s-minimax-principle">Yao’s minimax principle</h2>
+<h2 id="minimax-principle">Minimax principle</h2>
 
 <p><a href="https://en.wikipedia.org/wiki/Yao%27s_principle">Yao’s minimax principle</a> 
 is a general theorem for randomized algorithms. 
@@ -136,9 +139,9 @@ distribution of instances. (This needs a precise statement, to say which thing i
 optimized first etc.).</p>
 
 <p>In the context of Alexandros, the instances are distributions (of which we know
-only the mean and the standard variation) thus a distribution of instances is 
-a distribution of distributions. This can be made precise, by considering a
-mixture of distributions.</p>
+only the mean and an upper bound on the standard deviation) thus a 
+distribution of instances is a distribution of distributions. 
+This can be made precise, by considering a mixture of distributions.</p>
 
 
 </div>
@@ -150,7 +153,7 @@ mixture of distributions.</p>
 
       <div class="footer">
         <p>
-          &copy; 2019. All rights reserved.
+          &copy; 2020. All rights reserved.
         </p>
       </div>
     </div>

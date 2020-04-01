@@ -7,6 +7,172 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Notes from pre-COVID19 times</title>
+        <description>&lt;p&gt;Hi there! After abruptly coming back to France because of the virus, I resume
+blogging (instead of traveling, basically). Here is a set of notes that I wrote 
+before the quarantine and everything.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/grafitti-donut.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;shapley-value&quot;&gt; Shapley value&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Shapley_value&quot;&gt;Shapley value&lt;/a&gt; 
+is a concept in game theory. It basically describes how a 
+group of players that have played collaboratively, should share the pay-off of 
+the game, taking into account that some players have contributed more than others. 
+In other words, it is a way to measure how important is each player for the team. 
+For some settings it is proved to be the optimal way to share the gain, with 
+respect to some objective of fairness.&lt;/p&gt;
+
+&lt;p&gt;The setting is the following. There are $N$ players, $1,2, …, N$, and a 
+function $f$ from the subsets of players to the set of possible pay-offs (eg $R$). 
+For a subset $S$ of players, $f(S)$ is the pay-off that the players of $S$ would 
+get as a whole if they were to collaborate together.&lt;/p&gt;
+
+&lt;p&gt;Now, assume that all players collaborate, and get some pay-off $P$. How should 
+we distribute $P$, using $f$? The idea is the following. First chose an 
+arbitrary order on the players, for simplcity, let say the natural order $1, 2, 
+…,N$. Then player $1$, gets $f(${$1$}$)$, player $2$ gets $f(${$1,2$}$) - 
+f(${$1$}$)$ etc. 
+That seems pretty reasonable: every player gets the marginal value it adds
+to the pay-off. Now this is not always fair, because of the ordering that we 
+chose arbitrarily. Therefore one normalizes this by taking the average over all 
+permutations of the individual pay-offs. This is the Shapley value.&lt;/p&gt;
+
+&lt;p&gt;[Thanks to &lt;a href=&quot;https://perso.univ-st-etienne.fr/remila/&quot;&gt;Eric Remila&lt;/a&gt; for telling 
+me about this.]&lt;/p&gt;
+
+&lt;h2 id=&quot;stochastic-dominance&quot;&gt;Stochastic dominance&lt;/h2&gt;
+
+&lt;p&gt;Stochastic dominance is a concept of probability that is useful in (algorithmic) 
+game theoretical settings, such as 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Secretary_problem&quot;&gt;secretary-type problems&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let $A$ and $B$ be two real random variables. Then $A$ 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Stochastic_dominance&quot;&gt;stochastically dominates&lt;/a&gt;
+$B$ if for every $x$, $P(A\geq x)\geq P(B\geq x)$, and for some x, the 
+inequality is strict. In terms of cumulative distribution function, this means 
+$F_A(x)\leq F_B(x)$ for all $x$, and with strict inequality for some $x$.&lt;/p&gt;
+
+&lt;p&gt;This notion is useful in the randomized online setting: you want to show that 
+your online algorithm obtains, in expectation, at least half the payoff of a 
+“prophet” that would play knowing all the game in advance. Then 
+it is sometimes useful to show that your algorithm stochastically dominates 
+“half the prophet”.&lt;/p&gt;
+
+&lt;p&gt;[I heard about this by working in the group of José Correa in Santiago de Chile.]&lt;/p&gt;
+
+&lt;h2 id=&quot;polygonization-not-known-in-p-or-npc&quot;&gt; Polygonization: not known in P or NPC&lt;/h2&gt;
+
+&lt;p&gt;There are not so many reasonable problems for which we have neither a 
+polynomial-time algorithm nor a proof of NP-hardness. Some well-known are 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Graph_isomorphism_problem&quot;&gt;graph isomorphism&lt;/a&gt; and 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Integer_factorization&quot;&gt;integer factorization&lt;/a&gt;.
+Wikipedia has a list in its 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/NP-intermediate&quot;&gt;NP-intermediate article&lt;/a&gt;.
+Here is a counting problem that falls into this category.&lt;/p&gt;
+
+&lt;p&gt;A polygonization of a set of points is a simple polygon that visits all the 
+points. In the following picture, the points are black and a polygonization is 
+drawn in blue.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/polygonization.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The algorithmic problem is: given the point set, count the number of 
+polygonizations it has.&lt;/p&gt;
+
+&lt;p&gt;See the two posts by Eppstein on special aspects of this problem, 
+&lt;a href=&quot;https://11011110.github.io/blog/2020/01/12/counting-grid-polygonalizations.html&quot;&gt;here&lt;/a&gt; 
+and 
+&lt;a href=&quot;https://11011110.github.io/blog/2020/01/29/unflippable-polygon.html&quot;&gt;there&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;liquid-rope-coiling-and-discrete-model&quot;&gt;Liquid rope coiling and discrete model&lt;/h2&gt;
+
+&lt;p&gt;When you pour some honey on a pancake, you can see that the honey behaves a bit 
+like a rope and can get some rotational movement when touching the pancake. 
+Something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/miel.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;[See also &lt;a href=&quot;https://www.youtube.com/watch?v=lZbOV8BIOt8&quot;&gt;this video&lt;/a&gt; by Jearl 
+Walker.]&lt;/p&gt;
+
+&lt;p&gt;Something strange about this is that there is no reaon a priori for the movement
+to be rotational: it’s just something (the honey) falling on something else 
+(the pancake). I was curious whether this could appear in a very simple discrete 
+model. Here is a naive model, which probably makes little sense, but shows
+some rotation, without explicitely refering to a rotation.&lt;/p&gt;
+
+&lt;p&gt;Start with an hexagonal grid representing the pancake (because it’s easier than 
+a square grid). The yellow cell is where the honey is currently arriving, and 
+the orange circle is the projection of the origin of the honey (e.g. the spoon) 
+on the pancake.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/miel1.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now there are two forces. One is the “speed” of the yellow patch, that simulates
+the fact that the honey tends to go where there is less honey, and the very last 
+cell visited has more, so is repulsive. It is represented by the yellow 
+arrow. The other one is the attraction of the orange circle, that simulates the 
+fact that the honey is still “tied” to the spoon. It is represented by an 
+orange arrow. Now the average of the two forces is the red arrow, that is 
+pointing to the next cell.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/miel2.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The proccess is repeated, and the yellow patch is circulating around the 
+cell with a orange circle.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/miel3.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Well it’s not a very fancy model, in particular it doesn’t make a difference 
+between honey on a pancake, and a planet around the sun, but maybe it can be 
+improved..!&lt;/p&gt;
+
+&lt;p&gt;Anyway, physicists prefer continuous models, and a paper about the modelization 
+of liquid rope coiling is available 
+&lt;a href=&quot;https://www.annualreviews.org/doi/10.1146/annurev-fluid-120710-101244&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;[I learned about research on liquid rope coiling in 
+&lt;a href=&quot;https://www.pourlascience.fr/sd/physique/les-acrobaties-des-filaments-liquides-8027.php&quot;&gt;this article&lt;/a&gt;
+in the French popularization magazine “Pour la science”.]&lt;/p&gt;
+
+&lt;h2 id=&quot;other-notes&quot;&gt;Other notes&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;A latex commands that some of my coauthors didn’t know: 
+&lt;code&gt;\scalebox{x}{picture}&lt;/code&gt; allows to scale a picture by a factor x.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;After trying various techniques and packages to write comments in latex files, 
+I ended up simply using text in color with 
+&lt;code&gt;\textcolor{color name}{text}&lt;/code&gt;, but sometimes (eg for the revision of
+a journal paper), one needs to color a large patch of text, and 
+&lt;code&gt;textcolor&lt;/code&gt; does not allow this. For example you cannot color two 
+sections. Then I rediscovered, that one can simply change the text color at any 
+point with &lt;code&gt;\color{color name}&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Eppstein has a 
+&lt;a href=&quot;https://11011110.github.io/blog/2020/02/22/applications-maximum-matching.html&quot;&gt;blog post&lt;/a&gt; 
+about applications of maximum matching algorithms, including kidney exchange, on 
+which I have worked recentely. 
+(As &lt;a href=&quot;./march-2019-notes-1&quot;&gt;already mentionned&lt;/a&gt; on this blog, 
+&lt;a href=&quot;https://cstheory.stackexchange.com/questions/19759/core-algorithms-deployed&quot;&gt;here&lt;/a&gt; 
+is a stack exchange thread on “core algorithms deployed”.)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 01 Apr 2020 00:00:00 +0200</pubDate>
+        <link>https://discrete-notes.github.io///notes-pre-COVID19</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///notes-pre-COVID19</guid>
+      </item>
+    
+      <item>
         <title>First 2020 notes</title>
         <description>&lt;p&gt;The first set of notes of 2020.&lt;/p&gt;
 
@@ -120,7 +286,7 @@ on this topic &lt;a href=&quot;https://arxiv.org/pdf/1911.05911.pdf&quot;&gt;her
 &lt;/ul&gt;
 
 </description>
-        <pubDate>Wed, 22 Jan 2020 00:00:00 -0300</pubDate>
+        <pubDate>Wed, 22 Jan 2020 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///first-2020-notes</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///first-2020-notes</guid>
       </item>
@@ -191,7 +357,7 @@ assignment often boils down to a randomized algorithms
 (see &lt;a href=&quot;https://arxiv.org/abs/1704.05739&quot;&gt;this&lt;/a&gt;), and maybe some slightly 
 random assignement could make sense.&lt;/p&gt;
 </description>
-        <pubDate>Mon, 13 Jan 2020 00:00:00 -0300</pubDate>
+        <pubDate>Mon, 13 Jan 2020 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///smoothed-analysis</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///smoothed-analysis</guid>
       </item>
@@ -221,7 +387,7 @@ these as you like.&lt;/p&gt;
 triangles, but not much more…&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 11 Dec 2019 00:00:00 -0300</pubDate>
+        <pubDate>Wed, 11 Dec 2019 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///polygon problem</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///polygon problem</guid>
       </item>
@@ -310,13 +476,13 @@ things happen in the such games (like in
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Braess%27s_paradox&quot;&gt;Braess’s paradox&lt;/a&gt;)&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 05 Dec 2019 00:00:00 -0300</pubDate>
+        <pubDate>Thu, 05 Dec 2019 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///price-anarchy-flows</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///price-anarchy-flows</guid>
       </item>
     
       <item>
-        <title>Bayesian mechanism design and Yao&#39;s principle</title>
+        <title>Bayesian mechanism design and Yao's principle</title>
         <description>&lt;p&gt;I attended a talk yesterday about 
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Algorithmic_game_theory&quot;&gt;algorithmic game theory&lt;/a&gt; by 
 &lt;a href=&quot;https://www.or.tum.de/en/group/alexandrostsigonias/&quot;&gt;Alexandros Tsigonias-Dimitriadis&lt;/a&gt;
@@ -375,7 +541,7 @@ distribution of instances is a distribution of distributions.
 This can be made precise, by considering a mixture of distributions.&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 21 Nov 2019 00:00:00 -0300</pubDate>
+        <pubDate>Thu, 21 Nov 2019 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///bayesian-auctions</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///bayesian-auctions</guid>
       </item>
@@ -452,11 +618,9 @@ of different slot-machines).&lt;/p&gt;
 
 &lt;p&gt;Given: $k$  arms, $T$ rounds.&lt;/p&gt;
 
-&lt;p&gt;In each round $t\in[T]$:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Algorithm picks arm $a_t$.&lt;/li&gt;
-  &lt;li&gt;Algorithm observes reward $r_t\in [0,1]$ for the chosen arm.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;In each round $t\in[T]$:
+1. Algorithm picks arm $a_t$.
+2. Algorithm observes reward $r_t\in [0,1]$ for the chosen arm.&lt;/p&gt;
 
 &lt;p&gt;Pay-off: the sum of the rewards&lt;/p&gt;
 
@@ -530,7 +694,7 @@ of a talk at &lt;a href=&quot;http://2019.highlightsofalgorithms.org/&quot;&gt;H
 &lt;/ul&gt;
 
 </description>
-        <pubDate>Mon, 18 Nov 2019 00:00:00 -0300</pubDate>
+        <pubDate>Mon, 18 Nov 2019 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///more-november-2019</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///more-november-2019</guid>
       </item>
@@ -607,7 +771,7 @@ If you want to know more and correct one of the many typos of this blog, you can
 take a look at &lt;a href=&quot;https://www.freecodecamp.org/news/how-to-make-your-first-pull-request-on-github/&quot;&gt;this page&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 12 Nov 2019 00:00:00 -0300</pubDate>
+        <pubDate>Tue, 12 Nov 2019 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///mid-november-2019-non-technical</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///mid-november-2019-non-technical</guid>
       </item>
@@ -735,19 +899,17 @@ approximation ratio in $\theta(\sqrt n)$. But it performs well in practice.&lt;/
 &lt;p&gt;A &lt;a href=&quot;https://arxiv.org/pdf/1909.12025.pdf&quot;&gt;recent preprint&lt;/a&gt; computes the 
 precise approximation ratio for 2-OPT, which is $\sqrt(n)/2$.&lt;/p&gt;
 
-&lt;p&gt;Other papers from the literature prove that :&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;The approximation ratio is in $O(\sqrt n)$ for random edge weights 
-(which are not metric in general), see &lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S016763770900011X?via%3Dihub&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;For Euclidian instances, the worst ratio is in $O(\log n)$.&lt;/li&gt;
-  &lt;li&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Smoothed_analysis&quot;&gt;smoothed analysis&lt;/a&gt;
-of the problem has been studied, eg &lt;a href=&quot;https://wwwhome.ewi.utwente.nl/~mantheyb/full/MantheyVeenstra_TwoOpt.pdf&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;The fine-grain analysis of $k$-OPT has been done &lt;a href=&quot;http://drops.dagstuhl.de/opus/volltexte/2016/6277/pdf/LIPIcs-ICALP-2016-5.pdf&quot;&gt;here&lt;/a&gt;
-with improved complexity for $k\geq 4$.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Other papers from the literature prove that : 
+* The approximation ratio is in $O(\sqrt n)$ for random edge weights 
+(which are not metric in general), see &lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S016763770900011X?via%3Dihub&quot;&gt;here&lt;/a&gt;.
+* For Euclidian instances, the worst ratio is in $O(\log n)$.
+* The &lt;a href=&quot;https://en.wikipedia.org/wiki/Smoothed_analysis&quot;&gt;smoothed analysis&lt;/a&gt;
+of the problem has been studied, eg &lt;a href=&quot;https://wwwhome.ewi.utwente.nl/~mantheyb/full/MantheyVeenstra_TwoOpt.pdf&quot;&gt;here&lt;/a&gt;.
+* The fine-grain analysis of $k$-OPT has been done &lt;a href=&quot;http://drops.dagstuhl.de/opus/volltexte/2016/6277/pdf/LIPIcs-ICALP-2016-5.pdf&quot;&gt;here&lt;/a&gt;
+with improved complexity for $k\geq 4$.&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 07 Nov 2019 00:00:00 -0300</pubDate>
+        <pubDate>Thu, 07 Nov 2019 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///october-2019-notes-distances</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///october-2019-notes-distances</guid>
       </item>
@@ -883,103 +1045,9 @@ classes that can be defined this way. In the next post, we will define
 this more formally.&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 17 Oct 2019 00:00:00 -0300</pubDate>
+        <pubDate>Thu, 17 Oct 2019 00:00:00 +0200</pubDate>
         <link>https://discrete-notes.github.io///patterns-1</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///patterns-1</guid>
-      </item>
-    
-      <item>
-        <title>Summer-winter notes</title>
-        <description>&lt;p&gt;Some notes for summer 2019, or actually winter 2019, as I moved to Chile.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;assets/azotea.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
-The Andes.
-&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;queue-number-again-and-applications&quot;&gt;Queue number again, and applications&lt;/h2&gt;
-
-&lt;p&gt;A recent result about the so-called &lt;em&gt;queue number&lt;/em&gt; was mentioned on this blog in March 
-(see &lt;a href=&quot;./stoc-socg-picks&quot;&gt;here&lt;/a&gt;). The result says that this graph parameter is bounded 
-on planar graph that have bounded degree.
-The result has now been generalized to any planar graph! 
-The &lt;a href=&quot;https://arxiv.org/pdf/1904.04791.pdf&quot;&gt;paper is on arxiv&lt;/a&gt; and will be presented 
-at FOCS 2019.
-I haven’t looked into the paper, but I know from 
-&lt;a href=&quot;https://11011110.github.io/blog/2019/08/10/report-from-cccg.html&quot;&gt;David Epptein’s blog&lt;/a&gt; 
-that it is a byproduct of showing that “every planar graph is a subgraph of a strong 
-product of a path graph and a bounded-treewidth graph”.&lt;/p&gt;
-
-&lt;p&gt;Another &lt;a href=&quot;https://arxiv.org/abs/1908.03341&quot;&gt;recent paper on the arxiv&lt;/a&gt; 
-uses this result to design shorter labeling schemes for planar graphs.
-As the abstract says: 
-“In graph-theoretical terms, this implies an explicit construction 
-of a graph on $n^{4/3}+o(1)$ vertices that contains all planar graphs 
-on n vertices as induced subgraphs”.
-(Thanks to Cyril Gavoille for pointing out this paper.)&lt;/p&gt;
-
-&lt;h2 id=&quot;unfolding-polytopes-durers-conjecture&quot;&gt;Unfolding polytopes: Durer’s Conjecture&lt;/h2&gt;
-
-&lt;p&gt;Given a polyhedra, one can cut along the edges to unfold it on the plane as in the following drawing.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/durer-1.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;But sometimes, if you cut along some edges, you may have an overlap in the unfolding, as the
-second unfolding of the 
-following  example (borrowed from &lt;a href=&quot;http://mathworld.wolfram.com/Unfolding.html&quot;&gt;here&lt;/a&gt;) shows.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/durer-2.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.openproblemgarden.org/op/d_urers_conjecture&quot;&gt;Durer’s conjecture&lt;/a&gt; states that 
-“Every convex polytope has a non-overlapping edge unfolding”.
-A non-overlapping edge unfolding is called &lt;a href=&quot;https://en.wikipedia.org/wiki/Net_(polyhedron)&quot;&gt;a net&lt;/a&gt;, 
-so the conjecture can be reformulated as: “Every convex polytope has a net”.
-It is surprising that such a cute and simple result is still open.&lt;/p&gt;
-
-&lt;p&gt;I learned about this conjecture in 
-&lt;a href=&quot;https://11011110.github.io/blog/2019/08/10/report-from-cccg.html&quot;&gt;Eppstein’s report on CCCG&lt;/a&gt;. 
-More information can be found in 
-&lt;a href=&quot;https://www.mi.fu-berlin.de/math/groups/discgeom/ziegler/Preprintfiles/127PREPRINT.pdf&quot;&gt;Ten Problems in Geometry&lt;/a&gt;
-by Moritz W. Schmitt and Günter M. Ziegler.&lt;/p&gt;
-
-&lt;h2 id=&quot;more-on-graphs-inspired-by-objects-and-nature&quot;&gt;More on graphs inspired by objects and nature&lt;/h2&gt;
-
-&lt;p&gt;We had a &lt;a href=&quot;./april-may-2019-notes&quot;&gt;post in april&lt;/a&gt; on graphs that have some meaning 
-in terms of real-world objects.&lt;/p&gt;
-
-&lt;p&gt;Two additional pointers on this topic:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;a &lt;a href=&quot;https://11011110.github.io/blog/2013/12/07/kinematic-chains-and.html&quot;&gt;blog post&lt;/a&gt; about graph that have one degree of freedom when you want to move them.&lt;/li&gt;
-  &lt;li&gt;the &lt;a href=&quot;https://www.ics.uci.edu/~eppstein/pubs/Epp-WADS-19.pdf&quot;&gt;slides&lt;/a&gt; of a talk about graphs inspired by nature, for example by crystals and by bubbles.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/cristaux-bulles.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
-The red circles are the nodes on the right drawing, but on the left ones they are part of the procedure to draw the crystals. See the slides for more details.
-&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;automata-size-to-separate-two-words&quot;&gt;Automata size to separate two words&lt;/h2&gt;
-
-&lt;p&gt;Yet another very simple and still open problem: consider two strings of length $n$, what is the size of the smallest deterministic automaton than accepts one and rejects the other? 
-Or more precisely, what is the maximum over all such pairs of this size? 
-The upper bound is polynomial in $n$ (something like $\sqrt(n)$) and the lower bound is $\Omega(\log n)$. An exponential gap!&lt;/p&gt;
-
-&lt;p&gt;For more on this see these two posts by Lipton: &lt;a href=&quot;https://rjlipton.wordpress.com/2019/09/08/separating-words-by-automata/&quot;&gt;here&lt;/a&gt; and
-&lt;a href=&quot;https://rjlipton.wordpress.com/2019/09/16/separating-words-decoding-a-paper/&quot;&gt;there&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;other-notes&quot;&gt;Other notes&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;The paper about the matching lower bound that I mentioned here several times won the best paper award at FOCS! I think it’s a remarkable research story: identifying a fundamental problem, telling everybody about it, learning more and more, and finally solving it, and getting an award for it!&lt;/li&gt;
-  &lt;li&gt;Some day, I’ll learn about spanners, I hope. &lt;a href=&quot;https://arxiv.org/pdf/1909.03152.pdf&quot;&gt;Here&lt;/a&gt; is a recent survey that may help.&lt;/li&gt;
-  &lt;li&gt;A &lt;a href=&quot;https://arxiv.org/abs/1907.05257&quot;&gt;paper appeared on the arxiv&lt;/a&gt; on the recognition of intersection graphs of objects touching a diagonal line, related to &lt;a href=&quot;https://www.dii.uchile.cl/~feuilloley/publications/rectangles_DCG15.html&quot;&gt;this paper of mine&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Tue, 17 Sep 2019 00:00:00 -0300</pubDate>
-        <link>https://discrete-notes.github.io///summer-winter-2019-notes</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///summer-winter-2019-notes</guid>
       </item>
     
   </channel>

@@ -111,7 +111,7 @@ a square grid). The yellow cell is where the honey is currently arriving, and
 the orange circle is the projection of the origin of the honey (e.g. the spoon) 
 on the pancake.
 
-![](assets/miel1.jpg){: .center-image height="600px"}
+![](assets/miel1.jpg){: .center-image height="400px"}
 
 Now there are two forces. One is the "speed" of the yellow patch, that simulates
 the fact that the honey tends to go where there is less honey, and the very last 

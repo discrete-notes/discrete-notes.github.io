@@ -5,6 +5,9 @@ redirect_from: "/2020/04/01/notes-pre-COVID19/"
 permalink: notes-pre-COVID19
 ---
 
+NOTE: It seems that there is a problem the pictures, I'll keep the post online, 
+but wait a bit before reading it :)
+
 Hi there! After abruptly coming back to France because of the virus, I resume
 blogging (instead of traveling, basically). Here is a set of notes that I wrote 
 before the quarantine and everything.  

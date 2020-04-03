@@ -14,7 +14,7 @@ before the quarantine and everything.
 
 --- 
 
-![](assets/grafitti-donut.jpg){: .center-image height="600px"}
+![](assets/grafitti-donut.jpg){: .center-image height="400px"}
 
 ---
 

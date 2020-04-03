@@ -98,7 +98,7 @@ When you pour some honey on a pancake, you can see that the honey behaves a bit
 like a rope and can get some rotational movement when touching the pancake. 
 Something like this: 
 
-![](assets/miel.jpg){: .center-image height="400px"}
+![](assets/miel.png){: .center-image height="400px"}
 
 [See also [this video](https://www.youtube.com/watch?v=lZbOV8BIOt8) by Jearl 
 Walker.] 
@@ -114,7 +114,7 @@ a square grid). The yellow cell is where the honey is currently arriving, and
 the orange circle is the projection of the origin of the honey (e.g. the spoon) 
 on the pancake.
 
-![](assets/miel1.jpg){: .center-image height="400px"}
+![](assets/miel1.png){: .center-image height="400px"}
 
 Now there are two forces. One is the "speed" of the yellow patch, that simulates
 the fact that the honey tends to go where there is less honey, and the very last 
@@ -124,12 +124,12 @@ fact that the honey is still "tied" to the spoon. It is represented by an
 orange arrow. Now the average of the two forces is the red arrow, that is 
 pointing to the next cell.
 
-![](assets/miel2.jpg){: .center-image height="400px"}
+![](assets/miel2.png){: .center-image height="400px"}
 
 The proccess is repeated, and the yellow patch is circulating around the 
 cell with a orange circle. 
 
-![](assets/miel3.jpg){: .center-image height="400px"}
+![](assets/miel3.png){: .center-image height="400px"}
 
 Well it's not a very fancy model, in particular it doesn't make a difference 
 between honey on a pancake, and a planet around the sun, but maybe it can be 

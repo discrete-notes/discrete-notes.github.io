@@ -80,7 +80,7 @@ A polygonization of a set of points is a simple polygon that visits all the
 points. In the following picture, the points are black and a polygonization is 
 drawn in blue. 
 
-![](assets/polygonization.jpg){: .center-image height="600px"}
+![](assets/polygonization.png){: .center-image height="600px"}
 
 
 The algorithmic problem is: given the point set, count the number of 
@@ -98,7 +98,7 @@ When you pour some honey on a pancake, you can see that the honey behaves a bit
 like a rope and can get some rotational movement when touching the pancake. 
 Something like this: 
 
-![](assets/miel.png){: .center-image height="400px"}
+![](assets/miel.png){: .center-image height="250px"}
 
 [See also [this video](https://www.youtube.com/watch?v=lZbOV8BIOt8) by Jearl 
 Walker.] 

@@ -87,126 +87,171 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/first-2020-notes">
-        First 2020 notes
+      <a href="/notes-pre-COVID19">
+        Notes from pre-COVID19 times
       </a>
     </h1>
 
-    <span class="post-date">22 Jan 2020</span>
+    <span class="post-date">01 Apr 2020</span>
 
-    <p>The first set of notes of 2020.</p>
+    <p>Hi there! After abruptly coming back to France because of the virus, I resume
+blogging (instead of traveling, basically). Here is a set of notes that I wrote 
+before the quarantine and everything.</p>
 
 <hr />
-<p><img src="assets/pinguinos.jpg" alt="" class="center-image" height="250px" /></p>
-<p align="center"><small><i>
-Magellanic penguins.
-</i></small></p>
+
+<p><img src="assets/grafitti-donut.jpg" alt="" class="center-image" height="380px" /></p>
+
 <hr />
 
-<h2 id="conference-model-outcome-of-the-podc-survey-and-remote-attendance">Conference model: outcome of the PODC survey and remote attendance</h2>
+<h2 id="shapley-value">Shapley value</h2>
 
-<p>As <a href="./mid-november-2019-non-technical">reported here</a> in November, the
-community of the theory of distributed computing is in the process of
-changing some aspects of its conference model. A survey has been proposed
-that has received many answers. The email summarizing these answers
-is <a href="https://listserv.acm.org/SCRIPTS/WA-ACMLPX.CGI?A2=PODC;3b2ab6fa.1911&amp;S=">here</a>.
-It is fairly short, and I don’t have much to say, so I’ll just list 
-the topics discussed:</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Shapley_value">Shapley value</a> 
+is a concept in game theory. It basically describes how a 
+group of players that have played collaboratively, should share the pay-off of 
+the game, taking into account that some players have contributed more than others. 
+In other words, it is a way to measure how important is each player for the team. 
+For some settings it is proved to be the optimal way to share the gain, with 
+respect to some objective of fairness.</p>
 
-<ul>
-  <li>changing to several deadlines a year, to avoid a large gap between
-important deadlines,</li>
-  <li>a transition to a system with a journal,</li>
-  <li>collocation of the two main conferences.</li>
-</ul>
+<p>The setting is the following. There are $N$ players, $1,2, …, N$, and a 
+function $f$ from the subsets of players to the set of possible pay-offs (eg $R$). 
+For a subset $S$ of players, $f(S)$ is the pay-off that the players of $S$ would 
+get as a whole if they were to collaborate together.</p>
 
-<p>A topic mentioned in a previous mail was that this kind of survey is 
-more useful than business meetings: in a business meeting, most people are 
-afraid to talk, some people are very vocal and do not let others talk, 
-and more importantly, it’s late, and everybody wants to leave the room.</p>
+<p>Now, assume that all players collaborate, and get some pay-off $P$. How should 
+we distribute $P$, using $f$? The idea is the following. First chose an 
+arbitrary order on the players, for simplcity, let say the natural order $1, 2, 
+…,N$. Then player $1$, gets $f(${$1$}$)$, player $2$ gets $f(${$1,2$}$) - 
+f(${$1$}$)$ etc. 
+That seems pretty reasonable: every player gets the marginal value it adds
+to the pay-off. Now this is not always fair, because of the ordering that we 
+chose arbitrarily. Therefore one normalizes this by taking the average over all 
+permutations of the individual pay-offs. This is the Shapley value.</p>
 
-<p>Another related text is by Moshe Vardi in the Communication of the ACM, 
-see 
-<a href="https://cacm.acm.org/magazines/2020/1/241717-publish-and-perish/fulltext">here</a>.
-He basically says that conferences have a big environmental impact, and 
-that we should allow people to participate via video. 
-The usual answer to this is that you would loose a lot of informal 
-interaction between participants. He says he thinks it’s not as bad as 
-it looks.</p>
+<p>[Thanks to <a href="https://perso.univ-st-etienne.fr/remila/">Eric Remila</a> for telling 
+me about this.]</p>
 
-<h2 id="selfish-routing-andtraffic-lights">Selfish routing and traffic lights</h2>
+<h2 id="stochastic-dominance">Stochastic dominance</h2>
 
-<p>A <a href="https://arxiv.org/pdf/1912.06513.pdf">recent paper</a> on the arxiv, 
-consider the classic model of routing but with traffic lights. 
-As discussed recently on this blog (see <a href="./price-anarchy-flows">here</a>)
-a classic problem in algorithmic game theory is to evaluate how good is 
-the traffic on a network, if you allow each car to chose selfishly the 
-best route. 
-A surprising phenomenon in this model is that sometimes opening a new 
-street can slow down the traffic 
-(<a href="https://en.wikipedia.org/wiki/Braess%27s_paradox">Braess’s paradox</a>). 
-The authors show that this does not 
-happen when the network is equipped with some traffic lights.</p>
+<p>Stochastic dominance is a concept of probability that is useful in (algorithmic) 
+game theoretical settings, such as 
+<a href="https://en.wikipedia.org/wiki/Secretary_problem">secretary-type problems</a>.</p>
 
-<h2 id="sunset-geometry">Sunset geometry</h2>
+<p>Let $A$ and $B$ be two real random variables. Then $A$ 
+<a href="https://en.wikipedia.org/wiki/Stochastic_dominance">stochastically dominates</a>
+$B$ if for every $x$, $P(A\geq x)\geq P(B\geq x)$, and for some x, the 
+inequality is strict. In terms of cumulative distribution function, this means 
+$F_A(x)\leq F_B(x)$ for all $x$, and with strict inequality for some $x$.</p>
 
-<ul>
-  <li>Which of the two pictures below looks more like a sunset over a very 
-calm lake?</li>
-</ul>
+<p>This notion is useful in the randomized online setting: you want to show that 
+your online algorithm obtains, in expectation, at least half the payoff of a 
+“prophet” that would play knowing all the game in advance. Then 
+it is sometimes useful to show that your algorithm stochastically dominates 
+“half the prophet”.</p>
 
-<p><img src="assets/sunset-geometric.jpg" alt="" class="center-image" height="250px" /></p>
+<p>[I heard about this by working in the group of José Correa in Santiago de Chile.]</p>
 
-<p>If the Earth is flat then it’s the one on the left. If it’s spheric, it’s 
-the one on the right, and you can even compute the radius of the planet
-from the picture!</p>
+<h2 id="polygonization-a-problem-not-known-to-be-easy-or-hard">Polygonization, a problem not known to be easy or hard</h2>
 
-<p>See <a href="https://vanderbei.princeton.edu/tex/sunset/ms.pdf">this</a> for an 
-explanation using trigonometry, and 
-<a href="https://www.shapeoperator.com/2016/12/12/sunset-geometry/">that</a> for 
-one using geometric algebra.</p>
+<p>There are not so many reasonable problems for which we have neither a 
+polynomial-time algorithm nor a proof of NP-hardness. Some well-known are 
+<a href="https://en.wikipedia.org/wiki/Graph_isomorphism_problem">graph isomorphism</a> and 
+<a href="https://en.wikipedia.org/wiki/Integer_factorization">integer factorization</a>.
+Wikipedia has a list in its 
+<a href="https://en.wikipedia.org/wiki/NP-intermediate">NP-intermediate article</a>.
+Here is a counting problem that falls into this category.</p>
 
-<p>[I learned about this on <a href="https://11011110.github.io/blog/">Eppstein’s blog</a>.]</p>
+<p>A polygonization of a set of points is a simple polygon that visits all the 
+points. In the following picture, the points are black and a polygonization is 
+drawn in blue.</p>
+
+<p><img src="assets/polygonization.png" alt="" class="center-image" height="400px" /></p>
+
+<p>The algorithmic problem is: given the point set, count the number of 
+polygonizations it has.</p>
+
+<p>See the two posts by Eppstein on special aspects of this problem, 
+<a href="https://11011110.github.io/blog/2020/01/12/counting-grid-polygonalizations.html">here</a> 
+and 
+<a href="https://11011110.github.io/blog/2020/01/29/unflippable-polygon.html">there</a>.</p>
+
+<h2 id="liquid-rope-coiling-and-discrete-model">Liquid rope coiling and discrete model</h2>
+
+<p>When you pour some honey on a pancake, you can see that the honey behaves a bit 
+like a rope and can get some rotational movement when touching the pancake. 
+Something like this:</p>
+
+<p><img src="assets/miel.png" alt="" class="center-image" height="250px" /></p>
+
+<p>[See also <a href="https://www.youtube.com/watch?v=lZbOV8BIOt8">this video</a> by Jearl 
+Walker.]</p>
+
+<p>Something strange about this is that there is no reaon a priori for the movement
+to be rotational: it’s just something (the honey) falling on something else 
+(the pancake). I was curious whether this could appear in a very simple discrete 
+model. Here is a naive model, which probably makes little sense, but shows
+some rotation, without explicitely refering to a rotation.</p>
+
+<p>Start with an hexagonal grid representing the pancake (because it’s easier than 
+a square grid). The yellow cell is where the honey is currently arriving, and 
+the orange circle is the projection of the origin of the honey (e.g. the spoon) 
+on the pancake.</p>
+
+<p><img src="assets/miel1.png" alt="" class="center-image" height="300px" /></p>
+
+<p>Now there are two forces. One is the “speed” of the yellow patch, that simulates
+the fact that the honey tends to go where there is less honey, and the very last 
+cell visited has more, so is repulsive. It is represented by the yellow 
+arrow. The other one is the attraction of the orange circle, that simulates the 
+fact that the honey is still “tied” to the spoon. It is represented by an 
+orange arrow. Now the average of the two forces is the red arrow, that is 
+pointing to the next cell.</p>
+
+<p><img src="assets/miel2.png" alt="" class="center-image" height="300px" /></p>
+
+<p>The proccess is repeated, and the yellow patch is circulating around the 
+cell with a orange circle.</p>
+
+<p><img src="assets/miel3.png" alt="" class="center-image" height="300px" /></p>
+
+<p>Well it’s not a very fancy model, in particular it doesn’t make a difference 
+between honey on a pancake, and a planet around the sun, but maybe it can be 
+improved..!</p>
+
+<p>Anyway, physicists prefer continuous models, and a paper about the modelization 
+of liquid rope coiling is available 
+<a href="https://www.annualreviews.org/doi/10.1146/annurev-fluid-120710-101244">here</a>.</p>
+
+<p>[I learned about research on liquid rope coiling in 
+<a href="https://www.pourlascience.fr/sd/physique/les-acrobaties-des-filaments-liquides-8027.php">this article</a>
+in the French popularization magazine “Pour la science”.]</p>
 
 <h2 id="other-notes">Other notes</h2>
-
 <ul>
   <li>
-    <p>A bit more of geometry if you read French or Spanish: the former flag 
-of Chile has a very nice geometric construction. See 
-<a href="http://images.math.cnrs.fr/Un-drapeau-en-or-perdu-dans-l-histoire.html?lang=fr">here</a>
-for the article in French, and 
-<a href="http://images.math.cnrs.fr/Una-bandera-aurea-perdida-en-la-historia.html">here</a>
-in Spanish.</p>
+    <p>A latex commands that some of my coauthors didn’t know: 
+<code>\scalebox{x}{picture}</code> allows to scale a picture by a factor x.</p>
   </li>
   <li>
-    <p><a href="https://dblp.uni-trier.de/">DBLP</a> now keeps track of the citations of 
-the papers. You can access them by clicking on the page symbol close to 
-the colored square. Not all the citations are present because they use 
-an open access database, and of course, not everything is open.</p>
+    <p>After trying various techniques and packages to write comments in latex files, 
+I ended up simply using text in color with 
+<code>\textcolor{color name}{text}</code>, but sometimes (eg for the revision of
+a journal paper), one needs to color a large patch of text, and 
+<code>textcolor</code> does not allow this. For example you cannot color two 
+sections. Then I rediscovered, that one can simply change the text color at any 
+point with <code>\color{color name}</code>.</p>
   </li>
   <li>
-    <p>I used to use <a href="http://latexdraw.sourceforge.net/index.html">latexdraw</a>
-to generate pictures that can be included in latex. That is you draw, 
-like on a software like Paint, and it generates the code of this picture. 
- Unfortunately the output is only pstricks code, and one would sometimes 
-like a tikz code. 
-I discovered yesterday <a href="https://www.mathcha.io/">mathcha.io</a> which is an 
-online latex editor, and does the same but generates tikz code.
-[Thanks to 
-<a href="https://ingenieria.uai.cl/profesor/pedro-montealegre/">Pedro Montealegre</a>
-for showing me this.]</p>
-  </li>
-  <li>
-    <p>We mentioned robust statistics 
-<a href="https://discrete-notes.github.io/june-2019-notes">on this blog</a> some 
-time ago; if you’re interested, there is a survey on the recent advances 
-on this topic <a href="https://arxiv.org/pdf/1911.05911.pdf">here</a>.</p>
+    <p>Eppstein has a 
+<a href="https://11011110.github.io/blog/2020/02/22/applications-maximum-matching.html">blog post</a> 
+about applications of maximum matching algorithms, including kidney exchange, on 
+which I have worked recentely. 
+(As <a href="./march-2019-notes-1">already mentionned</a> on this blog, 
+<a href="https://cstheory.stackexchange.com/questions/19759/core-algorithms-deployed">here</a> 
+is a stack exchange thread on “core algorithms deployed”.)</p>
   </li>
 </ul>
-
-<p><img src="assets/miel3.png" alt="" class="center-image" height="250px" /></p>
-
 
   </div>
   

@@ -87,157 +87,69 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/more-november-2019">
-        More November notes
+      <a href="/bayesian-auctions">
+        Bayesian mechanism design and Yao's principle
       </a>
     </h1>
 
-    <span class="post-date">18 Nov 2019</span>
+    <span class="post-date">21 Nov 2019</span>
 
-    <p>Some more notes for November 2019.</p>
+    <p>I attended a talk yesterday about 
+<a href="https://en.wikipedia.org/wiki/Algorithmic_game_theory">algorithmic game theory</a> by 
+<a href="https://www.or.tum.de/en/group/alexandrostsigonias/">Alexandros Tsigonias-Dimitriadis</a>
+as part of Santiago’s <a href="http://www.dii.uchile.cl/acgo/seminar-acgo/">AGCO seminar</a>.
+Here are a few elements from this talk.</p>
 
-<hr />
-<p><img src="assets/nueva-constitucion.jpg" alt="" class="center-image" height="400px" /></p>
-<p align="center"><small><i>
-</i></small></p>
-<hr />
+<h2 id="basic-bayesian-auction">Basic Bayesian auction</h2>
 
-<h2 id="network-creation-game">Network creation game</h2>
+<p>The very basic setting we are looking at is the following: a client (the bidder)
+comes to a seller (the auctioneer) with the goal of buying a particular item. 
+The auctioneer has to set a price for the item. 
+The bidder knows the maximum price at which she will buy the object (the value 
+of the item for her).
+If the auctioneer’s price is higher than the bidder’s value, the bidder does not 
+buy the item, and if the price is lower then the bidder buys it, but the 
+auctioneer “loses” the difference.</p>
 
-<p>Network generation models are mechanisms to create networks. 
-In a classic setting the nodes arrive one after the other and are linked 
-to nodes already in 
-the network following some rules. 
-In another setting, called <em>network creation game</em> the nodes are players, 
-and they play a game in which they can choose to pay to be linked to 
-other nodes. 
-The outcome of the game is a network. 
-The cost that a player pays is $\alpha$ for every node it decides to be 
-linked to, plus 
-the sum of the distances from this node to all the other nodes. 
-In other words, a node wants to have short distance to every node, but 
-cannot add a link to every node, because it would be too expensive.</p>
+<p>In the <a href="https://en.wikipedia.org/wiki/Bayesian-optimal_mechanism">Bayesian setting</a>, 
+the bidder’s value is taken following a probability 
+distribution, and the auctioneer knows this distribution. 
+Then, the expected revenue of the auctioneer is the price she announces, 
+multiplied by the probability that this price is lower than the value taken by 
+the bidder. In other words, if $F$ is the cumulative probability distribution 
+of the value of the bidder, 
+then the expected revenue for a price $p$ is $p \cdot (1-F(p))$.
+Then the auctioneer chooses a price $p$ that maximizes this quantity.</p>
 
-<p>For this game one can study the usual objects of 
-<a href="https://en.wikipedia.org/wiki/Algorithmic_game_theory">algorithmic game theory</a>:
-the <a href="https://en.wikipedia.org/wiki/Nash_equilibrium">Nash equilibrium</a> 
-and the
-<a href="https://en.wikipedia.org/wiki/Price_of_anarchy">price of anarchy</a>.</p>
+<h2 id="generalizations">Generalizations</h2>
 
-<p>It is conjectured that the price of anarchy is constant for 
-any value $\alpha$, and <a href="https://arxiv.org/abs/1909.09799">this recent preprint</a> 
-makes progress on the conjecture.</p>
+<p>One can generalize this to work with several bidders. This is called 
+<a href="https://en.wikipedia.org/wiki/Bayesian-optimal_mechanism#The_Myerson_mechanism">Myerson mechanism</a>.</p>
 
-<h2 id="lempel-ziv-compression-algorithms">Lempel-Ziv compression algorithms</h2>
+<p>The paper of Alexandros and his co-authors 
+(<a href="https://arxiv.org/abs/1907.04220">Robust Revenue Maximization Under Minimal Statistical Information</a>)
+goes into another direction and explores the setting where the 
+auctioneer does not know the full distribution of the bidder, but 
+only the mean and an upper bound on the standard deviation. (That’s why it 
+is called <em>robust</em> revenue maximization.) Later they extend it to one 
+bidder buying (or not) several items.</p>
 
-<p>Lempel-Ziv algorithm is a classic compression algorithm (or more 
-precisely a classic family of algorithms, are there are several versions). 
-A <a href="https://semidoc.github.io/lagarde-catastrophe">blog post on Semidoc</a> 
-describes the algorithm and gives an overview of 
-<a href="https://arxiv.org/abs/1707.04312">this paper</a> which studies how the compression
-rate can change when the original text is changed by one bit.</p>
+<p>They show matching upper and lower bounds, and their lower bound
+is based on an argument similar to Yao’s minimax principle.</p>
 
-<p>Two recent papers on arxiv deal with Lempel-Ziv:</p>
+<h2 id="minimax-principle">Minimax principle</h2>
 
-<ul>
-  <li>
-    <p><a href="https://arxiv.org/pdf/1910.00941.pdf">The first one</a> gives a new analysis of 
-the fact that Lempel-Ziv is optimal for some models of random text (hidden 
-Markov sources)</p>
-  </li>
-  <li>
-    <p><a href="https://arxiv.org/abs/1802.10347">The second one</a> improves the complexity of 
-the algorithm decompressing the text.</p>
-  </li>
-</ul>
+<p><a href="https://en.wikipedia.org/wiki/Yao%27s_principle">Yao’s minimax principle</a> 
+is a general theorem for randomized algorithms. 
+Basically it is saying that the best randomized algorithm on its worst instance 
+will get the same performance as the best deterministic algorithm on the worst 
+distribution of instances. (This needs a precise statement, to say which thing is 
+optimized first etc.).</p>
 
-<h2 id="multi-armed-bandit">Multi-armed bandit</h2>
-
-<p><em>Multi-armed bandit</em> is an expression that appears here and there in 
-TCS conference, and very often in theoretical machine learning. It is a type of 
-problem where one has to make decisions one after the other, to 
-maximize some pay-off. Basically, at each round, it has the choice 
-between several options called the “arms” of the bandit (like the levers 
-of different slot-machines).</p>
-
-<p>A basic version is the following framework:</p>
-
-<p>Given: $k$  arms, $T$ rounds.</p>
-
-<p>In each round $t\in[T]$:
-1. Algorithm picks arm $a_t$.
-2. Algorithm observes reward $r_t\in [0,1]$ for the chosen arm.</p>
-
-<p>Pay-off: the sum of the rewards</p>
-
-<p>The reward for an arm comes from an unknown distribution, but if the 
-algorithm chooses an arm repeatedly, it somehow learns this distribution. 
-There is already a lot to say on this simple case, and there are a flurry
-of papers about this, these days.</p>
-
-<p><a href="https://arxiv.org/pdf/1904.07272.pdf">Here</a> is a recent introduction 
-to multi-armed bandit. Also if you are in Rennes, France, on Wednesday
-there is a 
-<a href="https://perso.crans.org/besson/phd/defense/">PhD defense on this topic</a>.</p>
-
-<h2 id="delaunay-triangulations-have-perfect-matchings">Delaunay triangulations have perfect matchings</h2>
-
-<p><a href="https://en.wikipedia.org/wiki/Delaunay_triangulation">Delaunay triangulations</a> 
-are triangulations of point sets in the plane. I recentely learnt that
-the graphs that are Delaunay triangulations, always have a perfect 
-matching (that is a matching of size $n/2$ if $n$ is even, and $(n-1)/2$
-is $n$ is odd).</p>
-
-<p><img src="assets/delaunay.png" alt="" class="center-image" height="250px" /></p>
-<p align="center"><small><i>
-A point set, its Delaunay triangulation, and the associated graph with a perfect matching.
-</i></small></p>
-
-<p>A short proof of this appeared on arxiv recently, 
-<a href="https://arxiv.org/pdf/1907.01617.pdf">here</a>. (Actually it is a stronger
-result that is proved, about the so-called “toughness” of Delaunay 
-triangulations.)</p>
-
-<h2 id="learning-augmented-algorithms">Learning-augmented algorithms</h2>
-
-<p>Learning-augmented algorithms are algorithms that can use informtation
-coming from some machine learning source. 
-Here is an example.</p>
-
-<p>Binary search takes $O(\log n)$ in the worst-case. 
-Now if you have some neural network (NN) telling you that the element you’re 
-looking for is around position $i$, how do you modify your search? 
-Well you can begin by testing position $i$. Then, if the NN is not perfect, 
-this might not be the right value, but maybe it’s close. Say the value 
-you’re looking for is larger. Then you can try to find a position 
-that has larger value than your element, for example by doing exponential guesses. 
-Once you have both upper and lower bound, you can run the usual binary 
-search.</p>
-
-<p>If the error (that is, the number of positions between your element
-and the prediction of the NN) is $\mu$, then your algorithm runs in 
-$O(\log \mu)$. This is good: if the prediction is good then you speed up 
-the search, and if it’s bad, then you do not loose much.</p>
-
-<p>In more general terms, one looks for two properties:</p>
-
-<ul>
-  <li>consistency: the better the prediction, the better the algorithm</li>
-  <li>robustness: if the predition is bad, then the algorithm does not get 
-much worse.</li>
-</ul>
-
-<p>Note that for real application, one might also be interested in the running 
-time of the NN, and a lot of other things.</p>
-
-<p>Some material on this topic:</p>
-
-<ul>
-  <li>a <a href="https://www.mit.edu/~andoni/algoS19/scribes/scribe24.pdf">lecture note</a></li>
-  <li><a href="http://theory.stanford.edu/~sergei/slides/HALG-slides.pdf">the slides</a> 
-of a talk at <a href="http://2019.highlightsofalgorithms.org/">HALG 2019</a></li>
-  <li><a href="https://www.mit.edu/~vakilian/ttic-workshop.html">a workshop</a>.</li>
-</ul>
+<p>In the context of Alexandros, the instances are distributions (of which we know
+only the mean and an upper bound on the standard deviation) thus a 
+distribution of instances is a distribution of distributions. 
+This can be made precise, by considering a mixture of distributions.</p>
 
 
   </div>

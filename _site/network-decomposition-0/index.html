@@ -47,7 +47,7 @@
 
   <title>
     
-      Discrete notes &middot; Blog
+      Network decomposition&#58; Introduction &middot; Discrete notes
     
   </title>
 
@@ -83,53 +83,40 @@
         </h3>
       </div>
 
-      <div class="posts">
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/polygon problem">
-        A cute "open" problem on polygons
-      </a>
-    </h1>
+      <div class="post">
+  <h1 class="post-title">Network decomposition&#58; Introduction</h1>
+  <span class="post-date">08 Apr 2020</span>
+  <p>This post is an introduction (and a table of contents) for a series of posts on
+distributed network decomposition.</p>
 
-    <span class="post-date">11 Dec 2019</span>
+<p><img src="assets/caravane-1.jpg" alt="" class="center-image" height="300px" /></p>
 
-    <p>Here is a cute problem that appeared on a chat channel of University of 
-Chile a few months ago. To my knowledge this is still open, but as it 
-seems rather natural, the answer is probably known somewhere.</p>
+<p>One of the important papers of these recent years in distributed graph 
+algorithms will appear at STOC this summer:</p>
 
-<p>Consider the following transformation: take a polygon in the plane and 
-then dilate it along the $x$-axis.</p>
+<p>“Polylogarithmic-Time Deterministic Network Decomposition and Distributed 
+Derandomization” by <a href="https://n.ethz.ch/~rozhonv/">Václav Rozhoň</a> and 
+<a href="https://people.inf.ethz.ch/gmohsen/">Mohsen Ghaffari</a> from ETH Zurich.</p>
 
-<p><img src="assets/polygon-expansion.png" alt="" class="center-image" height="250px" /></p>
+<p>It is basically the description of a distributed algorithm that performs what is 
+called a <em>network decomposition</em>, faster than before. This decomposition can 
+then be used to do many other things fast, and the paper solves several important 
+open problems of the field.</p>
 
-<p>In other words, the $x$ coordinates of the vertices
-are multiplied by some expansion factor $\alpha$.
-On the picture the expansion factor is $\alpha=2$.</p>
+<p>I quickly looked at the paper when it appeared on arxiv, but I want to 
+understand it better, and writing a series of posts about it is good way to do 
+this.</p>
 
-<p>Now the question is: is it always true that the original polygon fits in 
-the dilated polygon? Note that you are allowed to rotate and translate 
-these as you like.</p>
+<p>Here is the my current plan for this series:</p>
 
-<p><img src="assets/polygon-inclusion.png" alt="" class="center-image" height="200px" /></p>
+<ol>
+  <li><em>Impact for distributed algorithms</em>, that is, why is a network decomposition so 
+useful.</li>
+  <li><em>Centralized construction</em>, in particular, why such decomposition with good 
+parameters exist.</li>
+  <li>(and more) TBA</li>
+</ol>
 
-<p>We have thought a bit about this at some point, and we have a proof for 
-triangles, but not much more…</p>
-
-
-  </div>
-  
-</div>
-
-<div class="pagination">
-  
-    <a class="pagination-item older" href="/page6/">Older</a>
-  
-  
-    
-      <a class="pagination-item newer" href="/page4/">Newer</a>
-    
-  
 </div>
 
 

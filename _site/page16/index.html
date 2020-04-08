@@ -87,235 +87,134 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/march-2019-notes-2">
-        March notes II.
+      <a href="/natural-history">
+        Algorithms and natural history
       </a>
     </h1>
 
-    <span class="post-date">09 Apr 2019</span>
+    <span class="post-date">09 May 2019</span>
 
-    <p>Second set of notes for March 2019.</p>
+    <p>Until recently there was in Paris an exhibition about some techniques used for 
+research in natural history.
+It raises some algorithmic questions and comments about bones, diamonds and 
+polytopes.
+(More details about this great exhibition at the end of the post.)</p>
 
 <hr />
-
-<p><img src="assets/pivoines.png" alt="" class="center-image" height="500px" /></p>
-
+<p><img src="assets/grenouille.png" alt="" class="center-image" height="400px" /></p>
+<p align="center"><small><i>Researchers measure the teeth of the tadpoles this frog 
+species, and learn stuff.</i></small></p>
 <hr />
 
-<h2 id="a-pair-of-distributed-computing-talks">A pair of distributed computing talks</h2>
+<h2 id="computing-skull-volumes">Computing (skull) volumes</h2>
 
-<p>We had a couple of distributed computing talks this month. Here are a few words 
-about the concepts involved.</p>
+<p><img src="assets/crane.png" alt="" class="center-image" height="300px" /></p>
 
-<h3 id="beeping-model">Beeping model</h3>
-<p>The <em>beeping model</em> is a very weak model of distributed network computing.
-In this model, the nodes of the network communicate by beeping. 
-At each round, a node decides to beep or not. 
-And a node can receive only one information: either someone in the neighborhood 
-has beeped, or not. 
-One cannot know how many nodes beeped. 
-In particular, if the node chooses	 to beep, then it cannot know if another node 
-has beeped.</p>
+<p>When you get a skull, something you want to measure is how much brain you can 
+fit in, that is, what is its inside volume.
+This used to be done by filling the skull with some kind of grains, and then 
+measuring the volume of grain. 
+It is now done by with sensor measurements and computations. 
+But if I give you some triangulation of an object, how do you compute the volume?
+If you assume the object to be convex, then one can surely do some kind of discrete 
+integrals, suming some basic polytope volumes. 
+<a href="https://www.ams.org/journals/mcom/1991-57-195/S0025-5718-1991-1079024-2/S0025-5718-1991-1079024-2.pdf">This paper</a> 
+(or more precisely its introduction) seems to validate this intuition. 
+It also raises the question about how the object to measure is given.</p>
 
-<p>The beeping is used to model primitive communication, for example between cells.
-The surprising point is that you can actually do things in this model !
-For example compute a maximal independent set 
-(see <a href="http://www.cs.tau.ac.il/~afek/MISdisc.pdf">this paper</a>).</p>
+<p>This made me remember that some price was awarded for something related to 
+volume computation. 
+I dug out the reference: 1991 
+<a href="https://en.wikipedia.org/wiki/Fulkerson_Prize">Fulkerson prize</a> was awarded to 
+Dyer, Frieze and Kannan for works of this flavour.
+Their model is black-box: you ask for a point and you are answered whether it is 
+inside or outside. 
+They provide a randomized PTAS<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> for approximating
+the volume of high-dimensional polytopes using 
+<a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo">Markov chain Monte Carlo</a> 
+methods. 
+As many counting problems can be rephrased in terms of polytopes, this is much 
+more useful than just computing high-dimensional skull volumes.
+For a bit more on this, see 
+<a href="https://en.wikipedia.org/wiki/Convex_volume_approximation">this wikipedia page</a>.</p>
 
-<h3 id="superimposed-codes">Superimposed codes</h3>
+<h2 id="inclusions-ofdiamonds-and-polytopes">Inclusions of diamonds and polytopes</h2>
 
-<p>Beeps are binary information, thus to transmit more than one bit, nodes have to 
-encode information into sequences of beeps. 
-The problem is that a node may receive beeps from several neighbors, and a 
-priori cannot know if beeps it heard form a single sequence, or if it is a 
-mix of several sequences.</p>
+<p><img src="assets/diamant-1.png" alt="" class="center-image" height="400px" /></p>
 
-<p>A nice tool to solve that is <em>superimposed codes</em>: these codes are such that if one superimpose 
-them (that is, perform a bit-wise OR), one can still decode the different words. 
-In other words any sequence can be decomposed uniquely into several code words.</p>
+<p>The diamond above is the <a href="Tavernier Blue">Blue Diamond of the French Crown</a> 
+that Louis XIV bought at some point of the 17th century. 
+Or actually, it’s what it used to look like, because this diamond disappeared. 
+It was suspected that it has been recut and is now the diamond known as the 
+<a href="https://en.wikipedia.org/wiki/Hope_Diamond">Hope diamond</a>.</p>
 
-<p>It seems that these codes were already used for punched-cards…</p>
+<p>This was presented in the exhibition because the museum in Paris has a lead cast 
+of the original diamond, and used it to validated the link between the two. 
+Basically the two diamonds fit so well one in the other, that is very likely 
+that they are the same with only a light recut.</p>
 
-<h3 id="fixing-blocking-edges-in-stable-marriage">Fixing blocking edges in stable marriage</h3>
+<p><img src="assets/diamant-2.png" alt="" class="center-image" height="250px" /></p>
 
-<p>A marriage (or bipartite matching) is a matching in a balanced 
-bipartite graph, where every node is has a preference list. 
-It is <em><a href="Stable marriage problem">stable</a></em> if not two participants would prefer to 
-be matched together instead of their current matching (such a pair is called a 
-<em>blocking edge</em>).</p>
+<p>But how can you decide if two polytopes could be included one in the other?
+And what’s the complexity? (Note that contrary to skulls, diamonds are pretty 
+much polytopes.)</p>
 
-<p>Gale and Shapley designed a well-known algorithm to compute such a marriage. 
-But it starts from an empty solution. Suppose you want to start from a non-stable
-solution and improve it step by step, for example because you are designing a
-self-stabilizing algorithm. This is not easy.</p>
+<p>First for the decision problem: the two polytopes are somehow aligned and you 
+just want to check the inclusion of one into the other.
+If both polytopes are given by sets of vertices, then some methods similar to
+<a href="https://en.wikipedia.org/wiki/Convex_hull_algorithms">convex hull computations</a> 
+should do the job.</p>
 
-<p>In the following example, 
-attributed to <a href="https://en.wikipedia.org/wiki/Donald_Knuth">Knuth</a>, 
-we start on the left from 
-a solution that is unstable (the blocking pair is in red), and solve this pair 
-on the right picture, and then iterate the procedure. Unfortunately, at the end 
-of the procedure, we are back to the first instance!</p>
+<p>Now how to find this alignment? For our diamonds, the spikes and planar 
+symmetries surely help. But what if your polytopes are say, 
+very close to spheres, but with random perturbations? Doesn’t seem very easy. 
+This looks similar to some robotics problem, such as the 
+<a href="https://en.wikipedia.org/wiki/Motion_planning">piano mover’s problem</a>, but it’s 
+not quite the same.</p>
 
-<p><img src="assets/mariages.png" alt="" class="center-image" height="700px" /></p>
+<h2 id="symmetrizing-old-bones">Symmetrizing old bones</h2>
 
-<h3 id="privacy-in-stable-marriage">Privacy in stable marriage</h3>
+<p><img src="assets/dinosaures.png" alt="" class="center-image" height="350px" /></p>
 
-<p>The classic centralized algorithms for stable marriage use the full list of 
-preferences, that is there is no privacy for the participants. 
-For distributed algorithms, it makes sense to try to minimize the amount of 
-information the participants have to share to solve the task.
-For example the algorithm presented in the talk uses little information 
-(e.g. “this player is already
-matched to someone higher in his/her list”).</p>
+<p>Yet another problems that one can transfer to polytopes. 
+Here the paleontologists find skulls like the one on the left (I didn’t take 
+notes of the name of this fellow), that has been deformed by non-uniform forces 
+in the ground.
+Then they try to reconstruct the correct shape, like the one on the right.</p>
 
-<p>[The talks were by 
-<a href="https://sites.google.com/view/dufoulon/accueil">Fabien Dufoulon</a> and 
-<a href="https://www.lri.fr/~laveau/">Marie Laveau</a>, 
-both PhD students in Paris-Sud University.
-Fabien told us about his new (not yet public) result in the beeping model, 
-using a variant of superimposed codes. 
-Marie told us about her result on self-stabilizing 
-stable matching. 
-It is <a href="https://hal.archives-ouvertes.fr/hal-01576055/document">this paper</a>.]</p>
+<p>Again if you are a human, if you know a lot about such creatures, it is possible 
+to find a plausible shape by adjusting the parameters of some transformation.
+In particular, you try to have a left-right symmetry.
+But what if I give you an arbitrary triangulation, and tell you: find the best 
+way to modify it in order to have a symmetry?</p>
 
-<h2 id="different-techniques-for-different-regimes-in-rockets-and-algorithms">Different techniques for different regimes (in rockets and algorithms)</h2>
+<p>Could be related to 
+<a href="https://en.wikipedia.org/wiki/Principal_component_analysis">principal component analysis</a>, 
+that gives you some notion of “this object is somehow aligned with this 
+direction”, but again if you have a random near-spherical objects, this does not 
+help you (but in this case, you may be happy with any plane, as an approximation).</p>
 
-<p>I discovered recently that the flames of different space rockets have different 
-colors, partly because they use different mix of fuels.</p>
+<h3 id="about-the-exhibition">About the exhibition</h3>
+<p>The name of the exhibition in French was 
+<em><a href="https://www.mnhn.fr/en/node/5277">Secrets dévoilés : voir l’imperceptible</a></em>, 
+which basically means <em>Unveiling secrets : seeing the imperciptible</em>.
+It was created by the 
+<a href="https://en.wikipedia.org/wiki/National_Museum_of_Natural_History,_France">National Museum of Natural History of Paris</a>
+and consisted in panels, hung in the
+<a href="https://en.wikipedia.org/wiki/Jardin_des_plantes">Jardin des Plantes</a>.</p>
 
-<p><img src="assets/rockets.png" alt="" class="center-image" height="550px" /></p>
-<p align="center">Space shuttle (yellowish flames) and Soyouz (pinkish flames).</p>
+<p>Some of the pictures can be seen on the 
+<a href="https://marieducom.com/portfolio/exhibition-secrets-devoiles-voir-limperceptible/?lang=fr">website of the illustrator</a>.</p>
 
-<p>This was surprising to me, as I would naively think that there must be a solution 
-that is considered “the best to push stuff upward”, and that everybody would use it.</p>
+<h3 id="footnotes">Footnotes</h3>
 
-<p>But I guess different regimes (how much you want to lift, at which speed etc.) 
-ask for different solutions. 
-In the world of algorithms, it is similar to the following scenario.
-Say you want an algorithm for instances that depend on two parameters $n$ and 
-$k$. Then you may use different technique for different regimes. 
-For example, expressing $k$ as a function of $n$, you could have: for constant 
-$k$ do brute-force, for logarithmic $k$ do some divide and conquer, for 
-$k$ around $\sqrt{n}$ do dynamic programming, etc.</p>
-
-<p>I wonder if we have such examples with many different regimes asking for many 
-different solutions. 
-In distributed graph algorithms, an example is coloring 
-(and similar problems) where for 
-bounded degree and unbounded degree you have completely different techniques.</p>
-
-<p>For the related question of problems (with one parameter) having many different 
-equally good solutions, I see $O(\log n)$-approximation of 
-<a href="https://en.wikipedia.org/wiki/Set_cover_problem">Set-Cover</a>, for which you can 
-basically use all the standard tools of approximation: greedy, LP-rounding, 
-primal-dual etc.</p>
-
-<p>[I semi-randomly stumbled on 
-<a href="https://www.youtube.com/watch?v=EO_gwxon764">this video</a> (or more precisely 
-the French-speaking version of it) that explains a lot of stuff about rockets 
-flames. 
-For example why one can see the kind of patterns below in rocket flames 
-(it’s actually in the second part of the video).</p>
-
-<p><img src="assets/shock-diamonds.png" alt="" class="center-image" height="170px" /></p>
-
-<p>These are called <a href="https://en.wikipedia.org/wiki/Shock_diamond">Mach disks</a> or 
-shock diamonds, and come from the fact that the flames expand when they get 
-out of the engine, but because the outside pressure is higher, it is then 
-recompressed, it heats up again, and then again 
-expands etc. Maybe there is a discrete analogue for this too (convergence by 
-oscillations?).]</p>
-
-<h2 id="abel-prize-and-limitations-of-the-discrete-approach">Abel prize and limitations of the discrete approach</h2>
-
-<p>Lipton and Regan 
-<a href="https://rjlipton.wordpress.com/2019/03/21/the-shortest-path-to-the-abel-prize/">blog about</a> 
-the new Abel prize recipient, 
-<a href="https://en.wikipedia.org/wiki/Karen_Uhlenbeck">Karen Uhlenbeck</a>, or actually about
-her research. They take the interesting approach of first trying to solve a 
-problem with a discrete natural approach, and then to show how it fails, and how 
-analysis in the style of Uhlenbeck’s research solves the problem.</p>
-
-<p>The question is simply to prove that in the plane the shortest path between two 
-points is a straight line. The natural discrete approach is to consider 
-polygonal lines, to prove the statement by induction (on the picture below the 
-blue line is better by triangle inequality), and then to say “every curve is 
-polygonal line up to small stuff”.</p>
-
-<p><img src="assets/uhlenbeck.png" alt="" class="center-image" height="200px" /></p>
-
-<p>The reason why it fails is all the nasty functions (fractals and other monsters) 
-that ruin the last step.</p>
-
-<h2 id="sigact-news-year-and-conference-reviews">SIGACT news, year and conference reviews</h2>
-
-<p>I was surprised to receive SIGACT news at home, and then remembered than I had 
-registered to ACM for FOCS. It is first time I glance at SIGACT news, as I don’t
-have access to it online.</p>
-
-<p>I was especially interested in the online algorithm review. 
-For the first issue of the year, the author, 
-<a href="https://www.uni-siegen.de/fb6/aan/optimierung/mitarbeiter/vanstee/?lang=d">Rob van Stee</a>, 
-does a review of the key results of 2018 in his area. 
-This is very nice format, that gives a higher perspective on a field.</p>
-
-<p>A more classic format is the review of a conference. In my experience, this is 
-less useful, because (1) one cannot be knowledgeable about every topic in a 
-conference, (2) one tries to be quite exhaustive ; consequently 
-the review often ends up being a list of small, not very informative
-sentences about many many papers.</p>
-
-<p>[By the way, it’s sad that SIGACT News is not open-access.]</p>
-
-<h2 id="point5-and-conference-travel">1point5 and conference travel</h2>
-
-<p><a href="https://en.wikipedia.org/wiki/Le_Monde">Le Monde</a>, one of the major French 
-newpapers, published 
-<a href="https://labos1point5.org/">the letter of the “1point5” group</a>. 
-This name comes from the objective of keeping global warming
-upper bounded by 1.5 degree Celsius. The collective is interested in the impact of 
-research on climate. They basically argue that research should be made 
-differently to reduce its impact on the planet.</p>
-
-<p>I have been thinking about this for a while. 
-It happened to me several times to go 
-to a conference, and think it was not worth the kerosene. 
-Conferences are often nice moments, you indeed learn stuff and make new projects,
-but it’s difficult to argue that this is as convincing as the following picture.</p>
-
-<p><img src="assets/histogram-CO2.png" alt="" class="center-image" height="600px" /></p>
-
-<p>The precise numbers can be discussed, but I got them from very reliable sources,
-and everywhere you will find numbers in the same ballpark.</p>
-
-<p>In the long term, we can hope to make conferences less numerous, more efficient, 
-more local. But in the short, term it seems that the only solution is to avoid 
-submitting to far away conferences. Obviously this is a very broad topic…</p>
-
-<h2 id="place-in-a-queue">Place in a queue</h2>
-
-<p>I recently went to a doctor who does not take appointments, thus people wait. 
-The rule is “first-in first-cured” and people have to remember when it’s their 
-turn.
-It is usually fine, but sometimes, maybe by mistake, maybe by slyness, people 
-disagree. 
-I noticed that people in the room have somehow random sampling of the 
-order, e.g. “I arrived before this person, that person was here before, these two 
-I don’t know”.</p>
-
-<p>You get diagrams like this one (with some inconsistencies):</p>
-
-<p><img src="assets/queue-1.png" alt="" class="center-image" height="400px" /></p>
-
-<p>Making this into a linear order has a feedback-arcset flavor.</p>
-
-<p>In other countries, I noticed that people, when they arrive say to a restaurant,
-ask “who is the latest arrived?”, which gives a simpler picture:</p>
-
-<p><img src="assets/queue-2.png" alt="" class="center-image" height="300px" /></p>
-
-<p>But maybe it’s less robust to slyness..?</p>
-
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>For PTAS and related acronyms, see <a href="https://discrete-notes.github.io/october-batch-forgotten">this post</a>.&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
   </div>
   

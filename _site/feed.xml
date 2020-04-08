@@ -7,17 +7,52 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Notes from pre-COVID19 times</title>
-        <description>&lt;p&gt;NOTE: It seems that there is a problem the pictures, I’ll keep the post online, 
-but wait a bit before reading it :)&lt;/p&gt;
+        <title>Network decomposition&amp;#58; Introduction</title>
+        <description>&lt;p&gt;This post is an introduction (and a table of contents) for a series of posts on
+distributed network decomposition.&lt;/p&gt;
 
-&lt;p&gt;Hi there! After abruptly coming back to France because of the virus, I resume
+&lt;p&gt;&lt;img src=&quot;assets/caravane-1.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;One of the important papers of these recent years in distributed graph 
+algorithms will appear at STOC this summer:&lt;/p&gt;
+
+&lt;p&gt;“Polylogarithmic-Time Deterministic Network Decomposition and Distributed 
+Derandomization” by &lt;a href=&quot;https://n.ethz.ch/~rozhonv/&quot;&gt;Václav Rozhoň&lt;/a&gt; and 
+&lt;a href=&quot;https://people.inf.ethz.ch/gmohsen/&quot;&gt;Mohsen Ghaffari&lt;/a&gt; from ETH Zurich.&lt;/p&gt;
+
+&lt;p&gt;It is basically the description of a distributed algorithm that performs what is 
+called a &lt;em&gt;network decomposition&lt;/em&gt;, faster than before. This decomposition can 
+then be used to do many other things fast, and the paper solves several important 
+open problems of the field.&lt;/p&gt;
+
+&lt;p&gt;I quickly looked at the paper when it appeared on arxiv, but I want to 
+understand it better, and writing a series of posts about it is good way to do 
+this.&lt;/p&gt;
+
+&lt;p&gt;Here is the my current plan for this series:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;Impact for distributed algorithms&lt;/em&gt;, that is, why is a network decomposition so 
+useful.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Centralized construction&lt;/em&gt;, in particular, why such decomposition with good 
+parameters exist.&lt;/li&gt;
+  &lt;li&gt;(and more) TBA&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 08 Apr 2020 00:00:00 +0200</pubDate>
+        <link>https://discrete-notes.github.io///network-decomposition-0</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///network-decomposition-0</guid>
+      </item>
+    
+      <item>
+        <title>Notes from pre-COVID19 times</title>
+        <description>&lt;p&gt;Hi there! After abruptly coming back to France because of the virus, I resume
 blogging (instead of traveling, basically). Here is a set of notes that I wrote 
 before the quarantine and everything.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/grafitti-donut.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;600px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/grafitti-donut.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;380px&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -83,7 +118,7 @@ Here is a counting problem that falls into this category.&lt;/p&gt;
 points. In the following picture, the points are black and a polygonization is 
 drawn in blue.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/polygonization.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;600px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/polygonization.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The algorithmic problem is: given the point set, count the number of 
 polygonizations it has.&lt;/p&gt;
@@ -99,7 +134,7 @@ and
 like a rope and can get some rotational movement when touching the pancake. 
 Something like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/miel.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/miel.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;250px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;[See also &lt;a href=&quot;https://www.youtube.com/watch?v=lZbOV8BIOt8&quot;&gt;this video&lt;/a&gt; by Jearl 
 Walker.]&lt;/p&gt;
@@ -115,7 +150,7 @@ a square grid). The yellow cell is where the honey is currently arriving, and
 the orange circle is the projection of the origin of the honey (e.g. the spoon) 
 on the pancake.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/miel1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/miel1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Now there are two forces. One is the “speed” of the yellow patch, that simulates
 the fact that the honey tends to go where there is less honey, and the very last 
@@ -125,12 +160,12 @@ fact that the honey is still “tied” to the spoon. It is represented by an
 orange arrow. Now the average of the two forces is the red arrow, that is 
 pointing to the next cell.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/miel2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/miel2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The proccess is repeated, and the yellow patch is circulating around the 
 cell with a orange circle.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/miel3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/miel3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Well it’s not a very fancy model, in particular it doesn’t make a difference 
 between honey on a pancake, and a planet around the sun, but maybe it can be 
@@ -287,8 +322,6 @@ time ago; if you’re interested, there is a survey on the recent advances
 on this topic &lt;a href=&quot;https://arxiv.org/pdf/1911.05911.pdf&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/miel3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;250px&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 22 Jan 2020 00:00:00 +0100</pubDate>
@@ -917,142 +950,6 @@ with improved complexity for $k\geq 4$.&lt;/p&gt;
         <pubDate>Thu, 07 Nov 2019 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///october-2019-notes-distances</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///october-2019-notes-distances</guid>
-      </item>
-    
-      <item>
-        <title>Graph classes and forbidden patterns&amp;#58; Introduction</title>
-        <description>&lt;p&gt;Michel Habib and I have quite recentely finished the paper 
-&lt;a href=&quot;https://arxiv.org/abs/1812.05913&quot;&gt;Graph classes and forbidden patterns on three vertices&lt;/a&gt;. 
-This blog post is the first of a small series that will present the paper.
-It follows the structure of a talk I gave yesterday at the University 
-of Chile.&lt;/p&gt;
-
-&lt;h2 id=&quot;why-studying-graph-classes&quot;&gt;Why studying graph classes?&lt;/h2&gt;
-
-&lt;p&gt;This paper is about graph classes, and it seems that it is a topic 
-that is not popular with everybody, so let’s start with a couple of 
-reasons to study graph classes.&lt;/p&gt;
-
-&lt;h4 id=&quot;graphs-are-fundamental-objects&quot;&gt;Graphs are fundamental objects&lt;/h4&gt;
-&lt;p&gt;Just like sets and languages, graphs are basic objects, thus gathering 
-knowledge about them is useful. For example, the pumping lemma
-for regular languages appears in distributed computing, because 
-languages are basic objects, and thus they pop up everywhere.&lt;/p&gt;
-
-&lt;h4 id=&quot;to-use-algorithms-in-the-real-world&quot;&gt;To use algorithms in the “real world”&lt;/h4&gt;
-&lt;p&gt;If one wants to use algorithms for real-world problems, it is likely 
-that looking at results for general graphs is not the most useful 
-approach. There is a good proportion of the real-world instances that
-belong to very special classes, and if (1) you can recognize such 
-special classes fast, and (2) you have a fast algorithm for your problem 
-on this class, then you are happy. In other words,
-your transportation problem may be hard on expanders, but road networks 
-are not expanders, so let’s look at what road networks look like.&lt;/p&gt;
-
-&lt;h2 id=&quot;why-not-studying-graph-classes&quot;&gt;Why &lt;em&gt;not&lt;/em&gt; studying graph classes?&lt;/h2&gt;
-
-&lt;p&gt;To be fair, there is a problem with graph classes: 
-there are way too many of them! The website 
-&lt;a href=&quot;http://graphclasses.org&quot;&gt;graphclasses.org&lt;/a&gt; lists 1600 classes, and it’s 
-difficult to navigate in this jungle, to know what is an interesting
-class, to know whether the class you’re working on is known etc.
-(although the website is very useful for that).&lt;/p&gt;
-
-&lt;h2 id=&quot;this-paper&quot;&gt;This paper&lt;/h2&gt;
-&lt;p&gt;This paper brings a new point of view on some very classic graph classes, 
-putting them all in the same framework, with algorithmic consequences.
-(Thus it goes in the right direction!).&lt;/p&gt;
-
-&lt;p&gt;Actually “new” should be used with a lot of quotation marks: this point of view 
-has been known for a long time for several classes. I cannot cite all 
-the papers here, so I’ll cite none of them, but keep in mind that most of 
-what I’ll write about is not new. Take a look at the paper if you want 
-to see the 70 citations.&lt;/p&gt;
-
-&lt;p&gt;Now, let’s get started with two examples.&lt;/p&gt;
-
-&lt;h2 id=&quot;example-1--forests&quot;&gt;Example 1 : forests&lt;/h2&gt;
-
-&lt;p&gt;Here is a complicated characterization of the forests (e.g. the acyclic 
-graphs).&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Theorem:&lt;/em&gt; A graph $G=(V,E)$ is a forest, if and only if, there exists an ordering 
-of the nodes, such that: there does &lt;em&gt;not&lt;/em&gt; exist three nodes $a&amp;lt;b&amp;lt;c$, with 
- $(a,b)\in E$ and $(a,c)\in E$.&lt;/p&gt;
-
-&lt;p&gt;That is, we forbid this pattern:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/tree.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;100px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Proof sketch&lt;/em&gt;
-$(\Rightarrow)$ : Consider a tree of the forest. Put the leaves 
-first in the ordering and remove them from the tree; then repeat 
-with the remaining nodes of the tree, until the tree is empty. 
-Then move on to the next tree, do the same etc. 
-It is easy to check that the pattern will not appear.&lt;/p&gt;
-
-&lt;p&gt;$(\Leftarrow)$ : If the graph is not a forest, then there is a cycle. 
-Now consider any ordering of the graph. The node of the cycle that is 
-the left-most in the ordering must have both its cycle neighbors on 
-its right, thus the pattern appears.&lt;/p&gt;
-
-&lt;h2 id=&quot;example-2--interval-graphs&quot;&gt;Example 2 : interval graphs&lt;/h2&gt;
-
-&lt;p&gt;A more interesting example is interval graphs. Given a set of intervals
-$S$, one can define the intersection graph of it, $I(S)$, by creating one 
-node for each interval and putting an edge between two nodes if the two 
-corresponding intervals intersect.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/interval-1.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;150px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Definition:&lt;/em&gt; A graph $G$ is an interval graph if $G=I(S)$ for some set 
-of intervals $S$.&lt;/p&gt;
-
-&lt;p&gt;From the picture above, we know that a path on four vertices is an 
-interval graph. A graph that is not an interval graph is the cycle on 
-four vertices. Consider the following picture.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/interval-2.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;150px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As the red node and the 
-blue node are not adjacent, they must correspond to two disjoint 
-intervals, and without loss of generality, the red interval comes first. 
-The black interval should intersect both the red and the blue intervals. 
-Thus it uses the space between these two.
-The same holds for the green interval, but the black and the green 
-intervals should not intersect, thus the construction is impossible.&lt;/p&gt;
-
-&lt;p&gt;Here is a characterization of interval graphs.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Theorem:&lt;/em&gt; A graph $G=(V,E)$ is an interval graph, if and only if, 
-there exists an ordering of the nodes, such that: there does not exist 
-three nodes $a&amp;lt;b&amp;lt;c$, with $(a,b)\notin E$ and $(a,c)\in E$.&lt;/p&gt;
-
-&lt;p&gt;In other words, the following pattern is forbidden:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/interval-pattern.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;100px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Proof sketch:&lt;/em&gt; 
-The key idea for the proof is to consider the ordering of the left 
-endpoints of the intervals. First, given a set of intervals 
-it is easy to see that the ordering given by these left endpoints avoids 
-the pattern. Second, to build a set of intervals, given the ordering, 
-one just as to put the left endpoint of the intervals in the right order
-and then to make put the right endpoint at the spot where the right most 
-neighbor starts. (The pattern insures that this construction is correct.)&lt;/p&gt;
-
-&lt;h2 id=&quot;similar-characterizations&quot;&gt;Similar characterizations&lt;/h2&gt;
-
-&lt;p&gt;Thus these two classes can be characterized in a 
-similar way: the existence of a vertex ordering that 
-avoids some small pattern. Our paper is about understanding what are the
-classes that can be defined this way. In the next post, we will define 
-this more formally.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 17 Oct 2019 00:00:00 +0200</pubDate>
-        <link>https://discrete-notes.github.io///patterns-1</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///patterns-1</guid>
       </item>
     
   </channel>

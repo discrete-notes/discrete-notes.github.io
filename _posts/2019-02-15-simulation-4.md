@@ -10,7 +10,7 @@ started with [this post](./simulation-1).
 
 ---
 
-![](assets/puzzle-4.png){: .center-image height="300px"}
+![](assets/puzzle-4.png){: .center-image width="50%"}
 
 ---
 
@@ -25,7 +25,7 @@ The real lower bound is in [this paper](https://arxiv.org/abs/1901.02441).
 A maximal matching is a set of edges of the graph, such that no two of these
 edges are adjacent, and no two unmatched node are linked by an edge. 
 
-![](assets/couplage.png){: .center-image height="400px"}
+![](assets/couplage.png){: .center-image width="100%"}
 
 A natural encoding for this problem would be to label the edges of the matching 
 with a label $A$, and edges not in the matching with a label $B$. 
@@ -41,7 +41,7 @@ These are pointers to matched black nodes.
 On the following picture, red edges are for $M$, green edges are for $P$, and 
 blue edges are for $O$ (the missing edge should be blue!).
 
-![](assets/couplage-2.png){: .center-image height="300px"}
+![](assets/couplage-2.png){: .center-image width="60%"}
 
 The languages we use are then described by the following polynomials:
 
@@ -87,7 +87,7 @@ Suppose you are in following situation, which is supposed to be easy because
 there is not even a $(P+O)$. (On the picture, every black node writes on its 
 adjacent edges.)
 
-![](assets/couplage-3.png){: .center-image height="300px"}
+![](assets/couplage-3.png){: .center-image width="60%"}
 
 Ok, let's just take one of the two edges labeled with $M+O$
 (let say the one with the smallest port-number on the white node), 

@@ -8,7 +8,7 @@ permalink: network-decomposition-0
 This post is an introduction (and a table of contents) for a series of posts on
 distributed network decomposition. 
 
-![](assets/caravane-1.jpg){: .center-image height="300px"}
+![](assets/caravane-1.jpg){: .center-image width="100%"}
 
 
 One of the important papers of these recent years in distributed graph 
@@ -29,7 +29,7 @@ this.
 
 Here is the my current plan for this series:
 
-1. *[Local algorithms](https://discrete-notes.github.io/network-decomposition-0)*, 
+1. *[Local algorithms](https://discrete-notes.github.io/network-decomposition-1)*, 
 an introduction to local algorithm, with the example of 
 the maximal independent set problem.
 2. *Impact for distributed algorithms*, that is, why is a network decomposition so 

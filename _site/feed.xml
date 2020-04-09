@@ -86,7 +86,7 @@ identifier is a number in $[1,n^2]$, where $n$ is the size of the netork
 polynomial for the upper bound, but for concreteness let’s say $n^2$). 
 For a node $v$, let $ID(v)$ be its identifier.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/MIS-ID.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/MIS-ID.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;65%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Using these identifier we will simulate the centralized scheduler.&lt;/p&gt;
 
@@ -171,7 +171,7 @@ correct, and then the output of the algorithm is also correct.&lt;/p&gt;
         <description>&lt;p&gt;This post is an introduction (and a table of contents) for a series of posts on
 distributed network decomposition.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/caravane-1.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/caravane-1.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;One of the important papers of these recent years in distributed graph 
 algorithms will appear at STOC this summer:&lt;/p&gt;
@@ -192,7 +192,7 @@ this.&lt;/p&gt;
 &lt;p&gt;Here is the my current plan for this series:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-0&quot;&gt;Local algorithms&lt;/a&gt;&lt;/em&gt;, 
+  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-1&quot;&gt;Local algorithms&lt;/a&gt;&lt;/em&gt;, 
 an introduction to local algorithm, with the example of 
 the maximal independent set problem.&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;Impact for distributed algorithms&lt;/em&gt;, that is, why is a network decomposition so 

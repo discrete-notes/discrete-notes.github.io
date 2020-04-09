@@ -58,7 +58,7 @@ identifier is a number in $[1,n^2]$, where $n$ is the size of the netork
 polynomial for the upper bound, but for concreteness let's say $n^2$). 
 For a node $v$, let $ID(v)$ be its identifier. 
 
-![](assets/MIS-ID.png){: .center-image height="300px"}
+![](assets/MIS-ID.png){: .center-image width="65%"}
 
 Using these identifier we will simulate the centralized scheduler. 
 

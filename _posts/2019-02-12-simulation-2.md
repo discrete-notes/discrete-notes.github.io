@@ -10,7 +10,7 @@ This is the second post of a series that starts
 
 ---
 
-![](assets/puzzle-2.png){: .center-image height="300px"}
+![](assets/puzzle-2.png){: .center-image width="50%"}
 
 ---
 
@@ -43,7 +43,7 @@ We will consider graphs that are 2-colored (trees are bipartite), and we assume
 that every node knows on which side of the partition it is (black or white). So 
 we work on this kind of graph (with omitted port-numbers):
 
-![](assets/fig-delta-regulier.png){: .center-image height="400px"}
+![](assets/fig-delta-regulier.png){: .center-image width="65%"}
 
 This, in addition to port-numbers, is a powerful way to break symmetry between 
 adjacent nodes.[^1] 
@@ -142,7 +142,7 @@ neighbor $v$ of $u$ consists of:
 In the following picture, this means that this view includes only the 
 black part and the red part. 
 
-![](assets/fig-simulation-1.png){: .center-image height="400px"}
+![](assets/fig-simulation-1.png){: .center-image width="65%"}
 
 As a consequence when simulating node $v$, the black node does not need to 
 imagine something for the other parts of its imaginary $(T+1)$-view (e.g. the blue 

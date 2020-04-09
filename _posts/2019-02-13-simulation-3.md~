@@ -9,7 +9,7 @@ This is the third post of a series that starts [here](./simulation-1).
 
 ---
 
-![](assets/puzzle-3.png){: .center-image height="300px"}
+![](assets/puzzle-3.png){: .center-image width="50%"}
 
 ---
 
@@ -54,7 +54,7 @@ By definition $P_u$ is included in $(w+b)^{\Delta}$.
 We now use the key properties to have a better upper bound on $P_u$.
 Thanks to the product property, we know that $P_u\subseteq w(b+w)^{\Delta-1}$.
 Now consider a white node $v$, and the set labels given by its black neighbours. 
-Because of the common label property, there must at least one of its edges 
+Because of the consistency property, there must at least one of its edges 
 labeled with $b$, that is $P_v$ cannot be $w^{\Delta}$.
 And well, that's all we need!
 

@@ -80,7 +80,7 @@ by
 It is a shorter text, with a focus on algorithmic techniques for the local model, 
 e.g. network decomposition.
 
-## Material covering the basics or specialized content
+## Material covering only the basics, or only specialized content
 
 A standard book is 
 [Distributed Algorithms](https://www.elsevier.com/books/distributed-algorithms/lynch/978-1-55860-348-6)

@@ -29,7 +29,7 @@ this.
 
 Here is the my current plan for this series:
 
-1. *[Local algorithms](https://discrete-notes.github.io/network-decomposition-1)*, 
+1. *[Local algorithms](https://discrete-notes.github.io/network-decomposition-1-local-algorithms)*, 
 an introduction to local algorithm, with the example of 
 the maximal independent set problem.
 2. *Impact for distributed algorithms*, that is, why is a network decomposition so 

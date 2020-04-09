@@ -32,7 +32,7 @@ get as a whole if they were to collaborate together.
 
 Now, assume that all players collaborate, and get some pay-off $P$. How should 
 we distribute $P$, using $f$? The idea is the following. First chose an 
-arbitrary order on the players, for simplcity, let say the natural order $1, 2, 
+arbitrary order on the players, for simplicity, let say the natural order $1, 2, 
 ...,N$. Then player $1$, gets $f(${$1$}$)$, player $2$ gets $f(${$1,2$}$) - 
 f(${$1$}$)$ etc. 
 That seems pretty reasonable: every player gets the marginal value it adds

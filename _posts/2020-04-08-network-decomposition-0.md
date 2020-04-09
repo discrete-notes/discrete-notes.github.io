@@ -29,8 +29,11 @@ this.
 
 Here is the my current plan for this series:
 
-1. *Impact for distributed algorithms*, that is, why is a network decomposition so 
+1. *[Local algorithms](https://discrete-notes.github.io/network-decomposition-0)*, 
+an introduction to local algorithm, with the example of 
+the maximal independent set problem.
+2. *Impact for distributed algorithms*, that is, why is a network decomposition so 
 useful. 
-2. *Centralized construction*, in particular, why such decomposition with good 
+3. *Centralized construction*, in particular, why such decomposition with good 
 parameters exist.
-3. (and more) TBA 
+4. (and more) TBA 

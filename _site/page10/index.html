@@ -87,142 +87,81 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/october-2019-notes-distances">
-        October 2019 notes&#58; distances and moving stuff
+      <a href="/mid-november-2019-non-technical">
+        Mid-November (non-technical) notes
       </a>
     </h1>
 
-    <span class="post-date">07 Nov 2019</span>
+    <span class="post-date">12 Nov 2019</span>
 
-    <p>Some notes for October 2019, related to distances and to moving stuff.</p>
+    <p>Some notes about a new conference, a new research organization etc.</p>
 
 <hr />
-<p><img src="assets/farmacia.jpg" alt="" class="center-image" height="600px" /></p>
+<p><img src="assets/comida-india.png" alt="" class="center-image" height="500px" /></p>
 <p align="center"><small><i>
-A lot is going on in Chile. Fortunately there are some good recipes.
 </i></small></p>
 <hr />
 
-<h2 id="matching-graphs-via-gromov-hausdorff-distance">Matching graphs via Gromov-Hausdorff distance</h2>
+<h2 id="conference-model-survey">Conference model survey</h2>
 
-<p>There are many contexts where one would like to compare two graphs, to 
-measure if they are close or not. 
-One way of doing this is to decide whether one is included in the other
-(the 
-<a href="https://en.wikipedia.org/wiki/Subgraph_isomorphism_problem">subgraph isomorphism problem</a>) 
-or more generally if they have a 
-<a href="https://en.wikipedia.org/wiki/Maximum_common_edge_subgraph">large isomorphic subgraph</a>.
-Another way is to measure the number of edits one has to make to go from 
-one graph to the other (for example the number of edges to add and 
-remove). This is what is done in 
-<a href="https://en.wikipedia.org/wiki/Property_testing">property testing</a>, where having a 
-distance on the objects is essential.</p>
-
-<p>More generally, there exists a distance for compact metric spaces called 
-<a href="https://en.wikipedia.org/wiki/Gromov%E2%80%93Hausdorff_convergence#Gromov%E2%80%93Hausdorff_distance">Gromov-Hausdorff distance</a>, 
-that applies to graphs.</p>
-
-<p>No surprise, this distance is a complicated notion 
-(an inf of a max of a sup of an inf),
-and computing it is NP-hard. The reduction is to the 
-<a href="https://en.wikipedia.org/wiki/Quadratic_bottleneck_assignment_problem">quadratic bottleneck assignment problem</a>, 
-a <a href="https://en.wikipedia.org/wiki/Facility_location_problem">facility location problem</a>.</p>
-
-<p>A <a href="https://arxiv.org/pdf/1909.09772.pdf">fairly recent preprint</a> studies how to 
-estimate a modification of this distance in polynomial time.</p>
-
-<h2 id="hardness-of-moving-earth">Hardness of moving earth</h2>
-
-<p>Given two point sets of equal size in an Euclidian space, $A$ and $B$, and a 
-bijection $f: A \rightarrow B$ , the cost of transporting $A$ to $B$ 
-through $f$ is the sum over the elements of $a$ of the distances 
-from $a$ to $f(a)$.</p>
-
-<p><img src="assets/earth-moving.jpg" alt="" class="center-image" height="200px" /></p>
-
-<p>Now given two point sets, the earth mover distance is the minimum such 
-distance over all bijection:
-$
-EMD(A,B)=\min_f \sum_{a\in A} d(a,f(a))
-$</p>
-
-<p>It is the discrete analogue of 
-<a href="https://en.wikipedia.org/wiki/Transportation_theory_(mathematics)">Monge-Kantorovich metric</a>
-in probability theory, and is used in machine learning.</p>
-
-<p>Algorithms to compute the EMD are quadratic in $n$, and faster algorithms 
-are known for approximation but only in small dimensions.</p>
-
-<p><a href="https://arxiv.org/abs/1909.11068">A recent preprint</a> proves conditional 
-hardness results that explain this situation.</p>
-
-<h2 id="complexity-of-sandpiles">Complexity of sandpiles</h2>
-
-<p>Sandpile models are models close to cellular automata, based on a grid 
-in some dimension $d$, where every cell has a number (the number of 
-grains of sand there is at this location), and there is a local rule to 
-decide where the grains move at each step.</p>
-
-<p>There is <a href="https://arxiv.org/pdf/1909.12150.pdf">a recent survey</a> about 
-the complexity of predicting the final shape of sandpiles. 
-There are some very nice things going on. For example the complexity of 
-the prediction is related to the computational power of the sandpile itself:</p>
+<p>An online survey has been created <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOmbqTTfQfUYEXADCLLqat-OAl7XUh8gFceg27uDfpr_NaaQ/viewform">here</a> to gather the opinions of the distributed 
+computing community about its model of conferences. Topics include:</p>
 
 <ul>
-  <li>If the prediction is P-hard, then the sandpile has the computational 
-power of a Turing machine.</li>
-  <li>If the prediction is easier then it is not the case.</li>
+  <li>changing from one deadline to three deadlines a year. Basically it’s like 
+having the reviewing process made three times (with a smaller number of papers), 
+and then having a conference with the papers accepted to any of the three phases.</li>
+  <li>collocating the two main conferences of the domain.</li>
+  <li>changing the format (more keynotes, or shorter talks etc.)</li>
+  <li>transitioning to a journal model.</li>
 </ul>
 
-<p>A classic sandpile model is called the
-<a href="https://en.wikipedia.org/wiki/Abelian_sandpile_model">abelian sandpile model</a>
-(or Bak–Tang–Wiesenfeld model) and is the following. 
-On a grid $Z^d$, the rule is: every node that has $2d$ grains or more 
-gives one grain to each neighboring cell.</p>
+<p>Details can be found in the survey.</p>
 
-<p>Here is an example with $d=1$, and a starting configuration where one 
-cell has 5 grains. The cells that have 2 or more grains are “unstable” 
-and give one grain to their left neighbor and one grain to their right 
-neighbor.</p>
+<h2 id="paper-presentation-videos">Paper presentation videos</h2>
 
-<p><img src="assets/sandpile.jpg" alt="" class="center-image" height="180px" /></p>
+<p>One of the side topics of the survey is the possibility for the 
+authors to upload a video presenting their papers. It’s something I have thought
+of doing for my papers, but finally didn’t try.</p>
 
-<p>Note that the dynamic is not exactly what you would expect from a real 
-sandpile, but it is very simple and has very nice properties.</p>
+<p>Till Miltzow is a researcher in graph theory and he records a talk for every 
+paper he has, see <a href="https://sites.google.com/view/miltzow/publications">here</a>. 
+I think it’s good!</p>
 
-<p>For this model, the following hold:</p>
+<h2 id="the-polytcs-project">The PolyTCS project</h2>
 
-<ul>
-  <li>In dimension 1, prediction is in <a href="https://en.wikipedia.org/wiki/NC_(complexity)">NC</a></li>
-  <li>In dimension 3 or more the prediction is P-hard.</li>
-</ul>
+<p>You may know the <a href="https://en.wikipedia.org/wiki/Polymath_Project">Polymath Project</a>,
+which is a project from the math community. It consists in choosing an open problem, 
+and then working on this problem in a massively collaborative way: everything is
+public, and everyone can help. This project has been quite successful, with great
+collaborations, and great papers.</p>
 
-<p>The survey gives a lot results, sketches and conjectures.</p>
+<p>A similar project has been launched in TCS: 
+<a href="https://polytcs.wordpress.com/">The PolyTCS project</a>.
+The first problem is about boolean functions, see 
+<a href="https://polytcs.wordpress.com/2019/11/01/the-entropy-influence-conjecture/">here</a>.</p>
 
-<h2 id="k-opt-ratio-for-tsp">k-OPT ratio for TSP</h2>
+<h2 id="forc-conference">FORC conference</h2>
 
-<p><a href="https://en.wikipedia.org/wiki/2-opt">2-OPT</a> and its generalization 
-k-OPT, are popular heuristics for 
-the (metric) <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem">traveling salesman problem</a>.
-They consist in iteratively looking for 2 (respectively $k$ edges) to modify to improve the 
-cost of the tour. Here is an example for 2-OPT.</p>
+<p>A new conference in TCS: <a href="https://responsiblecomputing.org/forc-2020-call-for-paper/">Symposium on the Foundations of Responsible Computing (FORC)</a>. Topics include privacy, fairness and electoral processes.</p>
 
-<p><img src="assets/2opt.jpg" alt="" class="center-image" height="200px" /></p>
+<h2 id="symbolic-computations-in-python">Symbolic computations in python</h2>
 
-<p>This heuristic performs poorly in the worst-case: exponential time, and 
-approximation ratio in $\theta(\sqrt n)$. But it performs well in practice.</p>
+<p>I recently had to do a lot of small computations on toy examples. To check the 
+computations, I wanted to have some symbolic math software, but the usual
+ones (e.g. Maple) are big machines, and often not open-source. If you are in the 
+same situation, python with <a href="https://www.sympy.org/en/index.html">sympy</a> is a 
+good choice.</p>
 
-<p>A <a href="https://arxiv.org/pdf/1909.12025.pdf">recent preprint</a> computes the 
-precise approximation ratio for 2-OPT, which is $\sqrt(n)/2$.</p>
+<h2 id="pull-requests-for-this-blog">Pull requests for this blog</h2>
 
-<p>Other papers from the literature prove that : 
-* The approximation ratio is in $O(\sqrt n)$ for random edge weights 
-(which are not metric in general), see <a href="https://www.sciencedirect.com/science/article/pii/S016763770900011X?via%3Dihub">here</a>.
-* For Euclidian instances, the worst ratio is in $O(\log n)$.
-* The <a href="https://en.wikipedia.org/wiki/Smoothed_analysis">smoothed analysis</a>
-of the problem has been studied, eg <a href="https://wwwhome.ewi.utwente.nl/~mantheyb/full/MantheyVeenstra_TwoOpt.pdf">here</a>.
-* The fine-grain analysis of $k$-OPT has been done <a href="http://drops.dagstuhl.de/opus/volltexte/2016/6277/pdf/LIPIcs-ICALP-2016-5.pdf">here</a>
-with improved complexity for $k\geq 4$.</p>
+<p>This blog is a github page, that is, it works as a git repository. 
+I recently got some pull requests for it, from my friend 
+<a href="https://perso.crans.org/besson/me/index.fr.html">Lilian Besson</a>. 
+Pull requests is a way to suggest changes, e.g. correct a typo. It is very 
+convenient (on my side): I just have to pull these commits. 
+If you want to know more and correct one of the many typos of this blog, you can 
+take a look at <a href="https://www.freecodecamp.org/news/how-to-make-your-first-pull-request-on-github/">this page</a>.</p>
 
 
   </div>

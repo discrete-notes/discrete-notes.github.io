@@ -87,151 +87,103 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/simulation-4">
-        Simulation argument IV. Maximal matching
+      <a href="/february-2019-notes">
+        February notes
       </a>
     </h1>
 
-    <span class="post-date">15 Feb 2019</span>
+    <span class="post-date">05 Mar 2019</span>
 
-    <p>This is the fourth and last post of a series about the simulation argument, that 
-started with <a href="./simulation-1">this post</a>.</p>
-
-<hr />
-
-<p><img src="assets/puzzle-4.png" alt="" class="center-image" height="300px" /></p>
+    <p>Notes for February 2019.</p>
 
 <hr />
 
-<p>In this post we tackle the maximal matching problem. 
-Or actually we will show 
-why establishing a lower bound for this problem is not as easy as for the 
-sinkless orientation problem. 
-The real lower bound is in <a href="https://arxiv.org/abs/1901.02441">this paper</a>.</p>
-
-<h3 id="encoding">Encoding</h3>
-
-<p>A maximal matching is a set of edges of the graph, such that no two of these
-edges are adjacent, and no two unmatched node are linked by an edge.</p>
-
-<p><img src="assets/couplage.png" alt="" class="center-image" height="400px" /></p>
-
-<p>A natural encoding for this problem would be to label the edges of the matching 
-with a label $A$, and edges not in the matching with a label $B$. 
-But this does not work for our setting. 
-Instead, we will do the following. 
-(As in the previous post we will deal with 2-colored trees.)</p>
-
-<ul>
-  <li>The edges of the matching are labeled with the label $M$.</li>
-  <li>If a white node is not matched then its edges are labeled with $P$. 
-These are pointers to matched black nodes.</li>
-  <li>The remaining edges are labeled with $O$.</li>
-</ul>
-
-<p>On the following picture, red edges are for $M$, green edges are for $P$, and 
-blue edges are for $O$ (the missing edge should be blue!).</p>
-
-<p><img src="assets/couplage-2.png" alt="" class="center-image" height="300px" /></p>
-
-<p>The languages we use are then described by the following polynomials:</p>
-
-<ul>
-  <li>$L_W = MO^{\Delta-1}+P^{\Delta}$,</li>
-  <li>$L_B = M(P+O)^{\Delta-1} + O^{\Delta}$.</li>
-</ul>
-
-<h2 id="transformation">Transformation</h2>
-
-<h3 id="simulation">Simulation</h3>
-
-<p>We perform the simulation on a black node $u$, and get a polynomial $P_u$.<br />
-By definition $P_u\subseteq (M+O+P)^{\Delta}$, and is factorized.</p>
-
-<h3 id="product-property">Product property</h3>
-
-<p>As the product rule applies, we know that
-$P_u \subseteq M(P+0)^{\Delta-1}+O^{\Delta}$.<br />
-Thus there is at most one factor of $P_u$ with an $M$.</p>
-
-<p><em>Claim 1</em>: This factor is either $(M)$ or $(M+O)$.</p>
-
-<p><em>Proof</em>: Suppose the factor with $M$ has a $P$. 
-Then it means that when we develop $P_u$,
-there are two monomials $M\times K$ and $P\times K$, with $K$ a polynomial
-of degree $\Delta-1$, that does not contain an $M$. 
-But the monomial $P\times K$ is not included in 
-$M(P+0)^{\Delta-1}+O^{\Delta}$. which contradicts the product property.</p>
-
-<p>Then we are left with 5 possible sums as factors in $P_u$: 
-$(M), (O), (P), (M+O), (P+0)$.</p>
-
-<p>Now it seems that we cannot get much more out of our properties, so let’s try a 
-simplification step.</p>
-
-<h3 id="tentative-simplification-step">(Tentative) Simplification step</h3>
-
-<p>If we can map $(M+O)$ and $(P+O)$ to a simple label, 
-and still match the language, 
-then we are done, and we can conclude like in the <a href="./simulation-3">previous post</a>. 
-But this is not going to happen.</p>
-
-<p>Suppose you are in following situation, which is supposed to be easy because 
-there is not even a $(P+O)$. (On the picture, every black node writes on its 
-adjacent edges.)</p>
-
-<p><img src="assets/couplage-3.png" alt="" class="center-image" height="300px" /></p>
-
-<p>Ok, let’s just take one of the two edges labeled with $M+O$
-(let say the one with the smallest port-number on the white node), 
-label it with $M$, label the other one with $O$, and we are done.</p>
-
-<p>This does notwork.
-The problem is the one we highlighted in the <a href="./simulation-2">second post</a>: 
-the edges are not uniformly set-labeled by all the nodes. 
-A concrete bad case:</p>
-
-<ul>
-  <li>let $(u,v)$ and $(v,w)$ be the two edges labeled by $(M+0)$</li>
-  <li>in its simulation, $u$ has (M+O) for both edges, and based on port-numbers, 
-decides that $(u,v)$ gets $M$.</li>
-  <li>in its simulation $w$ has $(M+O)$ for $(v,w)$, but only $(O)$ for $(u,v)$. Thus 
-it labels $(v,w)$ with $M$.</li>
-</ul>
-
-<p>To solve this problem you have to synchronize, and this is forbidden as it takes 
-extra time.</p>
-
-<h2 id="no-lower-bound-this-way">No lower bound this way</h2>
-
-<p>So at the end, we cannot conclude like in the case of sinkless orientation.</p>
-
-<p>Comments on that:</p>
-
-<ul>
-  <li>
-    <p>This makes sense: actually there is a $O(\Delta)$ 
-algorithm for this problem, thus no $\Omega(\log n)$ lower bound exists.</p>
-  </li>
-  <li>
-    <p>The above alone does not prove that there is no $\Omega(\log n)$ lower 
-bound: we could use another definition of the problem, or we could have tried 
-more exotic label replacement ($M$ transformed into $P$, or whatever).</p>
-  </li>
-  <li>
-    <p>If you want to prove a $\Omega(\Delta)$ lower bound then you need to be 
-smarter. In particular you need that, after the transformation, the language is 
-different. Basically there should be a parameter that starts with something like 
-$\Delta$ and decreases at each transformation. 
-For that, see <a href="https://arxiv.org/abs/1901.02441">the paper</a>!</p>
-  </li>
-</ul>
+<p><img src="assets/lierre.png" alt="" class="center-image" height="400px" /></p>
 
 <hr />
 
-<p>Thanks to 
-<a href="https://www.lix.polytechnique.fr/~mrabie/">Mikaêl Rabie</a> 
-for reading and improving this series of posts!</p>
+<h2 id="minorities-in-network">Minorities in network</h2>
+
+<p>I attended a talk about minorities in network,
+by <a href="http://claudiawagner.info/">Claudia Wagner</a> at the 
+<a href="http://www.complexnetworks.fr/events/">Complex network seminar</a> of Sorbonnes 
+University. 
+There was a lot of content, here are a few things I noted.</p>
+
+<ul>
+  <li>
+    <p>Contrary to what I thought, a <a href="https://en.wikipedia.org/wiki/K-core">$k$-core</a> 
+is not another name for a $k$-clique. 
+A $k$-core of a graph is a maximal connected subgraph where all the nodes have 
+degree at least $k$. It can have much more nodes than just $k$
+(a $k$-regular graph is its own $k$-core). Such subgraphs can be considered as 
+coherent communities in social networks.</p>
+  </li>
+  <li>
+    <p>A part of the talk was about minorities in wikipedia. 
+One would like to consider statements such as “women are more 
+linked to other women than to men”. 
+This is not true in general because there are more men pages, thus 
+links have more chance to point to men, but could still be true, proportionally.
+But it’s a bit too rough to just look at proportions because the graph may be 
+complicated and there might be many correlations going on.
+One way to deal with this is following: consider the graph of wikipedia 
+bibliographies, note the global gender proportions, then erase the gender of the 
+nodes, and reassign them at random, keeping the right proportions. 
+Now you can compare the neighbourhoods in this new graph and in the original 
+graph, and try to understand what’s going on. One paper on the topic is the following: 
+<a href="https://arxiv.org/pdf/1501.06307.pdf">It’s a Man’s Wikipedia? Assessing Gender Inequality in an Online Encyclopedia</a></p>
+  </li>
+  <li>
+    <p>A notion known as <em>Burt efficiency</em>, or <em>brokerage</em>, or 
+<em><a href="https://en.wikipedia.org/wiki/Structural_holes">structural hole</a></em>, is more or 
+less the following. 
+A node that belongs to (or is close to) two clusters in a 
+network, can have an advantage over the other nodes,
+because it can enjoy the information gathered by both communities, and 
+can choose to transfer or not such information. 
+One can define coefficients to measure if a node is or not in such a 
+position.</p>
+  </li>
+</ul>
+
+<h2 id="multi-stage-optimization">Multi-stage optimization</h2>
+
+<p>For dynamic algorithms, one is usually concerned with having a good solution
+ at any time, but these solutions do not need to be related.
+Multi-stage optimization, introduced in 
+<a href="https://arxiv.org/abs/1404.3768">this paper</a>, considers the cases where one 
+should not change the solution too much between the two steps. 
+In other words, in this framework one maximizes the quality of the solution, 
+while minimizing the churn.</p>
+
+<p>[I stumble on the notion in <a href="https://arxiv.org/abs/1901.11260">this preprint</a>.]</p>
+
+<h2 id="conjecture">1-2-3 Conjecture</h2>
+
+<p>Another edition of the Complex Network seminar by 
+<a href="http://www.labri.fr/index.php?n=Annuaires.Profile&amp;id=Senhaji_ID1441185629">Mohammed Senhaji</a> 
+(that I couldn’t attend) was about the 1-2-3 conjecture, which is the following.</p>
+
+<p>In any graph, one can label the edges with label 1, 2, or 3, such that, when each node 
+computes the sum of the labels of its adjacent labels, not two neighbours have 
+the same sum.</p>
+
+<p>A survey about the conjecture is <a href="https://arxiv.org/pdf/1211.5122.pdf">here</a>.</p>
+
+<h2 id="lovszs-new-book">Lovász’s new book</h2>
+<p><a href="https://fr.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Lov%C3%A1sz">László Lovász</a> 
+wrote a new book: 
+<a href="http://web.cs.elte.hu/~lovasz/bookxx/geombook2019-01-20.pdf">Graphs and geometry</a>.</p>
+
+<h2 id="vandermonde-identity">Vandermonde identity</h2>
+
+<p>Vandermonde’s identity is the following:</p>
+
+<script type="math/tex; mode=display">\binom{m+n}{r} = \sum_{k=0}^{r}\binom{m}{k} \binom{n}{r-k}.</script>
+
+<p>I thought it was only a bachelor exercise, until it naturally popped up in the 
+calculation in <a href="https://arxiv.org/pdf/1812.09120.pdf">a recent paper</a>.</p>
 
 
   </div>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","output/HTML-CSS"],
+        extensions: ["tex2jax.js"],
+        tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+        },
+     "HTML-CSS": {
+      styles: {
+        ".MathJax .mo, .MathJax .mi": {}
+      }
+    }
+    });
+    </script>
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        }
+    });
+
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+    </script>
+
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <title>
+    
+      Network decomposition 1&#58; local algorithms &middot; Discrete notes
+    
+  </title>
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/theorems.css">
+
+  <!-- Icons -->
+  <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">-->
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <link href='http://discrete-notes.github.io/feed.xml' rel='alternate' type='application/atom+xml'>
+</head>
+
+
+  <body>
+
+    <div class="container content">
+      <div class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Discrete notes</a>
+
+          
+              &nbsp;&nbsp;&nbsp;<small><a href="/about/">About</a></small>
+          
+              &nbsp;&nbsp;&nbsp;<small><a href="/archive/">Archive</a></small>
+          
+
+        </h3>
+      </div>
+
+      <div class="post">
+  <h1 class="post-title">Network decomposition 1&#58; local algorithms</h1>
+  <span class="post-date">09 Apr 2020</span>
+  <p>This the first real post of a series on distributed network decomposition. 
+The introductory post of this series is 
+<a href="https://discrete-notes.github.io/network-decomposition-0">here</a>. 
+This post is a quick introduction to local algorithms, with the example of the
+maximal independent set problem. If you have heard about the local model before, 
+you probably know everything in this post.</p>
+
+<p><img src="assets/caravane-2.jpg" alt="" class="center-image" height="300px" /></p>
+
+<h2 id="a-problem58-computing-a-maximal-independent-set">A problem: computing a maximal independent set</h2>
+<p>A typical problem of network distributed computing is computing a 
+<a href="https://en.wikipedia.org/wiki/Maximal_independent_set">maximal independent set</a>
+(MIS). An MIS is a set $S$ of nodes of the graph such that not two nodes of $S$
+are adjacent, and for every node not in $S$, there is neighbor in $S$.</p>
+
+<p>The two pictures below <em>do not</em> represent an MIS: the first one 
+because of two adjacent selected nodes, and the second because of an “isolated node”.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/MIS-arete.png" alt="" class="center-image" height="300px" /></td>
+      <td><img src="assets/MIS-noeud.png" alt="" class="center-image" height="300px" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The two following pictures represent MISs. Note that one in <em>maximum</em> (it has 3 
+nodes, and no MIS on 4 nodes exists), but the other is just maximal, and it’s 
+also fine.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/MIS-maxi.png" alt="" class="center-image" height="300px" /></td>
+      <td> <img src="assets/MIS-pas-maxi.png" alt="" class="center-image" height="300px" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="easy-to-solve-in-a-centralized-manner">Easy to solve in a centralized manner</h2>
+
+<p>It’s very easy to solve this problem in a centralized manner. 
+An algorithm is the following:</p>
+
+<ul>
+  <li>Label all nodes as <em>active</em></li>
+  <li>As long as it is possible:</li>
+</ul>
+
+<ol>
+  <li>Take an arbitrary active node</li>
+  <li>Put it in the MIS</li>
+  <li>Label this node and all its neighbors as <em>inactive</em></li>
+</ol>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/MIS-seq-1.png" alt="" class="center-image" height="200px" /></td>
+      <td><img src="assets/MIS-seq-2.png" alt="" class="center-image" height="200px" /></td>
+      <td><img src="assets/MIS-seq-3.png" alt="" class="center-image" height="200px" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A first problem for us, with this algorithm, is that it is not distributed: you
+need an external entity to chose the “arbitrary active node”. This is some kind 
+of scheduler, who decides which node is “doing something” at any step.</p>
+
+<h2 id="using-identifiers-to-simulate-a-centralized-scheduler">Using identifiers to simulate a centralized scheduler</h2>
+
+<p>In our model, we will assume that every node has a unique identity. This 
+identifier is a number in $[1,n^2]$, where $n$ is the size of the netork 
+(in general we take a large enough 
+polynomial for the upper bound, but for concreteness let’s say $n^2$). 
+For a node $v$, let $ID(v)$ be its identifier.</p>
+
+<p><img src="assets/MIS-ID.png" alt="" class="center-image" height="300px" /></p>
+
+<p>Using these identifier we will simulate the centralized scheduler.</p>
+
+<p>All nodes start at the same time, and follow time steps (time-step= 1, 2, 3 etc. ).
+They start with a status that is <em>active</em>.
+The following algorithm is run at all nodes.</p>
+
+<ul>
+  <li>If time-step = $ID(v)$ and status = <em>active</em>:</li>
+</ul>
+
+<ol>
+  <li>Change status to <em>selected</em></li>
+  <li>Send message “selected” to all neighbors</li>
+</ol>
+
+<ul>
+  <li>If the time-step $\neq ID(v)$ and status = <em>active</em>:</li>
+</ul>
+
+<ol>
+  <li>Wait for a message “selected” from neighbors</li>
+  <li>If one arrives, change status to <em>not selected</em></li>
+</ol>
+
+<p>One can check that on our example, with the identifier given above, the run of 
+the algorithm simulates the run of the centralized algorithm. Another identifier 
+assignment would correspond to another centralized scheduler, and would give 
+another MIS.</p>
+
+<p>Note that the algorithm is correct because the identifiers are all distinct. 
+Indeed, if two neighbors had the same identifier, they would be selected at the 
+same time, and the outcome would not be an MIS.</p>
+
+<p>Now to evaluate the performance of a local algorithm, we measure the number of 
+time steps before the solution is completed. Here it is $n^2$ in general, as 
+one would have to wait for the node with the largest identifier. 
+This is a very poor complexity. Indeed we finish this post with a proof that any
+problem can be solved in $O(n)$ time steps.</p>
+
+<h2 id="general-algorithm-in-on-steps">General algorithm in $O(n)$ steps</h2>
+
+<p>Consider the following algorithm (that is described partially by the pictures 
+below).</p>
+
+<ul>
+  <li>Send identifier to all neighbors</li>
+  <li>Receive the identifier of all neighbors, and build the list of the adjacent 
+edges, e.g. $(ID(v),ID(w))$ for a node $v$ receiving a message from a neighbor 
+$w$.</li>
+  <li>Send these edges to all neighbors.</li>
+  <li>For $n$ time steps: send the set of all the edges received so far.</li>
+  <li>Then build a local copy of the graph, solve the problem on this copy, and 
+output the part of the solution that correspond to the node.</li>
+</ul>
+
+<p>The following set of pictures shows how the information about the existence of
+the egde (2,5) is built and then broadcasted to the whole graph.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/flooding-1.png" alt="" class="center-image" height="200px" /> </td>
+      <td> <img src="assets/flooding-2.png" alt="" class="center-image" height="200px" /></td>
+      <td><img src="assets/flooding-3.png" alt="" class="center-image" height="200px" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This algorithm is correct because after $n$ steps of flooding, all nodes know 
+about all the edges, thus the local copy of the graph that each node has is 
+correct, and then the output of the algorithm is also correct.</p>
+
+
+</div>
+
+
+      
+
+
+
+      <div class="footer">
+        <p>
+          &copy; 2020. All rights reserved.
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

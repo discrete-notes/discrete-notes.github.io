@@ -215,7 +215,7 @@ before the quarantine and everything.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/grafitti-donut.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;380px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/grafitti-donut.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;95%&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -281,7 +281,7 @@ Here is a counting problem that falls into this category.&lt;/p&gt;
 points. In the following picture, the points are black and a polygonization is 
 drawn in blue.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/polygonization.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/polygonization.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The algorithmic problem is: given the point set, count the number of 
 polygonizations it has.&lt;/p&gt;
@@ -297,7 +297,7 @@ and
 like a rope and can get some rotational movement when touching the pancake. 
 Something like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/miel.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;250px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/miel.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;40%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;[See also &lt;a href=&quot;https://www.youtube.com/watch?v=lZbOV8BIOt8&quot;&gt;this video&lt;/a&gt; by Jearl 
 Walker.]&lt;/p&gt;
@@ -313,7 +313,7 @@ a square grid). The yellow cell is where the honey is currently arriving, and
 the orange circle is the projection of the origin of the honey (e.g. the spoon) 
 on the pancake.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/miel1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/miel1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;40%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Now there are two forces. One is the “speed” of the yellow patch, that simulates
 the fact that the honey tends to go where there is less honey, and the very last 
@@ -323,12 +323,12 @@ fact that the honey is still “tied” to the spoon. It is represented by an
 orange arrow. Now the average of the two forces is the red arrow, that is 
 pointing to the next cell.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/miel2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/miel2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;40%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The proccess is repeated, and the yellow patch is circulating around the 
 cell with a orange circle.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/miel3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/miel3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;40%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Well it’s not a very fancy model, in particular it doesn’t make a difference 
 between honey on a pancake, and a planet around the sun, but maybe it can be 
@@ -378,7 +378,7 @@ is a stack exchange thread on “core algorithms deployed”.)&lt;/p&gt;
         <description>&lt;p&gt;The first set of notes of 2020.&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;assets/pinguinos.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;250px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/pinguinos.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;95%&quot; /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
 Magellanic penguins.
 &lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
@@ -436,7 +436,7 @@ happen when the network is equipped with some traffic lights.&lt;/p&gt;
 calm lake?&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/sunset-geometric.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;250px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/sunset-geometric.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If the Earth is flat then it’s the one on the left. If it’s spheric, it’s 
 the one on the right, and you can even compute the radius of the planet
@@ -497,7 +497,7 @@ on this topic &lt;a href=&quot;https://arxiv.org/pdf/1911.05911.pdf&quot;&gt;her
         <description>&lt;p&gt;Happy 2020! A short post about smoothed analysis in distributed 
 computing.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/arbre-patagonie.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/arbre-patagonie.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Smoothed_analysis&quot;&gt;Smoothed analysis&lt;/a&gt; is 
 about a complexity measure in between the complexity on random instances 
@@ -572,7 +572,7 @@ seems rather natural, the answer is probably known somewhere.&lt;/p&gt;
 &lt;p&gt;Consider the following transformation: take a polygon in the plane and 
 then dilate it along the $x$-axis.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/polygon-expansion.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;250px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/polygon-expansion.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In other words, the $x$ coordinates of the vertices
 are multiplied by some expansion factor $\alpha$.
@@ -582,7 +582,7 @@ On the picture the expansion factor is $\alpha=2$.&lt;/p&gt;
 the dilated polygon? Note that you are allowed to rotate and translate 
 these as you like.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/polygon-inclusion.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;200px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/polygon-inclusion.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We have thought a bit about this at some point, and we have a proof for 
 triangles, but not much more…&lt;/p&gt;
@@ -752,7 +752,7 @@ This can be made precise, by considering a mixture of distributions.&lt;/p&gt;
         <description>&lt;p&gt;Some more notes for November 2019.&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;assets/nueva-constitucion.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/nueva-constitucion.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
 &lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -843,7 +843,7 @@ the graphs that are Delaunay triangulations, always have a perfect
 matching (that is a matching of size $n/2$ if $n$ is even, and $(n-1)/2$
 is $n$ is odd).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/delaunay.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;250px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/delaunay.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
 A point set, its Delaunay triangulation, and the associated graph with a perfect matching.
 &lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
@@ -905,7 +905,7 @@ of a talk at &lt;a href=&quot;http://2019.highlightsofalgorithms.org/&quot;&gt;H
         <description>&lt;p&gt;Some notes about a new conference, a new research organization etc.&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;assets/comida-india.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;500px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/comida-india.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
 &lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;hr /&gt;

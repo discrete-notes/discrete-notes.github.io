@@ -12,14 +12,14 @@ polytopes.
 (More details about this great exhibition at the end of the post.)
 
 ---
-![](assets/grenouille.png){: .center-image height="400px"}
+![](assets/grenouille.png){: .center-image width="80%"}
 <p align="center"><small><i>Researchers measure the teeth of the tadpoles this frog 
 species, and learn stuff.</i></small></p>
 ---
 
 ## Computing (skull) volumes
 
-![](assets/crane.png){: .center-image height="300px"}
+![](assets/crane.png){: .center-image width="60%"}
 
 When you get a skull, something you want to measure is how much brain you can 
 fit in, that is, what is its inside volume.
@@ -52,7 +52,7 @@ For a bit more on this, see
 
 ## Inclusions of diamonds and polytopes
 
-![](assets/diamant-1.png){: .center-image height="400px"}
+![](assets/diamant-1.png){: .center-image width="70%"}
 
 The diamond above is the [Blue Diamond of the French Crown](Tavernier Blue) 
 that Louis XIV bought at some point of the 17th century. 
@@ -65,7 +65,7 @@ of the original diamond, and used it to validated the link between the two.
 Basically the two diamonds fit so well one in the other, that is very likely 
 that they are the same with only a light recut.
 
-![](assets/diamant-2.png){: .center-image height="250px"}
+![](assets/diamant-2.png){: .center-image width="70%"}
 
 But how can you decide if two polytopes could be included one in the other?
 And what's the complexity? (Note that contrary to skulls, diamonds are pretty 
@@ -86,7 +86,7 @@ not quite the same.
 
 ## Symmetrizing old bones
 
-![](assets/dinosaures.png){: .center-image height="350px"}
+![](assets/dinosaures.png){: .center-image width="100%"}
 
 Yet another problems that one can transfer to polytopes. 
 Here the paleontologists find skulls like the one on the left (I didn't take 

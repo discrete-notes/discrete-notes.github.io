@@ -12,7 +12,7 @@ seems rather natural, the answer is probably known somewhere.
 Consider the following transformation: take a polygon in the plane and 
 then dilate it along the $x$-axis.
 
-![](assets/polygon-expansion.png){: .center-image height="250px"}
+![](assets/polygon-expansion.png){: .center-image width="60%"}
 
 In other words, the $x$ coordinates of the vertices
 are multiplied by some expansion factor $\alpha$.
@@ -22,7 +22,7 @@ Now the question is: is it always true that the original polygon fits in
 the dilated polygon? Note that you are allowed to rotate and translate 
 these as you like. 
 
-![](assets/polygon-inclusion.png){: .center-image height="200px"}
+![](assets/polygon-inclusion.png){: .center-image width="60%"}
 
 We have thought a bit about this at some point, and we have a proof for 
 triangles, but not much more...

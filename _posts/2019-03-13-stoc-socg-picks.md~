@@ -15,7 +15,7 @@ some papers I could find online.
 
 ---
 
-![](assets/saucisses.png){: .center-image height="350px"}
+![](assets/saucisses.png){: .center-image width="60%"}
 
 ---
 
@@ -66,7 +66,7 @@ $\mu(v)$, such that $\sum_v \mu(v)=0$, one has to find a flow to transport the
 supplies in order to reach the configuration where every node has supply 0. 
 See the picture below.
 
-![](assets/transportation.png){: .center-image height="250px"}
+![](assets/transportation.png){: .center-image width="100%"}
 
 This is very similar to the 
 [optimal transport problem](Transportation theory (mathematics)) in non-discrete 
@@ -123,7 +123,7 @@ edges into $k$ sets, such that there are not two edges of the same partition,
 that are nested. 
 Below is an example of a graph and a 2-queue layout of it.
 
-![](assets/queue-layout.png){: .center-image height="250px"}
+![](assets/queue-layout.png){: .center-image width="90%"}
 
 The [queue number](https://en.wikipedia.org/wiki/Queue_number) of a graph is 
 the minimum $k$ such that there exists a $k$ layout of the graph. 

@@ -9,7 +9,7 @@ Some deadlines disturbed the schedule of the monthly notes ; this post is for
 both April and May.
 
 
-![](assets/table.png){: .center-image height="700px"}
+![](assets/table.png){: .center-image width="95%"}
 
 ---
 
@@ -51,7 +51,7 @@ objects.
 First, [matchstick graphs](https://en.wikipedia.org/wiki/Matchstick_graph) are 
 graphs that you can draw on a table with matchsticks.
 
-![](assets/alumettes.png){: .center-image height="300px"}
+![](assets/alumettes.png){: .center-image width="80%"}
 
 In more precise terms, these are planar
 [unit-distance graphs](https://en.wikipedia.org/wiki/Unit_distance_graph), that 
@@ -63,7 +63,7 @@ penny graph, if it is possible to represent each vertex by a unit disk, and to
 place the disk in such a way that they touch only at the boundaries, and that 
 each contact represents an edge.
 
-![](assets/pennies.png){: .center-image height="300px"}
+![](assets/pennies.png){: .center-image width="60%"}
 
 Penny graphs are matchsticks graphs but the reverse is not true.
 
@@ -74,7 +74,7 @@ flexible, otherwise it is
 [rigid](https://en.wikipedia.org/wiki/Structural_rigidity).
 For example a cube is flexible, and a tetrahedron is rigid.
 
-![](assets/rigide.png){: .center-image height="300px"}
+![](assets/rigide.png){: .center-image width="100%"}
 
 ## Breaking symmetries, in cells
 
@@ -158,7 +158,7 @@ bulb. This is a classic exercise in physics, and on reasonable circuits one
 just has to use simple laws of electricity and a lot of time. 
 For example the video features this circuit, where all the resistances are equal.
 
-![](assets/ampoules.png){: .center-image height="500px"}
+![](assets/ampoules.png){: .center-image width="80%"}
 
 The paper studies the reverse problem: given a graph, and two nodes to plug the 
 battery, how to choose the resistance of the light bulbs such that they all 
@@ -225,7 +225,7 @@ The first example is of course graphs with an odd number of vertices.
 Next, you can find things like the one below (with a maximum non-perfect 
 matching).
 
-![](assets/couplage-max.png){: .center-image height="500px"}
+![](assets/couplage-max.png){: .center-image width="70%"}
 
 Intuitively, in each triangle, one node must be matched with a node outside the 
 triangle, but the three triangles are looking for the same node in the middle, 

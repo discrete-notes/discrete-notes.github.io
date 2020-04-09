@@ -9,7 +9,7 @@ Second set of notes for March 2019.
 
 --- 
 
-![](assets/pivoines.png){: .center-image height="500px"}
+![](assets/pivoines.png){: .center-image width="95%"}
 
 ---
 
@@ -68,7 +68,7 @@ a solution that is unstable (the blocking pair is in red), and solve this pair
 on the right picture, and then iterate the procedure. Unfortunately, at the end 
 of the procedure, we are back to the first instance!
 
-![](assets/mariages.png){: .center-image height="700px"}
+![](assets/mariages.png){: .center-image width="100%"}
 
 
 ### Privacy in stable marriage
@@ -97,7 +97,7 @@ It is [this paper](https://hal.archives-ouvertes.fr/hal-01576055/document).]
 I discovered recently that the flames of different space rockets have different 
 colors, partly because they use different mix of fuels.
 
-![](assets/rockets.png){: .center-image height="550px"}
+![](assets/rockets.png){: .center-image width="80%"}
 <p align="center">Space shuttle (yellowish flames) and Soyouz (pinkish flames).</p>
 
 This was surprising to me, as I would naively think that there must be a solution 
@@ -131,7 +131,7 @@ flames.
 For example why one can see the kind of patterns below in rocket flames 
 (it's actually in the second part of the video).
 
-![](assets/shock-diamonds.png){: .center-image height="170px"}
+![](assets/shock-diamonds.png){: .center-image width="50%"}
 
 These are called [Mach disks](https://en.wikipedia.org/wiki/Shock_diamond) or 
 shock diamonds, and come from the fact that the flames expand when they get 
@@ -157,7 +157,7 @@ polygonal lines, to prove the statement by induction (on the picture below the
 blue line is better by triangle inequality), and then to say "every curve is 
 polygonal line up to small stuff". 
 
-![](assets/uhlenbeck.png){: .center-image height="200px"}
+![](assets/uhlenbeck.png){: .center-image width="60%"}
 
 The reason why it fails is all the nasty functions (fractals and other monsters) 
 that ruin the last step.

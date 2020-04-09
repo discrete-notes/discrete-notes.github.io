@@ -8,7 +8,7 @@ permalink: october-2019-notes-distances
 Some notes for October 2019, related to distances and to moving stuff.
 
 --- 
-![](assets/farmacia.jpg){: .center-image height="600px"}
+![](assets/farmacia.jpg){: .center-image width="60%"}
 <p align="center"><small><i>
 A lot is going on in Chile. Fortunately there are some good recipes.
 </i></small></p>
@@ -50,7 +50,7 @@ bijection $f: A \rightarrow B$ , the cost of transporting $A$ to $B$
 through $f$ is the sum over the elements of $a$ of the distances 
 from $a$ to $f(a)$.
 
-![](assets/earth-moving.jpg){: .center-image height="200px"}
+![](assets/earth-moving.jpg){: .center-image width="40%"}
 
 Now given two point sets, the earth mover distance is the minimum such 
 distance over all bijection:
@@ -95,7 +95,7 @@ cell has 5 grains. The cells that have 2 or more grains are "unstable"
 and give one grain to their left neighbor and one grain to their right 
 neighbor.
 
-![](assets/sandpile.jpg){: .center-image height="180px"}
+![](assets/sandpile.jpg){: .center-image width="100%"}
 
 Note that the dynamic is not exactly what you would expect from a real 
 sandpile, but it is very simple and has very nice properties.
@@ -115,7 +115,7 @@ the (metric) [traveling salesman problem](https://en.wikipedia.org/wiki/Travelli
 They consist in iteratively looking for 2 (respectively $k$ edges) to modify to improve the 
 cost of the tour. Here is an example for 2-OPT.
 
-![](assets/2opt.jpg){: .center-image height="200px"}
+![](assets/2opt.jpg){: .center-image width="80%"}
 
 This heuristic performs poorly in the worst-case: exponential time, and 
 approximation ratio in $\theta(\sqrt n)$. But it performs well in practice.

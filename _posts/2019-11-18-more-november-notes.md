@@ -8,7 +8,7 @@ permalink: more-november-2019
 Some more notes for November 2019. 
 
 --- 
-![](assets/nueva-constitucion.jpg){: .center-image height="400px"}
+![](assets/nueva-constitucion.jpg){: .center-image width="80%"}
 <p align="center"><small><i>
 </i></small></p>
 ---
@@ -94,7 +94,7 @@ the graphs that are Delaunay triangulations, always have a perfect
 matching (that is a matching of size $n/2$ if $n$ is even, and $(n-1)/2$
 is $n$ is odd).
 
-![](assets/delaunay.png){: .center-image height="250px"}
+![](assets/delaunay.png){: .center-image width="100%"}
 <p align="center"><small><i>
 A point set, its Delaunay triangulation, and the associated graph with a perfect matching.
 </i></small></p>

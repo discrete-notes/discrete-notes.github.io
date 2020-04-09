@@ -12,7 +12,7 @@ This post is a quick introduction to local algorithms, with the example of the
 maximal independent set problem. If you have heard about the local model before, 
 you probably know everything in this post. 
 
-![](assets/caravane-2.jpg){: .center-image height="300px"}
+![](assets/caravane-2.jpg){: .center-image width="90%"}
 
 ## A problem&#58; computing a maximal independent set
 A typical problem of network distributed computing is computing a 
@@ -23,13 +23,13 @@ are adjacent, and for every node not in $S$, there is neighbor in $S$.
 The two pictures below *do not* represent an MIS: the first one 
 because of two adjacent selected nodes, and the second because of an "isolated node". 
 
-![](assets/MIS-arete.png){: .center-image height="300px"} | ![](assets/MIS-noeud.png){: .center-image height="300px"}
+![](assets/MIS-arete.png){: .center-image width="100%"} | ![](assets/MIS-noeud.png){: .center-image width="100%"}
 
 The two following pictures represent MISs. Note that one in *maximum* (it has 3 
 nodes, and no MIS on 4 nodes exists), but the other is just maximal, and it's 
 also fine.
 
-![](assets/MIS-maxi.png){: .center-image height="300px"} | ![](assets/MIS-pas-maxi.png){: .center-image height="300px"}
+![](assets/MIS-maxi.png){: .center-image width="100%"} | ![](assets/MIS-pas-maxi.png){: .center-image width="100%"}
 
 
 ## Easy to solve in a centralized manner
@@ -44,7 +44,7 @@ An algorithm is the following:
 2. Put it in the MIS 
 3. Label this node and all its neighbors as *inactive*
 
-![](assets/MIS-seq-1.png){: .center-image height="200px"}|![](assets/MIS-seq-2.png){: .center-image height="200px"}|![](assets/MIS-seq-3.png){: .center-image height="200px"}
+![](assets/MIS-seq-1.png){: .center-image width="100%"}|![](assets/MIS-seq-2.png){: .center-image width="100%"}|![](assets/MIS-seq-3.png){: .center-image width="100%"}
 
 A first problem for us, with this algorithm, is that it is not distributed: you
 need an external entity to chose the "arbitrary active node". This is some kind 
@@ -108,7 +108,7 @@ output the part of the solution that correspond to the node.
 The following set of pictures shows how the information about the existence of
 the egde (2,5) is built and then broadcasted to the whole graph.
 
-![](assets/flooding-1.png){: .center-image height="200px"} | ![](assets/flooding-2.png){: .center-image height="200px"} | ![](assets/flooding-3.png){: .center-image height="200px"}
+![](assets/flooding-1.png){: .center-image width="100%"} | ![](assets/flooding-2.png){: .center-image width="100%"} | ![](assets/flooding-3.png){: .center-image width="100%"}
 
 This algorithm is correct because after $n$ steps of flooding, all nodes know 
 about all the edges, thus the local copy of the graph that each node has is 

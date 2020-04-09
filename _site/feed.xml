@@ -15,7 +15,7 @@ This post is a quick introduction to local algorithms, with the example of the
 maximal independent set problem. If you have heard about the local model before, 
 you probably know everything in this post.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/caravane-2.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/caravane-2.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;a-problem58-computing-a-maximal-independent-set&quot;&gt;A problem: computing a maximal independent set&lt;/h2&gt;
 &lt;p&gt;A typical problem of network distributed computing is computing a 
@@ -29,8 +29,8 @@ because of two adjacent selected nodes, and the second because of an “isolated
 &lt;table&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;assets/MIS-arete.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;assets/MIS-noeud.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/MIS-arete.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/MIS-noeud.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -42,8 +42,8 @@ also fine.&lt;/p&gt;
 &lt;table&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;assets/MIS-maxi.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt; &lt;img src=&quot;assets/MIS-pas-maxi.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;300px&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/MIS-maxi.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;img src=&quot;assets/MIS-pas-maxi.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -67,9 +67,9 @@ An algorithm is the following:&lt;/p&gt;
 &lt;table&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;assets/MIS-seq-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;200px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;assets/MIS-seq-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;200px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;assets/MIS-seq-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;200px&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/MIS-seq-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/MIS-seq-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/MIS-seq-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -149,9 +149,9 @@ the egde (2,5) is built and then broadcasted to the whole graph.&lt;/p&gt;
 &lt;table&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;assets/flooding-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;200px&quot; /&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;img src=&quot;assets/flooding-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;200px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;assets/flooding-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; height=&quot;200px&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/flooding-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;img src=&quot;assets/flooding-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/flooding-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;

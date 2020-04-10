@@ -7,6 +7,190 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Network decomposition 2&amp;#58; Impact on distributed algorithms</title>
+        <description>&lt;p&gt;This the second post of a series on distributed network decomposition. 
+The introductory post of this series is 
+&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-0&quot;&gt;here&lt;/a&gt;. 
+This post explains why network decomposition is useful.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/caravane-2.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;recap-of-previous-episodes&quot;&gt;Recap of previous episodes&lt;/h3&gt;
+
+&lt;p&gt;We saw in the 
+&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-1-local-algorithms&quot;&gt;first post&lt;/a&gt; 
+of the series that one can simulate the greedy centralized algorithm in the local 
+model, by using the identifiers as a schedule, but that this was horribly slow.
+We also looked at an algorithm that gather the whole topology of the graph, this
+will be useful here.&lt;/p&gt;
+
+&lt;h2 id=&quot;everything-is-easier-with-a-coloring&quot;&gt;Everything is easier with a coloring&lt;/h2&gt;
+
+&lt;p&gt;It is easy to see how we could use less time steps to run the greedy algorithm: 
+if you have two nodes that are far enough one from the other, you can select 
+both without running into trouble. And then instead of two, you can select a
+large number of nodes, as long as they are far away one from the other. 
+This way in one round you can select and de-select a lot of nodes.&lt;/p&gt;
+
+&lt;p&gt;Now, more generally, imagine that a mysterious friend gives you a (proper) 
+$k$-coloring of the graph. You can use it to parallelize the algorithm the 
+following way. First, pick the first color, select all of its nodes, de-select 
+all the nodes adjacent to these nodes. This cannot create a problem as the nodes
+of a color class cannot be adjacent. Then continue by doing the same with the 
+nodes of the second color that are still active. And so on and so 
+forth, until you have considered all the colors.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/MIS-coloring-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/MIS-coloring-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/MIS-coloring-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/MIS-coloring-4.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;This algorithm basically takes $k$ times steps, which is awesome if your mysterious 
+friend gave you a 10-coloring.&lt;/p&gt;
+
+&lt;p&gt;Now there are two problems:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;You do not have a mysterious friend, and computing a good coloring yourself is 
+essentially as hard as computing the MIS.&lt;/li&gt;
+  &lt;li&gt;The graph might not be colorable with a small number of colors: maybe it’s
+chromatic number is $n/2$, and then the algorithm takes $n/2$ rounds, which is 
+not much better than before.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;network-decomposition-to-the-rescue&quot;&gt; Network decomposition to the rescue&lt;/h2&gt;
+
+&lt;p&gt;The idea of network decomposition is to relax the strong constraints of a 
+coloring into something more handy, while keeping the idea of a schedule of the 
+type:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;All nodes of group 1 do something and all the others are passive. At the end 
+of this phase, they all have an output.&lt;/li&gt;
+  &lt;li&gt;All nodes of group 2 do something and all the others are passive. At the end 
+of this phase, they all have an output.&lt;/li&gt;
+  &lt;li&gt;Etc.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In a nework decomposition, instead of having a coloring “at the level of the nodes” that 
+is where every node has a color different from its neighbors, we will color 
+clusters of nodes and have a coloring “at the level of the clusters”. In some 
+sense we change scale. A network decomposition looks a bit like this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/impact-decompo-6.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now there are three questions: What is exactly a network decomposition? 
+How to use it? and How to compute it?&lt;/p&gt;
+
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Definition&lt;/em&gt; A network decomposition with parameters $c$ and $d$ is a labeling of 
+the nodes with colors from 1 to $c$, such that for any given color, the (maximal)
+connected components with this color have diameter at most $d$.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/impact-decompo-5.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;[There are some subtleties with the definition, but let’s wait a bit before 
+looking into that.]&lt;/p&gt;
+
+&lt;p&gt;So for example a proper $k$-coloring is a network decomposition with parameter 
+$d=1$ and $c=k$. Also it is easy to have a network decomposition with parameters
+$d=n$ and $c=1$: color all nodes with color 1. 
+In all this series of posts, what we will look for is a decomposition where both 
+parameters are (poly)logarithmic in $n$.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-use-it&quot;&gt;How to use it?&lt;/h2&gt;
+
+&lt;p&gt;We cannot use the exact same strategy as when we had a proper coloring. Indeed, 
+in a network decomposition several nodes of the same color can be adjacent, thus 
+they cannot just wake up and select themselves. 
+Now it’s useful to remember the last part of the previous post about a general
+algorithm to solve any problem in time $O(n)$. 
+Basically this algorithm was doing the following: at any point in time, every 
+node sends to its neighbors everything it knows about the graph so far. Then
+steps by steps we have the following:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;When it starts a node knows only its identifier, and it sends it to its 
+neighbors.&lt;/li&gt;
+  &lt;li&gt;Then it receives the identifiers of its neighbors, thus in some sense it knows 
+the graph at distance one around itself: it knows its degree and the IDs of its 
+neighbors.&lt;/li&gt;
+  &lt;li&gt;Then the node sends this information to its neighbors, and it recives the 
+analogue information from its neighbors. With this, it can reconstruct its 
+neighborhood at distance 2. That is, it is exactly the same as if it could see 
+at distance 2 in the graph.&lt;/li&gt;
+  &lt;li&gt;Iterating this process, after $k$ steps all nodes know their neighborhoods 
+at distance $k$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In the proof of the general $O(n)$ algorithm, we iterated this process until 
+every node could see all the graph. That is we waited for $D$ steps, where $D$ 
+is the diameter of the graph (and then as $D \leq n$, we got the result). But this 
+process can be useful even if we do not wait up to $D$ rounds, that is, even if 
+the nodes do not see the whole graph.&lt;/p&gt;
+
+&lt;p&gt;Given the network decomposition, let’s start by activating all the nodes of 
+color 1. Now use the protocol above, for $d$ rounds. After this time, a node of
+color 1 knows all the nodes of its connected component. Indeed it can see at 
+distance $d$ and we have been promised that the diameter of each connected 
+component is at most $d$. Once this is done, we ask each node of the connected 
+component to forget about the rest of the graph, to compute an MIS in what 
+remains, and to output whether it is selected or not in this MIS. Note that it 
+is exactly the same thing as what we did in the previous post but on a subgraph.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/impact-decompo-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/impact-decompo-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;At the end of the phase, we have only selected and non-selected nodes in all the 
+connected components of the first color. Note that these local MIS are correct, 
+in the sense that there is no conflict: two connected components are necessarily 
+non-adjacent (otherwise they wouldn’t be maximal). To finish this phase with the 
+first color class, we de-select the nodes of the other color classes that are 
+adjacent to a newly selected node of the first color class. After this step, all
+these nodes will not participate in the computation, and we can imagine that 
+they are removed from the graph&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/impact-decompo-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/impact-decompo-4.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;We can iterate this for all the color classes, just as we did when we had a 
+proper coloring. Let us check the complexity. For each color we need the view at 
+distance $d$, which takes $d$ rounds, and there are $c$ colors, so we have an 
+algorithm in basically $d\times c$ rounds. As we look for a network decomposition 
+with polylogarithmic parameters, this gives us a polylogarithmic algorithm, 
+which is awesome!&lt;/p&gt;
+
+&lt;p&gt;But now we need to be able to build the network decomposition fast. This is the 
+core topic of this series of posts.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 10 Apr 2020 00:00:00 +0200</pubDate>
+        <link>https://discrete-notes.github.io///network-decomposition-2-impact</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///network-decomposition-2-impact</guid>
+      </item>
+    
+      <item>
         <title>Network decomposition 1&amp;#58; local algorithms</title>
         <description>&lt;p&gt;This the first real post of a series on distributed network decomposition. 
 The introductory post of this series is 
@@ -15,7 +199,7 @@ This post is a quick introduction to local algorithms, with the example of the
 maximal independent set problem. If you have heard about the local model before, 
 you probably know everything in this post.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/caravane-2.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/caravane-1.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;a-problem58-computing-a-maximal-independent-set&quot;&gt;A problem: computing a maximal independent set&lt;/h2&gt;
 &lt;p&gt;A typical problem of network distributed computing is computing a 
@@ -171,7 +355,7 @@ correct, and then the output of the algorithm is also correct.&lt;/p&gt;
         <description>&lt;p&gt;This post is an introduction (and a table of contents) for a series of posts on
 distributed network decomposition.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/caravane-1.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/caravane-0.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;One of the important papers of these recent years in distributed graph 
 algorithms will appear at STOC this summer:&lt;/p&gt;
@@ -192,11 +376,11 @@ this.&lt;/p&gt;
 &lt;p&gt;Here is the my current plan for this series:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-1&quot;&gt;Local algorithms&lt;/a&gt;&lt;/em&gt;, 
+  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-1-local-algorithms&quot;&gt;Local algorithms&lt;/a&gt;&lt;/em&gt;, 
 an introduction to local algorithm, with the example of 
 the maximal independent set problem.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Impact for distributed algorithms&lt;/em&gt;, that is, why is a network decomposition so 
-useful.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-2-impact&quot;&gt;Impact for distributed algorithms&lt;/a&gt;&lt;/em&gt;, 
+that is, why is a network decomposition so useful.&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;Centralized construction&lt;/em&gt;, in particular, why such decomposition with good 
 parameters exist.&lt;/li&gt;
   &lt;li&gt;(and more) TBA&lt;/li&gt;
@@ -236,7 +420,7 @@ get as a whole if they were to collaborate together.&lt;/p&gt;
 
 &lt;p&gt;Now, assume that all players collaborate, and get some pay-off $P$. How should 
 we distribute $P$, using $f$? The idea is the following. First chose an 
-arbitrary order on the players, for simplcity, let say the natural order $1, 2, 
+arbitrary order on the players, for simplicity, let say the natural order $1, 2, 
 …,N$. Then player $1$, gets $f(${$1$}$)$, player $2$ gets $f(${$1,2$}$) - 
 f(${$1$}$)$ etc. 
 That seems pretty reasonable: every player gets the marginal value it adds
@@ -898,83 +1082,6 @@ of a talk at &lt;a href=&quot;http://2019.highlightsofalgorithms.org/&quot;&gt;H
         <pubDate>Mon, 18 Nov 2019 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///more-november-2019</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///more-november-2019</guid>
-      </item>
-    
-      <item>
-        <title>Mid-November (non-technical) notes</title>
-        <description>&lt;p&gt;Some notes about a new conference, a new research organization etc.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;assets/comida-india.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
-&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;conference-model-survey&quot;&gt;Conference model survey&lt;/h2&gt;
-
-&lt;p&gt;An online survey has been created &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSfOmbqTTfQfUYEXADCLLqat-OAl7XUh8gFceg27uDfpr_NaaQ/viewform&quot;&gt;here&lt;/a&gt; to gather the opinions of the distributed 
-computing community about its model of conferences. Topics include:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;changing from one deadline to three deadlines a year. Basically it’s like 
-having the reviewing process made three times (with a smaller number of papers), 
-and then having a conference with the papers accepted to any of the three phases.&lt;/li&gt;
-  &lt;li&gt;collocating the two main conferences of the domain.&lt;/li&gt;
-  &lt;li&gt;changing the format (more keynotes, or shorter talks etc.)&lt;/li&gt;
-  &lt;li&gt;transitioning to a journal model.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Details can be found in the survey.&lt;/p&gt;
-
-&lt;h2 id=&quot;paper-presentation-videos&quot;&gt;Paper presentation videos&lt;/h2&gt;
-
-&lt;p&gt;One of the side topics of the survey is the possibility for the 
-authors to upload a video presenting their papers. It’s something I have thought
-of doing for my papers, but finally didn’t try.&lt;/p&gt;
-
-&lt;p&gt;Till Miltzow is a researcher in graph theory and he records a talk for every 
-paper he has, see &lt;a href=&quot;https://sites.google.com/view/miltzow/publications&quot;&gt;here&lt;/a&gt;. 
-I think it’s good!&lt;/p&gt;
-
-&lt;h2 id=&quot;the-polytcs-project&quot;&gt;The PolyTCS project&lt;/h2&gt;
-
-&lt;p&gt;You may know the &lt;a href=&quot;https://en.wikipedia.org/wiki/Polymath_Project&quot;&gt;Polymath Project&lt;/a&gt;,
-which is a project from the math community. It consists in choosing an open problem, 
-and then working on this problem in a massively collaborative way: everything is
-public, and everyone can help. This project has been quite successful, with great
-collaborations, and great papers.&lt;/p&gt;
-
-&lt;p&gt;A similar project has been launched in TCS: 
-&lt;a href=&quot;https://polytcs.wordpress.com/&quot;&gt;The PolyTCS project&lt;/a&gt;.
-The first problem is about boolean functions, see 
-&lt;a href=&quot;https://polytcs.wordpress.com/2019/11/01/the-entropy-influence-conjecture/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;forc-conference&quot;&gt;FORC conference&lt;/h2&gt;
-
-&lt;p&gt;A new conference in TCS: &lt;a href=&quot;https://responsiblecomputing.org/forc-2020-call-for-paper/&quot;&gt;Symposium on the Foundations of Responsible Computing (FORC)&lt;/a&gt;. Topics include privacy, fairness and electoral processes.&lt;/p&gt;
-
-&lt;h2 id=&quot;symbolic-computations-in-python&quot;&gt;Symbolic computations in python&lt;/h2&gt;
-
-&lt;p&gt;I recently had to do a lot of small computations on toy examples. To check the 
-computations, I wanted to have some symbolic math software, but the usual
-ones (e.g. Maple) are big machines, and often not open-source. If you are in the 
-same situation, python with &lt;a href=&quot;https://www.sympy.org/en/index.html&quot;&gt;sympy&lt;/a&gt; is a 
-good choice.&lt;/p&gt;
-
-&lt;h2 id=&quot;pull-requests-for-this-blog&quot;&gt;Pull requests for this blog&lt;/h2&gt;
-
-&lt;p&gt;This blog is a github page, that is, it works as a git repository. 
-I recently got some pull requests for it, from my friend 
-&lt;a href=&quot;https://perso.crans.org/besson/me/index.fr.html&quot;&gt;Lilian Besson&lt;/a&gt;. 
-Pull requests is a way to suggest changes, e.g. correct a typo. It is very 
-convenient (on my side): I just have to pull these commits. 
-If you want to know more and correct one of the many typos of this blog, you can 
-take a look at &lt;a href=&quot;https://www.freecodecamp.org/news/how-to-make-your-first-pull-request-on-github/&quot;&gt;this page&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 12 Nov 2019 00:00:00 +0100</pubDate>
-        <link>https://discrete-notes.github.io///mid-november-2019-non-technical</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///mid-november-2019-non-technical</guid>
       </item>
     
   </channel>

@@ -12,7 +12,7 @@ This post is a quick introduction to local algorithms, with the example of the
 maximal independent set problem. If you have heard about the local model before, 
 you probably know everything in this post. 
 
-![](assets/caravane-2.jpg){: .center-image width="90%"}
+![](assets/caravane-1.jpg){: .center-image width="90%"}
 
 ## A problem&#58; computing a maximal independent set
 A typical problem of network distributed computing is computing a 

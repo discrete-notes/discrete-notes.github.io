@@ -51,7 +51,7 @@ essentially as hard as computing the MIS.
 chromatic number is $n/2$, and then the algorithm takes $n/2$ rounds, which is 
 not much better than before.
 
-## Network decomposition to the rescue
+## Network decomposition to the rescue
 
 The idea of network decomposition is to relax the strong constraints of a 
 coloring into something more handy, while keeping the idea of a schedule of the 

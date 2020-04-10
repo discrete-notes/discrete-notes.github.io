@@ -12,7 +12,7 @@ This post explains why network decomposition is useful.
 
 ![](assets/caravane-2.jpg){: .center-image width="90%"}
 
-###Recap of previous episodes
+### Recap of previous episodes
 
 We saw in the 
 [first post](https://discrete-notes.github.io/network-decomposition-1-local-algorithms) 

@@ -103,8 +103,13 @@ Walker.]
 Something strange about this is that there is no reaon a priori for the movement
 to be rotational: it's just something (the honey) falling on something else 
 (the pancake). I was curious whether this could appear in a very simple discrete 
-model. Here is a naive model, which probably makes little sense, but shows
-some rotation, without explicitely refering to a rotation.
+model.
+I started thinking about a sandpile model (like the one mentioned 
+[here](https://discrete-notes.github.io/october-2019-notes-distances) recently) 
+to simulate the behaviour of the honey, but at the end I tried to design the 
+most simple model that would "create rotation". Here is a naive model, that does 
+not have a sandpile flavour (and probably makes little sense), but shows some 
+rotation, without explicitely refering to a rotation.
 
 Start with an hexagonal grid representing the pancake (because it's easier than 
 a square grid). The yellow cell is where the honey is currently arriving, and 

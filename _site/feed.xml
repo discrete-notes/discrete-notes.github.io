@@ -7,6 +7,75 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Online talks</title>
+        <description>&lt;p&gt;Many things have gone online, including talks and conferences. A small post with
+pointers.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/plume.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;online-seminars&quot;&gt;Online seminars&lt;/h2&gt;
+
+&lt;p&gt;Many seminars have moved to online settings.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Terence Tao has a 
+&lt;a href=&quot;https://terrytao.wordpress.com/2020/04/07/mathematics-seminars-list/&quot;&gt;list of list of online maths seminars&lt;/a&gt;, 
+including &lt;a href=&quot;http://math.mit.edu/~aosun/online_seminars.html&quot;&gt;Online maths seminars&lt;/a&gt; 
+that has more than 15 talks per day (in all kinds of mathematics).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The same thing but speciafically for TCS can be found 
+&lt;a href=&quot;https://cstheorytalks.wordpress.com/&quot;&gt;here&lt;/a&gt;. (One or two talks per day.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Aalto university also has &lt;a href=&quot;https://users.aalto.fi/~uittoj3/seminar.html&quot;&gt;its seminar&lt;/a&gt; 
+(that is not listed (yet?) in the lists above).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The online TCS seminar, &lt;a href=&quot;https://sites.google.com/site/plustcs/&quot;&gt;TCS+&lt;/a&gt; has 
+increased its frequency from one per month to one per week (and all the previous 
+talks are available).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The Simons Institute also has a lot of good videos, see 
+&lt;a href=&quot;https://simons.berkeley.edu/videos&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;online-courses&quot;&gt;Online courses&lt;/h2&gt;
+
+&lt;p&gt;Many universities have MOOCs, or at least videos of some classes.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jukka Suomela has just started a new iteration of his parallel programming 
+class, and this year of course everything is online. The videos are 
+&lt;a href=&quot;https://www.youtube.com/playlist?list=PL2RY7P3JxZN9Eeu2-XUbD4E4N3UNL6PV8&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;MIT has, for example, videos lectures 
+&lt;a href=&quot;https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-890-algorithmic-lower-bounds-fun-with-hardness-proofs-fall-2014/&quot;&gt;about lower bounds&lt;/a&gt;,
+and &lt;a href=&quot;https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/&quot;&gt;advanced data structures&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;online-conferences&quot;&gt;Online conferences&lt;/h2&gt;
+
+&lt;p&gt;Conferences that were suppose to take place this spring or this summer decide one
+by one to held virtually. This is the case of &lt;a href=&quot;https://icalp2020.saarland-informatics-campus.de/&quot;&gt;ICALP&lt;/a&gt;
+and &lt;a href=&quot;http://acm-stoc.org/stoc2020/&quot;&gt;STOC&lt;/a&gt; for example.&lt;/p&gt;
+
+&lt;p&gt;The ACM issued a guide on how to organize such online conferences. The pdf is 
+&lt;a href=&quot;https://people.clarkson.edu/~jmatthew/acm/VirtualConferences_GuideToBestPractices_CURRENT.pdf&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 14 Apr 2020 00:00:00 +0200</pubDate>
+        <link>https://discrete-notes.github.io///online-talks</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///online-talks</guid>
+      </item>
+    
+      <item>
         <title>Network decomposition 2&amp;#58; Impact on distributed algorithms</title>
         <description>&lt;p&gt;This the second post of a series on distributed network decomposition. 
 The introductory post of this series is 
@@ -66,7 +135,7 @@ chromatic number is $n/2$, and then the algorithm takes $n/2$ rounds, which is
 not much better than before.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;network-decomposition-to-the-rescue&quot;&gt; Network decomposition to the rescue&lt;/h2&gt;
+&lt;h2 id=&quot;network-decomposition-to-the-rescue&quot;&gt;Network decomposition to the rescue&lt;/h2&gt;
 
 &lt;p&gt;The idea of network decomposition is to relax the strong constraints of a 
 coloring into something more handy, while keeping the idea of a schedule of the 
@@ -489,8 +558,13 @@ Walker.]&lt;/p&gt;
 &lt;p&gt;Something strange about this is that there is no reaon a priori for the movement
 to be rotational: it’s just something (the honey) falling on something else 
 (the pancake). I was curious whether this could appear in a very simple discrete 
-model. Here is a naive model, which probably makes little sense, but shows
-some rotation, without explicitely refering to a rotation.&lt;/p&gt;
+model.
+I started thinking about a sandpile model (like the one mentioned 
+&lt;a href=&quot;https://discrete-notes.github.io/october-2019-notes-distances&quot;&gt;here&lt;/a&gt; recently) 
+to simulate the behaviour of the honey, but at the end I tried to design the 
+most simple model that would “create rotation”. Here is a naive model, that does 
+not have a sandpile flavour (and probably makes little sense), but shows some 
+rotation, without explicitely refering to a rotation.&lt;/p&gt;
 
 &lt;p&gt;Start with an hexagonal grid representing the pancake (because it’s easier than 
 a square grid). The yellow cell is where the honey is currently arriving, and 
@@ -929,159 +1003,6 @@ This can be made precise, by considering a mixture of distributions.&lt;/p&gt;
         <pubDate>Thu, 21 Nov 2019 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///bayesian-auctions</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///bayesian-auctions</guid>
-      </item>
-    
-      <item>
-        <title>More November notes</title>
-        <description>&lt;p&gt;Some more notes for November 2019.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;assets/nueva-constitucion.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
-&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;network-creation-game&quot;&gt;Network creation game&lt;/h2&gt;
-
-&lt;p&gt;Network generation models are mechanisms to create networks. 
-In a classic setting the nodes arrive one after the other and are linked 
-to nodes already in 
-the network following some rules. 
-In another setting, called &lt;em&gt;network creation game&lt;/em&gt; the nodes are players, 
-and they play a game in which they can choose to pay to be linked to 
-other nodes. 
-The outcome of the game is a network. 
-The cost that a player pays is $\alpha$ for every node it decides to be 
-linked to, plus 
-the sum of the distances from this node to all the other nodes. 
-In other words, a node wants to have short distance to every node, but 
-cannot add a link to every node, because it would be too expensive.&lt;/p&gt;
-
-&lt;p&gt;For this game one can study the usual objects of 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Algorithmic_game_theory&quot;&gt;algorithmic game theory&lt;/a&gt;:
-the &lt;a href=&quot;https://en.wikipedia.org/wiki/Nash_equilibrium&quot;&gt;Nash equilibrium&lt;/a&gt; 
-and the
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Price_of_anarchy&quot;&gt;price of anarchy&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It is conjectured that the price of anarchy is constant for 
-any value $\alpha$, and &lt;a href=&quot;https://arxiv.org/abs/1909.09799&quot;&gt;this recent preprint&lt;/a&gt; 
-makes progress on the conjecture.&lt;/p&gt;
-
-&lt;h2 id=&quot;lempel-ziv-compression-algorithms&quot;&gt;Lempel-Ziv compression algorithms&lt;/h2&gt;
-
-&lt;p&gt;Lempel-Ziv algorithm is a classic compression algorithm (or more 
-precisely a classic family of algorithms, are there are several versions). 
-A &lt;a href=&quot;https://semidoc.github.io/lagarde-catastrophe&quot;&gt;blog post on Semidoc&lt;/a&gt; 
-describes the algorithm and gives an overview of 
-&lt;a href=&quot;https://arxiv.org/abs/1707.04312&quot;&gt;this paper&lt;/a&gt; which studies how the compression
-rate can change when the original text is changed by one bit.&lt;/p&gt;
-
-&lt;p&gt;Two recent papers on arxiv deal with Lempel-Ziv:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1910.00941.pdf&quot;&gt;The first one&lt;/a&gt; gives a new analysis of 
-the fact that Lempel-Ziv is optimal for some models of random text (hidden 
-Markov sources)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1802.10347&quot;&gt;The second one&lt;/a&gt; improves the complexity of 
-the algorithm decompressing the text.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;multi-armed-bandit&quot;&gt;Multi-armed bandit&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;Multi-armed bandit&lt;/em&gt; is an expression that appears here and there in 
-TCS conference, and very often in theoretical machine learning. It is a type of 
-problem where one has to make decisions one after the other, to 
-maximize some pay-off. Basically, at each round, it has the choice 
-between several options called the “arms” of the bandit (like the levers 
-of different slot-machines).&lt;/p&gt;
-
-&lt;p&gt;A basic version is the following framework:&lt;/p&gt;
-
-&lt;p&gt;Given: $k$  arms, $T$ rounds.&lt;/p&gt;
-
-&lt;p&gt;In each round $t\in[T]$:
-1. Algorithm picks arm $a_t$.
-2. Algorithm observes reward $r_t\in [0,1]$ for the chosen arm.&lt;/p&gt;
-
-&lt;p&gt;Pay-off: the sum of the rewards&lt;/p&gt;
-
-&lt;p&gt;The reward for an arm comes from an unknown distribution, but if the 
-algorithm chooses an arm repeatedly, it somehow learns this distribution. 
-There is already a lot to say on this simple case, and there are a flurry
-of papers about this, these days.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1904.07272.pdf&quot;&gt;Here&lt;/a&gt; is a recent introduction 
-to multi-armed bandit. Also if you are in Rennes, France, on Wednesday
-there is a 
-&lt;a href=&quot;https://perso.crans.org/besson/phd/defense/&quot;&gt;PhD defense on this topic&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;delaunay-triangulations-have-perfect-matchings&quot;&gt;Delaunay triangulations have perfect matchings&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Delaunay_triangulation&quot;&gt;Delaunay triangulations&lt;/a&gt; 
-are triangulations of point sets in the plane. I recentely learnt that
-the graphs that are Delaunay triangulations, always have a perfect 
-matching (that is a matching of size $n/2$ if $n$ is even, and $(n-1)/2$
-is $n$ is odd).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/delaunay.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
-A point set, its Delaunay triangulation, and the associated graph with a perfect matching.
-&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
-
-&lt;p&gt;A short proof of this appeared on arxiv recently, 
-&lt;a href=&quot;https://arxiv.org/pdf/1907.01617.pdf&quot;&gt;here&lt;/a&gt;. (Actually it is a stronger
-result that is proved, about the so-called “toughness” of Delaunay 
-triangulations.)&lt;/p&gt;
-
-&lt;h2 id=&quot;learning-augmented-algorithms&quot;&gt;Learning-augmented algorithms&lt;/h2&gt;
-
-&lt;p&gt;Learning-augmented algorithms are algorithms that can use informtation
-coming from some machine learning source. 
-Here is an example.&lt;/p&gt;
-
-&lt;p&gt;Binary search takes $O(\log n)$ in the worst-case. 
-Now if you have some neural network (NN) telling you that the element you’re 
-looking for is around position $i$, how do you modify your search? 
-Well you can begin by testing position $i$. Then, if the NN is not perfect, 
-this might not be the right value, but maybe it’s close. Say the value 
-you’re looking for is larger. Then you can try to find a position 
-that has larger value than your element, for example by doing exponential guesses. 
-Once you have both upper and lower bound, you can run the usual binary 
-search.&lt;/p&gt;
-
-&lt;p&gt;If the error (that is, the number of positions between your element
-and the prediction of the NN) is $\mu$, then your algorithm runs in 
-$O(\log \mu)$. This is good: if the prediction is good then you speed up 
-the search, and if it’s bad, then you do not loose much.&lt;/p&gt;
-
-&lt;p&gt;In more general terms, one looks for two properties:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;consistency: the better the prediction, the better the algorithm&lt;/li&gt;
-  &lt;li&gt;robustness: if the predition is bad, then the algorithm does not get 
-much worse.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Note that for real application, one might also be interested in the running 
-time of the NN, and a lot of other things.&lt;/p&gt;
-
-&lt;p&gt;Some material on this topic:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;a &lt;a href=&quot;https://www.mit.edu/~andoni/algoS19/scribes/scribe24.pdf&quot;&gt;lecture note&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://theory.stanford.edu/~sergei/slides/HALG-slides.pdf&quot;&gt;the slides&lt;/a&gt; 
-of a talk at &lt;a href=&quot;http://2019.highlightsofalgorithms.org/&quot;&gt;HALG 2019&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.mit.edu/~vakilian/ttic-workshop.html&quot;&gt;a workshop&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 18 Nov 2019 00:00:00 +0100</pubDate>
-        <link>https://discrete-notes.github.io///more-november-2019</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///more-november-2019</guid>
       </item>
     
   </channel>

@@ -87,213 +87,159 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/stoc-socg-picks">
-        STOC and SOCG picks
+      <a href="/march-2019-notes-1">
+        March notes I.
       </a>
     </h1>
 
-    <span class="post-date">13 Mar 2019</span>
+    <span class="post-date">25 Mar 2019</span>
 
-    <p>A few weeks ago the accepted papers lists of 
-<a href="http://acm-stoc.org/stoc2019/">STOC</a> 
-and 
-<a href="http://eecs.oregonstate.edu/socg19/">SOCG</a> 
-were made public. 
-A bunch of titles caught my attention, and here are a few bits of information on
-some papers I could find online.</p>
+    <p>First half of the March 2019 notes.</p>
+
+<hr />
+<p><img src="assets/mimosa-2.JPG" alt="" class="center-image" width="90%" /></p>
+<p align="center">Mimosa in Jardin des Plantes.</p>
 
 <hr />
 
-<p><img src="assets/saucisses.png" alt="" class="center-image" width="60%" /></p>
+<h2 id="tverbergs-theorem">Tverberg’s theorem</h2>
 
-<hr />
+<p>For geometric algorithms in the plane, one sometimes has go through case by case 
+analysis along the lines of “if this point is below this line, then this and 
+that intersect, if not then…”. 
+Such proofs are a bit boring and it is easy to make mistakes. 
+So when you have a general theorem that does the work for you, it’s good news. 
+Tverberg’s theorem looks like a theorem that could be useful from this point of 
+view.</p>
 
-<h2 id="testing-graphs-in-vertex-distribution-free-models">Testing graphs in vertex-distribution-free models</h2>
+<p><a href="https://en.wikipedia.org/wiki/Tverberg%27s_theorem">Tverberg’s theorem</a> states 
+a condition such that the convex hulls of several sets of points intersect. 
+Precisely: in a $d$-dimensional euclidian space, for any integer $r$, for any 
+set of $(d+1)(r-1)+1$ points, there exists a partition in $r$ subsets such that 
+the convex hulls of the $r$ subsets intersect. 
+The picture below present the case $d=2$ and $r=3$, for $(d+1)(r-1)+1=7$ points, 
+and for one less point. 
+In this last case the theorem does not hold (we just show one partition).</p>
 
-<p>Graph <a href="https://en.wikipedia.org/wiki/Property_testing">property testing</a> 
-basically consists in deciding if a graph has a property 
-or not, by looking only at some parts of it. 
-More precisely one queries a few nodes, and ask for their neighbors for example, 
-and then outputs whether the graph has the property or is far from having 
-it. Note that such a statement can only be true with some probability.
-An introduction to graph property testing is 
-<a href="http://www.wisdom.weizmann.ac.il/~/oded/COL/tgp-intro.pdf">here</a>.</p>
+<p><img src="assets/tverberg.png" alt="" class="center-image" width="70%" /></p>
 
-<p>In the classic model, one is allowed to query a random node, with “random” 
-meaning “uniformly at random”. In a new 
-<a href="http://www.wisdom.weizmann.ac.il/~/oded/VO/vdf.pdf">paper</a>
-the author considers the case where the random access is not uniform but depends 
-on an arbitrary distribution. This in turn implies a change in the definition of 
-being far from a property.</p>
+<p>[I saw the name of this theorem on the SOCG accepted papers list, unfortunately
+the paper is not available online, and we don’t know what they do with this 
+theorem.]</p>
 
-<p>I didn’t dive in the paper, but I imagine the following scenario. 
-Some nodes are more “important” than others. This translates into two things:</p>
+<h2 id="criteria-for-fair-item-assignment">Criteria for fair item assignment</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Fair_item_assignment">Fair item assignement</a> 
+consists, given items and participants, to assign the items to the participants 
+in a fair manner, for some definition of fair. There are many variants of the 
+problem and many ways to define fairness.</p>
+
+<p>Here are a few fairness criteria, to decide if the assignment is fair or not:</p>
 
 <ul>
-  <li>It’s not a very big deal if you don’t detect that something is wrong around
-an unimportant node.</li>
-  <li>Your random queries have more chance to visit an important node than an 
-unimportant node.</li>
+  <li>Max-min fair-share (“I cut, you choose”): every participant is least as happy 
+as if she had cut the set of items first, and then let all the other 
+participants choose before her.</li>
+  <li>Max-min fair-share (“You cut, I choose”): the same but reversed, that is every
+participant is at least as happy as if someone else did the cut, and she could 
+decide first.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Envy-freeness">Envy-freeness</a>: 
+no participant would like to change her items for the items of 
+another participant.</li>
+  <li>Competitive equilibrium from equal incomes: there exists a price for each item
+such that, given the same budget, the participants would choose different items.</li>
 </ul>
 
-<p>For example, you have a dynamic graph, you may not know about newly arrived 
-nodes, but these are less important, so it’s no big deal if you don’t query them
-now.</p>
+<p>[I learnt about this at the CS PhD seminar of Sorbonne university, by Parham 
+Shams.]</p>
 
-<p>[The paper is 
-<em><a href="http://www.wisdom.weizmann.ac.il/~/oded/VO/vdf.pdf">Testing Graphs in Vertex-Distribution-Free Models</a></em>,
-by <a href="http://www.wisdom.weizmann.ac.il/~oded/">Oded Goldreich</a>, 
-and will appear at STOC 2019.
-It was listed in 
-<a href="https://ptreview.sublinear.info/?p=1044">October 2018 property testing review</a>.]</p>
+<h2 id="tai-chi-problem">Tai chi problem</h2>
 
-<h2 id="transportation-problem">Transportation problem</h2>
+<p>When crossing the 
+<a href="https://en.wikipedia.org/wiki/Jardin_des_plantes">Jardin des plantes</a> 
+I often witness the following kind of scene.</p>
 
-<p>The transportation problem is the following. 
-Given a graph, where each node $v$ is given a (positive or negative) supply 
-$\mu(v)$, such that $\sum_v \mu(v)=0$, one has to find a flow to transport the 
-supplies in order to reach the configuration where every node has supply 0. 
-See the picture below.</p>
+<p><img src="assets/taichi.JPG" alt="" class="center-image" width="90%" /></p>
 
-<p><img src="assets/transportation.png" alt="" class="center-image" width="100%" /></p>
+<p>It is people practising <a href="https://en.wikipedia.org/wiki/Tai_chi">taichi</a>. 
+There is a professor in front of the group (with a white cap on the picture)
+who is showing the movements, and everybody is supposed to perform them in 
+real-time (it’s pretty slow).</p>
 
-<p>This is very similar to the 
-<a href="Transportation theory (mathematics)">optimal transport problem</a> in non-discrete 
-mathematics. The <a href="https://arxiv.org/pdf/1902.08384.pdf">paper</a> presents an 
-approximation algorithm for fixed dimensions via continuous optimization.</p>
+<p>The thing is: people on the first row can see the professor, but the ones on the 
+back cannot, so they follow the moves of the people on the rows closer to the 
+professor. Therefore there is a kind of wave from the front to the back. 
+Maybe it can make an interesting problem: how fast does the wave propagate, is 
+it close to a straight line, how does it depend on the size of the participants?</p>
 
-<p>I don’t know how much continuous optimization is used, but it reminds me of an 
-excellent invited talk by 
-<a href="https://people.csail.mit.edu/madry/">Aleksander Mądry</a> at 
-<a href="http://2016.highlightsofalgorithms.org/">HALG 2016</a>, that convinced me that 
-continuous optimization can be a good approach to solve combinatorial problems.
-There is no video of the talk, but 
-<a href="https://www.youtube.com/watch?v=noRNcDbqtVY">this one</a>
-seems pretty close.</p>
+<h2 id="core-algorithms-deployed">Core algorithms deployed</h2>
 
-<p>[The paper is 
-<em><a href="https://arxiv.org/pdf/1902.08384.pdf">Preconditioning for the Geometric Transportation Problem</a></em>
-by <a href="http://www.math.toronto.edu/khesin/">Boris A. Khesin</a>,
-<a href="http://www.cs.toronto.edu/~anikolov/">Aleksandar Nikolov</a>,
-and Dmitry Paramonov, and will appear at SOCG.]</p>
+<p>It is common as a reseacher to have doubt about how useful your research is. 
+In my case, I sometimes wonder whether the algorithmic problem we try to solve 
+really have an impact. 
+It could well be the case that the algorithmic problems that 
+are really useful are the ones that have only basic answers.
+That is, we focus on the sweet spot between trivially easy and trivially hard 
+problems, and this set could have an empty intersection with real-world 
+questions.</p>
 
-<h2 id="lp-roundings-iterated-meets-randomized">LP roundings: iterated meets randomized</h2>
+<p>I was really happy to discover a few years ago 
+<a href="https://cstheory.stackexchange.com/questions/19759/core-algorithms-deployed">the topic “core algorithms deployed”</a>
+on stack exchange,
+that removes any doubt on this regard.</p>
 
-<p>A classic approach in combinatorial optimization is to express the problem as a 
-linear program. 
-Unfortunately, only the fractional case is known to be solvable 
-efficiently, and only the integer solutions can be transfered back to solution 
-for the original problem. 
-A solution is to compute a fractional solution and then to round it to an integer 
-solution. This approach is very powerful for approximation algorithms.</p>
+<h2 id="numerical-errors-in-missile-trajectories">Numerical errors in missile trajectories</h2>
 
-<p>There are two important types of rounding: randomized rounding and iterated 
-rounding. 
-In <a href="https://en.wikipedia.org/wiki/Randomized_rounding">randomized rounding</a>, 
-a fractional variable $x_i$ is simply rounded to 1 
-with probability $x_i$. 
-In iterated rounding, one iteratively modify the fractional solution until it 
-gets to an integral solutions (for example adding some small amount to a set of 
-variables, until they reach 1, etc.). 
-Both roundings have their pros and cons.</p>
+<p>I discovered in the introduction of
+<a href="https://www.lri.fr/~melquion/doc/19-hdr.pdf">this  PhD thesis</a> the following 
+story, illustrating why computer arithmetics is important and difficult.</p>
 
-<p><a href="https://arxiv.org/pdf/1811.01597.pdf">The paper</a> presents a method that 
-combines the two approaches into one common framework, and shows how to use it.</p>
+<p>In 2011, a US “<a href="https://en.wikipedia.org/wiki/Missile_defense">defence missile</a>” 
+missed a “real missile”, with tragic consequences, 
+because of computer arithmetic. 
+The basic reason is the following. 
+There used to be a software doing the trajectory computations, with rounding 
+operations, including on the time variable. This  variable slowly shifted 
+compared to the real time because of these rounding. 
+It sounds dangerous, but it was actually ok: 
+the trajectory computations would consider fast movements 
+so between the start and end of the trajectory, the shift was negligible, and 
+the absolute time did not matter. The problem is that part of the system was 
+updated with more accurate time variable. Then the shift would not be the same 
+in two different parts of the system. Then the shift would not cancel out and 
+this was the bug.</p>
 
-<p>[The paper is 
-<em><a href="https://arxiv.org/pdf/1811.01597.pdf">On a generalization of iterated and randomizedrounding</a></em>
-by <a href="https://www.win.tue.nl/~nikhil/">Nikhil Bansal</a>, and will appear at STOC.]</p>
+<p>[A better explanation can be found in 
+<a href="http://www-users.math.umn.edu/~arnold/disasters/Patriot-dharan-skeel-siam.pdf">this document</a>.
+The PhD thesis has a more light-hearted story about gamers trying to finish a 
+video game level without jumping, and using a slow shift of a platform 
+(also due to rounding errors) to do so.]</p>
 
-<h2 id="queue-layout">Queue layout</h2>
+<h2 id="max-cut-and-planar-graphs">Max cut and planar graphs</h2>
 
-<p>Given a graph, a $k$-queue layout is an ordering of the vertices and a partition 
-of the
-edges into $k$ sets, such that there are not two edges of the same partition, 
-that are nested. 
-Below is an example of a graph and a 2-queue layout of it.</p>
+<p>Two results about <a href="https://en.wikipedia.org/wiki/Maximum_cut">max-cut</a> that I 
+didn’t know:</p>
 
-<p><img src="assets/queue-layout.png" alt="" class="center-image" width="90%" /></p>
+<ul>
+  <li>
+    <p>a cut is maximum if and only if its complement is a minimum odd-circuit cover 
+(this is easy to check, see for example 
+<a href="https://web.engr.oregonstate.edu/~glencora/wiki/uploads/planar-max-cut.pdf">here</a>,
+or simply stare a bit at the picture below.)</p>
+  </li>
+  <li>
+    <p>This can be used to obtain a polynomial-time algorithm for max-cut in planar 
+graphs.</p>
+  </li>
+</ul>
 
-<p>The <a href="https://en.wikipedia.org/wiki/Queue_number">queue number</a> of a graph is 
-the minimum $k$ such that there exists a $k$ layout of the graph. 
-An important open question is whether planar graph have bounded queue number. 
-<a href="https://arxiv.org/pdf/1811.00816.pdf">The paper</a> makes a step towards a positive
-answer, by proving that planar graphs with bounded degree have bounded queue 
-number.</p>
+<p><img src="assets/maxcut.png" alt="" class="center-image" width="95%" /></p>
 
-<p>[The paper is 
-<em><a href="https://arxiv.org/pdf/1811.00816.pdf">Planar Graphs of Bounded Degree have Constant Queue Number</a></em>
-by 
-<a href="http://algo.inf.uni-tuebingen.de/?site=mitarbeiter/michaelbekos/index">Michael A. Bekos</a>, 
-<a href="http://www-pr.informatik.uni-tuebingen.de/?site=mitarbeiter/henryfoerster/index">Henry Förster</a>,
-<a href="https://informatik.uni-koeln.de/ls-juenger/people/gronemann/">Martin Gronemann</a>, 
-<a href="https://i11www.iti.kit.edu/en/members/tamara_mchedlidze/index">Tamara Mchedlidze</a>,
-<a href="http://mozart.diei.unipg.it/montecchiani/">Fabrizio Montecchiani</a>, 
-Chrysanthi Raftopoulou, and
-<a href="https://i11www.iti.kit.edu/en/members/torsten_ueckerdt/index">Torsten Ueckerdt</a>.
-It will appear at STOC (even though the topic is very SOCG-friendly).
-I didn’t know about queue layouts, and it’s good to discover it, as it is yet 
-another example of graph parameter that correspond to a pattern, in the sense of 
-<a href="https://arxiv.org/abs/1812.05913">this paper</a>.]</p>
-
-<h2 id="reachability-of-petri-nets">Reachability of Petri nets</h2>
-
-<p><a href="https://en.wikipedia.org/wiki/Petri_net">Petri nets</a> are very common in 
-theoretical computer science, for 
-example in <a href="https://en.wikipedia.org/wiki/Model_checking">model checking</a>. 
-Nevertheless, it is horribly hard to decide the reachability problem for this 
-model: can you get from a configuration $A$ to a configuration $B$?
-The decidability of the problem was proved only in the 80s, and the best 
-upper bound is non-primitive recursive cubic-Ackermannian (don’t ask what it 
-means, exponential space is already scaring me).</p>
-
-<p>The <a href="https://arxiv.org/pdf/1809.07115.pdf">paper</a> proves that the problem is 
-<a href="https://en.wikipedia.org/wiki/Nonelementary_problem">non-elemetary</a>, that is, 
-its time complexity cannot be bounded by a power tower.</p>
-
-<p>[The paper is 
-<em><a href="https://arxiv.org/pdf/1809.07115.pdf">The Reachability Problem for Petri Nets is Not Elementary</a></em>
-by <a href="https://www.mimuw.edu.pl/~wczerwin/">Wojciech Czerwiński</a>,
-<a href="https://mimuw.edu.pl/~sl/">Sławomir Lasota</a>,
-<a href="https://warwick.ac.uk/fac/sci/dcs/people/ranko_lazic">Ranko Lazić</a>,
-<a href="https://www.labri.fr/perso/leroux/">Jérôme Leroux</a> and 
-<a href="https://www.labri.fr/perso/fmazowiecki/">Filip Mazowiecki</a>; and will appear at STOC.
-In France, <a href="http://www.lsv.fr/~schmitz/index.html.en">Sylvain Schmitz</a> is one 
-of the researcher working on this kind of stratospherical complexities. 
-<a href="http://www.lsv.fr/~halfon/">Simon Halfon</a> one his PhD students at the time, 
-gave an excellent talk on this topic at the 
-<a href="https://www.irif.fr/en/seminaires/doctorants/index">IRIF PhD seminar</a> in 2017.]</p>
-
-<h2 id="quartet-distance-and-4-cycles">Quartet distance and 4-cycles</h2>
-
-<p>The <a href="https://en.wikipedia.org/wiki/Quartet_distance">quartet distance</a> is a 
-distance between phylogenetic trees. More precisely it is a distance between two 
-unrooted trees with labeled leaves. It basically takes all the tuples of four 
-leaves and count how many of them are in different topology in the two trees.</p>
-
-<p>For example in the picture below, for the two trees on the left, we want to 
-decide whether the leaves $a$, $b$, $c$ and $d$ are in the same topology or not. 
-We simplify the tree until we have only these leaves, and we see on the pictures
-on the right<br />
-that it is not the case. Thus this quartet will add one to the distance. 
-(Note that on the left, all leaves should be labeled, but I indicate only the 
-ones we are interested in).</p>
-
-<p><img src="assets/quartet.png" alt="" class="center-image" width="100%" /></p>
-
-<p>The <a href="https://arxiv.org/pdf/1811.06244.pdf">paper</a> shows that computing the 
-problem of computing 
-distance between two trees is equivalent to the problem of computing the number 
-of 4-cycles in a graph, up to 
-polylogarithmic factors. This implies better algorithms and better insights
-on the complexity.</p>
-
-<p>[The paper is
-<em><a href="https://arxiv.org/pdf/1811.06244.pdf">Computing Quartet Distance is Equivalent to Counting 4-Cycles</a></em>
- by Bartłomiej Dudek (whom I have had the chance to meet in EPFL), 
-and <a href="https://sites.google.com/a/cs.uni.wroc.pl/gawry/">Paweł Gawrychowski</a>, and 
-it
-will appear at STOC.]</p>
+<p>[I got aware of this by
+<a href="https://arxiv.org/abs/1903.06061">this preprint</a>
+which presents an algorithm for max-cut whose complexity is parametrized by the 
+<a href="https://en.wikipedia.org/wiki/Crossing_number_(graph_theory)">number of crossing</a> 
+in the drawing of the graph.]</p>
 
 
   </div>

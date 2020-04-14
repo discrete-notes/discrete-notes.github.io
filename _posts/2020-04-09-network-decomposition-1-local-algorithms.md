@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Network decomposition 1&#58; local algorithms
+title: Network decomposition 1&#58; Local algorithms
 redirect_from: "/2020/04/09/network-decomposition-1-local-algorithms/"
 permalink: network-decomposition-1-local-algorithms
 ---

@@ -34,6 +34,6 @@ an introduction to local algorithm, with the example of
 the maximal independent set problem.
 2. *[Impact for distributed algorithms](https://discrete-notes.github.io/network-decomposition-2-impact)*, 
 that is, why is a network decomposition so useful. 
-3. *Centralized construction*, in particular, why such decomposition with good 
-parameters exist.
+3. *[Centralized construction](https://discrete-notes.github.io/network-decomposition-3-centralized)*, 
+how to build a network decomposition with good parameters in a centralized manner.
 4. (and more) TBA 

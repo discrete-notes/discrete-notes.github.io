@@ -646,8 +646,8 @@ an introduction to local algorithm, with the example of
 the maximal independent set problem.&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-2-impact&quot;&gt;Impact for distributed algorithms&lt;/a&gt;&lt;/em&gt;, 
 that is, why is a network decomposition so useful.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Centralized construction&lt;/em&gt;, in particular, why such decomposition with good 
-parameters exist.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-3-centralized&quot;&gt;Centralized construction&lt;/a&gt;&lt;/em&gt;, 
+how to build a network decomposition with good parameters in a centralized manner.&lt;/li&gt;
   &lt;li&gt;(and more) TBA&lt;/li&gt;
 &lt;/ol&gt;
 </description>

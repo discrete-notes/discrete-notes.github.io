@@ -54,7 +54,7 @@ frozen nodes in grey, (3) the remaining nodes and edges after deletion of the
 colored nodes, (4) second color, (5) third color, and (6) the computed coloring.
 </i></small></p>
 
-## Adapting the technique to network decomposition
+## Adapting the technique to network decomposition
 
 We adapt the technique from the previous section to network decomposition. 
 That is, instead of picking a 
@@ -125,7 +125,7 @@ behavior, but it wouldn't help much with the distributed construction that
 follows, as such smart choice could require a large view of the graph.
 Instead we control the size of the balls.
 
-## Growing a ball
+## Growing a ball
 
 A technique to ensure that the interior/border ratio is large is to build the 
 ball around the selected center in the following way. 

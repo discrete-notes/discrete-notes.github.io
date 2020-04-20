@@ -87,176 +87,46 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/notes-pre-COVID19">
-        Notes from pre-COVID19 times
+      <a href="/network-decomposition-0">
+        Network decomposition&#58; Introduction
       </a>
     </h1>
 
-    <span class="post-date">01 Apr 2020</span>
+    <span class="post-date">08 Apr 2020</span>
 
-    <p>Hi there! After abruptly coming back to France because of the virus, I resume
-blogging (instead of traveling, basically). Here is a set of notes that I wrote 
-before the quarantine and everything.</p>
+    <p>This post is an introduction (and a table of contents) for a series of posts on
+distributed network decomposition.</p>
 
-<hr />
+<p><img src="assets/caravane-0.jpg" alt="" class="center-image" width="90%" /></p>
 
-<p><img src="assets/grafitti-donut.jpg" alt="" class="center-image" width="95%" /></p>
+<p>One of the important papers of these recent years in distributed graph 
+algorithms will appear at STOC this summer:</p>
 
-<hr />
+<p>“Polylogarithmic-Time Deterministic Network Decomposition and Distributed 
+Derandomization” by <a href="https://n.ethz.ch/~rozhonv/">Václav Rozhoň</a> and 
+<a href="https://people.inf.ethz.ch/gmohsen/">Mohsen Ghaffari</a> from ETH Zurich.</p>
 
-<h2 id="shapley-value">Shapley value</h2>
+<p>It is basically the description of a distributed algorithm that performs what is 
+called a <em>network decomposition</em>, faster than before. This decomposition can 
+then be used to do many other things fast, and the paper solves several important 
+open problems of the field.</p>
 
-<p>The <a href="https://en.wikipedia.org/wiki/Shapley_value">Shapley value</a> 
-is a concept in game theory. It basically describes how a 
-group of players that have played collaboratively, should share the pay-off of 
-the game, taking into account that some players have contributed more than others. 
-In other words, it is a way to measure how important is each player for the team. 
-For some settings it is proved to be the optimal way to share the gain, with 
-respect to some objective of fairness.</p>
+<p>I quickly looked at the paper when it appeared on arxiv, but I want to 
+understand it better, and writing a series of posts about it is good way to do 
+this.</p>
 
-<p>The setting is the following. There are $N$ players, $1,2, …, N$, and a 
-function $f$ from the subsets of players to the set of possible pay-offs (eg $R$). 
-For a subset $S$ of players, $f(S)$ is the pay-off that the players of $S$ would 
-get as a whole if they were to collaborate together.</p>
+<p>Here is the my current plan for this series:</p>
 
-<p>Now, assume that all players collaborate, and get some pay-off $P$. How should 
-we distribute $P$, using $f$? The idea is the following. First chose an 
-arbitrary order on the players, for simplicity, let say the natural order $1, 2, 
-…,N$. Then player $1$, gets $f(${$1$}$)$, player $2$ gets $f(${$1,2$}$) - 
-f(${$1$}$)$ etc. 
-That seems pretty reasonable: every player gets the marginal value it adds
-to the pay-off. Now this is not always fair, because of the ordering that we 
-chose arbitrarily. Therefore one normalizes this by taking the average over all 
-permutations of the individual pay-offs. This is the Shapley value.</p>
-
-<p>[Thanks to <a href="https://perso.univ-st-etienne.fr/remila/">Eric Remila</a> for telling 
-me about this.]</p>
-
-<h2 id="stochastic-dominance">Stochastic dominance</h2>
-
-<p>Stochastic dominance is a concept of probability that is useful in (algorithmic) 
-game theoretical settings, such as 
-<a href="https://en.wikipedia.org/wiki/Secretary_problem">secretary-type problems</a>.</p>
-
-<p>Let $A$ and $B$ be two real random variables. Then $A$ 
-<a href="https://en.wikipedia.org/wiki/Stochastic_dominance">stochastically dominates</a>
-$B$ if for every $x$, $P(A\geq x)\geq P(B\geq x)$, and for some x, the 
-inequality is strict. In terms of cumulative distribution function, this means 
-$F_A(x)\leq F_B(x)$ for all $x$, and with strict inequality for some $x$.</p>
-
-<p>This notion is useful in the randomized online setting: you want to show that 
-your online algorithm obtains, in expectation, at least half the payoff of a 
-“prophet” that would play knowing all the game in advance. Then 
-it is sometimes useful to show that your algorithm stochastically dominates 
-“half the prophet”.</p>
-
-<p>[I heard about this by working in the group of José Correa in Santiago de Chile.]</p>
-
-<h2 id="polygonization-a-problem-not-known-to-be-easy-or-hard">Polygonization, a problem not known to be easy or hard</h2>
-
-<p>There are not so many reasonable problems for which we have neither a 
-polynomial-time algorithm nor a proof of NP-hardness. Some well-known are 
-<a href="https://en.wikipedia.org/wiki/Graph_isomorphism_problem">graph isomorphism</a> and 
-<a href="https://en.wikipedia.org/wiki/Integer_factorization">integer factorization</a>.
-Wikipedia has a list in its 
-<a href="https://en.wikipedia.org/wiki/NP-intermediate">NP-intermediate article</a>.
-Here is a counting problem that falls into this category.</p>
-
-<p>A polygonization of a set of points is a simple polygon that visits all the 
-points. In the following picture, the points are black and a polygonization is 
-drawn in blue.</p>
-
-<p><img src="assets/polygonization.png" alt="" class="center-image" width="60%" /></p>
-
-<p>The algorithmic problem is: given the point set, count the number of 
-polygonizations it has.</p>
-
-<p>See the two posts by Eppstein on special aspects of this problem, 
-<a href="https://11011110.github.io/blog/2020/01/12/counting-grid-polygonalizations.html">here</a> 
-and 
-<a href="https://11011110.github.io/blog/2020/01/29/unflippable-polygon.html">there</a>.</p>
-
-<h2 id="liquid-rope-coiling-and-discrete-model">Liquid rope coiling and discrete model</h2>
-
-<p>When you pour some honey on a pancake, you can see that the honey behaves a bit 
-like a rope and can get some rotational movement when touching the pancake. 
-Something like this:</p>
-
-<p><img src="assets/miel.png" alt="" class="center-image" width="40%" /></p>
-
-<p>[See also <a href="https://www.youtube.com/watch?v=lZbOV8BIOt8">this video</a> by Jearl 
-Walker.]</p>
-
-<p>Something strange about this is that there is no reaon a priori for the movement
-to be rotational: it’s just something (the honey) falling on something else 
-(the pancake). I was curious whether this could appear in a very simple discrete 
-model.
-I started thinking about a sandpile model (like the one mentioned 
-<a href="https://discrete-notes.github.io/october-2019-notes-distances">here</a> recently) 
-to simulate the behaviour of the honey, but at the end I tried to design the 
-most simple model that would “create rotation”. Here is a naive model, that does 
-not have a sandpile flavour (and probably makes little sense), but shows some 
-rotation, without explicitely refering to a rotation.</p>
-
-<p>Start with an hexagonal grid representing the pancake (because it’s easier than 
-a square grid). The yellow cell is where the honey is currently arriving, and 
-the orange circle is the projection of the origin of the honey (e.g. the spoon) 
-on the pancake.</p>
-
-<p><img src="assets/miel1.png" alt="" class="center-image" width="40%" /></p>
-
-<p>Now there are two forces. One is the “speed” of the yellow patch, that simulates
-the fact that the honey tends to go where there is less honey, and the very last 
-cell visited has more, so is repulsive. It is represented by the yellow 
-arrow. The other one is the attraction of the orange circle, that simulates the 
-fact that the honey is still “tied” to the spoon. It is represented by an 
-orange arrow. Now the average of the two forces is the red arrow, that is 
-pointing to the next cell.</p>
-
-<p><img src="assets/miel2.png" alt="" class="center-image" width="40%" /></p>
-
-<p>The proccess is repeated, and the yellow patch is circulating around the 
-cell with a orange circle.</p>
-
-<p><img src="assets/miel3.png" alt="" class="center-image" width="40%" /></p>
-
-<p>Well it’s not a very fancy model, in particular it doesn’t make a difference 
-between honey on a pancake, and a planet around the sun, but maybe it can be 
-improved..!</p>
-
-<p>Anyway, physicists prefer continuous models, and a paper about the modelization 
-of liquid rope coiling is available 
-<a href="https://www.annualreviews.org/doi/10.1146/annurev-fluid-120710-101244">here</a>.</p>
-
-<p>[I learned about research on liquid rope coiling in 
-<a href="https://www.pourlascience.fr/sd/physique/les-acrobaties-des-filaments-liquides-8027.php">this article</a>
-in the French popularization magazine “Pour la science”.]</p>
-
-<h2 id="other-notes">Other notes</h2>
-<ul>
-  <li>
-    <p>A latex commands that some of my coauthors didn’t know: 
-<code>\scalebox{x}{picture}</code> allows to scale a picture by a factor x.</p>
-  </li>
-  <li>
-    <p>After trying various techniques and packages to write comments in latex files, 
-I ended up simply using text in color with 
-<code>\textcolor{color name}{text}</code>, but sometimes (eg for the revision of
-a journal paper), one needs to color a large patch of text, and 
-<code>textcolor</code> does not allow this. For example you cannot color two 
-sections. Then I rediscovered, that one can simply change the text color at any 
-point with <code>\color{color name}</code>.</p>
-  </li>
-  <li>
-    <p>Eppstein has a 
-<a href="https://11011110.github.io/blog/2020/02/22/applications-maximum-matching.html">blog post</a> 
-about applications of maximum matching algorithms, including kidney exchange, on 
-which I have worked recentely. 
-(As <a href="./march-2019-notes-1">already mentionned</a> on this blog, 
-<a href="https://cstheory.stackexchange.com/questions/19759/core-algorithms-deployed">here</a> 
-is a stack exchange thread on “core algorithms deployed”.)</p>
-  </li>
-</ul>
+<ol>
+  <li><em><a href="https://discrete-notes.github.io/network-decomposition-1-local-algorithms">Local algorithms</a></em>, 
+an introduction to local algorithm, with the example of 
+the maximal independent set problem.</li>
+  <li><em><a href="https://discrete-notes.github.io/network-decomposition-2-impact">Impact for distributed algorithms</a></em>, 
+that is, why is a network decomposition so useful.</li>
+  <li><em>Centralized construction</em>, in particular, why such decomposition with good 
+parameters exist.</li>
+  <li>(and more) TBA</li>
+</ol>
 
   </div>
   

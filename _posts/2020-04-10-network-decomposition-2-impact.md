@@ -5,7 +5,7 @@ redirect_from: "/2020/04/10/network-decomposition-2-impact/"
 permalink: network-decomposition-2-impact
 ---
 
-This the second post of a series on distributed network decomposition. 
+This is the second post of a series on distributed network decomposition. 
 The introductory post of this series is 
 [here](https://discrete-notes.github.io/network-decomposition-0). 
 This post explains why network decomposition is useful. 

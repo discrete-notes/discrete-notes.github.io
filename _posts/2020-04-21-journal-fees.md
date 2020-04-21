@@ -116,9 +116,9 @@ LIPICs expects authors and conference committees to produce papers that need
 almost no additional work before being published. For a conference, this work, 
 if not done by the authors, could require days of work from a member of the 
 committee (I remember that Jukka Suomela worked a lot on DISC proceedings some 
-years ago). 
+years ago).
 
-### Small scale
+## Small scale
 
 LIPICs does not handle hundreds of papers per day like some journals do (although 
 not in TCS probably). Maybe the fact that it has a small scale allows the 

@@ -87,73 +87,200 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/online-talks">
-        Online talks
+      <a href="/network-decomposition-3-centralized">
+        Network decomposition 3&#58; Centralized construction
       </a>
     </h1>
 
-    <span class="post-date">14 Apr 2020</span>
+    <span class="post-date">20 Apr 2020</span>
 
-    <p>Many things have gone online, including talks and conferences. A small post with
-pointers.</p>
+    <p>[Temporary note: one of the authors will present the network decomposition paper 
+at the Aalto seminar on Wednesday! See 
+<a href="https://users.aalto.fi/~uittoj3/seminar.html">here</a>.]</p>
 
-<p><img src="assets/plume.jpg" alt="" class="center-image" width="90%" /></p>
+<p>This is the third post of a series on distributed network decomposition. 
+The introductory post of this series is 
+<a href="https://discrete-notes.github.io/network-decomposition-0">here</a>. 
+This post explains how to build a network decomposition in a centralized manner.
+As a consequence it also shows that such decompositions exist with nice 
+parameters.</p>
 
-<h2 id="online-seminars">Online seminars</h2>
+<p><img src="assets/caravane-4.jpg" alt="" class="center-image" width="90%" /></p>
 
-<p>Many seminars have moved to online settings.</p>
+<h3 id="recap-of-previous-episodes">Recap of previous episodes</h3>
+
+<p>In the previous posts we saw how network decomposition can be useful to build 
+efficient local algorithms. Such algorithms are efficient only if the network 
+decomposition has good parameters, that is a small number of colors, and a small
+diameter for each component. 
+We won’t bother with multiplicative constants, or even constant exponents, 
+so let’s say that basically, we look for something like in the following picture, 
+with $\log n$ colors, and $\log n$ diameter.</p>
+
+<p><img src="assets/network-decomposition-log.png" alt="" class="center-image" width="60%" /></p>
+
+<h2 id="basic-technique-to-get-a-coloring">Basic technique to get a coloring</h2>
+
+<p>Suppose you want to compute a coloring in a graph in the most simple way. 
+You can start with the first color $c_1$, pick a node $v$, put color $c_1$ on it, 
+then choose a second node that is not a neighbor of $v$, put again color $c_1$, 
+and so on and so forth,
+until you cannot use color $c_1$ anymore. Then you take color $c_2$, and repeat 
+the process, considering only the nodes that do not have color $c_1$, etc.</p>
+
+<p>This is basically repeating an algorithm for MIS we mentionned in the 
+<a href="https://discrete-notes.github.io/network-decomposition-1-local-algorithms">post about local algorithms</a>.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/coloring-0.png" alt="" class="center-image" width="90%" /></td>
+      <td><img src="assets/coloring-1.png" alt="" class="center-image" width="90%" /></td>
+      <td><img src="assets/coloring-2.png" alt="" class="center-image" width="90%" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/coloring-3.png" alt="" class="center-image" width="90%" /></td>
+      <td><img src="assets/coloring-4.png" alt="" class="center-image" width="90%" /></td>
+      <td><img src="assets/coloring-5.png" alt="" class="center-image" width="90%" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p align="center"><small><i>
+Step by step construction of a coloring. (1) The graph, (2) the result of the 
+computation of the first color class (exactly as in the MIS algorithm), with the 
+frozen nodes in grey, (3) the remaining nodes and edges after deletion of the 
+colored nodes, (4) second color, (5) third color, and (6) the computed coloring.
+</i></small></p>
+
+<h2 id="adapting-the-technique-to-network-decomposition">Adapting the technique to network decomposition</h2>
+
+<p>We adapt the technique from the previous section to network decomposition. 
+That is, instead of picking a 
+node and coloring it, we pick a node, and color the ball of radius $\log n$ 
+around it. Similarly to what happens in the coloring algorithm above, 
+every time we color a ball, we freeze all the nodes that are adjacent to it. 
+That is, they will not be considered any more for the color at hand. Once we are 
+finished with a color, we go to the next color, remove the nodes of the previous 
+colors, defreeze the frozen nodes, and start again.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/coloring-log-1.png" alt="" class="center-image" width="90%" /></td>
+      <td><img src="assets/coloring-log-2.png" alt="" class="center-image" width="90%" /></td>
+      <td><img src="assets/coloring-log-3.png" alt="" class="center-image" width="90%" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p align="center"><small><i>
+Computation of the first color class: (1) choose a node, and select all the 
+nodes at distance at most $\log n$ from it, (2) freeze all the nodes that are 
+adjacent to a selected node, and (3) repeat the operation until all nodes are
+either selected or frozen.
+</i></small></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/coloring-log-4.png" alt="" class="center-image" width="90%" /></td>
+      <td><img src="assets/coloring-log-5.png" alt="" class="center-image" width="90%" /></td>
+      <td><img src="assets/coloring-log-6.png" alt="" class="center-image" width="90%" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p align="center"><small><i>
+Computation of the second color class: (1) and (2) remove all the 
+nodes of the first color class, and defreeze all frozen nodes. (3) Run the same 
+procedure as for the first color class. 
+</i></small></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/coloring-log-7.png" alt="" class="center-image" width="90%" /></td>
+      <td><img src="assets/coloring-log-8.png" alt="" class="center-image" width="90%" /></td>
+      <td><img src="assets/coloring-log-9.png" alt="" class="center-image" width="90%" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p align="center"><small><i>
+Computation of the third color class: again, (1) and (2) remove all the 
+nodes of the previous color classes, and defreeze all frozen nodes. (3) Run the 
+same procedure as for the first color classes. Now all nodes are selected, thus 
+the algorithm stops.
+</i></small></p>
+
+<p><img src="assets/coloring-log-10.png" alt="" class="center-image" width="60%" /></p>
+<p align="center"><small><i>
+The network decomposition produced by the algorithm.
+</i></small></p>
+
+<h2 id="an-unbalanced-coloring">An unbalanced coloring</h2>
+
+<p>The first thing one can note on the picture above is that the decomposition is 
+not balanced at all: a huge part of the network is red, a small part is yellow, 
+and a tiny part is blue. That might look like a bad thing, as for algorithms 
+having balanced decomposition is usually a nice feature. But actually this is not a 
+problem for the algorithms built on a network decomposition, as presented in 
+the <a href="https://discrete-notes.github.io/network-decomposition-2-impact">previous post</a>. 
+And, in fact this imbalance is good for us. Indeed suppose that each color 
+covers at least half of the remaining nodes, then after at most $\log n$ steps, 
+all nodes are colored. This, in turns, implies that the number of colors is 
+logarithmically bounded, which is what we were looking for.</p>
+
+<p>But, is this always the case? No, you can have a situation like the one on the 
+following picture: you pick a node and in its $\log n $ neighborhood, there are 
+very few nodes, but the number of nodes that is frozen at the border is huge. 
+If this happens everywhere, the number of nodes colored by a the first color 
+class is not a constant fraction of the total number of nodes.</p>
+
+<p><img src="assets/blow-up.png" alt="" class="center-image" width="70%" /></p>
+
+<p>Therefore, a bad situation for us is when the ratio between what is inside 
+the ball, and its border is small.</p>
+
+<p>We could try to show that we can choose the centers in a smart way to avoid this 
+behavior, but it wouldn’t help much with the distributed construction that 
+follows, as such smart choice could require a large view of the graph.
+Instead we control the size of the balls.</p>
+
+<h2 id="growing-a-ball">Growing a ball</h2>
+
+<p>A technique to ensure that the interior/border ratio is large is to build the 
+ball around the selected center in the following way.</p>
 
 <ul>
-  <li>
-    <p>Terence Tao has a 
-<a href="https://terrytao.wordpress.com/2020/04/07/mathematics-seminars-list/">list of list of online maths seminars</a>, 
-including <a href="http://math.mit.edu/~aosun/online_seminars.html">Online maths seminars</a> 
-that has more than 15 talks per day (in all kinds of mathematics).</p>
-  </li>
-  <li>
-    <p>The same thing but speciafically for TCS can be found 
-<a href="https://cstheorytalks.wordpress.com/">here</a>. (One or two talks per day.)</p>
-  </li>
-  <li>
-    <p>Aalto university also has <a href="https://users.aalto.fi/~uittoj3/seminar.html">its seminar</a> 
-(that is not listed (yet?) in the lists above).</p>
-  </li>
-  <li>
-    <p>The online TCS seminar, <a href="https://sites.google.com/site/plustcs/">TCS+</a> has 
-increased its frequency from one per month to one per week (and all the previous 
-talks are available).</p>
-  </li>
-  <li>
-    <p>The Simons Institute also has a lot of good videos, see 
-<a href="https://simons.berkeley.edu/videos">here</a>.</p>
-  </li>
+  <li>Start with only the center</li>
+  <li>Iterate the following:</li>
 </ul>
 
-<h2 id="online-courses">Online courses</h2>
-
-<p>Many universities have MOOCs, or at least videos of some classes.</p>
+<ol>
+  <li>Measure the number of nodes in the border</li>
+  <li>If it is at least twice the number of nodes in the ball, take all these nodes 
+in the ball, and restart the loop.</li>
+  <li>Otherwise leave the loop.</li>
+</ol>
 
 <ul>
-  <li>
-    <p>Jukka Suomela has just started a new iteration of his parallel programming 
-class, and this year of course everything is online. The videos are 
-<a href="https://www.youtube.com/playlist?list=PL2RY7P3JxZN9Eeu2-XUbD4E4N3UNL6PV8">here</a>.</p>
-  </li>
-  <li>
-    <p>MIT has, for example, videos lectures 
-<a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-890-algorithmic-lower-bounds-fun-with-hardness-proofs-fall-2014/">about lower bounds</a>,
-and <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/">advanced data structures</a></p>
-  </li>
+  <li>Freeze all the nodes of the border.</li>
 </ul>
 
-<h2 id="online-conferences">Online conferences</h2>
+<p>Note that the loop can be run for at most $\log n$ iterations, as otherwise 
+the ball would contain more than $n$ nodes. Thus the balls built this way are ok
+with the definition of the network decomposition.</p>
 
-<p>Conferences that were suppose to take place this spring or this summer decide one
-by one to held virtually. This is the case of <a href="https://icalp2020.saarland-informatics-campus.de/">ICALP</a>
-and <a href="http://acm-stoc.org/stoc2020/">STOC</a> for example.</p>
-
-<p>The ACM issued a guide on how to organize such online conferences. The pdf is 
-<a href="https://people.clarkson.edu/~jmatthew/acm/VirtualConferences_GuideToBestPractices_CURRENT.pdf">here</a>.</p>
+<p>By construction, the size of the border of the ball is at most the size of the
+interior of the ball. That is, if we select $m$ nodes to be in the ball, we 
+freeze at most $m$ new nodes. This is enough for the whole construction to work.</p>
 
 
   </div>

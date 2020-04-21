@@ -7,6 +7,194 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>About journal fees</title>
+        <description>&lt;p&gt;Some notes about journal fees. A random walk on the Internet, more than a 
+structured essay.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/feuille.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;open-access-and-apc&quot;&gt;Open access and APC&lt;/h2&gt;
+
+&lt;p&gt;As advised by a friend, I decided to submit my 
+&lt;a href=&quot;https://www.dii.uchile.cl/~feuilloley/publications/introduction-certification.html&quot;&gt;&lt;em&gt;Introduction to local certification&lt;/em&gt;&lt;/a&gt;
+to a journal. 
+And as I was the only author involved, 
+I thought it was a good occasion to submit the paper to an open-access journal.&lt;/p&gt;
+
+&lt;p&gt;Following some advice, I checked the editors list of the journal 
+&lt;a href=&quot;https://www.mdpi.com/journal/algorithms&quot;&gt;&lt;em&gt;Algorithms&lt;/em&gt;&lt;/a&gt; which looks very good.
+But then I realized that I had to pay something to get the paper published: the 
+article processing charges (APC) (I don’t want to ask money for that from my 
+institution). I looked it up, and saw the price: 1000 Swiss francs, that is, 
+around 950 euros.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; I was very surprised that it would be so expensive. 
+At the end I did two things: submitting the paper to 
+&lt;a href=&quot;https://dmtcs.episciences.org/&quot;&gt;&lt;em&gt;DMTCS&lt;/em&gt;&lt;/a&gt; instead, and reading on the 
+Internet to learn a bit about these APC.&lt;/p&gt;
+
+&lt;h2 id=&quot;journal-systems&quot;&gt;Journal systems&lt;/h2&gt;
+
+&lt;p&gt;So first there are several business models for scientific journals. The most common
+one is based on requesting money from the reader (or the institution of the 
+reader). Then there are open-access 
+journals where the reader does not pay. Often, in this second system, the 
+authors pay. Some journals propose the two schemes. Yet another type of journal 
+is free for readers and authors, and can be supported by some institution.&lt;/p&gt;
+
+&lt;p&gt;In this post I’ll focus on the open access systems: the ones where the
+reader does not pay.&lt;/p&gt;
+
+&lt;h2 id=&quot;journal-fees&quot;&gt; Journal fees&lt;/h2&gt;
+
+&lt;p&gt;So a first data point is this 1000 CH for &lt;em&gt;Algorithms&lt;/em&gt;. I also remember 
+something around 1000 euros for an open-access option of a not full-open-access 
+journal. Finally I checked &lt;em&gt;PLOS&lt;/em&gt;, a group of open-access journals, mostly in 
+biology, and again it varies between 1000 and 3000 euros.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;
+So it looks like a price tag around 1000 euros is common.&lt;/p&gt;
+
+&lt;p&gt;What does it pay for? Here is a list of services I can see the publisher offers, 
+that are not offered by scholars (reviews are “for free” for example):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Publication: archiving the paper in a safe place, easy to reach.&lt;/li&gt;
+  &lt;li&gt;Indexation: registering the paper in the databases, getting a doi.&lt;/li&gt;
+  &lt;li&gt;Advertising: maybe advertising the paper, and most probably advertising the 
+journal to ensure its prestige.&lt;/li&gt;
+  &lt;li&gt;Review process: running the plateforme to receive and store manuscripts, send 
+automatic notifications etc.&lt;/li&gt;
+  &lt;li&gt;Editorial management: the main editors might be paid by the publisher.&lt;/li&gt;
+  &lt;li&gt;Type-setting: improving the visual aspects of the papers.&lt;/li&gt;
+  &lt;li&gt;Language: in some fields, the journal improves the writing.&lt;/li&gt;
+  &lt;li&gt;Printing: for non-electronic journals.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It’s difficult to measure how much all this costs, so I’ll compare with another 
+plateforme: LIPIcs.&lt;/p&gt;
+
+&lt;h2 id=&quot;lipics-apc&quot;&gt;LIPIcs APC&lt;/h2&gt;
+
+&lt;p&gt;LIPIcs handles proceedings of computer science conferences. Basically the 
+conference pays LIPIcs for this job, and the conference itself gets the money 
+from the authors via the registration fees. 
+The APC is 60 euros for a 20 pages paper.&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;An interesting document is 
+&lt;a href=&quot;https://www.dagstuhl.de/fileadmin/dagpub/apc/seidel-apc-increase-letter-march2016.pdf&quot;&gt;a letter&lt;/a&gt; 
+telling the story of this APC. 
+In a nutshell, the first APC 15 euros. This was an estimate of the cost and more 
+and it included the fact that the journal was helped by
+Dagstuhl’s funds. But this was not ok with EU market laws, as it was unfair to 
+the classic publishers. They had to increase the price from 15 to 60 euros, to
+fill the gap of the Dagstuhl’s funds, and also because the 15 euros estimate 
+was a bit too low in comparison with the work needed. More precisely, they 
+didn’t expect that:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;many authors and committees would work less than required on the type-setting, 
+which meant more polishing from their side&lt;/li&gt;
+  &lt;li&gt;people would use so many weird latex packages that they had to work a lot to 
+solve the compatibility issues.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(Thanks to a donation, they could change the price progressively from 15 to 60.)&lt;/p&gt;
+
+&lt;h2 id=&quot;comparison-with-lipics&quot;&gt; Comparison with LIPIcs&lt;/h2&gt;
+
+&lt;p&gt;So, why is there such a difference between LIPIcs and an open-access journal? 
+I see several answers, beyond “journals want to make money”. Note that the 
+quality is not a difference, LIPICs proceedings look great to me. Also note that 
+PLOS is a non-profit organization, so is supposed to not make so much money.&lt;/p&gt;
+
+&lt;h3 id=&quot;conference-proceedings-versus-journal&quot;&gt;Conference proceedings versus journal&lt;/h3&gt;
+&lt;p&gt;The fact that LIPIcs handles only conference proceedings and is not a journal
+could change several aspects.
+Conference means a lighter review process (usually only one round). 
+Also it means that the number of 
+published papers is very controlled: you know it in advance basically. Also journal
+papers are usually longer, and LIPIcs charges 60 euros for 20 pages, 
+so 100 pages means 300 euros instead of 60. 
+Something interesting here is that in the LIPICs letter cited above, they say 
+that gold-open-access proceedings APC is usually in the range of 200 
+to 600 euros, which is less than what I sampled. This might be because of this
+conference versus journal topic.&lt;/p&gt;
+
+&lt;h3 id=&quot;less-type-setting-work&quot;&gt;Less type-setting work&lt;/h3&gt;
+
+&lt;p&gt;LIPICs expects authors and conference committees to produce papers that need
+almost no additional work before being published. For a conference, this work, 
+if not done by the authors, could require days of work from a member of the 
+committee (I remember that Jukka Suomela worked a lot on DISC proceedings some 
+years ago).&lt;/p&gt;
+
+&lt;h3 id=&quot;small-scale&quot;&gt; Small scale&lt;/h3&gt;
+
+&lt;p&gt;LIPICs does not handle hundreds of papers per day like some journals do (although 
+not in TCS probably). Maybe the fact that it has a small scale allows the 
+editors to be professors in some university, and not people paid by the publisher 
+to run the journal.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-institutional-support&quot;&gt;Some institutional support&lt;/h3&gt;
+
+&lt;p&gt;Maybe LIPICs has some support that does not come directly as money. For example 
+it seems that they have a partnership with the German National Library for 
+archiving the papers.&lt;/p&gt;
+
+&lt;h3 id=&quot;altogether&quot;&gt; Altogether&lt;/h3&gt;
+
+&lt;p&gt;Altogether it looks like there shouldn’t be such a difference in prices, in my 
+opinion, but there are probably many aspects that I haven’t taken into account. 
+Anyway, many thanks are due to the LIPIcs team for their great job.&lt;/p&gt;
+
+&lt;h2 id=&quot;fair-open-access&quot;&gt;Fair open-access&lt;/h2&gt;
+
+&lt;p&gt;As said above I ended up submitting the paper to DMTCS, which a journal that
+is free for both readers and authors. This seems to be called &lt;em&gt;fair open access&lt;/em&gt;.
+Here the model is basically that the journal is run by scholars, that may pay a 
+professional publisher for services such as printing. The money comes from 
+institutions, as general donations, not fees related to specific papers. And the
+money given to professional publishers should be controlled rigorously. 
+See the 
+&lt;a href=&quot;https://www.fairopenaccess.org/the-fair-open-access-principles/&quot;&gt;fair open access principles&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;An interesting bit in the explicative notes of these principles, is that they 
+fix the maximum fee per paper a publisher can ask to the journal to 1000 euros 
+(and say that “substantially lower fees should be possible in many case”).&lt;/p&gt;
+
+&lt;p&gt;In the case of DMTCS, the two large scientific French public institutions, CNRS 
+and INRIA, sponsor the plateforme &lt;a href=&quot;https://www.episciences.org/&quot;&gt;Episciences&lt;/a&gt;, 
+that the journal uses. Episciences supports around 15 fair open-access journals.&lt;/p&gt;
+
+&lt;p&gt;The list of fair open-access journals can be found on the 
+&lt;a href=&quot;https://freejournals.org/&quot;&gt;website of the Free Journal Network&lt;/a&gt;. Such journals
+in TCS are: &lt;a href=&quot;https://dmtcs.episciences.org/&quot;&gt;DMTCS&lt;/a&gt;, &lt;a href=&quot;jocg.org&quot;&gt;JOCG&lt;/a&gt;, 
+&lt;a href=&quot;jgaa.info&quot;&gt;JGAA&lt;/a&gt;, &lt;a href=&quot;https://lmcs.episciences.org&quot;&gt;LMCS&lt;/a&gt;, 
+&lt;a href=&quot;https://smai-jcm.math.cnrs.fr/index.php/SMAI-JCM/&quot;&gt;SMAI JCM&lt;/a&gt;,
+&lt;a href=&quot;https://digitalcommons.georgiasouthern.edu/tag/&quot;&gt;TAG&lt;/a&gt; ands
+&lt;a href=&quot;https://theoryofcomputing.org/&quot;&gt;TOC&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;And there several more if you extend the scope to combinatorics.&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.mdpi.com/journal/algorithms/apc&quot;&gt;APC page of &lt;em&gt;Algorithms&lt;/em&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://plos.org/publish/fees/&quot;&gt;Publication fees for PLOS journals&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.dagstuhl.de/en/publications/lipics/processing-charge/&quot;&gt;LIPIcs Processing charge&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 21 Apr 2020 00:00:00 +0200</pubDate>
+        <link>https://discrete-notes.github.io///journal-fees</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///journal-fees</guid>
+      </item>
+    
+      <item>
         <title>Network decomposition 3&amp;#58; Centralized construction</title>
         <description>&lt;p&gt;[Temporary note: one of the authors will present the network decomposition paper 
 at the Aalto seminar on Wednesday! See 
@@ -72,7 +260,7 @@ frozen nodes in grey, (3) the remaining nodes and edges after deletion of the
 colored nodes, (4) second color, (5) third color, and (6) the computed coloring.
 &lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;adapting-the-technique-to-network-decomposition&quot;&gt; Adapting the technique to network decomposition&lt;/h2&gt;
+&lt;h2 id=&quot;adapting-the-technique-to-network-decomposition&quot;&gt;Adapting the technique to network decomposition&lt;/h2&gt;
 
 &lt;p&gt;We adapt the technique from the previous section to network decomposition. 
 That is, instead of picking a 
@@ -167,7 +355,7 @@ behavior, but it wouldn’t help much with the distributed construction that
 follows, as such smart choice could require a large view of the graph.
 Instead we control the size of the balls.&lt;/p&gt;
 
-&lt;h2 id=&quot;growing-a-ball&quot;&gt; Growing a ball&lt;/h2&gt;
+&lt;h2 id=&quot;growing-a-ball&quot;&gt;Growing a ball&lt;/h2&gt;
 
 &lt;p&gt;A technique to ensure that the interior/border ratio is large is to build the 
 ball around the selected center in the following way.&lt;/p&gt;
@@ -1045,95 +1233,6 @@ triangles, but not much more…&lt;/p&gt;
         <pubDate>Wed, 11 Dec 2019 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///polygon problem</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///polygon problem</guid>
-      </item>
-    
-      <item>
-        <title>Price of anarchy for dynamic flows</title>
-        <description>&lt;p&gt;This post is about flows from a game theory perspective. 
-It originates from a recent talk of 
-&lt;a href=&quot;https://sites.google.com/view/timoosterwijk/home&quot;&gt;Tim Oosterwijk&lt;/a&gt; at 
-the University of Chile about 
-&lt;a href=&quot;https://drive.google.com/file/d/1u-NUQLppaTDdNUUh-BvsXYJ2QH9RM1K9/view&quot;&gt;this paper&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;a-model-for-dynamic-flows&quot;&gt;A model for dynamic flows&lt;/h2&gt;
-
-&lt;p&gt;We use a model useful to study settings like urban traffic.
-The flow is dynamic (that is we do not focus on 
-some stationary state) and there 
-can be congestion. It is called the &lt;em&gt;fluid queueing 
-model&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;The network is a graph, and there is one source node where the flow 
-enters and one target node where the flow exits. Each edge of the 
-network has a delay and a capacity per time unit. 
-If more flows enters the edge than the capacity, a (FIFO) queue will 
-form inside this edge.&lt;/p&gt;
-
-&lt;p&gt;Maybe a good example is a network where on every edge there is a 
-toll. If there is no queue, going through a toll $t$ takes some $s_t$ seconds,
-and at most some $c_t$ cars can go through the toll at each second. 
-If too many cars arrive, then a queue is forming, that will disappear 
-later if not so many cars arrive.&lt;/p&gt;
-
-&lt;h2 id=&quot;objective&quot;&gt;Objective&lt;/h2&gt;
-
-&lt;p&gt;We consider a setting where a constant flow $u_0$ 
-enters the network at each unit of time.&lt;/p&gt;
-
-&lt;p&gt;Now at each intersection of degree $d$ a particule of flow can go in 
-either of the $d-1$ directions. Given the choice of each particule at 
-each intersection, the flow is completely defined, and you can measure 
-how fast it is. For example routing every particule through the same edge
-of small capacity would in general form a huge queue in this edge and 
-make the flow very slow.&lt;/p&gt;
-
-&lt;p&gt;We can consider at least two notions of efficiency: (1) for a given 
-time, how much flow exits the network, and (2) for a given amount of flow 
-to start with, when does the last particule exits the network. 
-We we will consider the second one, called the &lt;em&gt;makespan&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;price-of-anarchy&quot;&gt;Price of anarchy&lt;/h2&gt;
-
-&lt;p&gt;We study the makespan of different strategies for routing the flow.
-As often in 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Algorithmic_game_theory&quot;&gt;algorithmic game theory&lt;/a&gt;,
-one is interested in the &lt;a href=&quot;https://en.wikipedia.org/wiki/Price_of_anarchy&quot;&gt;price of anarchy&lt;/a&gt;.
-On a given instance this price is the ratio of the makespan of the best 
-routing strategy divided by the makespan of the strategy where every 
-particule optimizes its own travel time. 
-In other words, the ratio between the strategy where an oracle decides 
-optimally a route for every car, and the strategy where every driver 
-optimizes its own travel time. Note that the setting where we let the 
-particules (or drivers) decide is a kind of game, and we look at the 
-equilibrium of this game. This might be called the &lt;em&gt;selfish&lt;/em&gt; solution.&lt;/p&gt;
-
-&lt;p&gt;The price of anarchy of the problem is the largest 
-(the supremum to be precise) price of anarchy among every instance of 
-the problem.&lt;/p&gt;
-
-&lt;h2 id=&quot;result&quot;&gt;Result&lt;/h2&gt;
-
-&lt;p&gt;Tim and his co-authors show (among other results) an upper bound of 
-$e/(e-1)$ on the price of anarchy for this problem, under some conditions.&lt;/p&gt;
-
-&lt;h2 id=&quot;a-key-open-problem-the-monotonicity-conjecture&quot;&gt;A key open problem: the monotonicity conjecture&lt;/h2&gt;
-
-&lt;p&gt;There is a very neat and puzzling conjecture that, if true, would imply 
-that the upper bound above always hold.&lt;/p&gt;
-
-&lt;p&gt;The so-called &lt;em&gt;monotonicity conjecture&lt;/em&gt; states that: if one reduces the 
-flow that enters in the network by unit of time (but keeping the total 
-amount to push in the network),  then the makespan of the selfish solution 
-increases.&lt;/p&gt;
-
-&lt;p&gt;This seems very natural, but it is still open, and sometimes unexpected
-things happen in the such games (like in 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Braess%27s_paradox&quot;&gt;Braess’s paradox&lt;/a&gt;)&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 05 Dec 2019 00:00:00 +0100</pubDate>
-        <link>https://discrete-notes.github.io///price-anarchy-flows</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///price-anarchy-flows</guid>
       </item>
     
   </channel>

@@ -40,7 +40,7 @@ is free for readers and authors, and can be supported by some institution.
 In this post I'll focus on the open access systems: the ones where the
 reader does not pay.
 
-## Journal fees
+## Journal fees
 
 So a first data point is this 1000 CH for *Algorithms*. I also remember 
 something around 1000 euros for an open-access option of a not full-open-access 
@@ -90,7 +90,7 @@ solve the compatibility issues.
 
 (Thanks to a donation, they could change the price progressively from 15 to 60.) 
 
-## Comparison with LIPIcs
+## Comparison with LIPIcs
 
 So, why is there such a difference between LIPIcs and an open-access journal? 
 I see several answers, beyond "journals want to make money". Note that the 
@@ -131,7 +131,7 @@ Maybe LIPICs has some support that does not come directly as money. For example
 it seems that they have a partnership with the German National Library for 
 archiving the papers.
 
-### Altogether
+### Altogether
 
 Altogether it looks like there shouldn't be such a difference in prices, in my 
 opinion, but there are probably many aspects that I haven't taken into account. 

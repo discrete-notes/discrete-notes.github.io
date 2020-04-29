@@ -87,93 +87,34 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/price-anarchy-flows">
-        Price of anarchy for dynamic flows
+      <a href="/polygon problem">
+        A cute "open" problem on polygons
       </a>
     </h1>
 
-    <span class="post-date">05 Dec 2019</span>
+    <span class="post-date">11 Dec 2019</span>
 
-    <p>This post is about flows from a game theory perspective. 
-It originates from a recent talk of 
-<a href="https://sites.google.com/view/timoosterwijk/home">Tim Oosterwijk</a> at 
-the University of Chile about 
-<a href="https://drive.google.com/file/d/1u-NUQLppaTDdNUUh-BvsXYJ2QH9RM1K9/view">this paper</a>.</p>
+    <p>Here is a cute problem that appeared on a chat channel of University of 
+Chile a few months ago. To my knowledge this is still open, but as it 
+seems rather natural, the answer is probably known somewhere.</p>
 
-<h2 id="a-model-for-dynamic-flows">A model for dynamic flows</h2>
+<p>Consider the following transformation: take a polygon in the plane and 
+then dilate it along the $x$-axis.</p>
 
-<p>We use a model useful to study settings like urban traffic.
-The flow is dynamic (that is we do not focus on 
-some stationary state) and there 
-can be congestion. It is called the <em>fluid queueing 
-model</em>.</p>
+<p><img src="assets/polygon-expansion.png" alt="" class="center-image" width="60%" /></p>
 
-<p>The network is a graph, and there is one source node where the flow 
-enters and one target node where the flow exits. Each edge of the 
-network has a delay and a capacity per time unit. 
-If more flows enters the edge than the capacity, a (FIFO) queue will 
-form inside this edge.</p>
+<p>In other words, the $x$ coordinates of the vertices
+are multiplied by some expansion factor $\alpha$.
+On the picture the expansion factor is $\alpha=2$.</p>
 
-<p>Maybe a good example is a network where on every edge there is a 
-toll. If there is no queue, going through a toll $t$ takes some $s_t$ seconds,
-and at most some $c_t$ cars can go through the toll at each second. 
-If too many cars arrive, then a queue is forming, that will disappear 
-later if not so many cars arrive.</p>
+<p>Now the question is: is it always true that the original polygon fits in 
+the dilated polygon? Note that you are allowed to rotate and translate 
+these as you like.</p>
 
-<h2 id="objective">Objective</h2>
+<p><img src="assets/polygon-inclusion.png" alt="" class="center-image" width="60%" /></p>
 
-<p>We consider a setting where a constant flow $u_0$ 
-enters the network at each unit of time.</p>
-
-<p>Now at each intersection of degree $d$ a particule of flow can go in 
-either of the $d-1$ directions. Given the choice of each particule at 
-each intersection, the flow is completely defined, and you can measure 
-how fast it is. For example routing every particule through the same edge
-of small capacity would in general form a huge queue in this edge and 
-make the flow very slow.</p>
-
-<p>We can consider at least two notions of efficiency: (1) for a given 
-time, how much flow exits the network, and (2) for a given amount of flow 
-to start with, when does the last particule exits the network. 
-We we will consider the second one, called the <em>makespan</em>.</p>
-
-<h2 id="price-of-anarchy">Price of anarchy</h2>
-
-<p>We study the makespan of different strategies for routing the flow.
-As often in 
-<a href="https://en.wikipedia.org/wiki/Algorithmic_game_theory">algorithmic game theory</a>,
-one is interested in the <a href="https://en.wikipedia.org/wiki/Price_of_anarchy">price of anarchy</a>.
-On a given instance this price is the ratio of the makespan of the best 
-routing strategy divided by the makespan of the strategy where every 
-particule optimizes its own travel time. 
-In other words, the ratio between the strategy where an oracle decides 
-optimally a route for every car, and the strategy where every driver 
-optimizes its own travel time. Note that the setting where we let the 
-particules (or drivers) decide is a kind of game, and we look at the 
-equilibrium of this game. This might be called the <em>selfish</em> solution.</p>
-
-<p>The price of anarchy of the problem is the largest 
-(the supremum to be precise) price of anarchy among every instance of 
-the problem.</p>
-
-<h2 id="result">Result</h2>
-
-<p>Tim and his co-authors show (among other results) an upper bound of 
-$e/(e-1)$ on the price of anarchy for this problem, under some conditions.</p>
-
-<h2 id="a-key-open-problem-the-monotonicity-conjecture">A key open problem: the monotonicity conjecture</h2>
-
-<p>There is a very neat and puzzling conjecture that, if true, would imply 
-that the upper bound above always hold.</p>
-
-<p>The so-called <em>monotonicity conjecture</em> states that: if one reduces the 
-flow that enters in the network by unit of time (but keeping the total 
-amount to push in the network),  then the makespan of the selfish solution 
-increases.</p>
-
-<p>This seems very natural, but it is still open, and sometimes unexpected
-things happen in the such games (like in 
-<a href="https://en.wikipedia.org/wiki/Braess%27s_paradox">Braess’s paradox</a>)</p>
+<p>We have thought a bit about this at some point, and we have a proof for 
+triangles, but not much more…</p>
 
 
   </div>

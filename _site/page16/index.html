@@ -87,140 +87,142 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/patterns-1">
-        Graph classes and forbidden patterns&#58; Introduction
+      <a href="/october-2019-notes-distances">
+        October 2019 notes&#58; distances and moving stuff
       </a>
     </h1>
 
-    <span class="post-date">17 Oct 2019</span>
+    <span class="post-date">07 Nov 2019</span>
 
-    <p>Michel Habib and I have quite recentely finished the paper 
-<a href="https://arxiv.org/abs/1812.05913">Graph classes and forbidden patterns on three vertices</a>. 
-This blog post is the first of a small series that will present the paper.
-It follows the structure of a talk I gave yesterday at the University 
-of Chile.</p>
+    <p>Some notes for October 2019, related to distances and to moving stuff.</p>
 
-<h2 id="why-studying-graph-classes">Why studying graph classes?</h2>
+<hr />
+<p><img src="assets/farmacia.jpg" alt="" class="center-image" width="60%" /></p>
+<p align="center"><small><i>
+A lot is going on in Chile. Fortunately there are some good recipes.
+</i></small></p>
+<hr />
 
-<p>This paper is about graph classes, and it seems that it is a topic 
-that is not popular with everybody, so let’s start with a couple of 
-reasons to study graph classes.</p>
+<h2 id="matching-graphs-via-gromov-hausdorff-distance">Matching graphs via Gromov-Hausdorff distance</h2>
 
-<h4 id="graphs-are-fundamental-objects">Graphs are fundamental objects</h4>
-<p>Just like sets and languages, graphs are basic objects, thus gathering 
-knowledge about them is useful. For example, the pumping lemma
-for regular languages appears in distributed computing, because 
-languages are basic objects, and thus they pop up everywhere.</p>
+<p>There are many contexts where one would like to compare two graphs, to 
+measure if they are close or not. 
+One way of doing this is to decide whether one is included in the other
+(the 
+<a href="https://en.wikipedia.org/wiki/Subgraph_isomorphism_problem">subgraph isomorphism problem</a>) 
+or more generally if they have a 
+<a href="https://en.wikipedia.org/wiki/Maximum_common_edge_subgraph">large isomorphic subgraph</a>.
+Another way is to measure the number of edits one has to make to go from 
+one graph to the other (for example the number of edges to add and 
+remove). This is what is done in 
+<a href="https://en.wikipedia.org/wiki/Property_testing">property testing</a>, where having a 
+distance on the objects is essential.</p>
 
-<h4 id="to-use-algorithms-in-the-real-world">To use algorithms in the “real world”</h4>
-<p>If one wants to use algorithms for real-world problems, it is likely 
-that looking at results for general graphs is not the most useful 
-approach. There is a good proportion of the real-world instances that
-belong to very special classes, and if (1) you can recognize such 
-special classes fast, and (2) you have a fast algorithm for your problem 
-on this class, then you are happy. In other words,
-your transportation problem may be hard on expanders, but road networks 
-are not expanders, so let’s look at what road networks look like.</p>
+<p>More generally, there exists a distance for compact metric spaces called 
+<a href="https://en.wikipedia.org/wiki/Gromov%E2%80%93Hausdorff_convergence#Gromov%E2%80%93Hausdorff_distance">Gromov-Hausdorff distance</a>, 
+that applies to graphs.</p>
 
-<h2 id="why-not-studying-graph-classes">Why <em>not</em> studying graph classes?</h2>
+<p>No surprise, this distance is a complicated notion 
+(an inf of a max of a sup of an inf),
+and computing it is NP-hard. The reduction is to the 
+<a href="https://en.wikipedia.org/wiki/Quadratic_bottleneck_assignment_problem">quadratic bottleneck assignment problem</a>, 
+a <a href="https://en.wikipedia.org/wiki/Facility_location_problem">facility location problem</a>.</p>
 
-<p>To be fair, there is a problem with graph classes: 
-there are way too many of them! The website 
-<a href="http://graphclasses.org">graphclasses.org</a> lists 1600 classes, and it’s 
-difficult to navigate in this jungle, to know what is an interesting
-class, to know whether the class you’re working on is known etc.
-(although the website is very useful for that).</p>
+<p>A <a href="https://arxiv.org/pdf/1909.09772.pdf">fairly recent preprint</a> studies how to 
+estimate a modification of this distance in polynomial time.</p>
 
-<h2 id="this-paper">This paper</h2>
-<p>This paper brings a new point of view on some very classic graph classes, 
-putting them all in the same framework, with algorithmic consequences.
-(Thus it goes in the right direction!).</p>
+<h2 id="hardness-of-moving-earth">Hardness of moving earth</h2>
 
-<p>Actually “new” should be used with a lot of quotation marks: this point of view 
-has been known for a long time for several classes. I cannot cite all 
-the papers here, so I’ll cite none of them, but keep in mind that most of 
-what I’ll write about is not new. Take a look at the paper if you want 
-to see the 70 citations.</p>
+<p>Given two point sets of equal size in an Euclidian space, $A$ and $B$, and a 
+bijection $f: A \rightarrow B$ , the cost of transporting $A$ to $B$ 
+through $f$ is the sum over the elements of $a$ of the distances 
+from $a$ to $f(a)$.</p>
 
-<p>Now, let’s get started with two examples.</p>
+<p><img src="assets/earth-moving.jpg" alt="" class="center-image" width="40%" /></p>
 
-<h2 id="example-1--forests">Example 1 : forests</h2>
+<p>Now given two point sets, the earth mover distance is the minimum such 
+distance over all bijection:
+$
+EMD(A,B)=\min_f \sum_{a\in A} d(a,f(a))
+$</p>
 
-<p>Here is a complicated characterization of the forests (e.g. the acyclic 
-graphs).</p>
+<p>It is the discrete analogue of 
+<a href="https://en.wikipedia.org/wiki/Transportation_theory_(mathematics)">Monge-Kantorovich metric</a>
+in probability theory, and is used in machine learning.</p>
 
-<p><em>Theorem:</em> A graph $G=(V,E)$ is a forest, if and only if, there exists an ordering 
-of the nodes, such that: there does <em>not</em> exist three nodes $a&lt;b&lt;c$, with 
- $(a,b)\in E$ and $(a,c)\in E$.</p>
+<p>Algorithms to compute the EMD are quadratic in $n$, and faster algorithms 
+are known for approximation but only in small dimensions.</p>
 
-<p>That is, we forbid this pattern:</p>
+<p><a href="https://arxiv.org/abs/1909.11068">A recent preprint</a> proves conditional 
+hardness results that explain this situation.</p>
 
-<p><img src="assets/tree.jpg" alt="" class="center-image" width="40%" /></p>
+<h2 id="complexity-of-sandpiles">Complexity of sandpiles</h2>
 
-<p><em>Proof sketch</em>
-$(\Rightarrow)$ : Consider a tree of the forest. Put the leaves 
-first in the ordering and remove them from the tree; then repeat 
-with the remaining nodes of the tree, until the tree is empty. 
-Then move on to the next tree, do the same etc. 
-It is easy to check that the pattern will not appear.</p>
+<p>Sandpile models are models close to cellular automata, based on a grid 
+in some dimension $d$, where every cell has a number (the number of 
+grains of sand there is at this location), and there is a local rule to 
+decide where the grains move at each step.</p>
 
-<p>$(\Leftarrow)$ : If the graph is not a forest, then there is a cycle. 
-Now consider any ordering of the graph. The node of the cycle that is 
-the left-most in the ordering must have both its cycle neighbors on 
-its right, thus the pattern appears.</p>
+<p>There is <a href="https://arxiv.org/pdf/1909.12150.pdf">a recent survey</a> about 
+the complexity of predicting the final shape of sandpiles. 
+There are some very nice things going on. For example the complexity of 
+the prediction is related to the computational power of the sandpile itself:</p>
 
-<h2 id="example-2--interval-graphs">Example 2 : interval graphs</h2>
+<ul>
+  <li>If the prediction is P-hard, then the sandpile has the computational 
+power of a Turing machine.</li>
+  <li>If the prediction is easier then it is not the case.</li>
+</ul>
 
-<p>A more interesting example is interval graphs. Given a set of intervals
-$S$, one can define the intersection graph of it, $I(S)$, by creating one 
-node for each interval and putting an edge between two nodes if the two 
-corresponding intervals intersect.</p>
+<p>A classic sandpile model is called the
+<a href="https://en.wikipedia.org/wiki/Abelian_sandpile_model">abelian sandpile model</a>
+(or Bak–Tang–Wiesenfeld model) and is the following. 
+On a grid $Z^d$, the rule is: every node that has $2d$ grains or more 
+gives one grain to each neighboring cell.</p>
 
-<p><img src="assets/interval-1.jpg" alt="" class="center-image" width="70%" /></p>
+<p>Here is an example with $d=1$, and a starting configuration where one 
+cell has 5 grains. The cells that have 2 or more grains are “unstable” 
+and give one grain to their left neighbor and one grain to their right 
+neighbor.</p>
 
-<p><em>Definition:</em> A graph $G$ is an interval graph if $G=I(S)$ for some set 
-of intervals $S$.</p>
+<p><img src="assets/sandpile.jpg" alt="" class="center-image" width="100%" /></p>
 
-<p>From the picture above, we know that a path on four vertices is an 
-interval graph. A graph that is not an interval graph is the cycle on 
-four vertices. Consider the following picture.</p>
+<p>Note that the dynamic is not exactly what you would expect from a real 
+sandpile, but it is very simple and has very nice properties.</p>
 
-<p><img src="assets/interval-2.jpg" alt="" class="center-image" width="70%" /></p>
+<p>For this model, the following hold:</p>
 
-<p>As the red node and the 
-blue node are not adjacent, they must correspond to two disjoint 
-intervals, and without loss of generality, the red interval comes first. 
-The black interval should intersect both the red and the blue intervals. 
-Thus it uses the space between these two.
-The same holds for the green interval, but the black and the green 
-intervals should not intersect, thus the construction is impossible.</p>
+<ul>
+  <li>In dimension 1, prediction is in <a href="https://en.wikipedia.org/wiki/NC_(complexity)">NC</a></li>
+  <li>In dimension 3 or more the prediction is P-hard.</li>
+</ul>
 
-<p>Here is a characterization of interval graphs.</p>
+<p>The survey gives a lot results, sketches and conjectures.</p>
 
-<p><em>Theorem:</em> A graph $G=(V,E)$ is an interval graph, if and only if, 
-there exists an ordering of the nodes, such that: there does not exist 
-three nodes $a&lt;b&lt;c$, with $(a,b)\notin E$ and $(a,c)\in E$.</p>
+<h2 id="k-opt-ratio-for-tsp">k-OPT ratio for TSP</h2>
 
-<p>In other words, the following pattern is forbidden:</p>
+<p><a href="https://en.wikipedia.org/wiki/2-opt">2-OPT</a> and its generalization 
+k-OPT, are popular heuristics for 
+the (metric) <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem">traveling salesman problem</a>.
+They consist in iteratively looking for 2 (respectively $k$ edges) to modify to improve the 
+cost of the tour. Here is an example for 2-OPT.</p>
 
-<p><img src="assets/interval-pattern.jpg" alt="" class="center-image" width="40%" /></p>
+<p><img src="assets/2opt.jpg" alt="" class="center-image" width="80%" /></p>
 
-<p><em>Proof sketch:</em> 
-The key idea for the proof is to consider the ordering of the left 
-endpoints of the intervals. First, given a set of intervals 
-it is easy to see that the ordering given by these left endpoints avoids 
-the pattern. Second, to build a set of intervals, given the ordering, 
-one just as to put the left endpoint of the intervals in the right order
-and then to make put the right endpoint at the spot where the right most 
-neighbor starts. (The pattern insures that this construction is correct.)</p>
+<p>This heuristic performs poorly in the worst-case: exponential time, and 
+approximation ratio in $\theta(\sqrt n)$. But it performs well in practice.</p>
 
-<h2 id="similar-characterizations">Similar characterizations</h2>
+<p>A <a href="https://arxiv.org/pdf/1909.12025.pdf">recent preprint</a> computes the 
+precise approximation ratio for 2-OPT, which is $\sqrt(n)/2$.</p>
 
-<p>Thus these two classes can be characterized in a 
-similar way: the existence of a vertex ordering that 
-avoids some small pattern. Our paper is about understanding what are the
-classes that can be defined this way. In the next post, we will define 
-this more formally.</p>
+<p>Other papers from the literature prove that : 
+* The approximation ratio is in $O(\sqrt n)$ for random edge weights 
+(which are not metric in general), see <a href="https://www.sciencedirect.com/science/article/pii/S016763770900011X?via%3Dihub">here</a>.
+* For Euclidian instances, the worst ratio is in $O(\log n)$.
+* The <a href="https://en.wikipedia.org/wiki/Smoothed_analysis">smoothed analysis</a>
+of the problem has been studied, eg <a href="https://wwwhome.ewi.utwente.nl/~mantheyb/full/MantheyVeenstra_TwoOpt.pdf">here</a>.
+* The fine-grain analysis of $k$-OPT has been done <a href="http://drops.dagstuhl.de/opus/volltexte/2016/6277/pdf/LIPIcs-ICALP-2016-5.pdf">here</a>
+with improved complexity for $k\geq 4$.</p>
 
 
   </div>

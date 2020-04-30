@@ -5,10 +5,6 @@ redirect_from: "/2020/04/20/network-decomposition-3-centralized/"
 permalink: network-decomposition-3-centralized
 ---
 
-[Temporary note: one of the authors will present the network decomposition paper 
-at the Aalto seminar on Wednesday! See 
-[here](https://users.aalto.fi/~uittoj3/seminar.html).] 
-
 This is the third post of a series on distributed network decomposition. 
 The introductory post of this series is 
 [here](https://discrete-notes.github.io/network-decomposition-0). 

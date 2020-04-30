@@ -10,7 +10,7 @@ COVID 19 is forcing a lot of conferences to go online. A few notes about this.
 ![](assets/yucca.JPG){: .center-image width="80%"}
 
 
-## Online conferences&#58; report from WAGON
+## Report from the online conference WAGON
 
 There is a maths conference named WAGS that took place virtually this year, and
 was renamed WAGON for the occasion. One of the organizers wrote report about it 

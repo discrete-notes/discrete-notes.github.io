@@ -7,12 +7,133 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Network decomposition 4&amp;#58; weak and strong decompositions</title>
+        <description>&lt;p&gt;This is the fourth post of a series on distributed network decomposition. 
+The introductory post of this series is 
+&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-0&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In this post, we take a look at the different versions of network decomposition
+(weak and strong), and how we can go from one to the other.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/caravane-5.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;recap-of-previous-episodes&quot;&gt; Recap of previous episodes&lt;/h3&gt;
+
+&lt;p&gt;In the previous posts, we saw what a network decomposition is, why it is useful
+to the design of local algorithms and how we can build such object with a 
+sequential algorithm. Before we describe the distributed efficient algorithm 
+(that is the core of series), let us give a further look at two different types
+of decompositions.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-the-diameter-of-a-component&quot;&gt;What is the diameter of a component?&lt;/h2&gt;
+
+&lt;p&gt;In the &lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-2-impact&quot;&gt;second post&lt;/a&gt; 
+of this series we defined network decompositions, saying that the connected 
+components of each color class have diameter at most $d$. 
+As usual, the diameter is the maximum over all pairs of nodes of the minimum length
+of a path between these two nodes. But which edges can you use for these paths: 
+only the edges of the subgraph, or all the edges of the graph? 
+The first way defines the &lt;em&gt;strong diameter&lt;/em&gt; and the second is the &lt;em&gt;weak diameter&lt;/em&gt;.
+These can be very different, as pictured below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/strong-weak.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
+On this graph, the blue component has weak diameter 2 and strong diameter 9.
+&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;The distributed algorithm we’ll study builds a network decomposition with a 
+logarithmic &lt;em&gt;weak diameter&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;going-from-weak-to-strong-diameter&quot;&gt; Going from weak to strong diameter&lt;/h2&gt;
+
+&lt;p&gt;For some applications it might be better to have a strong decomposition, and the 
+algorithm provides only a weak one. This is not a big problem. 
+The paper of Rozhon and Ghaffari sketches an approach that builds a strong 
+decomposition with $O(\log(n))$ colors from a weak one with also $O(\log(n))$ 
+colors. 	
+It is even simpler to have such a transformation if we just insist on having 
+polylogs: 
+take your weak decomposition, make the nodes of each component act like in a 
+centralized algorithm (by gathering the whole topology of the component and 
+simulating), and make them compute a strong decomposition of the component 
+itself. For example take a component of weak diameter with color yellow, the nodes 
+of this component a strong network decomposition of this component, in some sense
+the nodes of this component now have $\log(n)$ shades of yellow. In total this 
+makes a strong decomposition with $O(\log^2n)$ colors.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/refined-decompo-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/refined-decompo-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/refined-decompo-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
+The first picture is a weak decomposition with two colors, yellow and blue. 
+Note that the strong diameter is large in comparison with the weak diameter. Now,
+if the yellow component &quot;strongly decompose&quot; itself, we get three shades of 
+yellow, and the new yellow components have small strong diameter. We can do this 
+for all components of all colors classes, in parallel. 
+&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;We finish this post with some technical aspects of weak decompositions.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-tree-to-keep-track-of-the-diameter&quot;&gt;A tree to keep track of the diameter&lt;/h2&gt;
+
+&lt;p&gt;Remember that for the centralized construction, we create the component by making 
+the balls grow layers by layers. Now suppose that we would build a spanning tree
+of the component as we go: at each new layer, we would wire the nodes as leafs 
+of the tree. The depth of this tree is between half the diameter and the 
+diameter.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/boule-arbre-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
+The nodes of a component, added layers by layers, during the growth of a ball, 
+for the centralized construction. The orange edges are the edges of the tree, 
+the gray edges are other edges of the component. The diameter is 5, and the depth of 
+the tree is 4. 
+&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;In the distributed network decomposition, some balls will grow in a similar 
+fashion as in the centralized algorithm, but then they will be modified. In 
+particular some nodes will leave the component. Also, as we want the tree to have a 
+depth that bounds the weak diameter, this tree may have to use edges 
+that are not within the component. Hence we use a Steiner tree using the edges 
+and nodes that may not be in the component.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/boule-arbre-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
+The blue patches show the balls of various distance from the root, using the 
+nodes and edges of all the graph. In particular the yellow nodes are not part of 
+the component, but they are used by the tree.
+&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;giving-up-the-connectivity&quot;&gt;Giving up the connectivity&lt;/h2&gt;
+
+&lt;p&gt;Actually now that we measure the diameter via the tree, we can consider 
+non-connected components.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/boule-arbre-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This change in the definition useful in the distributed algorithm as we don’t 
+want to keep track of whether the component is connected or not.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 05 May 2020 00:00:00 +0200</pubDate>
+        <link>https://discrete-notes.github.io///network-decomposition-4-weak-strong</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///network-decomposition-4-weak-strong</guid>
+      </item>
+    
+      <item>
         <title>About online conferences</title>
         <description>&lt;p&gt;COVID 19 is forcing a lot of conferences to go online. A few notes about this.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/yucca.JPG&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;online-conferences-report-from-wagon&quot;&gt; Online conferences: report from WAGON&lt;/h2&gt;
+&lt;h2 id=&quot;report-from-the-online-conference-wagon&quot;&gt;Report from the online conference WAGON&lt;/h2&gt;
 
 &lt;p&gt;There is a maths conference named WAGS that took place virtually this year, and
 was renamed WAGON for the occasion. One of the organizers wrote report about it 
@@ -300,11 +421,7 @@ in TCS are: &lt;a href=&quot;https://dmtcs.episciences.org/&quot;&gt;DMTCS&lt;/a
     
       <item>
         <title>Network decomposition 3&amp;#58; Centralized construction</title>
-        <description>&lt;p&gt;[Temporary note: one of the authors will present the network decomposition paper 
-at the Aalto seminar on Wednesday! See 
-&lt;a href=&quot;https://users.aalto.fi/~uittoj3/seminar.html&quot;&gt;here&lt;/a&gt;.]&lt;/p&gt;
-
-&lt;p&gt;This is the third post of a series on distributed network decomposition. 
+        <description>&lt;p&gt;This is the third post of a series on distributed network decomposition. 
 The introductory post of this series is 
 &lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-0&quot;&gt;here&lt;/a&gt;. 
 This post explains how to build a network decomposition in a centralized manner.
@@ -940,6 +1057,8 @@ the maximal independent set problem.&lt;/li&gt;
 that is, why is a network decomposition so useful.&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-3-centralized&quot;&gt;Centralized construction&lt;/a&gt;&lt;/em&gt;, 
 how to build a network decomposition with good parameters in a centralized manner.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-4-weak-strong/&quot;&gt;Weak and strong decomposition&lt;/a&gt;&lt;/em&gt;, 
+some useful precisions about the decomposition&lt;/li&gt;
   &lt;li&gt;(and more) TBA&lt;/li&gt;
 &lt;/ol&gt;
 </description>
@@ -1236,77 +1355,6 @@ on this topic &lt;a href=&quot;https://arxiv.org/pdf/1911.05911.pdf&quot;&gt;her
         <pubDate>Wed, 22 Jan 2020 00:00:00 +0100</pubDate>
         <link>https://discrete-notes.github.io///first-2020-notes</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///first-2020-notes</guid>
-      </item>
-    
-      <item>
-        <title>Smoothed analysis in distributed computing</title>
-        <description>&lt;p&gt;Happy 2020! A short post about smoothed analysis in distributed 
-computing.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/arbre-patagonie.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Smoothed_analysis&quot;&gt;Smoothed analysis&lt;/a&gt; is 
-about a complexity measure in between the complexity on random instances 
-and the complexity on worst-case instances. 
-It basically asks about the complexity on the worst instance,
-but with a small random permutation.
-The goal of this measure is to better capture the complexity observed in
-practice.&lt;/p&gt;
-
-&lt;p&gt;For example, the 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Simplex_algorithm&quot;&gt;simplex algorithm&lt;/a&gt;
-performs very well in practice
-but is proved to be exponential in the worst-case. This means
-that worst-case complexity is not the right tool to evaluate this algorithm.
-But if you consider a bit of noise, then the simplex algorithm becomes 
-polynomial! More precisely the complexity is bounded 
-by a polynomial in $n$ and $1/\sigma$, where $\sigma$ is the standard 
-deviation of the gaussian noise. This somehow explains why the simplex 
-is so good in practice: the examples where it is exponential are very 
-special constructions, that are eliminated by small perturbations.&lt;/p&gt;
-
-&lt;p&gt;I was recentely asked whether there exists some smoothed analysis 
-in network distributed computing. There is actually a 
-&lt;a href=&quot;https://arxiv.org/pdf/1911.02628.pdf&quot;&gt;recent paper&lt;/a&gt; that started that. 
-It does a smoothed analysis of distributed minimum 
-spanning tree.&lt;/p&gt;
-
-&lt;p&gt;A problem with smoothed analysis, or a feature maybe, is that it can be 
-made in different ways, in particular a question is: What kind of noise 
-do you consider? When there are 
-numerical inputs, you can modify these inputs with a gaussian noise. But 
-in the case of minimum spanning tree, small perturbations of the weights
-do not change much.
-More precisely, given a difficult instance, one 
-would have to add a noise of the same order of magnitude as the 
-weights to break the lower bound. 
-Instead, the authors of the paper above consider a model 
-where each node is allowed to ask for a new adjacent random edge at 
-each round. These new edges have infinite weight thus they are not 
-useful for the MST, only for the communication. 
-This seems a rather strange model, but I can imagine that a lot of more
-natural variants do not make sense.&lt;/p&gt;
-
-&lt;p&gt;More generally, a problem I can see with smoothed 
-analysis for the LOCAL model for example, is that it is based on the 
-idea that random instances are easy. 
-For graphs, a natural choice of random instances, is 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model&quot;&gt;Erdos-Renyi graphs&lt;/a&gt;,
-but these are not always easy for distributed algorithms: they are 
-sometimes used as lower bound instances (or more precisely they are 
-expanders,  and have logarithmic girth, which are two properties that 
-often pop up in lower bounds). 
-Some graphs that are somehow easy are grids, but I don’t know what kind of 
-random transformation you can apply to a graph to make it more grid-like.&lt;/p&gt;
-
-&lt;p&gt;One could also play with the identifiers. For example a random identifier 
-assignment often boils down to a randomized algorithms
-(see &lt;a href=&quot;https://arxiv.org/abs/1704.05739&quot;&gt;this&lt;/a&gt;), and maybe some slightly 
-random assignement could make sense.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 13 Jan 2020 00:00:00 +0100</pubDate>
-        <link>https://discrete-notes.github.io///smoothed-analysis</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///smoothed-analysis</guid>
       </item>
     
   </channel>

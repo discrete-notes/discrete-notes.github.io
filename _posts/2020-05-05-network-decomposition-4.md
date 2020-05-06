@@ -41,7 +41,7 @@ On this graph, the blue component has weak diameter 2 and strong diameter 9.
 The distributed algorithm we'll study builds a network decomposition with a 
 logarithmic *weak diameter*. 
 
-## Going from weak to strong diameter
+## Going from strong to weak diameter
 
 For some applications it might be better to have a strong decomposition, and the 
 algorithm provides only a weak one. This is not a big problem. 

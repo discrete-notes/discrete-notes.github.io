@@ -36,6 +36,6 @@ the maximal independent set problem.
 that is, why is a network decomposition so useful. 
 3. *[Centralized construction](https://discrete-notes.github.io/network-decomposition-3-centralized)*, 
 how to build a network decomposition with good parameters in a centralized manner.
-4. *[Weak and strong decomposition](https://discrete-notes.github.io/network-decomposition-4-weak-strong/)*, 
+4. *[Weak and strong decomposition](https://discrete-notes.github.io/network-decomposition-4-weak-strong)*, 
 some useful precisions about the decomposition
 5. (and more) TBA 

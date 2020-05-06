@@ -153,7 +153,7 @@ core topic of this series of posts.
 
 
 
-
+*Next post of the series: [Centralized construction](https://discrete-notes.github.io/network-decomposition-3-centralized)*
 
 
  

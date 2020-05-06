@@ -144,3 +144,4 @@ By construction, the size of the border of the ball is at most the size of the
 interior of the ball. That is, if we select $m$ nodes to be in the ball, we 
 freeze at most $m$ new nodes. This is enough for the whole construction to work.
 
+*Next post of the series: [Weak and strong decomposition](https://discrete-notes.github.io/network-decomposition-4-weak-strong)*

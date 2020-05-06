@@ -115,5 +115,6 @@ about all the edges, thus the local copy of the graph that each node has is
 correct, and then the output of the algorithm is also correct. 
  
 
+*Next post of the series: [Impact on distributed algorithms](https://discrete-notes.github.io/network-decomposition-2-impact)*
 
 

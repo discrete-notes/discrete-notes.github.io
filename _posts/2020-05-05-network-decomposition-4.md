@@ -14,7 +14,7 @@ In this post, we take a look at the different versions of network decomposition
 
 ![](assets/caravane-5.jpg){: .center-image width="90%"}
 
-### Recap of previous episodes
+### Recap of previous episodes
 
 In the previous posts, we saw what a network decomposition is, why it is useful
 to the design of local algorithms and how we can build such object with a 

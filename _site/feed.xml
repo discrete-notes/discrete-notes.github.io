@@ -7,6 +7,219 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Notes for (rainy) May</title>
+        <description>&lt;p&gt;Notes for May.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/caravane-nuit.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;95%&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;active-learning-and-interactive-protocols&quot;&gt;Active learning and interactive protocols&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Grace_Murray_Hopper_Award&quot;&gt;Grace Murray Hopper Award&lt;/a&gt;
+has been given to &lt;a href=&quot;http://www.cs.cmu.edu/~ninamf/&quot;&gt;Maria Florina “Nina” Balcan&lt;/a&gt; 
+for her work in machine learning. One of her contributions is in
+&lt;em&gt;&lt;a href=&quot;Active learning (machine learning)&quot;&gt;active machine learning&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In a classic setting of machine learning, the machine is given a lot of 
+labeled data and must produce a classifier: an algorithm that can guess the label
+of a new data point. In active learning, this is made interactive: the machine 
+can create a data point and ask for the label of this point. For example in the
+following picture, in order to have a good classifier based on the red and blue
+points, the machine may ask about the yellow points, to know which hypothesis is 
+the best between the green and the pink one.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/active-learning.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A reason to do that is to save time: after processing a fraction of the data, 
+the machine can have some preliminary idea of how the classification look like, 
+and only relevant data point at the boundary of this partition are really useful.
+Another reason is if the data points themselves are costly. I remember a talk&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
+where the goal was to decide whether small islands close to the shore reduce 
+or increase the damages of a tsunami. If you have perfect knowledge of the 
+dimensions of your island, you can run a precise fluid simulation, and that’s it. 
+But if you 
+want a big picture of whether islands in general are bad or good, then you would 
+need to run many simulations, and you cannot because it takes too much time. 
+Then you can use machine learning to get an approximation of the damage as a 
+function of parameters of the island. But remember that any new point takes ages 
+to be computed, thus you would like to have only useful data points in you 
+learning set. And somehow you cannot always select your points a priori ; then 
+having active learning is great.&lt;/p&gt;
+
+&lt;p&gt;Balcan basically proved that active learning can be efficient even in the 
+presence of (all kinds of) noise. The Hopper award laudatio cites two other
+key works, in semi-supervised learning and clustering.&lt;/p&gt;
+
+&lt;p&gt;[I learned about this in a 
+&lt;a href=&quot;https://rjlipton.wordpress.com/2020/04/10/nina-balcan-wins/&quot;&gt;post on Lipton’s blog&lt;/a&gt;, 
+that contains the following amusing sentence: “Active learning follows a classic idea 
+in computer theory: Making a protocol interactive can often decrease the cost, 
+and almost always makes the protocol more complex to understand”.]&lt;/p&gt;
+
+&lt;h2 id=&quot;sprouts-game&quot;&gt;Sprouts game&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://images.math.cnrs.fr&quot;&gt;Images des maths&lt;/a&gt; a maths popularization website in 
+French has 
+&lt;a href=&quot;http://images.math.cnrs.fr/Savez-vous-planter-les-choux.html&quot;&gt;an article&lt;/a&gt; 
+on
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Sprouts_(game)&quot;&gt;sprouts&lt;/a&gt;, a combinatorial game 
+related to planar graphs.&lt;/p&gt;
+
+&lt;p&gt;It is a paper and pencil game between two players. They start from an arbitrary 
+set of points, and then play one after the other. At her turn, the player has to 
+do two things:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;draw a line between two points (including self-loops)&lt;/li&gt;
+  &lt;li&gt;draw a point on this line (not at one of the end points)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;and there are a few constraints:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the lines should not intersect&lt;/li&gt;
+  &lt;li&gt;every point has degree at most three.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;At some point one the players cannot play anymore, this player looses. On the 
+following picture, there are three initial points. The blue player makes the 
+sixth move, and after that the red player cannot play. Therefore the blue player
+wins.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/sprouts-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/sprouts-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/sprouts-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/sprouts-4.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Researchers have completely characterized what are the winning strategies for 
+this game up to 44 initial points. And there is the following conjecture: if 
+both players play perfectly, the first player cannot win if and only if the 
+number of initial points is 0, 1 or 2 modulo 6…!&lt;/p&gt;
+
+&lt;h2 id=&quot;diffraction-and-algorithms&quot;&gt; Diffraction and algorithms&lt;/h2&gt;
+
+&lt;p&gt;The other day, there was a paper on the arxiv named 
+&lt;a href=&quot;https://arxiv.org/pdf/2004.07659.pdf&quot;&gt;Algorithmic Foundations for the Diffraction Limit&lt;/a&gt; 
+and I thought that &lt;em&gt;diffraction&lt;/em&gt; had a meaning that I 
+didn’t know about, outside of physics. So I looked 
+at the abstract, and actually it’s about the good old 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Diffraction&quot;&gt;optical diffraction&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;From what I understood (and remember) here is the topic of the paper. When you 
+have two sources of light far away one from the other, and that you observe the 
+diffraction image created by a circular aperture, you can say “yes there are two 
+sources of light, and they are in that position”. But when the two sources are 
+close one from the other it’s less clear. It is believed that there is a 
+fundamental barrier after which you cannot decide between one and two sources. 
+There are several criteria to decide where this barrier is, with various 
+explanations but all are heuristics.&lt;/p&gt;
+
+&lt;p&gt;The approach of the paper is to consider that one receives the diffracted image 
+through (noisy) samples, and based on this samples must decide whether there are one or 
+two sources. This becomes a more statistical problem, and when we ask how many 
+points are needed, then it becomes more algorithmic too. Then one can design 
+algorithms with a complexity depending on the number of samples, the noise etc.&lt;/p&gt;
+
+&lt;h2 id=&quot;trusses&quot;&gt;Trusses&lt;/h2&gt;
+
+&lt;p&gt;In the study of social networks, a classic topic is to understand and detect 
+communities. In terms of graphs, the simplest object representing a community is 
+a clique. But this is a very demanding properties: there are many groups that 
+one would call a community, where not everybody knows everybody. A classic 
+object here is a $k$-core. A $k$-core is a maximal connected subgraph, with all 
+nodes having degree at least $k$ in this subgraph. That is everybody should know
+at least $k$ other members.&lt;/p&gt;
+
+&lt;p&gt;I learned recently about another such object: $k$-trusses. A $k-truss$ is a 
+maximal connected subgraph, such that inside this subgraph, every node is 
+adjacent to at least $k$ triangles. So now you want that every person can cite 
+$k$ pairs of acquaintances who know each other. It’s a more restricted notion 
+than $k$-cores, because in some sense the communities must be more “local”, with 
+each neighborhood being more connected.&lt;/p&gt;
+
+&lt;p&gt;[I learned about this while taking a look at the papers published in JGAA 
+journal for the &lt;a href=&quot;https://discrete-notes.github.io/journal-fees&quot;&gt;post about journal fees&lt;/a&gt;. 
+The paper in particular is 
+&lt;a href=&quot;http://www.jgaa.info/accepted/2020/527.pdf&quot;&gt;this one&lt;/a&gt;, which discusses bounds 
+and algorithms for $k$-trusses.]&lt;/p&gt;
+
+&lt;h2 id=&quot;eggs-and-reconfigurations&quot;&gt;Eggs and reconfigurations&lt;/h2&gt;
+&lt;p&gt;The Aperiodical has an 
+&lt;a href=&quot;https://aperiodical.com/2020/04/the-big-lock-down-math-off-match-5/&quot;&gt;article&lt;/a&gt; 
+about a maths games, with a box of eggs.
+The game is the following. You start with a box of eggs in this configuration:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/boite-oeufs-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;and you should transform it into that configuration:
+&lt;img src=&quot;assets/boite-oeufs-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;using only movements of the following form (move one right):
+&lt;img src=&quot;assets/boite-oeufs-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The question is what is the minimum number of moves? 
+In general I would consider this as just one more maths game, but as I will be 
+working on reconfiguration problems next year (in Lyon with 
+&lt;a href=&quot;https://pagesperso.g-scop.grenoble-inp.fr/~bousquen/&quot;&gt;Nicolas Bousquet&lt;/a&gt;), 
+this is relevant. Reconfiguration problems are problems of the form: how to get 
+from configuration A to B in the minimum number of moves of some sort. This is 
+important for example for random generation of solutions to combinatorial 
+problems.&lt;/p&gt;
+
+&lt;h2 id=&quot;other-notes&quot;&gt;Other notes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The Simons institute launches a new series of video, “Theory shorts”. The 
+&lt;a href=&quot;https://www.youtube.com/watch?time_continue=14&amp;amp;v=PLAZyu73tWE&amp;amp;feature=emb_logo&quot;&gt;first one&lt;/a&gt; 
+is about vision and brain ; quite interesting.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;An interesting blog about algorithmic fairness that I didn’t know: 
+&lt;a href=&quot;https://algorithmicfairness.wordpress.com/category/algorithms/&quot;&gt;Algorithmic fairness&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In &lt;a href=&quot;https://blog.computationalcomplexity.org/2020/05/vidcast-on-conferences.html&quot;&gt;a “vidcast”&lt;/a&gt;, 
+Gasarsh and Fortnow talk about conferences. In particular, 
+about having conferences sometimes in person, sometimes virtual (and also about 
+regional conferences). Incidentially, they mention the fact that the accronym 
+&lt;em&gt;EC&lt;/em&gt; used to be for &lt;em&gt;Electronic Commerce&lt;/em&gt;, which is weird… (now it’s 
+&lt;em&gt;Economy and Computation&lt;/em&gt; which makes more sense).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I realized that the blog was hard to read on smartphone because of the format 
+of the picture, it should be better now.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I started making pictures with my tablet, and it’s a very good solution. Before 
+looking into it, I didn’t know one could have a simple solftware with layers and 
+opacity parameters on tablets. 
+It’s especially nice to have a first sketch, and then make a precise drawing. 
+I use it not only for the blog but also for picture prototypes in manuscripts.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h3&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;The talk was a bachelor project defence, in &lt;a href=&quot;http://cmla.ens-paris-saclay.fr/&quot;&gt;CMLA&lt;/a&gt;, an applied maths lab  near Paris.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 11 May 2020 00:00:00 +0200</pubDate>
+        <link>https://discrete-notes.github.io///notes-rainy-may-2020</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///notes-rainy-may-2020</guid>
+      </item>
+    
+      <item>
         <title>Network decomposition 4&amp;#58; weak and strong decompositions</title>
         <description>&lt;p&gt;This is the fourth post of a series on distributed network decomposition. 
 The introductory post of this series is 
@@ -17,7 +230,7 @@ The introductory post of this series is
 
 &lt;p&gt;&lt;img src=&quot;assets/caravane-5.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;recap-of-previous-episodes&quot;&gt; Recap of previous episodes&lt;/h3&gt;
+&lt;h3 id=&quot;recap-of-previous-episodes&quot;&gt;Recap of previous episodes&lt;/h3&gt;
 
 &lt;p&gt;In the previous posts, we saw what a network decomposition is, why it is useful
 to the design of local algorithms and how we can build such object with a 
@@ -44,7 +257,7 @@ On this graph, the blue component has weak diameter 2 and strong diameter 9.
 &lt;p&gt;The distributed algorithm we’ll study builds a network decomposition with a 
 logarithmic &lt;em&gt;weak diameter&lt;/em&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;going-from-weak-to-strong-diameter&quot;&gt; Going from weak to strong diameter&lt;/h2&gt;
+&lt;h2 id=&quot;going-from-strong-to-weak-diameter&quot;&gt;Going from strong to weak diameter&lt;/h2&gt;
 
 &lt;p&gt;For some applications it might be better to have a strong decomposition, and the 
 algorithm provides only a weak one. This is not a big problem. 
@@ -605,6 +818,7 @@ with the definition of the network decomposition.&lt;/p&gt;
 interior of the ball. That is, if we select $m$ nodes to be in the ball, we 
 freeze at most $m$ new nodes. This is enough for the whole construction to work.&lt;/p&gt;
 
+&lt;p&gt;&lt;em&gt;Next post of the series: &lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-4-weak-strong&quot;&gt;Weak and strong decomposition&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 20 Apr 2020 00:00:00 +0200</pubDate>
         <link>https://discrete-notes.github.io///network-decomposition-3-centralized</link>
@@ -858,6 +1072,8 @@ which is awesome!&lt;/p&gt;
 &lt;p&gt;But now we need to be able to build the network decomposition fast. This is the 
 core topic of this series of posts.&lt;/p&gt;
 
+&lt;p&gt;&lt;em&gt;Next post of the series: &lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-3-centralized&quot;&gt;Centralized construction&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Fri, 10 Apr 2020 00:00:00 +0200</pubDate>
         <link>https://discrete-notes.github.io///network-decomposition-2-impact</link>
@@ -1018,6 +1234,8 @@ the egde (2,5) is built and then broadcasted to the whole graph.&lt;/p&gt;
 about all the edges, thus the local copy of the graph that each node has is 
 correct, and then the output of the algorithm is also correct.&lt;/p&gt;
 
+&lt;p&gt;&lt;em&gt;Next post of the series: &lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-2-impact&quot;&gt;Impact on distributed algorithms&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Thu, 09 Apr 2020 00:00:00 +0200</pubDate>
         <link>https://discrete-notes.github.io///network-decomposition-1-local-algorithms</link>
@@ -1057,7 +1275,7 @@ the maximal independent set problem.&lt;/li&gt;
 that is, why is a network decomposition so useful.&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-3-centralized&quot;&gt;Centralized construction&lt;/a&gt;&lt;/em&gt;, 
 how to build a network decomposition with good parameters in a centralized manner.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-4-weak-strong/&quot;&gt;Weak and strong decomposition&lt;/a&gt;&lt;/em&gt;, 
+  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-4-weak-strong&quot;&gt;Weak and strong decomposition&lt;/a&gt;&lt;/em&gt;, 
 some useful precisions about the decomposition&lt;/li&gt;
   &lt;li&gt;(and more) TBA&lt;/li&gt;
 &lt;/ol&gt;
@@ -1236,125 +1454,6 @@ is a stack exchange thread on “core algorithms deployed”.)&lt;/p&gt;
         <pubDate>Wed, 01 Apr 2020 00:00:00 +0200</pubDate>
         <link>https://discrete-notes.github.io///notes-pre-COVID19</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///notes-pre-COVID19</guid>
-      </item>
-    
-      <item>
-        <title>First 2020 notes</title>
-        <description>&lt;p&gt;The first set of notes of 2020.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;assets/pinguinos.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;95%&quot; /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;small&gt;&lt;i&gt;
-Magellanic penguins.
-&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;conference-model-outcome-of-the-podc-survey-and-remote-attendance&quot;&gt;Conference model: outcome of the PODC survey and remote attendance&lt;/h2&gt;
-
-&lt;p&gt;As &lt;a href=&quot;./mid-november-2019-non-technical&quot;&gt;reported here&lt;/a&gt; in November, the
-community of the theory of distributed computing is in the process of
-changing some aspects of its conference model. A survey has been proposed
-that has received many answers. The email summarizing these answers
-is &lt;a href=&quot;https://listserv.acm.org/SCRIPTS/WA-ACMLPX.CGI?A2=PODC;3b2ab6fa.1911&amp;amp;S=&quot;&gt;here&lt;/a&gt;.
-It is fairly short, and I don’t have much to say, so I’ll just list 
-the topics discussed:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;changing to several deadlines a year, to avoid a large gap between
-important deadlines,&lt;/li&gt;
-  &lt;li&gt;a transition to a system with a journal,&lt;/li&gt;
-  &lt;li&gt;collocation of the two main conferences.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A topic mentioned in a previous mail was that this kind of survey is 
-more useful than business meetings: in a business meeting, most people are 
-afraid to talk, some people are very vocal and do not let others talk, 
-and more importantly, it’s late, and everybody wants to leave the room.&lt;/p&gt;
-
-&lt;p&gt;Another related text is by Moshe Vardi in the Communication of the ACM, 
-see 
-&lt;a href=&quot;https://cacm.acm.org/magazines/2020/1/241717-publish-and-perish/fulltext&quot;&gt;here&lt;/a&gt;.
-He basically says that conferences have a big environmental impact, and 
-that we should allow people to participate via video. 
-The usual answer to this is that you would loose a lot of informal 
-interaction between participants. He says he thinks it’s not as bad as 
-it looks.&lt;/p&gt;
-
-&lt;h2 id=&quot;selfish-routing-andtraffic-lights&quot;&gt;Selfish routing and traffic lights&lt;/h2&gt;
-
-&lt;p&gt;A &lt;a href=&quot;https://arxiv.org/pdf/1912.06513.pdf&quot;&gt;recent paper&lt;/a&gt; on the arxiv, 
-consider the classic model of routing but with traffic lights. 
-As discussed recently on this blog (see &lt;a href=&quot;./price-anarchy-flows&quot;&gt;here&lt;/a&gt;)
-a classic problem in algorithmic game theory is to evaluate how good is 
-the traffic on a network, if you allow each car to chose selfishly the 
-best route. 
-A surprising phenomenon in this model is that sometimes opening a new 
-street can slow down the traffic 
-(&lt;a href=&quot;https://en.wikipedia.org/wiki/Braess%27s_paradox&quot;&gt;Braess’s paradox&lt;/a&gt;). 
-The authors show that this does not 
-happen when the network is equipped with some traffic lights.&lt;/p&gt;
-
-&lt;h2 id=&quot;sunset-geometry&quot;&gt;Sunset geometry&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Which of the two pictures below looks more like a sunset over a very 
-calm lake?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/sunset-geometric.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;If the Earth is flat then it’s the one on the left. If it’s spheric, it’s 
-the one on the right, and you can even compute the radius of the planet
-from the picture!&lt;/p&gt;
-
-&lt;p&gt;See &lt;a href=&quot;https://vanderbei.princeton.edu/tex/sunset/ms.pdf&quot;&gt;this&lt;/a&gt; for an 
-explanation using trigonometry, and 
-&lt;a href=&quot;https://www.shapeoperator.com/2016/12/12/sunset-geometry/&quot;&gt;that&lt;/a&gt; for 
-one using geometric algebra.&lt;/p&gt;
-
-&lt;p&gt;[I learned about this on &lt;a href=&quot;https://11011110.github.io/blog/&quot;&gt;Eppstein’s blog&lt;/a&gt;.]&lt;/p&gt;
-
-&lt;h2 id=&quot;other-notes&quot;&gt;Other notes&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;A bit more of geometry if you read French or Spanish: the former flag 
-of Chile has a very nice geometric construction. See 
-&lt;a href=&quot;http://images.math.cnrs.fr/Un-drapeau-en-or-perdu-dans-l-histoire.html?lang=fr&quot;&gt;here&lt;/a&gt;
-for the article in French, and 
-&lt;a href=&quot;http://images.math.cnrs.fr/Una-bandera-aurea-perdida-en-la-historia.html&quot;&gt;here&lt;/a&gt;
-in Spanish.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://dblp.uni-trier.de/&quot;&gt;DBLP&lt;/a&gt; now keeps track of the citations of 
-the papers. You can access them by clicking on the page symbol close to 
-the colored square. Not all the citations are present because they use 
-an open access database, and of course, not everything is open.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;I used to use &lt;a href=&quot;http://latexdraw.sourceforge.net/index.html&quot;&gt;latexdraw&lt;/a&gt;
-to generate pictures that can be included in latex. That is you draw, 
-like on a software like Paint, and it generates the code of this picture. 
- Unfortunately the output is only pstricks code, and one would sometimes 
-like a tikz code. 
-I discovered yesterday &lt;a href=&quot;https://www.mathcha.io/&quot;&gt;mathcha.io&lt;/a&gt; which is an 
-online latex editor, and does the same but generates tikz code.
-[Thanks to 
-&lt;a href=&quot;https://ingenieria.uai.cl/profesor/pedro-montealegre/&quot;&gt;Pedro Montealegre&lt;/a&gt;
-for showing me this.]&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;We mentioned robust statistics 
-&lt;a href=&quot;https://discrete-notes.github.io/june-2019-notes&quot;&gt;on this blog&lt;/a&gt; some 
-time ago; if you’re interested, there is a survey on the recent advances 
-on this topic &lt;a href=&quot;https://arxiv.org/pdf/1911.05911.pdf&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Wed, 22 Jan 2020 00:00:00 +0100</pubDate>
-        <link>https://discrete-notes.github.io///first-2020-notes</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///first-2020-notes</guid>
       </item>
     
   </channel>

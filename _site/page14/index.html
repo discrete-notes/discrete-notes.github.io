@@ -87,69 +87,93 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/bayesian-auctions">
-        Bayesian mechanism design and Yao's principle
+      <a href="/price-anarchy-flows">
+        Price of anarchy for dynamic flows
       </a>
     </h1>
 
-    <span class="post-date">21 Nov 2019</span>
+    <span class="post-date">05 Dec 2019</span>
 
-    <p>I attended a talk yesterday about 
-<a href="https://en.wikipedia.org/wiki/Algorithmic_game_theory">algorithmic game theory</a> by 
-<a href="https://www.or.tum.de/en/group/alexandrostsigonias/">Alexandros Tsigonias-Dimitriadis</a>
-as part of Santiago’s <a href="http://www.dii.uchile.cl/acgo/seminar-acgo/">AGCO seminar</a>.
-Here are a few elements from this talk.</p>
+    <p>This post is about flows from a game theory perspective. 
+It originates from a recent talk of 
+<a href="https://sites.google.com/view/timoosterwijk/home">Tim Oosterwijk</a> at 
+the University of Chile about 
+<a href="https://drive.google.com/file/d/1u-NUQLppaTDdNUUh-BvsXYJ2QH9RM1K9/view">this paper</a>.</p>
 
-<h2 id="basic-bayesian-auction">Basic Bayesian auction</h2>
+<h2 id="a-model-for-dynamic-flows">A model for dynamic flows</h2>
 
-<p>The very basic setting we are looking at is the following: a client (the bidder)
-comes to a seller (the auctioneer) with the goal of buying a particular item. 
-The auctioneer has to set a price for the item. 
-The bidder knows the maximum price at which she will buy the object (the value 
-of the item for her).
-If the auctioneer’s price is higher than the bidder’s value, the bidder does not 
-buy the item, and if the price is lower then the bidder buys it, but the 
-auctioneer “loses” the difference.</p>
+<p>We use a model useful to study settings like urban traffic.
+The flow is dynamic (that is we do not focus on 
+some stationary state) and there 
+can be congestion. It is called the <em>fluid queueing 
+model</em>.</p>
 
-<p>In the <a href="https://en.wikipedia.org/wiki/Bayesian-optimal_mechanism">Bayesian setting</a>, 
-the bidder’s value is taken following a probability 
-distribution, and the auctioneer knows this distribution. 
-Then, the expected revenue of the auctioneer is the price she announces, 
-multiplied by the probability that this price is lower than the value taken by 
-the bidder. In other words, if $F$ is the cumulative probability distribution 
-of the value of the bidder, 
-then the expected revenue for a price $p$ is $p \cdot (1-F(p))$.
-Then the auctioneer chooses a price $p$ that maximizes this quantity.</p>
+<p>The network is a graph, and there is one source node where the flow 
+enters and one target node where the flow exits. Each edge of the 
+network has a delay and a capacity per time unit. 
+If more flows enters the edge than the capacity, a (FIFO) queue will 
+form inside this edge.</p>
 
-<h2 id="generalizations">Generalizations</h2>
+<p>Maybe a good example is a network where on every edge there is a 
+toll. If there is no queue, going through a toll $t$ takes some $s_t$ seconds,
+and at most some $c_t$ cars can go through the toll at each second. 
+If too many cars arrive, then a queue is forming, that will disappear 
+later if not so many cars arrive.</p>
 
-<p>One can generalize this to work with several bidders. This is called 
-<a href="https://en.wikipedia.org/wiki/Bayesian-optimal_mechanism#The_Myerson_mechanism">Myerson mechanism</a>.</p>
+<h2 id="objective">Objective</h2>
 
-<p>The paper of Alexandros and his co-authors 
-(<a href="https://arxiv.org/abs/1907.04220">Robust Revenue Maximization Under Minimal Statistical Information</a>)
-goes into another direction and explores the setting where the 
-auctioneer does not know the full distribution of the bidder, but 
-only the mean and an upper bound on the standard deviation. (That’s why it 
-is called <em>robust</em> revenue maximization.) Later they extend it to one 
-bidder buying (or not) several items.</p>
+<p>We consider a setting where a constant flow $u_0$ 
+enters the network at each unit of time.</p>
 
-<p>They show matching upper and lower bounds, and their lower bound
-is based on an argument similar to Yao’s minimax principle.</p>
+<p>Now at each intersection of degree $d$ a particule of flow can go in 
+either of the $d-1$ directions. Given the choice of each particule at 
+each intersection, the flow is completely defined, and you can measure 
+how fast it is. For example routing every particule through the same edge
+of small capacity would in general form a huge queue in this edge and 
+make the flow very slow.</p>
 
-<h2 id="minimax-principle">Minimax principle</h2>
+<p>We can consider at least two notions of efficiency: (1) for a given 
+time, how much flow exits the network, and (2) for a given amount of flow 
+to start with, when does the last particule exits the network. 
+We we will consider the second one, called the <em>makespan</em>.</p>
 
-<p><a href="https://en.wikipedia.org/wiki/Yao%27s_principle">Yao’s minimax principle</a> 
-is a general theorem for randomized algorithms. 
-Basically it is saying that the best randomized algorithm on its worst instance 
-will get the same performance as the best deterministic algorithm on the worst 
-distribution of instances. (This needs a precise statement, to say which thing is 
-optimized first etc.).</p>
+<h2 id="price-of-anarchy">Price of anarchy</h2>
 
-<p>In the context of Alexandros, the instances are distributions (of which we know
-only the mean and an upper bound on the standard deviation) thus a 
-distribution of instances is a distribution of distributions. 
-This can be made precise, by considering a mixture of distributions.</p>
+<p>We study the makespan of different strategies for routing the flow.
+As often in 
+<a href="https://en.wikipedia.org/wiki/Algorithmic_game_theory">algorithmic game theory</a>,
+one is interested in the <a href="https://en.wikipedia.org/wiki/Price_of_anarchy">price of anarchy</a>.
+On a given instance this price is the ratio of the makespan of the best 
+routing strategy divided by the makespan of the strategy where every 
+particule optimizes its own travel time. 
+In other words, the ratio between the strategy where an oracle decides 
+optimally a route for every car, and the strategy where every driver 
+optimizes its own travel time. Note that the setting where we let the 
+particules (or drivers) decide is a kind of game, and we look at the 
+equilibrium of this game. This might be called the <em>selfish</em> solution.</p>
+
+<p>The price of anarchy of the problem is the largest 
+(the supremum to be precise) price of anarchy among every instance of 
+the problem.</p>
+
+<h2 id="result">Result</h2>
+
+<p>Tim and his co-authors show (among other results) an upper bound of 
+$e/(e-1)$ on the price of anarchy for this problem, under some conditions.</p>
+
+<h2 id="a-key-open-problem-the-monotonicity-conjecture">A key open problem: the monotonicity conjecture</h2>
+
+<p>There is a very neat and puzzling conjecture that, if true, would imply 
+that the upper bound above always hold.</p>
+
+<p>The so-called <em>monotonicity conjecture</em> states that: if one reduces the 
+flow that enters in the network by unit of time (but keeping the total 
+amount to push in the network),  then the makespan of the selfish solution 
+increases.</p>
+
+<p>This seems very natural, but it is still open, and sometimes unexpected
+things happen in the such games (like in 
+<a href="https://en.wikipedia.org/wiki/Braess%27s_paradox">Braess’s paradox</a>)</p>
 
 
   </div>

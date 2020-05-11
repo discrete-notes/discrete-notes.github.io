@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","output/HTML-CSS"],
+        extensions: ["tex2jax.js"],
+        tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+        },
+     "HTML-CSS": {
+      styles: {
+        ".MathJax .mo, .MathJax .mi": {}
+      }
+    }
+    });
+    </script>
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        }
+    });
+
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+    </script>
+
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <title>
+    
+      Notes for (rainy) May &middot; Discrete notes
+    
+  </title>
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/theorems.css">
+
+  <!-- Icons -->
+  <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">-->
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <link href='http://discrete-notes.github.io/feed.xml' rel='alternate' type='application/atom+xml'>
+</head>
+
+
+  <body>
+
+    <div class="container content">
+      <div class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Discrete notes</a>
+
+          
+              &nbsp;&nbsp;&nbsp;<small><a href="/about/">About</a></small>
+          
+              &nbsp;&nbsp;&nbsp;<small><a href="/archive/">Archive</a></small>
+          
+
+        </h3>
+      </div>
+
+      <div class="post">
+  <h1 class="post-title">Notes for (rainy) May</h1>
+  <span class="post-date">11 May 2020</span>
+  <p>Notes for May.</p>
+
+<p><img src="assets/caravane-nuit.jpg" alt="" class="center-image" width="95%" /></p>
+
+<h2 id="active-learning-and-interactive-protocols">Active learning and interactive protocols</h2>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Grace_Murray_Hopper_Award">Grace Murray Hopper Award</a>
+has been given to <a href="http://www.cs.cmu.edu/~ninamf/">Maria Florina “Nina” Balcan</a> 
+for her work in machine learning. One of her contributions is in
+<em><a href="Active learning (machine learning)">active machine learning</a></em>.</p>
+
+<p>In a classic setting of machine learning, the machine is given a lot of 
+labeled data and must produce a classifier: an algorithm that can guess the label
+of a new data point. In active learning, this is made interactive: the machine 
+can create a data point and ask for the label of this point. For example in the
+following picture, in order to have a good classifier based on the red and blue
+points, the machine may ask about the yellow points, to know which hypothesis is 
+the best between the green and the pink one.</p>
+
+<p><img src="assets/active-learning.png" alt="" class="center-image" width="70%" /></p>
+
+<p>A reason to do that is to save time: after processing a fraction of the data, 
+the machine can have some preliminary idea of how the classification look like, 
+and only relevant data point at the boundary of this partition are really useful.
+Another reason is if the data points themselves are costly. I remember a talk<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+where the goal was to decide whether small islands close to the shore reduce 
+or increase the damages of a tsunami. If you have perfect knowledge of the 
+dimensions of your island, you can run a precise fluid simulation, and that’s it. 
+But if you 
+want a big picture of whether islands in general are bad or good, then you would 
+need to run many simulations, and you cannot because it takes too much time. 
+Then you can use machine learning to get an approximation of the damage as a 
+function of parameters of the island. But remember that any new point takes ages 
+to be computed, thus you would like to have only useful data points in you 
+learning set. And somehow you cannot always select your points a priori ; then 
+having active learning is great.</p>
+
+<p>Balcan basically proved that active learning can be efficient even in the 
+presence of (all kinds of) noise. The Hopper award laudatio cites two other
+key works, in semi-supervised learning and clustering.</p>
+
+<p>[I learned about this in a 
+<a href="https://rjlipton.wordpress.com/2020/04/10/nina-balcan-wins/">post on Lipton’s blog</a>, 
+that contains the following amusing sentence: “Active learning follows a classic idea 
+in computer theory: Making a protocol interactive can often decrease the cost, 
+and almost always makes the protocol more complex to understand”.]</p>
+
+<h2 id="sprouts-game">Sprouts game</h2>
+
+<p><a href="http://images.math.cnrs.fr">Images des maths</a> a maths popularization website in 
+French has 
+<a href="http://images.math.cnrs.fr/Savez-vous-planter-les-choux.html">an article</a> 
+on
+<a href="https://en.wikipedia.org/wiki/Sprouts_(game)">sprouts</a>, a combinatorial game 
+related to planar graphs.</p>
+
+<p>It is a paper and pencil game between two players. They start from an arbitrary 
+set of points, and then play one after the other. At her turn, the player has to 
+do two things:</p>
+
+<ul>
+  <li>draw a line between two points (including self-loops)</li>
+  <li>draw a point on this line (not at one of the end points)</li>
+</ul>
+
+<p>and there are a few constraints:</p>
+
+<ul>
+  <li>the lines should not intersect</li>
+  <li>every point has degree at most three.</li>
+</ul>
+
+<p>At some point one the players cannot play anymore, this player looses. On the 
+following picture, there are three initial points. The blue player makes the 
+sixth move, and after that the red player cannot play. Therefore the blue player
+wins.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/sprouts-1.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/sprouts-2.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/sprouts-3.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/sprouts-4.png" alt="" class="center-image" width="100%" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Researchers have completely characterized what are the winning strategies for 
+this game up to 44 initial points. And there is the following conjecture: if 
+both players play perfectly, the first player cannot win if and only if the 
+number of initial points is 0, 1 or 2 modulo 6…!</p>
+
+<h2 id="diffraction-and-algorithms"> Diffraction and algorithms</h2>
+
+<p>The other day, there was a paper on the arxiv named 
+<a href="https://arxiv.org/pdf/2004.07659.pdf">Algorithmic Foundations for the Diffraction Limit</a> 
+and I thought that <em>diffraction</em> had a meaning that I 
+didn’t know about, outside of physics. So I looked 
+at the abstract, and actually it’s about the good old 
+<a href="https://en.wikipedia.org/wiki/Diffraction">optical diffraction</a>!</p>
+
+<p>From what I understood (and remember) here is the topic of the paper. When you 
+have two sources of light far away one from the other, and that you observe the 
+diffraction image created by a circular aperture, you can say “yes there are two 
+sources of light, and they are in that position”. But when the two sources are 
+close one from the other it’s less clear. It is believed that there is a 
+fundamental barrier after which you cannot decide between one and two sources. 
+There are several criteria to decide where this barrier is, with various 
+explanations but all are heuristics.</p>
+
+<p>The approach of the paper is to consider that one receives the diffracted image 
+through (noisy) samples, and based on this samples must decide whether there are one or 
+two sources. This becomes a more statistical problem, and when we ask how many 
+points are needed, then it becomes more algorithmic too. Then one can design 
+algorithms with a complexity depending on the number of samples, the noise etc.</p>
+
+<h2 id="trusses">Trusses</h2>
+
+<p>In the study of social networks, a classic topic is to understand and detect 
+communities. In terms of graphs, the simplest object representing a community is 
+a clique. But this is a very demanding properties: there are many groups that 
+one would call a community, where not everybody knows everybody. A classic 
+object here is a $k$-core. A $k$-core is a maximal connected subgraph, with all 
+nodes having degree at least $k$ in this subgraph. That is everybody should know
+at least $k$ other members.</p>
+
+<p>I learned recently about another such object: $k$-trusses. A $k-truss$ is a 
+maximal connected subgraph, such that inside this subgraph, every node is 
+adjacent to at least $k$ triangles. So now you want that every person can cite 
+$k$ pairs of acquaintances who know each other. It’s a more restricted notion 
+than $k$-cores, because in some sense the communities must be more “local”, with 
+each neighborhood being more connected.</p>
+
+<p>[I learned about this while taking a look at the papers published in JGAA 
+journal for the <a href="https://discrete-notes.github.io/journal-fees">post about journal fees</a>. 
+The paper in particular is 
+<a href="http://www.jgaa.info/accepted/2020/527.pdf">this one</a>, which discusses bounds 
+and algorithms for $k$-trusses.]</p>
+
+<h2 id="eggs-and-reconfigurations">Eggs and reconfigurations</h2>
+<p>The Aperiodical has an 
+<a href="https://aperiodical.com/2020/04/the-big-lock-down-math-off-match-5/">article</a> 
+about a maths games, with a box of eggs.
+The game is the following. You start with a box of eggs in this configuration:</p>
+
+<p><img src="assets/boite-oeufs-1.png" alt="" class="center-image" width="50%" /></p>
+
+<p>and you should transform it into that configuration:
+<img src="assets/boite-oeufs-2.png" alt="" class="center-image" width="50%" /></p>
+
+<p>using only movements of the following form (move one right):
+<img src="assets/boite-oeufs-3.png" alt="" class="center-image" width="50%" /></p>
+
+<p>The question is what is the minimum number of moves? 
+In general I would consider this as just one more maths game, but as I will be 
+working on reconfiguration problems next year (in Lyon with 
+<a href="https://pagesperso.g-scop.grenoble-inp.fr/~bousquen/">Nicolas Bousquet</a>), 
+this is relevant. Reconfiguration problems are problems of the form: how to get 
+from configuration A to B in the minimum number of moves of some sort. This is 
+important for example for random generation of solutions to combinatorial 
+problems.</p>
+
+<h2 id="other-notes">Other notes</h2>
+
+<ul>
+  <li>
+    <p>The Simons institute launches a new series of video, “Theory shorts”. The 
+<a href="https://www.youtube.com/watch?time_continue=14&amp;v=PLAZyu73tWE&amp;feature=emb_logo">first one</a> 
+is about vision and brain ; quite interesting.</p>
+  </li>
+  <li>
+    <p>An interesting blog about algorithmic fairness that I didn’t know: 
+<a href="https://algorithmicfairness.wordpress.com/category/algorithms/">Algorithmic fairness</a>.</p>
+  </li>
+  <li>
+    <p>In <a href="https://blog.computationalcomplexity.org/2020/05/vidcast-on-conferences.html">a “vidcast”</a>, 
+Gasarsh and Fortnow talk about conferences. In particular, 
+about having conferences sometimes in person, sometimes virtual (and also about 
+regional conferences). Incidentially, they mention the fact that the accronym 
+<em>EC</em> used to be for <em>Electronic Commerce</em>, which is weird… (now it’s 
+<em>Economy and Computation</em> which makes more sense).</p>
+  </li>
+  <li>
+    <p>I realized that the blog was hard to read on smartphone because of the format 
+of the picture, it should be better now.</p>
+  </li>
+  <li>
+    <p>I started making pictures with my tablet, and it’s a very good solution. Before 
+looking into it, I didn’t know one could have a simple solftware with layers and 
+opacity parameters on tablets. 
+It’s especially nice to have a first sketch, and then make a precise drawing. 
+I use it not only for the blog but also for picture prototypes in manuscripts.</p>
+  </li>
+</ul>
+
+<h3 id="footnotes">Footnotes</h3>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>The talk was a bachelor project defence, in <a href="http://cmla.ens-paris-saclay.fr/">CMLA</a>, an applied maths lab  near Paris.&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+</div>
+
+
+      
+
+
+
+      <div class="footer">
+        <p>
+          &copy; 2020. All rights reserved.
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -28,8 +28,8 @@ the best between the green and the pink one.
 ![](assets/active-learning.png){: .center-image width="70%"}
 
 A reason to do that is to save time: after processing a fraction of the data, 
-the machine can have some preliminary idea of how the classification look like, 
-and only relevant data point at the boundary of this partition are really useful.
+the machine can have some preliminary idea of what the classification looks like, 
+and only relevant data points at the boundary of this partition are really useful.
 Another reason is if the data points themselves are costly. I remember a talk[^1]
 where the goal was to decide whether small islands close to the shore reduce 
 or increase the damages of a tsunami. If you have perfect knowledge of the 
@@ -86,17 +86,17 @@ this game up to 44 initial points. And there is the following conjecture: if
 both players play perfectly, the first player cannot win if and only if the 
 number of initial points is 0, 1 or 2 modulo 6...!
 
-## Diffraction and algorithms
+## Diffraction and algorithms
 
 The other day, there was a paper on the arxiv named 
 [Algorithmic Foundations for the Diffraction Limit](https://arxiv.org/pdf/2004.07659.pdf) 
-and I thought that *diffraction* had a meaning that I 
+and I thought that "diffraction" had a meaning that I 
 didn't know about, outside of physics. So I looked 
 at the abstract, and actually it's about the good old 
 [optical diffraction](https://en.wikipedia.org/wiki/Diffraction)! 
 
 From what I understood (and remember) here is the topic of the paper. When you 
-have two sources of light far away one from the other, and that you observe the 
+have two sources of light far away one from the other, and you observe the 
 diffraction image created by a circular aperture, you can say "yes there are two 
 sources of light, and they are in that position". But when the two sources are 
 close one from the other it's less clear. It is believed that there is a 
@@ -107,20 +107,20 @@ explanations but all are heuristics.
 The approach of the paper is to consider that one receives the diffracted image 
 through (noisy) samples, and based on this samples must decide whether there are one or 
 two sources. This becomes a more statistical problem, and when we ask how many 
-points are needed, then it becomes more algorithmic too. Then one can design 
+samples are needed, then it becomes more algorithmic too. Then one can design 
 algorithms with a complexity depending on the number of samples, the noise etc. 
 
 ## Trusses
 
 In the study of social networks, a classic topic is to understand and detect 
 communities. In terms of graphs, the simplest object representing a community is 
-a clique. But this is a very demanding properties: there are many groups that 
+a clique. But this is a very demanding definition: there are many groups that 
 one would call a community, where not everybody knows everybody. A classic 
-object here is a $k$-core. A $k$-core is a maximal connected subgraph, with all 
+alternative here is a $k$-core. A $k$-core is a maximal connected subgraph, with all 
 nodes having degree at least $k$ in this subgraph. That is everybody should know
 at least $k$ other members. 
 
-I learned recently about another such object: $k$-trusses. A $k-truss$ is a 
+I learned recently about another such object: $k$-trusses. A $k$-truss is a 
 maximal connected subgraph, such that inside this subgraph, every node is 
 adjacent to at least $k$ triangles. So now you want that every person can cite 
 $k$ pairs of acquaintances who know each other. It's a more restricted notion 
@@ -137,7 +137,7 @@ and algorithms for $k$-trusses.]
 ## Eggs and reconfigurations
 The Aperiodical has an 
 [article](https://aperiodical.com/2020/04/the-big-lock-down-math-off-match-5/) 
-about a maths games, with a box of eggs.
+about a maths game, with a box of eggs.
 The game is the following. You start with a box of eggs in this configuration: 
 
 ![](assets/boite-oeufs-1.png){: .center-image width="50%"}
@@ -169,15 +169,15 @@ is about vision and brain ; quite interesting.
 * In [a "vidcast"](https://blog.computationalcomplexity.org/2020/05/vidcast-on-conferences.html), 
 Gasarsh and Fortnow talk about conferences. In particular, 
 about having conferences sometimes in person, sometimes virtual (and also about 
-regional conferences). Incidentially, they mention the fact that the accronym 
-*EC* used to be for *Electronic Commerce*, which is weird... (now it's 
+regional conferences). Incidentially, they mention the fact that the conference 
+accronym *EC* used to be for *Electronic Commerce*, which is weird... (now it's 
 *Economy and Computation* which makes more sense). 
 
 * I realized that the blog was hard to read on smartphone because of the format 
-of the picture, it should be better now.
+of the pictures, it should be better now.
 
 * I started making pictures with my tablet, and it's a very good solution. Before 
-looking into it, I didn't know one could have a simple solftware with layers and 
+looking into it, I didn't know one could have a simple software with layers and 
 opacity parameters on tablets. 
 It's especially nice to have a first sketch, and then make a precise drawing. 
 I use it not only for the blog but also for picture prototypes in manuscripts.

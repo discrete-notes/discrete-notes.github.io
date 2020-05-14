@@ -64,7 +64,7 @@ much nicer experience (for post-pandemic times).
 Of course virtual conferences have less impact on climate than flying across an 
 ocean, but what is the impact of it anyway? 
 There is a study by a (serious) French think tank about the impact of digital 
-technologies on climate, and in particular the impact of video. 
+technologies on the climate crisis, and in particular the impact of video. 
 You can find summary
 [here](https://theshiftproject.org/wp-content/uploads/2019/07/Excutive-Summary_EN_The-unsustainable-use-of-online-video.pdf) 
 and the full report [there](https://theshiftproject.org/wp-content/uploads/2019/07/2019-02.pdf).
@@ -92,7 +92,6 @@ By the way, there is a manifesto for taking climate change into account in TCS
 academic life. It is called [TCS4F](https://tcs4f.org/) (TCS for future). It has 
 been signed by ~100 people and some organizations such as the conference STACS. 
  
-
 ## Another relation between conferences and CO2
 
 Another, more unexpected relation between CO2 and conferences: during talks, 

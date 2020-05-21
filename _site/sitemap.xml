@@ -2,10 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://discrete-notes.github.io/</loc>
-    <lastmod>2020-05-11T22:54:09+02:00</lastmod>
+    <lastmod>2020-05-21T21:55:36+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+    <url>
+      <loc>https://discrete-notes.github.io//network-decomposition-5-algorithm</loc>
+      
+        <lastmod>2020-05-21T00:00:00+02:00</lastmod>
+      
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
   
     <url>
       <loc>https://discrete-notes.github.io//notes-rainy-may-2020</loc>
@@ -362,7 +371,7 @@
   <url>
     <loc>https://discrete-notes.github.io//404/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -375,7 +384,7 @@
   <url>
     <loc>https://discrete-notes.github.io//about/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -388,7 +397,7 @@
   <url>
     <loc>https://discrete-notes.github.io//archive/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -401,7 +410,7 @@
   <url>
     <loc>https://discrete-notes.github.io//feed.xml</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -414,7 +423,7 @@
   <url>
     <loc>https://discrete-notes.github.io//</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -427,7 +436,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page2/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -440,7 +449,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page3/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -453,7 +462,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page4/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -466,7 +475,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page5/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -479,7 +488,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page6/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -492,7 +501,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page7/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -505,7 +514,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page8/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -518,7 +527,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page9/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -531,7 +540,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page10/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -544,7 +553,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page11/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -557,7 +566,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page12/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -570,7 +579,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page13/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -583,7 +592,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page14/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -596,7 +605,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page15/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -609,7 +618,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page16/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -622,7 +631,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page17/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -635,7 +644,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page18/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -648,7 +657,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page19/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -661,7 +670,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page20/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -674,7 +683,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page21/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -687,7 +696,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page22/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -700,7 +709,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page23/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -713,7 +722,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page24/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -726,7 +735,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page25/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -739,7 +748,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page26/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -752,7 +761,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page27/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -765,7 +774,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page28/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -778,7 +787,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page29/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -791,7 +800,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page30/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -804,7 +813,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page31/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -817,7 +826,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page32/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -830,7 +839,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page33/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -843,7 +852,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page34/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -856,7 +865,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page35/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -869,7 +878,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page36/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -882,7 +891,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page37/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -895,7 +904,7 @@
   <url>
     <loc>https://discrete-notes.github.io//page38/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -908,7 +917,20 @@
   <url>
     <loc>https://discrete-notes.github.io//page39/</loc>
     
-      <lastmod>2020-05-11</lastmod>
+      <lastmod>2020-05-21</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://discrete-notes.github.io//page40/</loc>
+    
+      <lastmod>2020-05-21</lastmod>
     
     
       <changefreq>monthly</changefreq>

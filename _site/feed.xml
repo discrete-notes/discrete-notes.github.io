@@ -7,6 +7,199 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Network decomposition 5&amp;#58; The algorithm</title>
+        <description>&lt;p&gt;[NOTE: Because of timing issues, I want to have this online now, but it is
+not fully polished yet. I’ll polish it soon.]&lt;/p&gt;
+
+&lt;p&gt;This is the fifth post of a series on distributed network decomposition. 
+The introductory post of this series is 
+&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-0&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In this post, we (finally!) describe the algorithm of the paper of Ghaffari and Rozhon.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/caravane-6.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;recap-of-previous-episodes&quot;&gt; Recap of previous episodes&lt;/h3&gt;
+
+&lt;p&gt;In the previous posts we saw what a network decomposition is, why it is useful,
+and why computing only a weak decomposition is not problematic, as we can build
+a strong decomposition from a weak one. In this post we show the new algorithm
+to build a (weak) network decomposition.&lt;/p&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;An overview of the algorithm can be done as a comparison with the centralized
+construction presented in
+&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-3-centralized&quot;&gt;the third post&lt;/a&gt;
+of this series.
+First, just as in the centralized construction, the colors will be built one
+by one, and each color will take a constant fraction of the remaining nodes,
+in order to be sure to have a logarithmic number of color classes.
+This means that in the remaining of this post, we will be interested only in
+building a set of non-adjacent clusters with controlled diameter,
+separated by frozen nodes, with the constraint that not too many nodes should be
+frozen.&lt;/p&gt;
+
+&lt;p&gt;Now unlike in the sequential construction, we cannot grow balls one after the
+other (this would take at least diameter time, and the diameter can be large).
+One could think to first find a good set of nodes, far away one from the others,
+and to start growing balls in parallel from these nodes. But this looks as hard as
+computing the decomposition itself (remember that we build a network
+decomposition to compute maximal independent sets, among other things).&lt;/p&gt;
+
+&lt;p&gt;Hence another technique has to be used.&lt;/p&gt;
+
+&lt;h2 id=&quot;separating-the-graph&quot;&gt;Separating the graph&lt;/h2&gt;
+
+&lt;p&gt;We use a different approach to build the decomposition: instead of growing
+clusters we will separate the graph into smaller and smaller pieces (by freezing
+nodes).&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/ND-separating-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/ND-separating-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/ND-separating-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;A key idea of the algorithm is to use the digits of the identifiers of the
+nodes written in binary. A first attempt in this direction is the following. Let
+us start by having two sets of nodes, the ones whose IDs begin with 0, and
+the ones whose IDs begin with 1. We will draw these sets as respectively
+blue and red. Now if we want to be sure that not two nodes of different colors
+(red and blue) are adjacent, we can freeze one of the nodes for every such
+bicolored edge. In a good scenario, we get the following picture.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/ND-red-blue-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;70%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/ND-red-blue-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;70%&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;But this is a good case, and in general this technique will be bad. First, of
+course as the identifiers are not required to be uniformly distributed between
+red and blue, all nodes could be blue. But this is not really a problem: anyway
+we will have to somehow iterate the construction to all digit one by one, and the
+IDs are all distinct, thus at some point we will have two non-empty groups.
+The main problem is the number of frozen nodes: it can be huge, almost all
+the nodes can be frozen. This is bad for us: we want to get a
+color class that contains a constant fraction of the nodes of the graph. (Note
+that even if you could get only half of the nodes frozen at this step, as we
+will iterate this for all digits, this would not work.)&lt;/p&gt;
+
+&lt;p&gt;So now we have to answer the question: how to get a small number of frozen nodes
+when separating the red and the blue nodes?&lt;/p&gt;
+
+&lt;p&gt;Before going to that, let us restate at which level of the explanation we
+are:
+we want to build a network decomposition, for this we
+first want to build a first color class, and for this we first want to separate
+the nodes whose identifiers start with 0 (the blue nodes in the pictures) and
+the nodes whose identifiers start with 1 (the red nodes in the pictures)&lt;/p&gt;
+
+&lt;h2 id=&quot;ball-carving-is-back&quot;&gt;Ball carving is back&lt;/h2&gt;
+
+&lt;p&gt;We know a technique to separate some parts of the graph without freeing too many
+nodes: growing a ball like in the third post (that is, “ball-carving”). The idea
+is to consider the blue and red nodes in different ways: blue nodes are starting
+point for ball carving, and red nodes want to join such balls. That is, every
+blue node starts as a one-node ball, and then, until this is not possible:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the (non-frozen) red nodes that have at least one blue neighbor propose to
+join the ball of one of these nodes (arbitrarily)&lt;/li&gt;
+  &lt;li&gt;the blue balls accept if the number of red nodes proposing is large enough, and
+otherwise reject&lt;/li&gt;
+  &lt;li&gt;if the blue ball accepts, the red nodes become blue, if it rejects, they freeze.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When a red node joins a blue ball, we add an edge to the Steiner tree of this
+ball to link this node. Also this node change its ID, to take the identifier of
+the ball. Hence these numbers are not really identifiers, and from now on
+we’ll say &lt;em&gt;label&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;After this process we have:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;more blue nodes and less red nodes&lt;/li&gt;
+  &lt;li&gt;no edge between a red and a blue node&lt;/li&gt;
+  &lt;li&gt;not too many frozen vertices&lt;/li&gt;
+  &lt;li&gt;clusters whose Steiner tree have at most logarithmic diameter.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Which is pretty good! But of course, the clusters of same color can be adjacent,
+and we don’t want that. We have to refine this partition. But note that now the
+blue and red nodes will live in two independent worlds, separated by frozen nodes.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-second-digit&quot;&gt; The second digit&lt;/h2&gt;
+
+&lt;p&gt;Now we will go to the second digit of the labels. There are quite a few things
+that are simpler for the first digit, thus we cannot simply say “do it again”.&lt;/p&gt;
+
+&lt;p&gt;First of
+all forget about the colors of the nodes given by the first digit, and color
+them with the color of the second digit (blue for *0 and red for *1).
+This means that we have again adjacent red and blue clusters: either two clusters that
+were previously blue whose labels differ on the second bit, or
+two nodes that were previously red (and are also clusters restricted to one node),
+also with different second digit.&lt;/p&gt;
+
+&lt;p&gt;A natural way to iterate the construction would be the following: consider the
+clusters as the nodes of the previous phase and make the same construction at
+this level. That is, the red clusters propose to the blue clusters etc.
+But this would not be good: we could freeze an arbitrary red cluster because it
+proposed to blue clusters with few neighbors, and this red cluster might be huge.&lt;/p&gt;
+
+&lt;p&gt;What we do instead is to make the red nodes act individually without
+coordination inside the red cluster (but keep the blue nodes acting as a cluster).
+That is: every red node proposes to join a blue cluster (and is accepted if
+enough such nodes want to join). And we do the ball carving this way.
+A red node if it joins a blue cluster, will be linked the Steiner tree of this
+cluster, and take the label of this cluster.&lt;/p&gt;
+
+&lt;p&gt;Now, there are a few non-intuitive things going on. First, maybe we had a nice
+cluster from the previous step, and because its second digit is a 1, it is red,
+and now it is dismantled by adjacent blue nodes, which looks counter-productive.
+Second, it is possible that
+nodes having the same label do not form a connected component anymore. Indeed,
+consider a cluster that was blue before, and now is red. With the ball-carving,
+some nodes of this
+cluster become blue, some nodes are frozen and some nodes are still red and
+separated from blue nodes by frozen nodes. It is possible that these red nodes
+(that have the same labels) form disconnected islands that were linked
+by nodes that are now blue or frozen. But they still form a cluster: we have
+not erased the previous Steiner tree, thus they are still linked. And this is
+important: at the next digit, this label may give color blue, and then these
+nodes have to act in a coordinated way. This is why we need to talk about weak
+decompositions and not strong ones.
+One more non-intuitive thing is that, because of the same reason, the nodes of a
+cluster may have a label, that is the ID of a node that is not anymore in the
+cluster.&lt;/p&gt;
+
+&lt;h2 id=&quot;thats-it&quot;&gt;That’s it!&lt;/h2&gt;
+
+&lt;p&gt;This is pretty much the algorithm! Then you just iterate on the digits of the
+labels, and at the end, the all clusters are separated by frozen nodes, have
+a controlled weak diameter, and not too many nodes have been frozen. You get the
+first color class, and then you can go to second color class etc.&lt;/p&gt;
+
+&lt;p&gt;By setting the right parameters of the ball carving, you get an algorithm that
+is polylogarithmic time, for a network decomposition using logarithmic weak
+diameter and a logarithmic number of colors.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 21 May 2020 00:00:00 +0200</pubDate>
+        <link>https://discrete-notes.github.io///network-decomposition-5-algorithm</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///network-decomposition-5-algorithm</guid>
+      </item>
+    
+      <item>
         <title>Notes for (rainy) May</title>
         <description>&lt;p&gt;Notes for May.&lt;/p&gt;
 
@@ -30,8 +223,8 @@ the best between the green and the pink one.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;assets/active-learning.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;A reason to do that is to save time: after processing a fraction of the data, 
-the machine can have some preliminary idea of how the classification look like, 
-and only relevant data point at the boundary of this partition are really useful.
+the machine can have some preliminary idea of what the classification looks like, 
+and only relevant data points at the boundary of this partition are really useful.
 Another reason is if the data points themselves are costly. I remember a talk&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
 where the goal was to decide whether small islands close to the shore reduce 
 or increase the damages of a tsunami. If you have perfect knowledge of the 
@@ -101,17 +294,17 @@ this game up to 44 initial points. And there is the following conjecture: if
 both players play perfectly, the first player cannot win if and only if the 
 number of initial points is 0, 1 or 2 modulo 6…!&lt;/p&gt;
 
-&lt;h2 id=&quot;diffraction-and-algorithms&quot;&gt; Diffraction and algorithms&lt;/h2&gt;
+&lt;h2 id=&quot;diffraction-and-algorithms&quot;&gt;Diffraction and algorithms&lt;/h2&gt;
 
 &lt;p&gt;The other day, there was a paper on the arxiv named 
 &lt;a href=&quot;https://arxiv.org/pdf/2004.07659.pdf&quot;&gt;Algorithmic Foundations for the Diffraction Limit&lt;/a&gt; 
-and I thought that &lt;em&gt;diffraction&lt;/em&gt; had a meaning that I 
+and I thought that “diffraction” had a meaning that I 
 didn’t know about, outside of physics. So I looked 
 at the abstract, and actually it’s about the good old 
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Diffraction&quot;&gt;optical diffraction&lt;/a&gt;!&lt;/p&gt;
 
 &lt;p&gt;From what I understood (and remember) here is the topic of the paper. When you 
-have two sources of light far away one from the other, and that you observe the 
+have two sources of light far away one from the other, and you observe the 
 diffraction image created by a circular aperture, you can say “yes there are two 
 sources of light, and they are in that position”. But when the two sources are 
 close one from the other it’s less clear. It is believed that there is a 
@@ -122,20 +315,20 @@ explanations but all are heuristics.&lt;/p&gt;
 &lt;p&gt;The approach of the paper is to consider that one receives the diffracted image 
 through (noisy) samples, and based on this samples must decide whether there are one or 
 two sources. This becomes a more statistical problem, and when we ask how many 
-points are needed, then it becomes more algorithmic too. Then one can design 
+samples are needed, then it becomes more algorithmic too. Then one can design 
 algorithms with a complexity depending on the number of samples, the noise etc.&lt;/p&gt;
 
 &lt;h2 id=&quot;trusses&quot;&gt;Trusses&lt;/h2&gt;
 
 &lt;p&gt;In the study of social networks, a classic topic is to understand and detect 
 communities. In terms of graphs, the simplest object representing a community is 
-a clique. But this is a very demanding properties: there are many groups that 
+a clique. But this is a very demanding definition: there are many groups that 
 one would call a community, where not everybody knows everybody. A classic 
-object here is a $k$-core. A $k$-core is a maximal connected subgraph, with all 
+alternative here is a $k$-core. A $k$-core is a maximal connected subgraph, with all 
 nodes having degree at least $k$ in this subgraph. That is everybody should know
 at least $k$ other members.&lt;/p&gt;
 
-&lt;p&gt;I learned recently about another such object: $k$-trusses. A $k-truss$ is a 
+&lt;p&gt;I learned recently about another such object: $k$-trusses. A $k$-truss is a 
 maximal connected subgraph, such that inside this subgraph, every node is 
 adjacent to at least $k$ triangles. So now you want that every person can cite 
 $k$ pairs of acquaintances who know each other. It’s a more restricted notion 
@@ -151,7 +344,7 @@ and algorithms for $k$-trusses.]&lt;/p&gt;
 &lt;h2 id=&quot;eggs-and-reconfigurations&quot;&gt;Eggs and reconfigurations&lt;/h2&gt;
 &lt;p&gt;The Aperiodical has an 
 &lt;a href=&quot;https://aperiodical.com/2020/04/the-big-lock-down-math-off-match-5/&quot;&gt;article&lt;/a&gt; 
-about a maths games, with a box of eggs.
+about a maths game, with a box of eggs.
 The game is the following. You start with a box of eggs in this configuration:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/boite-oeufs-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
@@ -187,17 +380,17 @@ is about vision and brain ; quite interesting.&lt;/p&gt;
     &lt;p&gt;In &lt;a href=&quot;https://blog.computationalcomplexity.org/2020/05/vidcast-on-conferences.html&quot;&gt;a “vidcast”&lt;/a&gt;, 
 Gasarsh and Fortnow talk about conferences. In particular, 
 about having conferences sometimes in person, sometimes virtual (and also about 
-regional conferences). Incidentially, they mention the fact that the accronym 
-&lt;em&gt;EC&lt;/em&gt; used to be for &lt;em&gt;Electronic Commerce&lt;/em&gt;, which is weird… (now it’s 
+regional conferences). Incidentially, they mention the fact that the conference 
+accronym &lt;em&gt;EC&lt;/em&gt; used to be for &lt;em&gt;Electronic Commerce&lt;/em&gt;, which is weird… (now it’s 
 &lt;em&gt;Economy and Computation&lt;/em&gt; which makes more sense).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;I realized that the blog was hard to read on smartphone because of the format 
-of the picture, it should be better now.&lt;/p&gt;
+of the pictures, it should be better now.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;I started making pictures with my tablet, and it’s a very good solution. Before 
-looking into it, I didn’t know one could have a simple solftware with layers and 
+looking into it, I didn’t know one could have a simple software with layers and 
 opacity parameters on tablets. 
 It’s especially nice to have a first sketch, and then make a precise drawing. 
 I use it not only for the blog but also for picture prototypes in manuscripts.&lt;/p&gt;
@@ -400,7 +593,7 @@ much nicer experience (for post-pandemic times).&lt;/p&gt;
 &lt;p&gt;Of course virtual conferences have less impact on climate than flying across an 
 ocean, but what is the impact of it anyway? 
 There is a study by a (serious) French think tank about the impact of digital 
-technologies on climate, and in particular the impact of video. 
+technologies on the climate crisis, and in particular the impact of video. 
 You can find summary
 &lt;a href=&quot;https://theshiftproject.org/wp-content/uploads/2019/07/Excutive-Summary_EN_The-unsustainable-use-of-online-video.pdf&quot;&gt;here&lt;/a&gt; 
 and the full report &lt;a href=&quot;https://theshiftproject.org/wp-content/uploads/2019/07/2019-02.pdf&quot;&gt;there&lt;/a&gt;.&lt;/p&gt;
@@ -1277,183 +1470,12 @@ that is, why is a network decomposition so useful.&lt;/li&gt;
 how to build a network decomposition with good parameters in a centralized manner.&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-4-weak-strong&quot;&gt;Weak and strong decomposition&lt;/a&gt;&lt;/em&gt;, 
 some useful precisions about the decomposition&lt;/li&gt;
-  &lt;li&gt;(and more) TBA&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-5-algorithm&quot;&gt;The algorithm&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         <pubDate>Wed, 08 Apr 2020 00:00:00 +0200</pubDate>
         <link>https://discrete-notes.github.io///network-decomposition-0</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///network-decomposition-0</guid>
-      </item>
-    
-      <item>
-        <title>Notes from pre-COVID19 times</title>
-        <description>&lt;p&gt;Hi there! After abruptly coming back to France because of the virus, I resume
-blogging (instead of traveling, basically). Here is a set of notes that I wrote 
-before the quarantine and everything.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/grafitti-donut.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;95%&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;shapley-value&quot;&gt;Shapley value&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Shapley_value&quot;&gt;Shapley value&lt;/a&gt; 
-is a concept in game theory. It basically describes how a 
-group of players that have played collaboratively, should share the pay-off of 
-the game, taking into account that some players have contributed more than others. 
-In other words, it is a way to measure how important is each player for the team. 
-For some settings it is proved to be the optimal way to share the gain, with 
-respect to some objective of fairness.&lt;/p&gt;
-
-&lt;p&gt;The setting is the following. There are $N$ players, $1,2, …, N$, and a 
-function $f$ from the subsets of players to the set of possible pay-offs (eg $R$). 
-For a subset $S$ of players, $f(S)$ is the pay-off that the players of $S$ would 
-get as a whole if they were to collaborate together.&lt;/p&gt;
-
-&lt;p&gt;Now, assume that all players collaborate, and get some pay-off $P$. How should 
-we distribute $P$, using $f$? The idea is the following. First chose an 
-arbitrary order on the players, for simplicity, let say the natural order $1, 2, 
-…,N$. Then player $1$, gets $f(${$1$}$)$, player $2$ gets $f(${$1,2$}$) - 
-f(${$1$}$)$ etc. 
-That seems pretty reasonable: every player gets the marginal value it adds
-to the pay-off. Now this is not always fair, because of the ordering that we 
-chose arbitrarily. Therefore one normalizes this by taking the average over all 
-permutations of the individual pay-offs. This is the Shapley value.&lt;/p&gt;
-
-&lt;p&gt;[Thanks to &lt;a href=&quot;https://perso.univ-st-etienne.fr/remila/&quot;&gt;Eric Remila&lt;/a&gt; for telling 
-me about this.]&lt;/p&gt;
-
-&lt;h2 id=&quot;stochastic-dominance&quot;&gt;Stochastic dominance&lt;/h2&gt;
-
-&lt;p&gt;Stochastic dominance is a concept of probability that is useful in (algorithmic) 
-game theoretical settings, such as 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Secretary_problem&quot;&gt;secretary-type problems&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Let $A$ and $B$ be two real random variables. Then $A$ 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Stochastic_dominance&quot;&gt;stochastically dominates&lt;/a&gt;
-$B$ if for every $x$, $P(A\geq x)\geq P(B\geq x)$, and for some x, the 
-inequality is strict. In terms of cumulative distribution function, this means 
-$F_A(x)\leq F_B(x)$ for all $x$, and with strict inequality for some $x$.&lt;/p&gt;
-
-&lt;p&gt;This notion is useful in the randomized online setting: you want to show that 
-your online algorithm obtains, in expectation, at least half the payoff of a 
-“prophet” that would play knowing all the game in advance. Then 
-it is sometimes useful to show that your algorithm stochastically dominates 
-“half the prophet”.&lt;/p&gt;
-
-&lt;p&gt;[I heard about this by working in the group of José Correa in Santiago de Chile.]&lt;/p&gt;
-
-&lt;h2 id=&quot;polygonization-a-problem-not-known-to-be-easy-or-hard&quot;&gt;Polygonization, a problem not known to be easy or hard&lt;/h2&gt;
-
-&lt;p&gt;There are not so many reasonable problems for which we have neither a 
-polynomial-time algorithm nor a proof of NP-hardness. Some well-known are 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Graph_isomorphism_problem&quot;&gt;graph isomorphism&lt;/a&gt; and 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Integer_factorization&quot;&gt;integer factorization&lt;/a&gt;.
-Wikipedia has a list in its 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/NP-intermediate&quot;&gt;NP-intermediate article&lt;/a&gt;.
-Here is a counting problem that falls into this category.&lt;/p&gt;
-
-&lt;p&gt;A polygonization of a set of points is a simple polygon that visits all the 
-points. In the following picture, the points are black and a polygonization is 
-drawn in blue.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/polygonization.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The algorithmic problem is: given the point set, count the number of 
-polygonizations it has.&lt;/p&gt;
-
-&lt;p&gt;See the two posts by Eppstein on special aspects of this problem, 
-&lt;a href=&quot;https://11011110.github.io/blog/2020/01/12/counting-grid-polygonalizations.html&quot;&gt;here&lt;/a&gt; 
-and 
-&lt;a href=&quot;https://11011110.github.io/blog/2020/01/29/unflippable-polygon.html&quot;&gt;there&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;liquid-rope-coiling-and-discrete-model&quot;&gt;Liquid rope coiling and discrete model&lt;/h2&gt;
-
-&lt;p&gt;When you pour some honey on a pancake, you can see that the honey behaves a bit 
-like a rope and can get some rotational movement when touching the pancake. 
-Something like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/miel.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;40%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;[See also &lt;a href=&quot;https://www.youtube.com/watch?v=lZbOV8BIOt8&quot;&gt;this video&lt;/a&gt; by Jearl 
-Walker.]&lt;/p&gt;
-
-&lt;p&gt;Something strange about this is that there is no reaon a priori for the movement
-to be rotational: it’s just something (the honey) falling on something else 
-(the pancake). I was curious whether this could appear in a very simple discrete 
-model.
-I started thinking about a sandpile model (like the one mentioned 
-&lt;a href=&quot;https://discrete-notes.github.io/october-2019-notes-distances&quot;&gt;here&lt;/a&gt; recently) 
-to simulate the behaviour of the honey, but at the end I tried to design the 
-most simple model that would “create rotation”. Here is a naive model, that does 
-not have a sandpile flavour (and probably makes little sense), but shows some 
-rotation, without explicitely refering to a rotation.&lt;/p&gt;
-
-&lt;p&gt;Start with an hexagonal grid representing the pancake (because it’s easier than 
-a square grid). The yellow cell is where the honey is currently arriving, and 
-the orange circle is the projection of the origin of the honey (e.g. the spoon) 
-on the pancake.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/miel1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;40%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Now there are two forces. One is the “speed” of the yellow patch, that simulates
-the fact that the honey tends to go where there is less honey, and the very last 
-cell visited has more, so is repulsive. It is represented by the yellow 
-arrow. The other one is the attraction of the orange circle, that simulates the 
-fact that the honey is still “tied” to the spoon. It is represented by an 
-orange arrow. Now the average of the two forces is the red arrow, that is 
-pointing to the next cell.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/miel2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;40%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The proccess is repeated, and the yellow patch is circulating around the 
-cell with a orange circle.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/miel3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;40%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Well it’s not a very fancy model, in particular it doesn’t make a difference 
-between honey on a pancake, and a planet around the sun, but maybe it can be 
-improved..!&lt;/p&gt;
-
-&lt;p&gt;Anyway, physicists prefer continuous models, and a paper about the modelization 
-of liquid rope coiling is available 
-&lt;a href=&quot;https://www.annualreviews.org/doi/10.1146/annurev-fluid-120710-101244&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;[I learned about research on liquid rope coiling in 
-&lt;a href=&quot;https://www.pourlascience.fr/sd/physique/les-acrobaties-des-filaments-liquides-8027.php&quot;&gt;this article&lt;/a&gt;
-in the French popularization magazine “Pour la science”.]&lt;/p&gt;
-
-&lt;h2 id=&quot;other-notes&quot;&gt;Other notes&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;A latex commands that some of my coauthors didn’t know: 
-&lt;code&gt;\scalebox{x}{picture}&lt;/code&gt; allows to scale a picture by a factor x.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;After trying various techniques and packages to write comments in latex files, 
-I ended up simply using text in color with 
-&lt;code&gt;\textcolor{color name}{text}&lt;/code&gt;, but sometimes (eg for the revision of
-a journal paper), one needs to color a large patch of text, and 
-&lt;code&gt;textcolor&lt;/code&gt; does not allow this. For example you cannot color two 
-sections. Then I rediscovered, that one can simply change the text color at any 
-point with &lt;code&gt;\color{color name}&lt;/code&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Eppstein has a 
-&lt;a href=&quot;https://11011110.github.io/blog/2020/02/22/applications-maximum-matching.html&quot;&gt;blog post&lt;/a&gt; 
-about applications of maximum matching algorithms, including kidney exchange, on 
-which I have worked recentely. 
-(As &lt;a href=&quot;./march-2019-notes-1&quot;&gt;already mentionned&lt;/a&gt; on this blog, 
-&lt;a href=&quot;https://cstheory.stackexchange.com/questions/19759/core-algorithms-deployed&quot;&gt;here&lt;/a&gt; 
-is a stack exchange thread on “core algorithms deployed”.)&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 01 Apr 2020 00:00:00 +0200</pubDate>
-        <link>https://discrete-notes.github.io///notes-pre-COVID19</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///notes-pre-COVID19</guid>
       </item>
     
   </channel>

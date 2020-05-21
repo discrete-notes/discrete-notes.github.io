@@ -87,81 +87,157 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/mid-november-2019-non-technical">
-        Mid-November (non-technical) notes
+      <a href="/more-november-2019">
+        More November notes
       </a>
     </h1>
 
-    <span class="post-date">12 Nov 2019</span>
+    <span class="post-date">18 Nov 2019</span>
 
-    <p>Some notes about a new conference, a new research organization etc.</p>
+    <p>Some more notes for November 2019.</p>
 
 <hr />
-<p><img src="assets/comida-india.png" alt="" class="center-image" width="60%" /></p>
+<p><img src="assets/nueva-constitucion.jpg" alt="" class="center-image" width="80%" /></p>
 <p align="center"><small><i>
 </i></small></p>
 <hr />
 
-<h2 id="conference-model-survey">Conference model survey</h2>
+<h2 id="network-creation-game">Network creation game</h2>
 
-<p>An online survey has been created <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOmbqTTfQfUYEXADCLLqat-OAl7XUh8gFceg27uDfpr_NaaQ/viewform">here</a> to gather the opinions of the distributed 
-computing community about its model of conferences. Topics include:</p>
+<p>Network generation models are mechanisms to create networks. 
+In a classic setting the nodes arrive one after the other and are linked 
+to nodes already in 
+the network following some rules. 
+In another setting, called <em>network creation game</em> the nodes are players, 
+and they play a game in which they can choose to pay to be linked to 
+other nodes. 
+The outcome of the game is a network. 
+The cost that a player pays is $\alpha$ for every node it decides to be 
+linked to, plus 
+the sum of the distances from this node to all the other nodes. 
+In other words, a node wants to have short distance to every node, but 
+cannot add a link to every node, because it would be too expensive.</p>
+
+<p>For this game one can study the usual objects of 
+<a href="https://en.wikipedia.org/wiki/Algorithmic_game_theory">algorithmic game theory</a>:
+the <a href="https://en.wikipedia.org/wiki/Nash_equilibrium">Nash equilibrium</a> 
+and the
+<a href="https://en.wikipedia.org/wiki/Price_of_anarchy">price of anarchy</a>.</p>
+
+<p>It is conjectured that the price of anarchy is constant for 
+any value $\alpha$, and <a href="https://arxiv.org/abs/1909.09799">this recent preprint</a> 
+makes progress on the conjecture.</p>
+
+<h2 id="lempel-ziv-compression-algorithms">Lempel-Ziv compression algorithms</h2>
+
+<p>Lempel-Ziv algorithm is a classic compression algorithm (or more 
+precisely a classic family of algorithms, are there are several versions). 
+A <a href="https://semidoc.github.io/lagarde-catastrophe">blog post on Semidoc</a> 
+describes the algorithm and gives an overview of 
+<a href="https://arxiv.org/abs/1707.04312">this paper</a> which studies how the compression
+rate can change when the original text is changed by one bit.</p>
+
+<p>Two recent papers on arxiv deal with Lempel-Ziv:</p>
 
 <ul>
-  <li>changing from one deadline to three deadlines a year. Basically it’s like 
-having the reviewing process made three times (with a smaller number of papers), 
-and then having a conference with the papers accepted to any of the three phases.</li>
-  <li>collocating the two main conferences of the domain.</li>
-  <li>changing the format (more keynotes, or shorter talks etc.)</li>
-  <li>transitioning to a journal model.</li>
+  <li>
+    <p><a href="https://arxiv.org/pdf/1910.00941.pdf">The first one</a> gives a new analysis of 
+the fact that Lempel-Ziv is optimal for some models of random text (hidden 
+Markov sources)</p>
+  </li>
+  <li>
+    <p><a href="https://arxiv.org/abs/1802.10347">The second one</a> improves the complexity of 
+the algorithm decompressing the text.</p>
+  </li>
 </ul>
 
-<p>Details can be found in the survey.</p>
+<h2 id="multi-armed-bandit">Multi-armed bandit</h2>
 
-<h2 id="paper-presentation-videos">Paper presentation videos</h2>
+<p><em>Multi-armed bandit</em> is an expression that appears here and there in 
+TCS conference, and very often in theoretical machine learning. It is a type of 
+problem where one has to make decisions one after the other, to 
+maximize some pay-off. Basically, at each round, it has the choice 
+between several options called the “arms” of the bandit (like the levers 
+of different slot-machines).</p>
 
-<p>One of the side topics of the survey is the possibility for the 
-authors to upload a video presenting their papers. It’s something I have thought
-of doing for my papers, but finally didn’t try.</p>
+<p>A basic version is the following framework:</p>
 
-<p>Till Miltzow is a researcher in graph theory and he records a talk for every 
-paper he has, see <a href="https://sites.google.com/view/miltzow/publications">here</a>. 
-I think it’s good!</p>
+<p>Given: $k$  arms, $T$ rounds.</p>
 
-<h2 id="the-polytcs-project">The PolyTCS project</h2>
+<p>In each round $t\in[T]$:
+1. Algorithm picks arm $a_t$.
+2. Algorithm observes reward $r_t\in [0,1]$ for the chosen arm.</p>
 
-<p>You may know the <a href="https://en.wikipedia.org/wiki/Polymath_Project">Polymath Project</a>,
-which is a project from the math community. It consists in choosing an open problem, 
-and then working on this problem in a massively collaborative way: everything is
-public, and everyone can help. This project has been quite successful, with great
-collaborations, and great papers.</p>
+<p>Pay-off: the sum of the rewards</p>
 
-<p>A similar project has been launched in TCS: 
-<a href="https://polytcs.wordpress.com/">The PolyTCS project</a>.
-The first problem is about boolean functions, see 
-<a href="https://polytcs.wordpress.com/2019/11/01/the-entropy-influence-conjecture/">here</a>.</p>
+<p>The reward for an arm comes from an unknown distribution, but if the 
+algorithm chooses an arm repeatedly, it somehow learns this distribution. 
+There is already a lot to say on this simple case, and there are a flurry
+of papers about this, these days.</p>
 
-<h2 id="forc-conference">FORC conference</h2>
+<p><a href="https://arxiv.org/pdf/1904.07272.pdf">Here</a> is a recent introduction 
+to multi-armed bandit. Also if you are in Rennes, France, on Wednesday
+there is a 
+<a href="https://perso.crans.org/besson/phd/defense/">PhD defense on this topic</a>.</p>
 
-<p>A new conference in TCS: <a href="https://responsiblecomputing.org/forc-2020-call-for-paper/">Symposium on the Foundations of Responsible Computing (FORC)</a>. Topics include privacy, fairness and electoral processes.</p>
+<h2 id="delaunay-triangulations-have-perfect-matchings">Delaunay triangulations have perfect matchings</h2>
 
-<h2 id="symbolic-computations-in-python">Symbolic computations in python</h2>
+<p><a href="https://en.wikipedia.org/wiki/Delaunay_triangulation">Delaunay triangulations</a> 
+are triangulations of point sets in the plane. I recentely learnt that
+the graphs that are Delaunay triangulations, always have a perfect 
+matching (that is a matching of size $n/2$ if $n$ is even, and $(n-1)/2$
+is $n$ is odd).</p>
 
-<p>I recently had to do a lot of small computations on toy examples. To check the 
-computations, I wanted to have some symbolic math software, but the usual
-ones (e.g. Maple) are big machines, and often not open-source. If you are in the 
-same situation, python with <a href="https://www.sympy.org/en/index.html">sympy</a> is a 
-good choice.</p>
+<p><img src="assets/delaunay.png" alt="" class="center-image" width="100%" /></p>
+<p align="center"><small><i>
+A point set, its Delaunay triangulation, and the associated graph with a perfect matching.
+</i></small></p>
 
-<h2 id="pull-requests-for-this-blog">Pull requests for this blog</h2>
+<p>A short proof of this appeared on arxiv recently, 
+<a href="https://arxiv.org/pdf/1907.01617.pdf">here</a>. (Actually it is a stronger
+result that is proved, about the so-called “toughness” of Delaunay 
+triangulations.)</p>
 
-<p>This blog is a github page, that is, it works as a git repository. 
-I recently got some pull requests for it, from my friend 
-<a href="https://perso.crans.org/besson/me/index.fr.html">Lilian Besson</a>. 
-Pull requests is a way to suggest changes, e.g. correct a typo. It is very 
-convenient (on my side): I just have to pull these commits. 
-If you want to know more and correct one of the many typos of this blog, you can 
-take a look at <a href="https://www.freecodecamp.org/news/how-to-make-your-first-pull-request-on-github/">this page</a>.</p>
+<h2 id="learning-augmented-algorithms">Learning-augmented algorithms</h2>
+
+<p>Learning-augmented algorithms are algorithms that can use informtation
+coming from some machine learning source. 
+Here is an example.</p>
+
+<p>Binary search takes $O(\log n)$ in the worst-case. 
+Now if you have some neural network (NN) telling you that the element you’re 
+looking for is around position $i$, how do you modify your search? 
+Well you can begin by testing position $i$. Then, if the NN is not perfect, 
+this might not be the right value, but maybe it’s close. Say the value 
+you’re looking for is larger. Then you can try to find a position 
+that has larger value than your element, for example by doing exponential guesses. 
+Once you have both upper and lower bound, you can run the usual binary 
+search.</p>
+
+<p>If the error (that is, the number of positions between your element
+and the prediction of the NN) is $\mu$, then your algorithm runs in 
+$O(\log \mu)$. This is good: if the prediction is good then you speed up 
+the search, and if it’s bad, then you do not loose much.</p>
+
+<p>In more general terms, one looks for two properties:</p>
+
+<ul>
+  <li>consistency: the better the prediction, the better the algorithm</li>
+  <li>robustness: if the predition is bad, then the algorithm does not get 
+much worse.</li>
+</ul>
+
+<p>Note that for real application, one might also be interested in the running 
+time of the NN, and a lot of other things.</p>
+
+<p>Some material on this topic:</p>
+
+<ul>
+  <li>a <a href="https://www.mit.edu/~andoni/algoS19/scribes/scribe24.pdf">lecture note</a></li>
+  <li><a href="http://theory.stanford.edu/~sergei/slides/HALG-slides.pdf">the slides</a> 
+of a talk at <a href="http://2019.highlightsofalgorithms.org/">HALG 2019</a></li>
+  <li><a href="https://www.mit.edu/~vakilian/ttic-workshop.html">a workshop</a>.</li>
+</ul>
 
 
   </div>

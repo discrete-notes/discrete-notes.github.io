@@ -87,48 +87,167 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/network-decomposition-0">
-        Network decomposition&#58; Introduction
+      <a href="/network-decomposition-1-local-algorithms">
+        Network decomposition 1&#58; Local algorithms
       </a>
     </h1>
 
-    <span class="post-date">08 Apr 2020</span>
+    <span class="post-date">09 Apr 2020</span>
 
-    <p>This post is an introduction (and a table of contents) for a series of posts on
-distributed network decomposition.</p>
+    <p>This the first real post of a series on distributed network decomposition. 
+The introductory post of this series is 
+<a href="https://discrete-notes.github.io/network-decomposition-0">here</a>. 
+This post is a quick introduction to local algorithms, with the example of the
+maximal independent set problem. If you have heard about the local model before, 
+you probably know everything in this post.</p>
 
-<p><img src="assets/caravane-0.jpg" alt="" class="center-image" width="90%" /></p>
+<p><img src="assets/caravane-1.jpg" alt="" class="center-image" width="90%" /></p>
 
-<p>One of the important papers of these recent years in distributed graph 
-algorithms will appear at STOC this summer:</p>
+<h2 id="a-problem58-computing-a-maximal-independent-set">A problem: computing a maximal independent set</h2>
+<p>A typical problem of network distributed computing is computing a 
+<a href="https://en.wikipedia.org/wiki/Maximal_independent_set">maximal independent set</a>
+(MIS). An MIS is a set $S$ of nodes of the graph such that not two nodes of $S$
+are adjacent, and for every node not in $S$, there is neighbor in $S$.</p>
 
-<p>“Polylogarithmic-Time Deterministic Network Decomposition and Distributed 
-Derandomization” by <a href="https://n.ethz.ch/~rozhonv/">Václav Rozhoň</a> and 
-<a href="https://people.inf.ethz.ch/gmohsen/">Mohsen Ghaffari</a> from ETH Zurich.</p>
+<p>The two pictures below <em>do not</em> represent an MIS: the first one 
+because of two adjacent selected nodes, and the second because of an “isolated node”.</p>
 
-<p>It is basically the description of a distributed algorithm that performs what is 
-called a <em>network decomposition</em>, faster than before. This decomposition can 
-then be used to do many other things fast, and the paper solves several important 
-open problems of the field.</p>
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/MIS-arete.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/MIS-noeud.png" alt="" class="center-image" width="100%" /></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>I quickly looked at the paper when it appeared on arxiv, but I want to 
-understand it better, and writing a series of posts about it is good way to do 
-this.</p>
+<p>The two following pictures represent MISs. Note that one in <em>maximum</em> (it has 3 
+nodes, and no MIS on 4 nodes exists), but the other is just maximal, and it’s 
+also fine.</p>
 
-<p>Here is the my current plan for this series:</p>
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/MIS-maxi.png" alt="" class="center-image" width="100%" /></td>
+      <td> <img src="assets/MIS-pas-maxi.png" alt="" class="center-image" width="100%" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="easy-to-solve-in-a-centralized-manner">Easy to solve in a centralized manner</h2>
+
+<p>It’s very easy to solve this problem in a centralized manner. 
+An algorithm is the following:</p>
+
+<ul>
+  <li>Label all nodes as <em>active</em></li>
+  <li>As long as it is possible:</li>
+</ul>
 
 <ol>
-  <li><em><a href="https://discrete-notes.github.io/network-decomposition-1-local-algorithms">Local algorithms</a></em>, 
-an introduction to local algorithm, with the example of 
-the maximal independent set problem.</li>
-  <li><em><a href="https://discrete-notes.github.io/network-decomposition-2-impact">Impact for distributed algorithms</a></em>, 
-that is, why is a network decomposition so useful.</li>
-  <li><em><a href="https://discrete-notes.github.io/network-decomposition-3-centralized">Centralized construction</a></em>, 
-how to build a network decomposition with good parameters in a centralized manner.</li>
-  <li><em><a href="https://discrete-notes.github.io/network-decomposition-4-weak-strong">Weak and strong decomposition</a></em>, 
-some useful precisions about the decomposition</li>
-  <li>(and more) TBA</li>
+  <li>Take an arbitrary active node</li>
+  <li>Put it in the MIS</li>
+  <li>Label this node and all its neighbors as <em>inactive</em></li>
 </ol>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/MIS-seq-1.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/MIS-seq-2.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/MIS-seq-3.png" alt="" class="center-image" width="100%" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A first problem for us, with this algorithm, is that it is not distributed: you
+need an external entity to chose the “arbitrary active node”. This is some kind 
+of scheduler, who decides which node is “doing something” at any step.</p>
+
+<h2 id="using-identifiers-to-simulate-a-centralized-scheduler">Using identifiers to simulate a centralized scheduler</h2>
+
+<p>In our model, we will assume that every node has a unique identity. This 
+identifier is a number in $[1,n^2]$, where $n$ is the size of the netork 
+(in general we take a large enough 
+polynomial for the upper bound, but for concreteness let’s say $n^2$). 
+For a node $v$, let $ID(v)$ be its identifier.</p>
+
+<p><img src="assets/MIS-ID.png" alt="" class="center-image" width="65%" /></p>
+
+<p>Using these identifier we will simulate the centralized scheduler.</p>
+
+<p>All nodes start at the same time, and follow time steps (time-step= 1, 2, 3 etc. ).
+They start with a status that is <em>active</em>.
+The following algorithm is run at all nodes.</p>
+
+<ul>
+  <li>If time-step = $ID(v)$ and status = <em>active</em>:</li>
+</ul>
+
+<ol>
+  <li>Change status to <em>selected</em></li>
+  <li>Send message “selected” to all neighbors</li>
+</ol>
+
+<ul>
+  <li>If the time-step $\neq ID(v)$ and status = <em>active</em>:</li>
+</ul>
+
+<ol>
+  <li>Wait for a message “selected” from neighbors</li>
+  <li>If one arrives, change status to <em>not selected</em></li>
+</ol>
+
+<p>One can check that on our example, with the identifier given above, the run of 
+the algorithm simulates the run of the centralized algorithm. Another identifier 
+assignment would correspond to another centralized scheduler, and would give 
+another MIS.</p>
+
+<p>Note that the algorithm is correct because the identifiers are all distinct. 
+Indeed, if two neighbors had the same identifier, they would be selected at the 
+same time, and the outcome would not be an MIS.</p>
+
+<p>Now to evaluate the performance of a local algorithm, we measure the number of 
+time steps before the solution is completed. Here it is $n^2$ in general, as 
+one would have to wait for the node with the largest identifier. 
+This is a very poor complexity. Indeed we finish this post with a proof that any
+problem can be solved in $O(n)$ time steps.</p>
+
+<h2 id="general-algorithm-in-on-steps">General algorithm in $O(n)$ steps</h2>
+
+<p>Consider the following algorithm (that is described partially by the pictures 
+below).</p>
+
+<ul>
+  <li>Send identifier to all neighbors</li>
+  <li>Receive the identifier of all neighbors, and build the list of the adjacent 
+edges, e.g. $(ID(v),ID(w))$ for a node $v$ receiving a message from a neighbor 
+$w$.</li>
+  <li>Send these edges to all neighbors.</li>
+  <li>For $n$ time steps: send the set of all the edges received so far.</li>
+  <li>Then build a local copy of the graph, solve the problem on this copy, and 
+output the part of the solution that correspond to the node.</li>
+</ul>
+
+<p>The following set of pictures shows how the information about the existence of
+the egde (2,5) is built and then broadcasted to the whole graph.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/flooding-1.png" alt="" class="center-image" width="100%" /> </td>
+      <td> <img src="assets/flooding-2.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/flooding-3.png" alt="" class="center-image" width="100%" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This algorithm is correct because after $n$ steps of flooding, all nodes know 
+about all the edges, thus the local copy of the graph that each node has is 
+correct, and then the output of the algorithm is also correct.</p>
+
+<p><em>Next post of the series: <a href="https://discrete-notes.github.io/network-decomposition-2-impact">Impact on distributed algorithms</a></em></p>
+
 
   </div>
   

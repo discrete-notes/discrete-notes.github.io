@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Network decomposition 5&#58; The algorithm
-redirect_from: "/2020/05/05/network-decomposition-5-algorithm/"
+redirect_from: "/2020/05/21/network-decomposition-5-algorithm/"
 permalink: network-decomposition-5-algorithm
 ---
 

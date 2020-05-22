@@ -16,7 +16,7 @@ In this post, we (finally!) describe the algorithm of the paper of Ghaffari and 
 
 ![](assets/caravane-6.jpg){: .center-image width="90%"}
 
-### Recap of previous episodes
+### Recap of previous episodes
 
 In the previous posts we saw what a network decomposition is, why it is useful,
 and why computing only a weak decomposition is not problematic, as we can build
@@ -115,7 +115,7 @@ Which is pretty good! But of course, the clusters of same color can be adjacent,
 and we don't want that. We have to refine this partition. But note that now the
 blue and red nodes will live in two independent worlds, separated by frozen nodes.
 
-## The second digit
+## The second digit
 
 Now we will go to the second digit of the labels. There are quite a few things
 that are simpler for the first digit, thus we cannot simply say "do it again".

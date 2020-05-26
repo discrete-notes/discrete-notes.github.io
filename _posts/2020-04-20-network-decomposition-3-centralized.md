@@ -124,7 +124,7 @@ Instead we control the size of the balls.
 ## Growing a ball
 
 A technique to ensure that the interior/border ratio is large is to build the 
-ball around the selected center in the following way. 
+ball around the selected center in the following way, called *ball carving*.
 
 * Start with only the center
 * Iterate the following:

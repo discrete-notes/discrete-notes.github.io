@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Network decomposition 4&#58; weak and strong decompositions
+title: Network decomposition 4&#58; Weak and strong decompositions
 redirect_from: "/2020/05/05/network-decomposition-4-weak-strong/"
 permalink: network-decomposition-4-weak-strong
 ---

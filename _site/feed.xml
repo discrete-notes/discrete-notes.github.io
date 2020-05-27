@@ -8,10 +8,7 @@
     
       <item>
         <title>Network decomposition 5&amp;#58; The algorithm</title>
-        <description>&lt;p&gt;[NOTE: Because of timing issues, I want to have this online now, but it is
-not fully polished yet. I’ll polish it soon.]&lt;/p&gt;
-
-&lt;p&gt;This is the fifth post of a series on distributed network decomposition. 
+        <description>&lt;p&gt;This is the fifth post of a series on distributed network decomposition. 
 The introductory post of this series is 
 &lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-0&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
@@ -187,8 +184,19 @@ by nodes that are now blue or frozen. But they still form a cluster: we have
 not erased the previous Steiner tree, thus they are still linked. And this is
 important: at the next digit, this label may give color blue, and then these
 nodes have to act in a coordinated way. This is why we need to talk about weak
-decompositions and not strong ones.
-One more non-intuitive thing is that, because of the same reason, the nodes of a
+decompositions and not strong ones.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/ND-non-intuitive-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/ND-non-intuitive-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;assets/ND-non-intuitive-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;One more non-intuitive thing is that, because of the same reason, the nodes of a
 cluster may have a label that is the ID of a node that is not anymore in the
 cluster.&lt;/p&gt;
 

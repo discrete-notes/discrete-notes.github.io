@@ -5,9 +5,6 @@ redirect_from: "/2020/05/21/network-decomposition-5-algorithm/"
 permalink: network-decomposition-5-algorithm
 ---
 
-[NOTE: Because of timing issues, I want to have this online now, but it is
-not fully polished yet. I'll polish it soon.]
-
 This is the fifth post of a series on distributed network decomposition. 
 The introductory post of this series is 
 [here](https://discrete-notes.github.io/network-decomposition-0). 
@@ -166,6 +163,9 @@ not erased the previous Steiner tree, thus they are still linked. And this is
 important: at the next digit, this label may give color blue, and then these
 nodes have to act in a coordinated way. This is why we need to talk about weak
 decompositions and not strong ones.
+
+![](assets/ND-non-intuitive-1.png){: .center-image width="100%"}|![](assets/ND-non-intuitive-2.png){: .center-image width="100%"}|![](assets/ND-non-intuitive-3.png){: .center-image width="100%"}
+
 One more non-intuitive thing is that, because of the same reason, the nodes of a
 cluster may have a label that is the ID of a node that is not anymore in the
 cluster.

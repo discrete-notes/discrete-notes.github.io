@@ -87,218 +87,216 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/notes-rainy-may-2020">
-        Notes for (rainy) May
+      <a href="/network-decomposition-5-algorithm">
+        Network decomposition 5&#58; The algorithm
       </a>
     </h1>
 
-    <span class="post-date">11 May 2020</span>
+    <span class="post-date">21 May 2020</span>
 
-    <p>Notes for May.</p>
+    <p>This is the fifth post of a series on distributed network decomposition. 
+The introductory post of this series is 
+<a href="https://discrete-notes.github.io/network-decomposition-0">here</a>.</p>
 
-<p><img src="assets/caravane-nuit.jpg" alt="" class="center-image" width="95%" /></p>
+<p>In this post, we (finally!) describe the algorithm of the paper of Ghaffari and Rozhon.</p>
 
-<h2 id="active-learning-and-interactive-protocols">Active learning and interactive protocols</h2>
+<p><img src="assets/caravane-6.jpg" alt="" class="center-image" width="90%" /></p>
 
-<p>The <a href="https://en.wikipedia.org/wiki/Grace_Murray_Hopper_Award">Grace Murray Hopper Award</a>
-has been given to <a href="http://www.cs.cmu.edu/~ninamf/">Maria Florina “Nina” Balcan</a> 
-for her work in machine learning. One of her contributions is in
-<em><a href="Active learning (machine learning)">active machine learning</a></em>.</p>
+<h3 id="recap-of-previous-episodes">Recap of previous episodes</h3>
 
-<p>In a classic setting of machine learning, the machine is given a lot of 
-labeled data and must produce a classifier: an algorithm that can guess the label
-of a new data point. In active learning, this is made interactive: the machine 
-can create a data point and ask for the label of this point. For example in the
-following picture, in order to have a good classifier based on the red and blue
-points, the machine may ask about the yellow points, to know which hypothesis is 
-the best between the green and the pink one.</p>
+<p>In the previous posts, we saw what a network decomposition is, why it is useful,
+how to compute it in a sequential model via ball-carving,
+and why computing only a weak decomposition is not problematic. In this post we 
+show the new algorithm to build a (weak) network decomposition.</p>
 
-<p><img src="assets/active-learning.png" alt="" class="center-image" width="70%" /></p>
+<h2 id="overview">Overview</h2>
 
-<p>A reason to do that is to save time: after processing a fraction of the data, 
-the machine can have some preliminary idea of what the classification looks like, 
-and only relevant data points at the boundary of this partition are really useful.
-Another reason is if the data points themselves are costly. I remember a talk<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
-where the goal was to decide whether small islands close to the shore reduce 
-or increase the damages of a tsunami. If you have perfect knowledge of the 
-dimensions of your island, you can run a precise fluid simulation, and that’s it. 
-But if you 
-want a big picture of whether islands in general are bad or good, then you would 
-need to run many simulations, and you cannot because it takes too much time. 
-Then you can use machine learning to get an approximation of the damage as a 
-function of parameters of the island. But remember that any new point takes ages 
-to be computed, thus you would like to have only useful data points in you 
-learning set. And somehow you cannot always select your points a priori ; then 
-having active learning is great.</p>
+<p>An overview of the algorithm can be given	 as a comparison with the centralized
+construction presented in
+<a href="https://discrete-notes.github.io/network-decomposition-3-centralized">the third post</a>
+of this series.
+First, just as in the centralized construction, the color classes will be built 
+one by one, and each color will “take” a constant fraction of the remaining nodes,
+which insures that we get a logarithmic number of colors.
+As a consequence, in the remaining of this post, we will be interested only in
+building the first color class, as the other classes are built the same way.
+More precisely, as in the centralized construction, our goal is now to build a 
+set of clusters separated by frozen nodes, with small (weak) diameters, and
+with the constraint that not too many nodes are frozen.</p>
 
-<p>Balcan basically proved that active learning can be efficient even in the 
-presence of (all kinds of) noise. The Hopper award laudatio cites two other
-key works, in semi-supervised learning and clustering.</p>
+<p>Now, unlike in the sequential construction, we cannot grow balls one after the
+other (this would take at least diameter time, and the diameter can be large).
+One could try to first find a good set of nodes, far away one from the others,
+and to start growing balls in parallel from these nodes. But finding this set of
+nodes looks as hard 
+as computing the decomposition itself (remember that we build a network
+decomposition to compute maximal independent sets, among other things).</p>
 
-<p>[I learned about this in a 
-<a href="https://rjlipton.wordpress.com/2020/04/10/nina-balcan-wins/">post on Lipton’s blog</a>, 
-that contains the following amusing sentence: “Active learning follows a classic idea 
-in computer theory: Making a protocol interactive can often decrease the cost, 
-and almost always makes the protocol more complex to understand”.]</p>
+<p>Hence another technique has to be used.</p>
 
-<h2 id="sprouts-game">Sprouts game</h2>
+<h2 id="separating-the-graph">Separating the graph</h2>
 
-<p><a href="http://images.math.cnrs.fr">Images des maths</a> a maths popularization website in 
-French has 
-<a href="http://images.math.cnrs.fr/Savez-vous-planter-les-choux.html">an article</a> 
-on
-<a href="https://en.wikipedia.org/wiki/Sprouts_(game)">sprouts</a>, a combinatorial game 
-related to planar graphs.</p>
-
-<p>It is a paper and pencil game between two players. They start from an arbitrary 
-set of points, and then play one after the other. At her turn, the player has to 
-do two things:</p>
-
-<ul>
-  <li>draw a line between two points (including self-loops)</li>
-  <li>draw a point on this line (not at one of the end points)</li>
-</ul>
-
-<p>and there are a few constraints:</p>
-
-<ul>
-  <li>the lines should not intersect</li>
-  <li>every point has degree at most three.</li>
-</ul>
-
-<p>At some point one the players cannot play anymore, this player looses. On the 
-following picture, there are three initial points. The blue player makes the 
-sixth move, and after that the red player cannot play. Therefore the blue player
-wins.</p>
+<p>Instead of growing clusters, we will separate the graph into smaller and smaller 
+pieces (by freezing nodes).</p>
 
 <table>
   <tbody>
     <tr>
-      <td><img src="assets/sprouts-1.png" alt="" class="center-image" width="100%" /></td>
-      <td><img src="assets/sprouts-2.png" alt="" class="center-image" width="100%" /></td>
-      <td><img src="assets/sprouts-3.png" alt="" class="center-image" width="100%" /></td>
-      <td><img src="assets/sprouts-4.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/ND-separating-1.png" alt="" class="center-image" width="90%" /></td>
+      <td><img src="assets/ND-separating-2.png" alt="" class="center-image" width="90%" /></td>
+      <td><img src="assets/ND-separating-3.png" alt="" class="center-image" width="90%" /></td>
     </tr>
   </tbody>
 </table>
 
-<p>Researchers have completely characterized what are the winning strategies for 
-this game up to 44 initial points. And there is the following conjecture: if 
-both players play perfectly, the first player cannot win if and only if the 
-number of initial points is 0, 1 or 2 modulo 6…!</p>
+<p>A key idea of the algorithm is to use the digits of the identifiers of the
+nodes written in binary. A first attempt in this direction is the following. Let
+us start by having two sets of nodes, the ones whose IDs begin with 0, and
+the ones whose IDs begin with 1. We will draw these sets as respectively
+blue and red. Now if we want to be sure that not two nodes of different colors
+(red and blue) are adjacent, we can freeze one of the nodes for every
+bicolored edge. In a good scenario, we get the following picture.</p>
 
-<h2 id="diffraction-and-algorithms">Diffraction and algorithms</h2>
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/ND-red-blue-1.png" alt="" class="center-image" width="70%" /></td>
+      <td><img src="assets/ND-red-blue-2.png" alt="" class="center-image" width="70%" /></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>The other day, there was a paper on the arxiv named 
-<a href="https://arxiv.org/pdf/2004.07659.pdf">Algorithmic Foundations for the Diffraction Limit</a> 
-and I thought that “diffraction” had a meaning that I 
-didn’t know about, outside of physics. So I looked 
-at the abstract, and actually it’s about the good old 
-<a href="https://en.wikipedia.org/wiki/Diffraction">optical diffraction</a>!</p>
+<p>But this is a good case, and in general this technique is bad. First, of
+course as the identifiers are not required to be uniformly distributed between
+red and blue, all nodes could be blue. But this is not really a problem: anyway
+we will have to somehow iterate the construction to all digits one by one, and the
+IDs are all distinct, thus at some point we will have two non-empty groups.
+The main problem is the number of frozen nodes: it can be huge, almost all
+the nodes can be frozen. This is bad for us: we want to get a
+color class that contains a constant fraction of the nodes of the graph. (Note
+that even if you could get only half of the nodes frozen at this step, as we
+will iterate this for all digits, it wouldn’t work.)</p>
 
-<p>From what I understood (and remember) here is the topic of the paper. When you 
-have two sources of light far away one from the other, and you observe the 
-diffraction image created by a circular aperture, you can say “yes there are two 
-sources of light, and they are in that position”. But when the two sources are 
-close one from the other it’s less clear. It is believed that there is a 
-fundamental barrier after which you cannot decide between one and two sources. 
-There are several criteria to decide where this barrier is, with various 
-explanations but all are heuristics.</p>
+<p>So now we have to answer the question: how to get a small number of frozen nodes
+when separating the red and the blue nodes?</p>
 
-<p>The approach of the paper is to consider that one receives the diffracted image 
-through (noisy) samples, and based on this samples must decide whether there are one or 
-two sources. This becomes a more statistical problem, and when we ask how many 
-samples are needed, then it becomes more algorithmic too. Then one can design 
-algorithms with a complexity depending on the number of samples, the noise etc.</p>
+<p>Before going into that, let us restate at which level of the explanation we
+are (as there are quite a lot of levels).
+We want to build a network decomposition, for this we
+first want to build a first color class, and for this we first want to separate
+the nodes whose identifiers start with 0 (the blue nodes in the pictures) and
+the nodes whose identifiers start with 1 (the red nodes in the pictures)</p>
 
-<h2 id="trusses">Trusses</h2>
+<h2 id="ball-carving-is-back">Ball carving is back</h2>
 
-<p>In the study of social networks, a classic topic is to understand and detect 
-communities. In terms of graphs, the simplest object representing a community is 
-a clique. But this is a very demanding definition: there are many groups that 
-one would call a community, where not everybody knows everybody. A classic 
-alternative here is a $k$-core. A $k$-core is a maximal connected subgraph, with all 
-nodes having degree at least $k$ in this subgraph. That is everybody should know
-at least $k$ other members.</p>
-
-<p>I learned recently about another such object: $k$-trusses. A $k$-truss is a 
-maximal connected subgraph, such that inside this subgraph, every node is 
-adjacent to at least $k$ triangles. So now you want that every person can cite 
-$k$ pairs of acquaintances who know each other. It’s a more restricted notion 
-than $k$-cores, because in some sense the communities must be more “local”, with 
-each neighborhood being more connected.</p>
-
-<p>[I learned about this while taking a look at the papers published in JGAA 
-journal for the <a href="https://discrete-notes.github.io/journal-fees">post about journal fees</a>. 
-The paper in particular is 
-<a href="http://www.jgaa.info/accepted/2020/527.pdf">this one</a>, which discusses bounds 
-and algorithms for $k$-trusses.]</p>
-
-<h2 id="eggs-and-reconfigurations">Eggs and reconfigurations</h2>
-<p>The Aperiodical has an 
-<a href="https://aperiodical.com/2020/04/the-big-lock-down-math-off-match-5/">article</a> 
-about a maths game, with a box of eggs.
-The game is the following. You start with a box of eggs in this configuration:</p>
-
-<p><img src="assets/boite-oeufs-1.png" alt="" class="center-image" width="50%" /></p>
-
-<p>and you should transform it into that configuration:
-<img src="assets/boite-oeufs-2.png" alt="" class="center-image" width="50%" /></p>
-
-<p>using only movements of the following form (move one right):
-<img src="assets/boite-oeufs-3.png" alt="" class="center-image" width="50%" /></p>
-
-<p>The question is what is the minimum number of moves? 
-In general I would consider this as just one more maths game, but as I will be 
-working on reconfiguration problems next year (in Lyon with 
-<a href="https://pagesperso.g-scop.grenoble-inp.fr/~bousquen/">Nicolas Bousquet</a>), 
-this is relevant. Reconfiguration problems are problems of the form: how to get 
-from configuration A to B in the minimum number of moves of some sort. This is 
-important for example for random generation of solutions to combinatorial 
-problems.</p>
-
-<h2 id="other-notes">Other notes</h2>
+<p>We know a technique to separate some parts of the graph without freeing too many
+nodes: growing a ball like in the third post (that is, “ball carving”). The idea
+is to consider the blue and red nodes in a non-symmetrical way: blue nodes are 
+starting point for ball carving, and red nodes want to join such balls. That is, 
+every blue node starts as a one-node ball, and then, until this is not possible:</p>
 
 <ul>
-  <li>
-    <p>The Simons institute launches a new series of video, “Theory shorts”. The 
-<a href="https://www.youtube.com/watch?time_continue=14&amp;v=PLAZyu73tWE&amp;feature=emb_logo">first one</a> 
-is about vision and brain ; quite interesting.</p>
-  </li>
-  <li>
-    <p>An interesting blog about algorithmic fairness that I didn’t know: 
-<a href="https://algorithmicfairness.wordpress.com/category/algorithms/">Algorithmic fairness</a>.</p>
-  </li>
-  <li>
-    <p>In <a href="https://blog.computationalcomplexity.org/2020/05/vidcast-on-conferences.html">a “vidcast”</a>, 
-Gasarsh and Fortnow talk about conferences. In particular, 
-about having conferences sometimes in person, sometimes virtual (and also about 
-regional conferences). Incidentially, they mention the fact that the conference 
-accronym <em>EC</em> used to be for <em>Electronic Commerce</em>, which is weird… (now it’s 
-<em>Economy and Computation</em> which makes more sense).</p>
-  </li>
-  <li>
-    <p>I realized that the blog was hard to read on smartphone because of the format 
-of the pictures, it should be better now.</p>
-  </li>
-  <li>
-    <p>I started making pictures with my tablet, and it’s a very good solution. Before 
-looking into it, I didn’t know one could have a simple software with layers and 
-opacity parameters on tablets. 
-It’s especially nice to have a first sketch, and then make a precise drawing. 
-I use it not only for the blog but also for picture prototypes in manuscripts.</p>
-  </li>
+  <li>the (non-frozen) red nodes that have at least one blue neighbor propose to
+join the ball of one of these blue nodes (arbitrarily),</li>
+  <li>the blue balls accept if the number of red nodes proposing is large enough, and
+reject otherwise,</li>
+  <li>if the blue ball accepts, the red nodes proposing become blue, if it rejects, 
+they freeze.</li>
 </ul>
 
-<h3 id="footnotes">Footnotes</h3>
+<p>When a red node joins a blue ball, we add an edge to the Steiner tree of this
+ball to link this node. Also this node change its ID, to take the identifier of
+the ball. Hence these numbers are not really identifiers any more, and from now on
+we’ll say <em>label</em>.</p>
 
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>The talk was a bachelor project defence, in <a href="http://cmla.ens-paris-saclay.fr/">CMLA</a>, an applied maths lab  near Paris.&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<p>After this ball carving process we have:</p>
+
+<ul>
+  <li>more blue nodes and less red nodes,</li>
+  <li>no edge between a red and a blue node,</li>
+  <li>not too many frozen nodes,</li>
+  <li>clusters whose Steiner tree have at most logarithmic diameter.</li>
+</ul>
+
+<p>Which is pretty good! But of course, the clusters of same color can be adjacent,
+and we don’t want that. We have to refine this partition. Note that now the
+blue and red nodes will live in two independent worlds, separated by frozen nodes.</p>
+
+<h2 id="the-second-digit">The second digit</h2>
+
+<p>Now we will go to the second digit of the labels. There are quite a few things
+that are simpler for the first digit, thus we cannot simply say “do it again”.</p>
+
+<p>First of
+all forget about the colors of the nodes given by the first digit, and color
+them with the color of the second digit (blue for _0 and red for _1).
+This means that we have again adjacent red and blue clusters: either two clusters that
+were previously blue whose labels differ on the second bit, or
+two nodes that were previously red (and are also clusters restricted to one node),
+also with different second digit.</p>
+
+<p>A natural way to iterate the construction would be the following: consider the
+clusters as the nodes of the previous phase and make the same construction at
+this level. That is, the red clusters propose to the blue clusters etc.
+But this would not be good: we could freeze an arbitrary red cluster because it
+proposed to blue clusters with few neighbors, and this red cluster might be huge.</p>
+
+<p>What we do instead is to make the red nodes act individually without
+coordination inside the red cluster (but keep the blue nodes acting as a cluster).
+That is: every red node that is adjacent to a blue cluster proposes to join this 
+cluster (breaking ties arbitrarily), and is accepted if enough such nodes want 
+to join. 
+And we do the ball carving this way.
+A red node, if it joins a blue cluster, will be linked the Steiner tree of this
+cluster, and take the label of this cluster.</p>
+
+<h2 id="a-few-non-intuitive-things">A few non-intuitive things</h2>
+
+<p>Now, there are a few non-intuitive things going on. 
+First, suppose that after the first digit, we had a nice
+cluster, and that the second digit of its label is a 1. Then, this cluster is
+basically dismantled during the phase corresponding to the second digit, because 
+many nodes of this cluster might be eaten by adjacent blue clusters. This 
+looks counter-intuitive but seems necessary to separate clusters further.</p>
+
+<p>Second, it is possible that
+nodes having the same label, do not form a connected component anymore. Indeed,
+consider a cluster that was blue before, and now is red. With the ball-carving,
+some nodes of this
+cluster become blue, some nodes are frozen and some nodes are still red and
+separated from blue nodes by frozen nodes. It is possible that these red nodes
+(that have the same labels) form disconnected islands that were linked
+by nodes that are now blue or frozen. But they still form a cluster: we have
+not erased the previous Steiner tree, thus they are still linked. And this is
+important: at the next digit, this label may give color blue, and then these
+nodes have to act in a coordinated way. This is why we need to talk about weak
+decompositions and not strong ones.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/ND-non-intuitive-1.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/ND-non-intuitive-2.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/ND-non-intuitive-3.png" alt="" class="center-image" width="100%" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>One more non-intuitive thing is that, because of the same reason, the nodes of a
+cluster may have a label that is the ID of a node that is not anymore in the
+cluster.</p>
+
+<h2 id="thats-it">That’s it!</h2>
+
+<p>This is pretty much the algorithm! Then you just iterate on the digits of the
+labels, and at the end, the all clusters are separated by frozen nodes, have
+a controlled weak diameter, and not too many nodes have been frozen. This way
+we get the first color class, and then we can go to second color class,etc.</p>
+
+<p>By setting the right parameters for the ball carving, you get an algorithm that
+use polylogarithmic time to build a network decomposition with logarithmic weak
+diameter and a logarithmic number of colors.</p>
+
 
   </div>
   

@@ -87,166 +87,190 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/network-decomposition-1-local-algorithms">
-        Network decomposition 1&#58; Local algorithms
+      <a href="/network-decomposition-2-impact">
+        Network decomposition 2&#58; Impact on distributed algorithms
       </a>
     </h1>
 
-    <span class="post-date">09 Apr 2020</span>
+    <span class="post-date">10 Apr 2020</span>
 
-    <p>This the first real post of a series on distributed network decomposition. 
+    <p>This is the second post of a series on distributed network decomposition. 
 The introductory post of this series is 
 <a href="https://discrete-notes.github.io/network-decomposition-0">here</a>. 
-This post is a quick introduction to local algorithms, with the example of the
-maximal independent set problem. If you have heard about the local model before, 
-you probably know everything in this post.</p>
+This post explains why network decomposition is useful.</p>
 
-<p><img src="assets/caravane-1.jpg" alt="" class="center-image" width="90%" /></p>
+<p><img src="assets/caravane-2.jpg" alt="" class="center-image" width="90%" /></p>
 
-<h2 id="a-problem58-computing-a-maximal-independent-set">A problem: computing a maximal independent set</h2>
-<p>A typical problem of network distributed computing is computing a 
-<a href="https://en.wikipedia.org/wiki/Maximal_independent_set">maximal independent set</a>
-(MIS). An MIS is a set $S$ of nodes of the graph such that not two nodes of $S$
-are adjacent, and for every node not in $S$, there is neighbor in $S$.</p>
+<h3 id="recap-of-previous-episodes">Recap of previous episodes</h3>
 
-<p>The two pictures below <em>do not</em> represent an MIS: the first one 
-because of two adjacent selected nodes, and the second because of an “isolated node”.</p>
+<p>We saw in the 
+<a href="https://discrete-notes.github.io/network-decomposition-1-local-algorithms">first post</a> 
+of the series that one can simulate the greedy centralized algorithm in the local 
+model, by using the identifiers as a schedule, but that this was horribly slow.
+We also looked at an algorithm that gather the whole topology of the graph, this
+will be useful here.</p>
+
+<h2 id="everything-is-easier-with-a-coloring">Everything is easier with a coloring</h2>
+
+<p>It is easy to see how we could use less time steps to run the greedy algorithm: 
+if you have two nodes that are far enough one from the other, you can select 
+both without running into trouble. And then instead of two, you can select a
+large number of nodes, as long as they are far away one from the other. 
+This way in one round you can select and de-select a lot of nodes.</p>
+
+<p>Now, more generally, imagine that a mysterious friend gives you a (proper) 
+$k$-coloring of the graph. You can use it to parallelize the algorithm the 
+following way. First, pick the first color, select all of its nodes, de-select 
+all the nodes adjacent to these nodes. This cannot create a problem as the nodes
+of a color class cannot be adjacent. Then continue by doing the same with the 
+nodes of the second color that are still active. And so on and so 
+forth, until you have considered all the colors.</p>
 
 <table>
   <tbody>
     <tr>
-      <td><img src="assets/MIS-arete.png" alt="" class="center-image" width="100%" /></td>
-      <td><img src="assets/MIS-noeud.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/MIS-coloring-1.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/MIS-coloring-2.png" alt="" class="center-image" width="100%" /></td>
     </tr>
-  </tbody>
-</table>
-
-<p>The two following pictures represent MISs. Note that one in <em>maximum</em> (it has 3 
-nodes, and no MIS on 4 nodes exists), but the other is just maximal, and it’s 
-also fine.</p>
-
-<table>
-  <tbody>
     <tr>
-      <td><img src="assets/MIS-maxi.png" alt="" class="center-image" width="100%" /></td>
-      <td> <img src="assets/MIS-pas-maxi.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/MIS-coloring-3.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/MIS-coloring-4.png" alt="" class="center-image" width="100%" /></td>
     </tr>
   </tbody>
 </table>
 
-<h2 id="easy-to-solve-in-a-centralized-manner">Easy to solve in a centralized manner</h2>
+<p>This algorithm basically takes $k$ times steps, which is awesome if your mysterious 
+friend gave you a 10-coloring.</p>
 
-<p>It’s very easy to solve this problem in a centralized manner. 
-An algorithm is the following:</p>
-
-<ul>
-  <li>Label all nodes as <em>active</em></li>
-  <li>As long as it is possible:</li>
-</ul>
+<p>Now there are two problems:</p>
 
 <ol>
-  <li>Take an arbitrary active node</li>
-  <li>Put it in the MIS</li>
-  <li>Label this node and all its neighbors as <em>inactive</em></li>
+  <li>You do not have a mysterious friend, and computing a good coloring yourself is 
+essentially as hard as computing the MIS.</li>
+  <li>The graph might not be colorable with a small number of colors: maybe it’s
+chromatic number is $n/2$, and then the algorithm takes $n/2$ rounds, which is 
+not much better than before.</li>
 </ol>
+
+<h2 id="network-decomposition-to-the-rescue">Network decomposition to the rescue</h2>
+
+<p>The idea of network decomposition is to relax the strong constraints of a 
+coloring into something more handy, while keeping the idea of a schedule of the 
+type:</p>
+
+<ol>
+  <li>All nodes of group 1 do something and all the others are passive. At the end 
+of this phase, they all have an output.</li>
+  <li>All nodes of group 2 do something and all the others are passive. At the end 
+of this phase, they all have an output.</li>
+  <li>Etc.</li>
+</ol>
+
+<p>In a nework decomposition, instead of having a coloring “at the level of the nodes” that 
+is where every node has a color different from its neighbors, we will color 
+clusters of nodes and have a coloring “at the level of the clusters”. In some 
+sense we change scale. A network decomposition looks a bit like this.</p>
+
+<p><img src="assets/impact-decompo-6.png" alt="" class="center-image" width="50%" /></p>
+
+<p>Now there are three questions: What is exactly a network decomposition? 
+How to use it? and How to compute it?</p>
+
+<h2 id="definition">Definition</h2>
+
+<p><em>Definition</em> A network decomposition with parameters $c$ and $d$ is a labeling of 
+the nodes with colors from 1 to $c$, such that for any given color, the (maximal)
+connected components with this color have diameter at most $d$.</p>
+
+<p><img src="assets/impact-decompo-5.png" alt="" class="center-image" width="50%" /></p>
+
+<p>[There are some subtleties with the definition, but let’s wait a bit before 
+looking into that.]</p>
+
+<p>So for example a proper $k$-coloring is a network decomposition with parameter 
+$d=1$ and $c=k$. Also it is easy to have a network decomposition with parameters
+$d=n$ and $c=1$: color all nodes with color 1. 
+In all this series of posts, what we will look for is a decomposition where both 
+parameters are (poly)logarithmic in $n$.</p>
+
+<h2 id="how-to-use-it">How to use it?</h2>
+
+<p>We cannot use the exact same strategy as when we had a proper coloring. Indeed, 
+in a network decomposition several nodes of the same color can be adjacent, thus 
+they cannot just wake up and select themselves. 
+Now it’s useful to remember the last part of the previous post about a general
+algorithm to solve any problem in time $O(n)$. 
+Basically this algorithm was doing the following: at any point in time, every 
+node sends to its neighbors everything it knows about the graph so far. Then
+steps by steps we have the following:</p>
+
+<ol>
+  <li>When it starts a node knows only its identifier, and it sends it to its 
+neighbors.</li>
+  <li>Then it receives the identifiers of its neighbors, thus in some sense it knows 
+the graph at distance one around itself: it knows its degree and the IDs of its 
+neighbors.</li>
+  <li>Then the node sends this information to its neighbors, and it recives the 
+analogue information from its neighbors. With this, it can reconstruct its 
+neighborhood at distance 2. That is, it is exactly the same as if it could see 
+at distance 2 in the graph.</li>
+  <li>Iterating this process, after $k$ steps all nodes know their neighborhoods 
+at distance $k$.</li>
+</ol>
+
+<p>In the proof of the general $O(n)$ algorithm, we iterated this process until 
+every node could see all the graph. That is we waited for $D$ steps, where $D$ 
+is the diameter of the graph (and then as $D \leq n$, we got the result). But this 
+process can be useful even if we do not wait up to $D$ rounds, that is, even if 
+the nodes do not see the whole graph.</p>
+
+<p>Given the network decomposition, let’s start by activating all the nodes of 
+color 1. Now use the protocol above, for $d$ rounds. After this time, a node of
+color 1 knows all the nodes of its connected component. Indeed it can see at 
+distance $d$ and we have been promised that the diameter of each connected 
+component is at most $d$. Once this is done, we ask each node of the connected 
+component to forget about the rest of the graph, to compute an MIS in what 
+remains, and to output whether it is selected or not in this MIS. Note that it 
+is exactly the same thing as what we did in the previous post but on a subgraph.</p>
 
 <table>
   <tbody>
     <tr>
-      <td><img src="assets/MIS-seq-1.png" alt="" class="center-image" width="100%" /></td>
-      <td><img src="assets/MIS-seq-2.png" alt="" class="center-image" width="100%" /></td>
-      <td><img src="assets/MIS-seq-3.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/impact-decompo-1.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/impact-decompo-3.png" alt="" class="center-image" width="100%" /></td>
     </tr>
   </tbody>
 </table>
 
-<p>A first problem for us, with this algorithm, is that it is not distributed: you
-need an external entity to chose the “arbitrary active node”. This is some kind 
-of scheduler, who decides which node is “doing something” at any step.</p>
-
-<h2 id="using-identifiers-to-simulate-a-centralized-scheduler">Using identifiers to simulate a centralized scheduler</h2>
-
-<p>In our model, we will assume that every node has a unique identity. This 
-identifier is a number in $[1,n^2]$, where $n$ is the size of the netork 
-(in general we take a large enough 
-polynomial for the upper bound, but for concreteness let’s say $n^2$). 
-For a node $v$, let $ID(v)$ be its identifier.</p>
-
-<p><img src="assets/MIS-ID.png" alt="" class="center-image" width="65%" /></p>
-
-<p>Using these identifier we will simulate the centralized scheduler.</p>
-
-<p>All nodes start at the same time, and follow time steps (time-step= 1, 2, 3 etc. ).
-They start with a status that is <em>active</em>.
-The following algorithm is run at all nodes.</p>
-
-<ul>
-  <li>If time-step = $ID(v)$ and status = <em>active</em>:</li>
-</ul>
-
-<ol>
-  <li>Change status to <em>selected</em></li>
-  <li>Send message “selected” to all neighbors</li>
-</ol>
-
-<ul>
-  <li>If the time-step $\neq ID(v)$ and status = <em>active</em>:</li>
-</ul>
-
-<ol>
-  <li>Wait for a message “selected” from neighbors</li>
-  <li>If one arrives, change status to <em>not selected</em></li>
-</ol>
-
-<p>One can check that on our example, with the identifier given above, the run of 
-the algorithm simulates the run of the centralized algorithm. Another identifier 
-assignment would correspond to another centralized scheduler, and would give 
-another MIS.</p>
-
-<p>Note that the algorithm is correct because the identifiers are all distinct. 
-Indeed, if two neighbors had the same identifier, they would be selected at the 
-same time, and the outcome would not be an MIS.</p>
-
-<p>Now to evaluate the performance of a local algorithm, we measure the number of 
-time steps before the solution is completed. Here it is $n^2$ in general, as 
-one would have to wait for the node with the largest identifier. 
-This is a very poor complexity. Indeed we finish this post with a proof that any
-problem can be solved in $O(n)$ time steps.</p>
-
-<h2 id="general-algorithm-in-on-steps">General algorithm in $O(n)$ steps</h2>
-
-<p>Consider the following algorithm (that is described partially by the pictures 
-below).</p>
-
-<ul>
-  <li>Send identifier to all neighbors</li>
-  <li>Receive the identifier of all neighbors, and build the list of the adjacent 
-edges, e.g. $(ID(v),ID(w))$ for a node $v$ receiving a message from a neighbor 
-$w$.</li>
-  <li>Send these edges to all neighbors.</li>
-  <li>For $n$ time steps: send the set of all the edges received so far.</li>
-  <li>Then build a local copy of the graph, solve the problem on this copy, and 
-output the part of the solution that correspond to the node.</li>
-</ul>
-
-<p>The following set of pictures shows how the information about the existence of
-the egde (2,5) is built and then broadcasted to the whole graph.</p>
+<p>At the end of the phase, we have only selected and non-selected nodes in all the 
+connected components of the first color. Note that these local MIS are correct, 
+in the sense that there is no conflict: two connected components are necessarily 
+non-adjacent (otherwise they wouldn’t be maximal). To finish this phase with the 
+first color class, we de-select the nodes of the other color classes that are 
+adjacent to a newly selected node of the first color class. After this step, all
+these nodes will not participate in the computation, and we can imagine that 
+they are removed from the graph</p>
 
 <table>
   <tbody>
     <tr>
-      <td><img src="assets/flooding-1.png" alt="" class="center-image" width="100%" /> </td>
-      <td> <img src="assets/flooding-2.png" alt="" class="center-image" width="100%" /></td>
-      <td><img src="assets/flooding-3.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/impact-decompo-2.png" alt="" class="center-image" width="100%" /></td>
+      <td><img src="assets/impact-decompo-4.png" alt="" class="center-image" width="100%" /></td>
     </tr>
   </tbody>
 </table>
 
-<p>This algorithm is correct because after $n$ steps of flooding, all nodes know 
-about all the edges, thus the local copy of the graph that each node has is 
-correct, and then the output of the algorithm is also correct.</p>
+<p>We can iterate this for all the color classes, just as we did when we had a 
+proper coloring. Let us check the complexity. For each color we need the view at 
+distance $d$, which takes $d$ rounds, and there are $c$ colors, so we have an 
+algorithm in basically $d\times c$ rounds. As we look for a network decomposition 
+with polylogarithmic parameters, this gives us a polylogarithmic algorithm, 
+which is awesome!</p>
 
-<p><em>Next post of the series: <a href="https://discrete-notes.github.io/network-decomposition-2-impact">Impact on distributed algorithms</a></em></p>
+<p>But now we need to be able to build the network decomposition fast. This is the 
+core topic of this series of posts.</p>
+
+<p><em>Next post of the series: <a href="https://discrete-notes.github.io/network-decomposition-3-centralized">Centralized construction</a></em></p>
 
 
   </div>

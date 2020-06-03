@@ -87,198 +87,193 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/network-decomposition-3-centralized">
-        Network decomposition 3&#58; Centralized construction
+      <a href="/journal-fees">
+        About journal fees
       </a>
     </h1>
 
-    <span class="post-date">20 Apr 2020</span>
+    <span class="post-date">21 Apr 2020</span>
 
-    <p>This is the third post of a series on distributed network decomposition. 
-The introductory post of this series is 
-<a href="https://discrete-notes.github.io/network-decomposition-0">here</a>. 
-This post explains how to build a network decomposition in a centralized manner.
-As a consequence it also shows that such decompositions exist with nice 
-parameters.</p>
+    <p>Some notes about journal fees. A random walk on the Internet, more than a 
+structured essay.</p>
 
-<p><img src="assets/caravane-4.jpg" alt="" class="center-image" width="90%" /></p>
+<p><img src="assets/feuille.jpg" alt="" class="center-image" width="50%" /></p>
 
-<h3 id="recap-of-previous-episodes">Recap of previous episodes</h3>
+<h2 id="open-access-and-apc">Open access and APC</h2>
 
-<p>In the previous posts we saw how network decomposition can be useful to build 
-efficient local algorithms. Such algorithms are efficient only if the network 
-decomposition has good parameters, that is a small number of colors, and a small
-diameter for each component. 
-We won’t bother with multiplicative constants, or even constant exponents, 
-so let’s say that basically, we look for something like in the following picture, 
-with $\log n$ colors, and $\log n$ diameter.</p>
+<p>As advised by a friend, I decided to submit my 
+<a href="https://www.dii.uchile.cl/~feuilloley/publications/introduction-certification.html"><em>Introduction to local certification</em></a>
+to a journal. 
+And as I was the only author involved, 
+I thought it was a good occasion to submit the paper to an open-access journal.</p>
 
-<p><img src="assets/network-decomposition-log.png" alt="" class="center-image" width="60%" /></p>
+<p>Following some advice, I checked the editors list of the journal 
+<a href="https://www.mdpi.com/journal/algorithms"><em>Algorithms</em></a> which looks very good.
+But then I realized that I had to pay something to get the paper published: the 
+article processing charges (APC) (I don’t want to ask money for that from my 
+institution). I looked it up, and saw the price: 1000 Swiss francs, that is, 
+around 950 euros.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> I was very surprised that it would be so expensive. 
+At the end I did two things: submitting the paper to 
+<a href="https://dmtcs.episciences.org/"><em>DMTCS</em></a> instead, and reading on the 
+Internet to learn a bit about these APC.</p>
 
-<h2 id="basic-technique-to-get-a-coloring">Basic technique to get a coloring</h2>
+<h2 id="journal-systems">Journal systems</h2>
 
-<p>Suppose you want to compute a coloring in a graph in the most simple way. 
-You can start with the first color $c_1$, pick a node $v$, put color $c_1$ on it, 
-then choose a second node that is not a neighbor of $v$, put again color $c_1$, 
-and so on and so forth,
-until you cannot use color $c_1$ anymore. Then you take color $c_2$, and repeat 
-the process, considering only the nodes that do not have color $c_1$, etc.</p>
+<p>So first there are several business models for scientific journals. The most common
+one is based on requesting money from the reader (or the institution of the 
+reader). Then there are open-access 
+journals where the reader does not pay. Often, in this second system, the 
+authors pay. Some journals propose the two schemes. Yet another type of journal 
+is free for readers and authors, and can be supported by some institution.</p>
 
-<p>This is basically repeating an algorithm for MIS we mentionned in the 
-<a href="https://discrete-notes.github.io/network-decomposition-1-local-algorithms">post about local algorithms</a>.</p>
+<p>In this post I’ll focus on the open access systems: the ones where the
+reader does not pay.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td><img src="assets/coloring-0.png" alt="" class="center-image" width="90%" /></td>
-      <td><img src="assets/coloring-1.png" alt="" class="center-image" width="90%" /></td>
-      <td><img src="assets/coloring-2.png" alt="" class="center-image" width="90%" /></td>
-    </tr>
-  </tbody>
-</table>
+<h2 id="journal-fees">Journal fees</h2>
 
-<table>
-  <tbody>
-    <tr>
-      <td><img src="assets/coloring-3.png" alt="" class="center-image" width="90%" /></td>
-      <td><img src="assets/coloring-4.png" alt="" class="center-image" width="90%" /></td>
-      <td><img src="assets/coloring-5.png" alt="" class="center-image" width="90%" /></td>
-    </tr>
-  </tbody>
-</table>
+<p>So a first data point is this 1000 CH for <em>Algorithms</em>. I also remember 
+something around 1000 euros for an open-access option of a not full-open-access 
+journal. Finally I checked <em>PLOS</em>, a group of open-access journals, mostly in 
+biology, and again it varies between 1000 and 3000 euros.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>
+So it looks like a price tag around 1000 euros is common.</p>
 
-<p align="center"><small><i>
-Step by step construction of a coloring. (1) The graph, (2) the result of the 
-computation of the first color class (exactly as in the MIS algorithm), with the 
-frozen nodes in grey, (3) the remaining nodes and edges after deletion of the 
-colored nodes, (4) second color, (5) third color, and (6) the computed coloring.
-</i></small></p>
-
-<h2 id="adapting-the-technique-to-network-decomposition">Adapting the technique to network decomposition</h2>
-
-<p>We adapt the technique from the previous section to network decomposition. 
-That is, instead of picking a 
-node and coloring it, we pick a node, and color the ball of radius $\log n$ 
-around it. Similarly to what happens in the coloring algorithm above, 
-every time we color a ball, we freeze all the nodes that are adjacent to it. 
-That is, they will not be considered any more for the color at hand. Once we are 
-finished with a color, we go to the next color, remove the nodes of the previous 
-colors, defreeze the frozen nodes, and start again.</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td><img src="assets/coloring-log-1.png" alt="" class="center-image" width="90%" /></td>
-      <td><img src="assets/coloring-log-2.png" alt="" class="center-image" width="90%" /></td>
-      <td><img src="assets/coloring-log-3.png" alt="" class="center-image" width="90%" /></td>
-    </tr>
-  </tbody>
-</table>
-
-<p align="center"><small><i>
-Computation of the first color class: (1) choose a node, and select all the 
-nodes at distance at most $\log n$ from it, (2) freeze all the nodes that are 
-adjacent to a selected node, and (3) repeat the operation until all nodes are
-either selected or frozen.
-</i></small></p>
-
-<table>
-  <tbody>
-    <tr>
-      <td><img src="assets/coloring-log-4.png" alt="" class="center-image" width="90%" /></td>
-      <td><img src="assets/coloring-log-5.png" alt="" class="center-image" width="90%" /></td>
-      <td><img src="assets/coloring-log-6.png" alt="" class="center-image" width="90%" /></td>
-    </tr>
-  </tbody>
-</table>
-
-<p align="center"><small><i>
-Computation of the second color class: (1) and (2) remove all the 
-nodes of the first color class, and defreeze all frozen nodes. (3) Run the same 
-procedure as for the first color class. 
-</i></small></p>
-
-<table>
-  <tbody>
-    <tr>
-      <td><img src="assets/coloring-log-7.png" alt="" class="center-image" width="90%" /></td>
-      <td><img src="assets/coloring-log-8.png" alt="" class="center-image" width="90%" /></td>
-      <td><img src="assets/coloring-log-9.png" alt="" class="center-image" width="90%" /></td>
-    </tr>
-  </tbody>
-</table>
-
-<p align="center"><small><i>
-Computation of the third color class: again, (1) and (2) remove all the 
-nodes of the previous color classes, and defreeze all frozen nodes. (3) Run the 
-same procedure as for the first color classes. Now all nodes are selected, thus 
-the algorithm stops.
-</i></small></p>
-
-<p><img src="assets/coloring-log-10.png" alt="" class="center-image" width="60%" /></p>
-<p align="center"><small><i>
-The network decomposition produced by the algorithm.
-</i></small></p>
-
-<h2 id="an-unbalanced-coloring">An unbalanced coloring</h2>
-
-<p>The first thing one can note on the picture above is that the decomposition is 
-not balanced at all: a huge part of the network is red, a small part is yellow, 
-and a tiny part is blue. That might look like a bad thing, as for algorithms 
-having balanced decomposition is usually a nice feature. But actually this is not a 
-problem for the algorithms built on a network decomposition, as presented in 
-the <a href="https://discrete-notes.github.io/network-decomposition-2-impact">previous post</a>. 
-And, in fact this imbalance is good for us. Indeed suppose that each color 
-covers at least half of the remaining nodes, then after at most $\log n$ steps, 
-all nodes are colored. This, in turns, implies that the number of colors is 
-logarithmically bounded, which is what we were looking for.</p>
-
-<p>But, is this always the case? No, you can have a situation like the one on the 
-following picture: you pick a node and in its $\log n $ neighborhood, there are 
-very few nodes, but the number of nodes that is frozen at the border is huge. 
-If this happens everywhere, the number of nodes colored by a the first color 
-class is not a constant fraction of the total number of nodes.</p>
-
-<p><img src="assets/blow-up.png" alt="" class="center-image" width="70%" /></p>
-
-<p>Therefore, a bad situation for us is when the ratio between what is inside 
-the ball, and its border is small.</p>
-
-<p>We could try to show that we can choose the centers in a smart way to avoid this 
-behavior, but it wouldn’t help much with the distributed construction that 
-follows, as such smart choice could require a large view of the graph.
-Instead we control the size of the balls.</p>
-
-<h2 id="growing-a-ball">Growing a ball</h2>
-
-<p>A technique to ensure that the interior/border ratio is large is to build the 
-ball around the selected center in the following way, called <em>ball carving</em>.</p>
+<p>What does it pay for? Here is a list of services I can see the publisher offers, 
+that are not offered by scholars (reviews are “for free” for example):</p>
 
 <ul>
-  <li>Start with only the center</li>
-  <li>Iterate the following:</li>
+  <li>Publication: archiving the paper in a safe place, easy to reach.</li>
+  <li>Indexation: registering the paper in the databases, getting a doi.</li>
+  <li>Advertising: maybe advertising the paper, and most probably advertising the 
+journal to ensure its prestige.</li>
+  <li>Review process: running the plateforme to receive and store manuscripts, send 
+automatic notifications etc.</li>
+  <li>Editorial management: the main editors might be paid by the publisher.</li>
+  <li>Type-setting: improving the visual aspects of the papers.</li>
+  <li>Language: in some fields, the journal improves the writing.</li>
+  <li>Printing: for non-electronic journals.</li>
 </ul>
 
-<ol>
-  <li>Measure the number of nodes in the border</li>
-  <li>If it is at least twice the number of nodes in the ball, take all these nodes 
-in the ball, and restart the loop.</li>
-  <li>Otherwise leave the loop.</li>
-</ol>
+<p>It’s difficult to measure how much all this costs, so I’ll compare with another 
+plateforme: LIPIcs.</p>
+
+<h2 id="lipics-apc">LIPIcs APC</h2>
+
+<p>LIPIcs handles proceedings of computer science conferences. Basically the 
+conference pays LIPIcs for this job, and the conference itself gets the money 
+from the authors via the registration fees. 
+The APC is 60 euros for a 20 pages paper.<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+
+<p>An interesting document is 
+<a href="https://www.dagstuhl.de/fileadmin/dagpub/apc/seidel-apc-increase-letter-march2016.pdf">a letter</a> 
+telling the story of this APC. 
+In a nutshell, the first APC 15 euros. This was an estimate of the cost and more 
+and it included the fact that the journal was helped by
+Dagstuhl’s funds. But this was not ok with EU market laws, as it was unfair to 
+the classic publishers. They had to increase the price from 15 to 60 euros, to
+fill the gap of the Dagstuhl’s funds, and also because the 15 euros estimate 
+was a bit too low in comparison with the work needed. More precisely, they 
+didn’t expect that:</p>
 
 <ul>
-  <li>Freeze all the nodes of the border.</li>
+  <li>many authors and committees would work less than required on the type-setting, 
+which meant more polishing from their side</li>
+  <li>people would use so many weird latex packages that they had to work a lot to 
+solve the compatibility issues.</li>
 </ul>
 
-<p>Note that the loop can be run for at most $\log n$ iterations, as otherwise 
-the ball would contain more than $n$ nodes. Thus the balls built this way are ok
-with the definition of the network decomposition.</p>
+<p>(Thanks to a donation, they could change the price progressively from 15 to 60.)</p>
 
-<p>By construction, the size of the border of the ball is at most the size of the
-interior of the ball. That is, if we select $m$ nodes to be in the ball, we 
-freeze at most $m$ new nodes. This is enough for the whole construction to work.</p>
+<h2 id="comparison-with-lipics">Comparison with LIPIcs</h2>
 
-<p><em>Next post of the series: <a href="https://discrete-notes.github.io/network-decomposition-4-weak-strong">Weak and strong decomposition</a></em></p>
+<p>So, why is there such a difference between LIPIcs and an open-access journal? 
+I see several answers, beyond “journals want to make money”. Note that the 
+quality is not a difference, LIPICs proceedings look great to me. Also note that 
+PLOS is a non-profit organization, so is supposed to not make so much money.</p>
+
+<h3 id="conference-proceedings-versus-journal">Conference proceedings versus journal</h3>
+<p>The fact that LIPIcs handles only conference proceedings and is not a journal
+could change several aspects.
+Conference means a lighter review process (usually only one round). 
+Also it means that the number of 
+published papers is very controlled: you know it in advance basically. Also journal
+papers are usually longer, and LIPIcs charges 60 euros for 20 pages, 
+so 100 pages means 300 euros instead of 60. 
+Something interesting here is that in the LIPICs letter cited above, they say 
+that gold-open-access proceedings APC is usually in the range of 200 
+to 600 euros, which is less than what I sampled. This might be because of this
+conference versus journal topic.</p>
+
+<h3 id="less-type-setting-work">Less type-setting work</h3>
+
+<p>LIPICs expects authors and conference committees to produce papers that need
+almost no additional work before being published. For a conference, this work, 
+if not done by the authors, could require days of work from a member of the 
+committee (I remember that Jukka Suomela worked a lot on DISC proceedings some 
+years ago).</p>
+
+<h3 id="small-scale">Small scale</h3>
+
+<p>LIPICs does not handle hundreds of papers per day like some journals do (although 
+not in TCS probably). Maybe the fact that it has a small scale allows the 
+editors to be professors in some university, and not people paid by the publisher 
+to run the journal.</p>
+
+<h3 id="some-institutional-support">Some institutional support</h3>
+
+<p>Maybe LIPICs has some support that does not come directly as money. For example 
+it seems that they have a partnership with the German National Library for 
+archiving the papers.</p>
+
+<h3 id="altogether">Altogether</h3>
+
+<p>Altogether it looks like there shouldn’t be such a difference in prices, in my 
+opinion, but there are probably many aspects that I haven’t taken into account. 
+Anyway, many thanks are due to the LIPIcs team for their great job.</p>
+
+<h2 id="fair-open-access">Fair open-access</h2>
+
+<p>As said above I ended up submitting the paper to DMTCS, which a journal that
+is free for both readers and authors. This seems to be called <em>fair open access</em>.
+Here the model is basically that the journal is run by scholars, that may pay a 
+professional publisher for services such as printing. The money comes from 
+institutions, as general donations, not fees related to specific papers. And the
+money given to professional publishers should be controlled rigorously. 
+See the 
+<a href="https://www.fairopenaccess.org/the-fair-open-access-principles/">fair open access principles</a>.</p>
+
+<p>An interesting bit in the explicative notes of these principles, is that they 
+fix the maximum fee per paper a publisher can ask to the journal to 1000 euros 
+(and say that “substantially lower fees should be possible in many case”).</p>
+
+<p>In the case of DMTCS, the two large scientific French public institutions, CNRS 
+and INRIA, sponsor the plateforme <a href="https://www.episciences.org/">Episciences</a>, 
+that the journal uses. Episciences supports around 15 fair open-access journals.</p>
+
+<p>The list of fair open-access journals can be found on the 
+<a href="https://freejournals.org/">website of the Free Journal Network</a>. Such journals
+in TCS are: <a href="https://dmtcs.episciences.org/">DMTCS</a>, <a href="jocg.org">JOCG</a>, 
+<a href="jgaa.info">JGAA</a>, <a href="https://lmcs.episciences.org">LMCS</a>, 
+<a href="https://smai-jcm.math.cnrs.fr/index.php/SMAI-JCM/">SMAI JCM</a>,
+<a href="https://digitalcommons.georgiasouthern.edu/tag/">TAG</a> ands
+<a href="https://theoryofcomputing.org/">TOC</a>.</p>
+
+<p>And there several more if you extend the scope to combinatorics.</p>
+
+<h3 id="references">References</h3>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="https://www.mdpi.com/journal/algorithms/apc">APC page of <em>Algorithms</em></a>&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="https://plos.org/publish/fees/">Publication fees for PLOS journals</a>&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p><a href="https://www.dagstuhl.de/en/publications/lipics/processing-charge/">LIPIcs Processing charge</a>&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
   </div>
   

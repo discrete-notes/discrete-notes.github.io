@@ -7,6 +7,81 @@
     <atom:link href="https://discrete-notes.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>How to glue a double torus?</title>
+        <description>&lt;p&gt;Some colleagues and I have been playing with graphs on surfaces lately, and to 
+understand a bit what is done in this domain I drew a lot a figures. Here is 
+a series of pictures that explain how the surfaces called the double torus can 
+be built by gluing edges of a polygon.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;First of all, everything in this post is up to homomorphism, so the 
+construction cannot really be done with paper. We are playing with topological 
+objects, so “a donut is the same as a cup of tea”, because they both have exactly
+one hole, etc. The double torus is the surface with two holes. We show how to 
+build the torus by gluing faces of a polygon.&lt;/p&gt;
+
+&lt;p&gt;The following picture is what is called a polygonal scheme of the double torus. 
+It is an octagon whose edges have colors and orientations. There are exactly two 
+edges for each color.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/2-torus-1.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The construction consists in the following operation: take two edges of the same 
+color and glue them such that the orientation is consistent (heads together, tails 
+together). Here we start with the red edges.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/2-torus-2.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The same with the yellow edges.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/2-torus-3.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now note that as we will identify all the pairs of edges, the eight corners of the 
+polygon will be identified. That is all the corners will be merged. Here it gives 
+a better picture if we identify two of these (former) corners to link the yellow 
+and red paths.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/2-torus-4.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is the key operation. We have two oriented green loops. To merge them, we 
+create a handle, that is a kind of bridge above the original (not yet finished)
+surface. This creates our first hole. Note that the red path becomes a loop.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/2-torus-5.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now we do the same with the blue loops.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/2-torus-6.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We now have a two handles, and basically we have built a double torus. To 
+make it look nicer, we can stretch it a bit.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/2-torus-7.png&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A key thing here is that we can do these operations in the reverse direction. To 
+do so we just have to take scissors and cut along the four loops of the drawing. 
+This will automatically give us the original octagon.&lt;/p&gt;
+
+&lt;p&gt;A general theorem (the theorem of classification of the surfaces) tells us that
+for any surface one can find loops, such that cutting along these 
+loops we get a polygonal scheme. Moreover there is a canonical polygonal scheme
+for each surface. The more complicated the polygonal scheme, the higher the 
+genus of the surface. This applies not only to orientable surfaces (that is 
+donuts with multiple holes) but also to non-orientable surfaces, such as 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Klein_bottle&quot;&gt;Klein bottle&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you want to learn more, a reference for this domain with an algorithmic 
+perspective can be found 
+&lt;a href=&quot;http://monge.univ-mlv.fr/~colinde/cours/all-algo-embedded-graphs.pdf&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 03 Jun 2020 00:00:00 +0200</pubDate>
+        <link>https://discrete-notes.github.io///double-torus</link>
+        <guid isPermaLink="true">https://discrete-notes.github.io///double-torus</guid>
+      </item>
+    
+      <item>
         <title>Network decomposition 5&amp;#58; The algorithm</title>
         <description>&lt;p&gt;This is the fifth post of a series on distributed network decomposition. 
 The introductory post of this series is 
@@ -431,7 +506,7 @@ I use it not only for the blog but also for picture prototypes in manuscripts.&l
       </item>
     
       <item>
-        <title>Network decomposition 4&amp;#58; weak and strong decompositions</title>
+        <title>Network decomposition 4&amp;#58; Weak and strong decompositions</title>
         <description>&lt;p&gt;This is the fourth post of a series on distributed network decomposition. 
 The introductory post of this series is 
 &lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-0&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -1451,49 +1526,6 @@ correct, and then the output of the algorithm is also correct.&lt;/p&gt;
         <pubDate>Thu, 09 Apr 2020 00:00:00 +0200</pubDate>
         <link>https://discrete-notes.github.io///network-decomposition-1-local-algorithms</link>
         <guid isPermaLink="true">https://discrete-notes.github.io///network-decomposition-1-local-algorithms</guid>
-      </item>
-    
-      <item>
-        <title>Network decomposition&amp;#58; Introduction</title>
-        <description>&lt;p&gt;This post is an introduction (and a table of contents) for a series of posts on
-distributed network decomposition.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/caravane-0.jpg&quot; alt=&quot;&quot; class=&quot;center-image&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;One of the important papers of these recent years in distributed graph 
-algorithms will appear at STOC this summer:&lt;/p&gt;
-
-&lt;p&gt;“Polylogarithmic-Time Deterministic Network Decomposition and Distributed 
-Derandomization” by &lt;a href=&quot;https://n.ethz.ch/~rozhonv/&quot;&gt;Václav Rozhoň&lt;/a&gt; and 
-&lt;a href=&quot;https://people.inf.ethz.ch/gmohsen/&quot;&gt;Mohsen Ghaffari&lt;/a&gt; from ETH Zurich.&lt;/p&gt;
-
-&lt;p&gt;It is basically the description of a distributed algorithm that performs what is 
-called a &lt;em&gt;network decomposition&lt;/em&gt;, faster than before. This decomposition can 
-then be used to do many other things fast, and the paper solves several important 
-open problems of the field.&lt;/p&gt;
-
-&lt;p&gt;I quickly looked at the paper when it appeared on arxiv, but I want to 
-understand it better, and writing a series of posts about it is good way to do 
-this.&lt;/p&gt;
-
-&lt;p&gt;Here is the my current plan for this series:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-1-local-algorithms&quot;&gt;Local algorithms&lt;/a&gt;&lt;/em&gt;, 
-an introduction to local algorithm, with the example of 
-the maximal independent set problem.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-2-impact&quot;&gt;Impact for distributed algorithms&lt;/a&gt;&lt;/em&gt;, 
-that is, why is a network decomposition so useful.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-3-centralized&quot;&gt;Centralized construction&lt;/a&gt;&lt;/em&gt;, 
-how to build a network decomposition with good parameters in a centralized manner.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-4-weak-strong&quot;&gt;Weak and strong decomposition&lt;/a&gt;&lt;/em&gt;, 
-some useful precisions about the decomposition&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://discrete-notes.github.io/network-decomposition-5-algorithm&quot;&gt;The algorithm&lt;/a&gt;&lt;/em&gt; of Ghaffari and Rozhon.&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Wed, 08 Apr 2020 00:00:00 +0200</pubDate>
-        <link>https://discrete-notes.github.io///network-decomposition-0</link>
-        <guid isPermaLink="true">https://discrete-notes.github.io///network-decomposition-0</guid>
       </item>
     
   </channel>

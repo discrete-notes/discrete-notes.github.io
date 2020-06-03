@@ -87,108 +87,125 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/online-conference">
-        About online conferences
+      <a href="/network-decomposition-4-weak-strong">
+        Network decomposition 4&#58; Weak and strong decompositions
       </a>
     </h1>
 
-    <span class="post-date">29 Apr 2020</span>
+    <span class="post-date">05 May 2020</span>
 
-    <p>COVID 19 is forcing a lot of conferences to go online. A few notes about this.</p>
+    <p>This is the fourth post of a series on distributed network decomposition. 
+The introductory post of this series is 
+<a href="https://discrete-notes.github.io/network-decomposition-0">here</a>.</p>
 
-<p><img src="assets/yucca.JPG" alt="" class="center-image" width="80%" /></p>
+<p>In this post, we take a look at the different versions of network decomposition
+(weak and strong), and how we can go from one to the other.</p>
 
-<h2 id="report-from-the-online-conference-wagon">Report from the online conference WAGON</h2>
+<p><img src="assets/caravane-5.jpg" alt="" class="center-image" width="90%" /></p>
 
-<p>There is a maths conference named WAGS that took place virtually this year, and
-was renamed WAGON for the occasion. One of the organizers wrote report about it 
-<a href="https://www.daniellitt.com/blog/2020/4/20/wagon-lessons-learned">here</a>.
-It explains what worked and what didn’t.</p>
+<h3 id="recap-of-previous-episodes">Recap of previous episodes</h3>
 
-<p>They used zoom, with a license purchased by a university, which worked well even 
-though they had ~1000 participants (but only a few had video). 
-During the talks, there was a chat channel for all participants. 
-There was a few moderators (session chairs and specialists), that would answer 
-some of the 
-questions, and interrupt the speaker only if needed. The speaker did not need to 
-look at the chat. Seemingly the chat was very active and very useful. They also 
-had some other ways to ask questions, such as the “raise your hand” button of 
-zoom, but it seems that the chat was the main channel for this.</p>
+<p>In the previous posts, we saw what a network decomposition is, why it is useful
+to the design of local algorithms and how we can build such object with a 
+sequential algorithm. Before we describe the distributed efficient algorithm 
+(that is the core of series), let us give a further look at two different types
+of decompositions.</p>
 
-<p>There was also some virtual discussion tables for coffee breaks. 
-This was successful up to some 
-extent but it seems that it needs some more iterations to find a good mix. 
-There are questions like: do you register to get on a table? Do you know the 
-names of the people on the table? etc.</p>
+<h2 id="what-is-the-diameter-of-a-component">What is the diameter of a component?</h2>
 
-<h2 id="virtual-conference-schedule">Virtual conference schedule</h2>
+<p>In the <a href="https://discrete-notes.github.io/network-decomposition-2-impact">second post</a> 
+of this series we defined network decompositions, saying that the connected 
+components of each color class have diameter at most $d$. 
+As usual, the diameter is the maximum over all pairs of nodes of the minimum length
+of a path between these two nodes. But which edges can you use for these paths: 
+only the edges of the subgraph, or all the edges of the graph? 
+The first way defines the <em>strong diameter</em> and the second is the <em>weak diameter</em>.
+These can be very different, as pictured below.</p>
 
-<p>Conferences going online was a topic before the COVID 19, because of climate 
-change and the impact of flying. We are kind of forced to use it now, and that’s 
-a test that might show that at least some conferences can be virtual. 
-For the moment it seems that the choice for these virtual conferences is 
-to make the same event as before 
-but online, in the sense that the schedules are similar, that there are coffee 
-breaks between talks etc. A question is whether this is the best format. Of 
-course for this year, it’s probably the best because it’s what was planned. 
-But if some 
-conferences stay online, maybe another format would be better.</p>
+<p><img src="assets/strong-weak.png" alt="" class="center-image" width="50%" /></p>
+<p align="center"><small><i>
+On this graph, the blue component has weak diameter 2 and strong diameter 9.
+</i></small></p>
 
-<p>In particular, I have seen comments saying that attending 7 hours of online talks 
-is even more exhausting than 7 hours of real talks, and I can imagine that. 
-Also I’m not sure whether having lunch on your desk with zoom open is great. 
-But still you want people to “attend” the conference and do not just come back
-and forth between their usual activity and the conference, both because it is 
-more efficient this way, and also because if one can go out of the conference 
-easily then people will be asked to do it (by their colleagues, by the 
-department etc.) although it’s not what they would prefer.</p>
+<p>The distributed algorithm we’ll study builds a network decomposition with a 
+logarithmic <em>weak diameter</em>.</p>
 
-<p>Maybe a good thing is to gather a few people interested in the conference (from 
-your department or city) and to live the conference together. This is probably a 
-much nicer experience (for post-pandemic times).</p>
+<h2 id="going-from-strong-to-weak-diameter">Going from strong to weak diameter</h2>
 
-<h2 id="impact-of-video-on-climate-change">Impact of video on climate change</h2>
+<p>For some applications it might be better to have a strong decomposition, and the 
+algorithm provides only a weak one. This is not a big problem. 
+The paper of Rozhon and Ghaffari sketches an approach that builds a strong 
+decomposition with $O(\log(n))$ colors from a weak one with also $O(\log(n))$ 
+colors. 	
+It is even simpler to have such a transformation if we just insist on having 
+polylogs: 
+take your weak decomposition, make the nodes of each component act like in a 
+centralized algorithm (by gathering the whole topology of the component and 
+simulating), and make them compute a strong decomposition of the component 
+itself. For example take a component of weak diameter with color yellow, the nodes 
+of this component a strong network decomposition of this component, in some sense
+the nodes of this component now have $\log(n)$ shades of yellow. In total this 
+makes a strong decomposition with $O(\log^2n)$ colors.</p>
 
-<p>Of course virtual conferences have less impact on climate than flying across an 
-ocean, but what is the impact of it anyway? 
-There is a study by a (serious) French think tank about the impact of digital 
-technologies on the climate crisis, and in particular the impact of video. 
-You can find summary
-<a href="https://theshiftproject.org/wp-content/uploads/2019/07/Excutive-Summary_EN_The-unsustainable-use-of-online-video.pdf">here</a> 
-and the full report <a href="https://theshiftproject.org/wp-content/uploads/2019/07/2019-02.pdf">there</a>.</p>
+<table>
+  <tbody>
+    <tr>
+      <td><img src="assets/refined-decompo-1.png" alt="" class="center-image" width="90%" /></td>
+      <td><img src="assets/refined-decompo-2.png" alt="" class="center-image" width="90%" /></td>
+      <td><img src="assets/refined-decompo-3.png" alt="" class="center-image" width="90%" /></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>A few numbers:</p>
+<p align="center"><small><i>
+The first picture is a weak decomposition with two colors, yellow and blue. 
+Note that the strong diameter is large in comparison with the weak diameter. Now,
+if the yellow component "strongly decompose" itself, we get three shades of 
+yellow, and the new yellow components have small strong diameter. We can do this 
+for all components of all colors classes, in parallel. 
+</i></small></p>
 
-<ul>
-  <li>The energy consumption related to digital technologies is distributed the 
-following way: 45% for production of the devices, 19% for data centers, 16% for 
-network, and 20% for terminal use.</li>
-  <li>Digital technologies represent 4% of the greenhouse gases emissions (to be compared
-to the 2% due to aviation) and will most probably reach 8% soon (which is the 
-percentage of car emissions).</li>
-  <li>Out of these 4%, 1% is due to video.</li>
-  <li>80% of the global data flow is video, and this 80% can is then divided into 
-two categories: 60% of streaming-like usage
-(youtube, netflix, social media etc.) and 20% of visioconferences-like
-usage.</li>
-</ul>
+<p>We finish this post with some technical aspects of weak decompositions.</p>
 
-<p>If you want to measure the impact of our Internet activity, the report 
-mentions the firefox add-on 
-<a href="https://addons.mozilla.org/en-US/firefox/addon/carbonalyser/">carbonalyser</a>	.</p>
+<h2 id="a-tree-to-keep-track-of-the-diameter">A tree to keep track of the diameter</h2>
 
-<p>By the way, there is a manifesto for taking climate change into account in TCS 
-academic life. It is called <a href="https://tcs4f.org/">TCS4F</a> (TCS for future). It has 
-been signed by ~100 people and some organizations such as the conference STACS.</p>
+<p>Remember that for the centralized construction, we create the component by making 
+the balls grow layers by layers. Now suppose that we would build a spanning tree
+of the component as we go: at each new layer, we would wire the nodes as leafs 
+of the tree. The depth of this tree is between half the diameter and the 
+diameter.</p>
 
-<h2 id="another-relation-between-conferences-and-co2">Another relation between conferences and CO2</h2>
+<p><img src="assets/boule-arbre-1.png" alt="" class="center-image" width="70%" /></p>
+<p align="center"><small><i>
+The nodes of a component, added layers by layers, during the growth of a ball, 
+for the centralized construction. The orange edges are the edges of the tree, 
+the gray edges are other edges of the component. The diameter is 5, and the depth of 
+the tree is 4. 
+</i></small></p>
 
-<p>Another, more unexpected relation between CO2 and conferences: during talks, 
-the CO2 level and the temperature in the room increase in a non-negligible way, 
-which can explain why it’s difficult to stay awake sometimes.</p>
+<p>In the distributed network decomposition, some balls will grow in a similar 
+fashion as in the centralized algorithm, but then they will be modified. In 
+particular some nodes will leave the component. Also, as we want the tree to have a 
+depth that bounds the weak diameter, this tree may have to use edges 
+that are not within the component. Hence we use a Steiner tree using the edges 
+and nodes that may not be in the component.</p>
 
-<p>A full (quite old) twitter thread on this <a href="https://twitter.com/battersbot/status/1135926829813063680">here</a>.
-Also, a <a href="https://www.nytimes.com/2019/05/06/health/conference-room-air.html">New York Times article</a> about this.</p>
+<p><img src="assets/boule-arbre-2.png" alt="" class="center-image" width="70%" /></p>
+<p align="center"><small><i>
+The blue patches show the balls of various distance from the root, using the 
+nodes and edges of all the graph. In particular the yellow nodes are not part of 
+the component, but they are used by the tree.
+</i></small></p>
+
+<h2 id="giving-up-the-connectivity">Giving up the connectivity</h2>
+
+<p>Actually now that we measure the diameter via the tree, we can consider 
+non-connected components.</p>
+
+<p><img src="assets/boule-arbre-3.png" alt="" class="center-image" width="70%" /></p>
+
+<p>This change in the definition useful in the distributed algorithm as we don’t 
+want to keep track of whether the component is connected or not.</p>
 
 
   </div>

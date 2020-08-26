@@ -84,7 +84,7 @@ two categories: 60% of streaming-like usage
 usage. 
 
 
-If you want to measure the impact of our Internet activity, the report 
+If you want to measure the impact of your Internet activity, the report 
 mentions the firefox add-on 
 [carbonalyser](https://addons.mozilla.org/en-US/firefox/addon/carbonalyser/)	.
 

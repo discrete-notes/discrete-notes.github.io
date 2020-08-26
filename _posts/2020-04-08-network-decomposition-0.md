@@ -39,3 +39,5 @@ how to build a network decomposition with good parameters in a centralized manne
 4. *[Weak and strong decomposition](https://discrete-notes.github.io/network-decomposition-4-weak-strong)*, 
 some useful precisions about the decomposition
 5. *[The algorithm](https://discrete-notes.github.io/network-decomposition-5-algorithm)* of Ghaffari and Rozhon.
+
+[Many thanks to Fabien Dufoulon and Yannic Maus for their helpful comments.]

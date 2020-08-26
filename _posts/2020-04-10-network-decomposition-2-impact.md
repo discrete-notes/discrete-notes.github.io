@@ -151,10 +151,12 @@ which is awesome!
 ## More generally
 
 More generally, network decomposition is important and useful because it 
-allows *derandomization*. More precisely for pretty much all classic problems,
-a polylogarithmic randomized algorithm was known, and network 
-decomposition allows to transform these directly into deterministic 
-algorithms. See [this paper](https://arxiv.org/pdf/1711.02194.pdf) for 
+allows *derandomization*. More precisely, for a lot of classic 
+problems, a polylogarithmic randomized algorithm is known, because 
+randomization is a powerful tool to break symmetry.
+Now, with network decomposition it is possible to automatically 
+transform these into deterministic polylogarithmic algorithms. 
+See [this paper](https://arxiv.org/pdf/1711.02194.pdf) for 
 more inforamtion on this derandomization result.
 
 

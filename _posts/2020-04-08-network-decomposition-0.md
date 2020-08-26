@@ -11,7 +11,7 @@ distributed network decomposition.
 ![](assets/caravane-0.jpg){: .center-image width="90%"}
 
 
-One of the important papers of these recent years in distributed graph 
+One of the most important papers of these recent years in distributed graph 
 algorithms will appear at STOC this summer:
 
 "Polylogarithmic-Time Deterministic Network Decomposition and Distributed 
@@ -30,7 +30,7 @@ this.
 Here is the my current plan for this series:
 
 1. *[Local algorithms](https://discrete-notes.github.io/network-decomposition-1-local-algorithms)*, 
-an introduction to local algorithm, with the example of 
+an introduction to local algorithms, with the example of 
 the maximal independent set problem.
 2. *[Impact for distributed algorithms](https://discrete-notes.github.io/network-decomposition-2-impact)*, 
 that is, why is a network decomposition so useful. 

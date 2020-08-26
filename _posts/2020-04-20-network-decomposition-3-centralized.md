@@ -36,7 +36,7 @@ and so on and so forth,
 until you cannot use color $c_1$ anymore. Then you take color $c_2$, and repeat 
 the process, considering only the nodes that do not have color $c_1$, etc. 
 
-This is basically repeating an algorithm for MIS we mentionned in the 
+This is basically repeating an algorithm for MIS we mentioned in the 
 [post about local algorithms](https://discrete-notes.github.io/network-decomposition-1-local-algorithms).  
 
 ![](assets/coloring-0.png){: .center-image width="90%"}|![](assets/coloring-1.png){: .center-image width="90%"}|![](assets/coloring-2.png){: .center-image width="90%"}
@@ -118,7 +118,7 @@ the ball, and its border is small.
 
 We could try to show that we can choose the centers in a smart way to avoid this 
 behavior, but it wouldn't help much with the distributed construction that 
-follows, as such smart choice could require a large view of the graph.
+follows, as such a smart choice could require a large view of the graph.
 Instead we control the size of the balls.
 
 ## Growing a ball

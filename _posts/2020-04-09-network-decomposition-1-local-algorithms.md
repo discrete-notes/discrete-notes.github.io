@@ -9,7 +9,7 @@ This the first real post of a series on distributed network decomposition.
 The introductory post of this series is 
 [here](https://discrete-notes.github.io/network-decomposition-0). 
 This post is a quick introduction to local algorithms, with the example of the
-maximal independent set problem. If you have heard about the local model before, 
+maximal independent set problem. If you have heard about the LOCAL model before, 
 you probably know everything in this post. 
 
 ![](assets/caravane-1.jpg){: .center-image width="90%"}
@@ -17,7 +17,7 @@ you probably know everything in this post.
 ## A problem&#58; computing a maximal independent set
 A typical problem of network distributed computing is computing a 
 [maximal independent set](https://en.wikipedia.org/wiki/Maximal_independent_set)
-(MIS). An MIS is a set $S$ of nodes of the graph such that not two nodes of $S$
+(MIS). An MIS is a set $S$ of nodes of the graph such that no two nodes of $S$
 are adjacent, and for every node not in $S$, there is neighbor in $S$.
 
 The two pictures below *do not* represent an MIS: the first one 
@@ -26,7 +26,7 @@ because of two adjacent selected nodes, and the second because of an "isolated n
 ![](assets/MIS-arete.png){: .center-image width="100%"} | ![](assets/MIS-noeud.png){: .center-image width="100%"}
 
 The two following pictures represent MISs. Note that one is *maximum* (it has 3 
-nodes, and no MIS on 4 nodes exists), but the other is just maximal, and it's 
+nodes, and no MIS on 4 nodes exists), but the other is just maximal, which is 
 also fine.
 
 ![](assets/MIS-maxi.png){: .center-image width="100%"} | ![](assets/MIS-pas-maxi.png){: .center-image width="100%"}
@@ -34,7 +34,8 @@ also fine.
 
 ## Easy to solve in a centralized manner
 
-It's very easy to solve this problem in a centralized manner. 
+It's very easy to solve this problem in a centralized manner, in a 
+greedy way. 
 An algorithm is the following:
 
 * Label all nodes as *active*

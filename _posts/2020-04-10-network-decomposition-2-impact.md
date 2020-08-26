@@ -18,7 +18,7 @@ We saw in the
 [first post](https://discrete-notes.github.io/network-decomposition-1-local-algorithms) 
 of the series that one can simulate the greedy centralized algorithm in the local 
 model, by using the identifiers as a schedule, but that this was horribly slow.
-We also looked at an algorithm that gather the whole topology of the graph, this
+We also looked at an algorithm that gathers the whole topology of the graph, this
 will be useful here.
 
 ## Everything is easier with a coloring
@@ -63,17 +63,17 @@ of this phase, they all have an output.
 of this phase, they all have an output.
 3. Etc.
 
-In a nework decomposition, instead of having a coloring "at the level of the nodes" that 
+In a network decomposition, instead of having a coloring "at the level of the nodes" that 
 is where every node has a color different from its neighbors, we will color 
 clusters of nodes and have a coloring "at the level of the clusters". In some 
 sense we change scale. A network decomposition looks a bit like this.
 
 ![](assets/impact-decompo-6.png){: .center-image width="50%"}
 
-Now there are three questions: What is exactly a network decomposition? 
+Now there are three questions: What exactly is a network decomposition? 
 How to use it? and How to compute it?
 
-## Definition
+## Definition of network decomposition
 
 *Definition* A network decomposition with parameters $c$ and $d$ is a labeling of 
 the nodes with colors from 1 to $c$, such that for any given color, the (maximal)
@@ -99,14 +99,14 @@ Now it's useful to remember the last part of the previous post about a general
 algorithm to solve any problem in time $O(n)$. 
 Basically this algorithm was doing the following: at any point in time, every 
 node sends to its neighbors everything it knows about the graph so far. Then
-steps by steps we have the following:
+step by steps we have the following:
 
 1. When it starts a node knows only its identifier, and it sends it to its 
 neighbors. 
 2. Then it receives the identifiers of its neighbors, thus in some sense it knows 
 the graph at distance one around itself: it knows its degree and the IDs of its 
 neighbors.
-3. Then the node sends this information to its neighbors, and it recives the 
+3. Then the node sends this information to its neighbors, and it receives the 
 analogue information from its neighbors. With this, it can reconstruct its 
 neighborhood at distance 2. That is, it is exactly the same as if it could see 
 at distance 2 in the graph.
@@ -144,9 +144,10 @@ they are removed from the graph
 We can iterate this for all the color classes, just as we did when we had a 
 proper coloring. Let us check the complexity. For each color we need the view at 
 distance $d$, which takes $d$ rounds, and there are $c$ colors, so we have an 
-algorithm in basically $d\times c$ rounds. As we look for a network decomposition 
-with polylogarithmic parameters, this gives us a polylogarithmic algorithm, 
-which is awesome!
+algorithm in basically $d\times c$ rounds. 
+In these posts, we look for a network decomposition 
+with polylogarithmic parameters, such an decomposition gives us a 
+polylogarithmic algorithm, which is awesome!
 
 ## More generally
 

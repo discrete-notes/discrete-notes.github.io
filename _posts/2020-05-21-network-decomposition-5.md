@@ -56,7 +56,7 @@ A key idea of the algorithm is to use the digits of the identifiers of the
 nodes written in binary. A first attempt in this direction is the following. Let
 us start by having two sets of nodes, the ones whose IDs begin with 0, and
 the ones whose IDs begin with 1. We will draw these sets as respectively
-blue and red. Now if we want to be sure that not two nodes of different colors
+blue and red. Now if we want to be sure that no two nodes of different colors
 (red and blue) are adjacent, we can freeze one of the nodes for every
 bicolored edge. In a good scenario, we get the following picture.
 
@@ -88,7 +88,7 @@ the nodes whose identifiers start with 1 (the red nodes in the pictures)
 We know a technique to separate some parts of the graph without freeing too many
 nodes: growing a ball like in the third post (that is, "ball carving"). The idea
 is to consider the blue and red nodes in a non-symmetrical way: blue nodes are 
-starting point for ball carving, and red nodes want to join such balls. That is, 
+starting points for ball carving, and red nodes want to join such balls. That is, 
 every blue node starts as a one-node ball, and then, until this is not possible:
 
 * the (non-frozen) red nodes that have at least one blue neighbor propose to
@@ -173,12 +173,12 @@ cluster.
 ## That's it!
 
 This is pretty much the algorithm! Then you just iterate on the digits of the
-labels, and at the end, the all clusters are separated by frozen nodes, have
+labels, and at the end, all clusters are separated by frozen nodes, have
 a controlled weak diameter, and not too many nodes have been frozen. This way
 we get the first color class, and then we can go to second color class,etc.
 
 By setting the right parameters for the ball carving, you get an algorithm that
-use polylogarithmic time to build a network decomposition with logarithmic weak
+uses polylogarithmic time to build a network decomposition with logarithmic weak
 diameter and a logarithmic number of colors.
 
 

@@ -54,7 +54,7 @@ GEM
       nokogiri (~> 1.4)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
-    jekyll (2.4.0)
+    jekyll (3.6.3)
       classifier-reborn (~> 2.0)
       colorator (~> 0.1)
       jekyll-coffeescript (~> 1.0)

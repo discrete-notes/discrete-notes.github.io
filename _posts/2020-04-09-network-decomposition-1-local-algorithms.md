@@ -25,7 +25,7 @@ because of two adjacent selected nodes, and the second because of an "isolated n
 
 ![](assets/MIS-arete.png){: .center-image width="100%"} | ![](assets/MIS-noeud.png){: .center-image width="100%"}
 
-The two following pictures represent MISs. Note that one in *maximum* (it has 3 
+The two following pictures represent MISs. Note that one is *maximum* (it has 3 
 nodes, and no MIS on 4 nodes exists), but the other is just maximal, and it's 
 also fine.
 

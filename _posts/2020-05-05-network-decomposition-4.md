@@ -45,7 +45,7 @@ logarithmic *weak diameter*.
 
 For some applications it might be better to have a strong decomposition, and the 
 algorithm provides only a weak one. This is not a big problem. 
-The paper of Rozhon and Ghaffari sketches an approach that builds a strong 
+The paper of Rozhon and Ghaffari sketches an approach (that is already known) that builds a strong 
 decomposition with $O(\log(n))$ colors from a weak one with also $O(\log(n))$ 
 colors. 	
 It is even simpler to have such a transformation if we just insist on having 

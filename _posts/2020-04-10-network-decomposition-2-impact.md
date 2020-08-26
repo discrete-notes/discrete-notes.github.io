@@ -45,8 +45,8 @@ friend gave you a 10-coloring.
 
 Now there are two problems: 
 
-1. You do not have a mysterious friend, and computing a good coloring yourself is 
-essentially as hard as computing the MIS.
+1. You do not have a mysterious friend, and computing a good coloring yourself might not be 
+easier than computing the MIS.
 2. The graph might not be colorable with a small number of colors: maybe it's
 chromatic number is $n/2$, and then the algorithm takes $n/2$ rounds, which is 
 not much better than before.
@@ -148,7 +148,18 @@ algorithm in basically $d\times c$ rounds. As we look for a network decompositio
 with polylogarithmic parameters, this gives us a polylogarithmic algorithm, 
 which is awesome!
 
-But now we need to be able to build the network decomposition fast. This is the 
+## More generally
+
+More generally, network decomposition is important and useful because it 
+allows *derandomization*. More precisely for pretty much all classic problems,
+a polylogarithmic randomized algorithm was known, and network 
+decomposition allows to transform these directly into deterministic 
+algorithms. See [this paper](https://arxiv.org/pdf/1711.02194.pdf) for 
+more inforamtion on this derandomization result.
+
+
+
+Now we need to be able to build the network decomposition fast. This is the 
 core topic of this series of posts.
 
 

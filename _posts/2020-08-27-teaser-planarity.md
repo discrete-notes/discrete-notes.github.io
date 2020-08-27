@@ -43,11 +43,11 @@ The mechanism to decide if the graph is planar or not is the following:
 * if the network is not planar, at least one node should raise an alarm
 * if the network is planar, no node should raise an alarm.
 
-## With a little help from my "friend"
+## With a little help from a "friend"
 
 The problem cannot be solved without help. Indeed, it could be that 
 locally everything seems fine, for every node, but that there are "long 
-paths" forming a $K_{5,5}$ for example. 
+paths" forming a $K_{5}$ for example. 
 
 The help comes as a labeling: every node is assigned a label.   
 

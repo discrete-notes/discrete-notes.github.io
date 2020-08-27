@@ -63,19 +63,20 @@ at least one node should raise an alarm,
 * if the network is planar, then there exists a labeling such that 
 no node raises an alarm.
 
-Note that it is a condition similar to the one of the complexity class 
+Note that this condition is similar to the one of the complexity class 
 NP. 
 
 ## Question and answer
 
 It is known that for any property (not just planarity) such a procedure 
-(labeling + rule to raise an alarm or not) exists. Now the question is:
+(labeling + rule to raise an alarm or not) exists, but the labels are 
+large. Now the question is:
 
-**Question:** What is the optimal label size. 
+**Question:** What is the optimal label size? 
 
 And our answer is:
 
-**Theorem:** The optimal size is $\Theta(\log n)$.
+**Theorem:** The optimal label size is $\Theta(\log n)$.
 
 ## Technique
 

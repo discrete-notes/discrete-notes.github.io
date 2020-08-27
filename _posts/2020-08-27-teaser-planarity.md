@@ -32,7 +32,7 @@ as every node is equipped with a unique identifier, what a
 node knows about the graph is:
 its identifier, its degree, and the identifiers of its neighbors.
 
-![](assets/planar-teaser-local.jpg){: .center-image width="70%"}
+![](assets/planar-teaser-local.png){: .center-image width="70%"}
 
 The mechanism to decide if the graph is planar or not is the following:
 
@@ -47,7 +47,7 @@ paths" forming a $K_{5,5}$ for example.
 
 The help comes as a labeling: every node is assigned a label.   
 
-![](assets/planar-teaser-labels.jpg){: .center-image width="70%"}
+![](assets/planar-teaser-labels.png){: .center-image width="70%"}
 
 Theses labels can be seen by the nodes: a node can see its own label 
 and the labels of its neighbors. 
@@ -92,14 +92,14 @@ What we do (in a nutshell):
 * We first locally encode a transformation of the graph, where we 
 basically blow up a spanning tree, to have an hamiltonian path. 
 
-![](assets/planar-teaser-tree-1.jpg){: .center-image width="70%"}
-![](assets/planar-teaser-tree-2.jpg){: .center-image width="70%"}
+![](assets/planar-teaser-tree-1.png){: .center-image width="70%"}
+![](assets/planar-teaser-tree-2.png){: .center-image width="70%"}
 
 * Then we use this hamiltonian path to order the nodes along a line 
 (similarly to outerplanar graphs), and givan to every node its rank on 
 the line is basically enough for the node to check the planarity of 
 this transformed graph. 
 
-![](assets/planar-teaser-outerplanar.jpg){: .center-image width="70%"}
+![](assets/planar-teaser-outerplanar.png){: .center-image width="70%"}
 
  

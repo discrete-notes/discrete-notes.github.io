@@ -17,7 +17,7 @@ I was to give a teaser of it at HALG in a few days, but as I
 cannot be (virtually) present, here is a blog version (and Ioan 
 kindly agreed to give the real talk).
 
-![](assets/halgae.jpg){: .center-image width="80%"}
+![](assets/halgae.jpg){: .center-image width="90%"}
 <p align="center"><small><i>
 Some Patagonian (h)algae.
 </i></small></p>
@@ -27,12 +27,16 @@ Some Patagonian (h)algae.
 Consider the following problem.
 The nodes of a graph want to know whether the graph they live in is 
 planar. But every node has a very limited knowledge of the graph.
-Basically, every node can only see its neighborhood. More precisely, 
-as every node is equipped with a unique identifier, what a 
-node knows about the graph is:
-its identifier, its degree, and the identifiers of its neighbors.
+Basically, every node can only see its neighborhood.
 
 ![](assets/planar-teaser-local.png){: .center-image width="70%"}
+<p align="center"><small><i>
+The node towards which the arrow is pointing can see only the yellow 
+part of the graph.
+</i></small></p>
+
+More precisely, every node is equipped with a unique identifier, and 
+knows its identifier, its degree, and the identifiers of its neighbors.
 
 The mechanism to decide if the graph is planar or not is the following:
 

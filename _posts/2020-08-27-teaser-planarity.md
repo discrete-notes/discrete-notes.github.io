@@ -96,8 +96,7 @@ What we do (in a nutshell):
 * We first locally encode a transformation of the graph, where we 
 basically blow up a spanning tree, to have an hamiltonian path. 
 
-![](assets/planar-teaser-tree-1.png){: .center-image width="40%"}
-![](assets/planar-teaser-tree-2.png){: .center-image width="40%"}
+![](assets/planar-teaser-tree-1.png){: .center-image width="40%"}|![](assets/planar-teaser-tree-2.png){: .center-image width="40%"}
 
 * Then we use this hamiltonian path to order the nodes along a line 
 (similarly to outerplanar graphs), and givan to every node its rank on 

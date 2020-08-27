@@ -96,12 +96,12 @@ What we do (in a nutshell):
 * We first locally encode a transformation of the graph, where we 
 basically blow up a spanning tree, to have an hamiltonian cycle. 
 
-![](assets/planar-teaser-tree-1.png){: .center-image width="70%"}|![](assets/planar-teaser-tree-2.png){: .center-image width="40%"}
+![](assets/planar-teaser-tree-1.png){: .center-image width="70%"}|![](assets/planar-teaser-tree-2.png){: .center-image width="70%"}
 
 * Then we use this hamiltonian cycle to order the nodes along a line 
-(similarly to outerplanar graphs), and givan to every node its rank on 
-the line is basically enough for the node to check the planarity of 
-this transformed graph. 
+(similarly to outerplanar graphs), and then giving to every node its 
+rank on the line is basically enough for the node to check the planarity
+of this transformed graph. 
 
 ![](assets/planar-teaser-outerplanar.png){: .center-image width="70%"}
 

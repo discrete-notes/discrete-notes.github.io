@@ -49,20 +49,19 @@ The problem cannot be solved without help. Indeed, it could be that
 locally everything seems fine, for every node, but that there are "long 
 paths" forming a $K_{5}$ for example. 
 
-The help comes as a labeling: every node is assigned a label.   
+The help comes as a labeling: every node is assigned a label. 
+Theses labels can be seen by the nodes: a node can see its own label 
+and the labels of its neighbors.   
 
 ![](assets/planar-teaser-labels.png){: .center-image width="70%"}
-
-Theses labels can be seen by the nodes: a node can see its own label 
-and the labels of its neighbors. 
 
 Now we want the nodes to have procedure such that the following 
 condition is verified:
 
 * if the network is not planar, then for all possible labeling, 
-at least one node should raise an alarm
+at least one node should raise an alarm,
 * if the network is planar, then there exists a labeling such that 
-no node should raise an alarm.
+no node raises an alarm.
 
 Note that it is a condition similar to the one of the complexity class 
 NP. 

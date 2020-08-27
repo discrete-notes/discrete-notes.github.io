@@ -14,10 +14,10 @@ PODC 2020 (joint work with Pierre Fraigniaud, Ivan Rapaport,
 the video by Pedro. 
 
 I was to give a teaser of it at HALG in a few days, but as I 
-cannot be (virtually) present, here is a blog version (and Ioan Todinca 
+cannot be (virtually) present, here is a blog version (and Ioan 
 kindly agreed to give the real talk).
 
-![](assets/halgae.jpg){: .center-image width="70%"}
+![](assets/halgae.jpg){: .center-image width="80%"}
 <p align="center"><small><i>
 Some Patagonian (h)algae.
 </i></small></p>
@@ -92,8 +92,8 @@ What we do (in a nutshell):
 * We first locally encode a transformation of the graph, where we 
 basically blow up a spanning tree, to have an hamiltonian path. 
 
-![](assets/planar-teaser-tree-1.png){: .center-image width="70%"}
-![](assets/planar-teaser-tree-2.png){: .center-image width="70%"}
+![](assets/planar-teaser-tree-1.png){: .center-image width="40%"}
+![](assets/planar-teaser-tree-2.png){: .center-image width="40%"}
 
 * Then we use this hamiltonian path to order the nodes along a line 
 (similarly to outerplanar graphs), and givan to every node its rank on 

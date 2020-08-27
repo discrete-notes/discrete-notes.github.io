@@ -84,7 +84,7 @@ Two words on the technique.
 
 Things that do not work:
 
-* Kuratowski theorem: it is not easy to certify locally that somehting 
+* Kuratowski theorem: it is not easy to certify locally that something 
 (a minor) does not exist.
 * Coordinates: if the endpoints of two edges are far away in the graph, 
 they cannot check wether the two edges intersect or not.
@@ -94,11 +94,11 @@ local verification could be fooled if given only face and edge numbers.
 What we do (in a nutshell):
 
 * We first locally encode a transformation of the graph, where we 
-basically blow up a spanning tree, to have an hamiltonian path. 
+basically blow up a spanning tree, to have an hamiltonian cycle. 
 
 ![](assets/planar-teaser-tree-1.png){: .center-image width="70%"}|![](assets/planar-teaser-tree-2.png){: .center-image width="40%"}
 
-* Then we use this hamiltonian path to order the nodes along a line 
+* Then we use this hamiltonian cycle to order the nodes along a line 
 (similarly to outerplanar graphs), and givan to every node its rank on 
 the line is basically enough for the node to check the planarity of 
 this transformed graph. 

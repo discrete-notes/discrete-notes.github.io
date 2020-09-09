@@ -28,11 +28,11 @@ and came back with a problem we could study. The problem is following.
 
 Input: A set of axis-aligned rectangles touching some curve.
 
-![](assets/rectangles-1.png){: .center-image width="70%"}
+![](assets/rectangles-1.png){: .center-image width="80%"}
 
 Task: Find the maximum independent set of rectangles. 
 
-![](assets/rectangles-2.png){: .center-image width="70%"}
+![](assets/rectangles-2.png){: .center-image width="80%"}
 
 I think I remember the paper was presenting an approximation algorithm 
 with a large approximation ratio, and anyway it was not the main focus 
@@ -42,7 +42,7 @@ The idea was to simplify the problem a bit and to try to have a clean
 approximation algorithm with a small approximation ratio. We ended up 
 studying configurations where the curve is a decreasing straight line. 
 
-![](assets/rectangles-3.png){: .center-image width="70%"}
+![](assets/rectangles-3.png){: .center-image width="60%"}
 
 ## Some results
 
@@ -66,7 +66,7 @@ along the diagonal, it is not possible to have some rectangles $A$, $B$,
 $C$ and $D$ in this order, such that $A$ intersect $C$, and $B$ 
 intersects $D$, but $B$ does not intersect $C$.
 
-![](assets/rectangle-characterization.png){: .center-image width="70%"}
+![](assets/rectangle-characterization.png){: .center-image width="60%"}
 
 It is not much harder to prove the full characterization.
 
@@ -85,11 +85,14 @@ What is funny is that they came from a completely different path.
 Mauricio and Chirstopher were interested in sensor networks. A classic 
 model for those, is to consider that you have some sensors in the plane, 
 and that every sensor can communicate with the other sensors that are 
-at distance at most $d$, where $d$ is some distance. Now you can 
+at distance at most $d$, where $d$ is some distance. 
+
+![](assets/sensors-1.png){: .center-image width="70%"}
+
+Now you can 
 associate a graph with this model: a node for each sensor, and an edge 
 every time two sensors can communicate.   
 
-![](assets/sensors-1.png){: .center-image width="70%"}
 ![](assets/sensors-2.png){: .center-image width="70%"}
 
 This is equivalent to consider 

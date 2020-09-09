@@ -10,7 +10,7 @@ Almost one year ago, I wrote
 classes and patterns, and said that some other posts 
 would follow. Well, there has not been no other posts, but now the 
 paper has been definitely accepted in a journal so it's a good moment
-to write again about this. Actually, I won't continue on the purely 
+to write about this agin. Actually, I won't continue on the purely 
 scientific perspective of the first post, instead I'll tell the story of
 the paper. I really enjoy such "research stories", and unfortunately 
 they are not often told.    

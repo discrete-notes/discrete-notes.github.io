@@ -15,8 +15,8 @@ scientific perspective of the first post, instead I'll tell the story of
 the paper. I really enjoy such "research stories", and unfortunately 
 they are not often told.    
 
---- 
 ![](assets/plage.jpg){: .center-image height="600px"}
+
 ---
 
 ## Starting point

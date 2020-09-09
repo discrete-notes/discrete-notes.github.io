@@ -16,7 +16,7 @@ the paper. I really enjoy such "research stories", and unfortunately
 they are not often told.    
 
 --- 
-![](plage.jpg){: .center-image height="600px"}
+![](assets/plage.jpg){: .center-image height="600px"}
 ---
 
 ## Starting point
@@ -28,11 +28,11 @@ and came back with a problem we could study. The problem is following.
 
 Input: A set of axis-aligned rectangles touching some curve.
 
-![](rectangles-1.png){: .center-image height="600px"}
+![](assets/rectangles-1.png){: .center-image height="600px"}
 
 Task: Find the maximum independent set of rectangles. 
 
-![](rectangles-2.png){: .center-image height="600px"}
+![](assets/rectangles-2.png){: .center-image height="600px"}
 
 I think I remember the paper was presenting an approximation algorithm 
 with a large approximation ratio, and anyway it was not the main focus 
@@ -42,7 +42,7 @@ The idea was to simplify the problem a bit and to try to have a clean
 approximation algorithm with a small approximation ratio. We ended up 
 studying configurations where the curve is a decreasing straight line. 
 
-![](rectangles-3.png){: .center-image height="600px"}
+![](assets/rectangles-3.png){: .center-image height="600px"}
 
 ## Some results
 
@@ -53,7 +53,7 @@ Here the intersection graph is defined by creating a node for each
 rectangle and having an edge when the two corresponding rectangles 
 intersect
 
-![](diagonal-graph.png){: .center-image height="600px"}
+![](assets/diagonal-graph.png){: .center-image height="600px"}
 
 The characterization is the following: a graph is the intersection graph
 of rectangles intersecting a diagonal line (that we called *diagonal 
@@ -66,7 +66,7 @@ along the diagonal, it is not possible to have some rectangles $A$, $B$,
 $C$ and $D$ in this order, such that $A$ intersect $C$, and $B$ 
 intersects $D$, but $B$ does not intersect $C$.
 
-![](rectangle-characterization.png){: .center-image height="600px"}
+![](assets/rectangle-characterization.png){: .center-image height="600px"}
 
 It is not much harder to prove the full characterization.
 
@@ -89,14 +89,14 @@ at distance at most $d$, where $d$ is some distance. Now you can
 associate a graph with this model: a node for each sensor, and an edge 
 every time two sensors can communicate.   
 
-![](sensor-1.png){: .center-image height="600px"}
-![](sensor-2.png){: .center-image height="600px"}
+![](assets/sensor-1.png){: .center-image height="600px"}
+![](assets/sensor-2.png){: .center-image height="600px"}
 
 This is equivalent to consider 
 the intersection graph where you have a disk circle of radius $d/2$ 
 around each sensor, and put an edge if the disks intersect. 
 
-![](unit-disk.png){: .center-image height="600px"}
+![](assets/unit-disk.png){: .center-image height="600px"}
 
 And as we can re-scale everything, we can say that $d/2=1$. The class of 
 underlying graphs is called 
@@ -112,12 +112,12 @@ that could handle the cases where the sensors do not have the same range
  graph where two sensors "intersect" if they can see each other, that 
  is if each sensor is in the interval of the other.
  
-![](p-box.png){: .center-image height="600px"}
+![](assets/p-box.png){: .center-image height="600px"}
 
 And now this class of graphs they call $p-box$, ends up being the exact 
 same class as our diagonal rectangle graphs!
 Basically if you take the branch of the interval that is on the right to
  the sensor point and make it vertical, you can create a rectangle.
  
-![](p-box-rectangle.png){: .center-image height="600px"}
+![](assets/p-box-rectangle.png){: .center-image height="600px"}
 

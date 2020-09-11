@@ -138,5 +138,5 @@ in the future papers).
 ### Notes  
 
 * [The paper by Mauricio and Christopher](https://www.dmtcs.org/dmtcs-ojs/index.php/dmtcs/article/viewFile/2508/4670.pdf).
-
+* Thanks to [Fabien Dufoulon](https://sites.google.com/view/dufoulon/accueil) for spotting some typos.
 

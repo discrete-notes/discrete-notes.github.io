@@ -10,7 +10,7 @@ Almost one year ago, I wrote
 classes and patterns, and said that some other posts 
 would follow. Well, there has not been no other posts, but now the 
 paper has been definitely accepted in a journal so it's a good moment
-to write about this agin. Actually, I won't continue on the purely 
+to write about this again. Actually, I won't continue on the purely 
 scientific perspective of the first post, instead I'll tell the story of
 the paper. I really enjoy such "research stories", and unfortunately 
 they are not often told.    
@@ -38,7 +38,11 @@ I think I remember the paper was presenting an approximation algorithm
 with a large approximation ratio, and anyway it was not the main focus 
 of the authors (but to be honest I don't remember). 
 
-The idea was to simplify the problem a bit and to try to have a clean 
+After some quick research, it appeared that the general problem of maximum
+independent set of rectangles (without the curve) was a popular one, 
+thus worth studying even in special cases.  
+The idea was to simplify it even more than in the IPCO paper and to try 
+to have a clean 
 approximation algorithm with a small approximation ratio. We ended up 
 studying configurations where the curve is a decreasing straight line. 
 
@@ -64,7 +68,7 @@ such that $(a,c)$ and $(b,d)$ are edges and $(b,c)$ is not an edge.
 It is easy to see that, if you consider the ordering of the rectangles 
 along the diagonal, it is not possible to have some rectangles $A$, $B$, 
 $C$ and $D$ in this order, such that $A$ and $C$ intersect, and $B$ and 
-$D$ intersect, but $B$ and $D$ *do not* intersect.
+$D$ intersect, but $B$ and $C$ *do not* intersect.
 
 ![](assets/rectangle-characterization.png){: .center-image width="60%"}
 
@@ -127,6 +131,12 @@ Basically if you take the branch of the interval that is on the right to
 In the end, their work was more on the graph theory aspects and ours 
 more on the optimization side, so we decide not to merge the results, 
 and to continue on our respective paths (acknowledging the other group 
-in the future papers).
+in the future papers). 
 
 *To be continued...*
+
+### Notes  
+
+* [The paper by Mauricio and Christopher](https://www.dmtcs.org/dmtcs-ojs/index.php/dmtcs/article/viewFile/2508/4670.pdf).
+
+

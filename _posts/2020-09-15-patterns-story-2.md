@@ -10,7 +10,7 @@ patterns and graph classes. The first post is
 [here](https://discrete-notes.github.io/patterns-story-1).
 
 --- 
-![](assets/plage-3.jpg){: .center-image height="80%"}
+![](assets/plage-3.jpg){: .center-image height="70%"}
 
 ---
 
@@ -38,7 +38,7 @@ intersection of segments.
 
  
 When studying such graphs a popular way to look at special cases is to 
-allow only some directions for the segements. For example, on the 
+allow only some directions for the segments. For example, on the 
 drawing above all segments 
 have angle $0$, $\pi/3$ or $2\pi/3$ with the horizontal.
 But Hixon and Felsner went into another direction, which is to allow 
@@ -55,13 +55,13 @@ Actually, José Soto even knew about an older paper by
 had an algorithm for the same class of graphs. She had arrived to this
 class by generalizing 
 [interval graphs](https://en.wikipedia.org/wiki/Interval_graph) (in the
-same kind of perspetive as Mauricio and Christopher from the previous 
+same kind of perspective as Mauricio and Christopher from the previous 
 post).
 
 I was quite depressed to discover that I had work all this weeks in vain, 
-and José (Correa) told me somehting like: "it's actually good news: if people have
+and José (Correa) told me something like: "it's actually good news: if people have
 already answered our questions, it means that we have good questions and 
-that's the most important part."
+that's the most important part."...
 
 In the end, we could strengthen our results in various ways 
 (more general rectangle configurations, faster algorithm, results about 
@@ -90,11 +90,11 @@ graph class at the same moment (+ it had been studied before).
 
 Years later I presented some results about graphs at 
 [GROW 2017](http://www.fields.utoronto.ca/activities/17-18/grow2017) and 
-mentionned this class without naming any authors or the story, and at 
+mentioned this class without naming any authors or the story, and at 
 the end of the talk 
 [Steven Chaplick](https://www.maastrichtuniversity.nl/p70068141) (one 
 of the authors of the merged paper) came to me and told me "by the way 
-this class you mentionned it is known, it is not new": he was 
+this class you mentioned it is known, it is not new": he was 
 afraid I might be re-re-re-re-re-inventing it!
 
 ### Notes

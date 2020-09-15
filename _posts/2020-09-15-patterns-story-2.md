@@ -13,7 +13,7 @@ After discovering that our class of diagonal rectangle graphs had been
 studied by other people in our own university, we discovered that we 
 were not only two groups chasing this class.
 
-![](assets/plage-3.jpg){: .center-image height="70%"}
+![](assets/plage-3.jpg){: .center-image width="80%"}
 
 ---
 
@@ -31,9 +31,9 @@ They were studying *segment graphs*, which are just intersection graphs
 of segments. These are quite popular graphs ; in particular 
 [Scheinerman's conjecture](https://en.wikipedia.org/wiki/Scheinerman%27s_conjecture)
 (now a theorem) states that every planar graph can be represented as the
-intersection of segments. 
+intersection of segments.
  
-![](assets/scheinerman-1.png){: .center-image height="80%"}|![](assets/scheinerman-2.png){: .center-image height="80%"}
+![](assets/scheinerman-1.png){: .center-image height="70%"}|![](assets/scheinerman-2.png){: .center-image height="80%"}
 
  
 When studying such graphs a popular way to look at special cases is to 
@@ -57,20 +57,21 @@ class by generalizing
 same kind of perspective as Mauricio and Christopher from the previous 
 post).
 
-I was quite depressed to discover that I had work all this weeks in vain, 
-and José (Correa) told me something like: "it's actually good news: if people have
+I was quite depressed to discover that I had worked all this weeks in vain, 
+and José (Correa) told me something like: "It's actually good news: if people have
 already answered our questions, it means that we have good questions and 
-that's the most important part."...
+that's the most important part." (At the time I was completely convinced, 
+that this was good news!)
 
 In the end, we could strengthen our results in various ways 
 (more general rectangle configurations, faster algorithm, results about 
 integrality gap etc.), and it became my first paper.
 
 Meanwhile, I had been playing with the kind of characterization we had, 
-with forbidden configurations on an ordering, which is the main topic of 
+with forbidden configurations and an ordering, which is the main topic of 
 this series. More in the next posts.
 
-## Yet another group and end of the geometric part
+## Epilogue about diagonal rectangle graphs
 
 Believe it or not, yet another group had been "discovering" the same 
 graph class at the same period. This we learned from Hixon's thesis, 
@@ -80,11 +81,11 @@ Cantanzaro, Chaplick, Halldórson, Halldórson and Stacho, had introduced
 *max point-tolerance graphs*, as a variation of 
 [tolerance graphs](https://en.wikipedia.org/wiki/Tolerance_graph). They 
 defined it as a model for biology. More precisely, they too had the point 
-of view of intervals with points, and these represented segments of DNA, 
+of view of intervals with points, and these represented segments of DNA 
 with a special position, for example a suspected deletion. 
  
 Cantanzaro et al. and Hixon et al. ended up merging the papers. 
-It a bit crazy how four completely independent groups studied the same 
+It's a bit crazy how four completely independent groups studied the same 
 graph class at the same moment (+ it had been studied before).
 
 Years later I presented some results about graphs at 
@@ -93,7 +94,7 @@ mentioned this class without naming any authors or the story, and at
 the end of the talk 
 [Steven Chaplick](https://www.maastrichtuniversity.nl/p70068141) (one 
 of the authors of the merged paper) came to me and told me "by the way 
-this class you mentioned it is known, it is not new": he was 
+this class you mentioned, it is known, it is not new": he was 
 afraid I might be re-re-re-re-re-inventing it!
 
 ### Notes

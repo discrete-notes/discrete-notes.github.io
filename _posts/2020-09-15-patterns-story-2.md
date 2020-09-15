@@ -10,7 +10,7 @@ patterns and graph classes. The first post is
 [here](https://discrete-notes.github.io/patterns-story-1).
 
 --- 
-![](plage-3.jpg){: .center-image height="80%"}
+![](assets/plage-3.jpg){: .center-image height="80%"}
 
 ---
 
@@ -34,7 +34,7 @@ of segments. These are quite popular graphs ; in particular
 (now a theorem) states that every planar graph can be represented as the
 intersection of segments. 
  
-![](scheinerman-1.png){: .center-image height="80%"}|![](scheinerman-2.png){: .center-image height="80%"}
+![](assets/scheinerman-1.png){: .center-image height="80%"}|![](assets/scheinerman-2.png){: .center-image height="80%"}
 
  
 When studying such graphs a popular way to look at special cases is to 
@@ -44,7 +44,7 @@ have angle $0$, $\pi/3$ or $2\pi/3$ with the horizontal.
 But Hixon and Felsner went into another direction, which is to allow 
 only segments lying on the set of lies tangent to a parabola. 
 
-![](segment-parabola.png){: .center-image height="80%"}
+![](assets/segment-parabola.png){: .center-image height="80%"}
 
 It happens that this defines intersection graphs that have the same 
 characterization as our class, thus is actually the same class.

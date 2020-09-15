@@ -71,7 +71,7 @@ Meanwhile, I had been playing with the kind of characterization we had,
 with forbidden configurations on an ordering, which is the main topic of 
 this series. More in the next posts.
 
-## Yet another group and the conclusion of the geometric part
+## Yet another group and end of the geometric part
 
 Believe it or not, yet another group had been "discovering" the same 
 graph class at the same period. This we learned from Hixon's thesis, 

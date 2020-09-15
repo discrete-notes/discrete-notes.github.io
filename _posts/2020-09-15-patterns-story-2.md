@@ -95,9 +95,9 @@ the end of the talk
 [Steven Chaplick](https://www.maastrichtuniversity.nl/p70068141) (one 
 of the authors of the merged paper) came to me and told me "by the way 
 this class you mentionned it is known, it is not new": he was 
-afraid I might be re-re-re-re-re-inventing it! 
+afraid I might be re-re-re-re-re-inventing it!
 
-### Notes
+### Notes
 
 * [Thomas Hixon's Master thesis](http://page.math.tu-berlin.de/~felsner/Diplomarbeiten/Hixon-Master.pdf)
 * [Lubiw's paper](https://core.ac.uk/download/pdf/82682757.pdf)

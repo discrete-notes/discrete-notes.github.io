@@ -9,22 +9,21 @@ This is the second post of a series about the story of a paper on
 patterns and graph classes. The first post is 
 [here](https://discrete-notes.github.io/patterns-story-1).
 
---- 
-![](assets/plage-3.jpg){: .center-image height="70%"}
-
----
-
 After discovering that our class of diagonal rectangle graphs had been 
 studied by other people in our own university, we discovered that we 
 were not only two groups chasing this class.
+
+![](assets/plage-3.jpg){: .center-image height="70%"}
+
+---
 
 ## Second twist, segments and parabolas 
 
 [José Soto](http://www.dim.uchile.cl/~jsoto/) came back from
 a postdoc in Germany at some point of my stay in Chile. 
-We told him our problem and solution
+We told him about our problem and solution
 and he told us he had just attended a Master defense in Berlin where 
-the same class was studied! The student was Thomas Hixon, and his 
+the same class was studied. The student was Thomas Hixon, and his 
 advisor [Stefan Felsner](http://page.math.tu-berlin.de/~felsner/). 
 They ended up with this class following yet another path.
 
@@ -42,9 +41,9 @@ allow only some directions for the segments. For example, on the
 drawing above all segments 
 have angle $0$, $\pi/3$ or $2\pi/3$ with the horizontal.
 But Hixon and Felsner went into another direction, which is to allow 
-only segments lying on the set of lies tangent to a parabola. 
+only segments lying on the set of lines tangent to a parabola. 
 
-![](assets/segment-parabola.png){: .center-image height="80%"}
+![](assets/segment-parabola.png){: .center-image height="70%"}
 
 It happens that this defines intersection graphs that have the same 
 characterization as our class, thus is actually the same class.

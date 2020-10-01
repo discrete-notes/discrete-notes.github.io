@@ -72,15 +72,12 @@ As we said, a self-stabilizing algorithm ends up in a good configuration
 after some time, even if it started from a chaos of states. For example,
 if the goal is to compute a spanning tree, at the end of the 
 computation, every node has in its state the description of a pointer to
-its parent in the tree, and the collection of pointers forms a 
-spanning tree. But now suppose that a fault occur, and a pointer is 
-changed. If the nodes only hold the pointers they cannot detect that
-something is wrong. And the strategy where every node
-remembers the pointers of its neighbors does not work: a fault can 
-change many states at once (and if the degree is large this would 
-require a lot of space). 
+a neighbor, and the collection of pointers forms a spanning tree. 
+Now suppose that a fault occur, and a pointer is 
+changed. If the nodes only hold the pointers in memory, 
+they cannot detect that something is wrong. 
 
-Thus the nodes also keep some data in addition to the output. For 
+Thus the nodes have to store more than just the output. For 
 example in the case of a spanning tree, the nodes keep their distance to
 the root and the ID of the root. 
 This can easily be computed during the computation. More importantly, 
@@ -91,14 +88,15 @@ the root ensures the connectivity.
 
 A good property of this type of stabilization, is that once the algorithm 
 has stabilized to a correct solution, the states do not change anymore 
-(unless there a fault). That is no rule of the algorithm can be applied. 
-These are called *silent algorithms*. There are other algorithm that 
-keep exchanging information after stabilization.
+(unless there is a fault) ; that is no rule of the algorithm can be 
+applied anymore. 
+These are called *silent algorithms*. (There are other algorithm that 
+keep exchanging information after stabilization.)
 
 Silent algorithms basically end up with a certification of the solution. 
-Such certification has been shown to be equivalent to what is known 
-under the name of proof-labeling schemes (or locally checkable proofs, 
-or more generally local certification)[^1]. This was the topic of my PhD. 
+Such certification has been shown to be equivalent to so-called 
+proof-labeling schemes (or locally checkable proofs, 
+or more generally local certification)[^1].  
 
 ## Space and time efficiency
 
@@ -107,10 +105,10 @@ stabilizes and the space it needs. The space needed for the certification,
 that is for the very end of the algorithm, is a lower bound on the 
 space needed. It was proved that actually one can always design an 
 algorithm with this space complexity (up to an additive $O(\log n)$ term), 
-but the technique uses exponential time [^1]. A question is then: what are 
+but the technique uses exponential time.[^1] A question is then: what are 
 the problems that can be solved with optimal space and polynomial time?
 
-In a recent paper[^2], we proved as a side result that minimum spanning 
+In a recent paper,[^2] we proved as a side result that minimum spanning 
 tree is one of these problems. A intriguing thing is that we were somehow 
 forced to use an uncommon approach: instead of book-keeping information
 during the computation for certification, we had to first build a solution

@@ -50,21 +50,21 @@ that at each round at least one node should so such an update).
 The idea of self-stabilization is that your algorithm (that is, your set
  of rules) should be robust enough so that starting from an arbitrary 
 collection of states, you end up with a correct configuration. Note that 
-this should for any choice of schedule by the scheduler. For example the
+this should hold for any choice of schedule by the scheduler. For example the
  scheduler can choose that some node will not apply any rule, until it 
  is the only node that can apply a rule (in this case the scheduler is 
 forced to "activate" this node otherwise the computation is stopped). 
 
 The state model is very basic and simple. This has a drawback: to 
-be precise algorithms have to be described by long lists of rules, which
- is often unpleasant. But the good thing is that there are not one 
- thousand parameters to consider. More precisely, the number of bits of 
+be precise, algorithms have to be described by long lists of rules, which
+ is often unpleasant to write and read. 
+A good thing is that the number of bits of 
 used by the states represents both the "message size" (as the nodes 
 communicate y reading their neighbors states) and the memory of a node 
 (the information it should store for later use).  
 
 At the end there are basically two measures of complexity: the time 
-before convergence and the space used to encode states. Only the later
+before convergence and the space used to encode states. 
 
 ## Silent stabilization and certification
 

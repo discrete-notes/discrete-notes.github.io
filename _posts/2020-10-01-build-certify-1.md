@@ -25,10 +25,7 @@ indicating that for minimum spanning tree, if the one aims for the
 optimal memory and fast stabilization, then one might have to first build the 
 solution, and *then* certify it.   
 
---- 
-![](assets/build-certify.png){: .center-image height="80%"}
-
----
+![](assets/build-certify.png){: .center-image width="90%"}
 
 ## Self-stabilization in the state model (in a nutshell)
 
@@ -103,7 +100,7 @@ Such certification has been shown to be equivalent to what is known
 under the name of proof-labeling schemes (or locally checkable proofs, 
 or more generally local certification)[^1]. This was the topic of my PhD. 
 
-## Space and time efficiency 
+## Space and time efficiency
 
 As said earlier, given an algorithm one can measure the time until it 
 stabilizes and the space it needs. The space needed for the certification,

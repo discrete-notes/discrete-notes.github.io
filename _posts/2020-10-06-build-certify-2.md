@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Can we always build and certify at the same time? (MST with fragements)
+title: Can we always build and certify at the same time? (MST with fragments)
 redirect_from: "/2020/10/06/build-certify-2/"
 permalink: build-certify-2
 ---   
@@ -15,7 +15,7 @@ spanning tree (MST) by merging fragments. Then, we will see the classic
 cettification of MST based on this construction. In the next post we 
 will finally discuss the question above.  
 
-![](assets/arbre-fragment.png){: .center-image width="80%"} 
+![](assets/arbre-fragments.png){: .center-image width="80%"} 
 
 ## Building an MST with fragments
 

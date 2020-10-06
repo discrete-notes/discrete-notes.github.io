@@ -138,8 +138,15 @@ merging edge, the node is given the name its "parent" in a spanning tree
  the merge edge. These two last pieces of information are necessary to 
  certify the existence of a merge edge. 
 
-These certificates are enough to check that the given tree is an MST 
-(of course this needs a proof). 
+These certificates are enough to check that the given tree is an MST. 
+Of course this needs a proof, but the basic idea is that the node can 
+check that the algorithm can be executed on the graph.  
+
+This scheme uses certificates of size precisely $O(\log^2n + \log n \log W)$,
+where $W$ is the maximum weight.
+This corresponds to $O(\log n)$ phases, for which we store pieces of information 
+of size $O(\log n)$ (IDs of nodes and distance) and of size $O(\log W)$ 
+(edge weights).
 
 ### Notes
 

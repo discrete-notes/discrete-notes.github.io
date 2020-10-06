@@ -84,12 +84,15 @@ And we get the final tree, which is a minimum spanning tree.
 ## Properties
 
 Here are a few comments about this process. We will reuse some of these
-properties in a later post.
+properties in the next post.
 
 * Here we have assumed that the weights are distinct, but in general 
-this is not the case. If not then we need an extra step, where the nodes
-having two outgoing edges with the same weight decide which one will be 
-selected.
+this is not the case. If not, then we need an extra step, where the 
+nodes decide which of the lightest outgoing edges will be selected. 
+Also an extra-step is needed in case two fragments choose ceach other to
+ merge, but using different edges. Again the nodes can decide which 
+ edge wil be kept. 
+
 
 * The process is incremental: the edges that have been added in an early 
 phase are kept during the whole computation and appear in the final
@@ -99,18 +102,18 @@ MST.
 is at least halved at each phase.
 
 * In the process, the merging is quite uncontrolled: it could be that a
-fragments merges with just one other fragments (like in the two last 
+fragments merges with just one other fragment (like in the two last 
 phases in the example), but it can also be two (like in the first 
-phase, in the middle and on the left), or actually $Theta(n)$.
+phase, in the middle and on the left), or actually $\Theta(n)$.
 
-* Also the place where the fragment merge is uncontrolled: a fragment 
-can be merging with one fragment in some places and with another 
-fragment very far away. 
+* Also the place where the fragments merge is uncontrolled: a large 
+fragment can be merging with one fragment in some places and with 
+another fragment very far away. 
 
 ## MST certification
 
-It is possible to certify a MST by basically describing the key pieces 
-of the process above. This scheme uses certificates of $O(\log^2n)$ bits
+It is possible to certify an MST by basically describing the key pieces 
+of the process above. This scheme uses certificates of $O(\log^2\!n)$ bits
 which is very good, although not optimal for every weight range. 
 
 We will describe these labels quickly, using the same example as above. 
@@ -120,7 +123,7 @@ drawing.
 ![](assets/MST-certificates-1.png){: .center-image width="80%"} 
 
 For this node, the important steps are: the merge with $J$, then the 
-merge with of the fragment $[I,J]$ with the fragment $[F,H]$, and then 
+merge of the fragment $[I,J]$ with the fragment $[F,H]$, and then 
 the merge of $[I,J,F,H]$ with $[A,B,C,D,E,G]$.
 
 ![](assets/MST-certificates-2.png){: .center-image width="80%"}
@@ -135,3 +138,10 @@ merging edge, the node is given the name its "parent" in a spanning tree
  the merge edge. These two last pieces of information are necessary to 
  certify the existence of a merge edge. 
 
+These certificates are enough to check that the given tree is an MST 
+(of course this needs a proof). 
+
+### Notes
+
+* The paper introducing this certification is: Amos Korman, Shay Kutten, David Peleg:
+Proof labeling schemes. Distributed Comput. 22(4): 215-233 (2010)

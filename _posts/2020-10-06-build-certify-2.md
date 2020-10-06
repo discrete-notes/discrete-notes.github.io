@@ -8,12 +8,12 @@ permalink: build-certify-2
 This is the second post of a series about self-stabilization. Many 
 self-stabilizing algorithms build and certify a solution at the same 
 time, and the main question of this series is whether this is always 
-possible if one insists on space and time efficiency. 
+possible if one insists on space and time efficiency.
 
-In this post, we will describe the classic way to build a minimum 
-spanning tree (MST) by merging fragments. Then, we will see the classic
-certification of MST based on this construction. In the next post we 
-will finally discuss the question above.  
+We will discuss this question on a particular problem: minimum spanning
+tree. To do so we first need to describe the classic structure of MST 
+algorithms, and the certification that follows. That's what this post 
+is about.  
 
 ![](assets/arbre-fragments.png){: .center-image width="60%"} 
 

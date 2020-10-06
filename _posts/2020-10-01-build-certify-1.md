@@ -43,6 +43,9 @@ color ; then a rule could be: if all neighbors' pointers are pointing
 toward me, and I have color red, then I make my own pointer point 
 towards myself, and change my color to blue.
 
+![](assets/local-rule.png){: .center-image width="90%"}
+
+
 Asynchrony is modeled by an adversarial scheduler who decides at every 
 round which nodes can update their states (with the only constraint 
 that at each round at least one node should so such an update).

@@ -15,7 +15,7 @@ spanning tree (MST) by merging fragments. Then, we will see the classic
 certification of MST based on this construction. In the next post we 
 will finally discuss the question above.  
 
-![](assets/arbre-fragments.png){: .center-image width="80%"} 
+![](assets/arbre-fragments.png){: .center-image width="60%"} 
 
 ## Building an MST with fragments
 

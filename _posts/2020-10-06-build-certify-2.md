@@ -12,7 +12,7 @@ possible if one insists on space and time efficiency.
 
 In this post, we will describe the classic way to build a minimum 
 spanning tree (MST) by merging fragments. Then, we will see the classic
-cettification of MST based on this construction. In the next post we 
+certification of MST based on this construction. In the next post we 
 will finally discuss the question above.  
 
 ![](assets/arbre-fragments.png){: .center-image width="80%"} 
@@ -40,7 +40,7 @@ computation there is only one fragment, with one spanning tree, and
 this spanning tree has minimum weight.
 
 Now let's get into the details with our example. (For simplicity, we do 
-not rewrite all the weigths on all the pictures.) First, every node 
+not rewrite all the weights on all the pictures.) First, every node 
 chooses the lightest among its adjacent edges. 
 
 ![](assets/MST-2.png){: .center-image width="90%"}
@@ -57,7 +57,7 @@ is a fragment.
 (In the picture above, the non-selected edges between nodes of a 
 fragments are more transparent, because they will not be useful anymore.)
 
-So now for the second phase, every fragment choses the *lightest 
+So now for the second phase, every fragment chooses the *lightest 
 out-going edge* that is the lightest among all edges that have exactly 
 one extremity in the fragment.  
 

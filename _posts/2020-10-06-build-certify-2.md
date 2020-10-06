@@ -17,7 +17,7 @@ is about.
 
 ![](assets/arbre-fragments.png){: .center-image width="60%"} 
 
-## Building an MST with fragments
+## Building an MST with fragments
 
 The classic way to build a minimum spanning tree (MST), is to use 
 so-called *fragments*. This technique originates from 
@@ -30,18 +30,23 @@ We will describe this approach on the following weighted graph.
 
 The general method is the following.
 We will select edges little by little.
-The idea is that at any point of the algorithms, there are *fragments*, 
+At any point of the algorithms, there are *fragments*, 
 which are sets of nodes, such that they are connected by a spanning 
 tree of selected edges. At the beginning, every node is its own fragment.
 When a new edge is selected, the two fragments of the two endpoints 
 merge, that is, the two sets of nodes merge into one set, and the two 
-spanning trees are connected into one spanning tree. At the end of the 
+spanning trees are connected into one spanning tree.
+It can be that more than two trees merge at the same time.
+ At the end of the 
 computation there is only one fragment, with one spanning tree, and 
 this spanning tree has minimum weight.
 
 Now let's get into the details with our example. (For simplicity, we do 
-not rewrite all the weights on all the pictures.) First, every node 
-chooses the lightest among its adjacent edges. 
+not rewrite all the weights on all the pictures.) 
+
+First, every node 
+chooses the lightest among its adjacent edges. In the picture, a yellow
+ arrow $u \rightarrow v$ means that $u$ chooses $(u,v)$.
 
 ![](assets/MST-2.png){: .center-image width="90%"}
 

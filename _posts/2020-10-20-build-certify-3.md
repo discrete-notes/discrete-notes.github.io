@@ -150,7 +150,7 @@ names should be different.
 Let us recall the two properties that we noted about the classic MST algorithms:
 
 * It could be that a fragment merges with just one other fragments, but it can 
-also be two or actually $Theta(n)$.
+also be two or actually $\Theta(n)$.
 
 * The place where the fragments merge is uncontrolled: a fragment 
 can be merging with one fragment in some places and with another 
@@ -185,7 +185,7 @@ on the right begin with 0 and the names on the left begin with 1, then it does
 not work. And indeed it is easy to check that one can certify the difference 
 between these names with a few bits. But now, remember that to get small names
 the optimal scheme had to use a naming related to the fragments sizes. And this 
-would not work with the O/1 idea: there is no reason why all the large fragments
+would not work with the 0/1 idea: there is no reason why all the large fragments
 should be on one side. 
 
 So here are so elements that make me think that simultaneous certification is 

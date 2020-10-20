@@ -49,7 +49,8 @@ make sense for other tasks than MST.
 We want to show that simultaneous certification may not be possible for
 MST if we want the optimal certificate size. The optimal size is 
 $\Theta(\log n \log W)$ where $W$ is the maximum weight as proved by 
-XXX. For small weights e.g. $W=\log n$ this is smaller than the scheme 
+Korman and Kutten. For small weights e.g. $W=\log n$ this is smaller 
+than the scheme 
 presented in the previous post, which uses $\Theta(\log^2 n)$ bits.
 
 The reason why the previous scheme uses $\Theta(\log^2 n)$ bits is 

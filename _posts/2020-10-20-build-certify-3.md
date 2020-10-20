@@ -18,7 +18,7 @@ but it is computed *after* the MST.
 
 In this post, we argue that this two-phase approach might be unavoidable.
 
-![](assets/build-certify.png){: .center-image width="80%"} 
+![](assets/build-certify-3.png){: .center-image width="80%"} 
 
 ## What does it mean to build and certify at the same time?
 
@@ -44,7 +44,7 @@ Simultaneous certification means that every time the algorithm looks
 "further" it has to certify what has been done already, and this might 
 make sense for other tasks than MST. 
 
-## About fragments names 
+## About fragments names
 
 We want to show that simultaneous certification may not be possible for
 MST if we want the optimal certificate size. The optimal size is 

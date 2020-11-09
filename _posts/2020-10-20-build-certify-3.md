@@ -106,7 +106,7 @@ And then again for in the last non-trivial subtree.
 At the end, the prover assigns to each node a name that is just the 
 concatenation of the successive subtree numbers it has received.
 
-![](assets/fragments-names-3.png){: .center-image width="80%"} 
+![](assets/fragments-names-4.png){: .center-image width="80%"} 
 
 
 ## Why are these node names useful, checkable and small?

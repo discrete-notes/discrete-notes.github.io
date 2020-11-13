@@ -10,7 +10,7 @@ in distributed computing, and I think it's an idea that can be useful in
 different areas of algorithmics. Here's a post about it, with an application to
 distributed 3-coloring of unoriented trees in $O(\log n)$ rounds. 
 
-![](assets/bonsai.png){: .center-image width="90%"}
+![](assets/bonsai.png){: .center-image width="95%"}
 
 ## Context
 
@@ -77,13 +77,12 @@ Consider the following labeling algorithm:
 The labeling we get has the property that a node has few neighbors with the 
 same or higher label. More precisely:
 
-* a node of label $i$ has at most 2 neighbors with labels larger or equal to $i$
-* a node of label $i$ has at most 1 neighbor with label strictly larger than $i$
+* a node of label $i$ has at most 2 neighbors with labels larger or equal to $i$,
+* a node of label $i$ has at most 1 neighbor with label strictly larger than $i$.
 
 This is easy to check. Consider a node $v$ and the step $i$ when it is labeled. 
 At that step, if $v$ is a leaf, and then it will have only one neighbor with
-larger label, its parent, and it has no adjacent node with label $i$, thus the 
-three properties are valid. 
+larger label, its parent. 
 If $v$ is in a path of degree 2 nodes, then it has at least one of its neighbors
 of degree 2, thus with label $i$, again the properties are satisfied. 
 
@@ -91,21 +90,22 @@ of degree 2, thus with label $i$, again the properties are satisfied.
 
 We claim that after $O(\log n)$ loops in the labeling algorithm, the forest is 
 empty. In other words, the labels are between 1 and some $\alpha \log n$, for 
-some constant $\alpha$ (\alpha=2 is enough). A formal proof of this can be read 
-in the distributed recoloring paper, but I prefer to present an intuition behind
-this result (it is a bit heuristic, maybe slightly wrong, but hopefully 
-meaningful). See the picture below for illustration.
+some constant $\alpha$ ($\alpha=2$ is actually enough). A formal proof of this 
+can be found in the distributed recoloring paper, but I prefer to present an 
+intuitive proof (it is a bit heuristic, maybe slightly wrong, but hopefully 
+meaningful). 
 
 The idea, in the formal proof and in the informal one, is that at every step 
-a constant fraction of the nodes is labeled. This is enough to show that there 
+at least a constant fraction of the remaining nodes is labeled. 
+This is enough to show that there 
 are at most $O(\log n)$ steps. Suppose this is not the case. 
 Then consider a tree of the forest at some step $i$ where strictly less than 
-1/6 of the nodes are labeled (this must exist). Let $k$ be the size of this tree.
+1/6 of the nodes are labeled. Let $k$ be the size of this tree.
 
 To prove that this is impossible, consider the following point of view. 
 We have a budget strictly smaller than 
 $(1/6)k$ of nodes that can be labeled (leaves or paths), and we have to build a 
-tree of size $k$. 
+tree of size $k$. See the picture below for illustration.
 
 The tree must we have $(1/6)k-r$ leaves, for some $r$. Then we want to get the 
 maximum number of non-leaf nodes, without using paths. Then we choose to have 

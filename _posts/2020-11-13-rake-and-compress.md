@@ -56,6 +56,7 @@ In the next sections, I'll describe a concrete application of rake-and-compress.
 ## Rake-and-compress to get a labeling  
 
 Consider the following labeling algorithm: 
+		
 		1. i = 1
 		2. "the forest" = the tree
 		3. while the forest is not empty:

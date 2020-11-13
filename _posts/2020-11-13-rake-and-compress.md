@@ -56,17 +56,17 @@ In the next sections, I'll describe a concrete application of rake-and-compress.
 ## Rake-and-compress to get a labeling  
 
 Consider the following labeling algorithm: 
-			i = 1
-			"the forest" = the tree
-			while the forest is not empty:
-				find the leaves
-				label them i
-				find the nodes of degree 2 that belong to paths 
+			1. i = 1
+			2. "the forest" = the tree
+			3. while the forest is not empty:
+				a. find the leaves
+				b. label them i
+				c. find the nodes of degree 2 that belong to paths 
 				(of nodes of degree 2) of length at least 3.
-				label them i
-				remove the nodes with label i from the forest
-				i++
-			output the labeling
+				d. label them i
+				e. remove the nodes with label i from the forest
+				f. i++
+			4. output the labeling
 		
 ![](assets/rake-and-compress-1.png){: .center-image width="80%"}
 ![](assets/rake-and-compress-2.png){: .center-image width="80%"}
@@ -108,15 +108,15 @@ $(1/6)k$ of nodes that can be labeled (leaves or paths), and we have to build a
 tree of size $k$. See the picture below for illustration.
 
 The tree must we have $(1/6)k-r$ leaves, for some $r$. Then we want to get the 
-maximum number of non-leaf nodes, without using paths. Then we choose to have 
+maximum number of non-leaf nodes, without using paths. We choose to have 
 the smallest degree possible, with the largest amount of nodes: a complete 
-binary tree. This gives us at most $(1/6)k-r$ nodes, thus we still have to sneak
-in $(2/3)k+2r$ nodes. 
-nodes. If we replace each edge of the binary tree by a path of three edges, 
+binary tree. This gives us at most $(1/6)k-r$ nodes, thus we still have to sneak 
+$(2/3)k+2r$ nodes in. 
+If we replace each edge of the binary tree by a path of three edges, 
 we do not create path of degree-2 nodes of length three or more, and we have 
-used $2*((1/6)k-r)=1/3-2r$ new nodes. We only have $4r$ nodes to add. But there 
-is no room for these nodes: any addition would result in a new labeled nodes, 
-and we have a remaining budget strictly smaller $r$ because of the leaves.
+used $2\times((1/6)k-r)=1/3-2r$ new nodes. We only have $4r$ nodes to add, $3r$
+of which must be unlabeled. But there is no room for these nodes: any addition 
+would result in a new labeled nodes.
 
 ![](assets/rake-log.png){: .center-image width="80%"}
 
@@ -127,18 +127,18 @@ In the following we will call $h$ the maximum label.
 We now use this labeling for distributed 3-coloring unrooted trees. As said in 
 the introduction for this problem we have a $O(\log^*n)$ algorithm for paths, 
 and trees of $O(\log n)$ diameter are also easy in $O(\log n)$ time: just look
-at the full tree and 3-color. Now for other types of trees its not that clear
+at the full tree and 3-color it. Now for other types of trees its not that clear
 what to do. (Note that we are talking about unrooted trees, rooted trees have 
 fast algorithms.)
 
 Consider the following algorithm:
 
-		Compute the labeling.
-		For each label, compute indepedentely of 3-coloring 
+		1. Compute the labeling.
+		2. For each label, compute indepedentely of 3-coloring 
 		of the nodes of the paths of this label.
-		The nodes that are not in a path are given color 1. 
+		3. The nodes that are not in a path are given color 1. 
 		(Now every node has a label $l$ and a color $c$.)
-		For label i from h to 1:
+		4. For label i from h to 1:
 			For color c from 1 to 3:
 				The nodes that have label i and color c 
 				color choose a color in [1,2,3] 

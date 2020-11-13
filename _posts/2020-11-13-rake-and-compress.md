@@ -12,7 +12,7 @@ distributed 3-coloring of unoriented trees in $O(\log n)$ rounds.
 
 ![](assets/bonsai.png){: .center-image width="90%"}
 
-## Context
+## Context
 
 Rake-and-compress is a method to deal with trees. 
 It is sometimes the case that you have good algorithms for special cases of 
@@ -56,26 +56,26 @@ In the next sections, I'll describe a concrete application of rake-and-compress.
 ## Rake-and-compress to get a labeling  
 
 Consider the following labeling algorithm: 
-
 			i = 1
 			"the forest" = the tree
 			while the forest is not empty:
-			find the leaves
-			label them i
-			find the nodes of degree 2 that belong to paths 
-			(of nodes of degree 2) of length at least 3.
-			label them i
-			remove the nodes with label i from the forest
-		output the labeling
+				find the leaves
+				label them i
+				find the nodes of degree 2 that belong to paths 
+				(of nodes of degree 2) of length at least 3.
+				label them i
+				remove the nodes with label i from the forest
+				i++
+			output the labeling
 		
-![](assets/rake-and-compress-1.png){: .center-image width="70%"}
-![](assets/rake-and-compress-2.png){: .center-image width="70%"}
-![](assets/rake-and-compress-3.png){: .center-image width="70%"}
-![](assets/rake-and-compress-4.png){: .center-image width="70%"}
-![](assets/rake-and-compress-5.png){: .center-image width="70%"}
+![](assets/rake-and-compress-1.png){: .center-image width="80%"}
+![](assets/rake-and-compress-2.png){: .center-image width="80%"}
+![](assets/rake-and-compress-3.png){: .center-image width="80%"}
+![](assets/rake-and-compress-4.png){: .center-image width="80%"}
+![](assets/rake-and-compress-5.png){: .center-image width="80%"}
 		
-The labeling we get is a *light h-labeling*. Basically it has the property that 
-a node has few neighbors with the same or higher label. More precisely:
+The labeling we get has the property that a node has few neighbors with the 
+same or higher label. More precisely:
 
 * a node of label $i$ has at most 2 neighbors with labels larger or equal to $i$
 * a node of label $i$ has at most 1 neighbor with label strictly larger than $i$

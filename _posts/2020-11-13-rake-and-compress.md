@@ -10,7 +10,7 @@ in distributed computing, and I think it's an idea that can be useful in
 different areas of algorithmics. Here's a post about it, with an application to
 distributed 3-coloring of unoriented trees in $O(\log n)$ rounds. 
 
-![](assets/bonsai.png){: .center-image width="70%"}
+![](assets/bonsai.png){: .center-image width="90%"}
 
 ## Context
 
@@ -57,12 +57,13 @@ In the next sections, I'll describe a concrete application of rake-and-compress.
 
 Consider the following labeling algorithm: 
 
-		i = 1
-		"the forest" = the tree
-		while the forest is not empty:
+			i = 1
+			"the forest" = the tree
+			while the forest is not empty:
 			find the leaves
 			label them i
-			find the nodes of degree 2 that belong to paths (of nodes of degree 2) of length at least 3.
+			find the nodes of degree 2 that belong to paths 
+			(of nodes of degree 2) of length at least 3.
 			label them i
 			remove the nodes with label i from the forest
 		output the labeling
@@ -86,7 +87,7 @@ three properties are valid.
 If $v$ is in a path of degree 2 nodes, then it has at least one of its neighbors
 of degree 2, thus with label $i$, again the properties are satisfied. 
 
-## Why $\log n$ steps is sufficient.
+## Why $O(\log n)$ steps are sufficient.
 
 We claim that after $O(\log n)$ loops in the labeling algorithm, the forest is 
 empty. In other words, the labels are between 1 and some $\alpha \log n$, for 
@@ -117,7 +118,7 @@ used $2*((1/6)k-r)=1/3-2r$ new nodes. We only have $4r$ nodes to add. But there
 is no room for these nodes: any addition would result in a new labeled nodes, 
 and we have a remaining budget strictly smaller $r$ because of the leaves.
 
-![](assets/rake-log.png){: .center-image width="70%"}
+![](assets/rake-log.png){: .center-image width="80%"}
 
 In the following we will call $h$ the maximum label. 
  
@@ -133,12 +134,16 @@ fast algorithms.)
 Consider the following algorithm:
 
 		Compute the labeling.
-		For each label, compute indepedentely of 3-coloring of the nodes of the paths of this label.
+		For each label, compute indepedentely of 3-coloring 
+		of the nodes of the paths of this label.
 		The nodes that are not in a path are given color 1. 
 		(Now every node has a label $l$ and a color $c$.)
 		For label i from h to 1:
 			For color c from 1 to 3:
-				The nodes that have label i and color c color choose a color in [1,2,3] among the colors not already chose by their neighbors. 
+				The nodes that have label i and color c 
+				color choose a color in [1,2,3] 
+				among the colors not already chosen 
+				by their neighbors. 
 				
 If the algorithm succeeds then it is clear it provides a 3-coloring in time 
 $O(\log n)$. What is left to prove is that it does not block at some point: there

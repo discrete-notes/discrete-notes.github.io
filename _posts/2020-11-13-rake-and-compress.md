@@ -137,11 +137,11 @@ Consider the following algorithm:
 		2. For each label, compute indepedentely of 3-coloring 
 		of the nodes of the paths of this label.
 		3. The nodes that are not in a path are given color 1. 
-		(Now every node has a label $l$ and a color $c$.)
+		(Now every node has a label i and a color c.)
 		4. For label i from h to 1:
 			For color c from 1 to 3:
 				The nodes that have label i and color c 
-				color choose a color in [1,2,3] 
+				choose a color in [1,2,3],
 				among the colors not already chosen 
 				by their neighbors. 
 				

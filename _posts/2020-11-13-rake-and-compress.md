@@ -56,17 +56,17 @@ In the next sections, I'll describe a concrete application of rake-and-compress.
 ## Rake-and-compress to get a labeling  
 
 Consider the following labeling algorithm: 
-			1. i = 1
-			2. "the forest" = the tree
-			3. while the forest is not empty:
-				a. find the leaves
-				b. label them i
-				c. find the nodes of degree 2 that belong to paths 
-				(of nodes of degree 2) of length at least 3.
-				d. label them i
-				e. remove the nodes with label i from the forest
-				f. i++
-			4. output the labeling
+		1. i = 1
+		2. "the forest" = the tree
+		3. while the forest is not empty:
+			a. find the leaves
+			b. label them i
+			c. find the nodes of degree 2 that belong to paths 
+			(of nodes of degree 2) of length at least 3.
+			d. label them i
+			e. remove the nodes with label i from the forest
+			f. i++
+		4. output the labeling
 		
 ![](assets/rake-and-compress-1.png){: .center-image width="80%"}
 ![](assets/rake-and-compress-2.png){: .center-image width="80%"}

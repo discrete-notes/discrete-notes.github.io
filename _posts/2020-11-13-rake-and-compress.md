@@ -2,7 +2,7 @@
 layout: post
 title: Rake-and-compress and 3-coloring trees
 redirect_from: "/2020/11/13/rake-and-compress/"
-permalink: name
+permalink: rake-and-compress
 ---
 
 I have encountered the *rake-and-compress method* a couple of times recently
@@ -17,18 +17,17 @@ distributed 3-coloring of unoriented trees in $O(\log n)$ rounds.
 Rake-and-compress is a method to deal with trees. 
 It is sometimes the case that you have good algorithms for special cases of 
 trees, but that it is not clear how to deal with general trees. 
-For example, for distributed 3-coloring, path are easy (we have algorithms in 
-time $O(\log^*n)$) and binary trees are also easy if we aim for $O(\log n)$ time,
-because they have $O(\log n)$ diameter. 
+For example, for distributed 3-coloring, paths are easy (we have algorithms in 
+time $O(\log^*n)$) and binary trees are also easy if we aim for $O(\log n)$ time. 
 Rake-and-compress is a way to decompose a general tree, that helps to combine 
-methods for trees and methods for paths. 
+methods for special trees and methods for paths. 
 
-Rake-and-compress originate from 
+Rake-and-compress originates from 
 [a paper of Reif and Miller](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.113.5254) 
 from 1989, where they used it for expression evaluation and subexpression 
 elimination in the PRAM model. 
 I know it from the paper 
-[distributed recoloring](https://arxiv.org/pdf/1802.06742.pdf) by Bonamy, 
+*[Distributed recoloring](https://arxiv.org/pdf/1802.06742.pdf)* by Bonamy, 
 Ouvrard, Rabie, Suomela and Uitto, where it is used in a distributed context. 
 The writing of this post is based on this later paper.
 
@@ -37,17 +36,18 @@ The writing of this post is based on this later paper.
 There are several variants of the rake-and-compress method, but basically it 
 consists in doing iteratively two operations: 
 
-* the *rake operation*: remove the leaves of the tree
+* *rake*: remove the leaves of the tree,
 
-* the *compress operation*: remove "long" paths in the tree (that is long paths 
+* *compress*: remove "long" paths in the tree (that is long paths 
 of nodes of degree 2).
 
 These two operations can be a bit different depending on the context. For 
 example, in the 
 [wikipedia article about tree contraction](https://en.wikipedia.org/wiki/Tree_contraction)
 the rake consists in keeping only one leaf per node having leaves as children, 
-and the compress consists in replacing every path by an edge. (The picture 
-above also show a rake-and-compress where the tree stays connected.)
+and the compress consists in replacing every path by an edge, hence keeping 
+connectivity. (The picture above also show a rake-and-compress where the tree 
+stays connected.)
 
 The idea is that after a logarithmic number of rake-and-compress the tree is 
 empty or reduced to a few nodes/edges. 

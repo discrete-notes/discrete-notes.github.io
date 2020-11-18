@@ -133,7 +133,7 @@ more on the optimization side, so we decide not to merge the results,
 and to continue on our respective paths (acknowledging the other group 
 in the future papers). 
 
-*To be continued...*
+[Next post of the series.](https://discrete-notes.github.io/patterns-story-2)
 
 ### Notes  
 

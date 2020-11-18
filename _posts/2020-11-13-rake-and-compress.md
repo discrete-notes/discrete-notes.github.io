@@ -146,18 +146,17 @@ Consider the following algorithm:
 				among the colors not already chosen 
 				by their neighbors. 
 				
-If the algorithm succeeds then it is clear it provides a 3-coloring in time 
+If the algorithm succeeds then it is clear that it provides a 3-coloring in time 
 $O(\log n)$. What is left to prove is that it does not block at some point: there
 is never a node that has to choose a color in [1,2,3] but all the colors are 
 already used by neighbors.
 
 This is easy to check using the properties of the labeling. Indeed, when a node 
-has to chose a color, only nodes of strictly larger label have chosen a color, 
-and each node has at most one neighbor in this case. Also, a node has at most 
-one neighbor with the same label, but such nodes either chose after, or have 
+has to choose a color, only nodes of strictly larger label have chosen a color, 
+and each node has at most one neighbor in this case. 
+Also, a node has at most two neighbor with the same label and then no node with
+higher labels. Such nodes either chose after, or have 
 already chosen a color (because of the 3-coloring of the paths we computed), thus
 there cannot be a conflict there either.
-
-
 
  

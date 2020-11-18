@@ -5,7 +5,9 @@ redirect_from: "/2020/10/06/build-certify-2/"
 permalink: build-certify-2
 ---   
 
-This is the second post of a series about self-stabilization. Many 
+This is the second post of a series about self-stabilization. 
+(The first post is [here](https://discrete-notes.github.io/build-certify-1)). 
+Many 
 self-stabilizing algorithms build and certify a solution at the same 
 time, and the main question of this series is whether this is always 
 possible if one insists on space and time efficiency.
@@ -147,6 +149,8 @@ where $W$ is the maximum weight.
 This corresponds to $O(\log n)$ phases, for which we store pieces of information 
 of size $O(\log n)$ (IDs of nodes and distance) and of size $O(\log W)$ 
 (edge weights).
+
+[Next post of the series](https://discrete-notes.github.io/build-certify-3).
 
 ### Notes
 

@@ -117,7 +117,8 @@ forced to use an uncommon approach: instead of book-keeping information
 during the computation for certification, we had to first build a solution
 and only then certify it. 
 
-We'll discuss this in detail in the next post.
+We'll discuss this in detail in the 
+[next post of the series](https://discrete-notes.github.io/build-certify-2).
 
 
 ### Notes

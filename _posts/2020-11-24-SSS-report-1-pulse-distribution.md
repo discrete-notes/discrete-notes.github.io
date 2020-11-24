@@ -3,6 +3,7 @@ layout: post
 title: SSS 2020 report 1&#58; Pulse distribution and a nice open problem
 redirect_from: "/2020/11/24/sss-2020-1-pulse-distribution/"
 permalink: sss-2020-1-pulse-distribution
+---
 
 I attended [SSS 2020](http://www.cse.msu.edu/~sandeep/SSS2020/index.html) last 
 week, and I'll try to write a few posts about things I 
@@ -13,7 +14,7 @@ The first post is about a problem of pulse sychronization and about the nice
 open problem about a "simple" discrete random process. 
 
 
-![](assets/austin.png){: .center-image width="100%"}
+![](assets/austin.png){: .center-image width="90%"}
 <p align="center"><small><i>
 Austin's skyline. (The conference was supposed to be in Austin.)
 </i></small></p>

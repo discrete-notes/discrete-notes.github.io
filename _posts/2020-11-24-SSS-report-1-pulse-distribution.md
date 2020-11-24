@@ -10,7 +10,7 @@ week, and I'll try to write a few posts about things I
 found interesting. (I'm trying to not delay too much the publication of these 
 posts so they won't be very deep nor polished. Comments are most welcome.)
 
-The first post is about a problem of pulse sychronization and about the nice 
+The first post is about a problem of pulse synchronization and about the nice 
 open problem about a "simple" discrete random process. 
 
 
@@ -26,30 +26,30 @@ about the paper
 The talk video is [here](https://mediaspace.msu.edu/media/SSS+2020A+Day+1A+Session+1A+Talk+4A+TRIXA+Low-Skew+Pulse+Propagation+for+Fault-Tolerant+Hardware.+Ben+Wiederhake+and+Christoph+Lenzen/1_mb5lmdso/189882373).
 
 The setting is the following. It is common in computers to have several "devices"
-that needs some common clock. A classic way to have that is to have one clock 
+needing some common clock. A classic way to have that is to have one clock 
 signal which is broadcast to the devices through a binary tree, like on the 
 picture below. 
 
-![](assets/pulse-tree.png){: .center-image width="70%"}
+![](assets/pulse-tree.png){: .center-image width="60%"}
 
 Now, if there is some abnormal delay on a link, or even a link failure, then the 
-clocks signals received by the devices can be badly synchronized. The paper 
+clocks signals received by the devices are desynchronized. The paper 
 introduces another type of synchronization network. (The specific reasons for 
-which this is realistic and meaninful can be found in the paper, I won't discuss 
+which this is realistic and meaningful can be found in the paper, I won't discuss 
 them). The authors consider a kind of generalized grid.
 Every node at position $(x,y)$ in the grid belongs to layer $x$, and is linked 
-to three nodes from the previous layer: $(x-1,y-1)$, $(x-1,y)$ and $(x-1,y+1)$, 
-its predecessors.
-Then it is also linked to three nodes from the next layer, its successors, which 
+to three nodes from the previous layer, its predecessors, $(x-1,y-1)$, $(x-1,y)$
+and $(x-1,y+1)$.
+It is also linked to three nodes from the next layer, its successors, which 
 are $(x+1,y-1)$, $(x+1,y)$ and $(x+1,y+1)$.
 
 ![](assets/pulse-grid.png){: .center-image width="70%"}
 
 The nodes of the first layer are synchronized, and send a pulse at the same time. 
-The key point is that every node sends a pulse to its children when it has 
+The key point is that every node sends a pulse to its successors when it has 
 received the pulse *from two of its predecessors*. 
 This ensures a kind of fault-tolerance: if a node has crashed, then the 
-sychronization can still happen perfectly, as its successors will still receive 
+synchronization can still happen perfectly, as its successors will still receive 
 two pulses. 
 
 ![](assets/pulse-fault.png){: .center-image width="70%"}
@@ -65,19 +65,19 @@ probability 1/2, the signal traverses the link in time 0, and with probability
 1/2 it traverses the link in time 1. And they focus on the following question: 
 given two nodes of the same layer, that are adjacent (e.g. some $(x,y)$ and
 $(x,y+1)$), what is the difference between the times at which they receive the 
-signal? (This difference is called the skew)
+signal? (This difference is called *the skew*.)
 
 The authors show by numerical experiment that the maximum skew at some layer $H$
-is lower than $\log \log H$, and other statistics showing that the systems works
-very well. 
+is lower than $\log \log H$. They also have other statistics showing that the 
+skew is very concentrated etc. 
 
 The obvious question from a TCS point of view is: can we show good bounds on the 
 process? This seems very hard. Already in 2018, the authors 
-mentionned the problem at the 
+mentioned the problem at the 
 [Helsinki February workshop](https://research.cs.aalto.fi/da/feb2018/), and 
-could not get a good bounds. One of the reason why this is difficult is that 
+could not get good bounds. One of the reason why this is difficult is that 
 at each node some input is lost: if the three pulses arrive at time $t$, $t'$ 
-and $t''$, then the nodes "fire" at time $t'$, and does not care about $t''$. 
+and $t''$, then the node "fires" at time $t'$, and does not care about $t''$. 
 In some sense $t''$ is lost. 
 
  

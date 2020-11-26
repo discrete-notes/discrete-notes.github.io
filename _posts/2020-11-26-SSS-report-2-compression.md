@@ -22,7 +22,7 @@ The video is [here](https://mediaspace.msu.edu/media/SSS+2020A+Day+1A+Keynote+1A
 
 
 Programmable matter is basically the idea that if you have many many very simple
-robots then you can do interesting things, for example you can make them
+robots, then you can do interesting things, for example you can make them
 assemble into complicated useful shapes, or make them modify their environment 
 in a way that a more classic robot would not be able to achieve.
 The talk featured (or "features" as the video is on the Internet) 

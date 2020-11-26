@@ -77,11 +77,17 @@ configuration where the diameter is at most $\alpha$ the minimum diameter.
 ## Algorithm idea
 
 The first intuition to have is that having a small perimeter is 
-the same as having a large number of edges on the induced graph. (Andrea says 
+the same as having a large number of edges in the induced graph. (Andrea says 
 it's easy to prove.) Then one can naturally try to make the robots move in a 
 greedy manner to a position that maximizes the number of edges locally.
 
 ![](assets/compression-5.png){: .center-image width="70%"}
+<p align="center"><small><i>
+On this picture, the robot with the dot has several adjacent positions with 
+diverse "quality": the blue position has the same number of edges as the current
+position (1 edge), the orange position is even worse (0 edge), and the 
+green one is better (2 edges).
+</i></small></p>
 
 Now, the authors use a kind of randomized version of this that can sometimes 
 move to a position with a lower degree. One reason for this is to avoid local 
@@ -102,7 +108,7 @@ There are some additional topics around connectivity and creating holes, and
 around replacing the uniform scheduling of the robots by something more local, 
 but again, let's not go into that. 
 
-## Result
+## Results
 
 It is possible to prove that the random process described by the algorithm is a 
 Markov chain that

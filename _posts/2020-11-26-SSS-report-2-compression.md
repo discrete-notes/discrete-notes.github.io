@@ -5,7 +5,7 @@ redirect_from: "/2020/11/26/sss-2020-2-compression/"
 permalink: sss-2020-2-compression
 ---
 
-I continue de series about 
+I continue the series about 
 [SSS 2020](http://www.cse.msu.edu/~sandeep/SSS2020/index.html) that started 
 [here](https://discrete-notes.github.io/sss-2020-1-pulse-distribution).
 (Again: I'm trying to not delay too much the publication of these 
@@ -22,7 +22,7 @@ The video is [here](https://mediaspace.msu.edu/media/SSS+2020A+Day+1A+Keynote+1A
 
 
 Programmable matter is basically the idea that if you have many many very simple
-robots than you can do interesting things, for example you can make them
+robots then you can do interesting things, for example you can make them
 assemble into complicated useful shapes, or make them modify their environment 
 in a way that a more classic robot would not be able to achieve.
 The talk featured (or "features" as the video is on the Internet) 
@@ -37,8 +37,8 @@ between theory and practice.
 ## The model and the problem
 
 The model is the following: you have a large number of robots on a triangular
-grid. (Theoretical models for programmanble matter often use such girds but
-in reality there're not always such an underlying structure.) Every node can 
+grid. (Theoretical models for programmable matter often use such girds but
+in reality there's not always such an underlying structure.) Every node can 
 basically see the six positions around itself, and check whether they are 
 occupied by robots or not. And every robot can move to these neighboring 
 positions if it does not contain already a robot.
@@ -47,7 +47,7 @@ positions if it does not contain already a robot.
 
 Then there is a million of model variations that you can consider, playing with 
 what the robots can see, what they can compute, what they know about the 
-environment, and when they can move (sychronous/asynchronous etc.). But let's 
+environment, and when they can move (synchronous/asynchronous etc.). But let's 
 not go into details here.
 
 Now the problem considered is called *compression*. 
@@ -81,7 +81,7 @@ Now, the authors use a kind of randomized version of this that can sometimes
 move to a position with a lower degree. One reason for this is to avoid local 
 minima. (You can see that on the picture above, no node except the one I chose could
 actually move if one insists on movements that strictly improve the situation.) 
-They consider a model where at each time step a particule is chosen uniformly at 
+They consider a model where at each time step a particle is chosen uniformly at 
 random, then this particle selects an adjacent position (occupied or not) 
 uniformly at random, and if the position is unoccupied, it considers whether to 
 move to this position or to stay to its position. 
@@ -104,16 +104,16 @@ converges to a stationary distribution, and that the probability of a
 distribution is proportional to $\lambda^E$, where $E$ is the number of edges 
 in the induced graph.
 As a consequence, one can then get with very high probability an
-$\alpha$-compressed configuration (with some realtion between the probability 
+$\alpha$-compressed configuration (with some relation between the probability 
 and the $\alpha$).
 
 Getting to a stationary distribution is not proven to be fast (the best upper
 bounds are polynomial), but simulations show that one gets a compressed 
 configuration in polynomial time. One thing to note here is that one can 
 actually get to an $\alpha$-compressed configuration much before stabilization, 
-so this discrepancy is not that surprizing. 
+so this discrepancy is not that surprising. 
 
-A surprizing phenomenon in the algorithm above is the following: if you chose 
+A surprising phenomenon in the algorithm above is the following: if you chose 
 $\lambda$ high enough (say larger than 4), then you get the behavior described 
 above, but if you chose it smaller (say between 1 and 2), then you can prove 
 that the configuration does not compress but expands! 

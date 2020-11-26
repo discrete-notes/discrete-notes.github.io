@@ -36,9 +36,9 @@ between theory and practice.
 
 ## The model and the problem
 
-The model is the following: you have a large number of identical 
+The model is the following. You have a large number of identical 
 robots on a triangular
-grid. (Theoretical models for programmable matter often use such girds but
+grid (theoretical models for programmable matter often use such girds but
 in reality there's not always such an underlying structure.) Every node can 
 basically see the six positions around itself, and check whether they are 
 occupied by robots or not. And every robot can move to these neighboring 
@@ -70,9 +70,9 @@ possible. In other words you want to minimize the diameter of the induced graph.
 
 ![](assets/compression-4.png){: .center-image width="70%"}
 
-As finding a minimum diameter is a hard task, one considers a realxation, which 
+As finding a minimum diameter is a hard task, one considers a relaxation, which 
 consists in looking for an *$\alpha$-compressed solution*, which is simply a 
-configuration where the diameter is at most $\alpha$ the minimum diameter.
+configuration where the diameter is at most $\alpha$ times the minimum diameter.
 
 ## Algorithm idea
 
@@ -96,15 +96,15 @@ actually move if one insists on movements that strictly improve the situation.)
 They consider a model where at each time step a particle is chosen uniformly at 
 random, then this particle selects an adjacent position (occupied or not) 
 uniformly at random, and if the position is unoccupied, it considers whether to 
-move to this position or to stay to its position. 
-The robot moves from position $p_1$ to the adjacent position $p_2$, with 
+move to this position or to stay at its current position. 
+The robot moves from position $p_1$ to the adjacent (unoccupied)position $p_2$, with 
 probability $$\min(1,\lambda^{\Delta_2-\Delta_1})$$, 
 where $\lambda>1$ is a real number to be fixed latter, and $\Delta_i$ is the 
 degree of the robot in position $i$. Thus, if the other position considered 
 strictly improves the degree, the robots always moves and otherwise it might 
 move, but it might also stay at the same position. 
 
-There are some additional topics around connectivity and creating holes, and 
+There are some additional topics around connectivity and holes, and 
 around replacing the uniform scheduling of the robots by something more local, 
 but again, let's not go into that. 
 
@@ -120,7 +120,7 @@ $\alpha$-compressed configuration (with some relation between the probability
 and the $\alpha$).
 
 Getting to a stationary distribution is not proven to be fast (the best upper
-bounds are polynomial), but simulations show that one gets a compressed 
+bounds are exponential), but simulations show that one gets a compressed 
 configuration in polynomial time. One thing to note here is that one can 
 actually get to an $\alpha$-compressed configuration much before stabilization, 
 so this discrepancy is not that surprising. 
@@ -128,9 +128,9 @@ so this discrepancy is not that surprising.
 A surprising phenomenon in the algorithm above is the following: if you chose 
 $\lambda$ high enough (say larger than 4), then you get the behavior described 
 above, but if you chose it smaller (say between 1 and 2), then you can prove 
-that the configuration does not compress but expands! 
-In other words, with such small $\lambda$ (but still larger than 1), at the end 
-you have configuration whose diameter is at least a fraction of the maximum 
+that the configuration does not compress but expand! 
+More precisely with such small $\lambda$ (but still larger than 1), at the end 
+you have configuration whose diameter is at least a fraction of the *maximum* 
 diameter.
 
 

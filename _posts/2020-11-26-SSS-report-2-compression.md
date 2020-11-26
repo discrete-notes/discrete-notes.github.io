@@ -32,9 +32,9 @@ way the designed theoretical solution can be adapted to fit the "real world
 conditions". For this post I'll focus on the second part (which is based on 
 [this paper](https://arxiv.org/pdf/1603.07991.pdf)), but the two other ones
 are very interesting too, and I really enjoyed the discussion of back-and-forths
-between theory and practice. 
+between theory and practice.
 
-## The model and the problem
+## The model and the problem
 
 The model is the following: you have a large number of robots on a triangular
 grid. (Theoretical models for programmable matter often use such girds but

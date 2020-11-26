@@ -36,21 +36,26 @@ between theory and practice.
 
 ## The model and the problem
 
-The model is the following: you have a large number of robots on a triangular
+The model is the following: you have a large number of identical 
+robots on a triangular
 grid. (Theoretical models for programmable matter often use such girds but
 in reality there's not always such an underlying structure.) Every node can 
 basically see the six positions around itself, and check whether they are 
 occupied by robots or not. And every robot can move to these neighboring 
-positions if it does not contain already a robot.
+positions if it does not already contain  a robot.
 
 ![](assets/compression-1.png){: .center-image width="70%"}
+<p align="center"><small><i>
+A set of blue robots. The one highlighted by a yellow dot can see and move to 
+the positions in the yellow region. 
+</i></small></p>
 
-Then there is a million of model variations that you can consider, playing with 
+Now there is a million of model variations that you can consider, playing with 
 what the robots can see, what they can compute, what they know about the 
 environment, and when they can move (synchronous/asynchronous etc.). But let's 
 not go into details here.
 
-Now the problem considered is called *compression*. 
+The problem we'll consider for these robots is called *compression*. 
 Before describing it let's define a graph: there is one node for each robot, 
 and an edge between any two adjacent robots.
 
@@ -62,6 +67,7 @@ still scattered in the grid, and you want to gather them together as tighly as
 possible. In other words you want to minimize the diameter of the induced graph.
 
 ![](assets/compression-3.png){: .center-image width="70%"}
+
 ![](assets/compression-4.png){: .center-image width="70%"}
 
 As finding a minimum diameter is a hard task, one considers a realxation, which 

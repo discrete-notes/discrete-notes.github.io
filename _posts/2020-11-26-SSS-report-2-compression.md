@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SSS 2020 report 2&#58; Compression of a programmable matter
+title: SSS 2020 report 2&#58; Compression of programmable matter
 redirect_from: "/2020/11/26/sss-2020-2-compression/"
 permalink: sss-2020-2-compression
 ---
@@ -64,15 +64,19 @@ and an edge between any two adjacent robots.
 For the compression problem, you start from a situation where the set of robots 
 is connected (in the sense that the graph is connected) but 
 still scattered in the grid, and you want to gather them together as tighly as 
-possible. In other words you want to minimize the diameter of the induced graph.
+possible. 
+One measure of the compression would be the diameter of the configuration, but 
+we use the perimeter instead, which is technically more handy. 
+Note that the perimeter is also a natural measure of compression: the disc is 
+the shape that has the best compression, and it has the smallest perimeter.
 
-![](assets/compression-3.png){: .center-image width="70%"}
+![](assets/compression-3-bis.png){: .center-image width="70%"}
 
-![](assets/compression-4.png){: .center-image width="70%"}
+![](assets/compression-4-bis.png){: .center-image width="70%"}
 
-As finding a minimum diameter is a hard task, one considers a relaxation, which 
+As finding a minimum perimeter is a hard task, one considers a relaxation, which 
 consists in looking for an *$\alpha$-compressed solution*, which is simply a 
-configuration where the diameter is at most $\alpha$ times the minimum diameter.
+configuration where the perimeter is at most $\alpha$ times the minimum perimeter.
 
 ## Algorithm idea
 
@@ -130,8 +134,8 @@ $\lambda$ high enough (say larger than 4), then you get the behavior described
 above, but if you chose it smaller (say between 1 and 2), then you can prove 
 that the configuration does not compress but expand! 
 More precisely with such small $\lambda$ (but still larger than 1), at the end 
-you have configuration whose diameter is at least a fraction of the *maximum* 
-diameter.
+you have configuration whose perimeter is at least a fraction of the *maximum* 
+perimeter.
 
 
  

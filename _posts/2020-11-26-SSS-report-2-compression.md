@@ -11,7 +11,7 @@ I continue the series about
 (Again: I'm trying to not delay too much the publication of these 
 posts so they won't be very deep nor polished. Comments are most welcome.)
 
-![](assets/austin-2.png){: .center-image width="90%"}
+![](./assets/austin-2.png){: .center-image width="90%"}
 <p align="center"><small><i>
 Austin's skyline. (The conference was supposed to be in Austin.)
 </i></small></p>

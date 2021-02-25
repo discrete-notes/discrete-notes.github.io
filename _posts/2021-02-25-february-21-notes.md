@@ -77,13 +77,13 @@ answer such surveys appear in the result.
 
 This is an issue only if there is a correlation between the willingness to 
 answer the survey and the topic of the survey. But such correlation can appear
-pretty easily. For example a simple survey about the weight, a person who is 
+pretty easily. For example in a survey about the people weights, a person who is 
 happy with his/her weight might be more willing to answer. 
 This is the starting point of a 
 [not so recent post](https://theorydish.blog/2020/05/19/incentive-compatible-sensitive-surveys/)
-on the blog *Theory Dish$.
+on the blog *Theory Dish*.
 
-The blog details several approach to design a mechanism that would allow to 
+The blog details several approaches to design a mechanism that would allow to 
 get an unbiased sample. These mechanisms are based on paying the individuals for
 their data. Different people would give different prices to their data, and one 
 would like to pay the right price for each person. To do so the mechanisms 
@@ -96,8 +96,8 @@ mechanism, minimizing the variance etc.
 
 ## About distinguishing some papers in a conference
 
-There is a trend in conferences to distinguish some papers form the others. 
-In the conferences I gi to, this takes of form of best papers awards and of 
+There is a trend in conferences to distinguish some papers from the others. 
+In the conferences I go to, this takes of form of best papers awards and of 
 invitation to journals special issues. I saw in the 
 [call for paper of LICS 2021](http://easyconferences.eu/lics2021/cfp/) that 
 another distinction was introduced: 
@@ -125,25 +125,25 @@ Jukka Suomela has a [very useful post](https://jukkasuomela.fi/online-teaching-2
 about his experience in online teaching. 
 
 The course taught is in a format that is not very common in France: 6 weeks, 
-with an expected workload of 20+ hours/week from the students. 
+with an expected student workload of 20+ hours/week. 
 This allowed Jukka and his team to have a very active slack channel, which 
-probably made students feel more involved, and more connected. 
+probably made students feel more involved, and more connected to each other. 
 (The student feedback on the course was excellent.)
 
-The students had access to brief recorded lectures, that are of very high 
+The students had access to brief recorded lectures of very high 
 quality (you can find them online). The text of these lectures was written in 
-advance, the sound and image quality is well above the average. 
-This is maybe the way to tackle the problem of the usual online lectures which is
-that one is not as focused as in a classroom.
+advance, and the sound and image quality is well above the average. 
+The short format and the quality help to stay focused, which is usually hard in 
+remote teaching.
 
-Jukka also used a written script for his SWAT 2020 keynote talk, you can find 
+Jukka also used a script for his SWAT 2020 keynote talk, you can find 
 the video of the talk 
 [here](https://www.youtube.com/watch?v=Z3-GhX4a4cU&feature=youtu.be)
 and the script [here](https://jukkasuomela.fi/landscape-of-locality/). 
 Without going all the way to exactly reading a script, I guess that writing
 a text that goes with a set of slides makes things clearer in the speaker's mind.
 Actually for their first lectures, the lecturers at 
-[College de France](https://en.wikipedia.org/wiki/Coll%C3%A8ge_de_France) 
+[Collège de France](https://en.wikipedia.org/wiki/Coll%C3%A8ge_de_France) 
 (a prestigious French research institution) are advised to do exactly that: write
 the text of the lecture in advance. 
 

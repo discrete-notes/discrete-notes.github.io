@@ -9,7 +9,7 @@ Some February notes.
 As usual I have a growing backlog of topics I want to write about, so this is 
 not very new stuff. 
 
-![](assets/chambran.jpg){: .center-image width="70%"}
+![](../assets/chambran.jpg){: .center-image width="70%"}
  
 
 ## Karp-Sipser algorithm and simple algorithms
@@ -38,7 +38,7 @@ good performance. The basic version is the following:
 
 ![](assets/karp-sipser-1.png){: .center-image width="80%"} |  ![](assets/karp-sipser-3.png){: .center-image width="80%"} | ![](assets/karp-sipser-4.png){: .center-image width="80%"}
 
-![](assets/karp-sipser-5.png){: .center-image width="80%"} | ![](assets/karp-sipser-6.png){: .center-image width="80%"}
+![](assets/karp-sipser-5.png){: .center-image width="70%"} | ![](assets/karp-sipser-6.png){: .center-image width="70%"}
 
 <p align="center"><small><i>
 A run of Karp-Sipser algorithm. The blue edges are taken using the first rule. 

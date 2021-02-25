@@ -5,9 +5,9 @@ redirect_from: "/2021/02/25/february-21-notes/"
 permalink: february-21-notes
 ---
 
-Some February notes
-As usual I have a growing backlog of topics I want to write about, so these are 
-not espicially new stuff. 
+Some February notes.
+As usual I have a growing backlog of topics I want to write about, so this is 
+not very new stuff. 
 
 ![](assets/chambran.jpg){: .center-image width="70%"}
  
@@ -30,15 +30,15 @@ Guillermo Dinamarca. It is a very simple matching algorithm with surprizingly
 good performance. The basic version is the following:
 
 		Iterate: 
-		1. If there are pendent edges, take one at random, add it to the matching,
-		and remove the nodes from the graph.
-		2. Otherwise take an edge at random, add it to the matching and remove 
-		the nodes from the graph.
+		1. If there are pendent edges, take one at random, 
+		add it to the matching, remove the nodes from the graph.
+		2. Otherwise take an edge at random, 
+		add it to the matching, remove the nodes from the graph.
 		
 
-![](assets/karp-sipser-1.png){: .center-image width="70%"} | ![](assets/karp-sipser-2.png){: .center-image width="70%"} | ![](assets/karp-sipser-3.png){: .center-image width="70%"}
+![](assets/karp-sipser-1.png){: .center-image width="80%"} | ![](assets/karp-sipser-2.png){: .center-image width="80%"} | ![](assets/karp-sipser-3.png){: .center-image width="80%"}
 
-![](assets/karp-sipser-4.png){: .center-image width="70%"} | ![](assets/karp-sipser-5.png){: .center-image width="70%"} | ![](assets/karp-sipser-6.png){: .center-image width="70%"}
+![](assets/karp-sipser-4.png){: .center-image width="80%"} | ![](assets/karp-sipser-5.png){: .center-image width="80%"} | ![](assets/karp-sipser-6.png){: .center-image width="80%"}
 		
 There exists a slightly more complicated version (as detailed in 
 [this blog post](https://cscresearchblog.wordpress.com/2018/11/16/karp-sipser-heuristic-and-reductions/#arfp)), 
@@ -67,7 +67,7 @@ I am sometimes a bit suspicious about some results in say medecine or sociology,
 that are based on surveys. There is an obvious bias: only people willing to 
 answer such surveys appear in the result. 
 
-![](assets/survey.png){: .center-image width="70%"}
+![](assets/survey.png){: .center-image width="60%"}
 
 This is an issue only if there is a correlation between the willingness to 
 answer the survey and the topic of the survey. But such correlation can appear

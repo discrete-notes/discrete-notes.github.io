@@ -14,7 +14,7 @@ The first post is about a problem of pulse synchronization and about the nice
 open problem about a "simple" discrete random process. 
 
 
-![](/assets/austin.png){: .center-image width="90%"}
+![](../assets/austin.png){: .center-image width="90%"}
 <p align="center"><small><i>
 Austin's skyline. (The conference was supposed to be in Austin.)
 </i></small></p>
@@ -30,7 +30,7 @@ needing some common clock. A classic way to have that is to have one clock
 signal which is broadcast to the devices through a binary tree, like on the 
 picture below. 
 
-![](assets/pulse-tree.png){: .center-image width="60%"}
+![](../assets/pulse-tree.png){: .center-image width="60%"}
 
 Now, if there is some abnormal delay on a link, or even a link failure, then the 
 clocks signals received by the devices are desynchronized. The paper 
@@ -43,7 +43,7 @@ and $(x-1,y+1)$.
 It is also linked to three nodes from the next layer, its successors, which 
 are $(x+1,y-1)$, $(x+1,y)$ and $(x+1,y+1)$.
 
-![](assets/pulse-grid.png){: .center-image width="70%"}
+![](../assets/pulse-grid.png){: .center-image width="70%"}
 
 The nodes of the first layer are synchronized, and send a pulse at the same time. 
 The key point is that every node sends a pulse to its successors when it has 
@@ -52,7 +52,7 @@ This ensures a kind of fault-tolerance: if a node has crashed, then the
 synchronization can still happen perfectly, as its successors will still receive 
 two pulses. 
 
-![](assets/pulse-fault.png){: .center-image width="70%"}
+![](../assets/pulse-fault.png){: .center-image width="70%"}
 
 But what the authors focus on is the skew between pulses of different nodes. 
 Because the wires are not perfect, it can take some time $\tau_1$ for the signal

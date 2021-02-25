@@ -13,7 +13,7 @@ After discovering that our class of diagonal rectangle graphs had been
 studied by other people in our own university, we discovered that we 
 were not only two groups chasing this class.
 
-![](assets/plage-3.jpg){: .center-image width="85%"}
+![](../assets/plage-3.jpg){: .center-image width="85%"}
 
 ---
 
@@ -33,7 +33,7 @@ of segments. These are quite popular graphs ; in particular
 (now a theorem) states that every planar graph can be represented as the
 intersection of segments.
  
-![](assets/scheinerman-1.png){: .center-image height="70%"}|![](assets/scheinerman-2.png){: .center-image height="80%"}
+![](../assets/scheinerman-1.png){: .center-image height="70%"}|![](assets/scheinerman-2.png){: .center-image height="80%"}
 
  
 When studying such graphs a popular way to look at special cases is to 
@@ -43,7 +43,7 @@ have angle $0$, $\pi/3$ or $2\pi/3$ with the horizontal.
 But Hixon and Felsner went into another direction, which is to allow 
 only segments lying on the set of lines tangent to a parabola. 
 
-![](assets/segment-parabola.png){: .center-image height="70%"}
+![](../assets/segment-parabola.png){: .center-image height="70%"}
 
 It happens that this defines intersection graphs that have the same 
 characterization as our class, thus is actually the same class.

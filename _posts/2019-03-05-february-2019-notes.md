@@ -9,7 +9,7 @@ Notes for February 2019.
 
 ---
 
-![](assets/lierre.png){: .center-image width="60%"}
+![](../assets/lierre.png){: .center-image width="60%"}
 
 ---
 

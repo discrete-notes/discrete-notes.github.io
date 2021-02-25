@@ -17,7 +17,7 @@ I was to give a teaser of it at HALG in a few days, but as I
 cannot be (virtually) present, here is a blog version (and Ioan 
 kindly agreed to give the real talk).
 
-![](assets/halgae.jpg){: .center-image width="80%"}
+![](../assets/halgae.jpg){: .center-image width="80%"}
 <p align="center"><small><i>
 Some Patagonian (h)algae.
 </i></small></p>
@@ -29,7 +29,7 @@ The nodes of a graph want to know whether the graph they live in is
 planar. But every node has a very limited knowledge of the graph.
 Basically, every node can only see its neighborhood.
 
-![](assets/planar-teaser-local.png){: .center-image width="70%"}
+![](../assets/planar-teaser-local.png){: .center-image width="70%"}
 <p align="center"><small><i>
 The node towards which the arrow is pointing can see only the yellow 
 part of the graph.
@@ -53,7 +53,7 @@ The help comes as a labeling: every node is assigned a label.
 Theses labels can be seen by the nodes: a node can see its own label 
 and the labels of its neighbors.
 
-![](assets/planar-teaser-labels.png){: .center-image width="70%"}
+![](../assets/planar-teaser-labels.png){: .center-image width="70%"}
 
 Now we want the nodes to have procedure such that the following 
 condition is verified:
@@ -96,13 +96,13 @@ What we do (in a nutshell):
 * We first locally encode a transformation of the graph, where we 
 basically blow up a spanning tree, to have an hamiltonian cycle. 
 
-![](assets/planar-teaser-tree-1.png){: .center-image width="70%"}|![](assets/planar-teaser-tree-2.png){: .center-image width="70%"}
+![](../assets/planar-teaser-tree-1.png){: .center-image width="70%"}|![](assets/planar-teaser-tree-2.png){: .center-image width="70%"}
 
 * Then we use this Hamiltonian cycle to order the nodes along a line 
 (similarly to outerplanar graphs), and then giving to every node its 
 rank on the line is basically enough for the node to check the planarity
 of this transformed graph. 
 
-![](assets/planar-teaser-outerplanar.png){: .center-image width="70%"}
+![](../assets/planar-teaser-outerplanar.png){: .center-image width="70%"}
 
  

@@ -11,7 +11,7 @@ before the quarantine and everything.
 
 --- 
 
-![](assets/grafitti-donut.jpg){: .center-image width="95%"}
+![](../assets/grafitti-donut.jpg){: .center-image width="95%"}
 
 ---
 
@@ -77,7 +77,7 @@ A polygonization of a set of points is a simple polygon that visits all the
 points. In the following picture, the points are black and a polygonization is 
 drawn in blue. 
 
-![](assets/polygonization.png){: .center-image width="60%"}
+![](../assets/polygonization.png){: .center-image width="60%"}
 
 
 The algorithmic problem is: given the point set, count the number of 
@@ -95,7 +95,7 @@ When you pour some honey on a pancake, you can see that the honey behaves a bit
 like a rope and can get some rotational movement when touching the pancake. 
 Something like this: 
 
-![](assets/miel.png){: .center-image width="40%"}
+![](../assets/miel.png){: .center-image width="40%"}
 
 [See also [this video](https://www.youtube.com/watch?v=lZbOV8BIOt8) by Jearl 
 Walker.] 
@@ -116,7 +116,7 @@ a square grid). The yellow cell is where the honey is currently arriving, and
 the orange circle is the projection of the origin of the honey (e.g. the spoon) 
 on the pancake.
 
-![](assets/miel1.png){: .center-image width="40%"}
+![](../assets/miel1.png){: .center-image width="40%"}
 
 Now there are two forces. One is the "speed" of the yellow patch, that simulates
 the fact that the honey tends to go where there is less honey, and the very last 
@@ -126,12 +126,12 @@ fact that the honey is still "tied" to the spoon. It is represented by an
 orange arrow. Now the average of the two forces is the red arrow, that is 
 pointing to the next cell.
 
-![](assets/miel2.png){: .center-image width="40%"}
+![](../assets/miel2.png){: .center-image width="40%"}
 
 The proccess is repeated, and the yellow patch is circulating around the 
 cell with a orange circle. 
 
-![](assets/miel3.png){: .center-image width="40%"}
+![](../assets/miel3.png){: .center-image width="40%"}
 
 Well it's not a very fancy model, in particular it doesn't make a difference 
 between honey on a pancake, and a planet around the sun, but maybe it can be 

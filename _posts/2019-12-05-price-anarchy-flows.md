@@ -80,7 +80,7 @@ that the upper bound above always hold.
 The so-called *monotonicity conjecture* states that: if one reduces the 
 flow that enters in the network by unit of time (but keeping the total 
 amount to push in the network),  then the makespan of the selfish solution 
-increases.   
+increases. 
 
 This seems very natural, but it is still open, and sometimes unexpected
 things happen in the such games (like in 

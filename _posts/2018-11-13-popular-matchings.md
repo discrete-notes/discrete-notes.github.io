@@ -26,7 +26,7 @@ matching matches the top node on the left, with the bottom node on the right,
 and prevent the two other nodes from being matched, although all could be 
 matched. 
 
-![](assets/popular.png){: .center-image height="300px"}
+![](../assets/popular.png){: .center-image height="300px"}
 
 This example shows that the size of a stable matching can be half of the size of 
 a maximum matching. 

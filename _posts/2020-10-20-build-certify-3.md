@@ -18,7 +18,7 @@ but it is computed *after* the MST.
 
 In this post, we argue that this two-phase approach might be unavoidable.
 
-![](assets/build-certify-3.png){: .center-image width="80%"} 
+![](../assets/build-certify-3.png){: .center-image width="80%"} 
 
 ## What does it mean to build and certify at the same time?
 
@@ -67,7 +67,7 @@ then the merge is forbidden).
 Taking an ID from each fragment as its "name" is an easy way to do that, as IDs 
 are distinct by definition. 
 
-![](assets/good-bad-merges.png){: .center-image width="80%"} 
+![](../assets/good-bad-merges.png){: .center-image width="80%"} 
 
 ## Node names in the optimal scheme
 
@@ -82,7 +82,7 @@ A center should be such that if
 we root the tree at the center, then the subtrees have size at most half of the 
 full tree. Here is our example from the previous post.
 
-![](assets/fragments-names-0.png){: .center-image width="80%"} 
+![](../assets/fragments-names-0.png){: .center-image width="80%"} 
 
 On this graph, the prover chooses D as a center. 
 Here the subtrees have sizes 3, 1, 1 and 4, and the full tree has size 10, thus
@@ -91,22 +91,22 @@ the condition is satisfied.
 Now the second step is that the prover labels the $k$ subtrees from 1 to $k$, in
 in decreasing order of size.
 
-![](assets/fragments-names-1.png){: .center-image width="80%"} 
+![](../assets/fragments-names-1.png){: .center-image width="80%"} 
 
 Then the same operation is repeated in the subtrees. For the subtrees of size 1, 
 the center is obviously the only node of the subtree. For the two other subtrees, 
 the prover chooses again a center, and labels the subtrees.
 
-![](assets/fragments-names-2.png){: .center-image width="80%"} 
+![](../assets/fragments-names-2.png){: .center-image width="80%"} 
  
 And then again for in the last non-trivial subtree.
 
-![](assets/fragments-names-3.png){: .center-image width="80%"} 
+![](../assets/fragments-names-3.png){: .center-image width="80%"} 
 
 At the end, the prover assigns to each node a name that is just the 
 concatenation of the successive subtree numbers it has received.
 
-![](assets/fragments-names-4.png){: .center-image width="80%"} 
+![](../assets/fragments-names-4.png){: .center-image width="80%"} 
 
 
 ## Why are these node names useful, checkable and small?
@@ -163,7 +163,7 @@ the following scenario can occur. There is central fragment that is a long path,
 and at each endpoint, $k$ fragments are merging. The prover provides some names 
 for these fragments, that are supposed to be different. 
 
-![](assets/MST-communication.png){: .center-image width="80%"} 
+![](../assets/MST-communication.png){: .center-image width="80%"} 
 
 But now, how do the nodes check that these names are different? Maybe the same 
 name is used, once on the left and once on the right. If the prover can chose 

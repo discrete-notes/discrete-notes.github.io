@@ -15,7 +15,7 @@ this paper.
 
 ---
 
-![](assets/puzzle-1.png){: .center-image width="50%"}
+![](../assets/puzzle-1.png){: .center-image width="50%"}
 
 ---
 

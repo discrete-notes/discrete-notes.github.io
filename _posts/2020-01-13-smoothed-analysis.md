@@ -9,7 +9,7 @@ Happy 2020! A short post about smoothed analysis in distributed
 computing.
 
 
-![](assets/arbre-patagonie.jpg){: .center-image width="70%"}
+![](../assets/arbre-patagonie.jpg){: .center-image width="70%"}
 
 
 [Smoothed analysis](https://en.wikipedia.org/wiki/Smoothed_analysis) is 

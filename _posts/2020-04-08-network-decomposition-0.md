@@ -8,7 +8,7 @@ permalink: network-decomposition-0
 This post is an introduction (and a table of contents) for a series of posts on
 distributed network decomposition. 
 
-![](assets/caravane-0.jpg){: .center-image width="90%"}
+![](../assets/caravane-0.jpg){: .center-image width="90%"}
 
 
 One of the most important papers of these recent years in distributed graph 

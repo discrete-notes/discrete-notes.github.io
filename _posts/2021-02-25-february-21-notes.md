@@ -36,9 +36,9 @@ good performance. The basic version is the following:
 		add it to the matching, remove the nodes from the graph.
 		
 
-![](assets/karp-sipser-1.png){: .center-image width="80%"} |  ![](assets/karp-sipser-3.png){: .center-image width="80%"} | ![](assets/karp-sipser-4.png){: .center-image width="80%"}
+![](../assets/karp-sipser-1.png){: .center-image width="80%"} |  ![](../assets/karp-sipser-3.png){: .center-image width="80%"} | ![](../assets/karp-sipser-4.png){: .center-image width="80%"}
 
-![](assets/karp-sipser-5.png){: .center-image width="70%"} | ![](assets/karp-sipser-6.png){: .center-image width="70%"}
+![](../assets/karp-sipser-5.png){: .center-image width="70%"} | ![](../assets/karp-sipser-6.png){: .center-image width="70%"}
 
 <p align="center"><small><i>
 A run of Karp-Sipser algorithm. The blue edges are taken using the first rule. 
@@ -73,7 +73,7 @@ I am sometimes a bit suspicious about some results in say medecine or sociology,
 that are based on surveys. There is an obvious bias: only people willing to 
 answer such surveys appear in the result. 
 
-![](assets/survey.png){: .center-image width="60%"}
+![](../assets/survey.png){: .center-image width="60%"}
 
 This is an issue only if there is a correlation between the willingness to 
 answer the survey and the topic of the survey. But such correlation can appear
@@ -149,4 +149,4 @@ the text of the lecture in advance.
 
 ## A nice theorem
 
-![](assets/new-result.png){: .center-image width="70%"}
+![](../assets/new-result.png){: .center-image width="70%"}

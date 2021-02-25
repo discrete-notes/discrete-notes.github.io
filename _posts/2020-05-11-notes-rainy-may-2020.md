@@ -7,7 +7,7 @@ permalink: notes-rainy-may-2020
 
 Notes for May.
 
-![](assets/caravane-nuit.jpg){: .center-image width="95%"}
+![](../assets/caravane-nuit.jpg){: .center-image width="95%"}
  
 
 ## Active learning and interactive protocols
@@ -25,7 +25,7 @@ following picture, in order to have a good classifier based on the red and blue
 points, the machine may ask about the yellow points, to know which hypothesis is 
 the best between the green and the pink one.
 
-![](assets/active-learning.png){: .center-image width="70%"}
+![](../assets/active-learning.png){: .center-image width="70%"}
 
 A reason to do that is to save time: after processing a fraction of the data, 
 the machine can have some preliminary idea of what the classification looks like, 
@@ -79,7 +79,7 @@ following picture, there are three initial points. The blue player makes the
 sixth move, and after that the red player cannot play. Therefore the blue player
 wins. 
 
-![](assets/sprouts-1.png){: .center-image width="100%"}|![](assets/sprouts-2.png){: .center-image width="100%"}|![](assets/sprouts-3.png){: .center-image width="100%"}|![](assets/sprouts-4.png){: .center-image width="100%"}|
+![](../assets/sprouts-1.png){: .center-image width="100%"}|![](../assets/sprouts-2.png){: .center-image width="100%"}|![](../assets/sprouts-3.png){: .center-image width="100%"}|![](../assets/sprouts-4.png){: .center-image width="100%"}|
 
 Researchers have completely characterized what are the winning strategies for 
 this game up to 44 initial points. And there is the following conjecture: if 
@@ -140,13 +140,13 @@ The Aperiodical has an
 about a maths game, with a box of eggs.
 The game is the following. You start with a box of eggs in this configuration: 
 
-![](assets/boite-oeufs-1.png){: .center-image width="50%"}
+![](../assets/boite-oeufs-1.png){: .center-image width="50%"}
 
 and you should transform it into that configuration:
-![](assets/boite-oeufs-2.png){: .center-image width="50%"}
+![](../assets/boite-oeufs-2.png){: .center-image width="50%"}
 
 using only movements of the following form (move one right):
-![](assets/boite-oeufs-3.png){: .center-image width="50%"}
+![](../assets/boite-oeufs-3.png){: .center-image width="50%"}
 
 The question is what is the minimum number of moves? 
 In general I would consider this as just one more maths game, but as I will be 

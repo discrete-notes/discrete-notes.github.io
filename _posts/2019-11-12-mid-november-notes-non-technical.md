@@ -8,7 +8,7 @@ permalink: mid-november-2019-non-technical
 Some notes about a new conference, a new research organization etc.
 
 --- 
-![](assets/comida-india.png){: .center-image width="60%"}
+![](../assets/comida-india.png){: .center-image width="60%"}
 <p align="center"><small><i>
 </i></small></p>
 ---

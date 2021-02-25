@@ -8,7 +8,7 @@ permalink: summer-winter-2019-notes
 Some notes for summer 2019, or actually winter 2019, as I moved to Chile.
 
 --- 
-![](assets/azotea.jpg){: .center-image width="70%"}
+![](../assets/azotea.jpg){: .center-image width="70%"}
 <p align="center"><small><i>
 The Andes.
 </i></small></p>
@@ -39,13 +39,13 @@ on n vertices as induced subgraphs".
 
 Given a polyhedra, one can cut along the edges to unfold it on the plane as in the following drawing.
 
-![](assets/durer-1.jpg){: .center-image width="90%"}
+![](../assets/durer-1.jpg){: .center-image width="90%"}
 
 But sometimes, if you cut along some edges, you may have an overlap in the unfolding, as the
 second unfolding of the 
 following  example (borrowed from [here](http://mathworld.wolfram.com/Unfolding.html)) shows.
 
-![](assets/durer-2.jpg){: .center-image width="90%"}
+![](../assets/durer-2.jpg){: .center-image width="90%"}
 
 [Durer's conjecture](http://www.openproblemgarden.org/op/d_urers_conjecture) states that 
 "Every convex polytope has a non-overlapping edge unfolding".
@@ -68,7 +68,7 @@ Two additional pointers on this topic:
 * a [blog post](https://11011110.github.io/blog/2013/12/07/kinematic-chains-and.html) about graph that have one degree of freedom when you want to move them.
 * the [slides](https://www.ics.uci.edu/~eppstein/pubs/Epp-WADS-19.pdf) of a talk about graphs inspired by nature, for example by crystals and by bubbles. 
 
-![](assets/cristaux-bulles.jpg){: .center-image width="80%"}
+![](../assets/cristaux-bulles.jpg){: .center-image width="80%"}
 <p align="center"><small><i>
 The red circles are the nodes on the right drawing, but on the left ones they are part of the procedure to draw the crystals. See the slides for more details.
 </i></small></p>

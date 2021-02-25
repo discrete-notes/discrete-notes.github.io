@@ -11,7 +11,7 @@ The introductory post of this series is
 
 In this post, we (finally!) describe the algorithm of the paper of Ghaffari and Rozhon.
 
-![](assets/caravane-6.jpg){: .center-image width="90%"}
+![](../assets/caravane-6.jpg){: .center-image width="90%"}
 
 ### Recap of previous episodes
 
@@ -50,7 +50,7 @@ Hence another technique has to be used.
 Instead of growing clusters, we will separate the graph into smaller and smaller 
 pieces (by freezing nodes). 
 
-![](assets/ND-separating-1.png){: .center-image width="90%"}|![](assets/ND-separating-2.png){: .center-image width="90%"}|![](assets/ND-separating-3.png){: .center-image width="90%"}
+![](../assets/ND-separating-1.png){: .center-image width="90%"}|![](assets/ND-separating-2.png){: .center-image width="90%"}|![](assets/ND-separating-3.png){: .center-image width="90%"}
 
 A key idea of the algorithm is to use the digits of the identifiers of the
 nodes written in binary. A first attempt in this direction is the following. Let
@@ -60,7 +60,7 @@ blue and red. Now if we want to be sure that no two nodes of different colors
 (red and blue) are adjacent, we can freeze one of the nodes for every
 bicolored edge. In a good scenario, we get the following picture.
 
-![](assets/ND-red-blue-1.png){: .center-image width="70%"}|![](assets/ND-red-blue-2.png){: .center-image width="70%"}
+![](../assets/ND-red-blue-1.png){: .center-image width="70%"}|![](assets/ND-red-blue-2.png){: .center-image width="70%"}
 
 But this is a good case, and in general this technique is bad. First, of
 course as the identifiers are not required to be uniformly distributed between
@@ -164,7 +164,7 @@ important: at the next digit, this label may give color blue, and then these
 nodes have to act in a coordinated way. This is why we need to talk about weak
 decompositions and not strong ones.
 
-![](assets/ND-non-intuitive-1.png){: .center-image width="100%"}|![](assets/ND-non-intuitive-2.png){: .center-image width="100%"}|![](assets/ND-non-intuitive-3.png){: .center-image width="100%"}
+![](../assets/ND-non-intuitive-1.png){: .center-image width="100%"}|![](assets/ND-non-intuitive-2.png){: .center-image width="100%"}|![](assets/ND-non-intuitive-3.png){: .center-image width="100%"}
 
 One more non-intuitive thing is that, because of the same reason, the nodes of a
 cluster may have a label that is the ID of a node that is not anymore in the

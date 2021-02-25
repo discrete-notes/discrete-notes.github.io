@@ -69,11 +69,11 @@ Consider the following labeling algorithm:
 			f. i++
 		4. output the labeling
 		
-![](assets/rake-and-compress-1.png){: .center-image width="80%"}
-![](assets/rake-and-compress-2.png){: .center-image width="80%"}
-![](assets/rake-and-compress-3.png){: .center-image width="80%"}
-![](assets/rake-and-compress-4.png){: .center-image width="80%"}
-![](assets/rake-and-compress-5.png){: .center-image width="80%"}
+![](../assets/rake-and-compress-1.png){: .center-image width="80%"}
+![](../assets/rake-and-compress-2.png){: .center-image width="80%"}
+![](../assets/rake-and-compress-3.png){: .center-image width="80%"}
+![](../assets/rake-and-compress-4.png){: .center-image width="80%"}
+![](../assets/rake-and-compress-5.png){: .center-image width="80%"}
 		
 The labeling we get has the property that a node has few neighbors with the 
 same or higher label. More precisely:
@@ -119,7 +119,7 @@ used $2\times((1/6)k-r)=1/3-2r$ new nodes. We only have $4r$ nodes to add, $3r$
 of which must be unlabeled. But there is no room for these nodes: any addition 
 would result in a new labeled nodes.
 
-![](assets/rake-log.png){: .center-image width="80%"}
+![](../assets/rake-log.png){: .center-image width="80%"}
 
 In the following we will call $h$ the maximum label. 
  

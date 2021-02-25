@@ -12,7 +12,7 @@ This post explains how to build a network decomposition in a centralized manner.
 As a consequence it also shows that such decompositions exist with nice 
 parameters. 
 
-![](assets/caravane-4.jpg){: .center-image width="90%"}
+![](../assets/caravane-4.jpg){: .center-image width="90%"}
 
 ### Recap of previous episodes
 
@@ -24,7 +24,7 @@ We won't bother with multiplicative constants, or even constant exponents,
 so let's say that basically, we look for something like in the following picture, 
 with $\log n$ colors, and $\log n$ diameter. 
 
-![](assets/network-decomposition-log.png){: .center-image width="60%"}
+![](../assets/network-decomposition-log.png){: .center-image width="60%"}
 
 
 ## Basic technique to get a coloring
@@ -39,9 +39,9 @@ the process, considering only the nodes that do not have color $c_1$, etc.
 This is basically repeating an algorithm for MIS we mentioned in the 
 [post about local algorithms](https://discrete-notes.github.io/network-decomposition-1-local-algorithms).  
 
-![](assets/coloring-0.png){: .center-image width="90%"}|![](assets/coloring-1.png){: .center-image width="90%"}|![](assets/coloring-2.png){: .center-image width="90%"}
+![](../assets/coloring-0.png){: .center-image width="90%"}|![](../assets/coloring-1.png){: .center-image width="90%"}|![](../assets/coloring-2.png){: .center-image width="90%"}
 
-![](assets/coloring-3.png){: .center-image width="90%"}|![](assets/coloring-4.png){: .center-image width="90%"}|![](assets/coloring-5.png){: .center-image width="90%"}
+![](../assets/coloring-3.png){: .center-image width="90%"}|![](../assets/coloring-4.png){: .center-image width="90%"}|![](../assets/coloring-5.png){: .center-image width="90%"}
 
 <p align="center"><small><i>
 Step by step construction of a coloring. (1) The graph, (2) the result of the 
@@ -61,7 +61,7 @@ That is, they will not be considered any more for the color at hand. Once we are
 finished with a color, we go to the next color, remove the nodes of the previous 
 colors, defreeze the frozen nodes, and start again. 
 
-![](assets/coloring-log-1.png){: .center-image width="90%"}|![](assets/coloring-log-2.png){: .center-image width="90%"}|![](assets/coloring-log-3.png){: .center-image width="90%"}
+![](../assets/coloring-log-1.png){: .center-image width="90%"}|![](../assets/coloring-log-2.png){: .center-image width="90%"}|![](../assets/coloring-log-3.png){: .center-image width="90%"}
 
 <p align="center"><small><i>
 Computation of the first color class: (1) choose a node, and select all the 
@@ -70,7 +70,7 @@ adjacent to a selected node, and (3) repeat the operation until all nodes are
 either selected or frozen.
 </i></small></p>
 
-![](assets/coloring-log-4.png){: .center-image width="90%"}|![](assets/coloring-log-5.png){: .center-image width="90%"}|![](assets/coloring-log-6.png){: .center-image width="90%"}
+![](../assets/coloring-log-4.png){: .center-image width="90%"}|![](../assets/coloring-log-5.png){: .center-image width="90%"}|![](../assets/coloring-log-6.png){: .center-image width="90%"}
 
 <p align="center"><small><i>
 Computation of the second color class: (1) and (2) remove all the 
@@ -78,7 +78,7 @@ nodes of the first color class, and defreeze all frozen nodes. (3) Run the same
 procedure as for the first color class. 
 </i></small></p>
 
-![](assets/coloring-log-7.png){: .center-image width="90%"}|![](assets/coloring-log-8.png){: .center-image width="90%"}|![](assets/coloring-log-9.png){: .center-image width="90%"}
+![](../assets/coloring-log-7.png){: .center-image width="90%"}|![](../assets/coloring-log-8.png){: .center-image width="90%"}|![](../assets/coloring-log-9.png){: .center-image width="90%"}
 
 <p align="center"><small><i>
 Computation of the third color class: again, (1) and (2) remove all the 
@@ -87,7 +87,7 @@ same procedure as for the first color classes. Now all nodes are selected, thus
 the algorithm stops.
 </i></small></p>
 
-![](assets/coloring-log-10.png){: .center-image width="60%"}
+![](../assets/coloring-log-10.png){: .center-image width="60%"}
 <p align="center"><small><i>
 The network decomposition produced by the algorithm.
 </i></small></p>
@@ -111,7 +111,7 @@ very few nodes, but the number of nodes that is frozen at the border is huge.
 If this happens everywhere, the number of nodes colored by a the first color 
 class is not a constant fraction of the total number of nodes. 
 
-![](assets/blow-up.png){: .center-image width="70%"}
+![](../assets/blow-up.png){: .center-image width="70%"}
 
 Therefore, a bad situation for us is when the ratio between what is inside 
 the ball, and its border is small.

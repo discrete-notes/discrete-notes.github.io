@@ -11,7 +11,7 @@ I continue the series about
 (Again: I'm trying to not delay too much the publication of these 
 posts so they won't be very deep nor polished. Comments are most welcome.)
 
-![](./assets/austin-2.png){: .center-image width="90%"}
+![](../assets/austin-2.png){: .center-image width="90%"}
 <p align="center"><small><i>
 Austin's skyline. (The conference was supposed to be in Austin.)
 </i></small></p>
@@ -44,7 +44,7 @@ basically see the six positions around itself, and check whether they are
 occupied by robots or not. And every robot can move to these neighboring 
 positions if it does not already contain  a robot.
 
-![](assets/compression-1.png){: .center-image width="70%"}
+![](../assets/compression-1.png){: .center-image width="70%"}
 <p align="center"><small><i>
 A set of blue robots. The one highlighted by a yellow dot can see and move to 
 the positions in the yellow region. 
@@ -59,7 +59,7 @@ The problem we'll consider for these robots is called *compression*.
 Before describing it let's define a graph: there is one node for each robot, 
 and an edge between any two adjacent robots.
 
-![](assets/compression-2.png){: .center-image width="70%"}
+![](../assets/compression-2.png){: .center-image width="70%"}
 
 For the compression problem, you start from a situation where the set of robots 
 is connected (in the sense that the graph is connected) but 
@@ -70,9 +70,9 @@ we use the perimeter instead, which is technically more handy.
 Note that the perimeter is also a natural measure of compression: the disc is 
 the shape that has the best compression, and it has the smallest perimeter.
 
-![](assets/compression-3-bis.png){: .center-image width="70%"}
+![](../assets/compression-3-bis.png){: .center-image width="70%"}
 
-![](assets/compression-4-bis.png){: .center-image width="70%"}
+![](../assets/compression-4-bis.png){: .center-image width="70%"}
 
 As finding a minimum perimeter is a hard task, one considers a relaxation, which 
 consists in looking for an *$\alpha$-compressed solution*, which is simply a 
@@ -85,7 +85,7 @@ the same as having a large number of edges in the induced graph. (Andrea says
 it's easy to prove.) Then one can naturally try to make the robots move in a 
 greedy manner to a position that maximizes the number of edges locally.
 
-![](assets/compression-5.png){: .center-image width="70%"}
+![](../assets/compression-5.png){: .center-image width="70%"}
 <p align="center"><small><i>
 On this picture, the robot with the dot has several adjacent positions with 
 diverse "quality": the blue position has the same number of edges as the current

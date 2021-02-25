@@ -17,7 +17,7 @@ tree. To do so we first need to describe the classic structure of MST
 algorithms, and the certification that follows. That's what this post 
 is about.  
 
-![](assets/arbre-fragments.png){: .center-image width="60%"} 
+![](../assets/arbre-fragments.png){: .center-image width="60%"} 
 
 ## Building an MST with fragments
 
@@ -28,7 +28,7 @@ and is used in the celebrated
 [GHS algorithm](https://en.wikipedia.org/wiki/Distributed_minimum_spanning_tree#GHS_algorithm).
 We will describe this approach on the following weighted graph.
 
-![](assets/MST-1.png){: .center-image width="90%"} 
+![](../assets/MST-1.png){: .center-image width="90%"} 
 
 The general method is the following.
 We will select edges little by little.
@@ -50,7 +50,7 @@ First, every node
 chooses the lightest among its adjacent edges. In the picture, a yellow
  arrow $u \rightarrow v$ means that $u$ chooses $(u,v)$.
 
-![](assets/MST-2.png){: .center-image width="90%"}
+![](../assets/MST-2.png){: .center-image width="90%"}
 
 For now, we consider only the case where the edge weights are distinct, 
 like in our example.
@@ -59,7 +59,7 @@ the edges that have been chosen by at least one node are selected.
 The set of selected edges forms a forest, and each tree of this forest 
 is a fragment.
 
-![](assets/MST-3.png){: .center-image width="90%"} 
+![](../assets/MST-3.png){: .center-image width="90%"} 
 
 (In the picture above, the non-selected edges between nodes of a 
 fragments are more transparent, because they will not be useful anymore.)
@@ -68,20 +68,20 @@ So now for the second phase, every fragment chooses the *lightest
 out-going edge* that is the lightest among all edges that have exactly 
 one extremity in the fragment.  
 
-![](assets/MST-4.png){: .center-image width="90%"} 
+![](../assets/MST-4.png){: .center-image width="90%"} 
 
 And again, we merge the corresponding fragments by selecting the chosen
 edges. 
 
-![](assets/MST-5.png){: .center-image width="90%"} 
+![](../assets/MST-5.png){: .center-image width="90%"} 
 
 The last phase is the one where the last fragments get merged.
 
-![](assets/MST-6.png){: .center-image width="90%"} 
+![](../assets/MST-6.png){: .center-image width="90%"} 
 
 And we get the final tree, which is a minimum spanning tree.
 
-![](assets/MST-7.png){: .center-image width="90%"} 
+![](../assets/MST-7.png){: .center-image width="90%"} 
 
 ## Properties
 
@@ -122,17 +122,17 @@ We will describe these labels quickly, using the same example as above.
 In particular we will focus on the node named $I$ in the following 
 drawing.
 
-![](assets/MST-certificates-1.png){: .center-image width="80%"} 
+![](../assets/MST-certificates-1.png){: .center-image width="80%"} 
 
 For this node, the important steps are: the merge with $J$, then the 
 merge of the fragment $[I,J]$ with the fragment $[F,H]$, and then 
 the merge of $[I,J,F,H]$ with $[A,B,C,D,E,G]$.
 
-![](assets/MST-certificates-2.png){: .center-image width="80%"}
+![](../assets/MST-certificates-2.png){: .center-image width="80%"}
 
 This translate into the following certificate for $I$:
 
-![](assets/MST-certificates-3.png){: .center-image width="80%"}
+![](../assets/MST-certificates-3.png){: .center-image width="80%"}
  
 In addition to the number of the phase, and the characteristics of the 
 merging edge, the node is given the name its "parent" in a spanning tree

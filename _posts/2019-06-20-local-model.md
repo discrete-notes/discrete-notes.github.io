@@ -11,7 +11,7 @@ I probably missed some references, as typing "local model" in a search engine
 is not very helpful if you are not looking for top model agencies. 
 Other references are most welcome! 
 
-![](assets/local.png){: .center-image width="100%"}
+![](../assets/local.png){: .center-image width="100%"}
 
 ---
 

@@ -10,7 +10,7 @@ The introductory post of this series is
 [here](https://discrete-notes.github.io/network-decomposition-0). 
 This post explains why network decomposition is useful. 
 
-![](assets/caravane-2.jpg){: .center-image width="90%"}
+![](../assets/caravane-2.jpg){: .center-image width="90%"}
 
 ### Recap of previous episodes
 
@@ -37,8 +37,8 @@ of a color class cannot be adjacent. Then continue by doing the same with the
 nodes of the second color that are still active. And so on and so 
 forth, until you have considered all the colors.
  
-![](assets/MIS-coloring-1.png){: .center-image width="100%"}|![](assets/MIS-coloring-2.png){: .center-image width="100%"}
-![](assets/MIS-coloring-3.png){: .center-image width="100%"}|![](assets/MIS-coloring-4.png){: .center-image width="100%"}
+![](../assets/MIS-coloring-1.png){: .center-image width="100%"}|![](../assets/MIS-coloring-2.png){: .center-image width="100%"}
+![](../assets/MIS-coloring-3.png){: .center-image width="100%"}|![](../assets/MIS-coloring-4.png){: .center-image width="100%"}
 
 This algorithm basically takes $k$ times steps, which is awesome if your mysterious 
 friend gave you a 10-coloring. 
@@ -68,7 +68,7 @@ is where every node has a color different from its neighbors, we will color
 clusters of nodes and have a coloring "at the level of the clusters". In some 
 sense we change scale. A network decomposition looks a bit like this.
 
-![](assets/impact-decompo-6.png){: .center-image width="50%"}
+![](../assets/impact-decompo-6.png){: .center-image width="50%"}
 
 Now there are three questions: What exactly is a network decomposition? 
 How to use it? and How to compute it?
@@ -79,7 +79,7 @@ How to use it? and How to compute it?
 the nodes with colors from 1 to $c$, such that for any given color, the (maximal)
 connected components with this color have diameter at most $d$.
 
-![](assets/impact-decompo-5.png){: .center-image width="50%"}
+![](../assets/impact-decompo-5.png){: .center-image width="50%"}
 
 [There are some subtleties with the definition, but let's wait a bit before 
 looking into that.]
@@ -128,7 +128,7 @@ component to forget about the rest of the graph, to compute an MIS in what
 remains, and to output whether it is selected or not in this MIS. Note that it 
 is exactly the same thing as what we did in the previous post but on a subgraph.
 
-![](assets/impact-decompo-1.png){: .center-image width="100%"}|![](assets/impact-decompo-3.png){: .center-image width="100%"}
+![](../assets/impact-decompo-1.png){: .center-image width="100%"}|![](../assets/impact-decompo-3.png){: .center-image width="100%"}
 
 At the end of the phase, we have only selected and non-selected nodes in all the 
 connected components of the first color. Note that these local MIS are correct, 
@@ -139,7 +139,7 @@ adjacent to a newly selected node of the first color class. After this step, all
 these nodes will not participate in the computation, and we can imagine that 
 they are removed from the graph
 
-![](assets/impact-decompo-2.png){: .center-image width="100%"}|![](assets/impact-decompo-4.png){: .center-image width="100%"} 
+![](../assets/impact-decompo-2.png){: .center-image width="100%"}|![](../assets/impact-decompo-4.png){: .center-image width="100%"} 
 
 We can iterate this for all the color classes, just as we did when we had a 
 proper coloring. Let us check the complexity. For each color we need the view at 

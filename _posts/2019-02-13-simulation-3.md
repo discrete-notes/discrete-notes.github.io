@@ -9,7 +9,7 @@ This is the third post of a series that starts [here](./simulation-1).
 
 ---
 
-![](assets/puzzle-3.png){: .center-image width="50%"}
+![](../assets/puzzle-3.png){: .center-image width="50%"}
 
 ---
 
@@ -23,7 +23,7 @@ This is done in the context of the [previous post](./simulation-2), that is,
 The sinkless orientation problem consists in orienting the edges of the graph, 
 such that no node is a sink, that is, no node has only edges pointing to it.
 
-![](assets/sinkless.png){: .center-image width="90%"}
+![](../assets/sinkless.png){: .center-image width="90%"}
 
 In a bipartite graph, whose nodes are labeled black and white, 
 it is easy to encode an orientation with edge labels: an edge is 

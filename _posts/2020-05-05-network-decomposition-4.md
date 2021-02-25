@@ -12,7 +12,7 @@ The introductory post of this series is
 In this post, we take a look at the different versions of network decomposition
 (weak and strong), and how we can go from one to the other.
 
-![](assets/caravane-5.jpg){: .center-image width="90%"}
+![](../assets/caravane-5.jpg){: .center-image width="90%"}
 
 ### Recap of previous episodes
 
@@ -33,7 +33,7 @@ only the edges of the subgraph, or all the edges of the graph?
 The first way defines the *strong diameter* and the second is the *weak diameter*.
 These can be very different, as pictured below.
 
-![](assets/strong-weak.png){: .center-image width="50%"}
+![](../assets/strong-weak.png){: .center-image width="50%"}
 <p align="center"><small><i>
 On this graph, the blue component has weak diameter 2 and strong diameter 9.
 </i></small></p>
@@ -48,7 +48,7 @@ algorithm provides only a weak one. This is not a big problem.
 The paper of Rozhon and Ghaffari provides a sketch of the known approach
 to builds a strong 
 decomposition with $O(\log(n))$ colors from a weak one with also $O(\log(n))$ 
-colors. 	
+colors.
 It is even simpler to have such a transformation if we just insist on having 
 polylogs: 
 take your weak decomposition, make the nodes of each component act like in a 
@@ -58,9 +58,9 @@ itself. For example, take a component of weak diameter $O(\log(n))$
 with color yellow; these yellow nodes compute a 
 a strong network decomposition of the component, and now
 the nodes have $\log(n)$ shades of yellow. In total this 
-makes a strong decomposition with $O(\log^2n)$ colors.  
+makes a strong decomposition with $O(\log^2n)$ colors. 
 
-![](assets/refined-decompo-1.png){: .center-image width="90%"}|![](assets/refined-decompo-2.png){: .center-image width="90%"}|![](assets/refined-decompo-3.png){: .center-image width="90%"}
+![](../assets/refined-decompo-1.png){: .center-image width="90%"}|![](assets/refined-decompo-2.png){: .center-image width="90%"}|![](assets/refined-decompo-3.png){: .center-image width="90%"}
 
 <p align="center"><small><i>
 The first picture is a weak decomposition with two colors, yellow and blue. 
@@ -80,7 +80,7 @@ of the component as we go: at each new layer, we would wire the nodes as leafs
 of the tree. The depth of this tree is between half the diameter and the 
 diameter. 
 
-![](assets/boule-arbre-1.png){: .center-image width="70%"}
+![](../assets/boule-arbre-1.png){: .center-image width="70%"}
 <p align="center"><small><i>
 The nodes of a component, added layers by layers, during the growth of a ball, 
 for the centralized construction. The orange edges are the edges of the tree, 
@@ -95,7 +95,7 @@ depth that bounds the weak diameter, this tree may have to use edges
 that are not within the component. Hence we use a Steiner tree using the edges 
 and nodes that may not be in the component. 
 
-![](assets/boule-arbre-2.png){: .center-image width="70%"}
+![](../assets/boule-arbre-2.png){: .center-image width="70%"}
 <p align="center"><small><i>
 The blue patches show the balls of various distance from the root, using the 
 nodes and edges of all the graph. In particular the yellow nodes are not part of 
@@ -107,7 +107,7 @@ the component, but they are used by the tree.
 Actually now that we measure the diameter via the tree, we can consider 
 non-connected components.
 
-![](assets/boule-arbre-3.png){: .center-image width="70%"}
+![](../assets/boule-arbre-3.png){: .center-image width="70%"}
 
 This change in the definition useful in the distributed algorithm as we don't 
 want to keep track of whether the component is connected or not.

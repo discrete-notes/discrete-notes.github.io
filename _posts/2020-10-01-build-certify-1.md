@@ -25,7 +25,7 @@ indicating that for minimum spanning tree, if the one aims for the
 optimal memory and fast stabilization, then one might have to first build the 
 solution, and *then* certify it.   
 
-![](assets/build-certify.png){: .center-image width="90%"}
+![](../assets/build-certify.png){: .center-image width="90%"}
 
 ## Self-stabilization in the state model (in a nutshell)
 
@@ -43,7 +43,7 @@ color ; then a rule could be: if all neighbors' pointers are pointing
 toward me, and I have color red, then I make my own pointer point 
 towards myself, and change my color to blue.
 
-![](assets/local-rule.png){: .center-image width="90%"}
+![](../assets/local-rule.png){: .center-image width="90%"}
 
 
 Asynchrony is modeled by an adversarial scheduler who decides at every 

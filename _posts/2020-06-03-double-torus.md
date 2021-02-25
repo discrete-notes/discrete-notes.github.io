@@ -22,39 +22,39 @@ The following picture is what is called a polygonal scheme of the double torus.
 It is an octagon whose edges have colors and orientations. There are exactly two 
 edges for each color. 
 
-![](assets/2-torus-1.png){: .center-image width="50%"}
+![](../assets/2-torus-1.png){: .center-image width="50%"}
 
 The construction consists in the following operation: take two edges of the same 
 color and glue them such that the orientation is consistent (heads together, tails 
 together). Here we start with the red edges.
 
-![](assets/2-torus-2.png){: .center-image width="50%"}
+![](../assets/2-torus-2.png){: .center-image width="50%"}
 
 The same with the yellow edges. 
 
-![](assets/2-torus-3.png){: .center-image width="50%"}
+![](../assets/2-torus-3.png){: .center-image width="50%"}
 
 Now note that as we will identify all the pairs of edges, the eight corners of the 
 polygon will be identified. That is all the corners will be merged. Here it gives 
 a better picture if we identify two of these (former) corners to link the yellow 
 and red paths. 
 
-![](assets/2-torus-4.png){: .center-image width="50%"}
+![](../assets/2-torus-4.png){: .center-image width="50%"}
 
 Here is the key operation. We have two oriented green loops. To merge them, we 
 create a handle, that is a kind of bridge above the original (not yet finished)
-surface. This creates our first hole. Note that the red path becomes a loop.  
+surface. This creates our first hole. Note that the red path becomes a loop.
 
-![](assets/2-torus-5.png){: .center-image width="50%"}
+![](../assets/2-torus-5.png){: .center-image width="50%"}
 
 Now we do the same with the blue loops.
 
-![](assets/2-torus-6.png){: .center-image width="50%"}
+![](../assets/2-torus-6.png){: .center-image width="50%"}
 
 We now have a two handles, and basically we have built a double torus. To 
 make it look nicer, we can stretch it a bit. 
 
-![](assets/2-torus-7.png){: .center-image width="70%"}
+![](../assets/2-torus-7.png){: .center-image width="70%"}
 
 A key thing here is that we can do these operations in the reverse direction. To 
 do so we just have to take scissors and cut along the four loops of the drawing. 

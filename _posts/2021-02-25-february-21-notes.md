@@ -36,9 +36,9 @@ good performance. The basic version is the following:
 		add it to the matching, remove the nodes from the graph.
 		
 
-![](assets/karp-sipser-1.png){: .center-image width="80%"} | ![](assets/karp-sipser-2.png){: .center-image width="80%"} | ![](assets/karp-sipser-3.png){: .center-image width="80%"}
+![](assets/karp-sipser-1.png){: .center-image width="80%"} |  ![](assets/karp-sipser-3.png){: .center-image width="80%"} | ![](assets/karp-sipser-4.png){: .center-image width="80%"}
 
-![](assets/karp-sipser-4.png){: .center-image width="80%"} | ![](assets/karp-sipser-5.png){: .center-image width="80%"} | ![](assets/karp-sipser-6.png){: .center-image width="80%"}
+![](assets/karp-sipser-5.png){: .center-image width="80%"} | ![](assets/karp-sipser-6.png){: .center-image width="80%"}
 
 <p align="center"><small><i>
 A run of Karp-Sipser algorithm. The blue edges are taken using the first rule. 
@@ -54,15 +54,15 @@ Consider a (sparse) [Erdos-Renyi random graph](https://en.wikipedia.org/wiki/Erd
 with $cn/2$ edges. 
 It is proved in [this paper](https://www.researchgate.net/profile/Alan-Frieze/publication/240470502_Maximum_matchings_in_sparse_random_graphs_Karp_-_Sipser_re_-_visited_Random_Structures_and_Algorithms/links/5785455308aec5c2e4e11c0b/Maximum-matchings-in-sparse-random-graphs-Karp-Sipser-re-visited-Random-Structures-and-Algorithms.pdf), that refines the [original one](https://ieeexplore.ieee.org/abstract/document/4568355) that: 
 
-* If $c< e $ then Karp-Sipser algorithm finds a maximum matching with high 
+* If $c< e $, then Karp-Sipser algorithm finds a maximum matching with high 
 probability (!). 
 * If $c > e$, then with high probability Karp-Sipser algorithm finds a 
-$O(n^{1/5+o(1)})$ approximation of the optimal matching.
+$O(n^{1/5+o(1)})$ approximation of the maximum matching.
 
-The threshold at $e$ is surprizing, but not super surprizing as such threshold 
-often appear in random graphs.
-Note that the simpler algorithm that would not have a separate phase for pendent
-edges does not achieve such a good result. 
+The sharp threshold at $e$ is surprising at first, but actually such thresholds 
+often appear in topics related to random graphs.
+Note that the even simpler algorithm that just takes edges at random does not 
+achieve such a good result. 
 
 The algorithm also performs very well in practice, see the blog post mentioned 
 above.

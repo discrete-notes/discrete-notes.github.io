@@ -39,6 +39,12 @@ good performance. The basic version is the following:
 ![](assets/karp-sipser-1.png){: .center-image width="80%"} | ![](assets/karp-sipser-2.png){: .center-image width="80%"} | ![](assets/karp-sipser-3.png){: .center-image width="80%"}
 
 ![](assets/karp-sipser-4.png){: .center-image width="80%"} | ![](assets/karp-sipser-5.png){: .center-image width="80%"} | ![](assets/karp-sipser-6.png){: .center-image width="80%"}
+
+<p align="center"><small><i>
+A run of Karp-Sipser algorithm. The blue edges are taken using the first rule. 
+The red edge is taken using the second rule. The grey edges are the edges that 
+that removed.
+</i></small></p>
 		
 There exists a slightly more complicated version (as detailed in 
 [this blog post](https://cscresearchblog.wordpress.com/2018/11/16/karp-sipser-heuristic-and-reductions/#arfp)), 

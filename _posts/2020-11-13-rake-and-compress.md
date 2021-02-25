@@ -10,7 +10,7 @@ in distributed computing, and I think it's an idea that can be useful in
 different areas of algorithmics. Here's a post about it, with an application to
 distributed 3-coloring of unoriented trees in $O(\log n)$ rounds. 
 
-![](assets/bonsai.png){: .center-image width="95%"}
+![](../assets/bonsai.png){: .center-image width="95%"}
 
 ## Context
 

@@ -14,7 +14,7 @@ The first post is about a problem of pulse synchronization and about the nice
 open problem about a "simple" discrete random process. 
 
 
-![](assets/austin.png){: .center-image width="90%"}
+![](/assets/austin.png){: .center-image width="90%"}
 <p align="center"><small><i>
 Austin's skyline. (The conference was supposed to be in Austin.)
 </i></small></p>

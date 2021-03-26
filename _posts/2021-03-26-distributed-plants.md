@@ -3,6 +3,7 @@ layout: post
 title: A distributed computing view of plants
 redirect_from: "/2021/03/26/distributed-plants/"
 permalink: distributed-plants
+---
 
 I've recentely been interested in understanding the structure of living beings 
 using the algorithmic lens, and in particular the structure of plants. 

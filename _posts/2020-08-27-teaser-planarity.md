@@ -17,11 +17,6 @@ I was to give a teaser of it at HALG in a few days, but as I
 cannot be (virtually) present, here is a blog version (and Ioan 
 kindly agreed to give the real talk).
 
-![](../assets/halgae.jpg){: .center-image width="80%"}
-<p align="center"><small><i>
-Some Patagonian (h)algae.
-</i></small></p>
-
 ## The problem
 
 Consider the following problem.

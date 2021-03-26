@@ -15,10 +15,9 @@ about this topic with distributed computing tools in mind.
 
 ## From trees to trees
 
-There is important difference between trees in the CS/maths sense and trees in 
-reality. 
+Trees in the CS/maths sense are quite different from real trees. 
 
-![](assets/arbre-1.png){: .center-image width="70%"} | ![](assets/binary-tree.png){: .center-image width="70%"}
+![](assets/binary-tree.png){: .center-image width="80%"} | ![](assets/arbre-1.png){: .center-image width="70%"}
 
 Even if we root both trees on the bottom, there are several step to take 
 to transform a mathematical tree into some representation that looks like a real 
@@ -32,7 +31,7 @@ But for now, let's just think about graphs, and see what we can say.
 
 ## A first model
 
-Let's try to think about how one would "generate a tree" algorithmically. 
+Let's try to think about how one would "generate a tree". 
 For someone with an algorithmic background the first idea is 
 probably to consider a rule such as: 
 
@@ -40,39 +39,39 @@ probably to consider a rule such as:
 * apply recursively a local rule of the form "a leaf can be transformed into an 
 internal node with two leafs":
 
-![](assets/binary-plant.png){: .center-image width="90%"}
+![](assets/binary-plant.png){: .center-image width="80%"}
 
-So, except for the topics of thickness and 3D, can we be satisfied with this
+Apart from the topics of thickness and 3D, can we be satisfied with this
 model? 
 Not quite. Let's look at a few problems.
 
 * **The models generates infinite trees**.
-First we have not mentionned any termination, so the result of our generative 
+We have not mentionned any termination, so the result of our generative 
 process is an infinite tree, and (at least last time I checked) most real trees 
 were finite. 
 We can maybe say that we stop the process at some point and see what the object 
 looks like. This is not that bad, as anyway trees grow, so you can think that the
 process is infinite, but slower and slower, until the death of the tree.
 
-* **The process is synchronous**. At least on the picture I have assumed that
+* **The process is synchronous**. At least on the picture, I have assumed that
 at each step the local rule is applied on every leaf. This is probably too much 
-to ask, as there is no global clock in a tree, so from a distributed computing 
+to ask, as there is no global clock in a tree. Therefore, from a distributed computing 
 point of view, the process is asynchronous. One can expect that the asymmetry 
 of real trees is partly due to this asynchrony. 
 Note that actually in Nature there are some kind of clocks: the cycle of days 
 and nights, the cycle of seasons etc. 
 
 * **All nodes have 2 children**. When looking at the pictures, this regularity 
-seemss clearly wrong. Pictures like this seem more natural:
+seems wrong. Pictures like this seem more natural:
 
-![](assets/arbre-degre-divers.png){: .center-image width="90%"}
+![](assets/arbre-degre-divers.png){: .center-image width="60%"}
 
-But on the other hand we said we focus on the mere graph structure, and then 
-any area of the tree that looks globally like a place where three or more 
-branches appear, might look on a local level like just several close splits, 
-which does correspond to binary tree.
+But on the other hand we said that the focus was on the mere graph structure, 
+and then maybe a node with three leaves can be two binary nodes that would be 
+very close once we add thickness and length. This seems to also make some sense
+from a biology point of view. 
 
-![](assets/arbre-degre-3.png){: .center-image width="90%"}
+![](assets/arbre-degre-3.png){: .center-image width="80%"}
 
 Anyway, let's say that we do want to have a degree distribution that feels 
 natural. 
@@ -89,11 +88,11 @@ In terms of distributed computing, we can think of these labels/colors as
 constant size local memory. 
 With this we can have more refined rules, such as:
 
-![](assets/regle-algue.png){: .center-image width="70%"}
+![](assets/regle-algue.png){: .center-image width="60%"}
 
 Such enhanced rules create more intersting structures. 
 
-![](assets/algue.png){: .center-image width="70%"}
+![](assets/algue.png){: .center-image width="60%"}
 
 These structures are nicer, but still very rigid, and quite unnatural. 
 

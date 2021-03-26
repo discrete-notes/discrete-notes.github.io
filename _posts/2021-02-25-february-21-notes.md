@@ -15,7 +15,7 @@ not very new stuff.
 ## Karp-Sipser algorithm and simple algorithms
 
 Simple algorithms, even when they do not achieve state-of-the-art performance
-or precision are precious. As the call for paper of 
+or precision, are precious. As the call for paper of 
 [SOSA](https://www.siam.org/conferences/cm/conference/sosa21) states:
 "The benefits of simplicity are manifold: simpler algorithms manifest a better 
 understanding of the problem at hand; they are more likely to be implemented and 

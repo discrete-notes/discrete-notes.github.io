@@ -13,8 +13,6 @@ After discovering that our class of diagonal rectangle graphs had been
 studied by other people in our own university, we discovered that we 
 were not only two groups chasing this class.
 
-![](../assets/plage-3.jpg){: .center-image width="85%"}
-
 ---
 
 ## Second twist, segments and parabolas 

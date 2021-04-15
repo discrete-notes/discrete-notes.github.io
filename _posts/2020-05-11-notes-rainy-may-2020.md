@@ -7,7 +7,10 @@ permalink: notes-rainy-may-2020
 
 Notes for May.
 
-![](../assets/caravane-nuit.jpg){: .center-image width="95%"}
+![](../assets/caravane-nuit.jpg){: .center-image width="70%"}
+<p align="center"><small><i>
+A picture from May 2020.
+</i></small></p>
  
 
 ## Active learning and interactive protocols

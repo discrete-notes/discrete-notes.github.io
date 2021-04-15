@@ -10,7 +10,7 @@ Some notes for summer 2019, or actually winter 2019, as I moved to Chile.
 --- 
 ![](../assets/azotea.jpg){: .center-image width="70%"}
 <p align="center"><small><i>
-The Andes.
+A picture for the Summer 2019. The Andes.
 </i></small></p>
 ---
 

@@ -10,6 +10,7 @@ Some more notes for November 2019.
 --- 
 ![](../assets/nueva-constitucion.jpg){: .center-image width="80%"}
 <p align="center"><small><i>
+A picture from November 2019 in Chile.
 </i></small></p>
 ---
 

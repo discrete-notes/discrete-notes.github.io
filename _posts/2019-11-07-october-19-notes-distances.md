@@ -10,7 +10,7 @@ Some notes for October 2019, related to distances and to moving stuff.
 --- 
 ![](../assets/farmacia.jpg){: .center-image width="60%"}
 <p align="center"><small><i>
-A lot is going on in Chile. Fortunately there are some good recipes.
+A lot is going on in Chile in October 2019. Fortunately there are some good recipes.
 </i></small></p>
 ---
 

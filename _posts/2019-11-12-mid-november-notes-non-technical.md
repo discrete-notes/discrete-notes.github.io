@@ -10,6 +10,7 @@ Some notes about a new conference, a new research organization etc.
 --- 
 ![](../assets/comida-india.png){: .center-image width="60%"}
 <p align="center"><small><i>
+A picture from November 2019 in Chile.
 </i></small></p>
 ---
 

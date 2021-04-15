@@ -8,8 +8,6 @@ permalink: journal-fees
 Some notes about journal fees. A random walk on the Internet, more than a 
 structured essay.
 
-![](../assets/feuille.jpg){: .center-image width="50%"}
-
 ## Open access and APC
 
 As advised by a friend, I decided to submit my 

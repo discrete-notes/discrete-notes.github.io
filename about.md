@@ -3,23 +3,15 @@ layout: page
 title: About
 ---
 
-*Discrete notes* is a blog about discrete maths and theoretical computer science, 
-which are my research interests. 
+Hello, I'm [Laurent Feuilloley](https://perso.liris.cnrs.fr/lfeuilloley/), 
+a researcher in discrete maths and theoretical computer science.
+*Discrete notes* is a blog where I write about topics related to my research.
+I also write a blog in French, 
+*[Des notes discretes](https://des-notes-discretes.github.io)*. 
 
-A similar blog in French is *[Des notes discretes](https://des-notes-discretes.github.io)*. 
-Some posts are translations, but not the majority. 
-Before these blogs I used to write on *[Semidoc](https://semidoc.github.io)*, the blog of the PhD students of IRIF.
+My email is lfeuilloley@liris.cnrs.fr, do not hesitate to email me about 
+anything related to the blog, I'd be happy to answer! 
 
-A few remarks: 
 
-* There is no comment section, but you can send me emails, and I'll be very 
-happy to answer. 
-* I know there must be typos in the posts. I have decided to not polish them a 
-lot before publishing them, in order to not slow down the publication rate. 
-I think it's a reasonable trade-off. If you find typos, email me! 
-(This quantity/quality trade-off also explains the simple pen drawings.)
-* The picture at the beginning of the posts, are there to identify easily the 
-posts and are usually not related to the content.
 
-[Laurent Feuilloley](https://www.dii.uchile.cl/~feuilloley/)
 

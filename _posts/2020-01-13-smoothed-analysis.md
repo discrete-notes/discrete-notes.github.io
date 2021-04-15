@@ -10,6 +10,9 @@ computing.
 
 
 ![](../assets/arbre-patagonie.jpg){: .center-image width="70%"}
+<p align="center"><small><i>
+Some (non-minimum-spanning) trees.
+</i></small></p>
 
 
 [Smoothed analysis](https://en.wikipedia.org/wiki/Smoothed_analysis) is 

@@ -7,8 +7,6 @@ permalink: online-conference
 
 COVID 19 is forcing a lot of conferences to go online. A few notes about this.
 
-![](../assets/yucca.JPG){: .center-image width="80%"}
-
 
 ## Report from the online conference WAGON
 

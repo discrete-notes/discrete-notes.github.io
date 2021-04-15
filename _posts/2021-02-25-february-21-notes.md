@@ -10,6 +10,9 @@ As usual I have a growing backlog of topics I want to write about, so this is
 not very new stuff. 
 
 ![](../assets/chambran.jpg){: .center-image width="70%"}
+<p align="center"><small><i>
+A picture from February 2021.
+</i></small></p>
  
 
 ## Karp-Sipser algorithm and simple algorithms

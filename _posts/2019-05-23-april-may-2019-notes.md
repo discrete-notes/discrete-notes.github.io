@@ -8,8 +8,8 @@ permalink: april-may-2019-notes
 Some deadlines disturbed the schedule of the monthly notes ; this post is for 
 both April and May.
 
-
-![](../assets/table.png){: .center-image width="95%"}
+![](../assets/table.png){: .center-image width="80%"}
+A spring 2019 picture.
 
 ---
 

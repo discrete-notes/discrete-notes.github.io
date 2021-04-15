@@ -12,6 +12,9 @@ before the quarantine and everything.
 --- 
 
 ![](../assets/grafitti-donut.jpg){: .center-image width="95%"}
+<p align="center"><small><i>
+A picture from the pre-COVID times.
+</i></small></p>
 
 ---
 

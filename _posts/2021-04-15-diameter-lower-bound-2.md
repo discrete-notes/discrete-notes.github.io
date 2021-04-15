@@ -90,17 +90,17 @@ connecting two graphs: $H_1$ whose
 structure depends only on $x$ and $H_2$ whose structure depends only on 
 $y$. These graphs are going to be connected by a set of $p$ edges. 
 The nodes of $H_1$ and $H_2$ to which these edges are connected are called
-gate nodes. 
+*gate nodes*. 
 
 ![](assets/graph-CC.png){: .center-image width="70%"}
 
-(The gate nodes are part of $H_1$ and $H_2$, they are drawn outside for 
-convenience.)
+(The gate nodes are part of $H_1$ and $H_2$, they are drawn outside in the 
+picture for convenience.)
 
-The key point is that we we will build the graphs such that the following 
-claim holds:
+The key point is that we will build the graphs $G(x,y)$ such that the 
+following claim holds:
 
-*Claim:* $DISJ(x,y)=TRUE$ is and only is $DIAMETER(G(x,y))\leq k$.
+*Claim:* $DISJ(x,y)=TRUE$ if and only if $DIAM(G(x,y))\leq k$.
 
 We will describe the precise structure of $G(x,y)$ in the next post. 
 For now let's see how the reduction works.
@@ -138,6 +138,22 @@ case they both accept, otherwise they reject.
 This is a correct scheme, indeed, the strings $x$ and $y$ are disjoint, if
 and only if $G(x,y)$ has diameter $\leq k$, if and only if there exists 
 certificates such that all nodes accept. 
+
+## Discussion of the sizes
+
+The size of the certificate given by the prover to Alice (resp. Bob) is 
+basically the size of $H_1(x)$ (resp. size of $H_2(y)$) times the size of 
+the certificates in the local certification setting, $c$.
+
+Let $t$ be the size of $x$ and $y$.
+The function that maps $x$ to $H_1(x)$ (resp. $y$ to $H_2(y)$) is such that
+$H_1(x)$ and $H_2(y)$ have $\approx \sqrt(t)$ nodes.
+
+Putting things together, thanks to the reduction we now have a 
+non-deterministic communication protocol for Disjointess, that uses 
+$O(\sqrt(t)*c)$ bits, for strings of size $t$. Thus $c$ must be of size 
+$\sqrt(t)$, which is of the same order of magnitude as the size of $G$, 
+that is $n$. 
  
 
 

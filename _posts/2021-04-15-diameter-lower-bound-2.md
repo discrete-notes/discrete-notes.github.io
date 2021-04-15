@@ -31,7 +31,7 @@ To compute $f(x,y)$ Alice and Bob exchange information.
 The trivial 
 technique is that one of them, say Alice, sends her whole input to Bob, 
 and then Bob computes the function and sends the result to Alice.
-If $x$ and $y$ have size $n$, then this takes $\Theta(n)$ bits. 
+If $x$ and $y$ have size $t$, then this takes $\Theta(t)$ bits. 
 
 Sometimes we can do much better. For example, suppose that $f(x,y)$ is the
 number of 1s in $x$ + the number of 1s in $y$ modulo 2 (that is the 
@@ -62,7 +62,7 @@ of the 1s in their inputs are disjoint.
 ![](assets/disjointness.png){: .center-image width="70%"}
 
 A celebrated result states that the communication complexity of 
-Disjointness, even in the non-deterministic setting, is $\Theta(n)$. 
+Disjointness, even in the non-deterministic setting, is $\Theta(t)$. 
 That is, there is no better way to convince Alice and Bob that they have 
 disjoint inputs than to basically write their inputs in the certificates, 
 and let them exchange these certificates to check the consistency. 
@@ -77,7 +77,7 @@ Bob can check that indeed this was a 1 in their respective inputs (and
 exchange the certificates to check that they were given the same position 
 $i$). 
 There is no way to fool the players in *no*-instances. 
-This takes only $O(\log n)$ bits of communication complexity. 
+This takes only $O(\log t)$ bits of communication complexity. 
 
 ## Framework of the reduction	
 
@@ -142,18 +142,27 @@ local certificates such that all nodes accept.
 ## Discussion of the sizes
 
 The size of the certificate given by the prover to Alice (resp. Bob) is 
-basically the size of $H_1(x)$ (resp. size of $H_2(y)$) times the size of 
+basically the number of nodes of $H_1(x)$ (resp. size of $H_2(y)$) multiplied
+bu the size of 
 the certificates in the local certification setting, $c$.
 
 Let $t$ be the size of $x$ and $y$.
-The function that maps $x$ to $H_1(x)$ (resp. $y$ to $H_2(y)$) is such that
-$H_1(x)$ and $H_2(y)$ have $\approx \sqrt(t)$ nodes.
+As we will see in the next post, the function that maps $x$ to $H_1(x)$ 
+(resp. $y$ to $H_2(y)$) is such that $H_1(x)$ and $H_2(y)$ have 
+$\approx \sqrt{t}$ nodes.
 
 Putting things together, thanks to the reduction we now have a 
 non-deterministic communication protocol for Disjointess, that uses 
-$O(\sqrt(t)*c)$ bits, for strings of size $t$. Thus $c$ must be of size 
-$\sqrt(t)$, which is of the same order of magnitude as the size of $G$, 
-that is $n$. 
+$O(\sqrt{t}*c)$ bits, for strings of size $t$. 
+We know that this has to be in $\Omega(t)$.
+Thus $c$ must be of size $\Omega(\sqrt{t})$. 
+
+The size of the graph is basically $\sqrt{t}$, thus $n\approx \sqrt{t}$, 
+thus $c$ is in $\Omega(n)$. We get our lower bound!
+
+In the next post we will describe the construction that maps $x$ and $y$
+to $H_1(x)$ and $H_2(y)$.
+ 
  
 
 

@@ -135,9 +135,9 @@ accept on both side, then they will exchange messages to make sure that
 the prover gave them the same certificates for the gate nodes. If it is the 
 case they both accept, otherwise they reject. 
 
-This is a correct scheme, indeed, the strings $x$ and $y$ are disjoint, if
+This is a correct scheme because the strings $x$ and $y$ are disjoint, if
 and only if $G(x,y)$ has diameter $\leq k$, if and only if there exists 
-certificates such that all nodes accept. 
+local certificates such that all nodes accept. 
 
 ## Discussion of the sizes
 

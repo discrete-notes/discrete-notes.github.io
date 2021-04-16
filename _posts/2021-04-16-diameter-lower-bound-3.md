@@ -50,7 +50,9 @@ to as $x_{ij}$ (resp. y_{i,j}).
 
 (Let's assume that $t$ is a square number.)
 
-Now, we define a graph with two set of nodes $(a_i)_i$ and $(b_j)_j$.
+Now, we define a graph with two set of nodes 
+$(a_i)_i$ and 
+$(b_j)_j$.
 All the nodes $(a_i)_i$ form a clique and all the nodes $(b_j)_j$ into 
 another clique. 
 There is an edge between $a_i$ and $b_j$ if and only if $x_{ij} = 0 $. 

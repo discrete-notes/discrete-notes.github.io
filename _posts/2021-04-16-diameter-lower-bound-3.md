@@ -46,7 +46,7 @@ Let's focus on Alice's input $x$.
 First we put the string into a matrix, such that any bit can now be refered
 to as $x_{ij}$ (resp. y_{i,j}). 
 
-![](assets/string-matrix.png){: .center-image width="70%"}
+![](assets/string-matrix.png){: .center-image width="60%"}
 
 (Let's assume that $t$ is a square number.)
 
@@ -73,7 +73,7 @@ of $(c_i)_i$ and $(d_j)_j$.
 Then, we add paths of length $k-1$ between the pairs ${a_i,c_i}$, between 
 the pairs ${b_j,d_j}$ and between $\ell$ and $r$.
 
-![](assets/gadget.png){: .center-image width="70%"}
+![](assets/gadget.png){: .center-image width="80%"}
 
 That's it that's the graph. It has $O(\sqrt{t})$ nodes as announced. 
 

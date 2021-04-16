@@ -27,7 +27,8 @@ following form.
 Let $t$ be the size of $x$ and $y$.
 We want two properties:
 
-1 - $DISJ(x,y)=TRUE$ if and only if $DIAMETER(G(x,y))\leq k$.
+1 - $DISJ(x,y)=TRUE$ if and only if $DIAM(G(x,y))\leq k$.
+
 2 - The $H_i$ should have $O(\sqrt{t})$ nodes.
 
 The first one ensures that the reduction makes sense, and the second 
@@ -82,7 +83,7 @@ That's it that's the graph. It has $O(\sqrt{t})$ nodes as announced.
 ## Checking the diameter
 
 Now we have to check the first property, $DISJ(x,y)=TRUE$ if and only 
-if $DIAMETER(G(x,y))\leq k$. 
+if $DIAM(G(x,y))\leq k$. 
 
 The important part of the argument is about distances between $a_i$'s
 and $d_j$'s (or similarly the distance between the $b_j$'s and $c_i$'s), so 

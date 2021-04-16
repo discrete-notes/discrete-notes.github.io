@@ -3,6 +3,7 @@ layout: post
 title: Diameter lower bound in local certification (3)
 redirect_from: "/2021/04/16/diameter-lower-bound-3/"
 permalink: diameter-lower-bound-3
+---
 
 This is the third post about the certification lower bound of diameter. 
 The first post is [here](https://discrete-notes.github.io/diameter-lower-bound-1).

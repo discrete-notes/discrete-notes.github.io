@@ -78,6 +78,8 @@ the pairs ${b_j,d_j}$ and between $\ell$ and $r$.
 
 ![](assets/gadget.png){: .center-image width="80%"}
 
+(On the picture, $k=4$ and the paths have length $k-1=3$.)
+
 That's it that's the graph. It has $O(\sqrt{t})$ nodes as announced. 
 
 ## Checking the diameter

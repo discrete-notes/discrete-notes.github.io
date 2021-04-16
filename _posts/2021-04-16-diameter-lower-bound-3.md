@@ -53,7 +53,7 @@ to as $x_{ij}$ (resp. y_{i,j}).
 Now, we define a graph with two set of nodes $(a_i)_i$ and $(b_j)_j$.
 All the nodes $(a_i)_i$ form a clique and all the nodes $(b_j)_j$ into 
 another clique. 
-There is an edge between $a_i$ and $b_j$ if and only if $x_{ij}=0$. 
+There is an edge between $a_i$ and $b_j$ if and only if $x_{ij} = 0 $. 
 Note that it is the opposite as one would expect (eg in an adjacency 
 matrix).
 
@@ -77,7 +77,7 @@ the pairs ${b_j,d_j}$ and between $\ell$ and $r$.
 
 That's it that's the graph. It has $O(\sqrt{t})$ nodes as announced. 
 
-## The diameter
+## Checking the diameter
 
 Now we have to check the first property, $DISJ(x,y)=TRUE$ if and only 
 if $DIAMETER(G(x,y))\leq k$. 

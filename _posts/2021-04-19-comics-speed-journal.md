@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Comics: speed of journals
+title: Comics. Speed of journals
 redirect_from: "/2021/04/19/comics-speed-journal/"
 permalink: comics-speed-journal
 ---

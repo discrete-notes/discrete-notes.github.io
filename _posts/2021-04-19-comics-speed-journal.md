@@ -6,6 +6,6 @@ permalink: comics-speed-journal
 ---
 
 
-![](../assets/speed-of-journals.png){: .center-image width="70%"}
+![](../assets/speed-of-journals.png){: .center-image width="80%"}
 
 

@@ -45,14 +45,16 @@ structured.
 
 Let's focus on Alice's input $x$.
 First we put the string into a matrix, such that any bit can now be refered
-to as $x_{ij}$ (resp. y_{i,j}). 
+to as $x_{ij}$ (resp. $y_{i,j}$). 
 
 ![](../assets/string-matrix.png){: .center-image width="60%"}
 
 (Let's assume that $t$ is a square number.)
 
-Now, we define a graph with two sets of nodes $(a_i)_i$ and $(b_j)_j$.
-All the nodes $(a_i)_i$ form a clique and all the nodes $(b_j)_j$ into 
+
+Now, we define a graph with two sets of nodes, the $a_i$'s and the $b_j$'s.
+
+All the nodes in $(a_i)_i$ form a clique and all the nodes $(b_j)_j$ into 
 another clique. 
 There is an edge between $a_i$ and $b_j$ if and only if $x_{ij} = 0 $. 
 Note that it is the opposite as one would expect (eg in an adjacency 

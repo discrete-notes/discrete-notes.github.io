@@ -54,9 +54,9 @@ to as $x_{ij}$ (resp. $y_{i,j}$).
 
 Now, we define a graph with two sets of nodes, the $a_i$'s and the $b_j$'s.
 
-All the nodes in ${(a_i)}_i$ form a clique and all the nodes $(b_j)_j$ into 
+All the $a_i$'s form a clique and all the $b_j$'s form
 another clique. 
-There is an edge between $a_i$ and $b_j$ if and only if $x_{ij}= 0$. 
+There is an edge between $a_i$ and $b_j$ if and only if $x_{ij}=0$. 
 Note that it is the opposite as one would expect (eg in an adjacency 
 matrix).
 

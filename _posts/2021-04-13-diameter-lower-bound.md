@@ -39,7 +39,7 @@ building and certifying a BFS tree rooted at $u$
 (every node is given its parent and its distance to the root in the tree, 
 and can check the consistency of the distances).
 
-![](assets/diameter-1.png){: .center-image width="70%"}
+![](../assets/diameter-1.png){: .center-image width="70%"}
 
 (One also needs spanning trees pointing to $u$ and $v$, which do not 
 appear in the picture.) 
@@ -70,7 +70,7 @@ Let's start with a simple example.
 We want to check whether the graph is a dumbbell graph, that is a graph $G$
 formed by taking two copies of a graph $H$ and linking them by a long path. 
 
-![](assets/dumbbell.png){: .center-image width="70%"}
+![](../assets/dumbbell.png){: .center-image width="70%"}
 
 Intuitively one has to transfer the whole map of the left graph to the 
 right graph or vice-versa, in order to have one node comparing the two 
@@ -96,7 +96,7 @@ to be transferred from one end to the other. Basically the nodes only need
 to know what is the longest shortest path starting at the connection
 with the path. 
 
-![](assets/diameter-2.png){: .center-image width="70%"}
+![](../assets/diameter-2.png){: .center-image width="70%"}
 
 As we are looking for linear-in-$n$ lower bounds, what we would like is 
 that for every new node we need to send one more bit of information, which 
@@ -110,7 +110,7 @@ simplest set of instances with two paths: the graph below, with either
 (3) only the blue or (4) none of them (let's not worry about connectivity 
 here).
    
-![](assets/blue-red.png){: .center-image width="70%"}
+![](../assets/blue-red.png){: .center-image width="70%"}
 
 Now, if the paths have length $k-1$, the diameter can be either $k$ (case 1), 
 or $2k-1$ (case 2 and 3), or infinite (case 4). 
@@ -142,7 +142,7 @@ Intuitively, if there are $p$ paths, then on each side there are $p$
 endpoints, and the total information about the adjacency of these nodes 
 takes $\Omega(p^2)$ bits. 
 
-![](assets/five-paths.png){: .center-image width="70%"}
+![](../assets/five-paths.png){: .center-image width="70%"}
 
 The number of nodes in such an instances is around $\Theta(p)$ 
 so transferring $\Omega(p^2)$ bits through

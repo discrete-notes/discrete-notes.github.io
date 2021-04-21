@@ -59,7 +59,7 @@ $DISJ(x,y)=0$ if there exists a position $i$ such that $x_i=y_i=1$, and 1
 otherwise. In other words Alice and Bob should accept only if the positions
 of the 1s in their inputs are disjoint.
 
-![](assets/disjointness.png){: .center-image width="70%"}
+![](../assets/disjointness.png){: .center-image width="70%"}
 
 A celebrated result states that the communication complexity of 
 Disjointness, even in the non-deterministic setting, is $\Theta(t)$. 
@@ -92,7 +92,7 @@ $y$. These graphs are going to be connected by a set of $p$ edges.
 The nodes of $H_1$ and $H_2$ to which these edges are connected are called
 *gate nodes*. 
 
-![](assets/graph-CC.png){: .center-image width="70%"}
+![](../assets/graph-CC.png){: .center-image width="70%"}
 
 (The gate nodes are part of $H_1$ and $H_2$, they are drawn outside in the 
 picture for convenience.)
@@ -110,13 +110,13 @@ Alice can compute $H_1(x)$ and Bob can compute $H_2(y)$, without
 communication. Actually they also know that there will be gate nodes on the 
 other side, so they can also compute whose. 
 
-![](assets/reduction-1.png){: .center-image width="70%"}
+![](../assets/reduction-1.png){: .center-image width="70%"}
 
 Now suppose we have a certification of diameter $\leq k$ with certificates 
 of size $c$. Then in particular for the graphs $G(x,y)$, the usual 
 conditions hold.
 
-![](assets/reduction-2.png){: .center-image width="80%"}
+![](../assets/reduction-2.png){: .center-image width="80%"}
 
 Let's now describe the communication complexity protocol. 
 On *yes*-instances, the prover will give to Alice the certificates of the 
@@ -127,7 +127,7 @@ Alice and Bob, when they receive the certificates, will simulate the
 local verifier on all the nodes of their graphs, except the gate nodes 
 of the other player. 
 
-![](assets/reduction-3.png){: .center-image width="70%"}
+![](../assets/reduction-3.png){: .center-image width="70%"}
 
 If in this simulation one of the nodes rejects, then 
 they will exchange messages saying that they should reject. If all nodes 

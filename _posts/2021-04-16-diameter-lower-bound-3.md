@@ -22,7 +22,7 @@ We want to define two transformations $x \mapsto H_1(x)$ and
 $y \mapsto H_2(y)$ that we will put together to form a graph $G(x,y)$ of the 
 following form.
 
-![](assets/graph-CC.png){: .center-image width="70%"}
+![](../assets/graph-CC.png){: .center-image width="70%"}
 
 Let $t$ be the size of $x$ and $y$.
 We want two properties:
@@ -47,7 +47,7 @@ Let's focus on Alice's input $x$.
 First we put the string into a matrix, such that any bit can now be refered
 to as $x_{ij}$ (resp. y_{i,j}). 
 
-![](assets/string-matrix.png){: .center-image width="60%"}
+![](../assets/string-matrix.png){: .center-image width="60%"}
 
 (Let's assume that $t$ is a square number.)
 
@@ -58,7 +58,7 @@ There is an edge between $a_i$ and $b_j$ if and only if $x_{ij} = 0 $.
 Note that it is the opposite as one would expect (eg in an adjacency 
 matrix).
 
-![](assets/matrix-graph.png){: .center-image width="70%"}
+![](../assets/matrix-graph.png){: .center-image width="70%"}
 
 ## Putting things together
 
@@ -74,7 +74,7 @@ of $(c_i)_i$ and $(d_j)_j$.
 Then, we add paths of length $k-1$ between the pairs ${a_i,c_i}$, between 
 the pairs ${b_j,d_j}$ and between $\ell$ and $r$.
 
-![](assets/gadget.png){: .center-image width="80%"}
+![](../assets/gadget.png){: .center-image width="80%"}
 
 (On the picture, $k=4$ and the paths have length $k-1=3$.)
 

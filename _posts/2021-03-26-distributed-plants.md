@@ -17,7 +17,7 @@ about this topic with distributed computing tools in mind.
 
 Trees in the CS/maths sense are quite different from real trees. 
 
-![](assets/binary-tree.png){: .center-image width="80%"} | ![](assets/arbre-1.png){: .center-image width="70%"}
+![](../assets/binary-tree.png){: .center-image width="80%"} | ![](assets/arbre-1.png){: .center-image width="70%"}
 
 Even if we root both trees on the bottom, there are several step to take 
 to transform a mathematical tree into some representation that looks like a real 
@@ -39,7 +39,7 @@ probably to consider a rule such as:
 * apply recursively a local rule of the form "a leaf can be transformed into an 
 internal node with two leafs":
 
-![](assets/binary-plant.png){: .center-image width="80%"}
+![](../assets/binary-plant.png){: .center-image width="80%"}
 
 Apart from the topics of thickness and 3D, can we be satisfied with this
 model? 
@@ -64,14 +64,14 @@ and nights, the cycle of seasons etc.
 * **All nodes have 2 children**. When looking at the pictures, this regularity 
 seems wrong. Pictures like this seem more natural:
 
-![](assets/arbre-degre-divers.png){: .center-image width="60%"}
+![](../assets/arbre-degre-divers.png){: .center-image width="60%"}
 
 But on the other hand we said that the focus was on the mere graph structure, 
 and then maybe a node with three leaves can be two binary nodes that would be 
 very close once we add thickness and length. This seems to also make some sense
 from a biology point of view. 
 
-![](assets/arbre-degre-3.png){: .center-image width="80%"}
+![](../assets/arbre-degre-3.png){: .center-image width="80%"}
 
 Anyway, let's say that we do want to have a degree distribution that feels 
 natural. 
@@ -88,11 +88,11 @@ In terms of distributed computing, we can think of these labels/colors as
 constant size local memory. 
 With this we can have more refined rules, such as:
 
-![](assets/regle-algue.png){: .center-image width="60%"}
+![](../assets/regle-algue.png){: .center-image width="60%"}
 
 Such enhanced rules create more interesting structures. 
 
-![](assets/algue.png){: .center-image width="60%"}
+![](../assets/algue.png){: .center-image width="60%"}
 
 These structures are nicer, but still very rigid, and quite unnatural. 
 
@@ -109,7 +109,7 @@ the tree: a node with label $A$ will always generate the same probabilistic
 distribution of branches. This is probably fine for some plants which have very 
 regular shapes. A well-known example of such a plant is the Romanesco broccoli.
 
-![](assets/romanesco.png){: .center-image width="60%"}
+![](../assets/romanesco.png){: .center-image width="60%"}
 
 But real trees are not so fractal-like.
 For example one can see that the lowest part is very different from the upper 

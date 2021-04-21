@@ -163,6 +163,7 @@ thus $c$ is in $\Omega(n)$. We get our lower bound!
 In the next post we will describe the construction that maps $x$ and $y$
 to $H_1(x)$ and $H_2(y)$.
  
+$\rightarrow$ [Next post of the series](https://discrete-notes.github.io/diameter-lower-bound-3)
  
 
 

@@ -155,8 +155,7 @@ representation of the adjacency.
 In the next post we will see how to make this very precise 
 through a reduction from communication complexity. 
 
-
-
+$\rightarrow$ [Next post of the series](https://discrete-notes.github.io/diameter-lower-bound-2)
 
 
  

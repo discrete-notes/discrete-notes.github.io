@@ -9,7 +9,6 @@ Some notes on graph theory topics.
 
 ![](../assets/avril-21.JPG){: .center-image width="70%"}
 
-
 ## Linkless embedding, a generalization of planar graphs to three dimensions
 
 Planar embedding are embedding of a graph in the plane without crossing of 
@@ -83,7 +82,7 @@ $G$ has treewidth at most $15a$.
 
 ## Baker's technique for peeling planar graphs
 
-[https://en.wikipedia.org/wiki/Baker%27s_technique](Baker's techniques) 
+[Baker's techniques](https://en.wikipedia.org/wiki/Baker%27s_technique) 
 (named after [Brenda Baker](https://en.wikipedia.org/wiki/Brenda_Baker)) is
 a way to decompose planar graphs. Basically it's about peeling the graph 
 like an onion, by iteratively removing layers.

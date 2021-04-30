@@ -7,7 +7,7 @@ permalink: notes-graph-stuff
 
 Some notes on graph theory topics.
 
-![](../assets/avril-21.jpg){: .center-image width="70%"}
+![](../assets/avril-21.JPG){: .center-image width="70%"}
 
 
 ## Linkless embedding, a generalization of planar graphs to three dimensions

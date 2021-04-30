@@ -150,6 +150,5 @@ Actually for their first lectures, the lecturers at
 (a prestigious French research institution) are advised to do exactly that: write
 the text of the lecture in advance. 
 
-## A nice theorem
-
-![](../assets/new-result.png){: .center-image width="70%"}
+[EDIT: there used to be a drawing here to finish the post. It has been 
+moved to a separate post.]

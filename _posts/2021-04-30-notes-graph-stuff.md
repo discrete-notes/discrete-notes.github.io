@@ -8,6 +8,9 @@ permalink: notes-graph-stuff
 Some notes on graph theory topics.
 
 ![](../assets/avril-21.JPG){: .center-image width="70%"}
+<p align="center"><small><i>
+A picture from April 2021.
+</i></small></p>
 
 ## Linkless embedding, a generalization of planar graphs to three dimensions
 
@@ -41,7 +44,7 @@ minus two matchings), then the orange edges (one matching) and then the
 blue edges (the other matching).
 </i></small></p>
 
-![](../assets/K6-linked.png){: .center-image width="60%"}
+![](../assets/K6-linked.png){: .center-image width="50%"}
 <p align="center"><small><i>
 The same embedding, but now with two linked cycles highlighted.
 </i></small></p>

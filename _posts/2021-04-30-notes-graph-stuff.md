@@ -35,14 +35,14 @@ One of these graphs is $K_6$, the clique on 6 vertices.
 Below is an attempt at building a linkless embedding for $K_6$, that 
 unsurprizingly fails.
 
-![](../assets/K6-construction.pnf){: .center-image width="80%"}
+![](../assets/K6-construction.png){: .center-image width="80%"}
 <p align="center"><small><i>
 Constructing a $K_6$ little by little. First the gray edges (the clique 
 minus two matchings), then the orange edges (one matching) and then the 
 blue edges (the other matching).
 </i></small></p>
 
-![](../assets/K6-linked.png){: .center-image width="80%"}
+![](../assets/K6-linked.png){: .center-image width="60%"}
 <p align="center"><small><i>
 The same embedding, but now with two linked cycles highlighted.
 </i></small></p>

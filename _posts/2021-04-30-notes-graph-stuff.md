@@ -7,9 +7,10 @@ permalink: name
 
 Some notes on graph theory topics.
 
-![](../assets/xxxxxxxxxxx.jpg){: .center-image width="70%"}
+![](../assets/avril-21.jpg){: .center-image width="70%"}
 
-## Linkless embedding, a generalization of planar graphs to three dimensions
+
+## Linkless embedding, a generalization of planar graphs to three dimensions
 
 Planar embedding are embedding of a graph in the plane without crossing of 
 edges.
@@ -23,7 +24,7 @@ A linkless embedding, is an embedding of a graph in 3D such that no two
 cycles are "linked". I found no easy way to describe this notion with words
 so I'll just make a drawing (the important part is highlighted in yellow).
 
-![](../assets/linked-cycle.png){: .center-image width="70%"}
+![](../assets/linked-cycles.png){: .center-image width="70%"}
 
 I discovered this notion (along with other things) in the blog post
 [Ten things you (possibly) didn't know about the petersen graph](https://cp4space.wordpress.com/2013/09/06/ten-things-you-possibly-didnt-know-about-the-petersen-graph/). 
@@ -34,14 +35,14 @@ One of these graphs is $K_6$, the clique on 6 vertices.
 Below is an attempt at building a linkless embedding for $K_6$, that 
 unsurprizingly fails.
 
-![](../assets/K6-construction){: .center-image width="80%"}
+![](../assets/K6-construction.pnf){: .center-image width="80%"}
 <p align="center"><small><i>
 Constructing a $K_6$ little by little. First the gray edges (the clique 
 minus two matchings), then the orange edges (one matching) and then the 
 blue edges (the other matching).
 </i></small></p>
 
-![](../assets/K6-linked){: .center-image width="80%"}
+![](../assets/K6-linked.png){: .center-image width="80%"}
 <p align="center"><small><i>
 The same embedding, but now with two linked cycles highlighted.
 </i></small></p>

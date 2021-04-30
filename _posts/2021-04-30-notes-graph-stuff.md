@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Notes&#58; Graph-related stuff
-redirect_from: "/2021/04/30/name/"
-permalink: name
+redirect_from: "/2021/04/30/notes-graph-stuff/"
+permalink: notes-graph-stuff
 ---
 
 Some notes on graph theory topics.

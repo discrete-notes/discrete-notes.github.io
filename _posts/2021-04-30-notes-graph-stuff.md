@@ -59,10 +59,10 @@ year the topic was width parameters (treewidth, cliquewidth, and all their
 friends). 
 Because I had to prepare for a job interview I didn't attend, but I plan 
 to catch up in the months to come. The videos are available on
-[https://webconf.u-bordeaux.fr/b/mar-pmc-ht6](that webpage).
+[that webpage](https://webconf.u-bordeaux.fr/b/mar-pmc-ht6).
 
 Actually I didn't attend last year either, but I learned a lot from the few 
-recorded talks I watched. (The two next notes come from the first 15 minutes
+recorded talks I watched. (The next two notes come from the first 15 minutes
 of the [first talk](https://visio.u-bordeaux.fr/playback/presentation/2.0/playback.html?meetingId=2f0650b79e14fde9ea24e2530b31c59a0ced0d87-1590392967834) by 
 [Gwenaël Joret](https://gjoret.be/).)
 
@@ -130,10 +130,10 @@ structure (small treewidth, k-outerplanar, etc.).
 ## Graph burning 
 
 I saw [a preprint](https://arxiv.org/pdf/2003.07746.pdf) on the arxiv about 
-"graph burning", and it made me curious. The graph burning if the following 
+"graph burning", and it made me curious. Graph burning is the following 
 process. You have time steps, and at each time-step:
 
-* you can chose an arbitrary vertex to burn
+* you can choose an arbitrary vertex to burn
 * a vertex that has burned before burns its neighbors. 
 
 ![](../assets/graph-burning-1.png){: .center-image width="60%"}

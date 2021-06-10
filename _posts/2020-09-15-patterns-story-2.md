@@ -58,7 +58,7 @@ post).
 I was quite depressed to discover that I had worked all this weeks in vain, 
 and José (Correa) told me something like: "It's actually good news: if people have
 already answered our questions, it means that we have good questions and 
-that's the most important part." (At the time I was completely convinced, 
+that's the most important part." (At the time I was not completely convinced 
 that this was good news!)
 
 In the end, we could strengthen our results in various ways 

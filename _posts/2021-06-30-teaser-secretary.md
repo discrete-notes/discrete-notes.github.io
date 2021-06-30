@@ -20,15 +20,15 @@ and [Alexandros Tsigonias-Dimitriadis](https://www.gs.tum.de/en/adone/participat
 ## The secretary problem
 
 The [secretary problem](https://en.wikipedia.org/wiki/Secretary_problem) 
-is a classic problem of online algorithmic. Basically numbers are presented 
-to a player, one after the other, and the player has to stop on the largest 
-number. 
+is a classic problem of online algorithmics. Basically, some numbers are 
+presented to a player, one after the other, and the player has to stop on 
+the largest number. 
 
 More precisely, an adversary chooses a set of $n$ numbers, 
 these numbers are presented to the player in a random order, and for every 
 number, the player has to decide either to discard it, or to keep it. 
-The decisions are irrevocable: if a number is discarded it is destroyed, 
-and if a number is chosen, then the game is stopped, and this number is the 
+The decisions are irrevocable: if a number is discarded then it is destroyed, 
+and if a number is chosen then the game is stopped, and this number is the 
 output of the player. 
 
 The player wins if and only if the number she chooses is the maximum number. 
@@ -47,12 +47,12 @@ total. So maybe, it's a good idea to stop there.
 ## Issues with the classic model and our new model
 
 A problem with the secretary problem, when it comes to modeling real-world
-situation, is that it is very pessimistic because we start with absolutely no 
+situations, is that it is very pessimistic: we start with absolutely no 
 knowledge about the numbers. The fact that we can still ensure $1/e$ is 
 because the order is random, and if we had an adversarial order, then we 
 couldn't guarantee anything. 
 
-![](../assets/secretary-animals-2.png){: .center-image width="80%"}
+![](../assets/secretary-animals-2.png){: .center-image width="90%"}
 <p align="center"><small><i>
 In the adversarial order, anything can happen.
 </i></small></p>
@@ -65,7 +65,7 @@ distribution?).
 
 We propose a new model summarized in the following picture.
 
-![](../assets/secretary-models.png){: .center-image width="80%"}
+![](../assets/secretary-models.png){: .center-image width="90%"}
 <p align="center"><small><i>
 The classic and the new secretary model.
 </i></small></p>

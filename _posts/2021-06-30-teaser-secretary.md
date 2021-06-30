@@ -39,12 +39,12 @@ maximum with probability $1/e$. (See the wikipedia article linked above.)
 
 ![](../assets/secretary-animals.png){: .center-image width="70%"}
 <p align="center"><small><i>
-At this point, we have discarded a 2 (turtle) and a 1 (rabbit), and we see
-a 5 (cow). We know that there are $n=4$ numbers (animals) in total. So 
-maybe, it's a good idea to stop there. 
+At this point, we have discarded a 2 (the turtle) and a 1 (the rabbit), and 
+we see a 5 (the cow). We know that there are $n=4$ numbers (animals) in 
+total. So maybe, it's a good idea to stop there. 
 </i></small></p>
 
-## Issues with the model and our new model
+## Issues with the classic model and our new model
 
 A problem with the secretary problem, when it comes to modeling real-world
 situation, is that it is very pessimistic because we start with absolutely no 
@@ -52,7 +52,7 @@ knowledge about the numbers. The fact that we can still ensure $1/e$ is
 because the order is random, and if we had an adversarial order, then we 
 couldn't guarantee anything. 
 
-![](../assets/secretary-animals-2.png){: .center-image width="70%"}
+![](../assets/secretary-animals-2.png){: .center-image width="80%"}
 <p align="center"><small><i>
 In the adversarial order, anything can happen.
 </i></small></p>
@@ -65,7 +65,7 @@ distribution?).
 
 We propose a new model summarized in the following picture.
 
-![](../assets/secretary-models.png){: .center-image width="70%"}
+![](../assets/secretary-models.png){: .center-image width="80%"}
 <p align="center"><small><i>
 The classic and the new secretary model.
 </i></small></p>

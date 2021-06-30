@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Teaser: The Secretary Problem with Independent Sampling
+title: Teaser&#58; The Secretary Problem with Independent Sampling
 redirect_from: "/2021/06/30/teaser-secretary/"
 permalink: teaser-secretary
 ---

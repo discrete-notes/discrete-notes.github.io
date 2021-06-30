@@ -1,18 +1,18 @@
 ---
 layout: post
-title: Teaser&#58; The Secretary Problem with Independent Sampling
+title: Teaser&#58; The secretary problem with independent sampling
 redirect_from: "/2021/06/30/teaser-secretary/"
 permalink: teaser-secretary
 ---
 
 I recentely presented the paper 
-[The Secretary Problem with Independent Sampling](https://perso.liris.cnrs.fr/lfeuilloley/publications/secretary.html)
+[The secretary problem with independent sampling](https://perso.liris.cnrs.fr/lfeuilloley/publications/secretary.html)
 at the [Highlight of algorithms conference](https://www.highlightsofalgorithms.org/) 
 in the three-minute format (+ poster). Here is a blog version of this 
 teaser talk. 
 
 The paper is joint work with 
-[José Correa](https://www.dii.uchile.cl/~jcorrea/)(José Correa), 
+[José Correa](https://www.dii.uchile.cl/~jcorrea/), 
 [Andres Cristi](https://sites.google.com/view/andres-cristi),
 [Tim Oosterwijk](https://sites.google.com/view/timoosterwijk/),
 and [Alexandros Tsigonias-Dimitriadis](https://www.gs.tum.de/en/adone/participating-researchers/tsigonias-dimitriadis-alexandros/).

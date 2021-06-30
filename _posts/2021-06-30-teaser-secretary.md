@@ -70,11 +70,15 @@ We propose a new model summarized in the following picture.
 The classic and the new secretary model.
 </i></small></p>
 
-The left column represents the classic secretary model. In our model, the 
+The left column represents the classic secretary model. In our model 
+(the right column), the 
 beginning is the same: an adversary chooses $n$ numbers, and these numbers 
 are shuffled at random. But then there is a twist. Each number will join
 a "sample set" with probability $p$, and will stay in the "online set" with 
-probability $(1-p)$. The numbers in the sample set are removed from the 
+probability $(1-p)$. 
+In the picture, the orange cards are the sampled numbers, and the yellow 
+cards are the ones that stay in the online set.
+The numbers in the sample set are removed from the 
 game, they are given directly to the player at the very beginning. 
 The player sees these numbers, and then plays only on the online set. 
 In other words, the sample set is a way for the algorithm to learn about 
@@ -85,19 +89,20 @@ test set.)
 The rational behind this model is that the samples model the past data 
 that we know about when we start the game. Still having an adversary
 makes the model more robust than having a distribution, and samples are 
-close to the type of knowledge one would have in a real-world scenario.
+closer to the type of knowledge one would have in real-world scenarios.
 
 ## Results
 
-In our new model, we can consider both the classic random order for the 
-numbers and the adversarial order. For these two variants we give algorithms
+In our new model, we can consider both the classic random order and the 
+adversarial order for the numbers arrivals. 
+For these two variants we give algorithms
 with optimal success guarantee. Unsurprisingly, in both cases the larger 
 the sampling probability $p$ the better the guarantee. (See the paper for 
 the curves.)
 
-The proofs in the two cases are very different: in the first
+The proofs of optimality in the two cases are very different: in the first
 case we make the problem more continuous and use tools from optimization, 
-whether in the second case we build technique for proving impossibility 
-results, based on indistinguishability arguments similar to the ones used 
-in distributed computing. 
+whereas in the second case we introduce a new technique for proving 
+impossibility results, based on indistinguishability arguments similar to 
+the ones used in distributed computing. 
 

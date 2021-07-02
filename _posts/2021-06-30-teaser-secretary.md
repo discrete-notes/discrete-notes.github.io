@@ -44,7 +44,7 @@ we see a 5 (the cow). We know that there are $n=4$ numbers (animals) in
 total. So maybe, it's a good idea to stop there. 
 </i></small></p>
 
-## Issues with the classic model and our new model
+## Issues and our new model
 
 A problem with the secretary problem, when it comes to modeling real-world
 situations, is that it is very pessimistic: we start with absolutely no 

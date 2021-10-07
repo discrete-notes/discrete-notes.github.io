@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The PODC/DISC community in France
+title: The PODC-DISC community in France
 redirect_from: "/2021/10/07/PODC-DISC-france/"
 permalink: PODC-DISC-france
 ---

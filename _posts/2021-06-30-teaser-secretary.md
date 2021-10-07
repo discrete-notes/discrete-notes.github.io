@@ -15,7 +15,7 @@ The paper is joint work with
 [José Correa](https://www.dii.uchile.cl/~jcorrea/), 
 [Andres Cristi](https://sites.google.com/view/andres-cristi),
 [Tim Oosterwijk](https://sites.google.com/view/timoosterwijk/),
-and [Alexandros Tsigonias-Dimitriadis](https://www.gs.tum.de/en/adone/participating-researchers/tsigonias-dimitriadis-alexandros/).
+and [Alexandros Tsigonias-Dimitriadis](https://www.gs.tum.de/en/adone/participating-researchers/tsigonias-dimitriadis-alexandros/)..
 
 ## The secretary problem
 

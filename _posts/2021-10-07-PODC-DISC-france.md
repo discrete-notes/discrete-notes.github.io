@@ -31,11 +31,11 @@ Map of the centers of PODC/DISC research in France.
 
 (We divide the list into Paris' area and outside Paris area for convenience.)
 
-### Sorbonne University - LIP6
+### Sorbonne University - LIP6
 
 (Former Université Pierre et Marie Curie, Paris 6, Paris Jussieu)
 
-* [Lélia Blin](https://www-npa.lip6.fr/blin/) (also affiliated to  
+* [Lélia Blin](https://www-npa.lip6.fr/blin/) (also affiliated to 
 Université Evry Val d'Essonne). Distributed algorithms, self-stabilization, 
 spanning trees, memory minimization, sensor networks.
 * [Swan Dubois](https://pages.lip6.fr/Swan.Dubois/). Fault tolerance, 
@@ -85,15 +85,14 @@ mobile agents
 * [Ami Paz (starting in Fall 2021)](https://sites.google.com/view/amipaz)
 Distributed graph algorithms, topological methods, streaming algorithms
 
-### Paris-Saclay University - CEA LIST
+### Paris-Saclay University - CEA LIST
 
 * [Sara Tucci-Piergiovanni](https://fr.linkedin.com/in/sara-tucci-piergiovanni-1582672). 
 Byzantine fault tolerance, blockchain
 * [Antonella Del Pozzo](https://fr.linkedin.com/in/antonella-del-pozzo-60165651).
 Byzantine fault tolerance, blockchain, distributed storages
 
-    
-### École polytechnique - LIX
+### École polytechnique - LIX
 
 * [Bernadette Charron-Bost](https://www.lix.polytechnique.fr/~charron/)
     Distributed algorithms, fault-tolerance, consensus, natural algorithms
@@ -114,14 +113,12 @@ Self-stabilization, graph theory
 * [Devan Sohier](https://fr.linkedin.com/in/devan-sohier-6307393). 
 Randomized methods, population protocols, self-stabilization.
 
-
 ### CNAM - CEDRIC
 
 * [Pierre Courtieu](https://cedric.cnam.fr/~courtiep/index.fr.html).
     Formal proofs, robots
-
-
-### Télécom Paris - INFRES
+    
+### Télécom Paris - INFRES
 
 * [Petr Kuznetsov](https://perso.telecom-paristech.fr/kuznetso/)
 Synchronization, failure detection, algebraic topology and distributed 
@@ -129,16 +126,14 @@ computing, distributed aspects in networking
 * [Matthieu Rambaud](https://perso.telecom-paristech.fr/rambaud/).
     Cryptography, algebraic geometry, byzantine fault tolerance
 * [Pierre Sutra](https://sites.google.com/site/0track/).
-    Data consistency and concurrency in distributed systems
-   
+Data consistency and concurrency in distributed systems
+    
 ### University of Technology of Compiègne
 
 * [Bertrand Ducourthial](https://www.hds.utc.fr/~ducourth/dokuwiki/doku.php).
-    Dynamic networks
-    
+Dynamic networks
 
-
-## Outside Paris'area
+## Outside Paris'area
 
 ### University of Bordeaux - LABRI
 
@@ -192,8 +187,8 @@ fault-tolerance, synchronization
     Large-scale distributed computer systems, programmability of distribution, cloud computing, social networks
 * [Bruno Sericola](http://www.irisa.fr/dionysos/pages\_perso/sericola/index.htm).
     Markov chains, Queuing theory, population protocols
-* [Yves Mocquard](http://people.irisa.fr/Yves.Mocquard/)
-    Randomized methods, population protocols
+* [Yves Mocquard](http://people.irisa.fr/Yves.Mocquard/). 
+Randomized methods, population protocols
 
 ### University of Nantes - LS2N
 

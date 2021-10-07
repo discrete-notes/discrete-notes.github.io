@@ -16,9 +16,9 @@ idea) and myself, with help from
 [Mikaël Rabie](https://www.irif.fr/~rabie/)..
 
 This list is meant to be inclusive. If you feel that someone is missing, 
-just let us know. Our rule of thumb to decide who to list was: people with
-permanent positions and with at least two
-papers in the last five years in a conference with similar topic as PODC/DISC
+just let us know. Our rule of thumb to decide who to put on the list was: 
+people with permanent positions and with at least two
+papers in the last five years in a conference with a PODC/DISC scope 
 (eg PODC, DISC, OPODIS, SSS, SIROCCO etc.). 
 
 
@@ -39,15 +39,15 @@ Map of the centers of PODC/DISC research in France.
 Université Evry Val d'Essonne). Distributed algorithms, self-stabilization, 
 spanning trees, memory minimization, sensor networks.
 * [Swan Dubois](https://pages.lip6.fr/Swan.Dubois/). Fault tolerance, 
-self-stabilization, dynamic systems, byzantine faults
+self-stabilization, dynamic systems, byzantine faults.
 * [Franck Petit](https://pages.lip6.fr/Franck.Petit/). Algorithmic aspects 
 of synchronization, stabilization and fault-tolerance, cohort of robots, 
-dynamic networks
+dynamic networks.
 * [Maria Potop-Butucaru](https://pagesperso.lip6.fr/Maria.Gradinariu/). 
 Fault-tolerant and self* distributed systems, sensor and robots networks, 
-P2P or distributed ledgers
-* [Sébastien Tixeuil](https://www-npa.lip6.fr/~tixeuil/wiki/pmwiki.php)
-Fault and attack tolerance in self-organized distributed systems and networks
+P2P or distributed ledgers.
+* [Sébastien Tixeuil](https://www-npa.lip6.fr/~tixeuil/wiki/pmwiki.php).
+Fault and attack tolerance in self-organized distributed systems and networks.
 
 ### University of Paris - IRIF 
 
@@ -55,52 +55,53 @@ Fault and attack tolerance in self-organized distributed systems and networks
 
 * [Carole Delporte-Gallet](https://www.irif.fr/~cd/). Distributed 
 algorithms, fault-tolerance, consensus, security and privacy, networks
-* [Hugues Fauconnier](https://www.irif.fr/~hf/)
+* [Hugues Fauconnier](https://www.irif.fr/~hf/).
     Distributed algorithms, fault-tolerance, consensus, security and privacy, networks
 * [Pierre Fraigniaud](https://www.irif.fr/users/pierref/index). Design and analysis of distributed algorithms and data structures for networks.
 * [Amos Korman](https://amoskorman.com/). Distributed algorithms in 
-networks, computations under uncertainties, algorithmic aspects of biology
+networks, computations under uncertainties, algorithmic aspects of biology.
 * [Mikaël Rabie](https://www.irif.fr/~rabie/). Complexity, Computability, 
-Distributed Computation
+Distributed Computation.
 * [Laurent Viennot](https://who.rocq.inria.fr/Laurent.Viennot/)
-Transportation networks, routing, labelings
+Transportation networks, routing, labelings.
 
 ### Paris-Saclay University - LRI/LISN + LSV
 
 * [Thibaut Balabonski](https://www.lri.fr/~blsk/). Formal proofs for mobile 
-robot swarms protocols, lambda calculus, concurrency
+robot swarms protocols, lambda calculus, concurrency.
 * [Evangelos Bampas](https://www.lri.fr/~bampas/). Distributed and mobile 
-agent systems
+agent systems.
 * [Joffroy Beauquier](https://www.lri.fr/membre\_en.php?mb=275). Population 
-protocols, self-stabilization
+protocols, self-stabilization.
 * [Janna Burman](https://www.lri.fr/membre.php?mb=1614). Population 
-protocols, self-stabilization
+protocols, self-stabilization.
 * [Johanne Cohen](https://www.lri.fr/~jcohen/). Algorithms and 
 telecommunications, self-stabilization.
 * [Matthias Függer](http://www.lsv.fr/~mfuegger/). Fundamentals of 
-computationally extremely restricted distributed devices
+computationally extremely restricted distributed devices.
 * [Thomas Nowak](https://www.thomasnowak.net/). Distributed algorithms, 
 synthetic biology, discrete-event systems, wireless ad-hoc networks of 
-mobile agents
-* [Ami Paz (starting in Fall 2021)](https://sites.google.com/view/amipaz)
-Distributed graph algorithms, topological methods, streaming algorithms
+mobile agents.
+* [Ami Paz](https://sites.google.com/view/amipaz) (starting in Fall 2021).
+Distributed graph algorithms, topological methods, streaming algorithms.
 
 ### Paris-Saclay University - CEA LIST
 
 * [Sara Tucci-Piergiovanni](https://fr.linkedin.com/in/sara-tucci-piergiovanni-1582672). 
-Byzantine fault tolerance, blockchain
+Byzantine fault tolerance, blockchain.
 * [Antonella Del Pozzo](https://fr.linkedin.com/in/antonella-del-pozzo-60165651).
-Byzantine fault tolerance, blockchain, distributed storages
+Byzantine fault tolerance, blockchain, distributed storages.
 
 ### École polytechnique - LIX
 
-* [Bernadette Charron-Bost](https://www.lix.polytechnique.fr/~charron/)
-    Distributed algorithms, fault-tolerance, consensus, natural algorithms
-* [Eric Goubault](http://www.lix.polytechnique.fr/~goubault/)
-Topological methods and verification of concurrent, distributed and fault-tolerant computing
-* [Samuel Mimram](http://www.lix.polytechnique.fr/Labo/Samuel.Mimram/)
+* [Bernadette Charron-Bost](https://www.lix.polytechnique.fr/~charron/).
+    Distributed algorithms, fault-tolerance, consensus, natural algorithms.
+* [Eric Goubault](http://www.lix.polytechnique.fr/~goubault/).
+Topological methods and verification of concurrent, distributed and 
+fault-tolerant computing.
+* [Samuel Mimram](http://www.lix.polytechnique.fr/Labo/Samuel.Mimram/).
 Denotational semantics, concurrency, rewriting theory, category theory, 
-linear logic, programming languages, algebraic topology, and hybrid systems
+linear logic, programming languages, algebraic topology, and hybrid systems.
 
 
 ### University of Versailles - Li-PaRAD 
@@ -108,16 +109,16 @@ linear logic, programming languages, algebraic topology, and hybrid systems
 (The full name is University of Versailles Saint-Quentin-en-Yvelines)
 
 * [George Manoussakis](https://sites.google.com/view/gom/home). 
-Self-stabilization, graph theory
+Self-stabilization, graph theory.
 * [Laurence Pilard](https://fr.linkedin.com/in/laurence-pilard-4528003).
-    Fault-tolerance
+    Fault-tolerance.
 * [Devan Sohier](https://fr.linkedin.com/in/devan-sohier-6307393). 
 Randomized methods, population protocols, self-stabilization.
 
 ### CNAM - CEDRIC
 
 * [Pierre Courtieu](https://cedric.cnam.fr/~courtiep/index.fr.html).
-    Formal proofs, robots
+    Formal proofs, robots.
     
 ### Télécom Paris - INFRES
 

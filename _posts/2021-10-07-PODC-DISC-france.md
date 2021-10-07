@@ -13,7 +13,7 @@ It has been compiled by
 [Fabien Dufoulon](https://fabiendufoulon.github.io/) (who came up with the 
 idea) and myself, with help from 
 [Anaïs Durand](https://sancy.iut-clermont.uca.fr/~durand/) and 
-[Mikaël Rabie](https://www.irif.fr/~rabie/).
+[Mikaël Rabie](https://www.irif.fr/~rabie/)..
 
 This list is meant to be inclusive. If you feel that someone is missing, 
 just let us know. Our rule of thumb to decide who to list was: people with

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The PODC-DISC community in France
+title: The PODC&#47;DISC community in France
 redirect_from: "/2021/10/07/PODC-DISC-france/"
 permalink: PODC-DISC-france
 ---
@@ -27,7 +27,7 @@ papers in the last five years in a conference with similar topic as PODC/DISC
 Map of the centers of PODC/DISC research in France.
 </i></small></p>
 
-## Paris' area (Île-de-France)
+## Paris's area (Ile-de-France)
 
 (We divide the list into Paris' area and outside Paris area for convenience.)
 
@@ -102,7 +102,8 @@ Topological methods and verification of concurrent, distributed and fault-tolera
 Denotational semantics, concurrency, rewriting theory, category theory, 
 linear logic, programming languages, algebraic topology, and hybrid systems
 
-### University of Versailles - LI-PaRAD
+
+### University of Versailles - Li-PaRAD 
 
 (The full name is University of Versailles Saint-Quentin-en-Yvelines)
 
@@ -113,7 +114,7 @@ Self-stabilization, graph theory
 * [Devan Sohier](https://fr.linkedin.com/in/devan-sohier-6307393). 
 Randomized methods, population protocols, self-stabilization.
 
-### CNAM - CEDRIC
+### CNAM - CEDRIC
 
 * [Pierre Courtieu](https://cedric.cnam.fr/~courtiep/index.fr.html).
     Formal proofs, robots
@@ -190,10 +191,10 @@ fault-tolerance, synchronization
 * [Yves Mocquard](http://people.irisa.fr/Yves.Mocquard/). 
 Randomized methods, population protocols
 
-### University of Nantes - LS2N
+## University of Nantes - LS2N
 
 * [Achour Mostéfaoui](https://www.irisa.fr/asap/index.html\%3Fp=205.html).
-    Synchronization, fault-tolerance, scalability, group communication, data consistency and checkpointing
+Synchronization, fault-tolerance, scalability, group communication, data consistency and checkpointing
 * [Matthieu Perrin](https://matthieu-perrin.fr/).
 Message-passing distributed systems, weakly consistent shared objects, message broadcast primitives
 
@@ -226,10 +227,9 @@ optimization
 * [Quentin Bramas](https://bramas.fr/).
     Autonomous mobile robots, distributed ledgers, wireless sensor networks, dynamic graphs
 * [Anissa Lamani](https://sites.google.com/view/lamani/).
-    Distributed systems, fault tolerance 
+Distributed systems, fault tolerance. 
 
-
-### University Clermont-Auvergne - LIMOS
+### Université Clermont-Auvergne - LIMOS
 
 * [Anaïs Durand](https://sancy.iut-clermont.uca.fr/~durand/).
     Fault-tolerance and self-stabilization

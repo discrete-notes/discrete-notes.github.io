@@ -12,7 +12,7 @@ concepts such as
 [Courcelle's theorem](https://en.wikipedia.org/wiki/Courcelle%27s_theorem). 
 It arises from the study of a new 
 parameter called *twinwidth*. 
-The paper developping the concept will appear at SODA next year, and is on 
+The paper developing the concept will appear at SODA next year, and is on 
 the arxiv [here](https://arxiv.org/abs/2111.00282).
 [Edouard Bonnet](https://perso.ens-lyon.fr/edouard.bonnet/) 
 gave a talk on the topic at our 
@@ -33,10 +33,10 @@ way:
 * a single vertex is a cograph
 * the union of two cographs is a cograph
 * the join of two cographs is a cograph (where a join is taking the union of 
-two graphs, plus all the edges between a verte in the first graph and a 
+two graphs, plus all the edges between a vertex in the first graph and a 
 vertex in the second graph.)
 
-![](../assets/cograph-construction.png){: .center-image width="70%"}
+![](../assets/cograph-construction.png){: .center-image width="90%"}
 
 Cographs have the following property (which is actually a characterization). 
 In a cograph, every induced subgraph has at least two 
@@ -45,7 +45,7 @@ These are called *twins*.
 More precisely, *true twins* are twins that are adjacent one to the other, 
 and *false twins* are twins that are not adjacent.
 
-![](../assets/twins-true-false.png){: .center-image width="70%"}
+![](../assets/twins-true-false.png){: .center-image width="90%"}
 
 Let's design an efficient algorithm for 
 [maximum independent set](https://en.wikipedia.org/wiki/Independent_set_(graph_theory)) 
@@ -54,7 +54,7 @@ We will maintain a partition of the vertices,
 and at first every vertex is in its own part of the partition. 
 In other words, there is a bag for each vertex. 
 We will maintain a maximum independent set in each bag. At the beginning, 
-every vertex is the maximum indepedent set of it own bag.
+every vertex is the maximum independent set of it own bag.
 
 Now, let's take two twins of the graph. 
 We will merge their bags. 
@@ -76,7 +76,7 @@ following properties:
 
 * If two bags $A$ and $B$ are linked by an edge in the 
 contracted graph, then every couple $(a,b) \in A\times B$ corresponds to an 
-edge in the original (uncontracted) graph.
+edge in the original (un-contracted) graph.
 * If two bags $A$ and $B$ are not linked by an edge in the contracted graph, 
 then no couple $(a,b) \in A\times B$ corresponds to an edge in the original 
 graph.
@@ -91,26 +91,26 @@ the solution from the other bag.
 Let's take an example. At first, every vertex is in its part of the 
 partition.
 
-![](../assets/cographe-algo-1.png){: .center-image width="70%"}
+![](../assets/cographe-algo-1.png){: .center-image width="50%"}
 
 Then we contract 1 and 2, which are false twins. And then 4 and 5 which are
 true twins. In the first case, we keep vertices in the solution. 
 In the second case, we have to chose, and we keep 4 (arbitrarily). 
 
-![](../assets/cographe-algo-2.png){: .center-image width="70%"}
+![](../assets/cographe-algo-2.png){: .center-image width="50%"}
 
 Next, we merge 4+5 with 6, which are false twin bags, and keep both solutions. 
 
-![](../assets/cographe-algo-3.png){: .center-image width="70%"}
+![](../assets/cographe-algo-3.png){: .center-image width="50%"}
 
 Then 3 and 4+5+6, which are true twins, and here we chose to keep the 
 solution of 4+5+6 because it is larger. 
 
-![](../assets/cographe-algo-4.png){: .center-image width="70%"}
+![](../assets/cographe-algo-4.png){: .center-image width="50%"}
 
 Finally, we merge  4+5+6 with 1+2, and keep the solution on one side.
 
-![](../assets/cographe-algo-5.png){: .center-image width="70%"}
+![](../assets/cographe-algo-5.png){: .center-image width="50%"}
 
 ## Contractions for general graphs
 
@@ -120,14 +120,14 @@ In general graphs, it is not possible to define a contraction sequence
 with such strong constraints. 
 The general notion of contraction sequence uses three types of edges between 
 bags: edges, that correspond to complete bipartite graphs, non-edges, which
-correspond to "no edge", and red egdes which correspond to cases where there 
+correspond to "no edge", and red edges which correspond to cases where there 
 are some edges, but not all of them.
-At a given step of the sequence, the red graph is the graph of the red egdes.
+At a given step of the sequence, the red graph is the graph of the red edges.
 
 ![](../assets/contraction-2.png){: .center-image width="70%"}
 
 A cograph is then a graph that admits a (general) contraction sequence with
-no red edge. More generally by putting constraints on the succesive red 
+no red edge. More generally by putting constraints on the successive red 
 graphs given by the sequence, we can redefine several interesting notions. 
 
 For example, consider the maximum degree of the red graph in the sequence. 
@@ -145,12 +145,12 @@ Very very roughly if the size/size-of-connnected-component/degree of the
 red graph is small, then it means that for many contractions, things are 
 easy, like for cographs. 
 When there are red edges, then we might need to do complicated things. 
-Then it is fairly natural to expect FPT-flavored results parametrized by a
+Then it is fairly natural to expect FPT-flavored results parameterized by a
 measure of the red edges.
 
 Contraction sequences can be used to get a new proof of Courcelle's theorem.
 Remember that Courcelle's theorem is basically saying that any problem that
-can be described by a logical formula of some type (an MSO formular), 
+can be described by a logical formula of some type (an MSO formula), 
 of length $l$, can be 
 solved in time $O(f(l,t).n)$, in a graph of treewidth $t$ and size $n$, 
 where $f$ is an arbitrary function. 

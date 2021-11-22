@@ -5,8 +5,6 @@ redirect_from: "/2021/11/19/contraction-sequences/"
 permalink: contraction-sequences
 ---
 
-(Note: this is an unpolished version, I will polish the post next week.)
-
 Contraction sequences is a new point of view on some graph algorithms 
 concepts such as 
 [Courcelle's theorem](https://en.wikipedia.org/wiki/Courcelle%27s_theorem). 

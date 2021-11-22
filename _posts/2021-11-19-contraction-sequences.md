@@ -7,7 +7,7 @@ permalink: contraction-sequences
 
 (Note: this is an unpolished version, I will polish the post next week.)
 
-Contraction sequences is a new point of view on some algorithmic graph 
+Contraction sequences is a new point of view on some graph algorithms 
 concepts such as 
 [Courcelle's theorem](https://en.wikipedia.org/wiki/Courcelle%27s_theorem). 
 It arises from the study of a new 
@@ -30,9 +30,9 @@ The [cographs](https://en.wikipedia.org/wiki/Cograph)
 are the graphs that can be built iteratively in the following 
 way: 
 
-* a single vertex is a cograph
-* the union of two cographs is a cograph
-* the join of two cographs is a cograph (where a join is taking the union of 
+* A single vertex is a cograph.
+* The union of two cographs is a cograph.
+* The join of two cographs is a cograph (where a join is taking the union of 
 two graphs, plus all the edges between a vertex in the first graph and a 
 vertex in the second graph.)
 
@@ -61,22 +61,23 @@ We will merge their bags.
 If the twins are false twins, then the solution is the union of the two 
 vertices. 
 If the twins are true twins, then they are linked by an edge, thus we cannot 
-be both in the solution, and we take an arbitrary vertex in the solution. 
+take both in the solution. We chose arbitrarily one of the two vertice to
+stay in the solution. 
 For the rest of the algorithm, we will consider that we have merged these 
 vertices into one. We will call this operation a *contraction*.
 As the twins have the same neighborhood, it is easy to define the adjacency 
 of the new vertex: it is again the same neighborhood.
 
 Note that after the merge, we have an induced subgraph of the original 
-graph, hence the twin property still holds. We will iterate the operation, 
+graph, hence the twin property still holds. We iterate the contraction operation, 
 but now in a more general context, where the twins are bags with more than 
 one vertex. 
-Let us note that any time we make a contraction we preserve the 
+Let us note that each time we make a contraction we preserve the 
 following properties: 
 
 * If two bags $A$ and $B$ are linked by an edge in the 
 contracted graph, then every couple $(a,b) \in A\times B$ corresponds to an 
-edge in the original (un-contracted) graph.
+edge in the original (uncontracted) graph.
 * If two bags $A$ and $B$ are not linked by an edge in the contracted graph, 
 then no couple $(a,b) \in A\times B$ corresponds to an edge in the original 
 graph.
@@ -93,8 +94,8 @@ partition.
 
 ![](../assets/cographe-algo-1.png){: .center-image width="50%"}
 
-Then we contract 1 and 2, which are false twins. And then 4 and 5 which are
-true twins. In the first case, we keep vertices in the solution. 
+Then we contract 1 and 2, which are false twins. And then 4 and 5, which are
+true twins. In the first case, we keep both vertices in the solution. 
 In the second case, we have to chose, and we keep 4 (arbitrarily). 
 
 ![](../assets/cographe-algo-2.png){: .center-image width="50%"}
@@ -104,11 +105,12 @@ Next, we merge 4+5 with 6, which are false twin bags, and keep both solutions.
 ![](../assets/cographe-algo-3.png){: .center-image width="50%"}
 
 Then 3 and 4+5+6, which are true twins, and here we chose to keep the 
-solution of 4+5+6 because it is larger. 
+solution of 4+5+6, because it is larger. 
 
 ![](../assets/cographe-algo-4.png){: .center-image width="50%"}
 
-Finally, we merge  4+5+6 with 1+2, and keep the solution on one side.
+Finally, we merge  4+5+6 with 1+2, and keep the solution of the left side.
+The outcome is a maximum independent set.
 
 ![](../assets/cographe-algo-5.png){: .center-image width="50%"}
 
@@ -123,6 +125,8 @@ bags: edges, that correspond to complete bipartite graphs, non-edges, which
 correspond to "no edge", and red edges which correspond to cases where there 
 are some edges, but not all of them.
 At a given step of the sequence, the red graph is the graph of the red edges.
+Below is an example of a contracted graphs, with some red edges, and what
+the partition looks like on the original graph.
 
 ![](../assets/contraction-2.png){: .center-image width="70%"}
 
@@ -132,25 +136,27 @@ graphs given by the sequence, we can redefine several interesting notions.
 
 For example, consider the maximum degree of the red graph in the sequence. 
 The minimum such value (over all sequences) is equal to the twinwidth of 
-the graph. Other example are the size of red components, which is related to
-rankwidth, and simply the number of red edges, which is related to the 
+the graph. 
+Other examples are the size of red components, which is related to
+rankwidth, and the number of red edges, which is related to the 
 linear rankwidth.
 
 ## Algorithmic consequences
 
-Contraction sequences are a good framework to design algorithm: one "just" 
+Contraction sequences is a good framework to design algorithms: one "just" 
 has to prove that taking one step of the sequence does not take too much 
 time. 
 Very very roughly if the size/size-of-connnected-component/degree of the 
 red graph is small, then it means that for many contractions, things are 
 easy, like for cographs. 
 When there are red edges, then we might need to do complicated things. 
-Then it is fairly natural to expect FPT-flavored results parameterized by a
+It is fairly natural to expect FPT-flavored results parameterized by a
 measure of the red edges.
 
 Contraction sequences can be used to get a new proof of Courcelle's theorem.
-Remember that Courcelle's theorem is basically saying that any problem that
-can be described by a logical formula of some type (an MSO formula), 
+Remember that Courcelle's theorem basically says that any problem that
+can be described by a logical formula of some type (a 
+[graph MSO formula](https://en.wikipedia.org/wiki/Logic_of_graphs)), 
 of length $l$, can be 
 solved in time $O(f(l,t).n)$, in a graph of treewidth $t$ and size $n$, 
 where $f$ is an arbitrary function. 

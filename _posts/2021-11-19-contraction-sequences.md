@@ -18,7 +18,8 @@ gave a talk on the topic at our
 ago, and this week a longer one at the 
 [French Graph and Algorithms days](https://jga2021.sciencesconf.org/).
 Here are some notes on the topic, following the structure of the introduction 
-of Edouard's talk.
+of Edouard's talk. We can find the slides of the long talk 
+[here](https://perso.ens-lyon.fr/edouard.bonnet/talk/jga21.pdf).
 
 ## Warm-up with cographs
 

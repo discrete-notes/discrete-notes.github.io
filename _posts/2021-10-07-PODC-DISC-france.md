@@ -155,8 +155,6 @@ Dynamic networks.
     Networks.
 * [Yves Métivier](https://scholar.google.fr/citations?user=7B3iaYYAAAAJ&hl=fr).
     Distributed network algorithms, beeping model.
-* [Alessia Milani](https://www.labri.fr/perso/milani/publications/).
-    Distributed and concurrent computing, consensus, anonymous dynamic networks.
 * [Corentin Travers](https://www.labri.fr/perso/travers/).
     Coordination and fault-tolerance.
 
@@ -174,6 +172,9 @@ Distributed Algorithms, structural properties and distributed, computability, te
 Distributed algorithms, malicious behaviors in distributed systems, combinatorial topology
 * [Arnaud Labourel](https://pageperso.lif.univ-mrs.fr/~arnaud.labourel/index.php?lang=en\&page=index)
  Graph representation, mobile agents, robots
+* [Alessia Milani](https://www.labri.fr/perso/milani/publications/). 
+(Starting in Fall 2021, previously in Bordeaux.)
+    Distributed and concurrent computing, consensus, anonymous dynamic networks.
 
 
 ### University of Rennes - IRISA

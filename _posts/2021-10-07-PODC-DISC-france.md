@@ -174,7 +174,8 @@ Distributed algorithms, malicious behaviors in distributed systems, combinatoria
  Graph representation, mobile agents, robots
 * [Alessia Milani](https://www.labri.fr/perso/milani/publications/). 
 (Starting in Fall 2021, previously in Bordeaux.)
-    Distributed and concurrent computing, consensus, anonymous dynamic networks.
+Distributed and concurrent computing, fault-tolerant shared objects, 
+consistency and dynamic networks.
 
 
 ### University of Rennes - IRISA

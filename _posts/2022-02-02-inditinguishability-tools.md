@@ -7,14 +7,14 @@ permalink: indistinguishability-tools
 
 One of my area of research if the study of algorithms that are 
 distributed (in space but also in time), and that are local, in the sense
-that the decision are taken based on the partial vision of the system/input. 
+that the decisions are based on the partial vision of the system/input. 
 In this area (at least for classic distributed algorithms) a standard
-techique is indistinguishability. 
+technique is *indistinguishability*. 
 The proofs using this technique often end up using some combinatorics 
-results, and working a proof recentely I had to look for 
-such results. 
-The purpose of this talk is to give an intuition of
-indistinguishability and to list a few combinatorics results that are 
+results, and working on such a proof recentely I had to expand my 
+combinatorics toolbox.
+The purpose of this post is to give an intuition of
+indistinguishability, and to list a few results that are 
 useful to me.
 
 ## Let's start with a jigsaw puzzle
@@ -144,7 +144,7 @@ be their union, if $|A_i \cap A_j| \leq k$, for every $i \neq j$, then
 |X| \geq \frac{r^2N}{r+(N-1)k}
 \].
  
-For the anecdote, I first found the lemma mentionned in this 
+For the anecdote, I first found the lemma mentionned in these 
 [lecture notes](https://homes.cs.washington.edu/~anuprao/pubs/CSE599sExtremal/lecture3.pdf)
 where it is connected to 
 [pseudorandom generators](https://en.wikipedia.org/wiki/Pseudorandom_generator), 

@@ -33,7 +33,7 @@ Now, there is a problem: by using only connections that already appeared
 in the two waves above (thus that are "correct"), we can create following
 configuration, that is not a wave, but a circle.
 
-![](../assets/puzzle-cycle.png){: .center-image width="40%"}
+![](../assets/puzzle-cycle.png){: .center-image width="35%"}
 
 That is, it was not possible to create pieces that would work
 with both wave instance, but not with the circle. 

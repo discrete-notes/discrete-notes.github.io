@@ -122,7 +122,7 @@ sometimes called Turán-type theorems, because of
 For example, if you look for a complete bipartite graph in a graph that is itself
 bipartite, then the right pointer is 
 [Zarankiewicz problem](https://en.wikipedia.org/wiki/Zarankiewicz_problem), 
-and one upper bound it the Kővári–Sós–Turán bound.
+and one upper bound is given by the Kővári–Sós–Turán theorem.
 
 ## One more tool about set intersections
 
@@ -148,8 +148,8 @@ For the anecdote, I first found the lemma mentionned in these
 where it is connected to 
 [pseudorandom generators](https://en.wikipedia.org/wiki/Pseudorandom_generator), 
 with a proof but no citation. Then I discovered that there was a wikipedia
-article, [but only German](https://de.wikipedia.org/wiki/Lemma_von_Corr%C3%A1di), 
-from which I could use the references, including the book 
+article about this, [but only German](https://de.wikipedia.org/wiki/Lemma_von_Corr%C3%A1di). 
+I could use the references and find the book 
 [Extremal Combinatorics](https://www.mathematik.uni-muenchen.de/~kpanagio/draft.pdf), 
 from which I took the formulation above.
    

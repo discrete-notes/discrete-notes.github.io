@@ -22,18 +22,18 @@ useful to me.
 Suppose we want to design a jigsaw puzzle that only leads to 
 configurations that are "waves", like this one:
 
-![](../assets/puzzle-serpentin-1.png){: .center-image width="70%"}
+![](../assets/puzzle-serpentin-1.png){: .center-image width="80%"}
 
 Suppose that you have designed the pieces in such a way that not 
 only the configuration above works, but also this one:
 
-![](../assets/puzzle-serpentin-2.png){: .center-image width="70%"}
+![](../assets/puzzle-serpentin-2.png){: .center-image width="80%"}
 
 Now, there is a problem: by using only connections that already appear 
 in the two waves above (thus that are "correct"), we can create following
 configuration, that is not a wave, but a circle.
 
-![](../assets/puzzle-cycle.png){: .center-image width="70%"}
+![](../assets/puzzle-cycle.png){: .center-image width="40%"}
 
 That is, it was not possible to create pieces that would work
 with both instances above but not with the circle. 
@@ -79,7 +79,7 @@ silent, although at least one should raise the alarm.
 This is a simplistic example, but the same idea can work for much more 
 subtle properties.
 
-## Defining a consistency graph
+## Defining a meta-graph
 
 A classic way to derive proofs by indistinguishability is to consider 
 a meta-graph where the nodes are all the local views (and possibly the 
@@ -95,8 +95,8 @@ edges that correspond to our two waves in this graph, then this graph
 is not acyclic anymore, and by creating the instance that correspond to 
 a cycle, we create an incorrect configuration where everthing is fine 
 locally. 
- 
-## Handy extremal comobinatorics results
+
+## Handy extremal combinatorics tools
 
 In real life, one might have to work quite
 hard to prove that the meta-graph contains a sub-structure that correspond
@@ -140,7 +140,9 @@ I struggle more than expected, but finally found the following lemma.
 **Theorem (Corrádi):** Let $A_1, ..., A_N$ be $r$-element sets and $X$
 be their union, if $|A_i \cap A_j| \leq k$, for every $i \neq j$, then
 
-$$|X| \geq \frac{r^2N}{r+(N-1)k}$$.
+\[
+|X| \geq \frac{r^2N}{r+(N-1)k}
+\].
  
 For the anecdote, I first found the lemma mentionned in this 
 [lecture notes](https://homes.cs.washington.edu/~anuprao/pubs/CSE599sExtremal/lecture3.pdf)

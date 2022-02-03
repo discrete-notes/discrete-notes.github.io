@@ -108,7 +108,7 @@ A useful result is the following:
 Any graph on $n$ vertices with at least $100kn^{1+1/k}$ edges contains
 a cycle of length $2\ell$, for every integer $\ell \in [k,kn^{1/k}]$.
 
-For example in 
+For example, in 
 [this paper](https://www.theoryofcomputing.org/articles/v012a019/) by 
 Göös and Suomela, one first proves that considering enough *yes*-instances
 leads to a large number of edges in the meta-graphs, and then use the 
@@ -116,8 +116,8 @@ result to conclude.
 
 In other contexts, one may be interested in substructures that are not
 cycles. Fortunately, there is a huge literature on this type of problems, 
-sometimes called Turán-type theorems, because of 
-[Turán number](https://en.wikipedia.org/wiki/Tur%C3%A1n_number). 
+sometimes called Turán-type theorems (see
+[Turán numbers](https://en.wikipedia.org/wiki/Tur%C3%A1n_number)). 
 
 For example, if you look for a complete bipartite graph in a graph that is itself
 bipartite, then the right pointer is 
@@ -133,7 +133,7 @@ set.
 
 In the end, what I needed was a result saying that for a ground set of a
 given size, if there are many sets, and that every set is large enough, 
-then there exists two sets with a large enough intersection. 
+then there must be two sets with a large enough intersection. 
 
 I struggle more than expected, but finally found the following lemma.
 
@@ -144,14 +144,14 @@ be their union, if $|A_i \cap A_j| \leq k$, for every $i \neq j$, then:
 $$\mid X \mid \geq \frac{r^2N}{r+(N-1)k}$$.
  
 For the anecdote, I first found the lemma mentionned in these 
-[lecture notes](https://homes.cs.washington.edu/~anuprao/pubs/CSE599sExtremal/lecture3.pdf)
+[lecture notes](https://homes.cs.washington.edu/~anuprao/pubs/CSE599sExtremal/lecture3.pdf),
 where it is connected to 
 [pseudorandom generators](https://en.wikipedia.org/wiki/Pseudorandom_generator), 
 with a proof but no citation. Then I discovered that there was a wikipedia
 article about this, [but only German](https://de.wikipedia.org/wiki/Lemma_von_Corr%C3%A1di). 
 I could use the references and find the book 
-[Extremal Combinatorics](https://www.mathematik.uni-muenchen.de/~kpanagio/draft.pdf), 
-from which I took the formulation above.
+[Extremal Combinatorics](https://www.mathematik.uni-muenchen.de/~kpanagio/draft.pdf)
+by Stasys Jukna, from which I took the formulation above.
    
 
 

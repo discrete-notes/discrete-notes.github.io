@@ -5,13 +5,13 @@ redirect_from: "/2022/02/02/indistinguishability-tools/"
 permalink: indistinguishability-tools
 ---
 
-One of my area of research if the study of algorithms that are 
+One of my areas of research if the study of algorithms that are 
 distributed (in space but also in time), and that are local, in the sense
-that the decisions are based on the partial view of the system/input. 
-In this area (at least for network distributed algorithms), a standard
+that the decisions are based on a partial view of the system/input. 
+In this area (at least for distributed graph algorithms), a standard
 technique is *indistinguishability*. 
 The proofs using this technique often end up using some combinatorics 
-results, and working on such a proof recentely I had to expand my 
+results, and working on such a proof recently I had to expand my 
 combinatorics toolbox.
 The purpose of this post is to give an intuition of the
 indistinguishability technique, and to list a few results that are 
@@ -35,7 +35,7 @@ configuration, that is not a wave, but a circle.
 
 ![](../assets/puzzle-cycle.png){: .center-image width="30%"}
 
-That is, it was not possible to create pieces that would work
+Here, it is not possible to create pieces that would work
 with both wave instances, but not with the circle. 
 
 A way to see this is that, if we want to allow waves with these color 
@@ -45,17 +45,17 @@ For example, we could specify that there cannot be three pieces
 in a row that have the "same curvature" (eg after two hill-shaped pieces, 
 we want a valley-shaped piece).
 
-Taking one more step in the generalization, this is an example of a 
+This is an example of a 
 global properties that cannot be reduced to a collection of 
 very local properties. 
-In other words, with a "local view", one cannot distinguish between correct 
+In other words, with only a "local view", one cannot distinguish between correct 
 configurations and incorrect configurations.
 
 ## Indistinguishability for algorithms
 
 The idea of indistinguishability proofs is basically the one above. 
 If the algorithm is too local (= does not see enough of the system), then 
-it cannot lead to correct decision on all instances. 
+it cannot lead to correct decisions on all instances. 
 Or more specifically, we can design a set of instances, such that if the 
 algorithm is correct on these instances, then it will be incorrect on 
 another instance. 
@@ -112,7 +112,7 @@ For example, in
 [this paper](https://www.theoryofcomputing.org/articles/v012a019/) by 
 Göös and Suomela, one first proves that considering enough *yes*-instances
 leads to a large number of edges in the meta-graphs, and then use the 
-result to conclude.
+result above to conclude.
 
 In other contexts, one may be interested in substructures that are not
 cycles. Fortunately, there is a huge literature on this type of problems, 
@@ -126,8 +126,8 @@ and one upper bound is given by the Kővári–Sós–Turán theorem.
 
 ## One more tool about set intersections
 
-In the proof I wanted to do, every edge had a set of colors, and in order to use 
-Kővári–Sós–Turán bound, I needed to prove that there was a couple of 
+In the proof I wanted to do, every edge had a set of colors, and in order 
+to use the Kővári–Sós–Turán bound, I needed to prove that there was a pair of 
 colors such that the edges having both colors formed a large enough 
 set.
 
@@ -135,7 +135,7 @@ In the end, what I needed was a result saying that for a ground set of a
 given size, if there are many sets, and that every set is large enough, 
 then there must be two sets with a large enough intersection. 
 
-I struggle more than expected, but finally found the following lemma.
+I struggled more than expected, but finally found the following lemma.
 
 **Theorem (Corrádi):** Let $A_1, ..., A_N$ be $r$-element sets and $X$
 be their union, if $|A_i \cap A_j| \leq k$, for every $i \neq j$, then:
@@ -153,6 +153,10 @@ I could use the references and find the book
 [Extremal Combinatorics](https://www.mathematik.uni-muenchen.de/~kpanagio/draft.pdf)
 by Stasys Jukna, from which I took the formulation above.
    
+</br>   
+   
+*Thanks to Fabien Dufoulon for catching many typos in a first version of 
+this post.*   
 
 
 

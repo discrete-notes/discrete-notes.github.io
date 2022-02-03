@@ -151,10 +151,8 @@ with a proof but no citation. Then I discovered that there was a wikipedia
 article about this, [but only German](https://de.wikipedia.org/wiki/Lemma_von_Corr%C3%A1di). 
 I could use the references and find the book 
 [Extremal Combinatorics](https://www.mathematik.uni-muenchen.de/~kpanagio/draft.pdf)
-by Stasys Jukna, from which I took the formulation above.
-   
-</br>   
-   
+by Stasys Jukna, from which I took the formulation above. 
+      
 *Thanks to Fabien Dufoulon for catching many typos in a first version of 
 this post.*   
 

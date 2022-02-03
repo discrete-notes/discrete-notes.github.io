@@ -8,13 +8,13 @@ permalink: indistinguishability-tools
 One of my area of research if the study of algorithms that are 
 distributed (in space but also in time), and that are local, in the sense
 that the decisions are based on the partial view of the system/input. 
-In this area (at least for classic distributed algorithms) a standard
+In this area (at least for network distributed algorithms), a standard
 technique is *indistinguishability*. 
 The proofs using this technique often end up using some combinatorics 
 results, and working on such a proof recentely I had to expand my 
 combinatorics toolbox.
-The purpose of this post is to give an intuition of
-indistinguishability, and to list a few results that are 
+The purpose of this post is to give an intuition of the
+indistinguishability technique, and to list a few results that are 
 useful to me.
 
 ## Let's start with a jigsaw puzzle
@@ -33,13 +33,13 @@ Now, there is a problem: by using only connections that already appeared
 in the two waves above (thus that are "correct"), we can create following
 configuration, that is not a wave, but a circle.
 
-![](../assets/puzzle-cycle.png){: .center-image width="35%"}
+![](../assets/puzzle-cycle.png){: .center-image width="30%"}
 
 That is, it was not possible to create pieces that would work
-with both wave instance, but not with the circle. 
+with both wave instances, but not with the circle. 
 
 A way to see this is that, if we want to allow waves with these color 
-patterns, but not circles, then we need more global rules than just "this 
+patterns, but no circles, then we need more global rules than just "this 
 pieces fits with this one". 
 For example, we could specify that there cannot be three pieces
 in a row that have the "same curvature" (eg after two hill-shaped pieces, 
@@ -68,9 +68,9 @@ distributed graph algorithm lower bound. Suppose that you consider
 a directed network where the nodes have identifiers, and the nodes want to check 
 that the network is a directed path. We want this verification to be 
 very local, thus we restrict ourselves to algorithms where every node 
-looks at its successor (if it has one), and either stay silent, or 
+looks at its successor (if it has one), and either stays silent, or 
 raises an alarm saying "this is not a path!". Can such an algorithm 
-exists? No. 
+exist? No. 
 Because on the instances $(0,1,2,3,4,5,6,7,8,9,10,11)$ and 
 $(0,2,5,8,3,6,9,4,7,10,1,11)$ every node has to stay silent, 
 which implies that on the cycle $(1,2,5,6,9,10,1)$ every node will stay 

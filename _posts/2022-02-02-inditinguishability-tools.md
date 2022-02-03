@@ -7,7 +7,7 @@ permalink: indistinguishability-tools
 
 One of my area of research if the study of algorithms that are 
 distributed (in space but also in time), and that are local, in the sense
-that the decisions are based on the partial vision of the system/input. 
+that the decisions are based on the partial view of the system/input. 
 In this area (at least for classic distributed algorithms) a standard
 technique is *indistinguishability*. 
 The proofs using this technique often end up using some combinatorics 

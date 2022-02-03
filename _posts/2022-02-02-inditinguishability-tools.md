@@ -141,7 +141,7 @@ I struggle more than expected, but finally found the following lemma.
 be their union, if $|A_i \cap A_j| \leq k$, for every $i \neq j$, then:
 
 
-$$\text{\textbar}X\text{\textbar} \geq \frac{r^2N}{r+(N-1)k}$$.
+$$\mid X \mid \geq \frac{r^2N}{r+(N-1)k}$$.
  
 For the anecdote, I first found the lemma mentionned in these 
 [lecture notes](https://homes.cs.washington.edu/~anuprao/pubs/CSE599sExtremal/lecture3.pdf)

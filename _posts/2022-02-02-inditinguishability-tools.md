@@ -71,7 +71,7 @@ very local, thus we restrict ourselves to algorithms where every node
 looks at its successor (if it has one), and either stays silent, or 
 raises an alarm saying "this is not a path!". Can such an algorithm 
 exist? No. 
-Because on the instances $(0,1,2,3,4,5,6,7,8,9,10,11)$ and 
+Indeed, on the instances $(0,1,2,3,4,5,6,7,8,9,10,11)$ and 
 $(0,2,5,8,3,6,9,4,7,10,1,11)$ every node has to stay silent, 
 which implies that on the cycle $(1,2,5,6,9,10,1)$ every node will stay 
 silent, although at least one should raise the alarm. 

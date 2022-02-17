@@ -5,7 +5,7 @@ redirect_from: "/2022/02/02/indistinguishability-tools/"
 permalink: indistinguishability-tools
 ---
 
-One of my areas of research if the study of algorithms that are 
+One of my areas of research is the study of algorithms that are 
 distributed (in space but also in time), and that are local, in the sense
 that the decisions are based on a partial view of the system/input. 
 In this area (at least for distributed graph algorithms), a standard

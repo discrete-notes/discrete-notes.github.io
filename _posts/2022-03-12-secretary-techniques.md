@@ -153,7 +153,7 @@ instances ordered by size.)
 Now that we have the result for the modified problem, with unknown length
 and increasing order, we have to go back to the original setting. 
 We do this by considering that the adversary chooses some secret time 
-$t$, and put numbers in increasing order until $t$, and then chooses only 
+$t$, and put numbers in increasing order until $k$, and then chooses only 
 low numbers like the picture below. It is easy to see that this simulates 
 the previous case.
 

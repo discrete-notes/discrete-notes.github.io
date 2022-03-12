@@ -154,8 +154,7 @@ I could use the references and find the book
 by Stasys Jukna, from which I took the formulation above. 
       
 *Thanks to Fabien Dufoulon for catching many typos in a first version of 
-this post.*   
-
+this post..*
 
 
 

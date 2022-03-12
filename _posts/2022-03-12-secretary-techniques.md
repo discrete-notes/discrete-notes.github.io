@@ -91,9 +91,9 @@ probability 0.5 or orange with probability 0.5.
 * The cards are revealed one by one, and the player should stop 
 on the last yellow card.
 
-![](../assets/yellow-card.png){: .center-image width="90%"}
+![](../assets/yellow-card.png){: .center-image width="70%"}
 
-## Identify indistinguishability situations
+## Idnetifiying indistinguishability situations
 
 As mentioned in the 
 [previous post](https://discrete-notes.github.io/indistinguishability-tools),
@@ -132,7 +132,7 @@ represent the conflicts between the instances.
 For example, on the 
 picture below, we can see an edge between yellow-orange and yellow-yellow-orange. 
  
-![](../assets/conflict-graph.png){: .center-image width="90%"}
+![](../assets/conflict-graph.png){: .center-image width="70%"}
 
 Actually, the picture does not show all the edges of the graph, only the 
 ones between instances of consecutive sizes.

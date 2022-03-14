@@ -72,7 +72,8 @@ Also, we assume for now that $p=1/2$, and that the algorithm must be determinist
 ## More structured instances and reduction
 
 A second idea that is common in the distributed computing community is 
-to consider the easiest possible problem we cannot solve. 
+to consider the easiest (and maybe quite artificial) problem we cannot solve, 
+solve it, and then generalize little by little.
 Here the idea was to make the simplifying assumption, that the adversary 
 does not chose the ordering of the numbers: they are presented in increasing 
 order. 
@@ -106,11 +107,11 @@ Consider two instances of the game:
 
 At the beginning of game the player cannot distinguish between these 
 instances: she does not know the length, and for both instances, she knows 
-that there is one orange card in the sequence and that the first 
+that there is one orange card in the sequence, and that the first 
 card is yellow. 
 Then, either in this situation she decides to stop, in which case she
  wins in Instance 2, but looses in Instance 1, or she decides to 
-continue and then looses in Instance 2, and maybe win in Instance 1 
+continue and then looses in Instance 2, and maybe wins in Instance 1 
 (if she stop on the second yellow card).
 
 In other words, these instances are in conflict: no algorithm can win in 
@@ -125,15 +126,16 @@ at some distance $d$ in the original graph, and then to study this graph.
 We use the same type of idea.
 
 We build an infinite graph, where the vertices are all the possible 
-instances (that is all the sequences of orange and yellow). The edges
+instances (that is, all the sequences of orange and yellow). The edges
 represent the conflicts between the instances. 
 For example, on the 
 picture below, we can see an edge between yellow-orange and yellow-yellow-orange. 
+(The picture does not show all the edges of the graph, only the 
+ones between instances of consecutive size.)
+
  
 ![](../assets/conflict-graph.png){: .center-image width="70%"}
 
-Actually, the picture does not show all the edges of the graph, only the 
-ones between instances of consecutive sizes.
 
 Now, the key property is that for any algorithm $A$, the instances where 
 $A$ succeeds form an independent of the graph, because of the 

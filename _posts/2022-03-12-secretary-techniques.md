@@ -5,7 +5,7 @@ redirect_from: "/2022/03/12/secretary-techniques/"
 permalink: secretary-techniques
 ---
 
-Last year I wrote 
+Last year, I wrote 
 [a teaser](https://discrete-notes.github.io/teaser-secretary) about our 
 SODA paper 
 [The secretary problem with independent sampling](https://perso.liris.cnrs.fr/lfeuilloley/publications/secretary.html)
@@ -14,23 +14,22 @@ SODA paper
 [Andres Cristi](https://sites.google.com/view/andres-cristi),
 [Tim Oosterwijk](https://sites.google.com/view/timoosterwijk/),
 and [Alexandros Tsigonias-Dimitriadis](https://www.gs.tum.de/en/adone/participating-researchers/tsigonias-dimitriadis-alexandros/)).
-
 Today, I'd like show how we could transfer a bunch of 
-techniques from distributed computing to 
-online computing (with sampling), to prove impossibility results. 
-This is not a complete proof just an overview of the ideas and techniques.
+ideas from distributed computing to 
+online computing to prove impossibility results. 
+This is not a complete proof, but an overview of the techniques.
 
 ## The problem
 
-The problem is the following: 
+The problem is an extension of the classic [secretary problem](Secretary problem): 
 
 * An adversary chooses a set of $n$ numbers and orders them. 
-* Then, for each number independently: with probability $p$ it joins the 
-*sample set*, and with probability $(1-p)$ it joins the *online set*. 
+* Then, for each number independently: with probability $p$, it joins the 
+*sample set* ; and with probability $(1-p)$, it joins the *online set*. 
 * The player is given $n$ and the sample set. 
 * The numbers of the online set are presented one by one to the player, 
 in the order chosen by the adversary. 
-* The player wins if and only if she stops on the maximum of the online
+* The player wins, if and only if, she stops on the maximum of the online
 set. 
 
 See the [teaser post](https://discrete-notes.github.io/teaser-secretary)
@@ -44,12 +43,12 @@ seemed optimal. Unfortunately, the classic approach in this area to prove
 optimality, which consists in proving that one can restrict attention to a 
 specific set of algorithms, would not work with the sampling extension. 
 
-Thus we proved that the algorithm was indeed optimal, following a 
+We proved that the algorithm was indeed optimal, following a 
 completely different paths: we showed an upper bound on the optimal 
 performance, and that bound happened to match the performance of the 
 threshold algorithm. 
 
-I will now list a few ideas of this impossibility proof. 
+I will now list a few ideas of this upper proof. 
 
 ## Playing with parameters
 
@@ -59,7 +58,7 @@ real life one might not know this length, but it prevents silly
 counter-examples, *e.g.* when there is only one number. 
 
 To make our life easier, we tried to 
-remove the assumption that the player knows $n$, and check what would 
+remove the assumption that the player knows $n$, and checked what would 
 happen. Note that since we have the sampling set
 (and know the sampling probability $p$), we still have some estimate of 
 $n$. 
@@ -68,7 +67,7 @@ This idea of playing with the assumptions regarding the knowledge of the
 parameters is common in distributed computing, where one might assume
 (or not) that the nodes know the size of the network, the maximum degree, etc. 
 
-Also, we assume for now that $p=1/2$ and that the algorithm must be deterministic.
+Also, we assume for now that $p=1/2$, and that the algorithm must be deterministic.
 
 ## More structured instances and reduction
 
@@ -77,16 +76,15 @@ to consider the easiest possible problem we cannot solve.
 Here the idea was to make the simplifying assumption, that the adversary 
 does not chose the ordering of the numbers: they are presented in increasing 
 order. 
-If the player knew the length of the sequence then this would be trivial, 
+If the player knew the length of the sequence, then this would be trivial, 
 since the maximum is the last value. 
 But without this knowledge, it's not so easy. 
 
 The problem becomes equivalent to what I call the "Last yellow card game":
 
 * There are $n$ cards, where $n$ is unknown to the player.
-* Every card has two faces: one is gray, and one is either yellow with 
+* There is a deck of $n$ cards, and each of them is yellow with 
 probability 0.5 or orange with probability 0.5.
-* The cards are placed one after another, with gray sides facing up.
 * The player is given the total number of orange cards.
 * The cards are revealed one by one, and the player should stop 
 on the last yellow card.

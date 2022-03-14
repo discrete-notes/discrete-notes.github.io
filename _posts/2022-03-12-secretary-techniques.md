@@ -33,7 +33,8 @@ in the order chosen by the adversary.
 set. 
 
 See the [teaser post](https://discrete-notes.github.io/teaser-secretary)
-for the origin of this problem.
+for the origin of this problem, and the other variant, where the order is 
+random and not adversarial.
 
 ## Context
 

@@ -91,7 +91,7 @@ on the last yellow card.
 
 ![](../assets/yellow-card.png){: .center-image width="70%"}
 
-## Idnetifiying indistinguishability situations
+## Identifiying indistinguishability situations
 
 As mentioned in the 
 [previous post](https://discrete-notes.github.io/indistinguishability-tools),

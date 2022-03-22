@@ -9,7 +9,7 @@ It's been almost a year since the last set of technical notes. I've been
 piling topics to blog about. I'll try to empty the list through a series of 
 spring cleaning blog posts. 
 
-![](../assets/spring-cleaning.jpg){: .center-image width="70%"}
+![](../assets/spring-cleaning.jpg){: .center-image width="60%"}
 
 
 ## The power of two choices
@@ -34,7 +34,7 @@ The good idea for a third rule is: take two bins at random, and place the
 ball in the least loaded bin. 
 
 
-![](../assets/balls-bins.png){: .center-image width="90%"}
+![](../assets/balls-bins.png){: .center-image width="80%"}
 
 The checking is limited: only two checks to 
 do. What about the maximum load at the end? One can prove that it is 
@@ -94,7 +94,7 @@ vertex ordering $\sigma$ such that for every edge $(u,v)$,
 $|\sigma(u)-\sigma(v)|\leq K$.
 
 
-![](../assets/scafolding.png){: .center-image width="90%"}
+![](../assets/scaffolding.png){: .center-image width="90%"}
 
 (Note that "bandwidth" is maybe not the best name, given that the important 
 parameter is more similar to a stretch of the edges than to the natural 
@@ -108,7 +108,7 @@ The maximum independent set of rectangles problem is following: given a set of
 axis-aligned rectangles, find the largest set of rectangles that do not 
 intersect. 
 
-![](../assets/independent-rectangles.png){: .center-image width="70%"}
+![](../assets/independent-rectangles.png){: .center-image width="80%"}
 
 The key question on this problem is: Does there exist a polynomial-time
 constant-approximation algorithm?
@@ -146,12 +146,12 @@ Finishing with a bit of fun. One often pictures an iceberg as a kind of
 tower of ice, with only the roof being above sea level, like on the picture 
 below. 
 
-![](../assets/iceberg-1.png){: .center-image width="70%"}
+![](../assets/iceberg-1.png){: .center-image width="60%"}
 
 Actually, this type of orientation is unstable, and a stable orientation 
 would look more like this.
 
-![](../assets/iceberg-2.png){: .center-image width="70%"}
+![](../assets/iceberg-2.png){: .center-image width="60%"}
 
 This was reminded Megan Thompson-Munson in
 [this twitter thread](https://twitter.com/GlacialMeg/status/1362557149147058178?ref_src=twsrc%5Etfw), 

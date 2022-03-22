@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Spring cleaning notes
-redirect_from: "/2022/xx/xx/spring-cleaning-notes/"
-permalink: name
+redirect_from: "/2022/03/22/spring-cleaning-notes/"
+permalink: spring-cleaning-notes
 ---
 
-It's been almost a year since the last set of technical notes. I've been 
-piling topics to blog about. I'll try to empty the list through a series of 
+It's been almost a year since the last set of technical notes and I've been 
+piling up topics to blog about. I'll try to empty the list through a series of 
 spring cleaning blog posts. 
 
 ![](../assets/spring-cleaning.jpg){: .center-image width="60%"}
@@ -22,22 +22,22 @@ What follows is based on
 Consider the following simple scenario: $n$ balls are placed into $n$ bins, 
 following some rule. 
 
-* First rule: place it in the least loaded bin of all. Then you get one ball
-per bin at the end, but you have to check the load of the bins all the time.
+* First rule: place it in the least loaded bin of all. At the end you get 
+one ball per bin, but you have to check the load of the bins at every step.
 
 * Second rule: do it at random. There is no checking involved, but the 
 maximum load at the end is around $\log n$, with high probability.
 
-How to interpolate between these two to have little load checking and 
-sublogartihmic maximum load? 
+How to interpolate between these two, to have little load checking and 
+sublogarithmic maximum load? 
 The good idea for a third rule is: take two bins at random, and place the 
 ball in the least loaded bin. 
 
 
 ![](../assets/balls-bins.png){: .center-image width="80%"}
 
-The checking is limited: only two checks to 
-do. What about the maximum load at the end? One can prove that it is 
+The checking is limited: there are only two bin to check. 
+What about the maximum load at the end? One can prove that it is 
 $O(\log \log n)$ with high probability, which is small for every (?) 
 practical context. 
 
@@ -57,17 +57,17 @@ different techniques and ideas.
 ## Scaffolding
 
 Scaffolding is a graph problem (or set of problems) stemming from 
-bioinformatics. It has been in my things-to-blog-about-list since it was 
+bioinformatics. It has been in my things-to-blog-about list since it was 
 mentioned in the talk 
 [Graphs in phylogenomics, a few applications](https://www-sop.inria.fr/coati/events/JGA2020/presentation/mardi-aprem/44-Scornavacca.Celine.pdf) by 
 [Celine Scornavacca](https://sites.google.com/view/celinescornavacca)
 
 The context of the problem is the reconstruction of a biology sequence, such 
-as DNA. In the first stage in DNA reconstruction, we might be given some 
-very small pieces of DNA, and it might be not too hard to assemble them 
-into larger chunks. Then we have to do scaffolding: we have a large set of 
-medium-length strings, and it is not clear how to assemble them into a 
-larger one. 
+as DNA. In the first stage of DNA reconstruction, we might be given some 
+very small pieces of DNA, and it might might not be too hard to assemble them 
+into larger chunks. But then we have to do scaffolding: given a large set of 
+medium-length strings, we have to put them together, and it is not clear
+from the strings themselves how to do that.
 
 We have to use external knowledge. For example, for two strings $A$ and $B$
 of our input, we know that $A$ contains a substring $A'$, that is 
@@ -82,7 +82,7 @@ and weighted strings of padding.
 In 
 [this paper](https://publications.mpi-cbg.de/Huson_2002_6349.pdf), 
 the knowledge is of the form: the distance between this string and that 
-string should be in some interval. One can then ask whether it 
+string should be in some interval [min, max]. One can then ask whether it 
 is possible to find a single string, that joins together all the strings of 
 the input, and satisfies all the constraints. 
 It is proved in the paper 
@@ -92,7 +92,6 @@ the bandwidth problem.
 The bandwidth problem consists, given a graph and an integer $K$, to find a
 vertex ordering $\sigma$ such that for every edge $(u,v)$, 
 $|\sigma(u)-\sigma(v)|\leq K$.
-
 
 ![](../assets/scaffolding.png){: .center-image width="90%"}
 

@@ -124,19 +124,19 @@ Mathieu Mari, Tobias Mömke, Madhusudhan Reddy Pittu, and Andreas Wiese
 ## Review/submission balance		
 
 At the end of 2021, I wanted to measure my balance between reviews and 
-submissions. There are several obstacles, first one should count fractions 
+submissions. There are several difficulties. First, one should count fractions 
 of submissions, since a paper submitted with eight authors should weight less
 than a solo paper. Also a journal paper takes more energy to review than 
 a conference paper, and there might be several revisions. 
 
 At the end, I couldn't find a precise and meaningful way to measure the 
-balance, but as my ratio conference/journal is similar for submissions and
+balance, but as my conference/journal ratio is similar for submissions and
 reviews, and as the number of authors of my paper is usually three, that 
-is approximately the number of reviewers of a paper, it is relevant to just 
+is, approximately the number of reviewers of a paper, it is relevant to just 
 count in the simplest way possible. 
 
 In 2021, I both submitted and reviewed more than the previous years, and 
-both counts are around 12, so probably quite balanced.
+both counts are around 12, so quite balanced.
  
 
 ## Iceberg orientation

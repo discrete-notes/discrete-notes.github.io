@@ -7,7 +7,7 @@ permalink: spring-cleaning-2
 
 A few more notes to empty the stack.
 
-Picture: TBA.
+![](../assets/cassis.jpg){: .center-image width="60%"}
 
 
 ## Odds algorithm

@@ -19,20 +19,20 @@ such as the [secretary problem](https://en.wikipedia.org/wiki/Secretary_problem)
 
 The setting is the following:
 
-* Let $n$ an integer, and $p_k$, for $k=1,..,n$ be $n$ numbers in $(0,1]$.
+* Let $n$ be an integer, and $p_1,...,p_n$ be numbers in $(0,1]$.
 * A sequence of bits $s=(s_k)_k$ is created by drawing each $s_k$ 
 independently at random with $P(s_k=1)=p_k$.
-* The player sees the elements of $s$ one after the other, and should stop 
-on the last 1. 
+* The player knows the $p_k$, sees the elements of the sequence $s$ one 
+after the other, and should stop on the last 1. 
 
-An example of application is for auctions, where $p_k$ represents the 
+An example of application is for auctions, where $s_k=1$ represents the 
 fact that the k-th bid is higher than all the bids that appeared before.
 
 Let's start with some notations.
 Let the *odd of position $k$* be $r_k=\frac{p_k}{1-p_k}$. 
-For every $t\in [1,n]$ Let $R_t=r_n + r_{n-1}+...+r_{t}$.
-Consider the first $t$ such that $R_t> 1$, and call it $t^*$. 
-(I the sum does not reach $1$, set $t^*=1$.)
+For every $t\in [1,n]$, let $R_t=r_n + r_{n-1}+...+r_{t}$.
+Consider the first $t$ such that $ R_t > 1$, and call it $t^{*}$. 
+(If the sum does not reach $1$, set $t^*=1$.)
 
 The odds algorithm is: stop as soon as you see a 1 at a position of 
 index $t^*$ or larger.

@@ -152,7 +152,7 @@ would look more like this.
 
 ![](../assets/iceberg-2.png){: .center-image width="60%"}
 
-This was reminded Megan Thompson-Munson in
+This was reminded by Megan Thompson-Munson in
 [this twitter thread](https://twitter.com/GlacialMeg/status/1362557149147058178?ref_src=twsrc%5Etfw), 
 and then Joshua Tauberer made 
 [this webpage](https://joshdata.me/iceberger.html), where you can draw an 

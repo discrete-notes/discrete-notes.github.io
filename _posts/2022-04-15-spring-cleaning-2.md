@@ -41,19 +41,19 @@ This algorithm happens to be optimal!
 
 ## Order of the authors names
 
-There has been recently efforts in the TCS community to reduce bias 
+Recently, there has been efforts in the TCS community to reduce the bias 
 originating from the way we cite the authors of papers. Basically, the 
-current system has a positive bias for people whose names appear early in 
-the alphabet. Now there are several questions:
+current system has a positive bias towards people whose names appear early in 
+the alphabet. Q&A:
  
-Is it really a things?
+**Is it really a thing?**
 I haven't seen any statistics about TCS or even maths, but I saw some stats
 in economics (where they also use alphabetical order), and it is 
 quite clear that there is non-negligible bias (check [this blog post] 
 for more about this). The studies look serious, controlling the other 
 possible factors (e.g. discrimination based on ethnicity etc.).
 
-Where does it come from?
+**Where does it come from?**
 The most plausible explanation is that this comes from the habit of citing 
 papers by the name of the first author (either informally in discussions, 
 or formally with "et al."). Knowing a name better than another introduces 
@@ -62,7 +62,7 @@ reviewing papers). At first it seems like a weak effect, but given the
 amount of money spent by companies on advertising for exactly this purpose, 
 we probably underestimate it.
 
-What are possible fixes? 
+**What are possible fixes?** 
 Call for papers of conferences 
 (e.g. [STOC 2022](http://acm-stoc.org/stoc2022/cfp.html)) have taken into 
 account this phenomenon in several ways. One is to ask to avoid the "et al."

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring notes (2)
+title: More spring cleaning notes
 redirect_from: "/2022/04/15/spring-cleaning-2/"
 permalink: spring-cleaning-2
 ---

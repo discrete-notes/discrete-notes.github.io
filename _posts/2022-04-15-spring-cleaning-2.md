@@ -31,11 +31,11 @@ fact that the k-th bid is higher than all the bids that appeared before.
 Let's start with some notations.
 Let the *odd of position $k$* be $r_k=\frac{p_k}{1-p_k}$. 
 For every $t\in [1,n]$, let $R_t=r_n + r_{n-1}+...+r_{t}$.
-Consider the first $t$ such that $ R_t > 1$, and call it $t^{*}$. 
-(If the sum does not reach $1$, set $t^*=1$.)
+Consider the first $t$ such that $ R_t > 1$, and call it $t^{\ast}$. 
+(If the sum does not reach $1$, set $t^\ast=1$.)
 
 The odds algorithm is: stop as soon as you see a 1 at a position of 
-index $t^*$ or larger.
+index $t^\ast$ or larger.
 
 This algorithm happens to be optimal!
 

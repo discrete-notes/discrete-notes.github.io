@@ -47,46 +47,46 @@ current system has a positive bias towards people whose names appear early in
 the alphabet. Q&A:
  
 **Is it really a thing?**
-I haven't seen any statistics about TCS or even maths, but I saw some stats
-in economics (where they also use alphabetical order), and it is 
-quite clear that there is non-negligible bias (check [this blog post] 
-for more about this). The studies look serious, controlling the other 
-possible factors (e.g. discrimination based on ethnicity etc.).
+I haven't seen any statistics about TCS or even maths, but I have seen some 
+stats in economics (where they also use alphabetical order), and it is 
+clear that there is a non-negligible bias (check [this blog post] 
+for more about this). The studies look serious, in particular controlling 
+the other possible factors (e.g. discrimination based on ethnicity, etc.).
 
 **Where does it come from?**
-The most plausible explanation is that this comes from the habit of citing 
+The most plausible explanation is that the bias comes from the habit of citing 
 papers by the name of the first author (either informally in discussions, 
 or formally with "et al."). Knowing a name better than another introduces 
 a bias (e.g. when thinking about speakers for invited talks, or just 
-reviewing papers). At first it seems like a weak effect, but given the 
-amount of money spent by companies on advertising for exactly this purpose, 
+reviewing papers). At first, it seems like a weak effect, but given the 
+amount of money spent by companies on advertising, for exactly this purpose, 
 we probably underestimate it.
 
 **What are possible fixes?** 
-Call for papers of conferences 
+Recent call for papers of TCS conferences 
 (e.g. [STOC 2022](http://acm-stoc.org/stoc2022/cfp.html)) have taken into 
-account this phenomenon in several ways. One is to ask to avoid the "et al."
-formulation. Another is to allow for randomized name ordering. In order to 
-avoid confusion between randomized and ranked orderings, the notation ⓡ has 
-been allowed (Author-random1 ⓡ Author-random2 ⓡ etc.). This should 
-appear in both the paper and the future citations of the paper. 
-It is arguably uglier than commas, but I think it is worth it. 
+account this phenomenon in several ways. One way is to ask authors to avoid 
+the "et al." formulation. Another is to allow for randomized name ordering. 
+In order to avoid confusion between randomized and ranked orderings, the 
+notation ⓡ has been allowed (Author-random1 ⓡ Author-random2 ⓡ etc.). 
+This should appear in both the paper and the future citations of the paper. 
+It is arguably uglier than commas, but it seems worth it. 
 
 ## Links
 
 * David Eppstein has a list of 
 [21 proofs of Euler formula](https://www.ics.uci.edu/~eppstein/junkyard/euler/).
-Hopefully, I'll find some time to write on this blog about my favorite proofs.
+Hopefully, I'll find some time to write about my favorite proofs on this blog.
 
 * An [excellent video](https://www.youtube.com/watch?v=ahW96yYmWx0) by Ryan 
 O'Donnell about the [switching lemma](https://en.wikipedia.org/wiki/Switching_lemma)
 (both fun and very enlightening). 
 
 * The [bulletin of EATCS](http://bulletin.eatcs.org/index.php/beatcs) has 
-some new interesting columns: "Know the people behind the papers" that is 
+some new columns: "Know the people behind the papers", that consists in 
 an interview of a well-known researcher (Keren Censor-Hillel in the current 
 issue, and Kurt Melhorn for the previous one), and "The Theory Blogs Column"
-managed by Luca Trevisan, about TCS blogs (the first one is *Computational 
+(managed by Luca Trevisan) about TCS blogs (the first one is *Computational 
 complexity* by Lance Fortnow).
 
 * If you work with graphs in [SageMath](https://www.sagemath.org/), then 
@@ -94,8 +94,8 @@ you should take a look at
 [Phitigra](https://github.com/jfraymond/phitigra/blob/master/README.md), a 
 graph editor created by [Jean-Florent Raymond](https://perso.limos.fr/~jfraymon/).
 
-* At some point I have been looking for a linux-compatible presentation viewer 
+* At some point, I have been looking for a linux-compatible presentation viewer 
 that would show some additional information on the presenter laptop (next 
-slide, remaining time, etc.). It seems that [pdfpc](https://pdfpc.github.io/) is an 
-option, but I haven't tried it yet.
+slide, remaining time, etc.). It seems that [pdfpc](https://pdfpc.github.io/) 
+is an option, but I haven't tried it yet.
 

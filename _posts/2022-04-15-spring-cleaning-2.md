@@ -39,7 +39,7 @@ index $t^\ast$ or larger.
 
 This algorithm happens to be optimal!
 
-## Order of the authors names
+## Order of the authors' names
 
 Recently, there has been efforts in the TCS community to reduce the bias 
 originating from the way we cite the authors of papers. Basically, the 

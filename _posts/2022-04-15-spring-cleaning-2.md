@@ -49,7 +49,7 @@ the alphabet. Q&A:
 **Is it really a thing?**
 I haven't seen any statistics about TCS or even maths, but I have seen some 
 stats in economics (where they also use alphabetical order), and it is 
-clear that there is a non-negligible bias (check [this blog post] 
+clear that there is a non-negligible bias (check [this blog post](https://researchonresearch.blog/2018/11/28/theres-lots-in-a-name/) 
 for more about this). The studies look serious, in particular controlling 
 the other possible factors (e.g. discrimination based on ethnicity, etc.).
 

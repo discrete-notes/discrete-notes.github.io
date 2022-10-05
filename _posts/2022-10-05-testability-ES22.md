@@ -91,7 +91,7 @@ class is monotone, but not the reverse.
 The main theorem of the paper is the following. 
 
 **Theorem:** For every minor-closed class $\mathcal{G}$, and any monotone 
-property $P$, one can test with one-sided error whether a graph in $\matchal{G}$ 
+property $P$, one can test with one-sided error whether a graph in $\mathcal{G}$ 
 has property $P$. 
 
 Remember that we are in the setting with a constant number of random 

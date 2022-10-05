@@ -20,15 +20,15 @@ by [Louis Esperet](https://oc.g-scop.grenoble-inp.fr/esperet/) and
 The paper is about 
 [property testing](https://en.wikipedia.org/wiki/Property_testing) 
 and local certification of graph properties. 
-I'll start with a few definition for the testing part. 
+I'll start with a few definitions for the testing part. 
 
 In the following, for concreteness, one can think of planarity as the 
 property we look at. 
 A graph $G$ is $\epsilon$-far from a property $P$ if one needs to modify 
-at least $\epsilon |E(G)|$ adjacencies (e.g. replacing edges by non-edges 
+at least $\epsilon |E(G)|$ adjacencies (= replacing edges by non-edges 
 or vice-versa) to get a graph having property $P$. 
 In property testing we are interested in the question of how much we need
-to know about the graph to be able to decide whether a graph satisfies 
+to know about the graph to be able to decide whether it satisfies 
 property $P$ or is $\epsilon$-far from it. 
 Since we are not going to know 
 the entire graph, it is usually impossible to have exact answers, which is 
@@ -50,12 +50,13 @@ oracle queries and decides whether the graph has property $P$
 or is $\epsilon$-far from it.
 Note that by "constant" we mean that the number of queries does not grow with 
 the size of the graph, but it does depend on $\epsilon$.
+
 Such an algorithm will necessarily make mistakes and only randomized 
 algorithms make sense. 
-If the answer is always correct when the graph satisfies $P$ the tester has 
-one-sided error, otherwise it has two-sided error. 
+Here the answer will always correct when the graph satisfies $P$, thus the 
+tester is said to have *one-sided error*. 
 
-## H-free, monotone, minor-closed
+## $\mathcal{H}$-free, monotone, minor-closed
 
 Before giving the results of the paper we need a bit of graph theory 
 vocabulary. 

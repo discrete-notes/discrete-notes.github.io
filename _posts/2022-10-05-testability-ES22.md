@@ -1,7 +1,6 @@
 ---
 layout: post
-title: Quick read&#58; Testability and local certification of monotone properties
-in minor-closed classes
+title: Quick read&#58; Testability and local certification
 redirect_from: "/2022/10/05/testability-ES22/"
 permalink: testability-ES22
 ---

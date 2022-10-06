@@ -53,12 +53,12 @@ the size of the graph, but it does depend on $\epsilon$.
 
 Such an algorithm will necessarily make mistakes and only randomized 
 algorithms make sense. 
-Here the answer will always correct when the graph satisfies $P$, thus the 
+Here the answer will always be correct when the graph satisfies $P$, thus the 
 tester is said to have *one-sided error*. 
 
 ## $\mathcal{H}$-free, monotone, minor-closed
 
-Before giving the results of the paper we need a bit of graph theory 
+Before stating the results of the paper, we need a bit of graph theory 
 vocabulary. 
 A class of graphs is 
 *[minor-closed](https://en.wikipedia.org/wiki/Graph_minor#Minor-closed_graph_families)* 
@@ -104,6 +104,10 @@ that are not the set of all graphs.)
 This results improves on a 
 [previous result by Czumaj and Sohler](https://ieeexplore.ieee.org/document/8948636) 
 that holds only for properties that are $\mathcal{H}$-free. 
+I think this theorem is pretty amazing, because of its generality. Even 
+having results about say bipartiteness is interesting, and here the only 
+hypothesis are just sort of stability conditions (monotonicity and 
+minor-closure).
 
 ## Approximate local certification
 

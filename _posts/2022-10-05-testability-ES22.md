@@ -70,7 +70,7 @@ states that this is equivalent to say that the class is defined
 by a finite set of forbidden minors, that is, a finite set of graphs that 
 cannot be obtained by edge and vertex removals, and by edge contractions.
 (You can check that planar graphs are minor-closed, and the corresponding 
-list of forbidden minors is $\{K_5,K_{3,3}\}$.)
+list of forbidden minors is &#123;$K_5,K_{3,3}$&#125;.)
 
 A class of graphs is *monotone* if it is closed by taking subgraphs, that 
 is, closed by edge and vertex removals. 
@@ -136,10 +136,12 @@ constant-size view).
 This improves on a 
 [result by Elek](https://www.sciencedirect.com/science/article/abs/pii/S0097316522000516?via%3Dihub) 
 that requires bounded degree, and it is actually generalized in the 
-paper to graph of bounded asymptotic dimension instead of minor-closed graphs. 
-(I hope to blog soon about asymptotic dimension.) Also, if one removes the 
+paper to graphs of bounded asymptotic dimension instead of minor-closed graphs. 
+(I hope to blog about asymptotic dimension soon.) Also, if one removes the 
 summability assumption, then the same results holds but with logarithmic 
 size certificates.
+This is interesting to me because it gives some approximate answer to the 
+question of whether minor-closed classes have compact certification.
 
 
 

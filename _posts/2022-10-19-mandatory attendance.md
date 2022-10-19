@@ -5,16 +5,16 @@ redirect_from: "/2022/10/19/mandatory-attendance/"
 permalink: mandatory-attendance
 ---
 
-There has been a lot of discussion in the CS research community the 
+There has been a lot of discussion in the CS research community about the 
 "conference culture": the fact that the 
-main publications in our field are conference publications.
-This system has some bad effects, but changing it is challenging. 
+main publications in our field are conference publications, and its 
+consequences.
 
 In this post I would like to discuss just one bad aspect: traveling to 
 conferences is bad for the climate. 
 I propose to consider one modification to the system, which is to remove 
-mandatory attendance, that is, the rule that one has to attend the
-conference to have the paper in the proceedings. 
+the rule that one has to attend the conference to have the paper in the 
+proceedings. 
 I will summarize quickly the motivation and proposal, and then try to discuss the 
 issues of this proposition. 
 
@@ -32,11 +32,11 @@ crisis.
 
 ![](../assets/wagon.png){: .center-image width="65%"}
 
-Before going further, let me answer the point of view that would be "yes, 
+Before going further, let me comment on the answer that would be "yes, 
 it is bad for the planet, but our job is important, others should make the 
 effort, not us". 
-One could argue about how solid this opinion is, but I don't want to do that. 
-I just want to make two points. First, not everybody in the community 
+One could argue about how solid this opinion is, but instead I'd like to 
+make two points. First, not everybody in the community 
 thinks the same way, and we should try to create space for these other people. 
 Second, it is very improbable that in 20 years the conference system will 
 still work as it does, so it is good to start changing some things now. 
@@ -89,12 +89,11 @@ My opinion is that we have to tackle this problem in a more satisfactory
 way than by a kind of extorsion. Maybe some travel grants, maybe more local 
 events, etc. 
 
-## Mandatory attendance is good for the organizers
+## Mandatory attendance is good for organizers
 
 As a local organizer I see that mandatory attendance is very reassuring: 
 you know that approximately X papers will be accepted, thus there will be at 
-least X people, and this is useful when looking for a hotel, a restaurant, 
-etc. 
+least X people, and this is useful when balancing the budget. 
 
 I would answer that: (1) anyway, there is always some fraction of 
 the participants who do not present a paper (so X is just a lower bound), 

@@ -5,23 +5,24 @@ redirect_from: "/2022/10/19/mandatory-attendance/"
 permalink: mandatory-attendance
 ---
 
-There has been a lot of discussion in the PODC/DISC community (but also 
-more generally in CS), about the "conference culture": the fact that the 
+There has been a lot of discussion in the CS research community the 
+"conference culture": the fact that the 
 main publications in our field are conference publications.
 This system has some bad effects, but changing it is challenging. 
 
 In this post I would like to discuss just one bad aspect: traveling to 
 conferences is bad for the climate. 
 I propose to consider one modification to the system, which is to remove 
-mandatory attendance to conferences when a paper is accepted. 
-I will summarize quickly the situation, and then try to discuss the 
+mandatory attendance, that is, the rule that one has to attend the
+conference to have the paper in the proceedings. 
+I will summarize quickly the motivation and proposal, and then try to discuss the 
 issues of this proposition. 
 
 ## The carbon-recognition correlation
 
 Prestigious publications are crucial to us: it is the way to get a 
 permanent job, to get funding, and to be recognized by the peers. 
-In CS, the prestigious venues are the international conferences and 
+In CS, the prestigious venues are the international conferences, and 
 attending international conferences very often involves flying.
 In other words, our system creates a correlation between recognition of our
 work and carbon emissions. 
@@ -29,7 +30,7 @@ work and carbon emissions.
 It is safe to say that this is a wrong incentive, given the current climate 
 crisis.
 
-![](../assets/wagon.png){: .center-image width="70%"}
+![](../assets/wagon.png){: .center-image width="65%"}
 
 Before going further, let me answer the point of view that would be "yes, 
 it is bad for the planet, but our job is important, others should make the 
@@ -58,7 +59,7 @@ physically to have recorded talks or online talks.
 
 In this post, I don't want to discuss what would be the exact replacement, 
 which kind of hybrid conference would be the best, etc. Also, since this is 
-a first step, that could possibly be reverted, or be followed by other
+a small step, that could be reverted or be followed by other
 changes, I don't want to discuss what would be the dynamic in the long run. 
 Let's say that we discuss what would happen if we do this for five years. 
 

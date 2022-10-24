@@ -136,7 +136,7 @@ internet, or with more local people, or during fewer events that could
 maybe be longer, etc. Again, other communities do not use so many 
 international conferences, and they seem to work pretty well. 
 
-## More comments
+## More comments
 
 I got some feedback on the first version of this post, and here are two 
 things I forgot to mention: 

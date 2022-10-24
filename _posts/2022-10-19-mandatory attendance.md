@@ -63,10 +63,12 @@ a small step, that could be reverted or be followed by other
 changes, I don't want to discuss what would be the dynamic in the long run. 
 Let's say that we discuss what would happen if we do this for five years. 
 
+## Critics and answers
+
 Below I have listed some critics of this proposition, and tried to answer 
 them. 
 
-## The travel-publication correlation is good for some people
+### The travel-publication correlation is good for some people
 
 I have used the expression "carbon-recognition correlation" to highlight 
 the bad aspects of the current system, but for some people the correlation 
@@ -86,10 +88,10 @@ Only the people in between would be hurt by the change.
 Second, it is very bad if these people are indeed hurt. But, note that with 
 the current system there are already people who want to attend and cannot. 
 My opinion is that we have to tackle this problem in a more satisfactory 
-way than by a kind of extorsion. Maybe some travel grants, maybe more local 
+way than by a kind of extortion. Maybe some travel grants, maybe more local 
 events, etc. 
 
-## Mandatory attendance is good for organizers
+### Mandatory attendance is good for organizers
 
 As a local organizer I see that mandatory attendance is very reassuring: 
 you know that approximately X papers will be accepted, thus there will be at 
@@ -105,7 +107,7 @@ soft commitment could help.
 Of course, it is very difficult to be a local organizer, and it is pity to
 make the job even more difficult, but I think it is worth it.
 
-## Hybrid conferences have issues
+### Hybrid conferences have issues
 
 I think everybody now knows that hybrid conferences are sometimes not great. 
 In the following I'll take the perspective of someone who 
@@ -134,5 +136,24 @@ internet, or with more local people, or during fewer events that could
 maybe be longer, etc. Again, other communities do not use so many 
 international conferences, and they seem to work pretty well. 
 
+## More comments
+
+I got some feedback on the first version of this post, and here are two 
+things I forgot to mention: 
+
+* One way to relax mandatory attendance without completely removing it 
+is to require that people present their papers on-site at some point.
+For example it could be in the 3 years after publication, and if there are 
+several conferences of similar strength in the field (eg DISC/PODC), one 
+could maybe choose which one to present at. Then one could choose the 
+conference place that is closer to her/his place. 
+We could call this delayed mandatory attendance. 
+
+* There is one aspect that is not related to climate change, but has to be
+mentioned to balance the drawbacks of hybrid I mentioned: for some people
+it is very difficult to get visas to go to conferences, thus having 
+something online is much better for them. 
+
+(Thanks to Joel and Darya, for pointing this out.)
 
 

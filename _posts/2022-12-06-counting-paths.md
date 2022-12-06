@@ -35,7 +35,7 @@ there does *not* exist $s$ cycles that are vertex-disjoint and have no edge
 joining them. For example, on the folllowing picture we can find three such 
 cycles (that are highlighted), but not four, thus the graph is 4-cycle-touching.
 
-![](../assets/chemin-exponentiel.png){: .center-image width="70%"}
+![](../assets/cycle-touching.png){: .center-image width="70%"}
 
 Very little is known about these graphs: we don't even know how to recognize 
 2-cycle-touching graphs efficiently. 
@@ -107,11 +107,11 @@ is polynomial in such graphs
 recognition problem, since one can enumerate the cycles and check whether 
 they are touching. 
 
-[https://sites.google.com/view/yuditsky/home](Lena Yuditsky),
-[https://perso.liris.cnrs.fr/nbousquet/](Nicolas Bousquet), 
-[https://perso.liris.cnrs.fr/tpierron/](Théo Pierron) and I worked on this
+[Lena Yuditsky](https://sites.google.com/view/yuditsky/home),
+[Nicolas Bousquet](https://perso.liris.cnrs.fr/nbousquet/), 
+[Théo Pierron](https://perso.liris.cnrs.fr/tpierron/) and I worked on this
 problem for a few days some months ago, thanks to 
-[https://perso.ens-lyon.fr/nicolas.trotignon/](Nicolas Trotignon) who told 
+[Nicolas Trotignon](https://perso.ens-lyon.fr/nicolas.trotignon/) who told 
 us about Le's conjecture. We had some partial results but nothing good 
 enough to be written down. We are happy to see that there is some progress!
 

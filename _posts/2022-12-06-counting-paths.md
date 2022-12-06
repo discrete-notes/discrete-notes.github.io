@@ -61,7 +61,7 @@ The main theorem of the Nguyen-Scott-Seymour paper is the following.
 
 **Theorem:** For all integers $s,t > 0$ there exists $c>0$ such that,
 if $G$ is $s$-cycle-touching and does not contain $K_{tt}$ as a subgraph, 
-then $G$ has only at most $|G^c|$ induced paths. 
+then $G$ has only at most $|G|^c$ induced paths. 
 
 In other words, in sparse graphs, the only way to have exponentially many 
 induced paths is to have many independent cycles.
@@ -114,6 +114,10 @@ problem for a few days some months ago, thanks to
 [Nicolas Trotignon](https://perso.ens-lyon.fr/nicolas.trotignon/) who told 
 us about Le's conjecture. We had some partial results but nothing good 
 enough to be written down. We are happy to see that there is some progress!
+
+--
+
+As usual, please email me if you see any writing or scientific mistake.
 
 
 

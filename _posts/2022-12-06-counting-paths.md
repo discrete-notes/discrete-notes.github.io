@@ -32,7 +32,7 @@ the question after having worked on this a bit, see the end of the post.)
 A way to formalize the notion of "stacking cycles is cheating" is to 
 consider graphs that are *s-cycle-touching*, that is, 
 there does *not* exist $s$ cycles that are vertex-disjoint and have no edge 
-joining them. For example, on the folllowing picture we can find three such 
+joining them. For example, in the following picture we can find three such 
 cycles (that are highlighted), but not four, thus the graph is 4-cycle-touching.
 
 ![](../assets/cycle-touching.png){: .center-image width="70%"}
@@ -100,7 +100,7 @@ This means that we have $2^{O(\log n)}=O(n^c)$ paths: a polynomial number.
 
 The motivation given at the beginning of this post is not the 
 motivation for the paper. The original motivation is this fact that we don't 
-know how to recognize 2-cycle-touching graphs afficiently. 
+know how to recognize 2-cycle-touching graphs efficiently. 
 If one can prove (without the sparsity assumption) that the number of paths 
 is polynomial in such graphs
 (which is Ngoc-Khang Le's unpublished conjecture), then it solves the 

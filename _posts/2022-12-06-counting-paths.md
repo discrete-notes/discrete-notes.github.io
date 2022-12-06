@@ -89,8 +89,9 @@ The core of the proof consists in studying a special case in which $Z$ is an
 independent set, each vertex of $N$ has exactly one neighbor in $Z$, 
 and all the paths we are interested in go through all the vertices of $Z$, 
 and have both endpoints in $Z$. 
-In this case, the authors prove that $N$ has basically the same size as $Z$.
-(One of the ingredients of the proof is [Erdős–Pósa theorem](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93P%C3%B3sa_theorem).) 
+In this case, the key lemma is that $N$ has basically the same size as $Z$.
+One of the ingredients for this lemma is [Erdős–Pósa theorem](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93P%C3%B3sa_theorem).
+
 This is good, because it means that the number of edges between $Z$ and $N$
 is of order $O(|Z|)=O(\log n)$. 
 Then we can enumerate all the sets of edges of $(Z,N)$, and for each such

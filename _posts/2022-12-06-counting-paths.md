@@ -2,7 +2,7 @@
 layout: post
 title: Quick read&#58; Counting paths
 redirect_from: "/2022/12/06/counting-paths/"
-permalink: name
+permalink: counting-paths
 ---
 
 A classic exercise when studying shortest paths algorithms is to prove that

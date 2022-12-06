@@ -115,7 +115,7 @@ problem for a few days some months ago, thanks to
 us about Le's conjecture. We had some partial results but nothing good 
 enough to be written down. We are happy to see that there is some progress!
 
---
+---
 
 As usual, please email me if you see any writing or scientific mistake.
 

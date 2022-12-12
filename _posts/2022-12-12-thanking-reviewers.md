@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Abount thanking reviewers
+title: About thanking reviewers
 redirect_from: "/2022/12/12/thanking-reviewers/"
 permalink: thanking-reviewers
 ---

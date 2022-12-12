@@ -12,9 +12,10 @@ problem: there is no good way to thank reviewers.
 Of course it is a bit strange when you want to thank the judge: they just 
 do their job, and it looks suspicious to try to thank them.
 But reviewers are not judges:
-two reviews with the same decision can be very different: one just saying 
-"yes, ok, interesting" and the other highlighting aspects that are a bit 
-too hidden, listing typos, suggesting simpler proofs, etc. And sometimes a
+two reviews with the same decision can be very different, one just saying 
+"yes, ok, interesting" and the other highlighting missing pieces of the story,
+giving meaningful pointers to references (without saying "please cite my papers"), 
+listing typos, suggesting simpler proofs, etc. And sometimes a
 negative review is worth much more than a positive one. 
 See [this tweet](https://twitter.com/JukkaSuomela/status/1095251485737345024). 
 
@@ -28,13 +29,12 @@ efficient, I believe. Without it, it is difficult to not drift slowly in
 the bad direction.
 
 So, how to thank reviewers? You can mention them in the acknowledgment
-paragraph, but this is so standard that it does not mean much. Moreover, 
-it usually does not make any difference between Reviewer 1 and Reviewer 2, 
-and most probably the reviewer is never going to read these lines. 
+paragraph, but this is so standard that it does not mean much and most 
+probably the reviewer is never going to read these lines. 
 Sometimes for journal reviews the editor is sending some kind words, which 
 is nice. Sometimes the PC member for whom you do the subreview says thanks, 
 and this is also nice (I try not to forget doing this when I am in a PC, but
-I have already forgot a few times).
+I have already forgotten a few times).
 In some cases there are rewards for good reviews (best reviewer 
 awards etc.) but it means competition on yet another aspect of research.
 

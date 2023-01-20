@@ -52,7 +52,7 @@ suppose you have a huge set system, and you want to succinct data structure
 to answer queries of the form 
 "list the points in hyperedge X". If you have a spanning path with 
 low crossing number this can be done very efficiently. 
-Indeed, you just have to store the points in the order of the path, and then*
+Indeed, you just have to store the points in the order of the path, and then
 for every hyperedge store a few intervals.
 This is because for any hyperedge the path crosses the border only a 
 small number of times, and it is enough to remember what are the points of 
@@ -62,18 +62,17 @@ entry and exit. See the picture below.
 
 ## A condition for existence 
 
-Now, to get some intuition about the crossing number, consider an
+To get some intuition about the crossing number, consider a
 hypergraph that contains all the possible hyperedges on a set of $n$ vertices. 
 This hypergraph does not have a spanning path of crossing number lower than 
 $n-1$. 
-Indeed, consider any path, and then a hyperedge that takes every 
-other vertex, like on the picture below. This path crosses the border of the 
-hyperedge $n-1$ times.
+Indeed, for any path, the hyperedge that takes every 
+other vertex of the path is crossed $n-1$ times. Se the picture below.
 
 ![](../assets/crossing-sans-VC.png){: .center-image width="80%"}
 
 In the following, when we say "low crossing number", we mean "crossing number 
-$o(n)$", and the example above shows that we cannot always achieve a 
+$o(n)$", and the example above shows that we cannot always hope for a 
 spanning path with a low crossing number. 
 But bounding some structural parameters of the hypergraph allows to go reach this 
 $o(n)$ regime. Specifically:

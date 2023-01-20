@@ -40,7 +40,6 @@ For example, below are two spanning paths for the same set system. The first
 one has crossing number 2 (every hyperedge is crossed at most twice), while 
 the second has crossing number 6, because of the middle hyperedge. 
  
-
 ![](../assets/crossing-nb-1.png){: .center-image width="70%"}
 ![](../assets/crossing-nb-2.png){: .center-image width="70%"}
 
@@ -48,13 +47,16 @@ the second has crossing number 6, because of the middle hyperedge.
 
 These structures have a lot of applications in geometry, theory of ML, and 
 discrepancy theory. 
-The simple example given during the talk is the following:
-suppose you have a set system and you have to answer queries of the form 
+A simple example is the following:
+suppose you have a huge set system, and you want to succinct data structure 
+to answer queries of the form 
 "list the points in hyperedge X". If you have a spanning path with 
-low crossing number, you can build a succinct data structure to answer such 
-queries. Indeed, for a given hyperedge the path crosses the border only a 
+low crossing number this can be done very efficiently. 
+Indeed, you just have to store the points in the order of the path, and then*
+for every hyperedge store a few intervals.
+This is because for any hyperedge the path crosses the border only a 
 small number of times, and it is enough to remember what are the points of 
-entry and exit. 
+entry and exit. See the picture below.
 
 ![](../assets/crossing-nb-3.png){: .center-image width="90%"}
 

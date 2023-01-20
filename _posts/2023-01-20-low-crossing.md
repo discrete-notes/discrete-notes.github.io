@@ -18,7 +18,7 @@ Here is a glimpse of it.
 A *set system* $(X,S)$ is just a ground set $X$ with a family of subsets $S$. 
 Alternatively, you can think of an hypergraph, with a set of vertices 
 (the ground set) and hyperedges (the subsets). 
-I will use both points of view. (In the picture below, $S=\{ S_1, S_2, S_3\}$.)
+I will use both points of view. (In the picture below, $S=${$S_1, S_2, S_3$}.)
 
 ![](../assets/set-system.png){: .center-image width="70%"}
 
@@ -88,20 +88,20 @@ from geometry, which is one of the main applications of what we discuss here).
 
 ## The previous algorithm
 
-The main contribution of Csikós-Mustafa paper is to improve on the time 
-complexity for computing a low-crossing spanning path when the dual VC 
-dimension is bounded (e.g. the constructive version of the theorem above). 
-The authors do so by modifying the previous algorithm in an elegant way. 
+In 1989, Chazelle and Weyl gave a polynomial algorithm for computing a 
+spanning tree with low crossing number (see [this paper](https://link.springer.com/content/pdf/10.1007/BF02187743.pdf)) under the assumption of the theorem above. 
+The main contribution of Csikós-Mustafa paper is to improve greatly on the 
+time complexity by modifying the algorithm in several clever ways.
+For the explanation we will keep the example of a spanning paths, but again 
+it could be a spanning tree or a perfect matching. 
 
 The original algorithm 
-(from [that paper](https://link.springer.com/content/pdf/10.1007/BF02187743.pdf) 
-by Chazelle and Weyl) 
 follows the intuition of the 
 [multiplicative weight update method](https://en.wikipedia.org/wiki/Multiplicative_weight_update_method). 
-The algorithm gives and updates a *weight for every hyperedge* and a
+The algorithm defines and updates a *weight for every hyperedge* and a
 *cost for every edge* (here edge simply means an element of $X^2$, or in 
 other words, we start with a clique).
-The *cost of an edge* is actually the sum of the weights of the hyperedges 
+The *cost of an edge* will simply be the sum of the weights of the hyperedges 
 it crosses. 
 Here is a pseudo-code. 
 

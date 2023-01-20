@@ -40,8 +40,8 @@ For example, below are two spanning paths for the same set system. The first
 one has crossing number 2 (every hyperedge is crossed at most twice), while 
 the second has crossing number 6, because of the middle hyperedge. 
  
-![](../assets/crossing-nb-1.png){: .center-image width="70%"}
-![](../assets/crossing-nb-2.png){: .center-image width="70%"}
+![](../assets/crossing-nb-1.png){: .center-image width="65%"}
+![](../assets/crossing-nb-2.png){: .center-image width="65%"}
 
 ## An application 
 
@@ -106,21 +106,21 @@ it crosses.
 Here is a pseudo-code. 
 
 1. Initially, every hyperedge has weight 1.
-2. For i=1 to $n-1$:
+2. For $i=1$ to $n-1$:
 * Select an edge $e$ with minimum cost, and add it to the path. 
 * Double the weight of any hyperedge that is crossed by $e$.
 * Remove all vertices that have two incident edges selected (ie those that do
 not need more edges, since we look for a path). 
 
-Now, intuitively here is what's going on. Since, we want to minimize the 
+Intuitively, here is what's going on. Since, we want to minimize the 
 maximum crossing number of an hyperedge, one wants to keep an eye on the 
 hyperedges that are already crossed by a lot of selected edges, and try to 
 avoid adding even more edges crossing them. 
 In the algorithm, an hyperedge in this situation will have a high weight, 
 hence in general the algorithm will not 
 pick an edge that is crossing it. The magic of the 
-multiplicative weight update method is that doubling the weights 
-allows to get theoretical guarantees on the outcome. 
+multiplicative weight update method (and of the dual VC dimension) is that 
+doubling the weights allows to get theoretical guarantees on the outcome. 
 
 Now the complexity of this algorithm is basically the cost of 
 finding the edge of minimum cost for each iteration of the loop, which 
@@ -131,16 +131,16 @@ leads to $O(mn^3)$ (where $n$ is the size of $X$ and $m$ is the size of $S$).
 The new algorithm achieves the better complexity of $\tilde{O}(mn^{1/d}+n^{2+1/d})$. 
 The dependency in $d$ might seem counter-intuitive: the larger the parameter, 
 the fastest they solve the problem. But remember that the goal is to compute
-a spanning path with crossing number $O(n^{1-1/d})$, so the target becomes 
+a spanning path with crossing number $O(n^{1-1/d})$, hence the target becomes 
 easier to reach when $d$ increases.
 
-For the new algorithm, there are two key ideas. The first one is to avoid 
+For the new algorithm, the key idea is to avoid 
 the costly procedure of finding the edge with the smallest cost. 
-Instead, we will do some sampling. For this, we stop computing the cost of 
-each edge to get the next edge to add to the path. 
-Instead, we define *weights for edges*, and sample according to these weights.
-(that is, the probability of picking an edge will be proportional to the weight).
-Just to clarify: now both edges and hyperedges have costs. 
+Instead, we will do some sampling. That is, we define *weights for edges*, 
+and sample according to these weights, which is means that the probability 
+of picking an edge will be proportional to the weight.
+Just to clarify the vocabulary: now both edges and hyperedges have weights, 
+and there are no cost anymore. 
 
 So how do we update the weights of the edges, to give more weights to the ones
 that do not cross heavy hyperedges? One way would be, for every edge, to go 

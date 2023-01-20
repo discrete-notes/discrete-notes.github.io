@@ -18,23 +18,25 @@ Here is a glimpse of it.
 A *set system* $(X,S)$ is just a ground set $X$ with a family of subsets $S$. 
 Alternatively, you can think of an hypergraph, with a set of vertices 
 (the ground set) and hyperedges (the subsets). 
-I will use both points of view.
+I will use both points of view. (In the picture below, $S=\{ S_1, S_2, S_3\}$.)
 
 ![](../assets/set-system.png){: .center-image width="70%"}
 
-Consider pair of vertices $x,y \in X$. This pair *crosses an hyperedge* if it has 
-one endpoint in the hyperedge, and one endpoint out of it.
+Now, consider a pair of vertices $x,y \in X$. Such a pair *crosses an hyperedge* 
+if it has one endpoint in the hyperedge, and one endpoint out of it. 
+For example in the picture above $(x_1,x_2)$ crosses $S_4$ (but no other 
+hyperedge).
 
-We are interested in computing a graph $G$, whose vertex set is the same 
-as the vertex set $X$ of the hypergraph, and whose edge set $E\subseteq X^2$ is 
+We are interested in computing a graph $G$, whose vertex set is equal to
+the vertex set $X$ of the hypergraph, and whose edge set $E\subseteq X^2$ is 
 such that: 
 
 * it satisfies some structural constraints, for example being a spanning 
 path (variants could be a spanning tree or a perfect matching) ; 
-* it has *low crossing number* which means that for every hyperedge $S$, the 
-number of edges of $G$ crossing $S$ is small. 
+* it has *low crossing number* which means that for every hyperedge $S_i$, the 
+number of edges of $G$ crossing $S_i$ is small. 
 
-For example, below are two spanning path for the same set system. The first 
+For example, below are two spanning paths for the same set system. The first 
 one has crossing number 2 (every hyperedge is crossed at most twice), while 
 the second has crossing number 6, because of the middle hyperedge. 
  

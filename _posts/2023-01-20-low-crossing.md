@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Quick read: Low crossing numbers
+title: Quick read&#58; Low crossing numbers
 redirect_from: "/2023/01/20/crossing-number/"
 permalink: crossing-number
 ---
@@ -69,7 +69,6 @@ Indeed, consider any path, and then a hyperedge that takes every
 other vertex, like on the picture below. This path crosses the border of the 
 hyperedge $n-1$ times.
 
-TODOOOOOOOOOOOOOOOOOOOOOO
 ![](../assets/crossing-sans-VC.png){: .center-image width="80%"}
 
 In the following, when we say "low crossing number", we mean "crossing number 

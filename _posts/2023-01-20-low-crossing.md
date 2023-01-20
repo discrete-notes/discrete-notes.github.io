@@ -54,10 +54,7 @@ queries. Indeed, for a given hyperedge the path crosses the border only a
 small number of times, and it is enough to remember what are the points of 
 entry and exit. 
 
-For example, in the following picture, one can store, for this hyperedge, 
-[(x,y),(z,azadazaz)] à compléter.
-
-![](../assets/crossing-number-3.png){: .center-image width="90%"}
+![](../assets/crossing-nb-3.png){: .center-image width="90%"}
 
 ## A condition for existence 
 

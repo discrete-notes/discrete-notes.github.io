@@ -142,38 +142,42 @@ of picking an edge will be proportional to the weight.
 Just to clarify the vocabulary: now both edges and hyperedges have weights, 
 and there are no cost anymore. 
 
-So how do we update the weights of the edges, to give more weights to the ones
-that do not cross heavy hyperedges? One way would be, for every edge, to go 
-over the hyperedges it crosses, and compute some weight, but we would revived 
-the $O(mn^2)$ we want to avoid. Instead the edge weight update will itself 
-depend on a sampling. 
+So how do we update the weights of the edges in order to give more weights 
+to the ones that do not cross already-heavy hyperedges? One way would be, 
+for every edge, to go over the hyperedges it crosses, and compute some weight, 
+but we would revived the $O(mn^2)$ we want to avoid. 
+Instead the edge weight update will itself depend on a sampling. 
 
-Let's be concrete, here is the pseudo code of the modified algorithm.
+Here is the pseudo-code of the modified algorithm.
 
 1. Initially, every hyperedge and every edge has weight 1.
-2. For i=1 to $n-1$:
-* Sample an edge $e$ according to edge weight. 
-* Sample a hyperedge $h$ according to hyperedge weight.
+2. For $i=1$ to $n-1$:
+* Sample an edge $e$ according to edge weights, and add it to the path. 
+* Sample a hyperedge $h$ according to hyperedge weights.
 * Double the weight of any hyperedge that is crossed by $e$.
 * Halve the weights of any edge that is crossing $h$.
-* Remove all vertices that have two incident edges selected.
+* Remove all vertices that have two incident edges already in the path.
 
 Thanks to sampling the complexity of each loop is much reduced. What is less
-clear is whether this is good enough to lead to a good paths. And the answer
+clear is whether this is good enough to lead to a good path. And the answer
 is no a priori. 
 
 ## Even more new ideas
 
 Something that makes the algorithm above deviate from the desired behavior 
-is that the very innocent looking last step of every loop (that is removing 
+is that the very innocent-looking last step of every loop (that is, removing 
 the vertices that are useless) messes up the structure of the weights. 
-And iteration after iteration the error is amplified. What the authors do
+And the error is amplified, iteration after iteration. What the authors do
 is to reinitialize the weights periodically (a logarithmic number of times), 
-to avoid to much deviation.
+to avoid too much deviation.
 
 Finally, to gain even more on the complexity, they also do not fully perform
 the weight doubling and weight halving, and again sample (uniformly this 
-time) for this step. Very nice! 
+time) for this step. 
+
+A very nice algorithm! And also an applicable one: the authors have an 
+[open-access code](https://github.com/csikosm/LowCrossingMatchings) that
+can handle large instances. 
 
 
 

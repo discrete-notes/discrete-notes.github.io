@@ -10,7 +10,8 @@ In December, I participated in an algorithms/OR
 of [Mónika Csikós](https://csikosm.github.io/) about her work on structures 
 with low 
 crossing number 
-(more precisely: [this paper](https://drops.dagstuhl.de/opus/volltexte/2021/13827/pdf/LIPIcs-SoCG-2021-28.pdf), 
+(more precisely: [this paper](https://drops.dagstuhl.de/opus/volltexte/2021/13827/pdf/LIPIcs-SoCG-2021-28.pdf)
+and [that paper](https://arxiv.org/pdf/2209.01147.pdf) 
 with [Nabil Mustafa](https://lipn.univ-paris13.fr/~mustafa/index.html)). 
 Here is a glimpse of it.
 
@@ -96,7 +97,7 @@ from geometry, which is one of the main applications of what we discuss here).
 
 ## The previous algorithm
 
-In 1989, Chazelle and Weyl gave a polynomial algorithm for computing a 
+In 1989, Chazelle and Welzl gave a polynomial algorithm for computing a 
 spanning tree with low crossing number (see [this paper](https://link.springer.com/content/pdf/10.1007/BF02187743.pdf)) under the assumption of the theorem above. 
 The main contribution of Csikós-Mustafa paper is to improve the complexity 
 by modifying the algorithm in several clever ways.
@@ -145,7 +146,7 @@ easier to reach when $d$ increases.
 For the new algorithm, the key idea is to avoid 
 the costly procedure of finding the edge with the smallest cost. 
 Instead, we will do some sampling. That is, we define *weights for edges*, 
-and sample according to these weights, which is means that the probability 
+and sample according to these weights, which means that the probability 
 of picking an edge will be proportional to the weight.
 Just to clarify the vocabulary: now both edges and hyperedges have weights, 
 and there are no cost anymore. 

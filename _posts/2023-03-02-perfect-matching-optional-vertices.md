@@ -7,7 +7,7 @@ permalink: perfect-matchings-optional-vertices
 
 This post is about a simple problem related to matchings.
 
-## The problem
+## The problem
 
 Consider the following problem, that I will call *perfect matching with 
 optional vertices*: 

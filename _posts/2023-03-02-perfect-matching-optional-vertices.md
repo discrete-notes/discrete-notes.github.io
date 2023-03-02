@@ -10,7 +10,7 @@ This post is about a simple problem related to matchings.
 ## The problem
 
 Consider the following problem, that I will call *perfect matching with 
-optional vertices*: 
+optional vertices*.
 
 **Input:** A graph $G=(V,E)$, and a subset of vertices $S\subset V$. 
 
@@ -19,7 +19,8 @@ in $V\setminus S$ are matched?
 
 In other words, you look for a relaxed 
 [perfect matching](https://en.wikipedia.org/wiki/Perfect_matching), where 
-it is ok that some vertices are unmatched if they belong to $S$, the *set of optional vertices*. 
+it is ok that some vertices are unmatched if they belong to $S$. 
+I call $S$ the *set of optional vertices*. 
 
 For example, here is a graph with optional vertices in yellow, and a solution
 in orange. 
@@ -29,7 +30,7 @@ in orange.
 And here is an instance that has no solution (because both vertices on the 
 right have to be matched, and this is impossible). 
 
-![](../assets/matching-option-B1.png){: .center-image width="80%"}
+![](../assets/matching-option-B1.png){: .center-image width="70%"}
 
 What is the complexity of this problem? Is it polynomial because it 
 ressembles perfect matching, or is it NP-hard because you somehow have to 
@@ -47,10 +48,10 @@ And he very quickly answered with the following neat algorithm.
 Thanks again Nicolas for this!
 
 The answer to the complexity question is that it is not harder than perfect 
-matching. Actually there is a very efficient reduction to perfect matching. 
+matching. Actually, there is a very efficient reduction to perfect matching. 
 
 Assume first that the graph has an even number of vertices. 
-We create anew graph $G'$ by adding all the missing edges between the 
+We create a new graph $G'$ by adding all the missing edges between the 
 optional vertices, like on the drawing below. 
 
 ![](../assets/matching-option-A4.png){: .center-image width="80%"}

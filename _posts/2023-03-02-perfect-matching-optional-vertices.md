@@ -58,12 +58,11 @@ optional vertices, like on the drawing below.
 
 Then we run a perfect matching algorithm on $G'$. If a perfect matching 
 exists in $G'$, we can simply remove the edges we just added, and get a 
-perfect matching with optional vertices of the original graph $G$! 
+perfect matching with optional vertices of the original graph $G$. 
 Now, for the reverse direction, if a perfect matching with optional vertices 
 exists in $G$, then there is a perfect matching in $G'$: just pair the 
 unmatched optional vertices two by two (which is possible since $G$ has an even number 
-of vertices), and add these edges in the matching 
-of $G'$. 
+of vertices), and add these edges in the matching. 
 
 Now if $G$ has an odd number of vertices, we first add a new optional
 vertex, and then we add the missing edges to have a clique of optional 

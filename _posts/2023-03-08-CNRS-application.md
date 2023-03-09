@@ -9,7 +9,7 @@ This post is about application to CNRS, a French research institution (and
 my employer since October). 
 If you are not French and want to know more about CNRS, let me redirect you
 to [this blog post](https://games-automata-play.com/blog/applying_cnrs/) 
-by [Nathanael Fijalkow](https://games-automata-play.com/), that explains 
+by [Nathanaël Fijalkow](https://games-automata-play.com/), that explains 
 it all very well. Let me just highlight that non-French people are very 
 welcome, that there is no need to speak French, and that the positions 
 come with no teaching duties. 

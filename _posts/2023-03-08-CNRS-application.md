@@ -47,7 +47,7 @@ I hesitated for quite a long time before making this public. I hope I will
 not look too stupid when some research directions I propose ends 
 up being complete non-sense. The reason I do it is because I think these 
 are useful to applicants and that it is unfair that some of them have 
-access to such documents (because they know well people who have aplied 
+access to such documents (because they know well people who have applied 
 recentely) and some do not. 
 
 Also, I'd like to take the opportunity to say a word about the 

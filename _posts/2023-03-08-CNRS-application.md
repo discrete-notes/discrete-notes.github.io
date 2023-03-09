@@ -5,11 +5,12 @@ redirect_from: "/2023/03/08/CNRS-application/"
 permalink: CNRS-application
 ---
 
-This post is about application to CNRS, a French research institution. 
+This post is about application to CNRS, a French research institution (and 
+my employer since October). 
 If you are not French and want to know more about CNRS, let me redirect you
 to [this blog post](https://games-automata-play.com/blog/applying_cnrs/) 
 by [Nathanael Fijalkow](https://games-automata-play.com/), that explains 
-it all very well. I will just highlight that non-French people are very 
+it all very well. Let me just highlight that non-French people are very 
 welcome, that there is no need to speak French, and that the positions 
 come with no teaching duties. 
 
@@ -34,31 +35,31 @@ already mentioned. When I applied for the first time, I had no idea what an
 application could look like, and having a few different examples was 
 reassuring and mitigated the writer's block.
 
-Now, I want to strongly highlight that this is an example, in *the sense of 
-an illustration/instance*, and not *in the sense of a model*.
+Now, I want emphasize that this is an example, in the sense of 
+an illustration/instance, and *not* in the sense of a model.
 First, there are tons of things to be improved there. Second, there 
-are thousands of ways of writing this kind of document, every researchers 
+are many of ways of writing this kind of document, every researcher 
 has different strengths and tastes. For example, I like making links 
 between different areas and drawing stuff, which is why the slides look 
 like they do. 
 
 I hesitated for quite a long time before making this public. I hope I will 
-not look too stupid if, for example, some research directions I propose ends 
+not look too stupid when some research directions I propose ends 
 up being complete non-sense. The reason I do it is because I think these 
-are useful to applicants, and that some applicants do not have 
-access to people who have applied before and can send them files, slides, 
-and advice, which is very unfair. 
+are useful to applicants and that it is unfair that some of them have 
+access to such documents (because they know well people who have aplied 
+recentely) and some do not. 
 
 Also, I'd like to take the opportunity to say a word about the 
 questions of the committee, because this was mysterious and a bit scary to 
 me. The questions I had were of two types. 
 
 * *Making sure that some aspect is solid enough.* For example, if you have a 
-very good publication in a field a bit far from your expertise, be prepared 
-to explain what you did, in which way you were useful, etc. Another example 
-is: a part of your project is connected to a field you do not know (eg A.I. 
-or biology), then be prepared to explain how you are going to work there, 
-with which experts of this area. 
+very good publication in a field a bit far from your field of expertise, be prepared 
+to explain what you did, in which way you were useful, etc. Also if a part 
+of your project is connected to a field you do not know (eg A.I., biology), 
+then be prepared to explain how you are going to work in this area, 
+with which experts, on which timeline. 
 
 * *Relating to a topic the committee members knows.* The people who will ask 
 the most of the questions are people who do not know your topic, but 
@@ -66,7 +67,7 @@ work in a close area. Think about someone who could go to the same
 conference, but not attend the same sessions. It is difficult for them to 
 ask very meaningful technical questions on your core topic. So they will 
 probably ask questions about a topic that is in their area of expertise and 
-related to your work, although not your specific area. You can try to 
+related to your work, although not to your specific area. You can try to 
 imagine what these questions can be.
 
 If you are applying, good luck to you! Bon courage!

@@ -11,7 +11,7 @@ My email is laurent.feuilloley@univ-lyon1.fr, do not hesitate to email me about
 anything related to the blog, I'd be happy to answer! 
 
 (I also have a very inactive blog in French: 
-*[Des notes discretes](https://des-notes-discretes.github.io)*. 
+*[Des notes discretes](https://des-notes-discretes.github.io)*.) 
 
 
 

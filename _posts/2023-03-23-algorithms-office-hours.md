@@ -16,9 +16,9 @@ of which nature. Here an adaptation of the answer.
 
 On a normal semester, the group gets around one request per week, which 
 sounds like a lot to me. 
-Sandeep also said that it depends on how much advertizing has been made on 
+Sandeep also said that it depends on how much advertising has been made on 
 the months before ; when we exchanged emails to was slowing down because
-they had not advertized for a long time. 
+they had not advertised for a long time. 
 People contact the group by an online form specifying what they are 
 interested in and Sandeep finds PhD students who are interested in the 
 question. 

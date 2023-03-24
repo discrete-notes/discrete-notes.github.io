@@ -37,12 +37,10 @@ That's looks like a very nice initiative, to be reproduced elsewhere!
 ---
 
 
-![](../assets/algo-hours-1.png){: .center-image width="70%"}
+![](../assets/algo-hours-1.png){: .center-image width="40%"}
+![](../assets/algo-hours-2.png){: .center-image width="40%"}
 
-![](../assets/algo-hours-2.png){: .center-image width="70%"}
-
-![](../assets/algo-hours-3.png){: .center-image width="70%"}
-
-![](../assets/algo-hours-4.png){: .center-image width="70%"}
+![](../assets/algo-hours-3.png){: .center-image width="40%"}
+![](../assets/algo-hours-4.png){: .center-image width="40%"}
 
 

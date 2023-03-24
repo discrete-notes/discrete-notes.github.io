@@ -5,7 +5,7 @@ redirect_from: "/2023/03/23/algorithms-office-hours/"
 permalink: algorithms-office-hours
 ---
 
-While randomly walking on the web I discovered an initiative of the theory 
+While randomly walking on the web, I discovered an initiative of the theory 
 group at MIT, called [Algorithms office hours](https://web.mit.edu/algoh/www/).
 The idea is to foster communication between algorithms folks and other 
 people at MIT who could be interested in some algorithm expertise. 
@@ -17,13 +17,13 @@ of which nature. Here an adaptation of the answer.
 On a normal semester, the group gets around one request per week, which 
 sounds like a lot to me. 
 Sandeep also said that it depends on how much advertising has been made on 
-the months before ; when we exchanged emails to was slowing down because
+the months before; when we exchanged emails it was slowing down because
 they had not advertised for a long time. 
-People contact the group by an online form specifying what they are 
-interested in and Sandeep finds PhD students who are interested in the 
-question. 
+People contact the group via an online form, with a short description of 
+their questions, and Sandeep finds PhD students who are interested in the 
+topic. 
 
-About the topics, let me cite an email: "An example could be someone in 
+About the type of requests they get, let me cite an email: "An example could be someone in 
 graphics research who wants to implement some 2d or 3d procedure and 
 doesn’t know the right algorithm to use, or someone in machine learning 
 who is curious if their optimization algorithm could have some provable 

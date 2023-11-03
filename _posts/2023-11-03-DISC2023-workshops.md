@@ -75,7 +75,7 @@ new perspectives and exciting twists.
 This year it was chaired by [Jara Uitto](https://users.aalto.fi/~uittoj3/#jara)
 (Aalto University) (who also founded the workshop). I really enjoyed the talks.
 
-## [HACDA](https://sites.google.com/view/hacda-workshop/home): Highlights of Asynchronous Concurrent and  Distributed Algorithms
+## [HACDA](https://sites.google.com/view/hacda-workshop/home): Highlights of Asynchronous Concurrent and  Distributed Algorithms
 
 HACDA is a new workshop, and as you might guess from the name, it has some
 relation with ADGA. The idea is to use the successful format of ADGA, but 

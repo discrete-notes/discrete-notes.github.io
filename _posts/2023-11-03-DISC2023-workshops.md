@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Six workshops at DISC
-redirect_from: "/2023/xx/xx/DISC2023-workshops/"
+redirect_from: "/2023/11/03/DISC2023-workshops/"
 permalink: DISC2023-workshops
 ---
 

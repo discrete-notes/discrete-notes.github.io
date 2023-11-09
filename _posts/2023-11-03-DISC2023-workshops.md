@@ -94,8 +94,11 @@ the basics were presented, while the most recent works were discussed in the
 afternoon. So, there was something for everyone!
 
 I couldn't attend it, but given the prevalence of AI these days, it's 
-exciting to see it co-located with DISC. It was organized by Nirupam Gupta, 
-Rafael Pinot and Rachid Guerraou (all three from EPFL).
+exciting to see it co-located with DISC. It was organized by 
+[Nirupam Gupta](https://nirupam115.github.io/), 
+[Rafael Pinot](https://rpinot.github.io/) 
+and 
+[Rachid Guerraoui](http://lpdwww.epfl.ch/rachid/index.html) (all three from EPFL).
  
  
  

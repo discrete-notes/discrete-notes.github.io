@@ -1,16 +1,16 @@
 ---
 layout: post
-title: About annotated bibliographies
+title: About an annotated bibliography
 redirect_from: "/2023/11/10/annotated-bibliographies/"
 permalink: annotated-bibliographies
 ---
 
 Today an updated version of my bibliography of papers about distributed 
 approximation is out 
-(see [here](https://arxiv.org/pdf/2001.08510.pdf) on the arxiv). 
+(see [here](https://arxiv.org/pdf/2001.08510.pdf) on the arxiv).
 
-## What it is 
-
+## What it is
+ 
 The idea is to have a list of papers, with a few items for each, telling 
 what is the setting, the main result, and how it compares with the other 
 papers. The origin of this one is a project,

@@ -13,7 +13,7 @@ approximation is out
  
 The idea is to have a list of papers, with a few items for each, telling 
 what is the setting, the main result, and how it compares with the other 
-papers. The origin of this one is a project,
+papers. The origin of this one is a project
 for which it was important to understand previous work, and the literature 
 was very confusing. So I did the first version of this bibliography for 
 my colleagues and myself, and then when we finally abandoned the project I 
@@ -37,7 +37,9 @@ technique. In this sense, it makes the area easier to reach, and avoids
 having only a small set of authors being able to understand what's going on. 
 
 Second, such bibliographic documents allow for a more healthy citation 
-system. Without them, one is often in a problematic situation for citing papers:
+culture in research papers. 
+Without a bibliography to cite, one is often in a problematic situation for 
+citing papers:
 
 * Either you cite all the papers of the area that you know, and then you do 
 it in a way that is useless for readers (long lists of citations, without 

@@ -39,7 +39,7 @@ results about constant-time computations in the local model.
 ## Distributed algorithms, by Suomela
 
 A neat online textbook is
-[Distributed algorithm](https://users.ics.aalto.fi/suomela/da/da-print.pdf)
+[Distributed algorithm](https://jukkasuomela.fi/da2020/)
 by Jukka Suomela.
 In addition to the classic topics such as coloring, that are contained in most 
 references listed here, it has a focus on showing the similarities and differences 

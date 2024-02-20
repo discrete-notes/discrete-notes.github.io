@@ -18,11 +18,11 @@ there a priori.
 
 The truth is, I still don't know what is the problem. My student Sébastien 
 and I just dug up some forum with a magic spell. Just add the following 
-in the first lines of the pdf:
+just after documentclass:
 
     \pdfoutput=1
     
-After that it works perfectly. If you run into similar trouble, maybe this 
+And it worked perfectly. If you run into similar trouble, maybe this 
 will help. 
 
 

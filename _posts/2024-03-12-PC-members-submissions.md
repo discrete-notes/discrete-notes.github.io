@@ -34,8 +34,7 @@ and at the number of PC members co-authoring a paper, at PODC and DISC 2023.
 To be honest, I don't know what to do with these numbers. But I have been 
 hesitant recentely to submit papers when I was a PC member, and at least 
 now I have some estimate of how standard this is. (I finally submitted the 
-paper because it was the good timing for my student, and it was 
-rejected.)
+paper because it was the good timing for my student, and it was rejected.)
 
 
 

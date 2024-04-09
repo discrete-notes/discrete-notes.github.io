@@ -21,8 +21,7 @@ said in the previous post.
 Nowadays, I use a graphics tablet with a stylus. It is "black" tablet, not 
 one with an LCD display. So I need to plug it to the computer, and look at 
 the screen of a computer, while moving the stylus on the tablet. It looks 
-weird at first, but when gets used to it quasi instantly. (Tablets with 
-screens are much more expensive.)
+weird at first, but one gets used to it in a few minutes.
 
 Specifically, I use a Repaper tablet by iskn, although I suspect any tablet 
 would suffice for my modest needs. 

@@ -18,7 +18,7 @@ time, and looks ok to me.
 The important feature is that your drawing software supports layers, as 
 said in the previous post. 
 
-Nowadays, I use a graphics tablet with a stylus. It is "black" tablet, not 
+Nowadays, I use a graphics tablet with a stylus. It is a "black" tablet, not 
 one with an LCD display. So I need to plug it to the computer, and look at 
 the screen of a computer, while moving the stylus on the tablet. It looks 
 weird at first, but one gets used to it in a few minutes.

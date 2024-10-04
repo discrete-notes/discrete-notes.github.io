@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Graph reconstruction conjectures
@@ -13,7 +12,7 @@ structure of the first part of his talk, surveying open problems in the area.
 If you interested, the video is available online [here](https://scalelite-info.univ-lyon1.fr/playback/presentation/2.3/deb1788b716ce04af06dc1761a32ab0e724bb232-1727436820184) (with suboptimal sound), and also 
 contains the second part where Paul speaks about his nice work on related problems.
 
-## General approach
+## General approach
 
 Graph reconstruction is about reconstructing a graph (or at least deciding 
 if it has a given property) given a collection of partial views of it. 
@@ -33,7 +32,7 @@ In the following, I discuss quickly the three conjectures that Paul
 highlighted in his talk. They use three different types of queries: edge 
 queries, deck queries and line queries.
 
-## Evasivness conjecture
+## Evasivness conjecture
 
 The most natural type of queries one can think of is: Is (u,v) an edge of the 
 graph? This is an *edge query*. To be able to ask the question, one needs to 
@@ -89,7 +88,7 @@ outerplanar graphs.
 
 ## Graham tree reconstruction conjecture
 
-A less-known conjecture is Graham tree reconstruction conjecture. (The only 
+A less known conjecture is Graham tree reconstruction conjecture. (The only 
 reference I could find online is [here](https://arxiv.org/pdf/1109.0522v1), 
 but it seems to be well known in the reconstruction community.)
 

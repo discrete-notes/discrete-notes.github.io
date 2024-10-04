@@ -19,8 +19,8 @@ if it has a given property) given a collection of partial views of it.
 In other words, one makes queries to a hidden graph $G$ 
 (for various types of queries) and tries to output the hidden graph, or 
 determine whether $G$ satisfies some property. Sometimes the question is 
-whether this is possible at all, and sometimes one wants to determine the 
-minimum number of queries. 
+whether this is possible at all, and sometimes the goal is to determine the 
+minimum number of queries needed. 
 
 This has a similar flavor as graph 
 [property testing](https://en.wikipedia.org/wiki/Property_testing) 

@@ -49,7 +49,7 @@ is a *scorpion graph* can be done with $O(n)$ queries. The picture below
 describes such graphs. The proof is non-trivial but shortish, see e.g. 
 [here](https://math.uchicago.edu/~may/REU2015/REUPapers/Zhao.pdf). 
 
-![](../assets/scorpion.png){: .center-image width="80%"}
+![](../assets/scorpion.png){: .center-image width="90%"}
 
 Being a scorpion graph is not a *monotone* property: it does not stay true 
 when one removes edges. (It seems that "monotone" refers either to removing 
@@ -74,7 +74,7 @@ On the picture below, the hidden graph is on the left and its deck
 on the right. Note that for this setting it is important that the vertices 
 do not have no names. 
 
-![](../assets/deck.png){: .center-image width="80%"}
+![](../assets/deck.png){: .center-image width="90%"}
 
 It's not clear how to reconstruct the original graph from the deck, because 
 of all the symmetries. (Try to imagine what you would have done with the 
@@ -87,31 +87,30 @@ states that it is always possible to reconstruct a graph from its deck
 The conjecture has been proved for various graph classes, such as trees and 
 outerplanar graphs.
 
-## Graham tree reconstruction conjecture
+## Graham tree reconstruction conjecture
 
 A less known conjecture is Graham tree reconstruction conjecture. (The only 
 reference I could find online is [here](https://arxiv.org/pdf/1109.0522v1), 
 but it seems to be well known in the reconstruction community.)
 
 It is based on the notion of line graph. Given a graph $G=(V,E)$, its line graph 
-is the graph L(G), with vertex set $E$ (one vertex for every edge of $G$), 
-such that $(u,v)\in L(G)$ iff $u$ and $v$ correspond to edges in $G$ that share 
-an endpoint. See the picture below. 
+is the graph $L(G)$, with vertex set $E$ (one vertex for each edge of $G$), 
+such that $(u,v)\in L(G)$ iff $u$ and $v$ correspond to edges that share 
+an endpoint in $G$. See the picture below. 
 
 ![](../assets/line-graph-operation.png){: .center-image width="80%"}
 
-If we iterate this operation, in general, we get larger and larger graphs. 
-In other the sequence: $|V(G)|, |L(V(G))|, |L(L(V(G)))| ...$ increases quickly. 
+If we iterate this operation, we get larger and larger graphs, in general, 
+and the sequence $|V(G)|, |L(V(G))|, |L(L(V(G)))| ...$ increases rapidly. 
 
-A question is: is it the case that this sequence characterizes the original
-graph $G$? In general, this is not true. For example, two $k$-regular graphs
-of size $n$, have the same sequence. See picture below for an example on 
-one step. 
+The question is: Is it the case that this sequence characterizes the original
+graph $G$? In general, this is not true, because two $k$-regular graphs
+of size $n$, have the same sequence (see the picture below for one step).
+But Graham conjectured that this is true for trees. 
 
-![](../assets/line-regular-graphs.png){: .center-image width="80%"}
+![](../assets/line-regular-graphs.png){: .center-image width="90%"}
 
-But Graham conjectured that this is true for trees. The conjecture is still 
-wide open. 
+All these three conjectures are still wide open. 
 
 
  

@@ -47,7 +47,7 @@ the graph is empty takes $n(n-1)/2$ queries, the trivial upper bound.
 But it is not true of every property. For example, deciding whether a graph 
 is a *scorpion graph* can be done with $O(n)$ queries. The picture below 
 describes such graphs. The proof is non-trivial but shortish, see e.g. 
-[here](https://math.uchicago.edu/~may/REU2015/REUPapers/Zhao.pdf).) 
+[here](https://math.uchicago.edu/~may/REU2015/REUPapers/Zhao.pdf). 
 
 ![](../assets/scorpion.png){: .center-image width="80%"}
 
@@ -69,19 +69,20 @@ $n$ is a power of a prime, by studying "group actions on topological spaces" .
 
 Consider now a new setting. One is given access to the *deck* of the hidden 
 graph $G$, which is the multiset of all the graphs that can be obtained by removing 
-exactly one vertex from $G$ (the *cards*). In this case the vertices have no names. 
-
-For example, on the picture, the hidden graph is on the left and its deck 
-on the right. 
+exactly one vertex from $G$ (the *cards*). 
+On the picture below, the hidden graph is on the left and its deck 
+on the right. Note that for this setting it is important that the vertices 
+do not have no names. 
 
 ![](../assets/deck.png){: .center-image width="80%"}
 
-Now, it's not clear how to reconstruct the original graph, because of all 
-the symmetries. (Try to imagine what you would have done with the deck above.)
+It's not clear how to reconstruct the original graph from the deck, because 
+of all the symmetries. (Try to imagine what you would have done with the 
+deck above.)
 
 The [reconstruction conjecture](https://en.wikipedia.org/wiki/Reconstruction_conjecture)
 states that it is always possible to reconstruct a graph from its deck 
-(if $n>2$ because an edge and two isolated vertices have the same deck). 
+(assuming $n>2$, an edge and two isolated vertices having the same deck). 
 
 The conjecture has been proved for various graph classes, such as trees and 
 outerplanar graphs.

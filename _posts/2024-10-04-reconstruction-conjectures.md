@@ -2,7 +2,7 @@
 ---
 layout: post
 title: Graph reconstruction conjectures
-redirect_from: "/2024/10/xx/reconstruction-conjectures/"
+redirect_from: "/2024/10/04/reconstruction-conjectures/"
 permalink: reconstruction-conjectures
 ---
 

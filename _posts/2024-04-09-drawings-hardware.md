@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My pictures&#58; hardware
+title: Hardware for pictures
 redirect_from: "/2024/04/09/drawings-hardware/"
 permalink: drawings-hardware
 ---

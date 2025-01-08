@@ -59,16 +59,16 @@ versions of different formats (teaser, 20 minutes, extended version) would be
 great. Finally, being very responsive with questions: being connected to the 
 PODC-DISC zulip channel, promptly answering questions via email, offering 
 video calls to discuss specific aspects. Of course this is more work than 
-sketching half-baked slides a few hours before your talk, but think about the 
+sketching half-baked slides a few hours before your talk, but think about all 
 the time you will not spend in planes and airports! (From Lyon, where I am, 
 the round trip is almost 40 hours, see
 [skyscanner](https://www.skyscanner.fr/transport/flights/lys/hux/250614/?adultsv2=1&cabinclass=economy&childrenv2=&inboundaltsenabled=false&outboundaltsenabled=false&preferdirects=false&rtn=0))
 
 
 As for my plans, I decided not to submit to PODC 
-this year (being the PC, and having nothing that would 
+this year (being in the PC, and having nothing that would 
 be ready without rushing). However, I am happy to assist anyone making the 
-decision to present online both for the diplomatic side and for preparing 
+decision to present online both on the diplomatic side and for preparing 
 a great presentation.
 
 

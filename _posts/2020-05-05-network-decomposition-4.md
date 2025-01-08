@@ -47,17 +47,17 @@ For some applications it might be better to have a strong decomposition, and the
 algorithm provides only a weak one. This is not a big problem. 
 The paper of Rozhon and Ghaffari provides a sketch of the known approach
 to builds a strong 
-decomposition with $O(\log(n))$ colors from a weak one with also $O(\log(n))$ 
+decomposition with $O(\log n)$ colors from a weak one with also $O(\log n)$ 
 colors.
 It is even simpler to have such a transformation if we just insist on having 
 polylogs: 
 take your weak decomposition, make the nodes of each component act like in a 
 centralized algorithm (by gathering the whole topology of the component and 
 simulating), and make them compute a strong decomposition of the component 
-itself. For example, take a component of weak diameter $O(\log(n))$ 
+itself. For example, take a component of weak diameter $O(\log n )$ 
 with color yellow; these yellow nodes compute a 
 a strong network decomposition of the component, and now
-the nodes have $\log(n)$ shades of yellow. In total this 
+the nodes have $\log n$ shades of yellow. In total this 
 makes a strong decomposition with $O(\log^2n)$ colors. 
 
 ![](../assets/refined-decompo-1.png){: .center-image width="90%"}|![](assets/refined-decompo-2.png){: .center-image width="90%"}|![](assets/refined-decompo-3.png){: .center-image width="90%"}
@@ -112,6 +112,6 @@ non-connected components.
 This change in the definition useful in the distributed algorithm as we don't 
 want to keep track of whether the component is connected or not.
 
-*Next post of the series: [The algorithm](https://discrete-notes.github.io/https://discrete-notes.github.io/network-decomposition-5-algorithm)*
+*Next post of the series: [The algorithm](https://discrete-notes.github.io/network-decomposition-5-algorithm)*
 
 

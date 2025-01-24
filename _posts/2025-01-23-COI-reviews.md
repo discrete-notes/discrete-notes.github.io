@@ -9,11 +9,13 @@ A short post about two (hopefully) useful webpages on my site.
 
 ## List of conflicts of interest 
 
-I maintain a list of my conflicts of interest here. It follows the standard 
+I maintain a list of my conflicts of interest 
+[here](https://perso.liris.cnrs.fr/lfeuilloley/COI.html). 
+It follows the standard 
 COI definition used by conferences: PhD advisor/student, close or current 
 collaborators, and co-authors of papers published within the last two years.
 
-This list is particularly useful for me when submitting papers or serving 
+This list is particularly useful to me when submitting papers or serving 
 on a program committee, as I can simply copy-paste it to disclose my COIs.
 
 I hope it is also helpful to others. For example, if you're considering 

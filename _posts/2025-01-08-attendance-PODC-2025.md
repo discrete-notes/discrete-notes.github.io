@@ -5,6 +5,10 @@ redirect_from: "/2025/01/08/attendance-PODC-2025/"
 permalink: attendance-PODC-2025
 ---
 
+UPDATE: As a consequence of this post, PODC CfP was modified to mention a 
+form of mandatory attendance. I'm leaving the original version of the post 
+here, and might have another post about the current formulation of the CfP.
+
 [PODC 2025](https://www.podc.org/podc2025/), the flagship conference of 
 (the theory of) distributed computing will take place in Huatulco, a 
 seaside resort in southern Mexico.
@@ -44,11 +48,11 @@ system makes it so that having a PODC paper can change your career. Some
 countries, for recruiting academics, simply compute a weighted average of 
 the publications, and PODC usually has a high weight, even compared to 
 DISC or Distributed Computing (respectively, the second flagship conference 
-of the area and the main journal). Since it is impossible to change this in a 
+of the area, and the main journal). Since it is impossible to change this in a 
 few month, we have to adapt to it. 
 
 A second issue is that online presentation can be less engaging than 
-on-site talks, because of technical issues, less dynamic talks, and 
+on-site talks because of technical issues, less dynamic talks, and 
 lack of interaction at coffee breaks. My bet is that if one does things 
 right, an online talk can overall be better than an average on-site talk. 
 I would urge anyone planning to present online to make big efforts to 

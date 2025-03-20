@@ -7,9 +7,9 @@ permalink: gender-committee
 
 Thanks to
 [Marie Kerjean](https://lipn.univ-paris13.fr/~kerjean/) 
-on mastodon, I got aware of a [conference on gender and science] at 
+on mastodon, I got aware of a conference on gender and science at 
 Collège de France. If you understand French, there is plenty of interesting
-talks to watch, on various fields of research, see 
+talks to watch on various fields of research, see 
 [here](https://www.college-de-france.fr/fr/agenda/grand-evenement/genre-et-sciences).
 
 In this blog post, I'd like to highlight a tiny part of

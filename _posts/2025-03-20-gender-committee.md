@@ -26,8 +26,8 @@ academics' careers (e.g. tenure committees).
 It is well known that men tend to be biased against woman in many settings 
 (and also women can be biased against women, but less). 
 This is one of the reasons why it is now common to have rules 
-enforcing that every committee should have at least some quota of women. 
-What was surprising to me is that men can be *more* biased against women 
+enforcing that every committee should have some quota of women. 
+It has been established that men can be *more* biased against women 
 when there is a woman in the committee, which then implies that the committee
 as a whole is more biased.
 The reason would be that, when a woman is present, men tend to be less 

@@ -12,8 +12,9 @@ Collège de France. If you understand French, there is plenty of interesting
 talks to watch, on various fields of research, see 
 [here](https://www.college-de-france.fr/fr/agenda/grand-evenement/genre-et-sciences).
 
-In this blog post, I'd like to highlight a tiny part of the
- [talk by Esther Duflo](https://www.college-de-france.fr/fr/agenda/grand-evenement/genre-et-sciences/la-discrimination-contre-les-femmes-scientifiques-une-histoire-recente-inachevee) 
+In this blog post, I'd like to highlight a tiny part of
+ [the talk](https://www.college-de-france.fr/fr/agenda/grand-evenement/genre-et-sciences/la-discrimination-contre-les-femmes-scientifiques-une-histoire-recente-inachevee) 
+ by [Esther Duflo](https://en.wikipedia.org/wiki/Esther_Duflo)
 (a prominent French economist working at MIT). In general, the talk is about 
 all the mechanisms that explain why there are so few women in many fields 
 of research, with a focus on economics. For several such mechanisms I was 
@@ -27,17 +28,17 @@ It is well known that men tend to be biased against woman in many settings
 This is one of the reasons why it is now common to have rules 
 enforcing that every committee should have at least some quota of women. 
 What was surprising to me is that men can be *more* biased against women 
-when there is a woman in the committee. The reason would be that men 
-tend to be less committed to gender equality, or that their male identity is 
-strengthened, when a woman is present.
+when there is a woman in the committee, which then implies that the committee
+as a whole is more biased.
+The reason would be that, when a woman is present, men tend to be less 
+committed to gender equality, or that their male identity is strengthened.
 
 I had never thought about it before, but in retrospect it feels familiar. 
 I have only been in a few committees (namely, two committees for PhD awards), 
-and I cannot say I have detected this phenomenon, but I did get the feeling of 
-"ok, there is a 
-person from research area X, so I don't need to be very careful about not 
-being biased against X". Therefore it is reasonable to think that the same 
-would apply to gender. 
+and I have not detected this phenomenon, but I did get a feeling of 
+"Since there is a person from research area X, I don't need to be very 
+careful about not being biased against X". Therefore it is reasonable to 
+think that the same would apply to gender. 
 
 Of course this does not mean that we should remove woman quotas for 
 committees. I guess the conclusion that there is one more bias mechanism to 

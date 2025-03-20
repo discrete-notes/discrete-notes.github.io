@@ -27,9 +27,10 @@ It is well known that men tend to be biased against woman in many settings
 (and also women can be biased against women, but less). 
 This is one of the reasons why it is now common to have rules 
 enforcing that every committee should have some quota of women. 
-It has been established that *men can be more biased against women 
-when there is a woman in the committee*, which then implies that the committee
-as a whole is more biased.
+Surprisingly, it has been established that *men can be more biased against women 
+when there is a woman in the committee*. And this implies that the committee
+as a whole is more biased, because women's less-biased opinions are not 
+enough to oppose this trend.
 An explanation is that, when a woman is present, men tend to be less 
 committed to gender equality, or that their male identity is strengthened.
 
@@ -45,13 +46,11 @@ Of course this does not mean that we should remove woman quotas for
 committees. I guess the conclusion that there is one more bias mechanism to 
 be aware of, when being in a committee.
 
---- 
-
 If you look for a paper on this, the one I could find is
 [Does the Gender Composition of Scientific Committees Matter?](https://docs.iza.org/dp9199.pdf)
-published in American Economic Review in 2017, which uses data from 
-associate and full professorships committees in Italy and Spain, and 
-randomized external evaluation to assess the bias.
+published in American Economic Review (one of the top journals in economics). 
+It uses data from associate and full professorships committees in Italy and 
+Spain, and randomized external evaluation to assess the bias.
 
 
 

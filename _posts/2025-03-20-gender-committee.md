@@ -43,7 +43,7 @@ careful about not being biased against X". Therefore, it is reasonable to
 think that the same would apply to gender. 
 
 Of course this does not mean that we should remove woman quotas for 
-committees. I guess the conclusion that there is one more bias mechanism to 
+committees. I guess the conclusion is that there is one more bias mechanism to 
 be aware of, when being in a committee.
 
 If you look for a paper on this, the one I could find is

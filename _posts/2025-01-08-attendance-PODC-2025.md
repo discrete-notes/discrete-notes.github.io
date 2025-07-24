@@ -9,6 +9,8 @@ UPDATE: As a consequence of this post, PODC CfP was modified to mention a
 form of mandatory attendance. I'm leaving the original version of the post 
 here, and might have another post about the current formulation of the CfP.
 
+UPDATE 2: There is now a long workshop organized before PODC. 
+
 [PODC 2025](https://www.podc.org/podc2025/), the flagship conference of 
 (the theory of) distributed computing will take place in Huatulco, a 
 seaside resort in southern Mexico.

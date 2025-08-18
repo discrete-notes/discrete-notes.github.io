@@ -27,7 +27,7 @@ DBLP, for instance)
 
 I also maintain the list of all the reviews I have done, as a set of conference
 and journal names, sorted by year. You can view it 
-[here](https://perso.liris.cnrs.fr/lfeuilloley/reviews.html).
+[here](https://perso.liris.cnrs.fr/lfeuilloley/PC-reviews.html).
 
 This is satisfying for me, since it leaves a record of the work done.
 I hope it’s also useful to others when assessing whether I’m a suitable 

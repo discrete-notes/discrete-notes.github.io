@@ -103,7 +103,7 @@ the activity, sense of autonomy, perception of control,
 sense of belonging.
 
 
-## People at workshop
+## Participants
 
 We were around 10 academics at the training, from diverse areas of science. 
 Basically, there were people 

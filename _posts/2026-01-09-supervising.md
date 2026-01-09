@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Take-aways from a PhD supervision training
+title: Takeaways from a PhD supervision training
 redirect_from: "/2026/01/09/supervising/"
 permalink: supervising
 ---

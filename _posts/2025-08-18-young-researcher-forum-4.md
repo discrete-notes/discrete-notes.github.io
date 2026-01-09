@@ -18,17 +18,17 @@ There were some critics about the date: Friday is not good for people
 in Israel, and it was too close to PODC. Because we organized the event 
 too late, we did not have much choice, but for next editions we'll 
 try to do better. It is unclear what is the best time of the year for the 
-forum, avoiding deadlines and conferences. 
+forum though, since there are many deadlines and conferences. 
 
 Personally, I also learned an important lesson: choosing CET time for an 
 event in June is stupid. 
 I had in mind that CET was the time zone of France, Germany and 
 other countries in Europe, so it looked reasonable; but because of 
 daylight saving time, this is *not* the case in summer (these countries use 
-CEST in summer, Central Europe Summer Time). 
+Central Europe Summer Time, CEST). 
 CET ended up coinciding with the time zone of 
 Billy in the UK, so it was not completely wrong, but since the time 
-zones were crucial for the event, we add to highlight this many times in 
+zones were crucial for the event, we had to insist on this aspect many times in 
 the emails, which was a bit painful. 
 
 ## About the junior-senior meetings

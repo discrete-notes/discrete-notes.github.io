@@ -46,7 +46,7 @@ Some argue that we should make the effort and adapt: presenting journal
 papers at workshops, prioritizing journal reviews, and disregarding rankings, etc. 
 As far as I can see, this is not happening.
 
-## The problems with reforming conferences
+## The problems with reforming conferences
 
 Another approach is to modify our conferences, for example by making them hybrid,
 or having several hubs, or making them online every other year. 

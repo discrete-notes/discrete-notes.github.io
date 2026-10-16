@@ -8,6 +8,7 @@ permalink: two-analogies
 I'm trying to get some opinion on the typical conversation that goes like this:
 
 -- I don't want to use AI, nobody should use AI. 
+
 -- You have no choice. Soon it will not make sense not to use it.
 
 In this post I explore two analogies related to this situation, without any 
@@ -51,7 +52,7 @@ because there is some inertia or a feeling of empathy.
 All the work that have been done without computers will have some weight on a CV 
 for a few years, but this weight decreases with time.
 
-## Analogy 2: Torturing monkeys
+## Analogy 2: Torturing monkeys
 
 Consider a situation where a research group obtains groundbreaking results
 of the highest technical quality, but tortured thousands of monkeys in the 

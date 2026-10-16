@@ -49,8 +49,7 @@ either because the reviewing peers do not have computers yet, or
 because there is some inertia or a feeling of empathy. 
 
 All the work that have been done without computers will have some weight on a CV 
-for a few years, but this weight decreases with time. 
-
+for a few years, but this weight decreases with time.
 
 ## Analogy 2: Torturing monkeys
 
